@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IELTS Band 7.5+ গাইড | বাংলায় সম্পূর্ণ প্রস্তুতি</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f1226;
+    --bg2:#171a35;
+    --card:#1d2142;
+    --card2:#242a52;
+    --line:#2e3563;
+    --txt:#e9ecff;
+    --muted:#a7adda;
+    --accent:#6c8cff;
+    --accent2:#46d6b3;
+    --gold:#ffcb5b;
+    --pink:#ff7ab6;
+    --speak:#ff7ab6;
+    --write:#ffcb5b;
+    --read:#46d6b3;
+    --listen:#6c8cff;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Hind Siliguri',system-ui,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),
+               radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),
+               var(--bg);
+    color:var(--txt);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+  /* HEADER */
+  header.hero{
+    padding:64px 0 40px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .badge{
+    display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#0b0e22;font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;
+    letter-spacing:.3px;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(1.9rem,5vw,3.1rem);font-weight:700;line-height:1.3;margin-bottom:14px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--pink),var(--accent));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto 26px;font-size:1.08rem}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    border:none;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:600;
+    padding:13px 24px;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card);color:var(--txt);border:1px solid var(--line)}
+
+  /* STAT STRIP */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat b{font-size:1.7rem;display:block;color:var(--gold)}
+  .stat span{color:var(--muted);font-size:.9rem}
+
+  /* NAV TABS */
+  nav.tabs{
+    position:sticky;top:0;z-index:50;background:rgba(15,18,38,.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:10px 0;
+  }
+  .tabrow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .tabrow::-webkit-scrollbar{display:none}
+  .tab{
+    white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:9px 16px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:500;
+    transition:.15s; flex:none;
+  }
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b0e22;font-weight:700;border-color:transparent}
+
+  /* SECTIONS */
+  section.panel{display:none;padding:36px 0 24px;animation:fade .4s ease}
+  section.panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .sec-icon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.5rem;flex:none}
+  .sec-head h2{font-size:1.6rem;font-weight:700}
+  .sec-sub{color:var(--muted);margin-bottom:26px;font-size:1.02rem}
+  .prio{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:auto}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}
+  .card h3{font-size:1.18rem;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  .card h3 .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .card p{color:#d6daff;margin-bottom:10px}
+  .card ul{list-style:none;margin:6px 0}
+  .card ul li{padding:7px 0 7px 30px;position:relative;color:#d6daff}
+  .card ul li::before{content:"✦";position:absolute;left:6px;color:var(--accent2)}
+  .card ol{margin:8px 0 8px 22px;color:#d6daff}
+  .card ol li{padding:5px 0}
+
+  .pill{display:inline-block;background:var(--card2);border:1px solid var(--line);color:var(--muted);
+    padding:5px 12px;border-radius:999px;font-size:.85rem;margin:4px 4px 0 0}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);
+    border-left:3px solid var(--accent);padding:12px 16px;border-radius:8px;margin:12px 0;color:#dfe3ff}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+
+  /* PHRASE BANK */
+  .phrase{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:8px 0}
+  .phrase .en{color:var(--gold);font-weight:500;display:block}
+  .phrase small{color:var(--muted)}
+
+  /* ACCORDION */
+  details{background:var(--card2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+  summary{cursor:pointer;padding:14px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.4rem;color:var(--accent2)}
+  details[open] summary::after{content:"–"}
+  details .body{padding:0 18px 16px}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+  th{background:var(--card2);color:var(--gold)}
+
+  /* CHECKLIST / PLAN */
+  .day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  .day h4{color:var(--accent2);margin-bottom:10px}
+  .check{display:flex;align-items:flex-start;gap:10px;padding:6px 0;cursor:pointer}
+  .check input{width:18px;height:18px;margin-top:5px;accent-color:var(--accent2);flex:none;cursor:pointer}
+  .check label{cursor:pointer;color:#d6daff}
+  .check input:checked + label{text-decoration:line-through;color:var(--muted)}
+
+  .progwrap{background:var(--card2);border-radius:999px;height:14px;overflow:hidden;margin:14px 0;border:1px solid var(--line)}
+  .progbar{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s ease}
+
+  /* RESOURCE CARDS */
+  .res{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .res a{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--txt);transition:.15s;display:block}
+  .res a:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .res a b{display:block;color:var(--gold);margin-bottom:4px}
+  .res a span{color:var(--muted);font-size:.9rem}
+
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+
+  @media(max-width:720px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid2,.res{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">🎯 লক্ষ্য: IELTS Band 7.5+ | প্রতিটি সেকশনে দক্ষতা</span>
+    <h1>ইংরেজিতে <span class="grad">ফ্লুয়েন্ট</span> হও,<br/>IELTS-এ <span class="grad">৭.৫+</span> স্কোর করো</h1>
+    <p>একদম শুরু থেকে শেষ পর্যন্ত — পুরো রোডম্যাপ, কৌশল, টেমপ্লেট আর প্র্যাকটিস প্ল্যান। সব বাংলায়, একটাই পেজে। প্রায়োরিটি অনুযায়ী সাজানো: <b>Speaking → Writing → Reading → Listening</b>।</p>
+    <div class="hero-cta">
+      <a href="#start" class="btn btn-primary" onclick="go('plan')">🚀 শুরু করি কীভাবে?</a>
+      <a href="#speak" class="btn btn-ghost" onclick="go('speaking')">🗣️ Speaking দিয়ে শুরু</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>4</b><span>সেকশন কভার করা</span></div>
+      <div class="stat"><b>90</b><span>দিনের প্ল্যান</span></div>
+      <div class="stat"><b>7.5+</b><span>টার্গেট ব্যান্ড</span></div>
+      <div class="stat"><b>100%</b><span>বাংলায়</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="tabs">
+  <div class="wrap">
+    <div class="tabrow" id="tabrow">
+      <button class="tab active" onclick="go('start')">🧭 শুরু কীভাবে</button>
+      <button class="tab" onclick="go('speaking')">🗣️ ১. Speaking</button>
+      <button class="tab" onclick="go('writing')">✍️ ২. Writing</button>
+      <button class="tab" onclick="go('reading')">📖 ৩. Reading</button>
+      <button class="tab" onclick="go('listening')">🎧 ৪. Listening</button>
+      <button class="tab" onclick="go('plan')">📅 ৯০ দিনের প্ল্যান</button>
+      <button class="tab" onclick="go('resources')">🔗 রিসোর্স</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ===================== START ===================== -->
+<section class="panel active" id="start">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(108,140,255,.18)">🧭</div>
+    <h2>শুরুটা কীভাবে করব?</h2>
+  </div>
+  <p class="sec-sub">ফ্লুয়েন্সি কোনো ম্যাজিক না — এটা প্রতিদিনের অভ্যাস। নিচের ভিত্তিটা ঠিক করলে বাকি সব সেকশন সহজ হয়ে যাবে।</p>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--accent)"></span>প্রথম সত্যটা বুঝে নাও</h3>
+    <p>ইংরেজি শেখা = <b>ভাষা ব্যবহার করা</b>, ব্যাকরণ মুখস্থ করা না। বাচ্চারা গ্রামার বই ছাড়াই কথা শেখে — কারণ তারা প্রতিদিন <b>শোনে আর বলে</b>। তোমার পদ্ধতিও তাই হবে: <b>Input (শোনা/পড়া) → Output (বলা/লেখা)</b>।</p>
+    <div class="note good">✅ নিয়ম: পারফেকশনের চিন্তা বাদ দাও। ভুল করেই শেখা যায়। দিনে ৩০ মিনিট নিয়মিত করা > সপ্তাহে একদিন ৪ ঘণ্টা।</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>🧱 ধাপ ১: ভিত্তি তৈরি (প্রথম ২ সপ্তাহ)</h3>
+      <ul>
+        <li>প্রতিদিন ১৫–২০ মিনিট ইংরেজি <b>শোনো</b> (পডকাস্ট/ইউটিউব), সাবটাইটেল সহ</li>
+        <li>প্রতিদিন ১০টি নতুন <b>collocation</b> শেখো (শুধু শব্দ না, শব্দের জোড়া)</li>
+        <li>প্রতিদিন আয়নার সামনে ৫ মিনিট নিজের সাথে ইংরেজিতে কথা বলো</li>
+        <li>একটা নোটবুক/অ্যাপে নতুন শব্দ লিখে রাখো</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎯 ধাপ ২: IELTS মোড (এরপর)</h3>
+      <ul>
+        <li>একটা <b>full mock test</b> দাও — বর্তমান লেভেল জানো</li>
+        <li>কোন সেকশনে দুর্বল সেটা চিহ্নিত করো</li>
+        <li>নিচের প্রায়োরিটি অনুযায়ী রোজ প্র্যাকটিস করো</li>
+        <li>প্রতি সপ্তাহে অন্তত ১টা mock দাও</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--gold)"></span>Band 7.5+ এর গোপন সূত্র (চারটি মানদণ্ড)</h3>
+    <p>Examiner চারটি জিনিস দেখে। এগুলো জানলে স্কোর তোলা সহজ:</p>
+    <table>
+      <tr><th>মানদণ্ড</th><th>মানে কী</th><th>৭.৫+ এর জন্য</th></tr>
+      <tr><td>Fluency / Coherence</td><td>থেমে না গিয়ে গুছিয়ে বলা/লেখা</td><td>লিংকিং ওয়ার্ড + আইডিয়া এক্সটেন্ড</td></tr>
+      <tr><td>Lexical Resource</td><td>শব্দভাণ্ডার</td><td>Collocation + কম common শব্দ</td></tr>
+      <tr><td>Grammar Range</td><td>বাক্যের বৈচিত্র্য</td><td>Simple + Complex বাক্য মিশিয়ে</td></tr>
+      <tr><td>Pronunciation / Accuracy</td><td>উচ্চারণ ও নির্ভুলতা</td><td>স্পষ্ট, স্ট্রেস ঠিক রেখে</td></tr>
+    </table>
+    <div class="note">💡 মনে রাখো: ব্রিটিশ/আমেরিকান accent দরকার নেই। শুধু <b>স্পষ্ট ও বোধগম্য</b> উচ্চারণ চাই।</div>
+  </div>
+
+  <div class="card">
+    <h3>📊 নিজের লেভেল ট্র্যাক করো</h3>
+    <p>প্রতি সপ্তাহে এই প্রশ্নগুলোর উত্তর দাও — উন্নতি বুঝতে পারবে:</p>
+    <ol>
+      <li>৫ মিনিট না থেমে ইংরেজিতে কথা বলতে পারছি? (হ্যাঁ/না)</li>
+      <li>আজ কয়টা নতুন collocation শিখলাম?</li>
+      <li>আজ কি ইংরেজিতে কিছু লিখলাম/বললাম/শুনলাম?</li>
+    </ol>
+    <a href="#plan" class="btn btn-primary" onclick="go('plan')">📅 ৯০ দিনের পূর্ণ প্ল্যান দেখো</a>
+  </div>
+</section>
+
+<!-- ===================== SPEAKING ===================== -->
+<section class="panel" id="speaking">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(255,122,182,.18)">🗣️</div>
+    <h2>Speaking — তোমার #১ প্রায়োরিটি</h2>
+    <span class="prio" style="background:var(--speak);color:#2a0a18">PRIORITY 1</span>
+  </div>
+  <p class="sec-sub">ফ্লুয়েন্সির আসল পরীক্ষা এখানেই। পরীক্ষা ৩ পার্টে: Introduction (৪–৫ মিনিট) → Cue Card (২ মিনিট বলা) → Discussion (৪–৫ মিনিট)।</p>
+
+  <div class="card" style="border-color:var(--pink);background:linear-gradient(135deg,rgba(255,122,182,.14),var(--card))">
+    <h3><span class="dot" style="background:var(--pink)"></span>🎙️ ইন্টারঅ্যাকটিভ Speaking Module (Beginner → Expert)</h3>
+    <p>আলাদা একটা পূর্ণ মডিউল বানানো হয়েছে — ৬টি লেভেল, প্রতিটিতে ড্রিল ও চেকলিস্ট। সাথে <b>ভয়েস রেকর্ডার, Cue Card টাইমার, র‍্যান্ডম প্রম্পট জেনারেটর</b> আর উচ্চারণ শোনার টুল। সবকিছু এখানেই প্র্যাকটিস করতে পারবে।</p>
+    <a href="speaking-module.html" class="btn btn-primary">🚀 Speaking Module খোলো →</a>
+  </div>
+
+  <div class="card" style="border-color:var(--accent2);background:linear-gradient(135deg,rgba(70,214,179,.13),var(--card))">
+    <h3><span class="dot" style="background:var(--accent2)"></span>📚 Grammar + Spoken English (Basic → Advanced)</h3>
+    <p>ইংরেজিতে <b>সঠিকভাবে</b> কথা বলতে গ্রামার লাগবেই। আলাদা একটা পূর্ণ মডিউল আছে — Basic → Intermediate → Advanced, প্রতিটি টপিক কথা বলার সাথে যুক্ত। সাথে <b>কুইজ, বাক্য বানানোর খেলা</b> আর ডেইলি প্র্যাকটিস রুটিন।</p>
+    <a href="grammar-speaking.html" class="btn btn-primary">📖 Grammar Module খোলো →</a>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--speak)"></span>ফ্লুয়েন্ট হওয়ার আসল কৌশল</h3>
+    <ul>
+      <li><b>Shadowing:</b> ইংরেজি ভিডিও/পডকাস্ট চালিয়ে বক্তার ঠিক পরেই একই কথা নকল করে বলো — accent, rhythm আর intonation এতে আসে।</li>
+      <li><b>Think in English:</b> বাংলায় ভেবে অনুবাদ কোরো না। ছোট জিনিস (চা বানাচ্ছি, বাস ধরছি) মনে মনে ইংরেজিতে বর্ণনা করো।</li>
+      <li><b>Talk to yourself:</b> প্রতিদিন একটা টপিক নিয়ে ২ মিনিট নিজে নিজে বলো, রেকর্ড করো, শুনে ভুল ধরো।</li>
+      <li><b>Speaking partner:</b> বন্ধু/অনলাইন পার্টনারের সাথে রোজ ১৫ মিনিট ইংরেজিতে কথা বলো।</li>
+      <li><b>Never go silent:</b> থেমে যেও না — filler ব্যবহার করো (নিচে দেওয়া আছে)।</li>
+    </ul>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>⏸️ থামার বদলে যা বলবে (Fillers)</h3>
+      <div class="phrase"><span class="en">That's an interesting question…</span><small>প্রশ্ন শুনে সময় নেওয়ার জন্য</small></div>
+      <div class="phrase"><span class="en">Well, let me think about that for a second.</span><small>ভাবার সময় নাও</small></div>
+      <div class="phrase"><span class="en">To be honest with you…</span><small>সৎভাবে বললে</small></div>
+      <div class="phrase"><span class="en">I'd say that…</span><small>মত দেওয়ার সময়</small></div>
+      <div class="phrase"><span class="en">Off the top of my head…</span><small>হঠাৎ মনে যা এল</small></div>
+    </div>
+    <div class="card">
+      <h3>🌟 ব্যান্ড বাড়ানো প্রকাশভঙ্গি</h3>
+      <div class="phrase"><span class="en">It depends on the situation, but generally…</span><small>ভারসাম্যপূর্ণ উত্তর</small></div>
+      <div class="phrase"><span class="en">I'm absolutely passionate about…</span><small>আগ্রহ প্রকাশ</small></div>
+      <div class="phrase"><span class="en">One thing that really stands out is…</span><small>গুরুত্ব দেওয়া</small></div>
+      <div class="phrase"><span class="en">If I had to choose, I'd probably go for…</span><small>পছন্দ জানানো</small></div>
+      <div class="phrase"><span class="en">…and that's exactly why I feel this way.</span><small>উদাহরণ শেষে</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🃏 Cue Card (Part 2) জেতার ফর্মুলা</h3>
+    <p>২ মিনিট একটানা বলতে হবে। প্রস্তুতির ১ মিনিটে এই স্ট্রাকচার নোট করো — <b>PEEL</b>:</p>
+    <table>
+      <tr><th>ধাপ</th><th>কী বলবে</th></tr>
+      <tr><td>P – Point</td><td>সরাসরি টপিক পরিচয় করাও</td></tr>
+      <tr><td>E – Explain</td><td>বিস্তারিত বর্ণনা করো (কে/কী/কখন/কোথায়)</td></tr>
+      <tr><td>E – Example</td><td>একটা বাস্তব উদাহরণ/গল্প দাও</td></tr>
+      <tr><td>L – Link / Feeling</td><td>তোমার অনুভূতি দিয়ে শেষ করো</td></tr>
+    </table>
+    <div class="note good">💡 ট্রিক: পুরোপুরি সত্য না হলেও গল্প বানিয়ে বলতে পারো — examiner সত্যতা যাচাই করে না, ভাষা যাচাই করে।</div>
+  </div>
+
+  <details>
+    <summary>📋 সবচেয়ে কমন Speaking টপিক (প্রস্তুত থাকো)</summary>
+    <div class="body">
+      <span class="pill">Hometown</span><span class="pill">Work / Study</span><span class="pill">Hobbies</span>
+      <span class="pill">Technology</span><span class="pill">Travel</span><span class="pill">Food</span>
+      <span class="pill">Family & Friends</span><span class="pill">Books / Movies</span><span class="pill">Weather</span>
+      <span class="pill">Social media</span><span class="pill">A memorable person</span><span class="pill">A place you visited</span>
+      <span class="pill">A skill you learned</span><span class="pill">A gift you received</span><span class="pill">Future plans</span>
+      <p style="margin-top:12px">এই টপিকগুলোর প্রতিটিতে ২ মিনিট বলার প্র্যাকটিস করে রাখো।</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>✅ নমুনা উত্তর: "Describe a hobby you enjoy"</summary>
+    <div class="body">
+      <p class="en" style="color:#dfe3ff">"One hobby I'm <b>genuinely passionate about</b> is photography. I picked it up a couple of years ago, and it's <b>become a huge part of my life</b> ever since. What I love most is that it lets me <b>capture moments</b> that would otherwise be forgotten. For instance, last winter I travelled to the hills and took some breathtaking shots of the sunrise — honestly, that's a memory I'll cherish forever. It's also <b>incredibly therapeutic</b>; whenever I feel stressed, I just grab my camera and head out. So yeah, that's exactly why photography means so much to me."</p>
+      <div class="note">🔑 খেয়াল করো: collocation (genuinely passionate, capture moments, breathtaking shots), উদাহরণ, আর অনুভূতি দিয়ে শেষ।</div>
+    </div>
+  </details>
+
+  <div class="card warn note">
+    ⚠️ যে ভুলগুলো ব্যান্ড কমায়: এক শব্দে উত্তর দেওয়া • মুখস্থ স্ক্রিপ্ট বলা (examiner ধরে ফেলে) • "umm/aaa" বেশি করা • খুব দ্রুত বা খুব ধীরে বলা।
+  </div>
+</section>
+
+<!-- ===================== WRITING ===================== -->
+<section class="panel" id="writing">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(255,203,91,.18)">✍️</div>
+    <h2>Writing — প্রায়োরিটি ২</h2>
+    <span class="prio" style="background:var(--write);color:#2a230a">PRIORITY 2</span>
+  </div>
+  <p class="sec-sub">২টি টাস্ক: Task 1 (১৫০+ শব্দ, ২০ মিনিট) ও Task 2 (২৫০+ শব্দ, ৪০ মিনিট)। Task 2 এর ওজন বেশি — আগে এটায় জোর দাও।</p>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--write)"></span>Task 2 (Essay) — ৪ প্যারার স্ট্রাকচার</h3>
+    <ol>
+      <li><b>Introduction:</b> প্রশ্নটা নিজের ভাষায় লেখো (paraphrase) + তোমার মত/থিসিস</li>
+      <li><b>Body 1:</b> প্রথম মূল আইডিয়া + ব্যাখ্যা + উদাহরণ</li>
+      <li><b>Body 2:</b> দ্বিতীয় মূল আইডিয়া + ব্যাখ্যা + উদাহরণ</li>
+      <li><b>Conclusion:</b> মতামতের সারাংশ (নতুন আইডিয়া না)</li>
+    </ol>
+    <div class="note good">✅ প্রতিটি body প্যারায় <b>একটাই</b> মূল আইডিয়া রাখো — TEE: Topic sentence → Explain → Example.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>🧩 Essay টেমপ্লেট ফ্রেজ</h3>
+      <div class="phrase"><span class="en">It is often argued that…</span><small>ইন্ট্রো শুরু</small></div>
+      <div class="phrase"><span class="en">In my opinion / From my perspective…</span><small>মত দেওয়া</small></div>
+      <div class="phrase"><span class="en">One of the main reasons for this is…</span><small>body শুরু</small></div>
+      <div class="phrase"><span class="en">A clear example of this is…</span><small>উদাহরণ</small></div>
+      <div class="phrase"><span class="en">In conclusion, it is evident that…</span><small>উপসংহার</small></div>
+    </div>
+    <div class="card">
+      <h3>🔗 Linking Words (Coherence স্কোর বাড়ায়)</h3>
+      <p><b>যোগ করতে:</b> Moreover, Furthermore, In addition</p>
+      <p><b>বিপরীত:</b> However, On the other hand, Nevertheless</p>
+      <p><b>কারণ:</b> Therefore, Consequently, As a result</p>
+      <p><b>উদাহরণ:</b> For instance, To illustrate, Namely</p>
+      <p><b>উপসংহার:</b> In conclusion, To sum up, Overall</p>
+    </div>
+  </div>
+
+  <details>
+    <summary>📊 Task 1 (Academic) — গ্রাফ/চার্ট বর্ণনা স্ট্রাকচার</summary>
+    <div class="body">
+      <ol>
+        <li><b>Intro:</b> প্রশ্নটা paraphrase করো (graph কী দেখাচ্ছে)</li>
+        <li><b>Overview:</b> ২টি প্রধান ট্রেন্ড/বৈশিষ্ট্য (সবচেয়ে গুরুত্বপূর্ণ অংশ!)</li>
+        <li><b>Body 1 & 2:</b> নির্দিষ্ট ডেটা/সংখ্যা দিয়ে বিস্তারিত</li>
+      </ol>
+      <p><b>দরকারি শব্দ:</b> increased sharply, rose steadily, plummeted, peaked at, remained stable, fluctuated, accounted for, the highest figure</p>
+      <div class="note">💡 কখনো নিজের মতামত দিয়ো না Task 1 এ — শুধু ডেটা বর্ণনা।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>✉️ Task 1 (General Training) — চিঠির ধরন</summary>
+    <div class="body">
+      <table>
+        <tr><th>ধরন</th><th>শুরু</th><th>শেষ</th></tr>
+        <tr><td>Formal</td><td>Dear Sir/Madam,</td><td>Yours faithfully,</td></tr>
+        <tr><td>Semi-formal</td><td>Dear Mr. Rahman,</td><td>Yours sincerely,</td></tr>
+        <tr><td>Informal</td><td>Hi Sarah,</td><td>Best wishes / Take care,</td></tr>
+      </table>
+    </div>
+  </details>
+
+  <div class="card">
+    <h3>🏆 Band 7.5+ এর জন্য Writing চেকলিস্ট</h3>
+    <ul>
+      <li>প্রশ্নের সব অংশের উত্তর দিয়েছ? (Task Response)</li>
+      <li>প্রতি প্যারায় একটাই আইডিয়া + উদাহরণ আছে?</li>
+      <li>Linking words ব্যবহার করেছ (কিন্তু অতিরিক্ত না)?</li>
+      <li>Simple + Complex বাক্য মিশিয়েছ?</li>
+      <li>শব্দ সংখ্যা পূরণ হয়েছে (২৫০+ / ১৫০+)?</li>
+      <li>শেষে ২ মিনিট রেখে বানান/গ্রামার চেক করেছ?</li>
+    </ul>
+    <div class="note warn">⚠️ লেখা শেষে সবসময় নিজে রিভিউ করো অথবা Grammarly/ChatGPT দিয়ে গ্রামার চেক করাও — এটা দ্রুত উন্নতি আনে।</div>
+  </div>
+</section>
+
+<!-- ===================== READING ===================== -->
+<section class="panel" id="reading">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(70,214,179,.18)">📖</div>
+    <h2>Reading — প্রায়োরিটি ৩</h2>
+    <span class="prio" style="background:var(--read);color:#062019">PRIORITY 3</span>
+  </div>
+  <p class="sec-sub">৬০ মিনিটে ৩টি প্যাসেজ, ৪০টি প্রশ্ন। মূল চ্যালেঞ্জ — সময় ব্যবস্থাপনা। প্রতি প্যাসেজে সর্বোচ্চ ২০ মিনিট।</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>⚡ Skimming vs Scanning</h3>
+      <p><b>Skimming:</b> দ্রুত চোখ বুলিয়ে মূল ভাব ধরা — প্রথমে পুরো প্যাসেজ ১–২ মিনিটে।</p>
+      <p><b>Scanning:</b> নির্দিষ্ট তথ্য/keyword খোঁজা — প্রশ্ন পড়ে সেই শব্দ প্যাসেজে খোঁজো।</p>
+      <div class="note good">✅ পুরো প্যাসেজ শব্দে শব্দে পড়ো না — সময় শেষ হয়ে যাবে।</div>
+    </div>
+    <div class="card">
+      <h3>🎯 কার্যকর কৌশল (ক্রম)</h3>
+      <ol>
+        <li>প্রথমে প্রশ্ন পড়ো, keyword আন্ডারলাইন করো</li>
+        <li>প্যাসেজ skim করো (মূল ভাব)</li>
+        <li>keyword scan করে উত্তর খোঁজো</li>
+        <li>উত্তর সাধারণত প্রশ্নের ক্রমেই থাকে</li>
+        <li>সহজ প্রশ্ন আগে, কঠিন পরে</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--read)"></span>প্রশ্নের ধরন অনুযায়ী টিপস</h3>
+    <table>
+      <tr><th>প্রশ্নের ধরন</th><th>কৌশল</th></tr>
+      <tr><td>True/False/Not Given</td><td>"Not Given" = প্যাসেজে নেই; "False" = উল্টো বলা আছে। বাইরের জ্ঞান দিয়ে উত্তর দিও না।</td></tr>
+      <tr><td>Matching Headings</td><td>প্রতি প্যারার প্রথম ও শেষ বাক্যে মূল ভাব থাকে।</td></tr>
+      <tr><td>Fill in the blanks</td><td>আশেপাশের শব্দ থেকে synonym খোঁজো; শব্দ সংখ্যা সীমা মানো।</td></tr>
+      <tr><td>Multiple Choice</td><td>ভুল অপশন বাদ দিয়ে এগোও (elimination)।</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>📈 কীভাবে Reading এ ভালো করব?</h3>
+    <ul>
+      <li>প্রতিদিন ইংরেজি আর্টিকেল পড়ো (BBC, The Guardian, National Geographic)</li>
+      <li>নতুন শব্দের <b>synonym</b> শেখো — IELTS এ paraphrase খুব হয়</li>
+      <li>প্রতিদিন টাইমার ধরে অন্তত ১টা প্যাসেজ প্র্যাকটিস করো</li>
+      <li>ভুল উত্তরগুলো বিশ্লেষণ করো — কেন ভুল হলো?</li>
+    </ul>
+    <div class="note warn">⚠️ উত্তর answer sheet এ তোলার সময় হাতে রাখো — General এ আলাদা সময় দেওয়া হয় না।</div>
+  </div>
+</section>
+
+<!-- ===================== LISTENING ===================== -->
+<section class="panel" id="listening">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(108,140,255,.18)">🎧</div>
+    <h2>Listening — প্রায়োরিটি ৪</h2>
+    <span class="prio" style="background:var(--listen);color:#0a1228">PRIORITY 4</span>
+  </div>
+  <p class="sec-sub">৪টি সেকশন, ৪০টি প্রশ্ন, ~৩০ মিনিট অডিও। রেকর্ডিং একবারই শোনানো হয় — মনোযোগই মূল চাবি।</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>🎯 পরীক্ষার সময় কৌশল</h3>
+      <ul>
+        <li>অডিও শুরুর আগে প্রশ্ন দ্রুত পড়ে নাও</li>
+        <li>keyword আগে থেকে চিহ্নিত করো</li>
+        <li>শোনার সময় উত্তর ছোট করে লিখে নাও</li>
+        <li>একটা মিস করলে পরেরটায় ফোকাস করো — আটকে থেকো না</li>
+        <li>spelling ও singular/plural খেয়াল রাখো</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🪤 কমন ফাঁদ থেকে সাবধান</h3>
+      <ul>
+        <li>বক্তা মত পাল্টায়: "Actually, no… let's make it Tuesday"</li>
+        <li>distractor সংখ্যা/নাম আগে বলে পরে শুধরে দেয়</li>
+        <li>synonym দিয়ে paraphrase করা হয়</li>
+        <li>শব্দ সংখ্যা সীমা ভাঙলে উত্তর বাতিল</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--listen)"></span>প্রতিদিন কান তৈরি করো (সবচেয়ে গুরুত্বপূর্ণ)</h3>
+    <ul>
+      <li>প্রতিদিন ২০–৩০ মিনিট ইংরেজি <b>শোনো</b> — পডকাস্ট, খবর, ইউটিউব</li>
+      <li>বিভিন্ন accent শোনো (British, American, Australian) — পরীক্ষায় মিশ্রিত থাকে</li>
+      <li><b>Active listening:</b> শুনে শুনে লিখে ফেলো (dictation) — banding দ্রুত বাড়ে</li>
+      <li>সাবটাইটেল ছাড়া দেখার চেষ্টা করো, পরে মিলিয়ে নাও</li>
+    </ul>
+    <div class="note good">✅ Listening আর Speaking একসাথে উন্নতি করে — যত শুনবে, তত ভালো বলবে।</div>
+  </div>
+
+  <details>
+    <summary>📚 ৪টি সেকশনে কী থাকে?</summary>
+    <div class="body">
+      <table>
+        <tr><th>সেকশন</th><th>বিষয়</th><th>কঠিনতা</th></tr>
+        <tr><td>1</td><td>দৈনন্দিন কথোপকথন (২ জন)</td><td>সহজ</td></tr>
+        <tr><td>2</td><td>মনোলগ (যেমন: ট্যুর গাইড)</td><td>মাঝারি</td></tr>
+        <tr><td>3</td><td>একাডেমিক আলোচনা (২–৪ জন)</td><td>কঠিন</td></tr>
+        <tr><td>4</td><td>একাডেমিক লেকচার (১ জন)</td><td>সবচেয়ে কঠিন</td></tr>
+      </table>
+    </div>
+  </details>
+</section>
+
+<!-- ===================== 90 DAY PLAN ===================== -->
+<section class="panel" id="plan">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(255,203,91,.18)">📅</div>
+    <h2>৯০ দিনের অ্যাকশন প্ল্যান</h2>
+  </div>
+  <p class="sec-sub">প্রতিদিনের একটা রুটিন। নিচের চেকবক্স টিক দাও — তোমার অগ্রগতি ব্রাউজারে সেভ থাকবে।</p>
+
+  <div class="card">
+    <h3>📊 তোমার অগ্রগতি</h3>
+    <div class="progwrap"><div class="progbar" id="progbar"></div></div>
+    <p id="progtext" style="text-align:center;color:var(--muted)">০% সম্পন্ন</p>
+  </div>
+
+  <div class="day">
+    <h4>🗓️ দৈনিক রুটিন (প্রতিদিন ~৬০–৯০ মিনিট)</h4>
+    <div class="check"><input type="checkbox" data-k="d1" /><label>🗣️ Speaking: ১টি টপিকে ২ মিনিট রেকর্ড করে শুনে ভুল ধরা (২০ মিনিট)</label></div>
+    <div class="check"><input type="checkbox" data-k="d2" /><label>🎧 Listening: ২০ মিনিট ইংরেজি কনটেন্ট + dictation</label></div>
+    <div class="check"><input type="checkbox" data-k="d3" /><label>📖 Reading: ১টি আর্টিকেল পড়া + ১০টি নতুন শব্দ (২০ মিনিট)</label></div>
+    <div class="check"><input type="checkbox" data-k="d4" /><label>✍️ Writing: ১ প্যারা/মিনি-এসে লেখা (২০ মিনিট)</label></div>
+    <div class="check"><input type="checkbox" data-k="d5" /><label>🔁 Shadowing: ৫ মিনিট নকল করে বলা</label></div>
+  </div>
+
+  <div class="grid2">
+    <div class="day">
+      <h4>মাস ১ — ভিত্তি ও অভ্যাস</h4>
+      <div class="check"><input type="checkbox" data-k="m1a" /><label>একটা ডায়াগনস্টিক mock test দাও</label></div>
+      <div class="check"><input type="checkbox" data-k="m1b" /><label>রোজ ১০টি collocation শেখো</label></div>
+      <div class="check"><input type="checkbox" data-k="m1c" /><label>Think-in-English অভ্যাস শুরু</label></div>
+      <div class="check"><input type="checkbox" data-k="m1d" /><label>সব কমন Speaking টপিকে প্র্যাকটিস</label></div>
+    </div>
+    <div class="day">
+      <h4>মাস ২ — কৌশল ও গতি</h4>
+      <div class="check"><input type="checkbox" data-k="m2a" /><label>Task 2 এসে স্ট্রাকচার আয়ত্ত</label></div>
+      <div class="check"><input type="checkbox" data-k="m2b" /><label>Reading টাইমার ধরে প্র্যাকটিস</label></div>
+      <div class="check"><input type="checkbox" data-k="m2c" /><label>সপ্তাহে ১টি full mock</label></div>
+      <div class="check"><input type="checkbox" data-k="m2d" /><label>Speaking partner খুঁজে রোজ কথা</label></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <h4>মাস ৩ — পরীক্ষার সিমুলেশন</h4>
+    <div class="check"><input type="checkbox" data-k="m3a" /><label>সপ্তাহে ২টি full mock (আসল সময় মেনে)</label></div>
+    <div class="check"><input type="checkbox" data-k="m3b" /><label>প্রতিটি লেখা রিভিউ/ফিডব্যাক নাও</label></div>
+    <div class="check"><input type="checkbox" data-k="m3c" /><label>দুর্বল সেকশনে extra সময় দাও</label></div>
+    <div class="check"><input type="checkbox" data-k="m3d" /><label>আত্মবিশ্বাস তৈরি — পরীক্ষার আগে relax</label></div>
+  </div>
+
+  <button class="btn btn-ghost" onclick="resetProg()">♻️ অগ্রগতি রিসেট করো</button>
+</section>
+
+<!-- ===================== RESOURCES ===================== -->
+<section class="panel" id="resources">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:rgba(70,214,179,.18)">🔗</div>
+    <h2>ফ্রি রিসোর্স</h2>
+  </div>
+  <p class="sec-sub">বেশিরভাগ ফ্রি। এগুলো নিয়মিত ব্যবহার করলেই হবে — বেশি রিসোর্স না, নিয়মিত প্র্যাকটিসই আসল।</p>
+
+  <h3 style="margin:8px 0 12px;color:var(--gold)">🏛️ অফিসিয়াল ও মক টেস্ট</h3>
+  <div class="res">
+    <a href="https://www.ielts.org/" target="_blank" rel="noopener"><b>IELTS.org</b><span>অফিসিয়াল তথ্য, ফরম্যাট, স্যাম্পল</span></a>
+    <a href="https://takeielts.britishcouncil.org/take-ielts/prepare" target="_blank" rel="noopener"><b>British Council Prepare</b><span>ফ্রি প্র্যাকটিস টেস্ট ও টিপস</span></a>
+    <a href="https://ieltsliz.com/" target="_blank" rel="noopener"><b>IELTS Liz</b><span>সব সেকশনের কৌশল ও মডেল উত্তর</span></a>
+    <a href="https://www.ieltsbuddy.com/" target="_blank" rel="noopener"><b>IELTS Buddy</b><span>ফ্রি প্র্যাকটিস ও স্যাম্পল</span></a>
+  </div>
+
+  <h3 style="margin:22px 0 12px;color:var(--gold)">📺 ইউটিউব চ্যানেল</h3>
+  <div class="res">
+    <a href="https://www.youtube.com/@ielts" target="_blank" rel="noopener"><b>IELTS Official</b><span>আসল পরীক্ষার নমুনা</span></a>
+    <a href="https://www.youtube.com/@AcademicEnglishHelp" target="_blank" rel="noopener"><b>E2 IELTS</b><span>স্ট্র্যাটেজি ক্লাস</span></a>
+    <a href="https://www.youtube.com/@LearnEnglishwithEnglishClass101" target="_blank" rel="noopener"><b>English Listening Practice</b><span>রোজ শোনার অভ্যাস</span></a>
+    <a href="https://www.bbc.co.uk/learningenglish" target="_blank" rel="noopener"><b>BBC Learning English</b><span>ফ্লুয়েন্সি ও শব্দভাণ্ডার</span></a>
+  </div>
+
+  <h3 style="margin:22px 0 12px;color:var(--gold)">🛠️ টুলস (প্র্যাকটিসের জন্য)</h3>
+  <div class="res">
+    <a href="https://www.grammarly.com/" target="_blank" rel="noopener"><b>Grammarly</b><span>লেখার গ্রামার চেক</span></a>
+    <a href="https://chat.openai.com/" target="_blank" rel="noopener"><b>ChatGPT / AI</b><span>Speaking পার্টনার + Writing ফিডব্যাক</span></a>
+    <a href="https://quizlet.com/" target="_blank" rel="noopener"><b>Quizlet / Anki</b><span>শব্দ ও collocation মুখস্থ</span></a>
+    <a href="https://www.cambridgeenglish.org/" target="_blank" rel="noopener"><b>Cambridge IELTS Books</b><span>আসল প্র্যাকটিস টেস্ট (1–18)</span></a>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <h3>🤖 AI দিয়ে কীভাবে প্র্যাকটিস করবে</h3>
+    <ul>
+      <li><b>Speaking:</b> AI কে বলো "Act as an IELTS examiner, ask me Part 2 questions" — উত্তর দিয়ে ফিডব্যাক চাও</li>
+      <li><b>Writing:</b> তোমার এসে দিয়ে বলো "Score this IELTS essay and suggest band 7.5+ improvements"</li>
+      <li><b>Vocabulary:</b> "Give me 10 advanced collocations about [topic] with examples"</li>
+    </ul>
+  </div>
+
+  <div class="note good" style="margin-top:18px">
+    🎓 শেষ কথা: ৯০ দিন প্রতিদিন এই রুটিন ফলো করলে ৭.৫+ একদম সম্ভব। ধারাবাহিকতাই (consistency) সবচেয়ে বড় শক্তি। শুরু করো আজই! 💪
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>🎯 তোমার IELTS Band 7.5+ যাত্রা শুরু হোক আজ থেকে।</p>
+    <p style="margin-top:6px;font-size:.85rem">এই পেজটা বুকমার্ক করে রাখো — প্রতিদিন এসে চেকলিস্ট আপডেট করো।</p>
+  </div>
+</footer>
+
+<script>
+  // ----- TAB NAVIGATION -----
+  function go(id){
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    const idx={start:0,speaking:1,writing:2,reading:3,listening:4,plan:5,resources:6}[id];
+    document.querySelectorAll('.tab')[idx]?.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // ----- PROGRESS CHECKLIST (localStorage) -----
+  const boxes=document.querySelectorAll('.check input');
+  function loadProg(){
+    boxes.forEach(b=>{
+      const v=localStorage.getItem('ielts_'+b.dataset.k);
+      if(v==='1') b.checked=true;
+    });
+    updateProg();
+  }
+  function updateProg(){
+    const total=boxes.length;
+    let done=0;
+    boxes.forEach(b=>{if(b.checked)done++});
+    const pct=Math.round(done/total*100);
+    document.getElementById('progbar').style.width=pct+'%';
+    document.getElementById('progtext').textContent=pct+'% সম্পন্ন ('+done+'/'+total+')';
+  }
+  boxes.forEach(b=>{
+    b.addEventListener('change',()=>{
+      localStorage.setItem('ielts_'+b.dataset.k, b.checked?'1':'0');
+      updateProg();
+    });
+  });
+  function resetProg(){
+    boxes.forEach(b=>{b.checked=false;localStorage.removeItem('ielts_'+b.dataset.k)});
+    updateProg();
+  }
+  loadProg();
+</script>
+</body>
+</html>

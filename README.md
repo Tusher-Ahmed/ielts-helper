@@ -1,0 +1,33 @@
+# IELTS Band 7.5+ — বাংলায় সম্পূর্ণ প্রস্তুতি 🎯
+
+ইংরেজিতে ফ্লুয়েন্ট হওয়া এবং IELTS-এ **Band 7.5+** স্কোর করার জন্য একটি সম্পূর্ণ, ইন্টারঅ্যাকটিভ ওয়েব রিসোর্স। সবকিছু **বাংলায়**, প্রায়োরিটি অনুযায়ী সাজানো: **Speaking → Writing → Reading → Listening**।
+
+## 📄 পেজগুলো
+
+| পেজ | কী আছে |
+|---|---|
+| [`index.html`](index.html) | মূল গাইড — চার সেকশনের কৌশল, ৯০ দিনের প্ল্যান, রিসোর্স |
+| [`speaking-module.html`](speaking-module.html) | Speaking মডিউল (Beginner → Expert) + ভয়েস রেকর্ডার, টাইমার, প্রম্পট জেনারেটর |
+| [`grammar-speaking.html`](grammar-speaking.html) | Grammar + Spoken English (Basic → Advanced) + কুইজ, বাক্য বানানোর খেলা, ডেইলি প্র্যাকটিস |
+
+তিনটি পেজ একে অপরের সাথে লিংক করা।
+
+## ✨ ফিচার
+- 🎙️ ব্রাউজারে ভয়েস রেকর্ডিং (নিজের কথা শুনে ভুল ধরা)
+- ⏱️ IELTS Cue Card টাইমার (১ মিনিট প্রস্তুতি + ২ মিনিট বলা)
+- 🔊 উচ্চারণ শোনা (Text-to-Speech)
+- 🎲 লেভেল-ভিত্তিক র‍্যান্ডম প্রম্পট
+- ✅ কুইজ ও বাক্য বানানোর খেলা
+- 📊 অগ্রগতি ট্র্যাকিং (ব্রাউজারে সেভ থাকে)
+
+## 🚀 চালানোর নিয়ম
+কোনো বিল্ড লাগে না — `index.html` ব্রাউজারে খুললেই চলবে।
+
+## 🌐 GitHub Pages-এ প্রকাশ করা
+1. এই ফোল্ডারটি একটি GitHub রিপোতে push করো।
+2. রিপোর **Settings → Pages** এ যাও।
+3. **Source** → `Deploy from a branch`, **Branch** → `main` / `(root)` সিলেক্ট করো।
+4. কিছুক্ষণ পর সাইট লাইভ হবে: `https://<username>.github.io/<repo-name>/`
+
+---
+🤖 Built with [Claude Code](https://claude.com/claude-code)

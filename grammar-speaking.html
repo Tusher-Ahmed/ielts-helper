@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grammar + Spoken English | Basic → Advanced (বাংলায়)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;
+    --txt:#e9ecff;--muted:#a7adda;--accent:#6c8cff;--accent2:#46d6b3;
+    --gold:#ffcb5b;--pink:#ff7ab6;--red:#ff6b6b;--green:#46d6b3;
+    --shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;
+    --basic:#46d6b3;--inter:#6c8cff;--adv:#ff7ab6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),
+               radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);
+    color:var(--txt);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+  header.hero{padding:54px 0 30px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:18px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#06121f;
+    font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:16px}
+  .hero h1{font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;line-height:1.3;margin-bottom:12px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--accent2),var(--accent),var(--pink));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:660px;margin:0 auto;font-size:1.06rem}
+
+  /* STAGE TABS */
+  .stagebar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:30px 0 8px}
+  .stage{border:1px solid var(--line);background:var(--card);color:var(--muted);padding:12px 22px;border-radius:14px;
+    cursor:pointer;font-family:inherit;font-weight:700;font-size:1rem;transition:.15s}
+  .stage:hover{color:var(--txt)}
+  .stage.active{color:#06121f}
+  .stage[data-s="basic"].active{background:var(--basic)}
+  .stage[data-s="inter"].active{background:var(--inter);color:#fff}
+  .stage[data-s="adv"].active{background:var(--adv);color:#2a0a18}
+  .stage span{display:block;font-size:.74rem;font-weight:500;opacity:.85}
+
+  .stagewrap{display:none;animation:fade .35s ease}
+  .stagewrap.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  h2.section{font-size:1.55rem;margin:34px 0 6px;text-align:center}
+  .section-sub{color:var(--muted);text-align:center;margin-bottom:24px}
+
+  /* LESSON ACCORDION */
+  .lesson{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:12px 0;overflow:hidden;box-shadow:var(--shadow)}
+  .lesson>summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:1.08rem;list-style:none;
+    display:flex;align-items:center;gap:12px}
+  .lesson>summary::-webkit-details-marker{display:none}
+  .lesson>summary .ln{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:700;
+    font-family:'Poppins';color:#06121f;flex:none;font-size:.95rem}
+  .lesson>summary .arr{margin-left:auto;color:var(--accent2);font-size:1.3rem;transition:.2s}
+  .lesson[open]>summary .arr{transform:rotate(45deg)}
+  .lbody{padding:4px 20px 20px}
+
+  .basic .ln{background:var(--basic)}
+  .inter .ln{background:var(--inter)}
+  .adv .ln{background:var(--adv)}
+
+  .lbody h4{margin:14px 0 8px;font-size:1.02rem;color:var(--gold);display:flex;align-items:center;gap:8px}
+  .lbody p{color:#d6daff;margin-bottom:8px}
+  .lbody ul{list-style:none;margin:4px 0}
+  .lbody ul li{padding:6px 0 6px 26px;position:relative;color:#d6daff}
+  .lbody ul li::before{content:"✦";position:absolute;left:2px;color:var(--accent2)}
+
+  .formula{background:var(--card2);border:1px dashed var(--accent);border-radius:10px;padding:12px 16px;margin:10px 0;
+    font-family:'Poppins';color:var(--gold);font-weight:500}
+
+  .ex{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;
+    display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .ex .enx{color:#eef0ff}
+  .ex .enx b{color:var(--gold)}
+  .ex small{color:var(--muted);display:block;font-size:.82rem;margin-top:2px}
+  .say{background:none;border:1px solid var(--line);color:var(--accent2);border-radius:8px;cursor:pointer;
+    padding:6px 11px;font-size:.85rem;flex:none}
+  .say:hover{background:var(--card)}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.93rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left}
+  th{background:var(--card2);color:var(--gold)}
+
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);
+    padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+
+  .speakbox{background:linear-gradient(90deg,rgba(255,203,91,.13),transparent);border-left:3px solid var(--gold);
+    padding:12px 15px;border-radius:8px;margin:12px 0}
+  .speakbox b{color:var(--gold)}
+
+  /* QUIZ */
+  .quiz{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+  .quiz .q{font-weight:600;margin-bottom:10px}
+  .quiz .opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);color:var(--txt);
+    padding:10px 14px;border-radius:9px;margin:6px 0;cursor:pointer;font-family:inherit;font-size:.95rem;transition:.15s}
+  .quiz .opt:hover{border-color:var(--accent)}
+  .quiz .opt.correct{background:rgba(70,214,179,.25);border-color:var(--green)}
+  .quiz .opt.wrong{background:rgba(255,107,107,.22);border-color:var(--red)}
+  .quiz .fb{margin-top:8px;font-size:.9rem;color:var(--muted);min-height:1.2em}
+
+  /* DAILY PRACTICE */
+  .dp{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+  .dp h3{font-size:1.2rem;margin-bottom:6px;display:flex;align-items:center;gap:9px}
+  .progwrap{background:var(--card2);border-radius:999px;height:14px;overflow:hidden;margin:14px 0;border:1px solid var(--line)}
+  .progbar{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s}
+  .routine .item{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .routine .item:last-child{border-bottom:none}
+  .routine input{width:19px;height:19px;margin-top:5px;accent-color:var(--accent2);flex:none;cursor:pointer}
+  .routine label{cursor:pointer;color:#d6daff}
+  .routine label b{color:var(--gold)}
+  .routine input:checked + label{color:var(--muted)}
+  .routine input:checked + label b{text-decoration:line-through}
+  .mins{margin-left:auto;font-size:.8rem;color:var(--muted);background:var(--card2);padding:3px 9px;border-radius:999px;flex:none;border:1px solid var(--line)}
+
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.96rem;font-weight:600;padding:11px 20px;border-radius:11px;
+    transition:transform .15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+
+  /* SENTENCE BUILDER */
+  .builder{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+  .scramble{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;min-height:44px}
+  .word{background:var(--card2);border:1px solid var(--line);color:var(--txt);padding:8px 14px;border-radius:9px;cursor:pointer;
+    font-family:'Poppins';font-size:.95rem;transition:.12s}
+  .word:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .answerline{background:var(--card2);border:1px dashed var(--accent2);border-radius:10px;padding:12px 14px;min-height:46px;
+    font-family:'Poppins';color:var(--gold);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .answerline .w{background:var(--card);border:1px solid var(--line);padding:5px 11px;border-radius:8px;cursor:pointer}
+  .bfb{margin-top:10px;font-weight:600;min-height:1.4em}
+
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:50px}
+  @media(max-width:720px){.ex{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">📚 GRAMMAR + SPOKEN ENGLISH — Basic → Advanced</span></div>
+    <h1>গ্রামার শিখে <span class="grad">কথা বলো</span> সঠিকভাবে</h1>
+    <p>প্রতিটি গ্রামার টপিক এখানে <b>কথা বলার সাথে যুক্ত</b> — শুধু নিয়ম মুখস্থ না, ব্যবহার শেখা। Basic → Intermediate → Advanced, সাথে কুইজ, বাক্য বানানোর খেলা আর ডেইলি প্র্যাকটিস। সব বাংলায়।</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ DAILY PRACTICE (TOP) ============ -->
+  <div class="dp">
+    <h3>🔥 আজকের প্র্যাকটিস (প্রতিদিন ~৪৫ মিনিট)</h3>
+    <p style="color:var(--muted)">এই রুটিন রোজ ফলো করলে গ্রামার + স্পিকিং একসাথে এগোবে। টিক দিলে ব্রাউজারে সেভ থাকবে।</p>
+    <div class="progwrap"><div class="progbar" id="dpBar"></div></div>
+    <p id="dpText" style="text-align:center;color:var(--muted);margin-bottom:12px">০% সম্পন্ন</p>
+    <div class="routine" id="routine">
+      <div class="item"><input type="checkbox" data-k="r1"><label><b>Listen & Repeat:</b> ১০টি ইংরেজি বাক্য শোনো ও জোরে নকল করো (shadowing)</label><span class="mins">10 মি</span></div>
+      <div class="item"><input type="checkbox" data-k="r2"><label><b>Grammar focus:</b> আজকের ১টি টপিক পড়ো ও তার ৫টি বাক্য নিজে বানাও</label><span class="mins">10 মি</span></div>
+      <div class="item"><input type="checkbox" data-k="r3"><label><b>Speak aloud:</b> আজকের টপিক ব্যবহার করে নিজের জীবন নিয়ে ১ মিনিট বলো</label><span class="mins">8 মি</span></div>
+      <div class="item"><input type="checkbox" data-k="r4"><label><b>Sentence builder:</b> নিচের বাক্য বানানোর খেলায় ৩টি বাক্য সঠিক করো</label><span class="mins">5 মি</span></div>
+      <div class="item"><input type="checkbox" data-k="r5"><label><b>Vocabulary:</b> ৫টি নতুন শব্দ/collocation শিখে বাক্যে ব্যবহার করো</label><span class="mins">7 মি</span></div>
+      <div class="item"><input type="checkbox" data-k="r6"><label><b>Record & review:</b> নিজের কথা রেকর্ড করে শুনে ভুল ধরো</label><span class="mins">5 মি</span></div>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+      <a href="speaking-module.html" class="btn btn-primary">🎙️ রেকর্ডার + টাইমার খোলো</a>
+      <button class="btn btn-ghost" onclick="resetDP()">♻️ রিসেট</button>
+    </div>
+  </div>
+
+  <!-- ============ STAGE SELECTOR ============ -->
+  <h2 class="section">📈 ধাপে ধাপে গ্রামার + স্পিকিং</h2>
+  <p class="section-sub">তোমার লেভেল বেছে নাও। প্রতিটি টপিকে ক্লিক করলে খুলবে।</p>
+
+  <div class="stagebar">
+    <button class="stage active" data-s="basic" onclick="goStage('basic')">🌱 Basic <span>একদম শুরু</span></button>
+    <button class="stage" data-s="inter" onclick="goStage('inter')">🚀 Intermediate <span>মাঝারি</span></button>
+    <button class="stage" data-s="adv" onclick="goStage('adv')">🏆 Advanced <span>উন্নত</span></button>
+  </div>
+
+  <!-- ================= BASIC ================= -->
+  <div class="stagewrap active basic" id="stage-basic">
+
+    <details class="lesson" open>
+      <summary><span class="ln">1</span> Parts of Speech — শব্দের ধরন <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>প্রতিটি বাক্য কিছু "ইট" দিয়ে তৈরি। এই ৮টি চিনলে বাক্য বানানো সহজ হবে।</p>
+        <table>
+          <tr><th>ধরন</th><th>কাজ</th><th>উদাহরণ</th></tr>
+          <tr><td>Noun (বিশেষ্য)</td><td>নাম/বস্তু</td><td>book, Dhaka, love</td></tr>
+          <tr><td>Pronoun</td><td>নামের বদলে</td><td>I, you, he, it</td></tr>
+          <tr><td>Verb (ক্রিয়া)</td><td>কাজ</td><td>go, eat, is</td></tr>
+          <tr><td>Adjective</td><td>গুণ বোঝায়</td><td>good, big, happy</td></tr>
+          <tr><td>Adverb</td><td>কীভাবে</td><td>quickly, well</td></tr>
+          <tr><td>Preposition</td><td>সম্পর্ক</td><td>in, on, at</td></tr>
+          <tr><td>Conjunction</td><td>যোগ করে</td><td>and, but, because</td></tr>
+          <tr><td>Interjection</td><td>আবেগ</td><td>Wow! Oh!</td></tr>
+        </table>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> চারপাশের ৫টি জিনিসের নাম (noun) আর তাদের একটা করে গুণ (adjective) ইংরেজিতে বলো — "a red chair", "a small phone"।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">2</span> Subject + Verb + Object — বাক্যের কাঠামো <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>ইংরেজি বাক্যের মূল গঠন। বাংলা থেকে আলাদা — verb মাঝে বসে।</p>
+        <div class="formula">Subject + Verb + Object → I (S) eat (V) rice (O).</div>
+        <div class="ex"><div class="enx"><b>I drink tea.</b><small>আমি চা খাই।</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>She reads a book.</b><small>সে একটি বই পড়ে।</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>They play football.</b><small>তারা ফুটবল খেলে।</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note warn">⚠️ বাংলায় বলি "আমি ভাত খাই" (verb শেষে), কিন্তু ইংরেজিতে "I eat rice" (verb মাঝে)। এই পার্থক্যটা মাথায় রাখো।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">3</span> Present Simple — সাধারণ বর্তমান <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>অভ্যাস, রুটিন ও সত্য বোঝাতে ব্যবহার হয়। কথা বলার সবচেয়ে কাজের tense।</p>
+        <div class="formula">I/You/We/They + verb · He/She/It + verb + <b>s</b></div>
+        <div class="ex"><div class="enx"><b>I work every day.</b><small>আমি প্রতিদিন কাজ করি।</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>He works in a bank.</b> <small>(work + s)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Water boils at 100°C.</b><small>(চিরন্তন সত্য)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> তোমার দৈনিক রুটিন present simple-এ বলো — "I wake up at 7. I drink tea. I go to work."</div>
+        <div class="quiz" data-answer="1">
+          <div class="q">সঠিকটা বেছে নাও: "She ___ to school."</div>
+          <button class="opt" onclick="checkQuiz(this)">go</button>
+          <button class="opt" onclick="checkQuiz(this)">goes</button>
+          <button class="opt" onclick="checkQuiz(this)">going</button>
+          <div class="fb"></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">4</span> Present Continuous — চলমান বর্তমান <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>এখন এই মুহূর্তে যা ঘটছে তা বোঝায়।</p>
+        <div class="formula">am / is / are + verb + <b>ing</b></div>
+        <div class="ex"><div class="enx"><b>I am studying now.</b><small>আমি এখন পড়ছি।</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>She is cooking dinner.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>They are playing outside.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> এই মুহূর্তে কী করছ বর্ণনা করো — "I am sitting. I am learning English. I am holding my phone."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">5</span> Past Simple — অতীত কাল <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>অতীতে ঘটে যাওয়া কাজ। নিয়মিত verb-এ "ed" যোগ হয়, অনিয়মিত verb আলাদা।</p>
+        <div class="formula">verb + <b>ed</b> (regular) · go→went, eat→ate (irregular)</div>
+        <div class="ex"><div class="enx"><b>I visited my uncle yesterday.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>She went to the market.</b><small>(go → went)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>We ate rice for lunch.</b><small>(eat → ate)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note">📌 সবচেয়ে কমন irregular verbs মুখস্থ করো: go-went, do-did, have-had, see-saw, make-made, take-took, come-came, get-got.</div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> গতকাল কী করলে ৫ বাক্যে বলো — "Yesterday I woke up late. I had breakfast. I met a friend."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">6</span> Future (will / going to) — ভবিষ্যৎ <span class="arr">+</span></summary>
+      <div class="lbody">
+        <div class="formula">will + verb (হঠাৎ সিদ্ধান্ত) · am/is/are going to + verb (পরিকল্পনা)</div>
+        <div class="ex"><div class="enx"><b>I will call you later.</b><small>(এই মুহূর্তের সিদ্ধান্ত)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>I am going to visit Cox's Bazar.</b><small>(আগে থেকে প্ল্যান)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> আগামীকালের প্ল্যান বলো — "Tomorrow I am going to study. I will also call my friend."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">7</span> Articles & Prepositions — a/an/the, in/on/at <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p><b>Articles:</b> a (ব্যঞ্জনধ্বনির আগে), an (স্বরধ্বনির আগে), the (নির্দিষ্ট কিছু)।</p>
+        <div class="ex"><div class="enx"><b>a car, an apple, the sun</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <p style="margin-top:10px"><b>Prepositions of time:</b></p>
+        <table>
+          <tr><th>at</th><th>on</th><th>in</th></tr>
+          <tr><td>at 5 pm, at night</td><td>on Monday, on 5th May</td><td>in May, in 2026, in the morning</td></tr>
+        </table>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> "I have a class at 9 am on Sunday in January." — এমন বাক্য নিজে বানাও।</div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ================= INTERMEDIATE ================= -->
+  <div class="stagewrap inter" id="stage-inter">
+
+    <details class="lesson" open>
+      <summary><span class="ln">1</span> Present Perfect — অভিজ্ঞতা ও সদ্য ঘটা <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>অতীতে ঘটেছে কিন্তু এখন প্রভাব আছে, অথবা সময় উল্লেখ নেই এমন অভিজ্ঞতা।</p>
+        <div class="formula">have / has + past participle (V3) → I have eaten.</div>
+        <div class="ex"><div class="enx"><b>I have visited Dhaka many times.</b><small>(অভিজ্ঞতা)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>She has just finished her work.</b><small>(সদ্য)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note warn">⚠️ Past Simple vs Present Perfect: "I saw him yesterday" (নির্দিষ্ট সময়) ≠ "I have seen him" (সময় অনির্দিষ্ট)।</div>
+        <div class="quiz" data-answer="2">
+          <div class="q">"I ___ never been to London."</div>
+          <button class="opt" onclick="checkQuiz(this)">am</button>
+          <button class="opt" onclick="checkQuiz(this)">did</button>
+          <button class="opt" onclick="checkQuiz(this)">have</button>
+          <div class="fb"></div>
+        </div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> তোমার অভিজ্ঞতা বলো — "I have travelled to… I have tried… I have never…"</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">2</span> Modal Verbs — can/could/should/must <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>সম্ভাবনা, অনুমতি, পরামর্শ ও বাধ্যবাধকতা বোঝায়। কথা বলায় খুব দরকারি।</p>
+        <table>
+          <tr><th>Modal</th><th>অর্থ</th><th>উদাহরণ</th></tr>
+          <tr><td>can</td><td>পারা / অনুমতি</td><td>I can swim.</td></tr>
+          <tr><td>could</td><td>ভদ্র অনুরোধ</td><td>Could you help me?</td></tr>
+          <tr><td>should</td><td>পরামর্শ</td><td>You should rest.</td></tr>
+          <tr><td>must</td><td>অবশ্যই</td><td>You must stop.</td></tr>
+          <tr><td>might</td><td>হতে পারে</td><td>It might rain.</td></tr>
+        </table>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> বন্ধুকে পরামর্শ দাও — "You should sleep early. You could try yoga. You must drink water."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">3</span> Comparatives & Superlatives — তুলনা <span class="arr">+</span></summary>
+      <div class="lbody">
+        <div class="formula">ছোট শব্দ: big→bigger→biggest · বড় শব্দ: more/most + শব্দ</div>
+        <div class="ex"><div class="enx"><b>This phone is cheaper than that one.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>She is the most intelligent student.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>English is more useful than I thought.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> দুটো জিনিস তুলনা করো — "Tea is better than coffee for me because…"</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">4</span> Conjunctions & Linkers — বাক্য জোড়া <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>ছোট ছোট বাক্যকে এক করে কথা স্বাভাবিক ও সাবলীল করে।</p>
+        <ul>
+          <li><b>যোগ:</b> and, also, moreover</li>
+          <li><b>বিপরীত:</b> but, however, although</li>
+          <li><b>কারণ:</b> because, since, so</li>
+          <li><b>শর্ত:</b> if, unless</li>
+        </ul>
+        <div class="ex"><div class="enx"><b>I was tired, but I finished the work.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Although it was raining, we went out.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> দুটো ছোট বাক্যকে linker দিয়ে জোড়া দাও — "I like tea. It keeps me awake." → "I like tea <b>because</b> it keeps me awake."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">5</span> Questions & Tag Questions — প্রশ্ন করা <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>কথোপকথন চালাতে প্রশ্ন করা জরুরি।</p>
+        <div class="formula">Wh- + auxiliary + subject + verb → Where do you live?</div>
+        <div class="ex"><div class="enx"><b>What do you do for a living?</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>You are coming, aren't you?</b><small>(tag question)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> একজন নতুন মানুষকে ৫টি প্রশ্ন করার প্র্যাকটিস করো — name, work, hometown, hobby, plans।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">6</span> Phrasal Verbs — দৈনন্দিন ক্রিয়া <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>নেটিভরা প্রতিদিন এগুলো ব্যবহার করে। জানলে কথা স্বাভাবিক শোনায়।</p>
+        <table>
+          <tr><th>Phrasal verb</th><th>অর্থ</th></tr>
+          <tr><td>wake up</td><td>ঘুম থেকে ওঠা</td></tr>
+          <tr><td>get up</td><td>বিছানা ছাড়া</td></tr>
+          <tr><td>look for</td><td>খোঁজা</td></tr>
+          <tr><td>give up</td><td>হাল ছাড়া</td></tr>
+          <tr><td>find out</td><td>জানতে পারা</td></tr>
+          <tr><td>turn on/off</td><td>চালু/বন্ধ করা</td></tr>
+        </table>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> "I wake up at 6, get up, turn on the light, and look for my phone." — দিনের কাজ phrasal verb দিয়ে বলো।</div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ================= ADVANCED ================= -->
+  <div class="stagewrap adv" id="stage-adv">
+
+    <details class="lesson" open>
+      <summary><span class="ln">1</span> Conditionals — শর্তযুক্ত বাক্য (if) <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>"যদি… তাহলে…" — মতামত ও কল্পনা প্রকাশে শক্তিশালী, Band বাড়ায়।</p>
+        <table>
+          <tr><th>Type</th><th>গঠন</th><th>উদাহরণ</th></tr>
+          <tr><td>0 (সত্য)</td><td>if + present, present</td><td>If you heat ice, it melts.</td></tr>
+          <tr><td>1 (সম্ভব)</td><td>if + present, will</td><td>If I study, I will pass.</td></tr>
+          <tr><td>2 (কল্পনা)</td><td>if + past, would</td><td>If I were rich, I would travel.</td></tr>
+          <tr><td>3 (অতীত আক্ষেপ)</td><td>if + had + V3, would have</td><td>If I had studied, I would have passed.</td></tr>
+        </table>
+        <div class="ex"><div class="enx"><b>If I had more time, I would learn music.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> "If I were the prime minister, I would…" দিয়ে ২ মিনিট বলো।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">2</span> Passive Voice — কর্মবাচ্য <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>কাজটা কে করেছে গুরুত্বহীন হলে ব্যবহার হয়। লেখায় ও আনুষ্ঠানিক কথায় দরকারি।</p>
+        <div class="formula">be + past participle (V3) → English is spoken here.</div>
+        <div class="ex"><div class="enx"><b>The Taj Mahal was built in 1653.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>This bridge is being repaired.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> তোমার শহর নিয়ে passive-এ বলো — "Rice is grown here. Many clothes are made in Bangladesh."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">3</span> Reported Speech — পরোক্ষ উক্তি <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>কেউ কী বলেছিল তা জানাতে। কথোপকথনে গল্প বলার জন্য দরকারি।</p>
+        <div class="formula">Direct: He said, "I am busy." → Reported: He said (that) he was busy.</div>
+        <div class="ex"><div class="enx"><b>She told me she would come.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>He asked where I lived.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note">📌 Tense সাধারণত এক ধাপ পিছিয়ে যায়: is→was, will→would, can→could।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">4</span> Relative Clauses — who/which/that <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>দুটো বাক্যকে এক করে complex বাক্য বানায় — Band 7+ এর চিহ্ন।</p>
+        <div class="ex"><div class="enx"><b>The man <u>who lives next door</u> is a doctor.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>This is the book <u>that changed my life</u>.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note">📌 who = মানুষ · which = বস্তু · that = উভয় · where = স্থান · when = সময়।</div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> একজন প্রিয় মানুষের বর্ণনা দাও relative clause দিয়ে — "My friend, who always helps me, is…"</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">5</span> Idioms & Natural Expressions — নেটিভ টাচ <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>সঠিক জায়গায় ব্যবহার করলে কথা একদম নেটিভ শোনায় ও Lexical score বাড়ে।</p>
+        <table>
+          <tr><th>Idiom</th><th>অর্থ</th></tr>
+          <tr><td>a piece of cake</td><td>খুব সহজ</td></tr>
+          <tr><td>once in a blue moon</td><td>কালেভদ্রে</td></tr>
+          <tr><td>break the ice</td><td>আড়ষ্টতা কাটানো</td></tr>
+          <tr><td>on the same page</td><td>একমত</td></tr>
+          <tr><td>hit the nail on the head</td><td>একদম ঠিক বলা</td></tr>
+        </table>
+        <div class="warn note">⚠️ অতিরিক্ত idiom ব্যবহার কোরো না — ১–২টি স্বাভাবিকভাবে যথেষ্ট।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">6</span> Sentence Variety & Fluency — বাক্যের বৈচিত্র্য <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>Band 7.5+ এর জন্য simple, compound ও complex বাক্য মিশিয়ে ব্যবহার করতে হবে।</p>
+        <ul>
+          <li><b>Simple:</b> I like coffee.</li>
+          <li><b>Compound:</b> I like coffee, but I prefer tea.</li>
+          <li><b>Complex:</b> Although I like coffee, I prefer tea because it is healthier.</li>
+        </ul>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> একই আইডিয়া তিন ভাবে বলো — simple → compound → complex। এটা রোজ করলে গ্রামার রেঞ্জ বাড়বে।</div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ============ SENTENCE BUILDER GAME ============ -->
+  <div class="builder">
+    <h3 style="font-size:1.2rem;margin-bottom:6px">🧩 বাক্য বানানোর খেলা</h3>
+    <p style="color:var(--muted)">শব্দগুলোতে চাপ দিয়ে সঠিক ক্রমে সাজাও। উপরের লাইনে বসবে — ভুল হলে শব্দে চাপ দিয়ে ফেরত নাও।</p>
+    <div class="answerline" id="answerLine"></div>
+    <div class="scramble" id="scramble"></div>
+    <div class="bfb" id="bfb"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+      <button class="btn btn-primary" id="checkBtn">✅ চেক করো</button>
+      <button class="btn btn-ghost" id="nextSentence">➡️ পরের বাক্য</button>
+      <button class="btn btn-ghost" id="saySentence">🔊 সঠিক উত্তর শোনো</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>📚 গ্রামার শেখা শেষ নয় — প্রতিদিন <b>বলে</b> ব্যবহার করলেই তা পাকা হয়।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="speaking-module.html" class="btn btn-primary">🗣️ Speaking Module</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===================== STAGE NAV ===================== */
+function goStage(s){
+  document.querySelectorAll('.stagewrap').forEach(x=>x.classList.remove('active'));
+  document.getElementById('stage-'+s).classList.add('active');
+  document.querySelectorAll('.stage').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.stage[data-s="'+s+'"]').classList.add('active');
+}
+
+/* ===================== TEXT TO SPEECH ===================== */
+function speak(t){
+  if(!('speechSynthesis' in window))return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.9;
+  speechSynthesis.speak(u);
+}
+function say(btn){
+  const en=btn.parentElement.querySelector('.enx b').textContent;
+  speak(en);
+}
+
+/* ===================== QUIZ ===================== */
+function checkQuiz(btn){
+  const quiz=btn.closest('.quiz');
+  const ans=parseInt(quiz.dataset.answer);
+  const opts=[...quiz.querySelectorAll('.opt')];
+  const idx=opts.indexOf(btn);
+  const fb=quiz.querySelector('.fb');
+  opts.forEach(o=>o.disabled=true);
+  if(idx===ans){btn.classList.add('correct');fb.textContent='✅ সঠিক! চমৎকার।';fb.style.color='var(--green)';}
+  else{btn.classList.add('wrong');opts[ans].classList.add('correct');fb.textContent='❌ ঠিক উত্তর সবুজে দেখানো হলো।';fb.style.color='var(--pink)';}
+}
+
+/* ===================== DAILY PRACTICE PROGRESS ===================== */
+const dpBoxes=document.querySelectorAll('#routine input');
+function updateDP(){
+  let done=0;dpBoxes.forEach(b=>{if(b.checked)done++});
+  const pct=Math.round(done/dpBoxes.length*100);
+  document.getElementById('dpBar').style.width=pct+'%';
+  document.getElementById('dpText').textContent=pct+'% সম্পন্ন ('+done+'/'+dpBoxes.length+')';
+}
+dpBoxes.forEach(b=>{
+  const k='gr_'+b.dataset.k;
+  if(localStorage.getItem(k)==='1')b.checked=true;
+  b.addEventListener('change',()=>{localStorage.setItem(k,b.checked?'1':'0');updateDP();});
+});
+function resetDP(){dpBoxes.forEach(b=>{b.checked=false;localStorage.removeItem('gr_'+b.dataset.k)});updateDP();}
+updateDP();
+
+/* ===================== SENTENCE BUILDER ===================== */
+const SENTENCES=[
+  ["I","drink","tea","every","morning"],
+  ["She","is","reading","a","book"],
+  ["They","went","to","the","market","yesterday"],
+  ["If","I","study","hard","I","will","pass"],
+  ["He","has","lived","here","for","ten","years"],
+  ["The","man","who","helped","me","is","kind"],
+  ["Although","it","was","raining","we","went","out"],
+  ["You","should","drink","more","water"]
+];
+let sIndex=0;
+const scrambleEl=document.getElementById('scramble');
+const answerEl=document.getElementById('answerLine');
+const bfb=document.getElementById('bfb');
+
+function shuffle(arr,seed){
+  // deterministic shuffle (no Math.random) based on seed
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    seed=(seed*9301+49297)%233280;
+    const j=Math.floor(seed/233280*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function loadSentence(){
+  answerEl.innerHTML='';bfb.textContent='';
+  scrambleEl.innerHTML='';
+  const words=SENTENCES[sIndex];
+  const mixed=shuffle(words, sIndex*37+11);
+  mixed.forEach(w=>{
+    const b=document.createElement('button');
+    b.className='word';b.textContent=w;
+    b.onclick=()=>{
+      const wa=document.createElement('span');
+      wa.className='w';wa.textContent=w;
+      wa.onclick=()=>{wa.remove();b.style.display='';};
+      answerEl.appendChild(wa);
+      b.style.display='none';
+    };
+    scrambleEl.appendChild(b);
+  });
+}
+document.getElementById('checkBtn').onclick=()=>{
+  const built=[...answerEl.querySelectorAll('.w')].map(w=>w.textContent).join(' ');
+  const correct=SENTENCES[sIndex].join(' ');
+  if(built===correct){bfb.textContent='✅ একদম সঠিক! 🎉';bfb.style.color='var(--green)';}
+  else if(!built){bfb.textContent='⬆️ শব্দে চাপ দিয়ে বাক্য বানাও।';bfb.style.color='var(--muted)';}
+  else{bfb.textContent='❌ ঠিক হয়নি — আবার চেষ্টা করো। ("সঠিক উত্তর শোনো" তে চাপলে শুনতে পাবে)';bfb.style.color='var(--pink)';}
+};
+document.getElementById('nextSentence').onclick=()=>{sIndex=(sIndex+1)%SENTENCES.length;loadSentence();};
+document.getElementById('saySentence').onclick=()=>speak(SENTENCES[sIndex].join(' '));
+loadSentence();
+</script>
+</body>
+</html>
