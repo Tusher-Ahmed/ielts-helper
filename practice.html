@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IELTS Practice Centre | নিজেই প্র্যাকটিস করো (বাংলায়)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;
+    --txt:#e9ecff;--muted:#a7adda;--accent:#6c8cff;--accent2:#46d6b3;
+    --gold:#ffcb5b;--pink:#ff7ab6;--red:#ff6b6b;--green:#46d6b3;
+    --shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),
+               radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);
+    color:var(--txt);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+
+  header.hero{padding:50px 0 26px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:16px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;
+    font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:16px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.7rem);font-weight:700;line-height:1.3;margin-bottom:12px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--pink),var(--accent));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.04rem}
+
+  nav.tabs{position:sticky;top:0;z-index:50;background:rgba(15,18,38,.9);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:10px 0;margin-top:14px}
+  .tabrow{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .tabrow::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:9px 16px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:500;transition:.15s;flex:none}
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;font-weight:700;border-color:transparent}
+
+  section.panel{display:none;padding:30px 0 24px;animation:fade .35s ease}
+  section.panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  h2.sec{font-size:1.5rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .sub{color:var(--muted);margin-bottom:20px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+  .passage{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:12px 0;line-height:1.95;max-height:420px;overflow:auto}
+  .passage h4{color:var(--gold);margin-bottom:10px;font-size:1.1rem}
+  .passage p{color:#e2e6ff;margin-bottom:12px}
+  .passage::-webkit-scrollbar{width:8px}
+  .passage::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+
+  .q{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px 15px;margin:10px 0}
+  .qtext{color:#eef0ff;margin-bottom:8px;font-weight:500}
+  .opts{display:flex;flex-wrap:wrap;gap:7px}
+  .opt{background:var(--card);border:1px solid var(--line);color:var(--txt);padding:7px 14px;border-radius:8px;cursor:pointer;
+    font-family:inherit;font-size:.9rem;transition:.12s}
+  .opt:hover{border-color:var(--accent)}
+  .opt.sel{background:rgba(108,140,255,.3);border-color:var(--accent);color:#fff;font-weight:600}
+  .opt.correctopt{background:rgba(70,214,179,.28);border-color:var(--green);color:#d6ffef}
+  .fill{background:var(--card);border:1px solid var(--line);color:var(--txt);padding:8px 12px;border-radius:8px;
+    font-family:inherit;font-size:.95rem;width:220px;max-width:100%}
+  .fill:focus{outline:none;border-color:var(--accent)}
+  .q.ok{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
+  .q.bad{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+  .oki{border-color:var(--green)!important}
+  .badi{border-color:var(--red)!important}
+  .ansreveal{color:var(--green);font-weight:600;margin-left:8px;font-family:'Poppins';font-size:.9rem}
+
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.96rem;font-weight:600;padding:11px 20px;border-radius:11px;
+    transition:transform .15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+
+  .result{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:var(--card2);border:1px solid var(--line);font-size:1.05rem}
+  .result.show{display:block}
+  .result b{color:var(--gold);font-family:'Poppins'}
+
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);
+    padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+
+  details{background:var(--card2);border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow:hidden}
+  summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;color:var(--accent2)}
+  details[open] summary::after{content:"–"}
+  details .body{padding:0 16px 16px;line-height:1.9;color:#e2e6ff}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.93rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left}
+  th{background:var(--card2);color:var(--gold)}
+
+  /* AUDIO PLAYER */
+  .player{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--card2);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;margin:12px 0}
+  .player .pbtn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;border:none;cursor:pointer;
+    width:48px;height:48px;border-radius:50%;font-size:1.2rem;display:grid;place-items:center}
+  .player label{color:var(--muted);font-size:.85rem}
+  input[type=range]{accent-color:var(--accent2)}
+
+  /* WRITING */
+  .wtools{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:10px 0}
+  .counter{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-family:'Poppins'}
+  .counter b{color:var(--gold)}
+  .timer{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-family:'Poppins';color:var(--accent2)}
+  textarea{width:100%;min-height:260px;background:var(--card2);border:1px solid var(--line);border-radius:12px;
+    color:var(--txt);font-family:'Poppins';font-size:1rem;line-height:1.7;padding:14px;resize:vertical}
+  textarea:focus{outline:none;border-color:var(--accent)}
+
+  .pill{display:inline-block;background:var(--card2);border:1px solid var(--line);color:var(--muted);
+    padding:5px 12px;border-radius:999px;font-size:.85rem;margin:4px 4px 0 0}
+  .topicgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .topicgrid .card h3{color:var(--gold);font-size:1.05rem;margin-bottom:8px}
+  .topicgrid ul{list-style:none}
+  .topicgrid li{padding:5px 0 5px 22px;position:relative;color:#d6daff}
+  .topicgrid li::before{content:"▹";position:absolute;left:2px;color:var(--accent2)}
+
+  .cue{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:16px;margin:10px 0}
+  .cue b{color:var(--gold)}
+  .cue ul{margin:8px 0 0 18px;color:#cfd4ff}
+
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  @media(max-width:720px){.topicgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">🧪 PRACTICE CENTRE — নিজেই অনুশীলন করো, বই লাগবে না</span></div>
+    <h1>এখানেই <span class="grad">প্র্যাকটিস</span> করো,<br/>সাথে সাথে <span class="grad">স্কোর</span> পাও</h1>
+    <p>আসল IELTS-এ যেসব টপিক বারবার আসে, তা দিয়ে তৈরি passage ও প্রশ্ন। উত্তর দাও → তাৎক্ষণিক স্কোর ও সঠিক উত্তর দেখো। Listening টেস্ট ব্রাউজারেই অডিও সহ চলবে।</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <div class="tabrow">
+      <button class="tab active" onclick="go('reading')">📖 Reading</button>
+      <button class="tab" onclick="go('listening')">🎧 Listening</button>
+      <button class="tab" onclick="go('writing')">✍️ Writing</button>
+      <button class="tab" onclick="go('speaking')">🗣️ Speaking</button>
+      <button class="tab" onclick="go('topics')">🔮 Predicted Topics</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ==================== READING ==================== -->
+<section class="panel active" id="reading">
+  <h2 class="sec">📖 Reading Practice</h2>
+  <p class="sub">প্যাসেজ পড়ো → প্রশ্নের উত্তর দাও → <b>"উত্তর মিলাও"</b> চাপলে স্কোর ও সঠিক উত্তর দেখাবে। (সঠিক উত্তর সবুজ, ভুল লাল)</p>
+
+  <!-- READING TEST 1 -->
+  <div class="card">
+    <h3 style="color:var(--gold);margin-bottom:6px">📄 Passage 1 — Vertical Farming (Technology / Environment)</h3>
+    <div class="passage">
+      <h4>Vertical Farming: Growing Up, Not Out</h4>
+      <p>Vertical farming is an innovative approach to agriculture in which crops are grown in stacked layers, often inside controlled indoor environments such as warehouses or shipping containers. Unlike conventional farming, which spreads outwards across vast fields, vertical farming grows upwards, dramatically reducing the amount of land required. A single vertical farm can produce the same yield as a traditional farm many times its size.</p>
+      <p>The idea is not entirely new. Although small-scale experiments existed earlier, the modern concept was popularised in 1999 by Dickson Despommier, a professor at Columbia University, who challenged his students to feed a city using only rooftop gardens. When the rooftops proved insufficient, the class began imagining farms that climbed skyward instead.</p>
+      <p>One of the greatest advantages of vertical farming is its independence from weather. Because crops are grown indoors under artificial conditions, production continues regardless of droughts, floods, or seasonal changes. Temperature, humidity, and light are all carefully regulated, allowing farmers to harvest fresh produce throughout the year. Furthermore, since these farms can be built within cities, food travels a far shorter distance to reach consumers, cutting transport costs and reducing the carbon emissions associated with long-haul delivery.</p>
+      <p>Water efficiency is another notable benefit. Many vertical farms use hydroponic systems, in which plants grow in nutrient-rich water rather than soil. These systems recycle water continuously, using up to 95 per cent less than traditional irrigation. Pesticides are also largely unnecessary, as the enclosed environment keeps most pests out.</p>
+      <p>However, vertical farming is not without its critics. The most significant drawback is energy consumption. Replacing natural sunlight with artificial LED lighting requires enormous amounts of electricity, and unless that power comes from renewable sources, the environmental gains may be offset. The high initial cost of constructing and equipping a vertical farm also remains a barrier, putting it beyond the reach of many small businesses.</p>
+      <p>Despite these challenges, interest in the technology continues to grow. Several countries with limited farmland, such as Singapore and the United Arab Emirates, have invested heavily in vertical farms to strengthen their food security. As technology improves and energy becomes cleaner, supporters believe vertical farming could play a vital role in feeding the world's rapidly expanding urban population.</p>
+    </div>
+
+    <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–6:</b> TRUE / FALSE / NOT GIVEN লেখা আছে কিনা বেছে নাও।</p>
+    <div class="test" id="r1">
+      <div class="q choice" data-a="TRUE"><p class="qtext">1. Vertical farms need less land than traditional farms.</p>
+        <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+      <div class="q choice" data-a="FALSE"><p class="qtext">2. The modern concept of vertical farming was first introduced in the twenty-first century.</p>
+        <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+      <div class="q choice" data-a="FALSE"><p class="qtext">3. Despommier's students successfully fed a city using rooftop gardens.</p>
+        <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+      <div class="q choice" data-a="TRUE"><p class="qtext">4. Vertical farms can produce crops in every season.</p>
+        <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+      <div class="q choice" data-a="TRUE"><p class="qtext">5. The high cost of building a vertical farm prevents some businesses from adopting it.</p>
+        <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+      <div class="q choice" data-a="FALSE"><p class="qtext">6. Singapore invested in vertical farming because it has plenty of farmland.</p>
+        <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+
+      <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 7–9:</b> ONE WORD ONLY প্যাসেজ থেকে লেখো।</p>
+      <div class="q text" data-a="water"><p class="qtext">7. In hydroponic systems, plants grow in nutrient-rich ______ instead of soil.</p><input class="fill" type="text" placeholder="তোমার উত্তর"></div>
+      <div class="q text" data-a="pesticides|pesticide"><p class="qtext">8. Because the environment is enclosed, ______ are largely unnecessary.</p><input class="fill" type="text" placeholder="তোমার উত্তর"></div>
+      <div class="q text" data-a="energy"><p class="qtext">9. The most significant drawback of vertical farming is its high ______ consumption.</p><input class="fill" type="text" placeholder="তোমার উত্তর"></div>
+
+      <p style="color:var(--accent2);margin:14px 0 4px"><b>Question 10:</b> সঠিক উত্তর বেছে নাও।</p>
+      <div class="q choice" data-a="B"><p class="qtext">10. Vertical farming reduces carbon emissions mainly because:</p>
+        <div class="opts"><button class="opt">A) it uses hydroponics</button><button class="opt">B) food travels shorter distances</button><button class="opt">C) it avoids pesticides</button><button class="opt">D) it uses LED lights</button></div></div>
+
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="grade('r1')">✅ উত্তর মিলাও</button>
+        <button class="btn btn-ghost" onclick="resetTest('r1')">♻️ আবার চেষ্টা</button>
+      </div>
+      <div class="result" id="r1-res"></div>
+    </div>
+  </div>
+
+  <!-- READING TEST 2 -->
+  <details>
+    <summary>📄 Passage 2 — The Power of Sleep (Health) — খুলে প্র্যাকটিস করো</summary>
+    <div class="body">
+      <div class="passage">
+        <h4>The Power of a Good Night's Sleep</h4>
+        <p>For much of human history, sleep was regarded as a passive state — a simple switching-off of the body at the end of the day. Modern science, however, has revealed that sleep is one of the most active and essential processes for human health. Far from being wasted time, the hours we spend asleep allow the brain and body to repair, reorganise, and prepare for the day ahead.</p>
+        <p>During sleep, the brain cycles through several distinct stages. The deepest stage, known as slow-wave sleep, is when physical restoration takes place: tissues are repaired, muscles grow, and the immune system is strengthened. Later in the night, a stage called REM (rapid eye movement) sleep becomes more frequent. It is during REM sleep that most dreaming occurs, and researchers believe this phase is crucial for consolidating memories and processing emotions.</p>
+        <p>A lack of sufficient sleep can have serious consequences. Studies have consistently linked chronic sleep deprivation to a weakened immune system, weight gain, and an increased risk of heart disease. The effects on the mind are equally striking. People who sleep poorly often struggle with concentration, decision-making, and mood regulation. In fact, staying awake for twenty-four hours can impair performance to a degree comparable with being legally drunk.</p>
+        <p>So how much sleep do we actually need? While individual requirements vary, most adults function best with between seven and nine hours per night. Teenagers generally need more, owing to the demands of a developing brain. Yet in modern society, sleep is frequently sacrificed in favour of work, study, or entertainment, and many people consistently fall short.</p>
+        <p>Fortunately, the quality of sleep can be improved through simple habits. Experts recommend keeping a regular schedule, avoiding screens before bed, and limiting caffeine in the afternoon. A cool, dark, and quiet bedroom also promotes deeper rest. By treating sleep as a priority rather than a luxury, individuals can protect both their physical and mental wellbeing.</p>
+      </div>
+
+      <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–3:</b> সঠিক উত্তর বেছে নাও।</p>
+      <div class="test" id="r2">
+        <div class="q choice" data-a="B"><p class="qtext">1. The passage says that sleep was once thought to be:</p>
+          <div class="opts"><button class="opt">A) dangerous</button><button class="opt">B) a passive state</button><button class="opt">C) unnecessary</button><button class="opt">D) full of dreams</button></div></div>
+        <div class="q choice" data-a="C"><p class="qtext">2. Physical repair of the body mainly happens during:</p>
+          <div class="opts"><button class="opt">A) REM sleep</button><button class="opt">B) light sleep</button><button class="opt">C) slow-wave sleep</button><button class="opt">D) waking hours</button></div></div>
+        <div class="q choice" data-a="B"><p class="qtext">3. Staying awake for 24 hours is compared to:</p>
+          <div class="opts"><button class="opt">A) running a marathon</button><button class="opt">B) being legally drunk</button><button class="opt">C) heavy exercise</button><button class="opt">D) growing old</button></div></div>
+
+        <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 4–7:</b> TRUE / FALSE / NOT GIVEN।</p>
+        <div class="q choice" data-a="TRUE"><p class="qtext">4. REM sleep is believed to help with memory.</p>
+          <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+        <div class="q choice" data-a="FALSE"><p class="qtext">5. Everyone needs exactly eight hours of sleep.</p>
+          <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+        <div class="q choice" data-a="FALSE"><p class="qtext">6. Teenagers need less sleep than adults.</p>
+          <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+        <div class="q choice" data-a="NOT GIVEN"><p class="qtext">7. Drinking coffee in the morning harms sleep.</p>
+          <div class="opts"><button class="opt">TRUE</button><button class="opt">FALSE</button><button class="opt">NOT GIVEN</button></div></div>
+
+        <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 8–10:</b> NO MORE THAN TWO WORDS।</p>
+        <div class="q text" data-a="immune system"><p class="qtext">8. Chronic sleep deprivation has been linked to a weakened ______.</p><input class="fill" type="text" placeholder="তোমার উত্তর"></div>
+        <div class="q text" data-a="nine|nine hours"><p class="qtext">9. Most adults function best with seven to ______ hours of sleep.</p><input class="fill" type="text" placeholder="তোমার উত্তর"></div>
+        <div class="q text" data-a="quiet"><p class="qtext">10. A bedroom that is cool, dark and ______ helps deeper rest.</p><input class="fill" type="text" placeholder="তোমার উত্তর"></div>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="grade('r2')">✅ উত্তর মিলাও</button>
+          <button class="btn btn-ghost" onclick="resetTest('r2')">♻️ আবার চেষ্টা</button>
+        </div>
+        <div class="result" id="r2-res"></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="note good">✅ টিপ: ভুল উত্তরগুলো প্যাসেজে ফিরে খুঁজে বের করো — কেন ভুল হলো বুঝলে দ্রুত উন্নতি হবে।</div>
+</section>
+
+<!-- ==================== LISTENING ==================== -->
+<section class="panel" id="listening">
+  <h2 class="sec">🎧 Listening Practice</h2>
+  <p class="sub">নিচের ▶️ বাটনে চাপলে ব্রাউজার অডিওটি <b>পড়ে শোনাবে</b> (একবারই শোনার চেষ্টা করো, আসল পরীক্ষার মতো)। শুনতে শুনতে উত্তর লেখো।</p>
+
+  <div class="card">
+    <h3 style="color:var(--gold);margin-bottom:6px">🔊 Section — Community Sports Centre (Form Completion)</h3>
+    <div class="player">
+      <button class="pbtn" id="playBtn" onclick="toggleAudio()">▶️</button>
+      <div>
+        <div style="font-weight:600">Greenfield Sports Centre — তথ্য</div>
+        <label>গতি (speed): <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.9"></label>
+      </div>
+      <button class="btn btn-ghost" onclick="stopAudio()">⏹️ Stop</button>
+    </div>
+    <div class="note warn">⚠️ এটি ব্রাউজারের কৃত্রিম কণ্ঠ (synthetic voice) — প্র্যাকটিসের জন্য। আসল পরীক্ষায় বিভিন্ন accent থাকবে। হেডফোন ব্যবহার করো।</div>
+
+    <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–8:</b> ফাঁকা জায়গা পূরণ করো (সংখ্যা বা ১ শব্দ)।</p>
+    <div class="test" id="l1">
+      <div class="q text" data-a="10pm|10 pm|ten|10|10:00"><p class="qtext">1. Weekday closing time: ______</p><input class="fill" type="text" placeholder="যেমন 10pm"></div>
+      <div class="q text" data-a="eight|8"><p class="qtext">2. Number of swimming pool lanes: ______</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
+      <div class="q text" data-a="40|£40|40 pounds|forty"><p class="qtext">3. Adult membership per month: £______</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
+      <div class="q text" data-a="25|£25|25 pounds|twenty-five|twenty five"><p class="qtext">4. Student membership per month: £______</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
+      <div class="q text" data-a="cafe|café"><p class="qtext">5. The gym is located next to the ______.</p><input class="fill" type="text" placeholder="১ শব্দ"></div>
+      <div class="q text" data-a="padlock"><p class="qtext">6. Members must bring a towel and a ______.</p><input class="fill" type="text" placeholder="১ শব্দ"></div>
+      <div class="q text" data-a="two|2"><p class="qtext">7. Group classes must be booked ______ days in advance.</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
+      <div class="q choice" data-a="B"><p class="qtext">8. Visitors must pay for parking:</p>
+        <div class="opts"><button class="opt">A) it is free</button><button class="opt">B) £3 per hour</button><button class="opt">C) £40 per month</button><button class="opt">D) only at weekends</button></div></div>
+
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="grade('l1')">✅ উত্তর মিলাও</button>
+        <button class="btn btn-ghost" onclick="resetTest('l1')">♻️ আবার চেষ্টা</button>
+      </div>
+      <div class="result" id="l1-res"></div>
+    </div>
+
+    <details style="margin-top:14px">
+      <summary>📜 Transcript দেখো (উত্তর দেওয়ার পর)</summary>
+      <div class="body" id="transcriptText">
+        "Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah, and I'll give you a quick overview of what we offer. The centre is open from six in the morning until ten at night on weekdays, and from eight until eight at weekends. Our most popular facility is the swimming pool, which has eight lanes and is heated all year round. Membership costs forty pounds per month for adults, but students receive a discount and pay only twenty-five pounds. If you join for a full year, you also get one free personal training session. The gym is located on the first floor, next to the café. Please remember to bring a towel and a padlock for the lockers, as these are not provided. For group classes such as yoga and boxing, you need to book at least two days in advance through our website. Finally, parking is free for members, but visitors must pay three pounds per hour."
+      </div>
+    </details>
+  </div>
+  <div class="note">💡 প্রতিদিন একবার এই টেস্ট না দেখে শুনে অভ্যাস করো; পরে transcript দিয়ে মিলাও — এটাই active listening।</div>
+</section>
+
+<!-- ==================== WRITING ==================== -->
+<section class="panel" id="writing">
+  <h2 class="sec">✍️ Writing Practice</h2>
+  <p class="sub">নিচের predicted প্রশ্নে ৪০ মিনিটের টাইমার চালু করে নিজে টাইপ করো — শব্দ সংখ্যা লাইভ দেখাবে (CD-IELTS-এর মতো)।</p>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">🖊️ Task 2 — লাইভ প্র্যাকটিস এরিয়া</h3>
+    <p id="wPrompt" style="color:#e2e6ff;margin:8px 0"><b>প্রশ্ন:</b> Some people believe technology has made our lives more complicated, while others think it has made life easier. Discuss both views and give your own opinion.</p>
+    <button class="btn btn-ghost" onclick="newPrompt()">🔄 নতুন প্রশ্ন দাও</button>
+    <div class="wtools" style="margin-top:12px">
+      <div class="counter">শব্দ: <b id="wc">0</b> / 250+</div>
+      <div class="timer" id="wtimer">40:00</div>
+      <button class="btn btn-primary" onclick="startTimer()">▶️ টাইমার</button>
+      <button class="btn btn-ghost" onclick="pauseTimer()">⏸️</button>
+      <button class="btn btn-ghost" onclick="resetTimer()">♻️</button>
+    </div>
+    <textarea id="essay" placeholder="এখানে তোমার essay টাইপ করো... (Introduction → Body 1 → Body 2 → Conclusion)" oninput="countWords()"></textarea>
+    <div class="note warn">⚠️ CD-IELTS-এ spell-check নেই — শেষে নিজে বানান/গ্রামার রিভিউ করো। চাইলে লেখাটা ChatGPT-তে দিয়ে "Score this as an IELTS examiner and suggest band 7.5+ fixes" বলো।</div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">🔮 Predicted Task 2 প্রশ্ন (ধরন অনুযায়ী)</h3>
+    <details><summary>Opinion (Agree/Disagree)</summary><div class="body">
+      • Some people think that governments should spend money on public services rather than on the arts. To what extent do you agree or disagree?<br>
+      • Technology has made people less socially active. To what extent do you agree?</div></details>
+    <details><summary>Discussion (Both views)</summary><div class="body">
+      • Some believe children should start school at an early age; others say later. Discuss both views and give your opinion.<br>
+      • Some prefer to live in a city, others in the countryside. Discuss both and give your view.</div></details>
+    <details><summary>Problem / Solution</summary><div class="body">
+      • Traffic congestion is a growing problem in many cities. What are the causes, and what solutions can you suggest?<br>
+      • Many young people leave their home country to work abroad. Why? What problems can this cause?</div></details>
+    <details><summary>Advantages / Disadvantages</summary><div class="body">
+      • More people now work from home. Do the advantages outweigh the disadvantages?<br>
+      • Online learning is becoming common. Do its benefits outweigh its drawbacks?</div></details>
+    <details><summary>Two-part question</summary><div class="body">
+      • People use social media every day. Why is it so popular? Is this a positive or negative development?<br>
+      • Many countries have an ageing population. Why is this happening? What effects does it have?</div></details>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">📊 Predicted Task 1 (Academic) ধরন</h3>
+    <span class="pill">Line graph (trend over time)</span><span class="pill">Bar chart (comparison)</span>
+    <span class="pill">Pie chart (proportion)</span><span class="pill">Table (data)</span>
+    <span class="pill">Process diagram</span><span class="pill">Map (changes over time)</span>
+    <p style="margin-top:10px;color:#cfd4ff">প্রতিটি ধরনের জন্য মডেল ও ভোকাবুলারি মূল গাইডের Writing সেকশনে আছে।</p>
+    <a href="index.html" onclick="sessionStorage.setItem('goto','writing')" class="btn btn-ghost">📖 Writing মডেল উত্তর দেখো</a>
+  </div>
+</section>
+
+<!-- ==================== SPEAKING ==================== -->
+<section class="panel" id="speaking">
+  <h2 class="sec">🗣️ Speaking Practice</h2>
+  <p class="sub">Predicted প্রশ্ন ও Cue Card। রেকর্ডার দিয়ে নিজের উত্তর রেকর্ড করে শুনে ভুল ধরো।</p>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">🎤 Part 1 — Predicted টপিক ও প্রশ্ন</h3>
+    <details><summary>Work / Study</summary><div class="body">• Do you work or study? • What do you like about it? • Would you like to change your job in future?</div></details>
+    <details><summary>Hometown</summary><div class="body">• Where are you from? • What's your hometown like? • Has it changed much recently?</div></details>
+    <details><summary>Technology</summary><div class="body">• How often do you use your phone? • What apps do you use most? • Could you live without the internet?</div></details>
+    <details><summary>Food / Hobbies / Weather</summary><div class="body">• What food do you enjoy? • What do you do in your free time? • What's the weather like in your country?</div></details>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">🃏 Part 2 — Predicted Cue Cards</h3>
+    <div class="cue"><b>1. Describe a skill you would like to learn.</b><ul><li>what the skill is</li><li>how you would learn it</li><li>why you want to learn it</li><li>and how it would help you</li></ul></div>
+    <div class="cue"><b>2. Describe a piece of technology you find useful.</b><ul><li>what it is</li><li>how you use it</li><li>how often you use it</li><li>and why it is useful</li></ul></div>
+    <div class="cue"><b>3. Describe a person who has influenced you.</b><ul><li>who they are</li><li>how you know them</li><li>what they did</li><li>and why they influenced you</li></ul></div>
+    <div class="cue"><b>4. Describe a memorable journey you have taken.</b><ul><li>where you went</li><li>who you went with</li><li>what you did</li><li>and why it was memorable</li></ul></div>
+    <a href="speaking-module.html" class="btn btn-primary" style="margin-top:8px">🎙️ রেকর্ডার + ২-মিনিট টাইমার খোলো →</a>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">💬 Part 3 — Discussion প্রশ্ন</h3>
+    <ul style="list-style:none">
+      <li style="padding:5px 0">• Do you think technology will replace human jobs in the future?</li>
+      <li style="padding:5px 0">• How has the way people learn skills changed over the years?</li>
+      <li style="padding:5px 0">• Is it better to learn from a teacher or by yourself? Why?</li>
+      <li style="padding:5px 0">• Why do some people resist new technology?</li>
+    </ul>
+    <div class="note good">✅ Part 3-এ OREO ব্যবহার করো: Opinion → Reason → Example → Opinion (মূল গাইডে বিস্তারিত)।</div>
+  </div>
+</section>
+
+<!-- ==================== PREDICTED TOPICS ==================== -->
+<section class="panel" id="topics">
+  <h2 class="sec">🔮 High-Frequency / Predicted Topics</h2>
+  <p class="sub">এই থিমগুলো IELTS-এ সবচেয়ে বেশি আসে — Reading, Listening, Writing, Speaking সব জায়গায়। এগুলোর ভোকাবুলারি ও আইডিয়া তৈরি রাখো।</p>
+
+  <div class="topicgrid">
+    <div class="card"><h3>🌍 Environment</h3><ul>
+      <li>climate change, pollution, recycling</li>
+      <li>renewable energy, plastic waste</li>
+      <li>vocab: carbon footprint, sustainability, conservation</li></ul></div>
+    <div class="card"><h3>💻 Technology</h3><ul>
+      <li>AI, automation, social media</li>
+      <li>online learning, screen time</li>
+      <li>vocab: cutting-edge, digital detox, innovation</li></ul></div>
+    <div class="card"><h3>🎓 Education</h3><ul>
+      <li>online vs traditional, exams, skills</li>
+      <li>free university, learning a language</li>
+      <li>vocab: well-rounded, literacy, curriculum</li></ul></div>
+    <div class="card"><h3>🏥 Health</h3><ul>
+      <li>diet, exercise, mental health, sleep</li>
+      <li>public healthcare, fast food</li>
+      <li>vocab: well-being, sedentary, immune system</li></ul></div>
+    <div class="card"><h3>💼 Work</h3><ul>
+      <li>work-from-home, work-life balance</li>
+      <li>job satisfaction, changing careers</li>
+      <li>vocab: remote work, burnout, productivity</li></ul></div>
+    <div class="card"><h3>🏙️ Society & City</h3><ul>
+      <li>urbanisation, traffic, housing</li>
+      <li>crime, ageing population, globalisation</li>
+      <li>vocab: infrastructure, cost of living, community</li></ul></div>
+    <div class="card"><h3>📱 Media</h3><ul>
+      <li>news, advertising, fake news</li>
+      <li>influence of social media</li>
+      <li>vocab: misinformation, target audience, bias</li></ul></div>
+    <div class="card"><h3>✈️ Travel & Culture</h3><ul>
+      <li>tourism, traditions, festivals</li>
+      <li>learning about other cultures</li>
+      <li>vocab: heritage, broaden horizons, hospitality</li></ul></div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--gold)">🧠 প্রতি টপিকে যা তৈরি রাখবে</h3>
+    <ul style="list-style:none">
+      <li style="padding:5px 0">✦ ৫টি advanced collocation</li>
+      <li style="padding:5px 0">✦ ১টি pros আর ১টি cons আইডিয়া</li>
+      <li style="padding:5px 0">✦ ১টি বাস্তব উদাহরণ (নিজের বা সাধারণ)</li>
+      <li style="padding:5px 0">✦ ২ মিনিট বলার প্র্যাকটিস (Speaking)</li>
+    </ul>
+    <div class="note">💡 ৮টা থিম × এই ৪টা জিনিস তৈরি থাকলে — Speaking ও Writing-এর প্রায় যেকোনো প্রশ্ন সামলাতে পারবে।</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>🧪 রোজ অন্তত ১টা Reading + ১টা Listening টেস্ট দাও, ১টা Writing টাইপ করো।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+      <a href="speaking-module.html" class="btn btn-primary">🎙️ Speaking Module</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== TAB NAV ===== */
+function go(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const idx={reading:0,listening:1,writing:2,speaking:3,topics:4}[id];
+  document.querySelectorAll('.tab')[idx]?.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ===== OPTION SELECT ===== */
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('opt')){
+    const opts=e.target.parentElement;
+    opts.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+    e.target.classList.add('sel');
+  }
+});
+
+/* ===== GRADER ===== */
+function norm(s){return (s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.,]$/,'');}
+function grade(id){
+  const t=document.getElementById(id);
+  const qs=t.querySelectorAll('.q');
+  let correct=0;
+  qs.forEach(q=>{
+    const ans=q.dataset.a.split('|').map(norm);
+    q.classList.remove('ok','bad');
+    q.querySelectorAll('.correctopt').forEach(o=>o.classList.remove('correctopt'));
+    const old=q.querySelector('.ansreveal'); if(old) old.remove();
+    if(q.classList.contains('choice')){
+      const sel=q.querySelector('.opt.sel');
+      const val=sel?norm(sel.textContent.split(')')[0].length<=2?sel.textContent:sel.textContent):'';
+      const selVal=sel?norm(sel.textContent):'';
+      const letter=sel?norm(sel.textContent.charAt(0)):'';
+      const match = sel && (ans.includes(selVal) || ans.includes(letter));
+      if(match){correct++;q.classList.add('ok');sel.classList.add('correctopt');}
+      else{
+        q.classList.add('bad');
+        q.querySelectorAll('.opt').forEach(o=>{
+          const ot=norm(o.textContent), ol=norm(o.textContent.charAt(0));
+          if(ans.includes(ot)||ans.includes(ol)) o.classList.add('correctopt');
+        });
+      }
+    } else {
+      const inp=q.querySelector('.fill');
+      inp.classList.remove('oki','badi');
+      const val=norm(inp.value);
+      if(val && ans.includes(val)){correct++;q.classList.add('ok');inp.classList.add('oki');}
+      else{
+        q.classList.add('bad');inp.classList.add('badi');
+        const s=document.createElement('span');s.className='ansreveal';
+        s.textContent=' ✓ সঠিক: '+q.dataset.a.split('|')[0];
+        inp.insertAdjacentElement('afterend',s);
+      }
+    }
+  });
+  const total=qs.length;
+  const pct=Math.round(correct/total*100);
+  let msg = pct>=90?'🏆 দুর্দান্ত! Band 8+ লেভেল।':pct>=70?'👍 ভালো! আরেকটু গুছিয়ে Band 7.5।':pct>=50?'🙂 চলছে — ভুলগুলো বিশ্লেষণ করো।':'💪 চিন্তা নেই — রোজ প্র্যাকটিসে উন্নতি হবেই।';
+  const res=document.getElementById(id+'-res');
+  res.innerHTML='স্কোর: <b>'+correct+' / '+total+'</b> ('+pct+'%) — '+msg;
+  res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetTest(id){
+  const t=document.getElementById(id);
+  t.querySelectorAll('.q').forEach(q=>{q.classList.remove('ok','bad')});
+  t.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel','correctopt'));
+  t.querySelectorAll('.fill').forEach(i=>{i.value='';i.classList.remove('oki','badi')});
+  t.querySelectorAll('.ansreveal').forEach(s=>s.remove());
+  document.getElementById(id+'-res').classList.remove('show');
+}
+
+/* ===== LISTENING (TTS) ===== */
+let speaking=false;
+function getTranscript(){
+  return document.getElementById('transcriptText').textContent.replace(/"/g,'').trim();
+}
+function toggleAudio(){
+  if(!('speechSynthesis' in window)){alert('তোমার ব্রাউজার voice সাপোর্ট করে না।');return;}
+  if(speaking){speechSynthesis.pause();speaking=false;document.getElementById('playBtn').textContent='▶️';return;}
+  if(speechSynthesis.paused && speechSynthesis.speaking){speechSynthesis.resume();}
+  else{
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(getTranscript());
+    u.lang='en-GB';u.rate=parseFloat(document.getElementById('rate').value);
+    u.onend=()=>{speaking=false;document.getElementById('playBtn').textContent='▶️';};
+    speechSynthesis.speak(u);
+  }
+  speaking=true;document.getElementById('playBtn').textContent='⏸️';
+}
+function stopAudio(){speechSynthesis.cancel();speaking=false;document.getElementById('playBtn').textContent='▶️';}
+
+/* ===== WRITING TOOLS ===== */
+function countWords(){
+  const t=document.getElementById('essay').value.trim();
+  const n=t?t.split(/\s+/).length:0;
+  const el=document.getElementById('wc');
+  el.textContent=n;
+  el.style.color = n>=250?'var(--green)':'var(--gold)';
+}
+const PROMPTS=[
+  "Some people believe technology has made our lives more complicated, while others think it has made life easier. Discuss both views and give your own opinion.",
+  "Many people work from home nowadays. Do the advantages of this outweigh the disadvantages?",
+  "Some think governments should spend money on public services rather than the arts. To what extent do you agree or disagree?",
+  "Traffic congestion is becoming a serious problem in many cities. What are the causes, and what measures can solve it?",
+  "Social media is used by people every day. Why is it so popular, and is it a positive or negative development?",
+  "Some believe children should start school at an early age, while others disagree. Discuss both views and give your opinion."
+];
+let pi=0;
+function newPrompt(){pi=(pi+1)%PROMPTS.length;document.getElementById('wPrompt').innerHTML='<b>প্রশ্ন:</b> '+PROMPTS[pi];}
+
+/* ===== TIMER ===== */
+let tSec=40*60,tInt=null;
+function fmt(s){const m=Math.floor(s/60),x=s%60;return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');}
+function renderTimer(){document.getElementById('wtimer').textContent=fmt(tSec);}
+function startTimer(){
+  if(tInt)return;
+  tInt=setInterval(()=>{
+    if(tSec<=0){clearInterval(tInt);tInt=null;document.getElementById('wtimer').textContent='⏰ শেষ!';return;}
+    tSec--;renderTimer();
+  },1000);
+}
+function pauseTimer(){clearInterval(tInt);tInt=null;}
+function resetTimer(){clearInterval(tInt);tInt=null;tSec=40*60;renderTimer();}
+renderTimer();
+</script>
+</body>
+</html>

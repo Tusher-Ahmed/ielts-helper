@@ -6,9 +6,10 @@
 
 | পেজ | কী আছে |
 |---|---|
-| [`index.html`](index.html) | মূল গাইড — চার সেকশনের কৌশল, ৯০ দিনের প্ল্যান, রিসোর্স |
+| [`index.html`](index.html) | মূল গাইড — চার সেকশনের কৌশল, CD-IELTS, মডেল উত্তর, ৯০ দিনের প্ল্যান, exam countdown |
+| [`practice.html`](practice.html) | **Practice Centre** — auto-graded Reading/Listening টেস্ট (TTS অডিও সহ), Writing টাইমার+word count, predicted topics |
 | [`speaking-module.html`](speaking-module.html) | Speaking মডিউল (Beginner → Expert) + ভয়েস রেকর্ডার, টাইমার, প্রম্পট জেনারেটর |
-| [`grammar-speaking.html`](grammar-speaking.html) | Grammar + Spoken English (Basic → Advanced) + কুইজ, বাক্য বানানোর খেলা, ডেইলি প্র্যাকটিস |
+| [`grammar-speaking.html`](grammar-speaking.html) | Grammar + Spoken English (Basic → Advanced → **Expert C1–C2**) + কুইজ, বাক্য বানানোর খেলা, ডেইলি প্র্যাকটিস |
 
 তিনটি পেজ একে অপরের সাথে লিংক করা।
 

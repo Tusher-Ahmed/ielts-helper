@@ -202,6 +202,7 @@
     <div class="hero-cta">
       <a href="#start" class="btn btn-primary" onclick="go('plan')">🚀 শুরু করি কীভাবে?</a>
       <a href="#speak" class="btn btn-ghost" onclick="go('speaking')">🗣️ Speaking দিয়ে শুরু</a>
+      <a href="practice.html" class="btn btn-ghost" style="border-color:var(--pink)">🧪 প্র্যাকটিস টেস্ট দাও</a>
     </div>
 
     <div class="countdown" id="countdown">
@@ -233,6 +234,7 @@
       <button class="tab" onclick="go('listening')">🎧 ৪. Listening</button>
       <button class="tab" onclick="go('plan')">📅 ৯০ দিনের প্ল্যান</button>
       <button class="tab" onclick="go('resources')">🔗 রিসোর্স</button>
+      <button class="tab" style="background:linear-gradient(90deg,var(--pink),var(--gold));color:#2a0a18;font-weight:700;border-color:transparent" onclick="location.href='practice.html'">🧪 Practice টেস্ট</button>
     </div>
   </div>
 </nav>
@@ -1189,6 +1191,10 @@
   }
   tickCountdown();
   setInterval(tickCountdown,1000);
+
+  // ----- DEEP-LINK from other pages -----
+  const goto=sessionStorage.getItem('goto');
+  if(goto){ sessionStorage.removeItem('goto'); go(goto); }
 </script>
 </body>
 </html>

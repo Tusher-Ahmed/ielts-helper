@@ -43,6 +43,7 @@
   .stage[data-s="basic"].active{background:var(--basic)}
   .stage[data-s="inter"].active{background:var(--inter);color:#fff}
   .stage[data-s="adv"].active{background:var(--adv);color:#2a0a18}
+  .stage[data-s="expert"].active{background:#c792ea;color:#1a0a2a}
   .stage span{display:block;font-size:.74rem;font-weight:500;opacity:.85}
 
   .stagewrap{display:none;animation:fade .35s ease}
@@ -66,6 +67,7 @@
   .basic .ln{background:var(--basic)}
   .inter .ln{background:var(--inter)}
   .adv .ln{background:var(--adv)}
+  .expert .ln{background:#c792ea}
 
   .lbody h4{margin:14px 0 8px;font-size:1.02rem;color:var(--gold);display:flex;align-items:center;gap:8px}
   .lbody p{color:#d6daff;margin-bottom:8px}
@@ -184,6 +186,7 @@
     <button class="stage active" data-s="basic" onclick="goStage('basic')">🌱 Basic <span>একদম শুরু</span></button>
     <button class="stage" data-s="inter" onclick="goStage('inter')">🚀 Intermediate <span>মাঝারি</span></button>
     <button class="stage" data-s="adv" onclick="goStage('adv')">🏆 Advanced <span>উন্নত</span></button>
+    <button class="stage" data-s="expert" onclick="goStage('expert')">🎓 Expert <span>C1–C2 (Band 7.5+)</span></button>
   </div>
 
   <!-- ================= BASIC ================= -->
@@ -468,6 +471,136 @@
 
   </div>
 
+  <!-- ================= EXPERT (C1–C2) ================= -->
+  <div class="stagewrap expert" id="stage-expert">
+
+    <div class="note good" style="margin-bottom:14px">🎓 এই অংশ <b>Band 7.5+</b> এর জন্য। এগুলো Speaking-এ ১–২ বার আর Writing-এ স্বাভাবিকভাবে ব্যবহার করলে Grammar Range স্কোর লাফ দেবে। অতিরিক্ত নয় — সঠিক জায়গায় ব্যবহারই আসল।</div>
+
+    <details class="lesson" open>
+      <summary><span class="ln">1</span> Inversion — জোর দেওয়ার অভিজাত গঠন <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>Negative/limiting শব্দ বাক্যের শুরুতে এনে auxiliary উল্টে দিলে বাক্য নাটকীয় ও উন্নত হয়। Examiner-রা এটা খুব পছন্দ করে।</p>
+        <div class="formula">Never have I… · Not only… but also… · Hardly had I… when… · Rarely do we… · Only after… did I…</div>
+        <div class="ex"><div class="enx"><b>Never have I experienced such a challenge.</b><small>= I have never experienced…</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Not only does it save money, but it also saves time.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Rarely do people consider the long-term effects.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Only after moving abroad did I appreciate my home.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> একটা মতামতে "Not only… but also…" বসিয়ে বলো — "Learning English is not only useful for my career but also opens up the world."</div>
+        <div class="quiz" data-answer="1">
+          <div class="q">সঠিক inversion কোনটি?</div>
+          <button class="opt" onclick="checkQuiz(this)">Never I have seen this.</button>
+          <button class="opt" onclick="checkQuiz(this)">Never have I seen this.</button>
+          <button class="opt" onclick="checkQuiz(this)">Never have seen I this.</button>
+          <div class="fb"></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">2</span> Cleft Sentences — একটা অংশে জোর <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>বাক্যের একটা নির্দিষ্ট অংশকে হাইলাইট করতে। আইডিয়া একই, কিন্তু শোনায় অনেক sophisticated।</p>
+        <div class="formula">It is X that… · What I really need is… · The reason (why)… is that… · All I want is…</div>
+        <div class="ex"><div class="enx"><b>It is education that drives long-term change.</b><small>(education-এ জোর)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>What impresses me most is his honesty.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>The reason I chose this field is that it never gets boring.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> "What I love most about… is…" দিয়ে তোমার কাজ/শহর নিয়ে বলো।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">3</span> Advanced & Mixed Conditionals <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>সাধারণ if-এর বাইরে — অতীত ও বর্তমান মিশিয়ে, এবং if বাদ দিয়ে inversion।</p>
+        <div class="formula">Mixed: If I had studied medicine, I would be a doctor now. · Inverted: Had I known, I would have helped. · Were I to fail, I'd retake it.</div>
+        <div class="ex"><div class="enx"><b>If I had taken that job, I would be living in London now.</b><small>(অতীত শর্ত → বর্তমান ফল)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Had I known about the deadline, I would have applied.</b><small>(= If I had known)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Provided that prices stay stable, demand will rise.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note">📌 আরও connector: <b>unless</b> (যদি না), <b>as long as / provided that</b> (যতক্ষণ), <b>even if</b> (যদিও)।</div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> একটা অতীত আক্ষেপ মিশ্র conditional-এ বলো — "If I had started learning English earlier, I would be fluent by now."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">4</span> Perfect Modals — অতীত নিয়ে অনুমান <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>অতীতের সম্ভাবনা, নিশ্চয়তা বা আক্ষেপ বোঝাতে। Band 7.5+ স্পিকিং-এ স্বাভাবিকভাবে আসে।</p>
+        <table>
+          <tr><th>গঠন</th><th>অর্থ</th><th>উদাহরণ</th></tr>
+          <tr><td>must have + V3</td><td>নিশ্চয়ই হয়েছিল</td><td>She must have left already.</td></tr>
+          <tr><td>can't have + V3</td><td>হতেই পারে না</td><td>He can't have finished so fast.</td></tr>
+          <tr><td>might/may have + V3</td><td>হয়তো হয়েছিল</td><td>They may have missed the bus.</td></tr>
+          <tr><td>should have + V3</td><td>করা উচিত ছিল (আক্ষেপ)</td><td>I should have studied harder.</td></tr>
+          <tr><td>needn't have + V3</td><td>দরকার ছিল না</td><td>You needn't have worried.</td></tr>
+        </table>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> একটা আক্ষেপ বলো — "Looking back, I should have travelled more when I was younger."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">5</span> Participle Clauses — বাক্য সংক্ষিপ্ত ও মসৃণ <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>দুটো বাক্যকে এক করে concise করে — academic লেখা ও fluent speaking দুটোতেই কাজে লাগে।</p>
+        <div class="formula">Having finished work, I went home. · Feeling tired, she left early. · Built in 1900, the bridge still stands.</div>
+        <div class="ex"><div class="enx"><b>Having lived abroad, I understand different cultures.</b><small>= Because I have lived abroad…</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Used correctly, technology can transform education.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>The students, working in groups, solved the problem.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> "Having + V3, …" দিয়ে নিজের অভিজ্ঞতা বলো — "Having worked as a developer for years, I've learned to stay calm under pressure."</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">6</span> Nominalisation & Academic Register (Writing) <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>ক্রিয়াকে বিশেষ্যে রূপান্তর করলে লেখা formal ও academic হয় — Task 2 Writing-এ Band তোলে।</p>
+        <table>
+          <tr><th>সাধারণ (verb)</th><th>Nominalised (noun)</th></tr>
+          <tr><td>Prices increased, which caused…</td><td>The increase in prices caused…</td></tr>
+          <tr><td>The government decided to…</td><td>The government's decision to…</td></tr>
+          <tr><td>People are concerned that…</td><td>There is growing concern that…</td></tr>
+        </table>
+        <div class="ex"><div class="enx"><b>The implementation of strict policies led to a reduction in crime.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="note warn">⚠️ Speaking-এ অতিরিক্ত nominalisation কোরো না — কথা শুকনো শোনায়। এটা মূলত Writing-এর টুল।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">7</span> Subjunctive & Formal Structures <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>পরামর্শ, দাবি, গুরুত্ব বোঝাতে formal গঠন। উচ্চ লেভেলের grammar control দেখায়।</p>
+        <div class="formula">I suggest that he <b>be</b> promoted. · It is essential that everyone <b>arrive</b> on time. · If I <b>were</b> you…</div>
+        <div class="ex"><div class="enx"><b>It is vital that the government take action immediately.</b><small>(take, takes নয়)</small></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>I would rather you didn't smoke here.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="ex"><div class="enx"><b>Were I in charge, I would change the system.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> "If I were the decision-maker, I would…" দিয়ে একটা opinion দাও।</div>
+      </div>
+    </details>
+
+    <details class="lesson">
+      <summary><span class="ln">8</span> Hedging & Discourse Markers — নুয়ান্স (Band 7.5+) <span class="arr">+</span></summary>
+      <div class="lbody">
+        <p>একদম জোর দিয়ে না বলে <b>সতর্কভাবে</b> মত দেওয়া (hedging) native-দের লক্ষণ। সাথে advanced linker।</p>
+        <p style="color:var(--accent2)"><b>Hedging (নরম দাবি):</b></p>
+        <div class="vbank" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="ex" style="margin:0"><div class="enx"><b>It tends to be the case that…</b></div><button class="say" onclick="say(this)">🔊</button></div>
+          <div class="ex" style="margin:0"><div class="enx"><b>This is, arguably, the main reason.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+          <div class="ex" style="margin:0"><div class="enx"><b>To some extent, I agree.</b></div><button class="say" onclick="say(this)">🔊</button></div>
+          <div class="ex" style="margin:0"><div class="enx"><b>There is a tendency for people to…</b></div><button class="say" onclick="say(this)">🔊</button></div>
+        </div>
+        <p style="color:var(--accent2);margin-top:10px"><b>Advanced discourse markers:</b></p>
+        <table>
+          <tr><th>Marker</th><th>কাজ</th></tr>
+          <tr><td>Conversely / On the contrary</td><td>বিপরীত দিক</td></tr>
+          <tr><td>Consequently / Hence / Thereby</td><td>ফলাফল</td></tr>
+          <tr><td>Notwithstanding / Albeit</td><td>যদিও / তা সত্ত্বেও</td></tr>
+          <tr><td>In essence / Ultimately</td><td>মূলত / শেষ পর্যন্ত</td></tr>
+        </table>
+        <div class="speakbox">🗣️ <b>বলার অভ্যাস:</b> জোর দিয়ে "X is true" না বলে hedge করো — "X tends to be true, at least to some extent." এটা Part 3-এ পরিণত শোনায়।</div>
+      </div>
+    </details>
+
+  </div>
+
   <!-- ============ SENTENCE BUILDER GAME ============ -->
   <div class="builder">
     <h3 style="font-size:1.2rem;margin-bottom:6px">🧩 বাক্য বানানোর খেলা</h3>
@@ -489,6 +622,7 @@
     <p>📚 গ্রামার শেখা শেষ নয় — প্রতিদিন <b>বলে</b> ব্যবহার করলেই তা পাকা হয়।</p>
     <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <a href="speaking-module.html" class="btn btn-primary">🗣️ Speaking Module</a>
+      <a href="practice.html" class="btn btn-ghost">🧪 Practice টেস্ট</a>
       <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
     </div>
   </div>
@@ -552,7 +686,12 @@ const SENTENCES=[
   ["He","has","lived","here","for","ten","years"],
   ["The","man","who","helped","me","is","kind"],
   ["Although","it","was","raining","we","went","out"],
-  ["You","should","drink","more","water"]
+  ["You","should","drink","more","water"],
+  ["Never","have","I","seen","such","a","view"],
+  ["Not","only","is","it","cheap","but","also","useful"],
+  ["Having","finished","work","I","went","home"],
+  ["What","I","need","most","is","time"],
+  ["Had","I","known","I","would","have","helped"]
 ];
 let sIndex=0;
 const scrambleEl=document.getElementById('scramble');
