@@ -154,6 +154,35 @@
   .res a b{display:block;color:var(--gold);margin-bottom:4px}
   .res a span{color:var(--muted);font-size:.9rem}
 
+  /* COUNTDOWN */
+  .countdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:24px auto 6px;max-width:520px}
+  .cd-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 10px;min-width:78px;text-align:center}
+  .cd-box b{display:block;font-size:1.8rem;color:var(--pink);font-family:'Poppins';line-height:1}
+  .cd-box span{font-size:.78rem;color:var(--muted)}
+  .cd-label{text-align:center;color:var(--gold);font-weight:600;margin-top:6px}
+
+  /* MODEL ESSAY / ANSWER */
+  .model{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:10px 0;line-height:1.9}
+  .model .en{color:#eef0ff}
+  .model .hl{background:rgba(255,203,91,.18);color:var(--gold);border-radius:4px;padding:1px 4px;font-weight:500}
+  .model .hl2{background:rgba(70,214,179,.16);color:var(--accent2);border-radius:4px;padding:1px 4px;font-weight:500}
+  .model .hl3{background:rgba(108,140,255,.18);color:#9db3ff;border-radius:4px;padding:1px 4px;font-weight:500}
+  .tag{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px;margin-bottom:6px;font-family:'Poppins'}
+
+  /* VOCAB BANK */
+  .vbank{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+  .vitem{background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:9px 12px}
+  .vitem b{color:var(--gold);font-family:'Poppins';font-weight:500;display:block;font-size:.95rem}
+  .vitem small{color:var(--muted)}
+
+  .qa{margin:10px 0}
+  .qa .qq{color:var(--accent);font-weight:600;margin-bottom:3px}
+  .qa .aa{color:#dfe3ff;padding-left:14px;border-left:2px solid var(--line)}
+  .qa .aa b{color:var(--gold)}
+
+  .band-yes{color:var(--accent2);font-weight:600}
+  .band-no{color:var(--pink);font-weight:600}
+
   footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
 
   @media(max-width:720px){
@@ -174,6 +203,14 @@
       <a href="#start" class="btn btn-primary" onclick="go('plan')">🚀 শুরু করি কীভাবে?</a>
       <a href="#speak" class="btn btn-ghost" onclick="go('speaking')">🗣️ Speaking দিয়ে শুরু</a>
     </div>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><b id="cd-d">–</b><span>দিন</span></div>
+      <div class="cd-box"><b id="cd-h">–</b><span>ঘণ্টা</span></div>
+      <div class="cd-box"><b id="cd-m">–</b><span>মিনিট</span></div>
+      <div class="cd-box"><b id="cd-s">–</b><span>সেকেন্ড</span></div>
+    </div>
+    <p class="cd-label">⏳ তোমার IELTS পরীক্ষা: <span class="en">25 September 2026</span> — প্রতিদিন গোনায় ধরো!</p>
 
     <div class="stats">
       <div class="stat"><b>4</b><span>সেকশন কভার করা</span></div>
@@ -258,6 +295,33 @@
       <li>আজ কি ইংরেজিতে কিছু লিখলাম/বললাম/শুনলাম?</li>
     </ol>
     <a href="#plan" class="btn btn-primary" onclick="go('plan')">📅 ৯০ দিনের পূর্ণ প্ল্যান দেখো</a>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--pink)"></span>📐 Band স্কোর কীভাবে হিসাব হয়?</h3>
+    <p>৪ সেকশনের গড় (average) নিয়ে Overall band হয়। প্রতিটি সেকশন ০–৯ এ স্কোর হয়।</p>
+    <table>
+      <tr><th>Listening / Reading সঠিক উত্তর (৪০-এ)</th><th>আনুমানিক Band (Academic)</th></tr>
+      <tr><td>39–40</td><td>9.0</td></tr>
+      <tr><td>35–36</td><td>8.0</td></tr>
+      <tr><td>30–32</td><td>7.0–7.5</td></tr>
+      <tr><td>23–26</td><td>6.0–6.5</td></tr>
+      <tr><td>18–22</td><td>5.0–5.5</td></tr>
+    </table>
+    <div class="note">💡 Overall .25 হলে উপরে, .75 হলেও উপরে রাউন্ড হয়: যেমন 6.75 → 7.0, আবার 6.25 → 6.5। তাই <b>প্রতি সেকশনে ৭+ টার্গেট</b> করো।</div>
+    <p style="margin-top:10px"><b>৭.৫ পেতে সাধারণত দরকার:</b> Listening 7.5–8 · Reading 7.5–8 · Writing 7 · Speaking 7.5 (Writing সবচেয়ে কঠিন, তাই Reading/Listening-এ বেশি তুলে ব্যালান্স করো)।</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--gold)"></span>🗓️ পরীক্ষার দিন কী হবে (Format একনজরে)</h3>
+    <table>
+      <tr><th>সেকশন</th><th>সময়</th><th>কাজ</th></tr>
+      <tr><td>Listening</td><td>~৩০ মিনিট (+১০ ট্রান্সফার)</td><td>৪ অংশ, ৪০ প্রশ্ন</td></tr>
+      <tr><td>Reading</td><td>৬০ মিনিট</td><td>৩ প্যাসেজ, ৪০ প্রশ্ন</td></tr>
+      <tr><td>Writing</td><td>৬০ মিনিট</td><td>Task 1 (২০ মি) + Task 2 (৪০ মি)</td></tr>
+      <tr><td>Speaking</td><td>১১–১৪ মিনিট</td><td>৩ পার্ট, examiner-এর সাথে (একই দিন বা আলাদা দিন)</td></tr>
+    </table>
+    <div class="note good">✅ Listening, Reading, Writing একটানা হয় (বিরতি নেই)। Speaking আলাদা স্লটে। মোট ~২ ঘণ্টা ৪৫ মিনিট।</div>
   </div>
 </section>
 
@@ -348,6 +412,136 @@
   <div class="card warn note">
     ⚠️ যে ভুলগুলো ব্যান্ড কমায়: এক শব্দে উত্তর দেওয়া • মুখস্থ স্ক্রিপ্ট বলা (examiner ধরে ফেলে) • "umm/aaa" বেশি করা • খুব দ্রুত বা খুব ধীরে বলা।
   </div>
+
+  <details>
+    <summary>🎤 Part 1 — কমন প্রশ্ন ও মডেল উত্তর (৭.৫+ লেভেল)</summary>
+    <div class="body">
+      <div class="qa"><div class="qq">Do you work or are you a student?</div>
+        <div class="aa">"I'm currently <b>juggling</b> both, actually. I work as a software developer during the day, and I'm also <b>pursuing</b> a part-time master's degree. It keeps me on my toes, but I genuinely enjoy the challenge."</div></div>
+      <div class="qa"><div class="qq">Do you like your hometown?</div>
+        <div class="aa">"Absolutely. I was <b>born and raised</b> in Dhaka, and despite the traffic, it has a certain charm. What I appreciate most is the <b>sense of community</b> — neighbours genuinely look out for one another."</div></div>
+      <div class="qa"><div class="qq">How often do you use your phone?</div>
+        <div class="aa">"Honestly, <b>far more than I'd like to admit</b>. It's become an extension of my hand. I mostly use it for staying in touch and reading the news, though I'm trying to <b>cut down on</b> mindless scrolling."</div></div>
+      <div class="note">🔑 ফর্মুলা: <b>সরাসরি উত্তর + কারণ/বিস্তার + ছোট উদাহরণ</b>। ২–৩ বাক্য আদর্শ — খুব ছোটও না, খুব লম্বাও না।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🃏 Part 2 — সম্পূর্ণ Cue Card মডেল উত্তর</summary>
+    <div class="body">
+      <p style="color:var(--gold)"><b>Cue Card:</b> Describe a person who has influenced you. You should say: who they are, how you know them, what they did, and explain why they influenced you.</p>
+      <div class="model">
+        <span class="tag" style="background:var(--pink);color:#2a0a18">MODEL ANSWER</span>
+        <p class="en">"I'd like to talk about my <span class="hl2">high-school English teacher</span>, Mr. Karim, who <span class="hl">had a profound impact on</span> the person I am today. I first met him when I was about fifteen — a fairly shy and unmotivated student, to be honest.<br><br>
+        What <span class="hl">set him apart</span> was his belief that every student had potential. He never simply lectured; instead, he <span class="hl2">encouraged us to think critically</span> and question everything. I vividly remember him staying back after class, completely unpaid, just to help me with my writing.<br><br>
+        The reason he influenced me so deeply is that he <span class="hl">instilled in me</span> a genuine love for learning. <span class="hl3">Thanks to him</span>, I went from dreading English to absolutely thriving in it — and that's <span class="hl">precisely why</span> I'm sitting for this exam today. He taught me that one caring mentor can <span class="hl2">change the entire trajectory</span> of someone's life."</p>
+      </div>
+      <div class="note good">✅ লক্ষ্য করো: PEEL মানা হয়েছে, advanced collocation হাইলাইট করা, আর শেষে অনুভূতি দিয়ে শক্ত conclusion।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>💬 Part 3 — Discussion প্রশ্ন ও উচ্চ-মানের উত্তর কৌশল</summary>
+    <div class="body">
+      <p>Part 3 এ examiner abstract/opinion প্রশ্ন করে। এখানে <b>OREO</b> ব্যবহার করো: <b>O</b>pinion → <b>R</b>eason → <b>E</b>xample → <b>O</b>pinion (restate)।</p>
+      <div class="qa"><div class="qq">Do you think teachers will be replaced by technology in the future?</div>
+        <div class="aa">"<b>That's a thought-provoking question.</b> Personally, I doubt teachers will ever be <b>fully replaced</b>, and here's why. While technology can deliver information efficiently, it <b>lacks the emotional intelligence</b> a human teacher brings. For instance, a good teacher senses when a student is struggling and adapts — something an algorithm <b>arguably can't replicate</b>. So, on balance, I believe technology will <b>complement</b> teachers rather than replace them."</div></div>
+      <div class="vbank">
+        <div class="vitem"><b>I'd argue that…</b><small>মত দৃঢ়ভাবে দেওয়া</small></div>
+        <div class="vitem"><b>There are two sides to this…</b><small>ভারসাম্য</small></div>
+        <div class="vitem"><b>It's a double-edged sword.</b><small>ভালো-খারাপ দুটোই</small></div>
+        <div class="vitem"><b>By and large…</b><small>সাধারণভাবে</small></div>
+        <div class="vitem"><b>That said,…</b><small>তবুও / যদিও</small></div>
+        <div class="vitem"><b>In the grand scheme of things…</b><small>বড় পরিসরে</small></div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📚 টপিক-ভিত্তিক Vocabulary Bank (মুখস্থ করে ব্যবহার করো)</summary>
+    <div class="body">
+      <p style="color:var(--accent2)"><b>🎓 Education</b></p>
+      <div class="vbank">
+        <div class="vitem"><b>a well-rounded education</b><small>সর্বাঙ্গীণ শিক্ষা</small></div>
+        <div class="vitem"><b>to broaden one's horizons</b><small>দৃষ্টিভঙ্গি প্রসারিত করা</small></div>
+        <div class="vitem"><b>hands-on experience</b><small>হাতে-কলমে অভিজ্ঞতা</small></div>
+        <div class="vitem"><b>to grasp a concept</b><small>ধারণা বোঝা</small></div>
+      </div>
+      <p style="color:var(--accent2);margin-top:10px"><b>💻 Technology</b></p>
+      <div class="vbank">
+        <div class="vitem"><b>cutting-edge technology</b><small>অত্যাধুনিক প্রযুক্তি</small></div>
+        <div class="vitem"><b>to stay connected</b><small>যোগাযোগে থাকা</small></div>
+        <div class="vitem"><b>digital detox</b><small>প্রযুক্তি থেকে বিরতি</small></div>
+        <div class="vitem"><b>a game-changer</b><small>খেলা বদলে দেয় এমন</small></div>
+      </div>
+      <p style="color:var(--accent2);margin-top:10px"><b>🌍 Environment / Society</b></p>
+      <div class="vbank">
+        <div class="vitem"><b>to raise awareness</b><small>সচেতনতা বাড়ানো</small></div>
+        <div class="vitem"><b>carbon footprint</b><small>কার্বন নিঃসরণ</small></div>
+        <div class="vitem"><b>a pressing issue</b><small>জরুরি সমস্যা</small></div>
+        <div class="vitem"><b>to bridge the gap</b><small>ব্যবধান কমানো</small></div>
+      </div>
+      <div class="note">💡 প্রতিটা collocation একটা নিজের বাক্যে বসিয়ে জোরে বলো — তাহলে পরীক্ষায় স্বাভাবিকভাবে বেরোবে।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🎯 Pronunciation ও Fluency বাড়ানোর ৫টি ড্রিল</summary>
+    <div class="body">
+      <ul>
+        <li><b>Word stress:</b> বড় শব্দে জোর কোথায় শেখো — <span class="en">comFORtable, phoTOGraphy, eDUcation</span></li>
+        <li><b>Sentence stress:</b> গুরুত্বপূর্ণ শব্দে জোর দাও — "I <span class="en">REALLY</span> enjoy it."</li>
+        <li><b>Chunking:</b> বাক্যকে ছোট টুকরোয় ভেঙে বলো / থামো — "When I was younger, / I used to / play a lot."</li>
+        <li><b>Intonation:</b> প্রশ্নে সুর উপরে, statement এ নিচে নামাও</li>
+        <li><b>Minimal pairs:</b> কাছাকাছি শব্দ আলাদা করো — ship/sheep, bat/bad, three/tree</li>
+      </ul>
+      <a href="speaking-module.html" class="btn btn-primary">🎙️ রেকর্ডার দিয়ে এখনই প্র্যাকটিস করো →</a>
+    </div>
+  </details>
+
+  <div class="card" style="border-color:var(--gold);background:linear-gradient(135deg,rgba(255,203,91,.13),var(--card))">
+    <h3><span class="dot" style="background:var(--gold)"></span>👨‍💻 শুধু তোমার জন্য: "Work" নিয়ে কথা (Software Engineer)</h3>
+    <p>তুমি <b>Onnorokom Projukti Limited</b>-এ ২+ বছর ধরে software engineer। Examiner প্রায় নিশ্চিতভাবে কাজ নিয়ে জিজ্ঞেস করবে। নিচের রেডি উত্তরগুলো নিজের ভাষায় মুখস্থ না করে <b>অভ্যাস</b> করো (মুখস্থ ধরা পড়ে)।</p>
+
+    <div class="qa"><div class="qq">What do you do? / Do you work or study?</div>
+      <div class="aa">"I work as a <b>software engineer</b> at a tech company called Onnorokom Projukti Limited. I've been there for <b>just over two years</b> now, mainly <b>building and maintaining web applications</b>. It's a fast-paced role, but I find it incredibly rewarding."</div></div>
+
+    <div class="qa"><div class="qq">Why did you choose this job?</div>
+      <div class="aa">"Well, I've always been <b>fascinated by problem-solving</b>, and programming lets me <b>turn ideas into something tangible</b>. There's a real sense of accomplishment when a feature I've built actually <b>helps thousands of users</b>."</div></div>
+
+    <div class="qa"><div class="qq">What do you like most about your work?</div>
+      <div class="aa">"What I enjoy most is that it's <b>never monotonous</b> — every project brings a fresh challenge. I also love that the tech field is <b>constantly evolving</b>, so I'm always <b>picking up new skills</b> and staying on my toes."</div></div>
+
+    <div class="qa"><div class="qq">Is there anything you would change about your job?</div>
+      <div class="aa">"If I'm honest, the <b>tight deadlines</b> can be a bit stressful at times, and the work can be quite <b>sedentary</b>. So if I could change one thing, I'd build in more time to <b>step away from the screen</b> and recharge."</div></div>
+
+    <div style="margin-top:12px">
+      <p style="color:var(--accent2)"><b>🔧 তোমার কাজে লাগবে এমন Vocabulary:</b></p>
+      <div class="vbank">
+        <div class="vitem"><b>to write clean code</b><small>পরিষ্কার কোড লেখা</small></div>
+        <div class="vitem"><b>to debug / troubleshoot</b><small>ভুল খুঁজে ঠিক করা</small></div>
+        <div class="vitem"><b>to meet a deadline</b><small>সময়মতো শেষ করা</small></div>
+        <div class="vitem"><b>to collaborate with a team</b><small>দলগত কাজ</small></div>
+        <div class="vitem"><b>a steep learning curve</b><small>কঠিন কিন্তু দ্রুত শেখার বিষয়</small></div>
+        <div class="vitem"><b>to roll out a feature</b><small>নতুন ফিচার চালু করা</small></div>
+        <div class="vitem"><b>cutting-edge technology</b><small>অত্যাধুনিক প্রযুক্তি</small></div>
+        <div class="vitem"><b>to stay up to date with…</b><small>হালনাগাদ থাকা</small></div>
+      </div>
+    </div>
+
+    <details style="margin-top:12px">
+      <summary>🃏 Part 2 Cue Card: "Describe your job / a project you worked on"</summary>
+      <div class="body">
+        <div class="model">
+          <span class="tag" style="background:var(--gold);color:#2a230a">MODEL ANSWER</span>
+          <p class="en">"I'd like to talk about my job as a <span class="hl">software engineer</span> at Onnorokom Projukti Limited, where I've worked for <span class="hl2">a little over two years</span>. My role mainly involves <span class="hl">developing web applications</span> — writing code, fixing bugs, and <span class="hl2">collaborating with a team</span> of designers and developers.<br><br>
+          One project I'm particularly proud of was when we <span class="hl">rolled out a new feature</span> that thousands of users rely on daily. It had a fairly <span class="hl2">steep learning curve</span>, and we were under a tight deadline, but we <span class="hl3">pulled it off</span> through teamwork.<br><br>
+          The reason I find this job so fulfilling is that it <span class="hl">combines creativity with logic</span>. Every day brings a new problem to crack, and honestly, <span class="hl3">that's exactly why</span> I've stuck with it and continue to love what I do."</p>
+        </div>
+        <div class="note good">✅ এটা Part 2 এর "a project", "a skill you learned", "something you're proud of" — সব cue card-এ অল্প বদলে কাজে লাগবে।</div>
+      </div>
+    </details>
+  </div>
 </section>
 
 <!-- ===================== WRITING ===================== -->
@@ -426,6 +620,90 @@
     </ul>
     <div class="note warn">⚠️ লেখা শেষে সবসময় নিজে রিভিউ করো অথবা Grammarly/ChatGPT দিয়ে গ্রামার চেক করাও — এটা দ্রুত উন্নতি আনে।</div>
   </div>
+
+  <div class="card">
+    <h3><span class="dot" style="background:var(--write)"></span>📝 Task 2 এর ৫টি প্রশ্নের ধরন (চিনে নাও)</h3>
+    <table>
+      <tr><th>ধরন</th><th>কী চায়</th><th>কীভাবে লিখবে</th></tr>
+      <tr><td>Opinion (Agree/Disagree)</td><td>তোমার মত</td><td>একপক্ষ নাও, পুরোটা সেটাই সমর্থন করো</td></tr>
+      <tr><td>Discussion (both views)</td><td>দুই দিক + মত</td><td>Body 1: এক পক্ষ, Body 2: অন্য পক্ষ</td></tr>
+      <tr><td>Advantages/Disadvantages</td><td>সুবিধা-অসুবিধা</td><td>প্রতিটির জন্য আলাদা প্যারা</td></tr>
+      <tr><td>Problem/Solution</td><td>সমস্যা + সমাধান</td><td>Body 1: কারণ/সমস্যা, Body 2: সমাধান</td></tr>
+      <tr><td>Two-part question</td><td>দুটো প্রশ্নের উত্তর</td><td>প্রতিটি প্রশ্নে একটা body</td></tr>
+    </table>
+    <div class="note">💡 প্রথমেই প্রশ্নের ধরন চিনে নাও — ভুল স্ট্রাকচার মানে Task Response এ কম স্কোর।</div>
+  </div>
+
+  <details>
+    <summary>🏆 সম্পূর্ণ Band 8 মডেল Essay (হাইলাইট সহ)</summary>
+    <div class="body">
+      <p style="color:var(--gold)"><b>প্রশ্ন:</b> Some people believe that children should be taught how to manage money at school. To what extent do you agree or disagree?</p>
+      <div class="model">
+        <span class="tag" style="background:var(--write);color:#2a230a">INTRODUCTION</span>
+        <p class="en">It is <span class="hl">increasingly argued</span> that financial literacy should be incorporated into the school curriculum. <span class="hl3">I completely agree</span> with this view, as teaching children to manage money equips them with an essential life skill and helps prevent future debt.</p>
+        <span class="tag" style="background:var(--accent2);color:#062019">BODY 1</span>
+        <p class="en"><span class="hl2">To begin with</span>, money management is a <span class="hl">practical skill</span> that benefits individuals throughout their lives. Unlike many academic subjects, budgeting and saving are used on a daily basis. <span class="hl2">For instance</span>, a child who learns to save a portion of their pocket money is far more likely to <span class="hl">develop responsible financial habits</span> as an adult. <span class="hl3">Consequently</span>, schools that ignore this leave students unprepared for real-world challenges.</p>
+        <span class="tag" style="background:var(--accent);color:#0a1228">BODY 2</span>
+        <p class="en"><span class="hl2">Furthermore</span>, early financial education can <span class="hl">significantly reduce</span> the risk of debt. Many young adults fall into financial difficulty simply because they were never taught how credit works. <span class="hl2">A clear example of this</span> is the growing number of university students struggling with loans they barely understand. <span class="hl3">Had they been educated earlier</span>, such problems could largely be avoided.</p>
+        <span class="tag" style="background:var(--pink);color:#2a0a18">CONCLUSION</span>
+        <p class="en"><span class="hl2">In conclusion</span>, I <span class="hl3">strongly believe</span> that schools should teach money management, as it is a vital life skill that fosters responsibility and shields young people from future financial hardship.</p>
+      </div>
+      <div class="note good">✅ ২৫০+ শব্দ • প্রতি প্যারায় একটা আইডিয়া + উদাহরণ • linking words • complex বাক্য (Had they been…) • স্পষ্ট অবস্থান।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📊 Task 1 (Academic) — সম্পূর্ণ মডেল উত্তর</summary>
+    <div class="body">
+      <p style="color:var(--gold)"><b>প্রশ্ন:</b> The chart below shows the percentage of households with internet access in three countries between 2000 and 2020.</p>
+      <div class="model">
+        <p class="en"><b>Intro:</b> The line graph <span class="hl">illustrates</span> the proportion of homes with internet access in three nations over a two-decade period from 2000 to 2020.<br><br>
+        <b>Overview:</b> <span class="hl2">Overall</span>, internet access rose <span class="hl">dramatically</span> in all three countries, with Country A consistently leading, while all figures <span class="hl">converged</span> at high levels by 2020.<br><br>
+        <b>Detail:</b> In 2000, only around 20% of households in Country A had access, <span class="hl">compared with</span> a mere 5% in Country C. Over the following years, access in Country A <span class="hl">climbed steadily</span>, <span class="hl">peaking at</span> roughly 95% in 2020. <span class="hl2">Similarly</span>, Country C <span class="hl">witnessed the sharpest growth</span>, <span class="hl">surging from</span> 5% to almost 90% over the same period.</p>
+      </div>
+      <div class="vbank">
+        <div class="vitem"><b>rose sharply / climbed steadily</b><small>দ্রুত/ক্রমান্বয়ে বাড়া</small></div>
+        <div class="vitem"><b>plummeted / declined gradually</b><small>হঠাৎ/ধীরে কমা</small></div>
+        <div class="vitem"><b>peaked at / hit a low of</b><small>সর্বোচ্চ/সর্বনিম্ন</small></div>
+        <div class="vitem"><b>remained stable / plateaued</b><small>স্থির থাকা</small></div>
+        <div class="vitem"><b>fluctuated / a downward trend</b><small>ওঠানামা/নিম্নমুখী</small></div>
+        <div class="vitem"><b>accounted for / made up</b><small>অংশ ছিল</small></div>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>✍️ Band 7+ এর জন্য Grammar ও Vocabulary আপগ্রেড</summary>
+    <div class="body">
+      <p>সাধারণ শব্দ/গঠনকে আপগ্রেড করো — এটাই Lexical ও Grammar স্কোর তোলে:</p>
+      <table>
+        <tr><th>সাধারণ (Band 6)</th><th>আপগ্রেড (Band 7.5+)</th></tr>
+        <tr><td>a lot of problems</td><td>a multitude of challenges</td></tr>
+        <tr><td>good for health</td><td>beneficial to one's well-being</td></tr>
+        <tr><td>nowadays</td><td>in this day and age</td></tr>
+        <tr><td>I think</td><td>I would contend / In my view</td></tr>
+        <tr><td>big difference</td><td>a substantial disparity</td></tr>
+      </table>
+      <p style="margin-top:10px"><b>Complex বাক্য গঠন (এগুলো ব্যবহার করলে Grammar range বাড়ে):</b></p>
+      <ul>
+        <li><b>Conditional:</b> If governments invested more, pollution would decline.</li>
+        <li><b>Relative clause:</b> Students who manage their time well tend to succeed.</li>
+        <li><b>Cleft sentence:</b> It is education that drives long-term change.</li>
+        <li><b>Inversion:</b> Not only does it save money, but it also saves time.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="card">
+    <h3>⏱️ পরীক্ষায় Writing সময় ভাগ</h3>
+    <table>
+      <tr><th>ধাপ</th><th>Task 1 (২০ মি)</th><th>Task 2 (৪০ মি)</th></tr>
+      <tr><td>পরিকল্পনা</td><td>৩ মিনিট</td><td>৫ মিনিট</td></tr>
+      <tr><td>লেখা</td><td>১৪ মিনিট</td><td>৩০ মিনিট</td></tr>
+      <tr><td>রিভিউ</td><td>৩ মিনিট</td><td>৫ মিনিট</td></tr>
+    </table>
+    <div class="note warn">⚠️ Task 2 আগে লেখো (বেশি নম্বর)। প্ল্যানিং বাদ দিও না — ৫ মিনিট প্ল্যান পুরো এসে গুছিয়ে দেয়।</div>
+  </div>
 </section>
 
 <!-- ===================== READING ===================== -->
@@ -476,6 +754,67 @@
       <li>ভুল উত্তরগুলো বিশ্লেষণ করো — কেন ভুল হলো?</li>
     </ul>
     <div class="note warn">⚠️ উত্তর answer sheet এ তোলার সময় হাতে রাখো — General এ আলাদা সময় দেওয়া হয় না।</div>
+  </div>
+
+  <details>
+    <summary>🧪 True / False / Not Given — কাজ করা উদাহরণ</summary>
+    <div class="body">
+      <p style="color:var(--accent2)"><b>প্যাসেজ:</b> "The Eiffel Tower, completed in 1889, was initially criticised by many Parisian artists who considered it an eyesore."</p>
+      <div class="qa"><div class="qq">1. The Eiffel Tower was finished in 1889.</div>
+        <div class="aa"><b class="band-yes">TRUE</b> — "completed in 1889" সরাসরি মেলে।</div></div>
+      <div class="qa"><div class="qq">2. Everyone admired the tower when it was built.</div>
+        <div class="aa"><b class="band-no">FALSE</b> — প্যাসেজ বলছে অনেকে সমালোচনা করেছিল, তাই উল্টো।</div></div>
+      <div class="qa"><div class="qq">3. The tower is the most visited monument in France.</div>
+        <div class="aa"><b style="color:var(--gold)">NOT GIVEN</b> — এ তথ্য প্যাসেজে নেই (যদিও সত্য হতে পারে, প্যাসেজ বলেনি)।</div></div>
+      <div class="note">🔑 মূল ভুল: নিজের জ্ঞান দিয়ে "Not Given" কে "True" বানিয়ে ফেলা। শুধু লেখা যা আছে তাই দেখো।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🧩 Matching Headings — কৌশল ও উদাহরণ</summary>
+    <div class="body">
+      <ul>
+        <li>প্রতি প্যারার <b>মূল ভাব</b> (main idea) খোঁজো, ডিটেইল না</li>
+        <li>প্রথম ও শেষ বাক্য সবচেয়ে গুরুত্বপূর্ণ</li>
+        <li>heading গুলো আগে পড়ে keyword আন্ডারলাইন করো</li>
+        <li>প্রতিটি প্যারা পড়ে নিজের ভাষায় ১টা শিরোনাম ভাবো, তারপর মেলাও</li>
+      </ul>
+      <div class="note warn">⚠️ ফাঁদ: heading-এ প্যাসেজের শব্দ হুবহু থাকলেই সেটা সঠিক না — অর্থ মেলাও, শব্দ না।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📝 Sentence/Summary Completion — শব্দ সীমা</summary>
+    <div class="body">
+      <p>"NO MORE THAN TWO WORDS" — এই নির্দেশ <b>কঠোরভাবে</b> মানো। ৩ শব্দ লিখলে উত্তর বাতিল।</p>
+      <ul>
+        <li>ফাঁকা জায়গার আগে-পরে দেখে কোন <b>ধরনের শব্দ</b> দরকার বোঝো (noun? verb?)</li>
+        <li>প্যাসেজে synonym/paraphrase খোঁজো — হুবহু শব্দ নাও থাকতে পারে</li>
+        <li>বানান নির্ভুল হতে হবে — ভুল বানান = ভুল উত্তর</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="card">
+    <h3>⏱️ Reading সময় বাঁচানোর কৌশল</h3>
+    <ul>
+      <li>প্রতি প্যাসেজে <b>২০ মিনিট</b> — ঘড়ি দেখো</li>
+      <li>একটা প্রশ্নে ১.৫ মিনিটের বেশি আটকে থেকো না — মার্ক করে এগোও</li>
+      <li>সহজ প্রশ্ন (fill-in-the-blank) আগে করো, কঠিন (matching) পরে</li>
+      <li>শেষ প্যাসেজ সবচেয়ে কঠিন — সময় রিজার্ভ রাখো</li>
+      <li>কোনো উত্তর খালি রেখো না — সম্ভাব্য উত্তর অবশ্যই লেখো (নেগেটিভ মার্কিং নেই)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📖 কী পড়লে Reading ভালো হবে</h3>
+    <div class="vbank">
+      <div class="vitem"><b>BBC / The Guardian</b><small>সংবাদ ও মতামত</small></div>
+      <div class="vitem"><b>National Geographic</b><small>বিজ্ঞান ও প্রকৃতি</small></div>
+      <div class="vitem"><b>Scientific American</b><small>একাডেমিক ধরন</small></div>
+      <div class="vitem"><b>Cambridge IELTS 10–18</b><small>আসল প্র্যাকটিস প্যাসেজ</small></div>
+    </div>
+    <div class="note good">✅ রোজ ১টা আর্টিকেল পড়ে ৫টা নতুন শব্দের synonym শেখো — paraphrase ধরা সহজ হবে।</div>
   </div>
 </section>
 
@@ -533,6 +872,57 @@
       </table>
     </div>
   </details>
+
+  <details>
+    <summary>📋 Form / Note Completion (Section 1) — সবচেয়ে কমন</summary>
+    <div class="body">
+      <p>নাম, ঠিকানা, ফোন, তারিখ লিখতে হয়। এখানেই সহজ নম্বর — হারিও না।</p>
+      <ul>
+        <li><b>Spelling:</b> নাম প্রায়ই বানান করে বলা হয় — "That's S-M-I-T-H." মনোযোগ দাও</li>
+        <li><b>Double letters:</b> "double L" = LL মনে রেখো</li>
+        <li><b>Numbers:</b> "oh" = 0, "double two" = 22</li>
+        <li><b>Dates:</b> "the third of May" → 3 May; ফরম্যাট খেয়াল করো</li>
+      </ul>
+      <div class="note">🔑 কমন বানান যা মুখস্থ রাখা ভালো: Wednesday, February, address, accommodation, receipt, restaurant.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🗺️ Map / Plan Labelling — দিকনির্দেশ শব্দ</summary>
+    <div class="body">
+      <p>একটা ম্যাপে জায়গা চিহ্নিত করতে হয়। এই শব্দগুলো জানা জরুরি:</p>
+      <div class="vbank">
+        <div class="vitem"><b>opposite / across from</b><small>উল্টোদিকে</small></div>
+        <div class="vitem"><b>adjacent to / next to</b><small>পাশে</small></div>
+        <div class="vitem"><b>at the far end</b><small>একদম শেষ মাথায়</small></div>
+        <div class="vitem"><b>turn left/right at…</b><small>বাঁক নাও</small></div>
+        <div class="vitem"><b>on your left / right-hand side</b><small>বাঁ/ডান দিকে</small></div>
+        <div class="vitem"><b>at the junction / corner</b><small>মোড়ে</small></div>
+      </div>
+      <div class="note warn">⚠️ ম্যাপের starting point ("you are here") আগে খুঁজে নাও, নাহলে দিক গুলিয়ে যাবে।</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🪤 Distractor (ফাঁদ) — উদাহরণসহ</summary>
+    <div class="body">
+      <p style="color:var(--accent2)"><b>যা শুনবে:</b> "I'd like to book a room for Monday… <i>oh wait, no</i>, make that <b>Wednesday</b> — Monday's fully booked."</p>
+      <div class="qa"><div class="qq">সঠিক উত্তর কী?</div>
+        <div class="aa"><b class="band-yes">Wednesday</b> — বক্তা প্রথমে Monday বলে পরে শুধরে নিয়েছে। শেষ সিদ্ধান্তই উত্তর।</div></div>
+      <p style="margin-top:8px"><b>ফাঁদ চেনার সংকেত শব্দ:</b> actually, sorry, on second thought, let me change that, rather than, instead of।</p>
+    </div>
+  </details>
+
+  <div class="card">
+    <h3>🎧 রোজকার Listening ড্রিল (Band বাড়ায়)</h3>
+    <ul>
+      <li><b>Dictation:</b> ১ মিনিট অডিও শুনে হুবহু লিখে ফেলো, পরে মিলাও</li>
+      <li><b>Active listening:</b> পডকাস্ট শুনে মূল ৩ পয়েন্ট নোট করো</li>
+      <li><b>Accent training:</b> British (BBC), American (CNN), Australian (ABC) — তিনটাই শোনো</li>
+      <li><b>Prediction:</b> প্রশ্ন পড়ে আগে অনুমান করো উত্তর কী ধরনের হবে (সংখ্যা/নাম/বিশেষণ)</li>
+    </ul>
+    <div class="note good">✅ TED Talks, BBC 6 Minute English, আর Cambridge IELTS-এর অডিও দিয়ে রোজ ২০ মিনিট প্র্যাকটিস করো।</div>
+  </div>
 </section>
 
 <!-- ===================== 90 DAY PLAN ===================== -->
@@ -680,6 +1070,22 @@
     updateProg();
   }
   loadProg();
+
+  // ----- EXAM COUNTDOWN (25 Sep 2026) -----
+  function tickCountdown(){
+    const exam=new Date('2026-09-25T09:00:00');
+    const now=new Date();
+    let diff=Math.max(0, exam-now);
+    const d=Math.floor(diff/86400000); diff-=d*86400000;
+    const h=Math.floor(diff/3600000); diff-=h*3600000;
+    const m=Math.floor(diff/60000); diff-=m*60000;
+    const s=Math.floor(diff/1000);
+    const set=(id,v)=>{const e=document.getElementById(id); if(e) e.textContent=v;};
+    set('cd-d',d); set('cd-h',String(h).padStart(2,'0'));
+    set('cd-m',String(m).padStart(2,'0')); set('cd-s',String(s).padStart(2,'0'));
+  }
+  tickCountdown();
+  setInterval(tickCountdown,1000);
 </script>
 </body>
 </html>
