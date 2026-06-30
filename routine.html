@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily Routine | কর্মজীবীদের IELTS রুটিন (বাংলায়)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;
+    --txt:#e9ecff;--muted:#a7adda;--accent:#6c8cff;--accent2:#46d6b3;
+    --gold:#ffcb5b;--pink:#ff7ab6;--green:#46d6b3;
+    --speak:#ff7ab6;--write:#ffcb5b;--read:#46d6b3;--listen:#6c8cff;
+    --shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),
+               radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);
+    color:var(--txt);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+
+  header.hero{padding:46px 0 18px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:14px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;
+    font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;line-height:1.3;margin-bottom:10px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--pink),var(--accent));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.02rem}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+  .card h2{font-size:1.3rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .card .csub{color:var(--muted);margin-bottom:14px}
+  .card h2 .em{font-size:1.5rem}
+
+  /* TIME BLOCKS */
+  .block{display:flex;gap:14px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:12px;
+    margin:10px 0;background:var(--card2)}
+  .block .time{font-family:'Poppins';font-weight:600;color:var(--gold);white-space:nowrap;min-width:96px;font-size:.92rem}
+  .block .body{flex:1}
+  .block .tt{font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .block .tt .chip{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;font-family:'Poppins'}
+  .chip.s{background:var(--speak);color:#2a0a18}.chip.w{background:var(--write);color:#2a230a}
+  .chip.r{background:var(--read);color:#062019}.chip.l{background:var(--listen);color:#0a1228}.chip.v{background:#c792ea;color:#1a0a2a}
+  .block .desc{color:#cfd4ff;font-size:.93rem;margin-top:3px}
+  .block .desc a{color:var(--accent2)}
+  .block input{width:20px;height:20px;margin-top:3px;accent-color:var(--green);flex:none;cursor:pointer}
+  .block.done{opacity:.6}
+  .block.done .tt{text-decoration:line-through}
+
+  .progwrap{background:var(--card2);border-radius:999px;height:14px;overflow:hidden;margin:12px 0;border:1px solid var(--line)}
+  .progbar{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s}
+
+  .micro{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line)}
+  .micro:last-child{border-bottom:none}
+  .micro .ic{font-size:1.3rem;flex:none}
+  .micro b{color:var(--gold)}
+  .micro span{color:#cfd4ff;font-size:.94rem}
+
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.92rem}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+  th{background:var(--card2);color:var(--gold)}
+  tr.today{outline:2px solid var(--accent2);background:rgba(70,214,179,.08)}
+  tr.today td:first-child{color:var(--accent2);font-weight:700}
+
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);
+    padding:11px 15px;border-radius:8px;margin:12px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.94rem;font-weight:600;padding:11px 18px;border-radius:11px;
+    transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  @media(max-width:600px){.block{flex-wrap:wrap}.block .time{min-width:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">🗓️ কর্মজীবীদের জন্য রুটিন — সন্ধ্যা ৭টার পর মূল পড়া</span></div>
+    <h1>তোমার <span class="grad">ডেইলি রুটিন</span><br/>(Full-time চাকরি + IELTS)</h1>
+    <p>দিনের বেলা অফিস — তাই দিনে <b>হালকা/passive</b> প্র্যাকটিস, আর <b>সন্ধ্যা ৭টার পর</b> মূল ২ ঘণ্টার সেশন। প্রায়োরিটি অনুযায়ী: Speaking → Writing → Reading → Listening। নিচে টিক দাও — অগ্রগতি রোজ সেভ হবে।</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- DAYTIME -->
+  <div class="card">
+    <h2><span class="em">☀️</span> দিনের বেলা — Micro-habits (অফিসের ফাঁকে)</h2>
+    <p class="csub">আলাদা সময় লাগে না — কাজের ফাঁকে এগুলোই ইংরেজির সাথে "exposure" রাখে।</p>
+    <div class="micro"><span class="ic">🚌</span><div><b>যাতায়াতের সময়:</b> <span>ইংরেজি পডকাস্ট / BBC 6 Minute English / অডিওবুক শোনো (কানে English রাখা)।</span></div></div>
+    <div class="micro"><span class="ic">🍽️</span><div><b>লাঞ্চ ব্রেক (১০ মিনিট):</b> <span>Vocabulary পেজে ১টা ক্যাটাগরির ১০টা শব্দ flashcard-এ ঝালাই করো।</span></div></div>
+    <div class="micro"><span class="ic">💭</span><div><b>কোডিং/কাজের ফাঁকে:</b> <span>"Think in English" — মনে মনে কাজগুলো ইংরেজিতে বর্ণনা করো ("I'm debugging this function…")।</span></div></div>
+    <div class="micro"><span class="ic">📰</span><div><b>চা-বিরতি (৫ মিনিট):</b> <span>১টা ছোট ইংরেজি আর্টিকেল পড়ো (tech news তোমার জন্য সহজ ও আগ্রহের)।</span></div></div>
+    <div class="note good">✅ এই micro-habit গুলো মিলিয়ে দিনে ~৩০ মিনিট passive ইংরেজি — কোনো বাড়তি চাপ ছাড়াই।</div>
+  </div>
+
+  <!-- EVENING CORE -->
+  <div class="card" style="border-color:var(--accent)">
+    <h2><span class="em">🌙</span> সন্ধ্যা ৭টার পর — মূল সেশন (~২ ঘণ্টা)</h2>
+    <p class="csub">আজকের অগ্রগতি (রোজ রাতে রিসেট হয়):</p>
+    <div class="progwrap"><div class="progbar" id="bar"></div></div>
+    <p id="ptext" style="text-align:center;color:var(--muted);margin-bottom:12px">০% সম্পন্ন</p>
+
+    <div class="block" data-k="b1">
+      <input type="checkbox" />
+      <div class="time">৭:৩০–৭:৪৫</div>
+      <div class="body"><div class="tt">🎧 Warm-up + Listening <span class="chip l">LISTEN</span></div>
+        <div class="desc">অফিস-ক্লান্তি কাটাতে হালকা শুরু — ১৫ মিনিট পডকাস্ট/news শুনে ৫টা বাক্য shadowing করো। <a href="practice.html">Practice → Listening</a></div></div>
+    </div>
+    <div class="block" data-k="b2">
+      <input type="checkbox" />
+      <div class="time">৭:৪৫–৮:১৫</div>
+      <div class="body"><div class="tt">🗣️ Speaking (Priority 1) <span class="chip s">SPEAK</span></div>
+        <div class="desc">১টা cue card নিয়ে ১ মিনিট প্রস্তুতি + ২ মিনিট বলে রেকর্ড করো, শুনে ভুল ধরো। Part 1/3 প্রশ্নও অনুশীলন করো। <a href="cue-cards.html">Cue Cards</a> · <a href="speaking-module.html">রেকর্ডার</a></div></div>
+    </div>
+    <div class="block" data-k="b3">
+      <input type="checkbox" />
+      <div class="time">৮:১৫–৮:৪৫</div>
+      <div class="body"><div class="tt">✍️ Writing (Priority 2) <span class="chip w">WRITE</span></div>
+        <div class="desc">৪০ মিনিট টাইমারে ১টা Task 2 এসে (সপ্তাহে ৩ দিন) বা Task 1 (২ দিন) লেখো — লাইভ word count সহ। <a href="practice.html">Practice → Writing</a></div></div>
+    </div>
+    <div class="block" data-k="b4">
+      <input type="checkbox" />
+      <div class="time">৮:৪৫–৯:১০</div>
+      <div class="body"><div class="tt">📖 Reading (Priority 3) <span class="chip r">READ</span></div>
+        <div class="desc">টাইমার ধরে ১টা passage + প্রশ্ন, তারপর ভুলগুলো বিশ্লেষণ করো (কেন ভুল হলো?)। <a href="practice.html">Practice → Reading</a></div></div>
+    </div>
+    <div class="block" data-k="b5">
+      <input type="checkbox" />
+      <div class="time">৯:১০–৯:২৫</div>
+      <div class="body"><div class="tt">📚 Vocabulary + Grammar <span class="chip v">VOCAB</span></div>
+        <div class="desc">১টা vocab ক্যাটাগরি (১০ শব্দ) + ১টা Expert grammar টপিক — প্রতিটা দিয়ে নিজের বাক্য বানাও। <a href="vocabulary.html">Vocabulary</a> · <a href="grammar-speaking.html">Grammar</a></div></div>
+    </div>
+    <div class="block" data-k="b6">
+      <input type="checkbox" />
+      <div class="time">৯:২৫–৯:৩০</div>
+      <div class="body"><div class="tt">🧾 Review + কালকের প্ল্যান <span class="chip v">REVIEW</span></div>
+        <div class="desc">আজ কী শিখলে ২ মিনিটে নোট করো, কাল কোন টপিক করবে ঠিক করো। ঘুমানোর আগে স্ক্রিন কমাও।</div></div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-ghost" onclick="resetDay()">♻️ আজকের চেকলিস্ট রিসেট</button>
+      <span id="streak" style="align-self:center;color:var(--accent2);font-weight:600"></span>
+    </div>
+    <div class="note warn">⚠️ ক্লান্ত লাগলে: ক্রম বদলে নাও — সবচেয়ে কঠিন (Writing) যেদিন এনার্জি বেশি, আর ক্লান্ত দিনে Listening/Vocab দিয়ে হালকা রাখো। কিন্তু <b>Speaking রোজ</b> বাদ দিও না (Priority 1)।</div>
+  </div>
+
+  <!-- WEEKLY PLAN -->
+  <div class="card">
+    <h2><span class="em">📅</span> সাপ্তাহিক প্ল্যান (আজকের দিন হাইলাইট করা)</h2>
+    <p class="csub">প্রতিদিন Speaking থাকে (Priority 1); বাকি স্কিল ঘুরিয়ে-ফিরিয়ে। সপ্তাহান্তে mock।</p>
+    <table>
+      <tr><th>দিন</th><th>মূল ফোকাস (সন্ধ্যা ৭টার পর)</th></tr>
+      <tr data-day="6"><td>শনি</td><td>🗣️ Speaking + ✍️ Writing Task 2 + 📚 Vocab</td></tr>
+      <tr data-day="0"><td>রবি</td><td>🗣️ Speaking + 📖 Reading (২ passage) + 📚 Vocab</td></tr>
+      <tr data-day="1"><td>সোম</td><td>🗣️ Speaking (cue card) + ✍️ Writing Task 1 + 🎧 Listening</td></tr>
+      <tr data-day="2"><td>মঙ্গল</td><td>🗣️ Speaking (Part 3) + 📖 Reading + 🎓 Expert Grammar</td></tr>
+      <tr data-day="3"><td>বুধ</td><td>🗣️ Speaking + ✍️ Writing Task 2 + 📚 Vocab</td></tr>
+      <tr data-day="4"><td>বৃহস্পতি</td><td>🗣️ Speaking + 🎧 Listening + 📖 Reading</td></tr>
+      <tr data-day="5"><td>শুক্র (ছুটি)</td><td>🧪 <b>Full Mock Test</b> (টাইমার মেনে) + পুরো রিভিউ</td></tr>
+    </table>
+    <div class="note good">✅ ছুটির দিন (শুক্র) দিনের বেলায় সময় বেশি — তখন একটা <b>full mock test</b> দাও আসল পরীক্ষার সময় মেনে। এটাই সবচেয়ে বড় প্রস্তুতি।</div>
+  </div>
+
+  <!-- ENERGY TIPS -->
+  <div class="card">
+    <h2><span class="em">🔋</span> কাজের পরে এনার্জি ধরে রাখার টিপস</h2>
+    <div class="micro"><span class="ic">🍵</span><div><span>সেশনের আগে ১৫ মিনিট ব্রেক + হালকা নাস্তা/চা — অফিস mode থেকে study mode-এ যাও।</span></div></div>
+    <div class="micro"><span class="ic">📵</span><div><span>ফোন silent/দূরে রাখো — ২ ঘণ্টা distraction-free রাখলে কাজ দ্বিগুণ হয়।</span></div></div>
+    <div class="micro"><span class="ic">🍅</span><div><span>Pomodoro: ২৫ মিনিট পড়া → ৫ মিনিট বিরতি — ক্লান্তি কমায়।</span></div></div>
+    <div class="micro"><span class="ic">🎯</span><div><span>রোজ সব করতেই হবে এমন না — অন্তত <b>Speaking + ১টা skill</b> করলেই দিনটা সফল।</span></div></div>
+    <div class="micro"><span class="ic">😴</span><div><span>৭+ ঘণ্টা ঘুম — কম ঘুমালে পরদিন কোনো কিছুই ঠিকমতো ঢুকবে না (Listening/Reading-এ মনোযোগ লাগে)।</span></div></div>
+  </div>
+
+  <div class="note good" style="margin:18px 0">🎓 সপ্তাহে ৫–৬ দিন এই রুটিন ধরে রাখলে পরীক্ষার আগেই তুমি প্রস্তুত। ধারাবাহিকতাই (consistency) আসল — নিখুঁততা নয়।</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>🗓️ আজকের সেশন শেষ? নিজেকে শাবাশি দাও — কাল আবার ৭টায়।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="cue-cards.html" class="btn btn-primary">🃏 Cue Cards</a>
+      <a href="practice.html" class="btn btn-ghost">🧪 Practice</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* today key for daily reset */
+function todayKey(){
+  const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+const TK=todayKey();
+const boxes=document.querySelectorAll('.block input');
+
+function load(){
+  boxes.forEach(b=>{
+    const k='rt_'+TK+'_'+b.closest('.block').dataset.k;
+    const on=localStorage.getItem(k)==='1';
+    b.checked=on;
+    b.closest('.block').classList.toggle('done',on);
+  });
+  update();
+}
+function update(){
+  let done=0;
+  boxes.forEach(b=>{if(b.checked)done++});
+  const pct=Math.round(done/boxes.length*100);
+  document.getElementById('bar').style.width=pct+'%';
+  document.getElementById('ptext').textContent=pct+'% সম্পন্ন ('+done+'/'+boxes.length+')';
+}
+boxes.forEach(b=>{
+  b.addEventListener('change',()=>{
+    const block=b.closest('.block');
+    const k='rt_'+TK+'_'+block.dataset.k;
+    localStorage.setItem(k, b.checked?'1':'0');
+    block.classList.toggle('done',b.checked);
+    update();
+    if([...boxes].every(x=>x.checked)) bumpStreak();
+  });
+});
+function resetDay(){
+  boxes.forEach(b=>{b.checked=false;localStorage.removeItem('rt_'+TK+'_'+b.closest('.block').dataset.k);b.closest('.block').classList.remove('done')});
+  update();
+}
+
+/* simple streak: count distinct completed days */
+function bumpStreak(){
+  const key='rt_done_'+TK;
+  if(!localStorage.getItem(key)){
+    localStorage.setItem(key,'1');
+    let c=parseInt(localStorage.getItem('rt_streak')||'0')+1;
+    localStorage.setItem('rt_streak',c);
+  }
+  showStreak();
+}
+function showStreak(){
+  const c=parseInt(localStorage.getItem('rt_streak')||'0');
+  document.getElementById('streak').textContent = c>0 ? ('🔥 মোট '+c+' দিন সম্পূর্ণ করেছ!') : '';
+}
+
+/* highlight today's row */
+const dow=new Date().getDay();
+const row=document.querySelector('tr[data-day="'+dow+'"]');
+if(row) row.classList.add('today');
+
+load();
+showStreak();
+</script>
+</body>
+</html>
