@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Band 7.5+ Vocabulary | IELTS শব্দভাণ্ডার (বাংলায়)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;
+    --txt:#e9ecff;--muted:#a7adda;--accent:#6c8cff;--accent2:#46d6b3;
+    --gold:#ffcb5b;--pink:#ff7ab6;--green:#46d6b3;
+    --shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),
+               radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);
+    color:var(--txt);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+
+  header.hero{padding:48px 0 22px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:16px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--pink));color:#2a0a18;
+    font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:16px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.7rem);font-weight:700;line-height:1.3;margin-bottom:12px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--pink),var(--accent));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:620px;margin:0 auto;font-size:1.03rem}
+
+  /* CONTROLS */
+  .controls{position:sticky;top:0;z-index:50;background:rgba(15,18,38,.92);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:12px 0;margin-top:14px}
+  .searchbar{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+  #search{flex:1;background:var(--card);border:1px solid var(--line);color:var(--txt);padding:11px 16px;border-radius:12px;
+    font-family:inherit;font-size:1rem}
+  #search:focus{outline:none;border-color:var(--accent)}
+  .filterrow{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .filterrow::-webkit-scrollbar{display:none}
+  .fpill{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:7px 13px;border-radius:9px;cursor:pointer;font-family:inherit;font-size:.88rem;font-weight:500;transition:.15s;flex:none}
+  .fpill:hover{color:var(--txt)}
+  .fpill.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;font-weight:700;border-color:transparent}
+
+  .statbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0}
+  .progwrap{flex:1;min-width:180px;background:var(--card2);border-radius:999px;height:14px;overflow:hidden;border:1px solid var(--line)}
+  .progbar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent2));transition:width .4s}
+  .statbar .num{font-family:'Poppins';color:var(--gold);font-weight:600}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.92rem;font-weight:600;padding:10px 18px;border-radius:11px;
+    transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+
+  /* CATEGORY + ROWS */
+  .cat{margin:26px 0 10px}
+  .cat h2{font-size:1.3rem;color:var(--gold);display:flex;align-items:center;gap:8px}
+  .cat .ccount{font-size:.8rem;color:var(--muted);font-weight:400;font-family:'Poppins'}
+  .vrow{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin:9px 0;
+    display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow)}
+  .vrow.learned{opacity:.62;border-color:var(--green)}
+  .vchk{width:20px;height:20px;margin-top:3px;accent-color:var(--green);flex:none;cursor:pointer}
+  .vmain{flex:1;min-width:0}
+  .vw{font-family:'Poppins';font-weight:600;color:var(--gold);font-size:1.05rem;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .say{background:none;border:1px solid var(--line);color:var(--accent2);border-radius:7px;cursor:pointer;
+    padding:3px 9px;font-size:.8rem;flex:none}
+  .say:hover{background:var(--card2)}
+  .vbn{color:#cdd2ff;margin:2px 0}
+  .vex{color:var(--muted);font-size:.93rem;font-style:italic}
+  .vex b{color:var(--accent2);font-style:normal}
+
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);
+    padding:11px 15px;border-radius:8px;margin:14px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .empty{text-align:center;color:var(--muted);padding:30px;display:none}
+
+  /* FLASHCARD MODAL */
+  .overlay{position:fixed;inset:0;background:rgba(8,10,24,.82);backdrop-filter:blur(4px);display:none;
+    place-items:center;z-index:100;padding:18px}
+  .overlay.show{display:grid}
+  .flash{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 26px;max-width:480px;width:100%;
+    text-align:center;box-shadow:var(--shadow)}
+  .flash .fcount{color:var(--muted);font-size:.85rem;font-family:'Poppins'}
+  .flash .fword{font-family:'Poppins';font-weight:700;color:var(--gold);font-size:1.7rem;margin:18px 0}
+  .flash .fmean{color:#dfe3ff;min-height:70px;font-size:1.05rem}
+  .flash .fmean.hidden{filter:blur(7px)}
+  .flash .frow{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+  .closex{position:absolute;top:18px;right:22px;color:var(--muted);font-size:1.8rem;cursor:pointer;background:none;border:none}
+
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  @media(max-width:600px){.vex{font-size:.88rem}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">📚 BAND 7.5+ VOCABULARY — Collocation, Idiom, Academic Phrase</span></div>
+    <h1>উচ্চ-ব্যান্ডের <span class="grad">শব্দভাণ্ডার</span><br/>টপিক অনুযায়ী সাজানো</h1>
+    <p>শুধু কঠিন শব্দ না — <b>collocation</b> (শব্দের জোড়া) আর natural expression-ই Band তোলে। 🔊 শুনে শেখো, ✅ টিক দিয়ে অগ্রগতি সেভ করো, 🎴 flashcard-এ ঝালাই করো।</p>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="searchbar">
+      <input id="search" type="text" placeholder="🔍 শব্দ বা বাংলা অর্থ খোঁজো... (যেমন: pollution, কাজ, increase)" oninput="applyFilter()" />
+      <button class="btn btn-primary" onclick="startFlash()">🎴 Flashcard</button>
+    </div>
+    <div class="filterrow" id="filterrow"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="statbar">
+    <span class="num"><span id="learnedCount">0</span> / <span id="totalCount">0</span> শেখা হয়েছে</span>
+    <div class="progwrap"><div class="progbar" id="progbar"></div></div>
+    <button class="btn btn-ghost" onclick="resetLearned()">♻️ রিসেট</button>
+  </div>
+
+  <div id="vocabRoot"></div>
+  <div class="empty" id="empty">😕 কিছু পাওয়া যায়নি — অন্য শব্দ দিয়ে খোঁজো।</div>
+
+  <div class="note good">✅ পদ্ধতি: রোজ ১টা ক্যাটাগরি নাও → ৫টা শব্দ ৩বার জোরে বলো → প্রতিটা দিয়ে নিজের ১টা বাক্য বানাও → টিক দাও। ১০ দিনে পুরোটা শেষ হবে।</div>
+</main>
+
+<!-- FLASHCARD -->
+<div class="overlay" id="overlay">
+  <div class="flash" style="position:relative">
+    <button class="closex" onclick="closeFlash()">×</button>
+    <div class="fcount" id="fcount"></div>
+    <div class="fword en" id="fword">—</div>
+    <div class="fmean hidden" id="fmean"></div>
+    <div class="frow">
+      <button class="btn btn-ghost" onclick="revealFlash()">👁️ অর্থ দেখাও</button>
+      <button class="btn btn-ghost" onclick="sayFlash()">🔊 শোনো</button>
+      <button class="btn btn-primary" onclick="nextFlash()">পরের ➡️</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>📚 শব্দ শেখা = প্রতিদিন একটু। জমে গেলে Band নিজে থেকেই উঠবে।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="practice.html" class="btn btn-primary">🧪 Practice টেস্ট</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===================== DATA ===================== */
+const VOCAB = {
+  "🌍 Environment": [
+    {w:"carbon footprint", bn:"কার্বন নিঃসরণের পরিমাণ", ex:"We must reduce our <b>carbon footprint</b> to fight climate change."},
+    {w:"to combat climate change", bn:"জলবায়ু পরিবর্তন মোকাবিলা করা", ex:"Governments are working to <b>combat climate change</b>."},
+    {w:"renewable energy sources", bn:"নবায়নযোগ্য শক্তির উৎস", ex:"Solar and wind are <b>renewable energy sources</b>."},
+    {w:"to deplete natural resources", bn:"প্রাকৃতিক সম্পদ নিঃশেষ করা", ex:"Overconsumption <b>depletes natural resources</b> rapidly."},
+    {w:"a pressing environmental issue", bn:"জরুরি পরিবেশগত সমস্যা", ex:"Plastic pollution is <b>a pressing environmental issue</b>."},
+    {w:"to raise awareness", bn:"সচেতনতা বাড়ানো", ex:"Schools should <b>raise awareness</b> about recycling."},
+    {w:"environmentally friendly", bn:"পরিবেশবান্ধব", ex:"Electric cars are more <b>environmentally friendly</b>."},
+    {w:"to leave a lasting impact", bn:"দীর্ঘস্থায়ী প্রভাব ফেলা", ex:"Deforestation <b>leaves a lasting impact</b> on ecosystems."},
+    {w:"to mitigate the effects of", bn:"কুপ্রভাব কমানো", ex:"Planting trees can <b>mitigate the effects of</b> pollution."},
+    {w:"sustainable development", bn:"টেকসই উন্নয়ন", ex:"<b>Sustainable development</b> balances growth and nature."}
+  ],
+  "💻 Technology": [
+    {w:"cutting-edge technology", bn:"অত্যাধুনিক প্রযুক্তি", ex:"This phone uses <b>cutting-edge technology</b>."},
+    {w:"a game-changer", bn:"পরিস্থিতি বদলে দেয় এমন কিছু", ex:"The internet was <b>a game-changer</b> for education."},
+    {w:"to stay connected", bn:"যোগাযোগে থাকা", ex:"Social media helps us <b>stay connected</b> with family."},
+    {w:"to keep up with the latest trends", bn:"সর্বশেষ ধারার সাথে তাল মেলানো", ex:"Developers must <b>keep up with the latest trends</b>."},
+    {w:"a double-edged sword", bn:"ভালো-খারাপ দুদিকই আছে এমন", ex:"Technology is <b>a double-edged sword</b>."},
+    {w:"to revolutionise the way we…", bn:"…করার ধরন আমূল বদলে দেওয়া", ex:"AI has <b>revolutionised the way we</b> work."},
+    {w:"digital detox", bn:"প্রযুক্তি থেকে স্বেচ্ছা-বিরতি", ex:"A weekend <b>digital detox</b> reduces stress."},
+    {w:"to streamline a process", bn:"কাজ সহজ ও দ্রুত করা", ex:"Automation <b>streamlines the process</b> of data entry."},
+    {w:"over-reliance on technology", bn:"প্রযুক্তির ওপর অতিনির্ভরতা", ex:"<b>Over-reliance on technology</b> can weaken memory."},
+    {w:"user-friendly interface", bn:"সহজে ব্যবহারযোগ্য ইন্টারফেস", ex:"The app has a <b>user-friendly interface</b>."}
+  ],
+  "🎓 Education": [
+    {w:"a well-rounded education", bn:"সর্বাঙ্গীণ শিক্ষা", ex:"Schools should provide <b>a well-rounded education</b>."},
+    {w:"to broaden one's horizons", bn:"দৃষ্টিভঙ্গি প্রসারিত করা", ex:"Studying abroad <b>broadens your horizons</b>."},
+    {w:"hands-on experience", bn:"হাতে-কলমে অভিজ্ঞতা", ex:"Internships give students <b>hands-on experience</b>."},
+    {w:"to grasp a concept", bn:"ধারণা বোঝা/আয়ত্ত করা", ex:"Visual aids help students <b>grasp a concept</b>."},
+    {w:"to instil a love of learning", bn:"শেখার প্রতি ভালোবাসা জাগানো", ex:"Good teachers <b>instil a love of learning</b>."},
+    {w:"academic performance", bn:"একাডেমিক ফলাফল", ex:"Sleep affects <b>academic performance</b>."},
+    {w:"to fall behind", bn:"পিছিয়ে পড়া", ex:"Students may <b>fall behind</b> without support."},
+    {w:"lifelong learning", bn:"আজীবন শেখা", ex:"<b>Lifelong learning</b> is vital in a changing world."},
+    {w:"to bridge the knowledge gap", bn:"জ্ঞানের ব্যবধান কমানো", ex:"Online courses help <b>bridge the knowledge gap</b>."},
+    {w:"rote learning", bn:"মুখস্থ-নির্ভর শেখা", ex:"<b>Rote learning</b> rarely builds real understanding."}
+  ],
+  "🏥 Health": [
+    {w:"to lead a sedentary lifestyle", bn:"নিষ্ক্রিয়/বসে থাকা জীবনযাপন", ex:"Many office workers <b>lead a sedentary lifestyle</b>."},
+    {w:"physical and mental well-being", bn:"শারীরিক ও মানসিক সুস্থতা", ex:"Exercise improves <b>physical and mental well-being</b>."},
+    {w:"to boost one's immune system", bn:"রোগ প্রতিরোধ ক্ষমতা বাড়ানো", ex:"A healthy diet <b>boosts your immune system</b>."},
+    {w:"a balanced diet", bn:"সুষম খাদ্য", ex:"<b>A balanced diet</b> is key to good health."},
+    {w:"to take a toll on", bn:"ক্ষতি/চাপ ফেলা", ex:"Stress can <b>take a toll on</b> your heart."},
+    {w:"preventive measures", bn:"প্রতিরোধমূলক ব্যবস্থা", ex:"Vaccines are effective <b>preventive measures</b>."},
+    {w:"to be prone to illness", bn:"অসুস্থ হওয়ার প্রবণতা থাকা", ex:"Without sleep, you are <b>prone to illness</b>."},
+    {w:"mental health awareness", bn:"মানসিক স্বাস্থ্য সচেতনতা", ex:"<b>Mental health awareness</b> is growing worldwide."},
+    {w:"to alleviate stress", bn:"মানসিক চাপ কমানো", ex:"Meditation can <b>alleviate stress</b>."},
+    {w:"a healthcare system", bn:"স্বাস্থ্যসেবা ব্যবস্থা", ex:"A strong <b>healthcare system</b> saves lives."}
+  ],
+  "💼 Work & Money": [
+    {w:"work-life balance", bn:"কাজ ও জীবনের ভারসাম্য", ex:"Remote work can improve <b>work-life balance</b>."},
+    {w:"to climb the career ladder", bn:"ক্যারিয়ারে উন্নতি করা", ex:"She worked hard to <b>climb the career ladder</b>."},
+    {w:"job satisfaction", bn:"কাজের সন্তুষ্টি", ex:"<b>Job satisfaction</b> matters more than salary to some."},
+    {w:"to make ends meet", bn:"টেনেটুনে সংসার চালানো", ex:"Many families struggle to <b>make ends meet</b>."},
+    {w:"a steady income", bn:"স্থিতিশীল আয়", ex:"A government job offers <b>a steady income</b>."},
+    {w:"to be financially independent", bn:"আর্থিকভাবে স্বাবলম্বী হওয়া", ex:"Young adults want to <b>be financially independent</b>."},
+    {w:"job security", bn:"চাকরির নিরাপত্তা", ex:"<b>Job security</b> is a major concern today."},
+    {w:"to burn out", bn:"অতিরিক্ত কাজে ক্লান্ত/নিঃশেষ হওয়া", ex:"Long hours can make employees <b>burn out</b>."},
+    {w:"a lucrative career", bn:"লাভজনক ক্যারিয়ার", ex:"Software engineering is <b>a lucrative career</b>."},
+    {w:"to acquire new skills", bn:"নতুন দক্ষতা অর্জন করা", ex:"Workers must constantly <b>acquire new skills</b>."}
+  ],
+  "🏙️ Society & City": [
+    {w:"a sense of community", bn:"সম্প্রদায়বোধ", ex:"Small towns often have a strong <b>sense of community</b>."},
+    {w:"the cost of living", bn:"জীবনযাত্রার খরচ", ex:"<b>The cost of living</b> is rising in big cities."},
+    {w:"rapid urbanisation", bn:"দ্রুত নগরায়ন", ex:"<b>Rapid urbanisation</b> strains infrastructure."},
+    {w:"to bridge the gap between", bn:"…মধ্যকার ব্যবধান কমানো", ex:"Policies should <b>bridge the gap between</b> rich and poor."},
+    {w:"an ageing population", bn:"বয়স্ক জনসংখ্যা বৃদ্ধি", ex:"Japan faces <b>an ageing population</b>."},
+    {w:"to put a strain on", bn:"…ওপর চাপ ফেলা", ex:"Migration can <b>put a strain on</b> housing."},
+    {w:"social cohesion", bn:"সামাজিক সংহতি", ex:"Shared values strengthen <b>social cohesion</b>."},
+    {w:"public infrastructure", bn:"জনঅবকাঠামো", ex:"Investment in <b>public infrastructure</b> boosts growth."},
+    {w:"a widening gap", bn:"ক্রমবর্ধমান ব্যবধান", ex:"There is <b>a widening gap</b> between income groups."},
+    {w:"to tackle a problem", bn:"সমস্যা মোকাবিলা করা", ex:"Cities must <b>tackle the problem</b> of congestion."}
+  ],
+  "📱 Media & Crime": [
+    {w:"the spread of misinformation", bn:"ভুল তথ্যের বিস্তার", ex:"Social media accelerates <b>the spread of misinformation</b>."},
+    {w:"to shape public opinion", bn:"জনমত গঠন করা", ex:"The media can <b>shape public opinion</b>."},
+    {w:"a deterrent to crime", bn:"অপরাধে বাধা/প্রতিবন্ধক", ex:"Strict laws act as <b>a deterrent to crime</b>."},
+    {w:"to rehabilitate offenders", bn:"অপরাধীদের সংশোধন করা", ex:"Prisons should aim to <b>rehabilitate offenders</b>."},
+    {w:"biased reporting", bn:"পক্ষপাতদুষ্ট সংবাদ", ex:"<b>Biased reporting</b> misleads the public."},
+    {w:"to commit a crime", bn:"অপরাধ করা", ex:"Poverty can push people to <b>commit a crime</b>."},
+    {w:"sensationalism", bn:"চাঞ্চল্য সৃষ্টির প্রবণতা", ex:"News channels often rely on <b>sensationalism</b>."},
+    {w:"to crack down on", bn:"কঠোর ব্যবস্থা নেওয়া", ex:"Police are <b>cracking down on</b> cybercrime."},
+    {w:"a reliable source", bn:"নির্ভরযোগ্য উৎস", ex:"Always check <b>a reliable source</b> before sharing."},
+    {w:"the root causes of", bn:"…মূল কারণ", ex:"We must address <b>the root causes of</b> crime."}
+  ],
+  "✈️ Travel & Culture": [
+    {w:"to broaden one's outlook", bn:"দৃষ্টিভঙ্গি প্রশস্ত করা", ex:"Travel <b>broadens your outlook</b> on life."},
+    {w:"cultural heritage", bn:"সাংস্কৃতিক ঐতিহ্য", ex:"We must preserve our <b>cultural heritage</b>."},
+    {w:"to immerse oneself in", bn:"…মধ্যে নিজেকে ডুবিয়ে দেওয়া", ex:"I love to <b>immerse myself in</b> local culture."},
+    {w:"a breathtaking view", bn:"মন-মুগ্ধকর দৃশ্য", ex:"The mountain offered <b>a breathtaking view</b>."},
+    {w:"to get off the beaten track", bn:"চেনা পথের বাইরে যাওয়া", ex:"We like to <b>get off the beaten track</b> when travelling."},
+    {w:"a melting pot of cultures", bn:"নানা সংস্কৃতির মিলনস্থল", ex:"London is <b>a melting pot of cultures</b>."},
+    {w:"to make lasting memories", bn:"স্মরণীয় স্মৃতি তৈরি করা", ex:"That trip helped us <b>make lasting memories</b>."},
+    {w:"hospitality", bn:"আতিথেয়তা", ex:"Bangladeshi <b>hospitality</b> is famous worldwide."},
+    {w:"to bridge cultural differences", bn:"সাংস্কৃতিক পার্থক্য কমানো", ex:"Travel helps <b>bridge cultural differences</b>."},
+    {w:"a once-in-a-lifetime experience", bn:"জীবনে একবারের অভিজ্ঞতা", ex:"Seeing the Himalayas was <b>a once-in-a-lifetime experience</b>."}
+  ],
+  "🔗 Academic Phrases (Writing)": [
+    {w:"It is widely acknowledged that…", bn:"ব্যাপকভাবে স্বীকৃত যে…", ex:"<b>It is widely acknowledged that</b> exercise improves health."},
+    {w:"There is a growing concern that…", bn:"ক্রমবর্ধমান উদ্বেগ আছে যে…", ex:"<b>There is a growing concern that</b> screens harm sleep."},
+    {w:"This essay will argue that…", bn:"এই রচনায় যুক্তি দেওয়া হবে যে…", ex:"<b>This essay will argue that</b> the benefits outweigh the costs."},
+    {w:"A further point to consider is…", bn:"আরও একটি বিবেচ্য বিষয় হলো…", ex:"<b>A further point to consider is</b> the long-term effect."},
+    {w:"This can be attributed to…", bn:"এটি …এর কারণে হতে পারে", ex:"The decline <b>can be attributed to</b> poor policy."},
+    {w:"Proponents argue that…", bn:"সমর্থকরা যুক্তি দেন যে…", ex:"<b>Proponents argue that</b> automation creates new jobs."},
+    {w:"Critics, on the other hand, claim…", bn:"অন্যদিকে সমালোচকরা দাবি করেন…", ex:"<b>Critics, on the other hand, claim</b> it raises costs."},
+    {w:"To put it another way,…", bn:"অন্যভাবে বললে…", ex:"<b>To put it another way,</b> prevention is cheaper than cure."},
+    {w:"Taking everything into account,…", bn:"সবকিছু বিবেচনায় নিয়ে…", ex:"<b>Taking everything into account,</b> I support the policy."},
+    {w:"This trend is likely to continue…", bn:"এই ধারা সম্ভবত চলতে থাকবে…", ex:"<b>This trend is likely to continue</b> in the coming years."}
+  ],
+  "🗣️ Speaking Idioms": [
+    {w:"to be over the moon", bn:"অত্যন্ত খুশি হওয়া", ex:"I was <b>over the moon</b> when I passed."},
+    {w:"a piece of cake", bn:"খুব সহজ কাজ", ex:"The exam was <b>a piece of cake</b> for her."},
+    {w:"once in a blue moon", bn:"খুব কালেভদ্রে", ex:"I eat out <b>once in a blue moon</b>."},
+    {w:"to hit the books", bn:"মন দিয়ে পড়াশোনা করা", ex:"I need to <b>hit the books</b> before the test."},
+    {w:"to break the ice", bn:"আড়ষ্টতা ভাঙা", ex:"A joke can <b>break the ice</b> with strangers."},
+    {w:"to be on the same page", bn:"একমত হওয়া", ex:"Our team is finally <b>on the same page</b>."},
+    {w:"to think outside the box", bn:"গতানুগতিকের বাইরে ভাবা", ex:"Good designers <b>think outside the box</b>."},
+    {w:"to get the hang of it", bn:"কোনো কিছু রপ্ত করা", ex:"Coding is hard at first, but you <b>get the hang of it</b>."},
+    {w:"to go the extra mile", bn:"বাড়তি পরিশ্রম করা", ex:"She always <b>goes the extra mile</b> at work."},
+    {w:"at the end of the day", bn:"শেষ বিচারে / মোট কথা", ex:"<b>At the end of the day</b>, health matters most."}
+  ],
+  "⬆️ Band 6 → 8 Upgrades": [
+    {w:"a lot of → a great deal of / numerous", bn:"অনেক", ex:"There are <b>numerous</b> reasons for this."},
+    {w:"good → beneficial / valuable", bn:"ভালো / উপকারী", ex:"Reading is <b>beneficial</b> for the mind."},
+    {w:"bad → detrimental / harmful", bn:"খারাপ / ক্ষতিকর", ex:"Pollution is <b>detrimental</b> to health."},
+    {w:"big → substantial / significant", bn:"বড় / উল্লেখযোগ্য", ex:"There was a <b>substantial</b> increase in sales."},
+    {w:"important → crucial / vital / essential", bn:"গুরুত্বপূর্ণ", ex:"Sleep is <b>crucial</b> for recovery."},
+    {w:"I think → I would argue / In my view", bn:"আমার মতে", ex:"<b>I would argue</b> that education is the key."},
+    {w:"nowadays → in this day and age", bn:"আজকাল", ex:"<b>In this day and age</b>, skills matter most."},
+    {w:"problem → issue / challenge / obstacle", bn:"সমস্যা", ex:"Traffic is a major <b>challenge</b> for cities."},
+    {w:"show → demonstrate / illustrate / reveal", bn:"দেখানো", ex:"The data <b>illustrates</b> a clear trend."},
+    {w:"because of → owing to / due to / as a result of", bn:"কারণে", ex:"Prices rose <b>owing to</b> higher demand."}
+  ]
+};
+
+/* ===================== RENDER ===================== */
+const root=document.getElementById('vocabRoot');
+const filterrow=document.getElementById('filterrow');
+let TOTAL=0;
+const cats=Object.keys(VOCAB);
+
+// filter pills
+const allPill=document.createElement('button');
+allPill.className='fpill active';allPill.textContent='সব';allPill.dataset.cat='all';
+allPill.onclick=()=>setCat('all',allPill);
+filterrow.appendChild(allPill);
+
+cats.forEach(cat=>{
+  const pill=document.createElement('button');
+  pill.className='fpill';pill.textContent=cat;pill.dataset.cat=cat;
+  pill.onclick=()=>setCat(cat,pill);
+  filterrow.appendChild(pill);
+
+  const sec=document.createElement('div');
+  sec.className='cat';sec.dataset.cat=cat;
+  const items=VOCAB[cat];
+  let html='<h2>'+cat+' <span class="ccount">('+items.length+')</span></h2>';
+  items.forEach((it,i)=>{
+    TOTAL++;
+    const key='voc_'+slug(cat)+'_'+i;
+    const word=it.w.replace(/<[^>]+>/g,'');
+    html+='<div class="vrow" data-key="'+key+'" data-text="'+esc((it.w+' '+it.bn+' '+it.ex).toLowerCase())+'">'+
+      '<input type="checkbox" class="vchk" data-key="'+key+'">'+
+      '<div class="vmain">'+
+        '<div class="vw">'+it.w+' <button class="say" data-w="'+esc(speakable(it.w))+'">🔊</button></div>'+
+        '<div class="vbn">'+it.bn+'</div>'+
+        '<div class="vex">'+it.ex+'</div>'+
+      '</div></div>';
+  });
+  sec.innerHTML=html;
+  root.appendChild(sec);
+});
+document.getElementById('totalCount').textContent=TOTAL;
+
+function slug(s){return s.replace(/[^a-zA-Z]/g,'').toLowerCase();}
+function esc(s){return s.replace(/"/g,'&quot;');}
+function speakable(w){ // for upgrades like "good → beneficial", speak the advanced part
+  if(w.includes('→')) return w.split('→')[1].split('/')[0].trim();
+  return w.replace(/<[^>]+>/g,'');
+}
+
+/* ===================== LEARNED TRACKING ===================== */
+function refreshLearned(){
+  let n=0;
+  document.querySelectorAll('.vchk').forEach(c=>{
+    const on=localStorage.getItem(c.dataset.key)==='1';
+    c.checked=on;
+    c.closest('.vrow').classList.toggle('learned',on);
+    if(on)n++;
+  });
+  document.getElementById('learnedCount').textContent=n;
+  document.getElementById('progbar').style.width=(TOTAL?Math.round(n/TOTAL*100):0)+'%';
+}
+document.addEventListener('change',e=>{
+  if(e.target.classList.contains('vchk')){
+    localStorage.setItem(e.target.dataset.key, e.target.checked?'1':'0');
+    refreshLearned();
+  }
+});
+function resetLearned(){
+  document.querySelectorAll('.vchk').forEach(c=>localStorage.removeItem(c.dataset.key));
+  refreshLearned();
+}
+refreshLearned();
+
+/* ===================== SPEAK ===================== */
+function speak(t){
+  if(!('speechSynthesis' in window))return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.9;
+  speechSynthesis.speak(u);
+}
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('say')){ speak(e.target.dataset.w); }
+});
+
+/* ===================== FILTER ===================== */
+let activeCat='all';
+function setCat(cat,pill){
+  activeCat=cat;
+  document.querySelectorAll('.fpill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  applyFilter();
+}
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let anyVisible=false;
+  document.querySelectorAll('.cat').forEach(sec=>{
+    const catOk = activeCat==='all' || sec.dataset.cat===activeCat;
+    let shown=0;
+    sec.querySelectorAll('.vrow').forEach(r=>{
+      const match = catOk && (!q || r.dataset.text.includes(q));
+      r.style.display=match?'':'none';
+      if(match)shown++;
+    });
+    sec.style.display=(catOk && shown>0)?'':'none';
+    if(shown>0)anyVisible=true;
+  });
+  document.getElementById('empty').style.display=anyVisible?'none':'block';
+}
+
+/* ===================== FLASHCARD ===================== */
+let flatList=[],fIdx=0;
+function buildFlat(){
+  flatList=[];
+  cats.forEach(c=>VOCAB[c].forEach(it=>flatList.push(it)));
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}}
+function startFlash(){
+  buildFlat();shuffle(flatList);fIdx=0;
+  document.getElementById('overlay').classList.add('show');
+  showFlash();
+}
+function showFlash(){
+  const it=flatList[fIdx];
+  document.getElementById('fcount').textContent=(fIdx+1)+' / '+flatList.length;
+  document.getElementById('fword').innerHTML=it.w;
+  const m=document.getElementById('fmean');
+  m.innerHTML='<div style="color:#cdd2ff;margin-bottom:8px">'+it.bn+'</div><div style="font-style:italic;color:var(--muted);font-size:.95rem">'+it.ex+'</div>';
+  m.classList.add('hidden');
+}
+function revealFlash(){document.getElementById('fmean').classList.remove('hidden');}
+function sayFlash(){speak(speakable(flatList[fIdx].w));}
+function nextFlash(){fIdx=(fIdx+1)%flatList.length;showFlash();}
+function closeFlash(){document.getElementById('overlay').classList.remove('show');speechSynthesis.cancel();}
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeFlash();});
+</script>
+</body>
+</html>
