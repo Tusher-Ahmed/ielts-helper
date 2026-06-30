@@ -8,7 +8,8 @@
 |---|---|
 | [`index.html`](index.html) | মূল গাইড — চার সেকশনের কৌশল, CD-IELTS, মডেল উত্তর, ৯০ দিনের প্ল্যান, exam countdown |
 | [`practice.html`](practice.html) | **Practice Centre** — auto-graded Reading/Listening টেস্ট (TTS অডিও সহ), Writing টাইমার+word count, ২৬টি Writing টপিক, ২৫টি cue card, predicted topics |
-| [`vocabulary.html`](vocabulary.html) | **Band 7.5+ Vocabulary** — ১১ ক্যাটাগরিতে collocation/idiom/academic phrase, 🔊 pronunciation, search, learned-tracker, flashcard |
+| [`vocabulary.html`](vocabulary.html) | **Band 7.5+ Vocabulary** — ৩০০+ শব্দ, ২৫+ ক্যাটাগরিতে collocation/idiom/academic phrase, 🔊 pronunciation, search, learned-tracker, flashcard |
+| [`cue-cards.html`](cue-cards.html) | **Cue Card Centre** — ২৫+ Part 2 cue card, প্রতি ক্যাটাগরিতে Band-8 মডেল উত্তর, ১ মিনিট প্রস্তুতি + ২ মিনিট বলার টাইমার, random picker |
 | [`speaking-module.html`](speaking-module.html) | Speaking মডিউল (Beginner → Expert) + ভয়েস রেকর্ডার, টাইমার, প্রম্পট জেনারেটর |
 | [`grammar-speaking.html`](grammar-speaking.html) | Grammar + Spoken English (Basic → Advanced → **Expert C1–C2**) + কুইজ, বাক্য বানানোর খেলা, ডেইলি প্র্যাকটিস |
 
