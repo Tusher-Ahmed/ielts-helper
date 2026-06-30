@@ -124,6 +124,10 @@
   .topicgrid li{padding:5px 0 5px 22px;position:relative;color:#d6daff}
   .topicgrid li::before{content:"▹";position:absolute;left:2px;color:var(--accent2)}
 
+  .topic{color:#e2e6ff;padding:9px 12px;margin:7px 0;border:1px solid var(--line);border-radius:9px;
+    background:var(--card2);cursor:pointer;transition:.12s}
+  .topic:hover{border-color:var(--accent);background:rgba(108,140,255,.12);transform:translateX(3px)}
+  .topic::before{content:"✍️ ";}
   .cue{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:16px;margin:10px 0}
   .cue b{color:var(--gold)}
   .cue ul{margin:8px 0 0 18px;color:#cfd4ff}
@@ -342,6 +346,52 @@
   </div>
 
   <div class="card">
+    <h3 style="color:var(--gold)">📚 ২৫+ Writing Task 2 Practice Topics</h3>
+    <p style="color:#cfd4ff">যেকোনোটায় ক্লিক করলে উপরের প্র্যাকটিস এরিয়ায় বসে যাবে — টাইমার চালু করে লেখা শুরু করো।</p>
+    <details open><summary>🌍 Environment</summary><div class="body">
+      <p class="topic">1. Some people think individuals can do little to protect the environment, and only governments and big companies can make a difference. To what extent do you agree or disagree?</p>
+      <p class="topic">2. Many believe that environmental problems are too big for individuals to solve. Others feel that nothing will change unless individuals take action. Discuss both views and give your opinion.</p>
+      <p class="topic">3. Plastic waste is harming the planet. What are the main causes, and what solutions can you suggest?</p>
+    </div></details>
+    <details><summary>💻 Technology</summary><div class="body">
+      <p class="topic">4. Some people say that the increased use of computers and smartphones harms children's development. To what extent do you agree or disagree?</p>
+      <p class="topic">5. Artificial intelligence is replacing humans in many jobs. Do the advantages of this development outweigh the disadvantages?</p>
+      <p class="topic">6. Social media has changed the way people communicate. Is this a positive or negative development?</p>
+      <p class="topic">7. Some believe technology has made people lonelier rather than more connected. To what extent do you agree?</p>
+    </div></details>
+    <details><summary>🎓 Education</summary><div class="body">
+      <p class="topic">8. Some think university education should be free for all students, while others believe students should pay. Discuss both views and give your opinion.</p>
+      <p class="topic">9. Many students now study online instead of in classrooms. Do the benefits of online learning outweigh the drawbacks?</p>
+      <p class="topic">10. Some people believe schools should teach practical skills like cooking and budgeting rather than only academic subjects. To what extent do you agree or disagree?</p>
+      <p class="topic">11. Should children learn a foreign language at primary school or at secondary school? Discuss both and give your view.</p>
+    </div></details>
+    <details><summary>💼 Work & Money</summary><div class="body">
+      <p class="topic">12. More people are working from home rather than in an office. Do the advantages outweigh the disadvantages?</p>
+      <p class="topic">13. Some people change jobs frequently, while others stay in the same job for life. What are the advantages and disadvantages of each?</p>
+      <p class="topic">14. Many young people today prefer to start their own business rather than work for a company. Why might this be? Is it a positive trend?</p>
+      <p class="topic">15. Some believe that a high salary is the most important factor when choosing a job. To what extent do you agree or disagree?</p>
+    </div></details>
+    <details><summary>🏙️ Society & City</summary><div class="body">
+      <p class="topic">16. Traffic congestion is a serious problem in many cities. What are the causes, and what measures can be taken to solve it?</p>
+      <p class="topic">17. In many countries, people are moving from rural areas to cities. Why is this happening, and what problems does it cause?</p>
+      <p class="topic">18. Some people believe living in a city is better than living in the countryside. Discuss both views and give your own opinion.</p>
+      <p class="topic">19. Many countries are facing an ageing population. What problems does this cause, and what solutions can you suggest?</p>
+    </div></details>
+    <details><summary>🏥 Health & Lifestyle</summary><div class="body">
+      <p class="topic">20. Fast food is becoming more popular worldwide. Why is this the case, and what effects does it have on health and society?</p>
+      <p class="topic">21. Some people think governments should make laws to encourage a healthy lifestyle, while others believe it is an individual's choice. Discuss both views.</p>
+      <p class="topic">22. Many people do not get enough physical exercise. What are the causes, and how can people be encouraged to be more active?</p>
+    </div></details>
+    <details><summary>📱 Media, Crime & Culture</summary><div class="body">
+      <p class="topic">23. Some people think the news media has too much influence on people's lives. To what extent do you agree or disagree?</p>
+      <p class="topic">24. Some believe that prison is the best way to reduce crime, while others think education is more effective. Discuss both views and give your opinion.</p>
+      <p class="topic">25. Globalisation has made the world's cultures more similar. Is this a positive or negative development?</p>
+      <p class="topic">26. Some people prefer to spend their money on travel and experiences, while others prefer to save it. Discuss both views and give your own opinion.</p>
+    </div></details>
+    <div class="note good">✅ লক্ষ্য: এই ২৬টা টপিকের মধ্যে অন্তত ১০টায় পূর্ণ essay লেখো (৪০ মিনিট টাইমার মেনে) — পরীক্ষার আগে এটাই সবচেয়ে বড় প্রস্তুতি।</div>
+  </div>
+
+  <div class="card">
     <h3 style="color:var(--gold)">📊 Predicted Task 1 (Academic) ধরন</h3>
     <span class="pill">Line graph (trend over time)</span><span class="pill">Bar chart (comparison)</span>
     <span class="pill">Pie chart (proportion)</span><span class="pill">Table (data)</span>
@@ -552,16 +602,22 @@ function countWords(){
   el.textContent=n;
   el.style.color = n>=250?'var(--green)':'var(--gold)';
 }
-const PROMPTS=[
-  "Some people believe technology has made our lives more complicated, while others think it has made life easier. Discuss both views and give your own opinion.",
-  "Many people work from home nowadays. Do the advantages of this outweigh the disadvantages?",
-  "Some think governments should spend money on public services rather than the arts. To what extent do you agree or disagree?",
-  "Traffic congestion is becoming a serious problem in many cities. What are the causes, and what measures can solve it?",
-  "Social media is used by people every day. Why is it so popular, and is it a positive or negative development?",
-  "Some believe children should start school at an early age, while others disagree. Discuss both views and give your opinion."
-];
-let pi=0;
-function newPrompt(){pi=(pi+1)%PROMPTS.length;document.getElementById('wPrompt').innerHTML='<b>প্রশ্ন:</b> '+PROMPTS[pi];}
+function cleanTopic(t){return t.replace(/^\s*✍️\s*/,'').replace(/^\d+\.\s*/,'').trim();}
+const TOPICS=[...document.querySelectorAll('.topic')].map(el=>cleanTopic(el.textContent));
+let pi=-1;
+function loadTopic(text){
+  document.getElementById('wPrompt').innerHTML='<b>প্রশ্ন:</b> '+text;
+  document.getElementById('essay').focus();
+  document.getElementById('wPrompt').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function newPrompt(){
+  if(!TOPICS.length)return;
+  pi=(pi+1)%TOPICS.length;
+  document.getElementById('wPrompt').innerHTML='<b>প্রশ্ন:</b> '+TOPICS[pi];
+}
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('topic')){ loadTopic(cleanTopic(e.target.textContent)); }
+});
 
 /* ===== TIMER ===== */
 let tSec=40*60,tInt=null;
