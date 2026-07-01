@@ -1257,6 +1257,420 @@ const MOCKS=[
   task1:"The bar chart below shows the percentage of newly sold cars that were electric in four countries in 2015 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people think that advertising encourages people to buy things they do not really need. To what extent do you agree or disagree? Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 10 ===================== */
+{
+ name:'Mock 10',
+ blurb:'Homestay · Recycling scheme · Internet history + English language · Whales · Fast fashion',
+ listen:[
+  {title:'Student homestay accommodation',
+   transcript:"Hello, I'm calling about arranging homestay accommodation for an international student. Of course. The standard package includes a private room and two meals a day, breakfast and dinner. The cost is one hundred and forty pounds per week. The student would have their own room, but the bathroom is usually shared. Most of our host families live within thirty minutes of the college by bus. We ask students to give two weeks' notice if they wish to leave. There is also a one-time placement fee of sixty pounds. Wifi is included in all our homes. The placement can begin from the second of September.",
+   Q:[
+    {t:'text',a:'two|2',q:'The package includes a private room and ______ meals a day.'},
+    {t:'text',a:'dinner',q:'Meals provided: breakfast and ______.'},
+    {t:'text',a:'140|one hundred and forty',q:'Cost: £______ per week.'},
+    {t:'text',a:'bathroom',q:'The ______ is usually shared.'},
+    {t:'text',a:'thirty|30',q:'Families live within ______ minutes of the college.'},
+    {t:'text',a:'bus',q:'Travel to college is by ______.'},
+    {t:'text',a:'two|2',q:"Students must give ______ weeks' notice to leave."},
+    {t:'text',a:'sixty|60',q:'One-time placement fee: £______.'},
+    {t:'text',a:'wifi|wi-fi|internet',q:'______ is included in all homes.'},
+    {t:'choice',a:'B',q:'The placement can begin from:',opts:['A) 2 August','B) 2 September','C) 2 October','D) today']}
+   ]},
+  {title:'Radio: new recycling scheme',
+   transcript:"And now, some news about changes to our local recycling scheme. From the first of March, households will be given three new bins. The green bin is for garden waste, the blue bin is for paper and cardboard, and the brown bin is for food waste. General rubbish will still go in the usual black bin. Recycling will be collected every Tuesday, and general rubbish every Friday. Residents are reminded to rinse containers before recycling them. Those who need extra bins can request them free of charge from the council website. The council hopes the new scheme will double the amount of waste that is recycled.",
+   Q:[
+    {t:'text',a:'first|1st|1',q:'The new scheme begins on the ______ of March.'},
+    {t:'text',a:'three|3',q:'Households will get ______ new bins.'},
+    {t:'text',a:'garden',q:'The green bin is for ______ waste.'},
+    {t:'text',a:'cardboard',q:'The blue bin is for paper and ______.'},
+    {t:'text',a:'food',q:'The brown bin is for ______ waste.'},
+    {t:'text',a:'bin',q:'General rubbish goes in the black ______.'},
+    {t:'text',a:'tuesday',q:'Recycling is collected every ______.'},
+    {t:'text',a:'rinse',q:'Residents should ______ containers before recycling.'},
+    {t:'text',a:'website',q:'Extra bins can be requested from the council ______.'},
+    {t:'choice',a:'B',q:'The council hopes the scheme will:',opts:['A) reduce costs','B) double recycling','C) cut collections','D) ban plastic']}
+   ]},
+  {title:'Geography project on a river',
+   transcript:"So, our geography project is on the local river. What should we investigate? I think we should look at water quality along its length. How will we measure it? We can test the water at different points for pollution. How many points? Let's take samples at five locations, from the source to the sea. And what causes the pollution? Mainly farm chemicals and waste from the factory upstream. We should include a map showing the sample points. How will we present the data? Graphs would show the changes clearly. When do we hand it in? The report is due on the tenth of December. Let's do the fieldwork this Saturday.",
+   Q:[
+    {t:'text',a:'river',q:'The project is on the local ______.'},
+    {t:'text',a:'quality',q:'They will investigate water ______.'},
+    {t:'text',a:'pollution',q:'They will test the water for ______.'},
+    {t:'text',a:'five|5',q:'They will take samples at ______ locations.'},
+    {t:'text',a:'waste',q:'Pollution comes from farm chemicals and factory ______.'},
+    {t:'text',a:'map',q:'They will include a ______ showing the sample points.'},
+    {t:'text',a:'graphs|graph',q:'They will present the data using ______.'},
+    {t:'text',a:'tenth|10th|10',q:'The report is due on the ______ of December.'},
+    {t:'text',a:'saturday',q:'They will do the fieldwork this ______.'},
+    {t:'choice',a:'A',q:'Samples will be taken from:',opts:['A) the source to the sea','B) one point','C) the factory only','D) the farm']}
+   ]},
+  {title:'Lecture: the history of the internet',
+   transcript:"Today we will look at the history of the internet. The internet has its origins in the 1960s, when researchers in the United States developed a way to connect computers so they could share information, originally for military and academic purposes. A major breakthrough came in 1969, when the first message was sent between two computers. However, the internet as we know it only began to take shape in 1989, when a British scientist, Tim Berners-Lee, invented the World Wide Web, making information easy to access through web pages and links. Throughout the 1990s, the internet spread rapidly into homes and businesses. The arrival of smartphones then made it possible to be online anywhere, at any time.",
+   Q:[
+    {t:'text',a:'1960s|sixties',q:'The internet has its origins in the ______.'},
+    {t:'text',a:'academic',q:'It was originally developed for military and ______ purposes.'},
+    {t:'text',a:'message',q:'In 1969, the first ______ was sent between two computers.'},
+    {t:'text',a:'1989',q:'The World Wide Web was invented in ______.'},
+    {t:'text',a:'lee',q:'The Web was invented by Tim Berners-______.'},
+    {t:'text',a:'pages|page',q:'The Web made information easy to access through web ______.'},
+    {t:'text',a:'businesses|business',q:'In the 1990s, the internet spread into homes and ______.'},
+    {t:'text',a:'smartphones|smartphone',q:'______ made it possible to be online anywhere.'},
+    {t:'choice',a:'B',q:'The World Wide Web was invented by a scientist from:',opts:['A) the US','B) Britain','C) Japan','D) Germany']},
+    {t:'choice',a:'B',q:'The first message between computers was sent in:',opts:['A) 1960','B) 1969','C) 1989','D) 1990']}
+   ]}
+ ],
+ read:[
+  {title:'The History of the English Language',
+   paras:[
+    "English, spoken by around 1.5 billion people worldwide, is often described as a global language. Yet its origins are surprisingly humble, and its history is one of constant change and borrowing from other tongues.",
+    "English began as the language of Germanic tribes, the Angles, Saxons, and Jutes, who settled in Britain in the fifth century. Their language, now called Old English, would be almost unrecognisable to a modern speaker. It was heavily influenced by the languages of later invaders, including the Vikings, who added many everyday words.",
+    "A turning point came in 1066, when the Normans, from what is now France, conquered England. For centuries afterwards, French was the language of the ruling class, while ordinary people continued to speak English. As a result, thousands of French words entered the language, which is why English often has two words with similar meanings.",
+    "Over time, English continued to absorb words from Latin, Greek, and, as trade and empire expanded, from languages all around the world. This willingness to borrow is one reason English has such an enormous vocabulary. Today, English keeps changing, adding new words for new technologies and ideas."
+   ],
+   Q:[
+    {t:'text',a:'1.5',q:'English is spoken by around ______ billion people.'},
+    {t:'text',a:'germanic',q:'English began as the language of ______ tribes.'},
+    {t:'text',a:'old',q:'The early form of English is called ______ English.'},
+    {t:'text',a:'vikings|viking',q:'The ______ added many everyday words.'},
+    {t:'text',a:'1066',q:'England was conquered by the Normans in ______.'},
+    {t:'text',a:'france',q:'The Normans came from what is now ______.'},
+    {t:'text',a:'french',q:'For centuries, ______ was the language of the ruling class.'},
+    {t:'text',a:'english',q:'Ordinary people continued to speak ______.'},
+    {t:'choice',a:'B',q:'English often has two words with similar meanings because of borrowing from:',opts:['A) Latin only','B) French','C) Chinese','D) Arabic']},
+    {t:'text',a:'greek',q:'English also absorbed words from Latin and ______.'},
+    {t:'text',a:'enormous|large|huge',q:'English has a very ______ vocabulary.'},
+    {t:'choice',a:'FALSE',q:'English no longer changes today.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'global',q:'English is often described as a ______ language.'}
+   ]},
+  {title:'The Great Migration of Whales',
+   paras:[
+    "Each year, some of the largest animals ever to have lived undertake one of nature's most extraordinary journeys. Many species of whale migrate vast distances between cold feeding grounds and warm breeding grounds, in some cases travelling over ten thousand kilometres in a single year.",
+    "The reason for these journeys lies in the whales' need for two different environments. In summer, whales feed in cold polar waters, which are rich in the tiny organisms they eat. Having built up thick layers of fat, they then travel towards the equator to give birth in warmer seas, where their newborn calves, which lack insulating fat, are more likely to survive.",
+    "How whales navigate across thousands of kilometres of featureless ocean remains something of a mystery. Scientists believe they may use a combination of methods, including the Earth's magnetic field, the position of the sun, and even the shape of the coastline and the sea floor.",
+    "Sadly, whales face many dangers on their long journeys. In the past, hunting brought several species close to extinction. Although commercial whaling is now largely banned, whales are still threatened by collisions with ships, entanglement in fishing nets, and increasing noise pollution in the oceans, which can interfere with the sounds they use to communicate."
+   ],
+   Q:[
+    {t:'text',a:'ten thousand|10000|10,000',q:'Some whales travel over ______ kilometres a year.'},
+    {t:'text',a:'polar',q:'Whales feed in cold ______ waters in summer.'},
+    {t:'text',a:'organisms|organism',q:'Cold waters are rich in tiny ______ that whales eat.'},
+    {t:'text',a:'equator',q:'Whales travel towards the ______ to give birth.'},
+    {t:'text',a:'fat',q:'Newborn calves lack insulating ______.'},
+    {t:'text',a:'survive',q:'Calves are more likely to ______ in warmer seas.'},
+    {t:'text',a:'magnetic',q:"Whales may navigate using the Earth's ______ field."},
+    {t:'choice',a:'C',q:'Which is NOT mentioned as a navigation method?',opts:['A) the sun','B) the coastline','C) the stars','D) the sea floor']},
+    {t:'text',a:'hunting|whaling',q:'In the past, ______ brought several species close to extinction.'},
+    {t:'text',a:'banned|ban',q:'Commercial whaling is now largely ______.'},
+    {t:'text',a:'ships|ship',q:'Whales can be harmed by collisions with ______.'},
+    {t:'text',a:'nets|net',q:'Whales can get entangled in fishing ______.'},
+    {t:'text',a:'communicate',q:'Noise pollution can interfere with the sounds whales use to ______.'}
+   ]},
+  {title:'The True Cost of Fast Fashion',
+   paras:[
+    "In recent decades, the way we buy clothes has changed dramatically. 'Fast fashion', a business model based on producing cheap, trendy clothing very quickly, has made fashionable garments more affordable than ever. Major retailers now release new collections almost every week, encouraging shoppers to buy more and more.",
+    "While cheap clothing may seem appealing, fast fashion carries a heavy hidden cost. The industry is one of the world's largest polluters. Producing clothes uses enormous amounts of water; a single cotton t-shirt can require around 2,700 litres. Textile factories also release chemicals into rivers, and the huge quantities of clothing thrown away each year end up in landfill, where synthetic fabrics can take decades to break down.",
+    "There are human costs too. To keep prices low, many clothes are made in factories where workers, often in developing countries, endure long hours and poor conditions for very little pay.",
+    "Growing awareness of these problems has led to calls for a more sustainable approach. Some consumers are choosing to buy fewer, higher-quality items, to repair clothes rather than replace them, or to buy second-hand. Meanwhile, some companies are experimenting with recycling old garments into new ones."
+   ],
+   Q:[
+    {t:'text',a:'quickly|fast',q:'Fast fashion produces cheap, trendy clothing very ______.'},
+    {t:'text',a:'week',q:'Retailers now release new collections almost every ______.'},
+    {t:'text',a:'polluters|polluter',q:"The fashion industry is one of the world's largest ______."},
+    {t:'text',a:'2700|2,700',q:'A single cotton t-shirt can require around ______ litres of water.'},
+    {t:'text',a:'chemicals|chemical',q:'Textile factories release ______ into rivers.'},
+    {t:'text',a:'landfill|landfills',q:'Discarded clothing ends up in ______.'},
+    {t:'text',a:'decades|decade',q:'Synthetic fabrics can take ______ to break down.'},
+    {t:'choice',a:'B',q:'Clothes are often made in factories with:',opts:['A) high pay','B) poor conditions','C) short hours','D) few workers']},
+    {t:'text',a:'developing',q:'Factory workers are often in ______ countries.'},
+    {t:'text',a:'quality',q:'Some consumers buy fewer, higher-______ items.'},
+    {t:'text',a:'repair',q:'Some choose to ______ clothes rather than replace them.'},
+    {t:'text',a:'recycling|recycle',q:'Some companies are ______ old garments into new ones.'},
+    {t:'choice',a:'TRUE',q:'Fast fashion has made clothes cheaper.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'C',q:'The writer believes a shift away from throwaway fashion is:',opts:['A) impossible','B) unnecessary','C) necessary and under way','D) harmful']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 560 320' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>Mobile vs landline subscriptions (millions), 2000–2020</text><line x1='60' y1='30' x2='60' y2='250' stroke='#333'/><line x1='60' y1='250' x2='510' y2='250' stroke='#333'/><g font-size='10' fill='#555'><text x='52' y='253' text-anchor='end'>0</text><text x='52' y='198' text-anchor='end'>20</text><text x='52' y='143' text-anchor='end'>40</text><text x='52' y='88' text-anchor='end'>60</text><text x='52' y='33' text-anchor='end'>80</text><line x1='60' y1='195' x2='500' y2='195' stroke='#eee'/><line x1='60' y1='140' x2='500' y2='140' stroke='#eee'/><line x1='60' y1='85' x2='500' y2='85' stroke='#eee'/><text x='60' y='265' text-anchor='middle'>2000</text><text x='170' y='265' text-anchor='middle'>2005</text><text x='280' y='265' text-anchor='middle'>2010</text><text x='390' y='265' text-anchor='middle'>2015</text><text x='500' y='265' text-anchor='middle'>2020</text></g><polyline fill='none' stroke='#1a73e8' stroke-width='2.5' points='60,223 170,168 280,99 390,58 500,36'/><polyline fill='none' stroke='#e0a800' stroke-width='2.5' points='60,140 170,135 280,154 390,181 500,209'/><g font-size='11'><rect x='185' y='288' width='16' height='4' fill='#1a73e8'/><text x='207' y='293'>Mobile</text><rect x='285' y='288' width='16' height='4' fill='#e0a800'/><text x='307' y='293'>Landline</text></g></svg>",
+  task1:"The line graph below shows the number of mobile phone and landline telephone subscriptions (in millions) in a country between 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"In many countries, the amount of waste people produce is increasing. Why is this happening, and what measures can be taken to reduce it? Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 11 ===================== */
+{
+ name:'Mock 11',
+ blurb:'Photography class · Art gallery · Architecture + Roman engineering · Happiness · Plastic',
+ listen:[
+  {title:'Evening photography course',
+   transcript:"Thank you for your interest in our evening photography course. The beginners' course runs for six weeks, meeting every Thursday evening from six thirty to eight thirty. The fee is one hundred and ten pounds. You will need to bring your own camera, although a smartphone is acceptable for beginners. The classes are held in Studio 3 at the community arts centre. There is a practical photo walk in week four. At the end of the course, students' work is displayed in a small exhibition. Class sizes are limited to ten people. To secure your place, a deposit of thirty pounds is required, and the next course starts on the seventh of October.",
+   Q:[
+    {t:'text',a:'six|6',q:'The course runs for ______ weeks.'},
+    {t:'text',a:'thursday',q:'Classes meet every ______ evening.'},
+    {t:'text',a:'eight thirty|8:30|8.30|830',q:'Classes run from six thirty to ______.'},
+    {t:'text',a:'110|one hundred and ten',q:'The fee is £______.'},
+    {t:'text',a:'camera',q:'Students must bring their own ______.'},
+    {t:'text',a:'three|3',q:'Classes are held in Studio ______.'},
+    {t:'text',a:'walk',q:'There is a practical photo ______ in week four.'},
+    {t:'text',a:'exhibition',q:"Students' work is displayed in an ______."},
+    {t:'text',a:'ten|10',q:'Class size is limited to ______ people.'},
+    {t:'choice',a:'B',q:'To secure a place you must pay:',opts:['A) the full fee','B) a deposit','C) nothing','D) for a camera']}
+   ]},
+  {title:'Art gallery exhibition tour',
+   transcript:"Welcome to the City Art Gallery and to our special exhibition on Impressionism. The exhibition brings together more than eighty paintings, many on loan from museums abroad. We'll begin in the first room, which introduces the movement and its origins in nineteenth-century France. Please do not use flash photography, as it can damage the artwork. Audio guides are available at the desk for three pounds. The exhibition shop, selling prints and postcards, is by the exit. The exhibition closes at five thirty, and the last entry is at half past four. There is also a cafe on the lower floor.",
+   Q:[
+    {t:'text',a:'impressionism',q:'The exhibition is about ______.'},
+    {t:'text',a:'eighty|80',q:'It brings together more than ______ paintings.'},
+    {t:'text',a:'loan',q:'Many paintings are on ______ from museums abroad.'},
+    {t:'text',a:'france',q:'The movement began in nineteenth-century ______.'},
+    {t:'text',a:'flash',q:'Visitors must not use ______ photography.'},
+    {t:'text',a:'three|3',q:'Audio guides cost £______.'},
+    {t:'text',a:'postcards|postcard',q:'The shop sells prints and ______.'},
+    {t:'text',a:'five thirty|5:30|5.30|530',q:'The exhibition closes at ______.'},
+    {t:'text',a:'half past four|4:30|4.30|430',q:'Last entry is at ______.'},
+    {t:'choice',a:'B',q:'The cafe is located:',opts:['A) by the entrance','B) on the lower floor','C) next to the shop','D) outside']}
+   ]},
+  {title:'Tutorial: a tourism dissertation',
+   transcript:"You wanted to discuss your tourism dissertation? Yes, I want to study the impact of tourism on a small coastal town. What's your main question? Whether tourism has helped or harmed the local community. How will you gather information? I'll interview local business owners and residents. Try to get a balanced range of views. And any statistics? Yes, I'll use visitor numbers from the tourist office. How many people will you interview? I'm planning on twenty. Remember to get their consent. How long should it be? Around twelve thousand words. And the deadline? The final draft is due in June, but send me a plan by the end of April.",
+   Q:[
+    {t:'text',a:'tourism',q:'The dissertation is about the impact of ______.'},
+    {t:'text',a:'coastal',q:'The study focuses on a small ______ town.'},
+    {t:'text',a:'harmed|harm',q:'The main question is whether tourism has helped or ______ the community.'},
+    {t:'text',a:'residents|resident',q:'She will interview local business owners and ______.'},
+    {t:'text',a:'office',q:'She will use visitor numbers from the tourist ______.'},
+    {t:'text',a:'twenty|20',q:'She plans to interview ______ people.'},
+    {t:'text',a:'consent',q:"She must get the participants' ______."},
+    {t:'text',a:'twelve|12',q:'Length: around ______ thousand words.'},
+    {t:'text',a:'april',q:'A plan is due by the end of ______.'},
+    {t:'choice',a:'B',q:'The tutor advises her to get:',opts:['A) more statistics','B) a balanced range of views','C) fewer interviews','D) a shorter topic']}
+   ]},
+  {title:'Lecture: architecture through history',
+   transcript:"Today's lecture is about how architecture reflects the societies that create it. Throughout history, the grandest buildings have often been those devoted to religion or power. The ancient Egyptians built enormous pyramids as tombs, while the Greeks constructed elegant temples supported by columns. The Romans were brilliant engineers, famous for inventing the arch, which allowed them to build strong bridges and vast structures like the Colosseum. In the Middle Ages, European builders created soaring cathedrals with pointed arches and huge stained-glass windows. Much later, the invention of steel and the lift made it possible to build upwards, giving rise to the modern skyscraper. Today, architects increasingly focus on sustainability, designing energy-efficient buildings.",
+   Q:[
+    {t:'text',a:'power',q:'The grandest buildings were often devoted to religion or ______.'},
+    {t:'text',a:'tombs|tomb',q:'The Egyptians built pyramids as ______.'},
+    {t:'text',a:'columns|column',q:'The Greeks built temples supported by ______.'},
+    {t:'text',a:'arch',q:'The Romans are famous for inventing the ______.'},
+    {t:'text',a:'colosseum',q:'The Romans built vast structures like the ______.'},
+    {t:'text',a:'glass',q:'Medieval cathedrals had pointed arches and stained-______ windows.'},
+    {t:'text',a:'lift|elevator',q:'Steel and the ______ made it possible to build upwards.'},
+    {t:'text',a:'sustainability',q:'Modern architects increasingly focus on ______.'},
+    {t:'choice',a:'B',q:'The arch allowed the Romans to build strong:',opts:['A) tombs','B) bridges','C) columns','D) windows']},
+    {t:'choice',a:'B',q:'Sustainable buildings are designed to use:',opts:['A) more power','B) less power','C) more steel','D) no windows']}
+   ]}
+ ],
+ read:[
+  {title:'The Engineering of Ancient Rome',
+   paras:[
+    "The ancient Romans were among the greatest engineers in history. While other civilisations produced impressive art and monuments, the Romans excelled at building practical structures on a massive scale, many of which still stand two thousand years later.",
+    "Perhaps their most important contribution was the development of the arch. Although the arch had been used before, the Romans perfected it, using it to build bridges and aqueducts strong enough to bear enormous weight. Aqueducts, which carried fresh water into cities across great distances using only the force of gravity, supplied public baths, fountains, and homes.",
+    "The Romans were also famous for their roads. Built to allow armies to move quickly across the empire, these roads were so well constructed, with layers of stone and a cambered surface to drain rainwater, that some are still in use today. It was said that 'all roads lead to Rome', reflecting how the network connected the entire empire to its capital.",
+    "Another key innovation was concrete. Roman concrete was extraordinarily durable, and structures built with it, such as the vast dome of the Pantheon, have survived for centuries. Modern scientists are still studying why Roman concrete has lasted so much longer than many modern equivalents."
+   ],
+   Q:[
+    {t:'text',a:'two thousand|2000|2,000',q:'Many Roman structures still stand after ______ years.'},
+    {t:'text',a:'arch',q:'The Romans perfected the ______.'},
+    {t:'text',a:'water',q:'Aqueducts carried fresh ______ into cities.'},
+    {t:'text',a:'gravity',q:'Aqueducts moved water using only the force of ______.'},
+    {t:'text',a:'homes|home',q:'Aqueducts supplied public baths, fountains and ______.'},
+    {t:'text',a:'armies|army',q:'Roman roads were built to allow ______ to move quickly.'},
+    {t:'text',a:'rainwater|water|rain',q:'Roads had a cambered surface to drain ______.'},
+    {t:'choice',a:'B',q:"What does 'all roads lead to Rome' reflect?",opts:['A) roads were short','B) the network connected the empire to its capital','C) Rome had no roads','D) roads were straight']},
+    {t:'text',a:'concrete',q:'Another key innovation was ______.'},
+    {t:'text',a:'durable',q:'Roman concrete was extraordinarily ______.'},
+    {t:'text',a:'pantheon',q:'The ______ has a vast dome built with Roman concrete.'},
+    {t:'text',a:'long',q:'Scientists still study why Roman concrete has lasted so ______.'},
+    {t:'choice',a:'TRUE',q:'Roman engineering influenced builders for thousands of years.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Science of Happiness',
+   paras:[
+    "What makes people happy? For most of history, this was a question for philosophers, but in recent decades it has become a subject of serious scientific study. Researchers in the field of 'positive psychology' have used surveys and experiments to investigate the factors that contribute to a happy life.",
+    "One of the clearest findings is that, beyond a certain point, money does not buy happiness. While having enough to meet basic needs is important, once people are comfortable, further increases in income make surprisingly little difference to their wellbeing. Far more important, research suggests, are strong personal relationships. People with close friends and supportive families tend to be significantly happier than those who are wealthy but isolated.",
+    "Other factors also play a role. Regular physical exercise, spending time in nature, and helping others have all been shown to boost happiness. Interestingly, the simple act of expressing gratitude appears to have a measurable positive effect.",
+    "Perhaps most encouraging is the discovery that happiness is not fixed. Although our genes and circumstances play a part, a significant portion of our happiness is within our control, influenced by our habits and attitudes. This suggests that people can learn to be happier."
+   ],
+   Q:[
+    {t:'text',a:'positive',q:'The scientific study of happiness is part of ______ psychology.'},
+    {t:'text',a:'money',q:'Beyond a certain point, ______ does not buy happiness.'},
+    {t:'text',a:'needs|need',q:'Having enough to meet basic ______ is important.'},
+    {t:'text',a:'relationships|relationship',q:'Far more important are strong personal ______.'},
+    {t:'text',a:'isolated',q:'People who are wealthy but ______ tend to be less happy.'},
+    {t:'text',a:'exercise',q:'Regular physical ______ boosts happiness.'},
+    {t:'text',a:'nature',q:'Spending time in ______ boosts happiness.'},
+    {t:'text',a:'others',q:'Helping ______ boosts happiness.'},
+    {t:'text',a:'gratitude',q:'Expressing ______ has a positive effect.'},
+    {t:'choice',a:'B',q:"Which has a 'measurable positive effect'?",opts:['A) earning more','B) expressing gratitude','C) being alone','D) working more']},
+    {t:'choice',a:'FALSE',q:'Happiness is completely fixed.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'control',q:'A significant portion of happiness is within our ______.'},
+    {t:'choice',a:'B',q:'The most encouraging finding is that people can:',opts:['A) become rich','B) learn to be happier','C) live longer','D) avoid stress']}
+   ]},
+  {title:'The Problem with Plastic',
+   paras:[
+    "Plastic is one of the most useful materials ever invented. Cheap, lightweight, strong, and waterproof, it is found in almost every part of modern life, from packaging and clothing to medical equipment. Yet the very qualities that make plastic so useful have also created one of the greatest environmental problems of our age.",
+    "The core of the problem is that most plastic does not break down naturally. A plastic bottle discarded today may still exist in hundreds of years. Because so much plastic is used only once and then thrown away, enormous quantities accumulate in the environment. Much of it ends up in the oceans, where it harms marine life; animals may become entangled in it or mistake it for food.",
+    "Even more worrying is the discovery of 'microplastics', tiny fragments formed as larger pieces break apart. These have now been found almost everywhere, from the deepest oceans to the food we eat and the water we drink, though the long-term effects on human health are still not fully understood.",
+    "Solving the problem will require action on many fronts. Individuals can reduce their use of single-use plastics, while governments can ban unnecessary items and improve recycling. Scientists, meanwhile, are developing new materials that break down harmlessly."
+   ],
+   Q:[
+    {t:'text',a:'waterproof',q:'Plastic is cheap, lightweight, strong and ______.'},
+    {t:'text',a:'break down|breakdown|decompose|degrade',q:'Most plastic does not ______ naturally.'},
+    {t:'text',a:'years|year',q:'A plastic bottle may still exist in hundreds of ______.'},
+    {t:'text',a:'once',q:'Much plastic is used only ______ and thrown away.'},
+    {t:'text',a:'oceans|ocean',q:'Much plastic ends up in the ______.'},
+    {t:'text',a:'food',q:'Animals may mistake plastic for ______.'},
+    {t:'text',a:'microplastics|microplastic',q:'Tiny fragments of plastic are called ______.'},
+    {t:'text',a:'water',q:'Microplastics have been found in the food we eat and the ______ we drink.'},
+    {t:'choice',a:'B',q:'The long-term effects of microplastics on human health are:',opts:['A) fully understood','B) not fully understood','C) harmless','D) beneficial']},
+    {t:'text',a:'single-use|single use',q:'Individuals can reduce their use of ______ plastics.'},
+    {t:'text',a:'recycling|recycle',q:'Governments can ban unnecessary items and improve ______.'},
+    {t:'text',a:'materials|material',q:'Scientists are developing new ______ that break down harmlessly.'},
+    {t:'text',a:'medical',q:'Plastic is found in packaging, clothing and ______ equipment.'},
+    {t:'choice',a:'B',q:"The writer's overall tone about solving the problem is:",opts:['A) hopeless','B) hopeful','C) uninterested','D) angry']}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Visitors to three attractions (thousands)</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Year</th><th style='border:1px solid #999;padding:5px 10px'>Castle</th><th style='border:1px solid #999;padding:5px 10px'>Museum</th><th style='border:1px solid #999;padding:5px 10px'>Zoo</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>2017</td><td style='border:1px solid #999;padding:5px 10px'>120</td><td style='border:1px solid #999;padding:5px 10px'>200</td><td style='border:1px solid #999;padding:5px 10px'>90</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>2018</td><td style='border:1px solid #999;padding:5px 10px'>135</td><td style='border:1px solid #999;padding:5px 10px'>210</td><td style='border:1px solid #999;padding:5px 10px'>100</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>2019</td><td style='border:1px solid #999;padding:5px 10px'>150</td><td style='border:1px solid #999;padding:5px 10px'>205</td><td style='border:1px solid #999;padding:5px 10px'>115</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>2020</td><td style='border:1px solid #999;padding:5px 10px'>90</td><td style='border:1px solid #999;padding:5px 10px'>110</td><td style='border:1px solid #999;padding:5px 10px'>70</td></tr></table>",
+  task1:"The table below shows the number of visitors (in thousands) to three tourist attractions in a city between 2017 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that tourism brings great benefits to a country, while others think it can cause harm to local communities and the environment. Discuss both views and give your own opinion. Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 12 ===================== */
+{
+ name:'Mock 12',
+ blurb:'Car hire · Botanical garden · Flight history + Flight · Trees · Reading',
+ listen:[
+  {title:'City Car Hire booking',
+   transcript:"Good afternoon, City Car Hire. I'd like to rent a car for the weekend. What size of car would you like? A small economy car, please. That's forty pounds a day, so eighty pounds for two days. Does that include insurance? Basic insurance is included, but full cover is an extra ten pounds a day. You'll need a valid driving licence and a credit card. The car comes with a full tank of fuel, and we ask that you return it full; there's a charge if it's returned with less. Can I collect it tomorrow? Yes, our office opens at eight in the morning. Please note the car must be returned by six in the evening on Sunday, or a late fee applies.",
+   Q:[
+    {t:'text',a:'economy',q:'The customer wants a small ______ car.'},
+    {t:'text',a:'forty|40',q:'Cost: £______ a day.'},
+    {t:'text',a:'eighty|80',q:'Total for two days: £______.'},
+    {t:'text',a:'insurance',q:'Basic ______ is included.'},
+    {t:'text',a:'ten|10',q:'Full cover costs an extra £______ a day.'},
+    {t:'text',a:'credit',q:'You need a valid driving licence and a ______ card.'},
+    {t:'text',a:'fuel|petrol',q:'The car comes with a full tank of ______.'},
+    {t:'text',a:'eight|8',q:'The office opens at ______ in the morning.'},
+    {t:'text',a:'six|6|6pm',q:'The car must be returned by ______ on Sunday.'},
+    {t:'choice',a:'B',q:'If the car is returned with less fuel, there is a:',opts:['A) discount','B) charge','C) free refill','D) warning']}
+   ]},
+  {title:'Botanical garden guided walk',
+   transcript:"Welcome to the Riverside Botanical Gardens. Our guided walk today will last about ninety minutes. We'll start at the tropical glasshouse, home to plants from rainforests around the world, including some rare orchids. From there, we'll visit the rose garden, which is at its best in June. One of our most popular features is the giant redwood tree, planted over a hundred years ago. Please stay on the paths to protect the plants, and note that picnics are only allowed in the designated area near the lake. The gardens are entirely run by volunteers. Guidebooks are available in the shop for four pounds. The cafe closes at four thirty.",
+   Q:[
+    {t:'text',a:'ninety|90',q:'The guided walk lasts about ______ minutes.'},
+    {t:'text',a:'glasshouse|glass house',q:'The walk starts at the tropical ______.'},
+    {t:'text',a:'orchids|orchid',q:'The glasshouse has some rare ______.'},
+    {t:'text',a:'june',q:'The rose garden is at its best in ______.'},
+    {t:'text',a:'redwood',q:'The giant ______ tree was planted over a hundred years ago.'},
+    {t:'text',a:'paths|path',q:'Visitors must stay on the ______.'},
+    {t:'text',a:'lake',q:'Picnics are only allowed near the ______.'},
+    {t:'text',a:'volunteers|volunteer',q:'The gardens are run entirely by ______.'},
+    {t:'text',a:'four|4',q:'Guidebooks cost £______.'},
+    {t:'choice',a:'B',q:'The cafe closes at:',opts:['A) 4:00','B) 4:30','C) 5:00','D) 6:00']}
+   ]},
+  {title:'Group project: reducing food waste',
+   transcript:"For our project, we need a plan to reduce food waste in the college canteen. Where should we start? Let's find out how much food is currently wasted. How? We could weigh the leftover food for a week. What are the main causes? I think portions are too large, and students take more than they eat. So what's our solution? We could offer smaller and larger portion sizes. And use the leftover food? Yes, we could donate it to a local charity. We should also put up posters to raise awareness. When do we present? On the fifteenth of May. I'll contact the charity, you design the posters. And we'll present the weight data as a graph.",
+   Q:[
+    {t:'text',a:'waste',q:'The project aims to reduce food ______ in the canteen.'},
+    {t:'text',a:'weigh',q:'They will ______ the leftover food for a week.'},
+    {t:'text',a:'portions|portion',q:'A main cause is that ______ are too large.'},
+    {t:'text',a:'sizes|size',q:'Their solution is to offer smaller and larger portion ______.'},
+    {t:'text',a:'charity',q:'Leftover food could be donated to a local ______.'},
+    {t:'text',a:'posters|poster',q:'They will put up ______ to raise awareness.'},
+    {t:'text',a:'fifteenth|15th|15',q:'They present on the ______ of May.'},
+    {t:'text',a:'charity',q:'The speaker will contact the ______.'},
+    {t:'text',a:'graph',q:'The weight data will be presented as a ______.'},
+    {t:'choice',a:'B',q:'Students currently take:',opts:['A) less than they eat','B) more than they eat','C) the right amount','D) nothing']}
+   ]},
+  {title:'Lecture: the history of flight',
+   transcript:"Today we will look at the history of human flight. For centuries, people dreamed of flying, but early attempts to copy birds by flapping wings all failed. The first real success came with balloons: in 1783, two Frenchmen became the first people to fly, in a hot-air balloon. However, balloons could not be steered easily. The great breakthrough came in 1903, when the Wright brothers, in the United States, made the first controlled flight in a powered aircraft, lasting just twelve seconds. Progress after that was astonishingly rapid. Within a few decades, aircraft were crossing oceans, and by 1969, humans had landed on the Moon.",
+   Q:[
+    {t:'text',a:'flapping|flap',q:'Early attempts to fly by ______ wings all failed.'},
+    {t:'text',a:'balloon',q:'The first people to fly used a hot-air ______.'},
+    {t:'text',a:'1783',q:'The first balloon flight was in ______.'},
+    {t:'text',a:'steered|steer',q:'Balloons could not be ______ easily.'},
+    {t:'text',a:'1903',q:'The first controlled powered flight was in ______.'},
+    {t:'text',a:'wright',q:'The first flight was made by the ______ brothers.'},
+    {t:'text',a:'twelve|12',q:'The first flight lasted just ______ seconds.'},
+    {t:'text',a:'moon',q:'By 1969, humans had landed on the ______.'},
+    {t:'choice',a:'B',q:'The first people to fly were from:',opts:['A) the US','B) France','C) Britain','D) Germany']},
+    {t:'choice',a:'A',q:'The first controlled powered flight lasted:',opts:['A) 12 seconds','B) 12 minutes','C) 12 hours','D) a day']}
+   ]}
+ ],
+ read:[
+  {title:'The History of Flight',
+   paras:[
+    "The dream of flight is as old as humanity itself. Ancient myths tell of people attaching wings to their arms, and for centuries inventors tried, and failed, to fly like birds. Real progress only began when people stopped imitating birds and started to understand the science of flight.",
+    "The first breakthrough came with the hot-air balloon. In 1783, in France, a balloon carried the first human passengers into the sky. Balloons, however, could drift only where the wind took them. The next great challenge was achieving controlled, powered flight.",
+    "This was accomplished in 1903 by two American brothers, Orville and Wilbur Wright, who built and flew the first aeroplane. Their first flight lasted only twelve seconds, but it changed the world. Over the following decades, aircraft became faster, larger, and more reliable. During the two World Wars, rapid advances were made in aviation technology.",
+    "The arrival of the jet engine after the Second World War transformed air travel, making it faster and eventually affordable to ordinary people. Air travel shrank the world, allowing people and goods to move between continents in hours rather than weeks."
+   ],
+   Q:[
+    {t:'text',a:'birds|bird',q:'For centuries, inventors tried to fly like ______.'},
+    {t:'text',a:'science',q:'Progress began when people understood the ______ of flight.'},
+    {t:'text',a:'balloon',q:'The first human passengers flew in a hot-air ______.'},
+    {t:'text',a:'1783',q:'The first balloon flight was in ______ (year).'},
+    {t:'text',a:'wind',q:'Balloons could only drift where the ______ took them.'},
+    {t:'choice',a:'B',q:'The first aeroplane was built by:',opts:['A) the French','B) the Wright brothers','C) the British','D) balloonists']},
+    {t:'text',a:'twelve|12',q:"The Wright brothers' first flight lasted ______ seconds."},
+    {t:'text',a:'wars|war',q:'Rapid advances were made during the two World ______.'},
+    {t:'text',a:'jet',q:'The ______ engine transformed air travel after WWII.'},
+    {t:'text',a:'affordable',q:'Air travel eventually became ______ to ordinary people.'},
+    {t:'text',a:'hours|hour',q:'Air travel allowed movement between continents in ______ rather than weeks.'},
+    {t:'choice',a:'TRUE',q:'Early inventors failed because they imitated birds.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'B',q:'The story of flight is described as:',opts:['A) unimportant','B) one of the most remarkable in history','C) a failure','D) a myth']}
+   ]},
+  {title:'The Secret Life of Trees',
+   paras:[
+    "For a long time, trees were thought of as solitary organisms, each competing with its neighbours for light and water. In recent years, however, scientists have discovered that forests are far more complex and cooperative than anyone imagined, and that trees are, in a sense, connected to one another.",
+    "The key to this hidden connection lies underground. The roots of trees are linked by a vast network of fungi, sometimes called the 'wood wide web'. Through this network, trees can actually share resources. A large, healthy tree may send sugars through the fungi to a younger or weaker tree nearby, helping it to survive in the shade.",
+    "Even more remarkably, trees appear to communicate. When one tree is attacked by insects, it can release chemical signals into the air and through the fungal network, warning neighbouring trees, which then begin to produce substances to defend themselves. In this way, a forest behaves less like a collection of individuals and more like a single, cooperative community.",
+    "These discoveries have important implications. They suggest that when we cut down forests, we may be destroying not just individual trees but complex communities and relationships built up over centuries."
+   ],
+   Q:[
+    {t:'text',a:'solitary',q:'Trees were once thought to be ______ organisms.'},
+    {t:'text',a:'fungi|fungus',q:'Tree roots are linked by a network of ______.'},
+    {t:'text',a:'web',q:"This network is sometimes called the 'wood wide ______'."},
+    {t:'text',a:'resources|resource',q:'Through the network, trees can share ______.'},
+    {t:'text',a:'sugars|sugar',q:'A healthy tree may send ______ to a weaker tree.'},
+    {t:'text',a:'shade',q:'This helps weaker trees survive in the ______.'},
+    {t:'text',a:'signals|signal',q:'When attacked by insects, a tree releases chemical ______.'},
+    {t:'text',a:'defend',q:'Warned trees produce substances to ______ themselves.'},
+    {t:'choice',a:'B',q:'A forest behaves less like individuals and more like a:',opts:['A) machine','B) cooperative community','C) single tree','D) desert']},
+    {t:'text',a:'communities|community',q:'Cutting down forests may destroy complex ______.'},
+    {t:'text',a:'centuries|century',q:'These relationships were built up over ______.'},
+    {t:'choice',a:'FALSE',q:'Trees are completely isolated from each other.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'protect',q:'Understanding forests may help us ______ them.'}
+   ]},
+  {title:'Why Reading Still Matters',
+   paras:[
+    "In an age of screens, videos, and endless digital distraction, some people wonder whether reading books still matters. Yet research continues to show that reading, particularly of longer texts such as books, offers benefits that other media struggle to match.",
+    "One clear benefit is for the mind. Reading has been shown to improve vocabulary and general knowledge, and, unlike passively watching a screen, it actively engages the brain, strengthening concentration and the ability to follow complex ideas. Reading fiction, in particular, has a surprising benefit: by encouraging readers to imagine the thoughts and feelings of characters, it appears to improve empathy, our ability to understand others.",
+    "Reading also has emotional benefits. Studies suggest that reading for pleasure can reduce stress, sometimes more effectively than other relaxing activities. For many, losing themselves in a good book provides a valuable escape from the pressures of daily life.",
+    "Despite these benefits, reading for pleasure appears to be declining, especially among young people, who spend increasing amounts of time on digital devices. Many experts find this worrying, arguing that the deep, focused attention that reading develops is exactly the skill most under threat in a world of constant distraction."
+   ],
+   Q:[
+    {t:'text',a:'matters|matter',q:'Some people wonder whether reading books still ______.'},
+    {t:'text',a:'knowledge',q:'Reading improves vocabulary and general ______.'},
+    {t:'text',a:'engages|engage',q:'Unlike watching a screen, reading actively ______ the brain.'},
+    {t:'text',a:'ideas|idea',q:'Reading strengthens concentration and the ability to follow complex ______.'},
+    {t:'text',a:'empathy',q:'Reading fiction appears to improve ______.'},
+    {t:'text',a:'others',q:'Empathy is the ability to understand ______.'},
+    {t:'text',a:'stress',q:'Reading for pleasure can reduce ______.'},
+    {t:'text',a:'escape',q:'A good book provides an ______ from daily pressures.'},
+    {t:'choice',a:'B',q:"Reading fiction improves empathy by encouraging readers to imagine characters' thoughts and:",opts:['A) actions','B) feelings','C) words','D) names']},
+    {t:'text',a:'declining|decline',q:'Reading for pleasure appears to be ______.'},
+    {t:'text',a:'young',q:'This decline is especially seen among ______ people.'},
+    {t:'text',a:'devices|device',q:'Young people spend increasing time on digital ______.'},
+    {t:'choice',a:'B',q:'Experts are worried because reading develops:',opts:['A) fast typing','B) deep, focused attention','C) social media skills','D) memory of facts']},
+    {t:'choice',a:'TRUE',q:'Reading books offers benefits other media struggle to match.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 420 330' width='100%' style='max-width:420px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='210' y='20' text-anchor='middle' font-size='13' font-weight='bold'>How people travel to work (%)</text><path d='M200 160 L200 65 A95 95 0 0 1 229.4 250.3 Z' fill='#1a73e8'/><path d='M200 160 L229.4 250.3 A95 95 0 0 1 123.1 215.8 Z' fill='#1a9c5a'/><path d='M200 160 L123.1 215.8 A95 95 0 0 1 109.7 130.6 Z' fill='#e0a800'/><path d='M200 160 L109.7 130.6 A95 95 0 0 1 144.2 83.1 Z' fill='#c0392b'/><path d='M200 160 L144.2 83.1 A95 95 0 0 1 200 65 Z' fill='#8e44ad'/><g font-size='11' fill='#333'><rect x='30' y='285' width='12' height='11' fill='#1a73e8'/><text x='46' y='294'>Car 45</text><rect x='130' y='285' width='12' height='11' fill='#1a9c5a'/><text x='146' y='294'>Bus 20</text><rect x='230' y='285' width='12' height='11' fill='#e0a800'/><text x='246' y='294'>Train 15</text><rect x='30' y='302' width='12' height='11' fill='#c0392b'/><text x='46' y='311'>Cycling 10</text><rect x='150' y='302' width='12' height='11' fill='#8e44ad'/><text x='166' y='311'>Walking 10</text></g></svg>",
+  task1:"The pie chart below shows how people in a city travel to work. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that reading books is a waste of time in the digital age. To what extent do you agree or disagree? Write at least 250 words."
+ }
 }
 
 ];
