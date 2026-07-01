@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IELTS Mock Tests — CD Simulation</title>
+<title>IELTS Full Mock Tests — CD Simulation</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -11,167 +11,151 @@
   .bn{font-family:'Hind Siliguri',sans-serif}
   .topbar{background:#2b2b2b;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:6px 16px;flex:none;font-size:14px}
   .topbar .idbox{display:flex;flex-direction:column;line-height:1.2}
-  .topbar .idbox b{font-size:15px}
-  .topbar .idbox span{font-size:11px;color:#bbb}
-  .timer{display:flex;align-items:center;gap:8px;background:#3a3a3a;padding:6px 14px;border-radius:6px;font-weight:700;font-size:15px}
+  .topbar .idbox b{font-size:15px}.topbar .idbox span{font-size:11px;color:#bbb}
+  .timer{background:#3a3a3a;padding:6px 14px;border-radius:6px;font-weight:700;font-size:15px}
   .timer.low{background:#b00020;animation:pulse 1s infinite}
   @keyframes pulse{50%{opacity:.6}}
   .topbar .tools button{background:#3a3a3a;color:#fff;border:none;border-radius:5px;padding:6px 10px;cursor:pointer;font-size:13px;margin-left:6px}
   .topbar .tools button:hover{background:#4a4a4a}
-  .partbar{background:#e6e6e6;border-bottom:1px solid #cfcfcf;padding:8px 16px;flex:none;display:flex;align-items:center;justify-content:space-between}
+  .partbar{background:#e6e6e6;border-bottom:1px solid #cfcfcf;padding:8px 16px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .partbar .left{display:flex;gap:12px;align-items:center}
   .partbar .pt{font-weight:700;font-size:15px;color:#222}
-  .partbar .hl-tools{display:flex;gap:6px}
-  .partbar .hl-tools button{background:#fff;border:1px solid #bbb;border-radius:5px;padding:5px 11px;cursor:pointer;font-size:12.5px}
-  .partbar .hl-tools button:hover{background:#fffbe6;border-color:#e0a800}
+  #readTabs{display:none;gap:5px}
+  .rtab{background:#fff;border:1px solid #bbb;border-radius:5px;padding:5px 12px;cursor:pointer;font-size:12.5px}
+  .rtab.active{background:#1a73e8;color:#fff;border-color:#1a73e8;font-weight:700}
+  .hl-tools{display:flex;gap:6px}
+  .hl-tools button{background:#fff;border:1px solid #bbb;border-radius:5px;padding:5px 11px;cursor:pointer;font-size:12.5px}
+  .hl-tools button:hover{background:#fffbe6;border-color:#e0a800}
   .stage{flex:1;overflow:hidden;position:relative}
   .screen{display:none;height:100%;overflow:auto}
   .screen.active{display:block}
-  .intro{max-width:760px;margin:34px auto;background:#fff;border:1px solid #ddd;border-radius:8px;padding:32px}
+  .intro{max-width:780px;margin:30px auto;background:#fff;border:1px solid #ddd;border-radius:8px;padding:30px}
   .intro h1{font-size:22px;margin-bottom:8px;color:#1a3a6b}
-  .intro p{color:#333;margin-bottom:12px;line-height:1.7}
-  .intro ul{margin:8px 0 16px 22px;color:#333}.intro li{margin:5px 0}
-  .testpick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+  .intro p{color:#333;margin-bottom:10px;line-height:1.7}
+  .intro ul{margin:6px 0 14px 22px;color:#333}.intro li{margin:4px 0}
+  .testpick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
   .tcard{border:2px solid #1a73e8;border-radius:10px;padding:16px;text-align:center;cursor:pointer;background:#f5f9ff;transition:.15s}
   .tcard:hover{background:#1a73e8;color:#fff;transform:translateY(-3px)}
-  .tcard b{display:block;font-size:17px;margin-bottom:4px}
-  .tcard small{font-size:12px;color:#666}
-  .tcard:hover small{color:#dbe8ff}
+  .tcard b{display:block;font-size:17px;margin-bottom:4px}.tcard small{font-size:11.5px;color:#666}.tcard:hover small{color:#dbe8ff}
   .split{display:flex;height:100%}
-  .passcol,.qcol{height:100%;overflow:auto;padding:18px 22px}
+  .passcol,.qcol{height:100%;overflow:auto;padding:16px 20px}
   .passcol{flex:1;border-right:2px solid #d0d0d0;background:#fff}
   .qcol{flex:1;background:#fafafa}
-  .passcol h2{font-size:19px;margin-bottom:10px;color:#1a3a6b}
-  .passcol p{margin-bottom:12px;line-height:1.75;font-size:15px;color:#222}
+  .passcol h2{font-size:18px;margin-bottom:10px;color:#1a3a6b}
+  .passcol p{margin-bottom:11px;line-height:1.7;font-size:14.5px;color:#222}
   mark{background:#ffe58a;padding:0 1px}
-  .pad{max-width:860px;margin:0 auto;padding:20px}
-  .pad h2{font-size:19px;color:#1a3a6b;margin-bottom:8px}
-  .qgroup-head{font-weight:700;margin:16px 0 4px;color:#1a3a6b}
-  .qgroup-sub{color:#555;font-size:13.5px;margin-bottom:8px}
-  .q{background:#fff;border:1px solid #ddd;border-radius:7px;padding:12px 14px;margin:10px 0}
-  .q .qn{display:inline-flex;width:24px;height:24px;background:#1a3a6b;color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;margin-right:8px}
-  .qtext{font-size:14.5px;color:#1a1a1a;margin-bottom:8px}
-  .opts{display:flex;flex-direction:column;gap:6px}
-  .opt{border:1px solid #ccc;background:#fff;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:14px;text-align:left}
+  .pad{max-width:880px;margin:0 auto;padding:18px}
+  .pad h2{font-size:18px;color:#1a3a6b;margin-bottom:6px}
+  .lsec{border:1px solid #e0e0e0;border-radius:8px;padding:14px;margin:14px 0;background:#fff}
+  .lsec h3{color:#1a3a6b;font-size:15px;margin-bottom:8px}
+  .qgroup-head{font-weight:700;margin:14px 0 4px;color:#1a3a6b;font-size:14px}
+  .qgroup-sub{color:#555;font-size:13px;margin-bottom:6px}
+  .q{background:#fff;border:1px solid #ddd;border-radius:7px;padding:11px 13px;margin:9px 0}
+  .q .qn{display:inline-flex;width:23px;height:23px;background:#1a3a6b;color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-right:8px}
+  .qtext{font-size:14px;color:#1a1a1a;margin-bottom:7px}
+  .opts{display:flex;flex-direction:column;gap:5px}
+  .opt{border:1px solid #ccc;background:#fff;border-radius:6px;padding:7px 11px;cursor:pointer;font-size:13.5px;text-align:left}
   .opt:hover{background:#eef4ff;border-color:#1a73e8}
   .opt.sel{background:#1a73e8;color:#fff;border-color:#1a73e8}
-  .fill{border:1px solid #aaa;border-radius:5px;padding:7px 10px;font-size:14px;width:210px;max-width:100%}
+  .fill{border:1px solid #aaa;border-radius:5px;padding:6px 10px;font-size:13.5px;width:200px;max-width:100%}
   .fill:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
-  .flagrow{margin-top:9px;display:flex;align-items:center;gap:6px;font-size:12.5px;color:#b06a00}
-  .flagrow input{accent-color:#e0a800;width:15px;height:15px}
+  .flagrow{margin-top:8px;display:flex;align-items:center;gap:6px;font-size:12px;color:#b06a00}
+  .flagrow input{accent-color:#e0a800;width:14px;height:14px}
   .q.ok{border-color:#1a9c5a;box-shadow:0 0 0 1px #1a9c5a inset}
   .q.bad{border-color:#c0392b;box-shadow:0 0 0 1px #c0392b inset}
   .opt.correctopt{background:#d6f5e3;border-color:#1a9c5a;color:#0a5c33}
-  .oki{border-color:#1a9c5a!important;background:#f0fff6}
-  .badi{border-color:#c0392b!important;background:#fff2f0}
-  .ansreveal{color:#1a9c5a;font-weight:700;font-size:13px;margin-left:8px}
-  .player{display:flex;gap:12px;align-items:center;background:#eef2f8;border:1px solid #cfd8e6;border-radius:8px;padding:12px 14px;margin:8px 0 14px}
-  .player .pbtn{background:#1a73e8;color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:16px;cursor:pointer}
-  .player label{font-size:12.5px;color:#555}
-  textarea{width:100%;min-height:320px;border:1px solid #aaa;border-radius:7px;padding:14px;font-size:15px;line-height:1.6;font-family:Arial;resize:vertical}
+  .oki{border-color:#1a9c5a!important;background:#f0fff6}.badi{border-color:#c0392b!important;background:#fff2f0}
+  .ansreveal{color:#1a9c5a;font-weight:700;font-size:12.5px;margin-left:8px}
+  .player{display:flex;gap:10px;align-items:center;background:#eef2f8;border:1px solid #cfd8e6;border-radius:8px;padding:9px 12px;margin:6px 0 8px}
+  .player .pbtn{background:#1a73e8;color:#fff;border:none;width:40px;height:40px;border-radius:50%;font-size:15px;cursor:pointer}
+  details{margin:6px 0}summary{cursor:pointer;color:#1a3a6b;font-weight:600;font-size:13px}
+  .tscript{font-size:13px;color:#333;padding:6px 0;line-height:1.6}
+  textarea{width:100%;min-height:220px;border:1px solid #aaa;border-radius:7px;padding:12px;font-size:14.5px;line-height:1.6;font-family:Arial;resize:vertical}
   textarea:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
-  .wc{font-weight:700;color:#1a3a6b;margin:8px 0}
+  .wc{font-weight:700;color:#1a3a6b;margin:6px 0}
   .navbar{background:#2b2b2b;color:#fff;flex:none;display:flex;align-items:center;gap:10px;padding:8px 14px;overflow-x:auto}
   .navbar .parts{display:flex;gap:6px}
-  .navbar .pbtn2{background:#444;color:#fff;border:none;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12.5px;white-space:nowrap}
-  .navbar .pbtn2.active{background:#1a73e8;font-weight:700}
+  .pbtn2{background:#444;color:#fff;border:none;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12.5px;white-space:nowrap}
+  .pbtn2.active{background:#1a73e8;font-weight:700}
   .palette{display:flex;gap:5px;flex:1;overflow-x:auto;padding:0 6px}
-  .pnum{min-width:30px;height:30px;border:1px solid #666;background:#3a3a3a;color:#fff;border-radius:5px;cursor:pointer;font-size:12.5px;position:relative;flex:none}
+  .pnum{min-width:29px;height:29px;border:1px solid #666;background:#3a3a3a;color:#fff;border-radius:5px;cursor:pointer;font-size:12px;position:relative;flex:none}
   .pnum.answered{background:#1a9c5a;border-color:#1a9c5a}
-  .pnum.current{outline:2px solid #ffd24d}
   .pnum.flagged::after{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;background:#e0a800;border-radius:50%}
   .submit{background:#1a9c5a;color:#fff;border:none;border-radius:6px;padding:9px 16px;cursor:pointer;font-weight:700;white-space:nowrap}
   .submit:hover{background:#158048}
-  .navarrow{background:#444;color:#fff;border:none;border-radius:6px;width:36px;height:34px;cursor:pointer;font-size:16px}
+  .navarrow{background:#444;color:#fff;border:none;border-radius:6px;width:34px;height:32px;cursor:pointer;font-size:15px}
   .overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;place-items:center;z-index:100;padding:18px}
   .overlay.show{display:grid}
-  .rmodal{background:#fff;border-radius:12px;max-width:470px;width:100%;padding:26px;text-align:center}
+  .rmodal{background:#fff;border-radius:12px;max-width:480px;width:100%;padding:24px;text-align:center}
   .rmodal h2{color:#1a3a6b;margin-bottom:8px}
-  .rmodal .score{font-size:38px;font-weight:800;color:#1a9c5a;margin:6px 0}
-  .rmodal table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  .rmodal .score{font-size:34px;font-weight:800;color:#1a9c5a;margin:6px 0}
+  .rmodal table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
   .rmodal td{border:1px solid #ddd;padding:8px;text-align:left}
-  .rmodal .closeb{background:#1a73e8;color:#fff;border:none;border-radius:7px;padding:11px 18px;font-size:15px;font-weight:700;cursor:pointer;margin:6px 4px 0}
-  .rmodal .altb{background:#e6e6e6;color:#222;border:none;border-radius:7px;padding:11px 18px;font-size:15px;font-weight:700;cursor:pointer;margin:6px 4px 0}
+  .rmodal .closeb{background:#1a73e8;color:#fff;border:none;border-radius:7px;padding:10px 16px;font-size:14.5px;font-weight:700;cursor:pointer;margin:6px 4px 0}
+  .rmodal .altb{background:#e6e6e6;color:#222;border:none;border-radius:7px;padding:10px 16px;font-size:14.5px;font-weight:700;cursor:pointer;margin:6px 4px 0}
   .exit{color:#9db;font-size:12px;text-decoration:none}
-  @media(max-width:760px){.split{flex-direction:column}.passcol{border-right:none;border-bottom:2px solid #d0d0d0;max-height:40%}.testpick{grid-template-columns:1fr}}
+  @media(max-width:760px){.split{flex-direction:column}.passcol{border-right:none;border-bottom:2px solid #d0d0d0;max-height:38%}.testpick{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="idbox"><b>IELTS Mock Test</b><span id="topId">Test taker ID: 100-2026 · <a href="index.html" class="exit">← Exit</a></span></div>
-  <div class="timer" id="timer">⏱ 60:00</div>
-  <div class="tools">
-    <button onclick="showIntro()">☰ Tests</button>
-    <button onclick="showHelp()">❓ Help</button>
-  </div>
+  <div class="idbox"><b>IELTS Full Mock</b><span id="topId">Test taker ID: 100-2026 · <a href="index.html" class="exit">← Exit</a></span></div>
+  <div class="timer" id="timer">⏱ 150:00</div>
+  <div class="tools"><button onclick="showIntro()">☰ Tests</button><button onclick="showHelp()">❓ Help</button></div>
 </div>
 
 <div class="partbar">
-  <div class="pt" id="partTitle">Choose a Mock Test</div>
+  <div class="left"><div class="pt" id="partTitle">Choose a Mock Test</div><div id="readTabs"></div></div>
   <div class="hl-tools" id="hlTools" style="display:none">
-    <button onclick="highlightSel()">🖊️ Highlight</button>
-    <button onclick="clearHl()">🧽 Clear</button>
+    <button onclick="highlightSel()">🖊️ Highlight</button><button onclick="clearHl()">🧽 Clear</button>
   </div>
 </div>
 
 <div class="stage" id="content">
-  <!-- INTRO -->
   <div class="screen active" id="intro">
     <div class="intro bn">
       <h1>🖥️ Computer-Delivered IELTS — ৩টি Full Mock</h1>
-      <p>আসল CD-IELTS ইন্টারফেসের মতো। প্রতিটি mock-এ <b>Listening + Reading + Writing</b> আছে। একটা বেছে নাও:</p>
+      <p>প্রতিটি mock <b>সম্পূর্ণ length</b>: Listening ৪০ প্রশ্ন (৪ সেকশন), Reading ৪০ প্রশ্ন (৩ passage), Writing (Task 1 + Task 2)। একটা বেছে নাও:</p>
       <div class="testpick">
-        <div class="tcard" onclick="startTest(0)"><b>Mock 1</b><small>Sports Centre · Vertical Farming · Technology essay</small></div>
-        <div class="tcard" onclick="startTest(1)"><b>Mock 2</b><small>Library · Bilingualism · Work-from-home essay</small></div>
-        <div class="tcard" onclick="startTest(2)"><b>Mock 3</b><small>Cookery course · Honeybees · Public spending essay</small></div>
+        <div class="tcard" onclick="startTest(0)"><b>Mock 1</b><small>Sports · Museum · Sleep + Farming · Coffee · Printing</small></div>
+        <div class="tcard" onclick="startTest(1)"><b>Mock 2</b><small>Library · Marathon · Ocean + Bilingualism · Bees · Remote work</small></div>
+        <div class="tcard" onclick="startTest(2)"><b>Mock 3</b><small>Cookery · Reserve · Cities + Octopus · Tea · Energy</small></div>
       </div>
       <p><b>কীভাবে কাজ করে:</b></p>
       <ul>
-        <li>উপরে ডানে টাইমার (শেষ ৫ মিনিটে লাল)</li>
-        <li>নিচে <b>question navigator</b> — নম্বরে ক্লিক করে যাও; উত্তর দিলে সবুজ</li>
-        <li>প্রতি প্রশ্নে <b>Review</b> টিক = পরে দেখার flag (কমলা বিন্দু)</li>
-        <li>Reading-এ টেক্সট সিলেক্ট করে <b>Highlight</b></li>
-        <li>শেষে <b>Submit</b> → Reading ও Listening স্কোর + আনুমানিক Band</li>
+        <li>উপরে টাইমার (আসল সময় ~১৫০ মিনিট: L৩০+R৬০+W৬০)</li>
+        <li>নিচে <b>question navigator</b> — নম্বরে ক্লিক; উত্তর দিলে সবুজ; Review টিক = কমলা flag</li>
+        <li>Reading-এ <b>P1/P2/P3</b> tab দিয়ে passage বদলাও; টেক্সট সিলেক্ট করে Highlight</li>
+        <li>Listening-এ ৪ সেকশন — প্রতিটার নিজের অডিও</li>
+        <li>শেষে <b>Submit</b> → Listening ও Reading স্কোর (৪০-এ) + আনুমানিক Band</li>
       </ul>
-      <p style="color:#b00020;font-size:13.5px"><b>মনে রাখো:</b> আসল পরীক্ষায় সময় আলাদা (Listening ~৩০, Reading ৬০, Writing ৬০ মিনিট)। এখানে ডেমোর জন্য একটাই ৬০ মিনিট টাইমার।</p>
+      <p style="color:#b00020;font-size:13px"><b>নোট:</b> এখানে একটাই টাইমার (১৫০ মিনিট)। আসল পরীক্ষায় প্রতি সেকশন আলাদাভাবে সময়বদ্ধ।</p>
     </div>
   </div>
 
-  <!-- LISTENING -->
-  <div class="screen" id="p-listening">
-    <div class="pad">
-      <h2 id="lHead">Listening — Section 1</h2>
-      <p style="color:#555;font-size:13.5px">▶️ চাপো, একবারই শোনার চেষ্টা করো।</p>
-      <div class="player">
-        <button class="pbtn" id="lplay" onclick="toggleAudio()">▶️</button>
-        <div><div style="font-weight:700" id="lTitle">Audio</div>
-        <label>Speed: <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.9"></label></div>
-      </div>
-      <div id="listenQ"></div>
-      <details style="margin-top:10px"><summary style="cursor:pointer;color:#1a3a6b;font-weight:600">📜 Transcript (Submit-এর পর দেখো)</summary>
-      <div id="lTranscript" style="font-size:13.5px;color:#333;padding:8px 0;line-height:1.7"></div></details>
-    </div>
-  </div>
+  <div class="screen" id="p-listening"><div class="pad">
+    <h2>Listening</h2>
+    <label style="font-size:12.5px;color:#555">Audio speed: <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.9"></label>
+    <div id="listenQ"></div>
+  </div></div>
 
-  <!-- READING -->
-  <div class="screen" id="p-reading">
-    <div class="split">
-      <div class="passcol" id="passage"></div>
-      <div class="qcol" id="readQ"></div>
-    </div>
-  </div>
+  <div class="screen" id="p-reading"><div class="split">
+    <div class="passcol" id="passage"></div>
+    <div class="qcol" id="readQ"></div>
+  </div></div>
 
-  <!-- WRITING -->
-  <div class="screen" id="p-writing">
-    <div class="pad">
-      <h2>Writing Task 2</h2>
-      <p style="font-size:14.5px;color:#222;margin-bottom:6px">You should spend about 40 minutes on this task. Write at least 250 words.</p>
-      <p id="wPrompt" style="background:#eef2f8;border:1px solid #cfd8e6;border-radius:7px;padding:12px 14px;font-size:14.5px;margin-bottom:10px"></p>
-      <div class="wc">Words: <span id="wc">0</span></div>
-      <textarea id="essay" placeholder="Type your essay here..." oninput="countWords()"></textarea>
-      <p style="font-size:12.5px;color:#666;margin-top:6px">⚠️ CD-IELTS-এ spell-check নেই — বানান নিজে দেখো।</p>
-    </div>
-  </div>
+  <div class="screen" id="p-writing"><div class="pad">
+    <h2>Writing Task 1</h2>
+    <p id="wPrompt1" style="background:#eef2f8;border:1px solid #cfd8e6;border-radius:7px;padding:11px;font-size:14px;margin:6px 0"></p>
+    <div class="wc">Words: <span id="wc1">0</span> (min 150)</div>
+    <textarea id="essay1" placeholder="Type your Task 1 answer..." oninput="countWords()"></textarea>
+    <h2 style="margin-top:20px">Writing Task 2</h2>
+    <p id="wPrompt2" style="background:#eef2f8;border:1px solid #cfd8e6;border-radius:7px;padding:11px;font-size:14px;margin:6px 0"></p>
+    <div class="wc">Words: <span id="wc2">0</span> (min 250)</div>
+    <textarea id="essay2" placeholder="Type your Task 2 essay..." oninput="countWords()"></textarea>
+    <p style="font-size:12px;color:#666;margin-top:6px">⚠️ CD-IELTS-এ spell-check নেই। নিজে/AI দিয়ে মূল্যায়ন করাও।</p>
+  </div></div>
 </div>
 
 <div class="navbar">
@@ -186,262 +170,143 @@
   <button class="submit" onclick="submitTest()">✔ Submit</button>
 </div>
 
-<div class="overlay" id="overlay">
-  <div class="rmodal bn">
-    <h2 id="rTitle">📊 ফলাফল</h2>
-    <div class="score" id="scoreBig">–</div>
-    <table id="scoreTable"></table>
-    <p style="font-size:13px;color:#555">✅ ভুল উত্তর প্রতি পার্টে সবুজ/লাল রঙে দেখানো হয়েছে।</p>
-    <button class="closeb" onclick="document.getElementById('overlay').classList.remove('show')">ভুলগুলো দেখি</button>
-    <button class="altb" onclick="showIntro()">🔄 আরেকটা Mock</button>
-  </div>
-</div>
+<div class="overlay" id="overlay"><div class="rmodal bn">
+  <h2 id="rTitle">📊 ফলাফল</h2>
+  <div class="score" id="scoreBig">–</div>
+  <table id="scoreTable"></table>
+  <p style="font-size:13px;color:#555">✅ ভুল উত্তর সবুজ/লাল রঙে দেখানো হয়েছে।</p>
+  <button class="closeb" onclick="document.getElementById('overlay').classList.remove('show')">ভুলগুলো দেখি</button>
+  <button class="altb" onclick="showIntro()">🔄 আরেকটা Mock</button>
+</div></div>
 
+<script src="mock-data.js"></script>
 <script>
-/* =============== 3 FULL MOCKS =============== */
-const MOCKS=[
-{
-  name:'Mock 1',
-  listen:{
-    title:'Community Sports Centre',
-    transcript:"Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah. The centre is open from six in the morning until ten at night on weekdays, and from eight until eight at weekends. Our most popular facility is the swimming pool, which has eight lanes and is heated all year round. Membership costs forty pounds per month for adults, but students pay only twenty-five pounds. The gym is located on the first floor, next to the café. Please bring a towel and a padlock for the lockers. For group classes such as yoga, you need to book at least two days in advance. Computers for members are available in the lounge, and parking is free for members, but visitors must pay three pounds per hour.",
-    Q:[
-      {t:'text',a:'10pm|10 pm|ten|10',q:'Weekday closing time: ______'},
-      {t:'text',a:'eight|8',q:'Swimming pool lanes: ______'},
-      {t:'text',a:'40|forty|£40',q:'Adult membership per month: £______'},
-      {t:'text',a:'25|twenty-five|twenty five|£25',q:'Student membership per month: £______'},
-      {t:'text',a:'cafe|café',q:'The gym is next to the ______.'},
-      {t:'text',a:'towel',q:'Members must bring a ______ and a padlock.'},
-      {t:'text',a:'two|2',q:'Group classes: book ______ days in advance.'},
-      {t:'text',a:'lounge',q:'Computers are available in the ______.'},
-      {t:'choice',a:'B',q:'Visitors must pay for parking:',opts:['A) it is free','B) £3 per hour','C) £40 a month','D) only weekends']},
-      {t:'choice',a:'A',q:'The swimming pool is:',opts:['A) heated all year','B) closed in winter','C) outdoors','D) for members only']}
-    ]
-  },
-  read:{
-    title:'Vertical Farming: Growing Up, Not Out',
-    paras:[
-      "Vertical farming is an innovative approach to agriculture in which crops are grown in stacked layers, often inside controlled indoor environments such as warehouses or shipping containers. Unlike conventional farming, which spreads outwards across vast fields, vertical farming grows upwards, dramatically reducing the amount of land required.",
-      "The idea is not entirely new. Although small-scale experiments existed earlier, the modern concept was popularised in 1999 by Dickson Despommier, a professor at Columbia University, who challenged his students to feed a city using only rooftop gardens. When the rooftops proved insufficient, the class began imagining farms that climbed skyward instead.",
-      "One of the greatest advantages of vertical farming is its independence from weather. Because crops are grown indoors under artificial conditions, production continues regardless of droughts, floods, or seasonal changes. Furthermore, since these farms can be built within cities, food travels a far shorter distance to reach consumers, cutting transport costs and reducing carbon emissions.",
-      "Water efficiency is another notable benefit. Many vertical farms use hydroponic systems, in which plants grow in nutrient-rich water rather than soil. These systems recycle water continuously, using up to 95 per cent less than traditional irrigation. Pesticides are also largely unnecessary, as the enclosed environment keeps most pests out.",
-      "However, vertical farming is not without its critics. The most significant drawback is energy consumption. Replacing natural sunlight with artificial LED lighting requires enormous amounts of electricity, and unless that power comes from renewable sources, the environmental gains may be offset. The high initial cost of construction also remains a barrier.",
-      "Despite these challenges, interest continues to grow. Several countries with limited farmland, such as Singapore and the United Arab Emirates, have invested heavily in vertical farms to strengthen their food security. As technology improves, supporters believe vertical farming could play a vital role in feeding the world's expanding urban population."
-    ],
-    Q:[
-      {t:'choice',a:'TRUE',q:'Vertical farms need less land than traditional farms.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'FALSE',q:'The modern concept was first introduced in the 21st century.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'FALSE',q:"Despommier's students fed a city using rooftop gardens.",opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'TRUE',q:'Vertical farms can produce crops in every season.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'NOT GIVEN',q:'LED lighting is more expensive than sunlight for farmers.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'FALSE',q:'Singapore invested because it has plenty of farmland.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'text',a:'water',q:'In hydroponics, plants grow in nutrient-rich ______.'},
-      {t:'text',a:'pesticides|pesticide',q:'The enclosed environment means ______ are largely unnecessary.'},
-      {t:'text',a:'energy',q:'The most significant drawback is high ______ consumption.'},
-      {t:'choice',a:'B',q:'Carbon emissions fall mainly because:',opts:['A) hydroponics','B) food travels shorter distances','C) no pesticides','D) LED lights']},
-      {t:'text',a:'weather',q:'Vertical farms are independent of the ______.'},
-      {t:'text',a:'security',q:'Some countries invested to strengthen their food ______.'},
-      {t:'text',a:'water',q:'Hydroponic systems recycle ______ continuously.'}
-    ]
-  },
-  writing:"Some people believe that technology has made our lives more complicated, while others think it has made life easier. Discuss both views and give your own opinion."
-},
-{
-  name:'Mock 2',
-  listen:{
-    title:'University Library Induction',
-    transcript:"Good morning, and welcome to the university library. I'm David, the head librarian. The library is open from eight in the morning until eleven at night on weekdays. On Saturdays, we close a little earlier, at six. To borrow books, you'll need your student card. Undergraduate students can borrow up to ten books at a time, while postgraduates can take out fifteen. Books are normally loaned for three weeks. Please note that if you return a book late, there is a fine of twenty pence per day. The ground floor is a social study area where talking is allowed, but the first and second floors are strictly silent zones. Computers are available on the first floor, next to the printing room. If you need help, visit the help desk near the main entrance.",
-    Q:[
-      {t:'text',a:'11pm|11 pm|eleven|11',q:'Weekday closing time: ______'},
-      {t:'text',a:'6pm|6 pm|six|6',q:'Saturday closing time: ______'},
-      {t:'text',a:'ten|10',q:'Undergraduates can borrow up to ______ books.'},
-      {t:'text',a:'fifteen|15',q:'Postgraduates can borrow up to ______ books.'},
-      {t:'text',a:'three|3',q:'Books are loaned for ______ weeks.'},
-      {t:'text',a:'20|twenty',q:'Late return fine: ______ pence per day.'},
-      {t:'text',a:'second',q:'Silent zones are the first and ______ floors.'},
-      {t:'text',a:'printing',q:'Computers are next to the ______ room.'},
-      {t:'text',a:'entrance|main entrance',q:'The help desk is near the main ______.'},
-      {t:'choice',a:'B',q:'Talking is allowed on:',opts:['A) the first floor','B) the ground floor','C) the second floor','D) nowhere']}
-    ]
-  },
-  read:{
-    title:'Two Languages, One Sharper Mind',
-    paras:[
-      "For a long time, raising a child with two languages was viewed with suspicion. Many parents and even educators believed that bilingualism would confuse young children and slow their development. Today, however, a growing body of research suggests the opposite: learning two languages from an early age offers considerable cognitive and social advantages.",
-      "One of the most significant benefits concerns the brain itself. Studies using brain imaging have shown that bilingual individuals tend to have denser grey matter in regions associated with attention and memory. Constantly switching between two languages appears to act as a kind of mental exercise, strengthening what psychologists call the 'executive control system', which helps people focus on relevant information while ignoring distractions.",
-      "The advantages are not limited to childhood. Remarkably, research indicates that bilingualism may delay the onset of dementia by several years. Although it does not prevent the disease, the mental flexibility built up over a lifetime of using two languages seems to make the brain more resilient.",
-      "Bilingual children also tend to develop stronger social skills. Because they must constantly judge which language to use with whom, they become more sensitive to the perspectives of others. This ability, known as 'perspective-taking', is increasingly valuable in an interconnected world.",
-      "Of course, bilingualism is not without its challenges. Bilingual children sometimes have a slightly smaller vocabulary in each individual language during their early years, though their combined vocabulary usually equals or exceeds that of monolingual children. Moreover, maintaining two languages requires consistent exposure and effort.",
-      "Despite these challenges, experts increasingly agree that the benefits far outweigh the drawbacks. Far from confusing children, growing up with two languages appears to give them a mental and social head start that lasts a lifetime."
-    ],
-    Q:[
-      {t:'choice',a:'TRUE',q:'In the past, some people believed bilingualism was harmful to children.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'FALSE',q:'Bilingual people always have a larger vocabulary in each language.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'FALSE',q:'Bilingualism can completely prevent dementia.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'TRUE',q:'Switching between languages strengthens attention and memory.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'NOT GIVEN',q:'Bilingual children are usually better at sports.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'text',a:'matter',q:'Bilingual people tend to have denser grey ______.'},
-      {t:'text',a:'perspective',q:"The ability to understand others' views is called ______-taking."},
-      {t:'text',a:'exposure',q:'Maintaining two languages requires consistent ______ and effort.'},
-      {t:'choice',a:'B',q:"The 'executive control system' helps people to:",opts:['A) learn faster','B) focus and ignore distractions','C) speak more languages','D) sleep better']},
-      {t:'choice',a:'C',q:"The writer's overall view of bilingualism is that it is:",opts:['A) risky','B) confusing','C) beneficial','D) unclear']},
-      {t:'text',a:'social',q:'Bilingual children may develop stronger ______ skills.'},
-      {t:'text',a:'dementia',q:'Bilingualism may delay the onset of ______.'},
-      {t:'choice',a:'B',q:"Bilingual children's combined vocabulary is usually:",opts:['A) smaller','B) equal or greater','C) irrelevant','D) unknown']}
-    ]
-  },
-  writing:"More people are now working from home rather than in an office. Do the advantages of this development outweigh the disadvantages?"
-},
-{
-  name:'Mock 3',
-  listen:{
-    title:'Evening Cookery Course',
-    transcript:"Thanks for calling Riverside Community College. Let me tell you about our evening cookery course. The course runs for eight weeks, every Tuesday, starting on the third of September. Classes begin at half past six and finish at nine. The full course costs ninety pounds, though members of the college pay a reduced rate of seventy pounds. You'll need to bring an apron and a set of containers to take your food home; all other ingredients are provided. The classes are held in the kitchen on the second floor of the main building. Please note that places are limited to twelve students, so early booking is advised. To reserve a place, you can pay online or by phone, but not by cheque.",
-    Q:[
-      {t:'text',a:'eight|8',q:'Course length: ______ weeks.'},
-      {t:'text',a:'tuesday',q:'Classes are held every ______.'},
-      {t:'text',a:'third|3rd|3',q:'Start date: ______ September.'},
-      {t:'text',a:'9pm|9 pm|nine|9',q:'Classes finish at ______.'},
-      {t:'text',a:'90|ninety|£90',q:'Full course cost: £______.'},
-      {t:'text',a:'70|seventy|£70',q:'Members pay: £______.'},
-      {t:'text',a:'containers',q:'Students must bring an apron and ______.'},
-      {t:'text',a:'second',q:'Classes are on the ______ floor.'},
-      {t:'text',a:'twelve|12',q:'Places are limited to ______ students.'},
-      {t:'choice',a:'B',q:'You can pay:',opts:['A) by cheque','B) online or by phone','C) only online','D) cash only']}
-    ]
-  },
-  read:{
-    title:'The Language of Bees',
-    paras:[
-      "Among the many wonders of the natural world, few are as fascinating as the way honeybees communicate. Despite having a brain smaller than a grain of rice, bees are able to share remarkably precise information with one another, guiding their hive-mates to distant sources of food.",
-      "The key to this communication is a behaviour known as the 'waggle dance'. When a forager bee discovers a rich patch of flowers, it returns to the hive and performs a series of movements on the honeycomb. By waggling its body and moving in a figure-of-eight pattern, the bee conveys both the direction and the distance of the food source. The angle of the dance indicates the direction relative to the sun, while the duration of the waggle signals how far away the food lies.",
-      "This discovery, made by the Austrian scientist Karl von Frisch in the twentieth century, was initially met with scepticism. Many found it hard to believe that an insect could communicate such detailed information. However, decades of careful experiments have confirmed that other bees do indeed use the dance to locate food.",
-      "Interestingly, the waggle dance is not the only signal bees use. They also rely heavily on chemical messages called pheromones. For example, when a hive is threatened, guard bees release an alarm pheromone that alerts the colony to danger. Pheromones also help maintain the social order of the hive.",
-      "Scientists believe that studying bee communication may have practical benefits beyond biology. Some researchers are exploring how the efficient way bees share information could inspire better designs for computer networks and even swarms of small robots.",
-      "Sadly, bee populations around the world are declining, threatened by pesticides, disease and habitat loss. Since bees pollinate a large proportion of the crops humans depend on, protecting them is not merely about preserving a fascinating species, but about safeguarding our own food supply."
-    ],
-    Q:[
-      {t:'choice',a:'B',q:'The waggle dance tells other bees:',opts:['A) the colour of flowers','B) the direction and distance of food','C) the time of day','D) the number of bees']},
-      {t:'choice',a:'C',q:'The angle of the dance is measured relative to:',opts:['A) the hive','B) the queen','C) the sun','D) the wind']},
-      {t:'choice',a:'C',q:"Karl von Frisch's discovery was at first:",opts:['A) widely accepted','B) ignored','C) met with scepticism','D) kept secret']},
-      {t:'choice',a:'TRUE',q:'Bees can communicate the distance of a food source.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'FALSE',q:'Bees only use dancing to communicate.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'TRUE',q:'Alarm pheromones warn the colony of danger.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'choice',a:'NOT GIVEN',q:'Bee communication has already been used to build working robots.',opts:['TRUE','FALSE','NOT GIVEN']},
-      {t:'text',a:'pheromone|pheromones',q:'When threatened, guard bees release an alarm ______.'},
-      {t:'text',a:'habitat',q:'Bee populations decline due to pesticides, disease and ______ loss.'},
-      {t:'text',a:'pollinate',q:'Bees ______ many of the crops humans rely on.'},
-      {t:'text',a:'pheromones|pheromone',q:'Bees rely on chemical messages called ______.'},
-      {t:'choice',a:'B',q:'Studying bees may inspire designs for:',opts:['A) new pesticides','B) computer networks and robots','C) larger hives','D) faster cars']},
-      {t:'text',a:'food',q:'Protecting bees safeguards our own ______ supply.'}
-    ]
-  },
-  writing:"Some people think that governments should spend money on public services rather than on the arts. To what extent do you agree or disagree?"
-}
-];
+/* =============== ENGINE =============== */
+let M=0, currentPart=null, readIdx=0, playingSec=-1;
 
-/* =============== RENDER =============== */
-function renderQuestions(arr, container, prefix){
-  arr.forEach((item,i)=>{
-    const div=document.createElement('div');
-    div.className='q';div.dataset.a=item.a;div.id=prefix+'q'+(i+1);
-    let inner='<div class="qtext"><span class="qn">'+(i+1)+'</span>'+item.q.replace(/^\d+\.\s*/,'')+'</div>';
-    if(item.t==='choice'){inner+='<div class="opts">'+item.opts.map(o=>'<button class="opt">'+o+'</button>').join('')+'</div>';}
-    else{inner+='<input class="fill" type="text" placeholder="Your answer">';}
-    inner+='<div class="flagrow"><input type="checkbox" class="flag"> Review</div>';
-    div.innerHTML=inner;container.appendChild(div);
-  });
+function qHTML(item,num){
+  let inner='<div class="qtext"><span class="qn">'+num+'</span>'+item.q+'</div>';
+  if(item.t==='choice') inner+='<div class="opts">'+item.opts.map(o=>'<button class="opt">'+o+'</button>').join('')+'</div>';
+  else inner+='<input class="fill" type="text" placeholder="Your answer">';
+  inner+='<div class="flagrow"><input type="checkbox" class="flag"> Review</div>';
+  return '<div class="q" data-a="'+item.a+'">'+inner+'</div>';
 }
-let M=0;
+function renderListening(m){
+  let html='',n=1;
+  m.listen.forEach((sec,si)=>{
+    html+='<div class="lsec"><h3>Section '+(si+1)+' — '+sec.title+'</h3>';
+    html+='<div class="player"><button class="pbtn lplaybtn" id="lp'+si+'" onclick="playSec('+si+')">▶️</button><span style="font-size:12.5px;color:#555">▶️ চাপো — একবারই শোনার চেষ্টা করো</span></div>';
+    sec.Q.forEach(item=>{html+=qHTML(item,n);n++;});
+    html+='<details><summary>📜 Transcript</summary><div class="tscript">'+sec.transcript+'</div></details>';
+    html+='</div>';
+  });
+  document.getElementById('listenQ').innerHTML=html;
+}
+function renderReading(m){
+  let pas='',blocks='',n=1;
+  m.read.forEach((p,idx)=>{
+    pas+='<div class="rpass" data-i="'+idx+'" style="display:'+(idx===0?'block':'none')+'"><h2>'+p.title+'</h2>'+p.paras.map(x=>'<p>'+x+'</p>').join('')+'</div>';
+    let qh='<div class="qgroup-head">Passage '+(idx+1)+' · '+p.title+'</div>';
+    p.Q.forEach(item=>{qh+=qHTML(item,n);n++;});
+    blocks+='<div class="rblock" data-i="'+idx+'" style="display:'+(idx===0?'block':'none')+'">'+qh+'</div>';
+  });
+  document.getElementById('passage').innerHTML=pas;
+  document.getElementById('readQ').innerHTML=blocks;
+  document.getElementById('readTabs').innerHTML=m.read.map((p,idx)=>'<button class="rtab'+(idx===0?' active':'')+'" onclick="setRead('+idx+')">P'+(idx+1)+'</button>').join('');
+  readIdx=0;
+}
 function loadMock(i){
   M=i;const m=MOCKS[i];
   document.getElementById('topId').innerHTML='Test taker ID: 100-2026 · '+m.name+' · <a href="index.html" class="exit">← Exit</a>';
-  document.getElementById('lTitle').textContent=m.listen.title;
-  document.getElementById('lTranscript').textContent='"'+m.listen.transcript+'"';
-  const lq=document.getElementById('listenQ');
-  lq.innerHTML='<div class="qgroup-head">Questions 1–'+m.listen.Q.length+'</div><div class="qgroup-sub">Complete the notes. Write ONE WORD OR A NUMBER for each answer.</div>';
-  renderQuestions(m.listen.Q, lq, 'l');
-  const pas=document.getElementById('passage');
-  pas.innerHTML='<h2>'+m.read.title+'</h2>'+m.read.paras.map(p=>'<p>'+p+'</p>').join('');
-  const rq=document.getElementById('readQ');rq.innerHTML='<div class="qgroup-head">Questions 1–'+m.read.Q.length+'</div>';
-  renderQuestions(m.read.Q, rq, 'r');
-  document.getElementById('wPrompt').textContent=m.writing;
-  document.getElementById('essay').value='';document.getElementById('wc').textContent='0';
+  renderListening(m);renderReading(m);
+  document.getElementById('wPrompt1').textContent=m.writing.task1;
+  document.getElementById('wPrompt2').textContent=m.writing.task2;
+  document.getElementById('essay1').value='';document.getElementById('essay2').value='';
+  document.getElementById('wc1').textContent='0';document.getElementById('wc2').textContent='0';
 }
 
-document.addEventListener('click',e=>{
-  if(e.target.classList.contains('opt')){const p=e.target.parentElement;p.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));e.target.classList.add('sel');updatePalette();}
-});
+document.addEventListener('click',e=>{if(e.target.classList.contains('opt')){const p=e.target.parentElement;p.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));e.target.classList.add('sel');updatePalette();}});
 document.addEventListener('input',e=>{if(e.target.classList.contains('fill'))updatePalette();});
 document.addEventListener('change',e=>{if(e.target.classList.contains('flag'))updatePalette();});
 
-/* =============== PARTS =============== */
-let currentPart=null;
 function switchPart(p){
-  if(!currentPart&&p!=='listening'){}
   currentPart=p;
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('p-'+p).classList.add('active');
   const m=MOCKS[M];
-  const titles={listening:m.name+' · Listening',reading:m.name+' · Reading',writing:m.name+' · Writing Task 2'};
-  document.getElementById('partTitle').textContent=titles[p];
+  document.getElementById('partTitle').textContent=m.name+' · '+(p==='listening'?'Listening':p==='reading'?'Reading':'Writing');
   document.querySelectorAll('.pbtn2').forEach(b=>b.classList.toggle('active',b.dataset.p===p));
   document.getElementById('hlTools').style.display=p==='reading'?'flex':'none';
+  document.getElementById('readTabs').style.display=p==='reading'?'flex':'none';
   buildPalette();document.getElementById('content').scrollTop=0;
+}
+function setRead(idx){
+  readIdx=idx;
+  document.querySelectorAll('.rpass').forEach(d=>d.style.display=(+d.dataset.i===idx)?'block':'none');
+  document.querySelectorAll('.rblock').forEach(d=>d.style.display=(+d.dataset.i===idx)?'block':'none');
+  document.querySelectorAll('.rtab').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  buildPalette();document.querySelector('.passcol').scrollTop=0;document.querySelector('.qcol').scrollTop=0;
 }
 function startTest(i){loadMock(i);document.getElementById('intro').classList.remove('active');switchPart('listening');resetTimer();startTimer();}
 function showIntro(){
-  clearInterval(tint);tint=null;speechSynthesis.cancel();
+  clearInterval(tint);tint=null;speechSynthesis.cancel();playingSec=-1;
   document.getElementById('overlay').classList.remove('show');
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('intro').classList.add('active');
   document.getElementById('partTitle').textContent='Choose a Mock Test';
+  document.getElementById('readTabs').style.display='none';document.getElementById('hlTools').style.display='none';
   document.querySelectorAll('.pbtn2').forEach(b=>b.classList.remove('active'));
   document.getElementById('palette').innerHTML='';currentPart=null;
-  document.getElementById('timer').textContent='⏱ 60:00';document.getElementById('timer').classList.remove('low');
+  document.getElementById('timer').textContent='⏱ 150:00';document.getElementById('timer').classList.remove('low');
 }
 
-/* =============== PALETTE =============== */
+/* PALETTE */
 function partQuestions(){
   if(currentPart==='listening')return document.querySelectorAll('#listenQ .q');
-  if(currentPart==='reading')return document.querySelectorAll('#readQ .q');
+  if(currentPart==='reading')return document.querySelectorAll('.rblock[data-i="'+readIdx+'"] .q');
   return [];
 }
 function buildPalette(){
   const pal=document.getElementById('palette');pal.innerHTML='';
   if(currentPart==='writing'){pal.innerHTML='<span style="color:#bbb;font-size:12.5px;align-self:center">Writing — word count নিচে</span>';return;}
-  partQuestions().forEach((q,i)=>{const b=document.createElement('button');b.className='pnum';b.textContent=i+1;b.onclick=()=>{q.scrollIntoView({behavior:'smooth',block:'center'});};pal.appendChild(b);});
+  partQuestions().forEach(q=>{const b=document.createElement('button');b.className='pnum';b.textContent=q.querySelector('.qn').textContent;b.onclick=()=>q.scrollIntoView({behavior:'smooth',block:'center'});pal.appendChild(b);});
   updatePalette();
 }
 function isAnswered(q){if(q.querySelector('.opts'))return !!q.querySelector('.opt.sel');const inp=q.querySelector('.fill');return inp&&inp.value.trim()!=='';}
 function updatePalette(){const qs=partQuestions();const pal=document.getElementById('palette').children;qs.forEach((q,i)=>{if(!pal[i])return;pal[i].classList.toggle('answered',isAnswered(q));const fl=q.querySelector('.flag');pal[i].classList.toggle('flagged',fl&&fl.checked);});}
-function stepQ(dir){const qs=[...partQuestions()];if(!qs.length)return;window._qi=window._qi||{};let idx=(window._qi[currentPart]||0)+dir;idx=Math.max(0,Math.min(qs.length-1,idx));window._qi[currentPart]=idx;qs[idx].scrollIntoView({behavior:'smooth',block:'center'});}
+function stepQ(dir){const qs=[...partQuestions()];if(!qs.length)return;window._qi=window._qi||{};const k=currentPart+readIdx;let idx=(window._qi[k]||0)+dir;idx=Math.max(0,Math.min(qs.length-1,idx));window._qi[k]=idx;qs[idx].scrollIntoView({behavior:'smooth',block:'center'});}
 
-/* =============== TIMER =============== */
-let sec=3600,tint=null;
+/* TIMER */
+let sec=150*60,tint=null;
 function fmt(s){const m=Math.floor(s/60),x=s%60;return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');}
-function resetTimer(){sec=3600;document.getElementById('timer').textContent='⏱ '+fmt(sec);document.getElementById('timer').classList.remove('low');}
+function resetTimer(){sec=150*60;document.getElementById('timer').textContent='⏱ '+fmt(sec);document.getElementById('timer').classList.remove('low');}
 function startTimer(){if(tint)return;tint=setInterval(()=>{sec--;document.getElementById('timer').textContent='⏱ '+fmt(sec);if(sec<=300)document.getElementById('timer').classList.add('low');if(sec<=0){clearInterval(tint);submitTest();}},1000);}
 
-/* =============== AUDIO =============== */
-let sp=false;
-function toggleAudio(){
+/* AUDIO */
+function playSec(si){
   if(!('speechSynthesis'in window)){alert('Voice not supported');return;}
-  if(sp){speechSynthesis.pause();sp=false;document.getElementById('lplay').textContent='▶️';return;}
-  if(speechSynthesis.paused&&speechSynthesis.speaking){speechSynthesis.resume();}
-  else{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(document.getElementById('lTranscript').textContent.replace(/"/g,''));u.lang='en-GB';u.rate=parseFloat(document.getElementById('rate').value);u.onend=()=>{sp=false;document.getElementById('lplay').textContent='▶️';};speechSynthesis.speak(u);}
-  sp=true;document.getElementById('lplay').textContent='⏸️';
+  const btn=document.getElementById('lp'+si);
+  if(playingSec===si){speechSynthesis.cancel();playingSec=-1;btn.textContent='▶️';return;}
+  speechSynthesis.cancel();document.querySelectorAll('.lplaybtn').forEach(b=>b.textContent='▶️');
+  const u=new SpeechSynthesisUtterance(MOCKS[M].listen[si].transcript);
+  u.lang='en-GB';u.rate=parseFloat(document.getElementById('rate').value||'0.9');
+  u.onend=()=>{playingSec=-1;btn.textContent='▶️';};
+  speechSynthesis.speak(u);playingSec=si;btn.textContent='⏸️';
 }
 
-/* =============== HIGHLIGHT =============== */
-function highlightSel(){const sel=window.getSelection();if(!sel.rangeCount||sel.isCollapsed)return;const r=sel.getRangeAt(0);if(!document.getElementById('passage').contains(r.commonAncestorContainer))return;const m=document.createElement('mark');try{r.surroundContents(m);}catch(e){}sel.removeAllRanges();}
-function clearHl(){document.querySelectorAll('#passage mark').forEach(m=>{const t=document.createTextNode(m.textContent);m.replaceWith(t);});}
+/* HIGHLIGHT */
+function highlightSel(){const s=window.getSelection();if(!s.rangeCount||s.isCollapsed)return;const r=s.getRangeAt(0);if(!document.getElementById('passage').contains(r.commonAncestorContainer))return;const m=document.createElement('mark');try{r.surroundContents(m);}catch(e){}s.removeAllRanges();}
+function clearHl(){document.querySelectorAll('#passage mark').forEach(m=>{m.replaceWith(document.createTextNode(m.textContent));});}
 
-function countWords(){const t=document.getElementById('essay').value.trim();document.getElementById('wc').textContent=t?t.split(/\s+/).length:0;}
+function countWords(){
+  const c=t=>{const x=t.trim();return x?x.split(/\s+/).length:0;};
+  document.getElementById('wc1').textContent=c(document.getElementById('essay1').value);
+  document.getElementById('wc2').textContent=c(document.getElementById('essay2').value);
+}
 
-/* =============== GRADE =============== */
+/* GRADE */
 function norm(s){return (s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.,]$/,'');}
-function gradePart(qs){let c=0;qs.forEach(q=>{const ans=q.dataset.a.split('|').map(norm);q.classList.remove('ok','bad');
+function gradeSet(qs){let c=0;qs.forEach(q=>{const ans=q.dataset.a.split('|').map(norm);q.classList.remove('ok','bad');
   if(q.querySelector('.opts')){const sel=q.querySelector('.opt.sel');const val=sel?norm(sel.textContent):'';const letter=sel?norm(sel.textContent.charAt(0)):'';
     if(sel&&(ans.includes(val)||ans.includes(letter))){c++;q.classList.add('ok');sel.classList.add('correctopt');}
     else{q.classList.add('bad');q.querySelectorAll('.opt').forEach(o=>{if(ans.includes(norm(o.textContent))||ans.includes(norm(o.textContent.charAt(0))))o.classList.add('correctopt');});}}
@@ -449,22 +314,24 @@ function gradePart(qs){let c=0;qs.forEach(q=>{const ans=q.dataset.a.split('|').m
     if(inp.value&&ans.includes(norm(inp.value))){c++;q.classList.add('ok');inp.classList.add('oki');}
     else{q.classList.add('bad');inp.classList.add('badi');if(!q.querySelector('.ansreveal')){const s=document.createElement('span');s.className='ansreveal';s.textContent='✓ '+q.dataset.a.split('|')[0];inp.insertAdjacentElement('afterend',s);}}}
 });return c;}
-function band(correct,total){const pct=correct/total;if(pct>=.95)return '8.5–9';if(pct>=.85)return '7.5–8';if(pct>=.75)return '7';if(pct>=.6)return '6–6.5';if(pct>=.45)return '5–5.5';return '4–4.5';}
+function bandRaw(r){if(r>=39)return '9';if(r>=37)return '8.5';if(r>=35)return '8';if(r>=33)return '7.5';if(r>=30)return '7';if(r>=27)return '6.5';if(r>=23)return '6';if(r>=19)return '5.5';if(r>=15)return '5';if(r>=13)return '4.5';return '4';}
 function submitTest(){
   if(!currentPart)return;
   const lq=document.querySelectorAll('#listenQ .q'),rq=document.querySelectorAll('#readQ .q');
-  const lc=gradePart(lq),rc=gradePart(rq);
-  const words=document.getElementById('essay').value.trim();const wn=words?words.split(/\s+/).length:0;
-  clearInterval(tint);tint=null;
+  const lc=gradeSet(lq),rc=gradeSet(rq);
+  const w1=document.getElementById('essay1').value.trim(),w2=document.getElementById('essay2').value.trim();
+  const wn1=w1?w1.split(/\s+/).length:0,wn2=w2?w2.split(/\s+/).length:0;
+  clearInterval(tint);tint=null;speechSynthesis.cancel();
   document.getElementById('rTitle').textContent='📊 '+MOCKS[M].name+' — ফলাফল';
-  document.getElementById('scoreBig').textContent=(lc+rc)+' / '+(lq.length+rq.length);
+  document.getElementById('scoreBig').textContent='L '+lc+'/'+lq.length+' · R '+rc+'/'+rq.length;
   document.getElementById('scoreTable').innerHTML=
-    '<tr><td>🎧 Listening</td><td>'+lc+' / '+lq.length+' — Band ~'+band(lc,lq.length)+'</td></tr>'+
-    '<tr><td>📖 Reading</td><td>'+rc+' / '+rq.length+' — Band ~'+band(rc,rq.length)+'</td></tr>'+
-    '<tr><td>✍️ Writing</td><td>'+wn+' words '+(wn>=250?'✅':'⚠️ ২৫০-এর কম')+'</td></tr>';
+    '<tr><td>🎧 Listening</td><td>'+lc+' / '+lq.length+' — Band ~'+bandRaw(lc)+'</td></tr>'+
+    '<tr><td>📖 Reading</td><td>'+rc+' / '+rq.length+' — Band ~'+bandRaw(rc)+'</td></tr>'+
+    '<tr><td>✍️ Task 1</td><td>'+wn1+' words '+(wn1>=150?'✅':'⚠️ <150')+'</td></tr>'+
+    '<tr><td>✍️ Task 2</td><td>'+wn2+' words '+(wn2>=250?'✅':'⚠️ <250')+'</td></tr>';
   document.getElementById('overlay').classList.add('show');
 }
-function showHelp(){alert('CD-IELTS Mock:\n• নিচের নম্বরে ক্লিক করে প্রশ্নে যাও\n• উত্তর দিলে সবুজ হয়\n• Review টিক = flag (কমলা বিন্দু)\n• Reading-এ টেক্সট সিলেক্ট করে Highlight\n• ☰ Tests দিয়ে অন্য Mock\n• শেষে Submit');}
+function showHelp(){alert('Full Mock:\n• Listening: ৪ সেকশন, প্রতিটার অডিও\n• Reading: P1/P2/P3 tab দিয়ে passage বদলাও\n• নম্বরে ক্লিক করে প্রশ্নে যাও; উত্তর দিলে সবুজ\n• Review টিক = flag\n• ☰ Tests দিয়ে অন্য mock\n• শেষে Submit');}
 </script>
 </body>
 </html>
