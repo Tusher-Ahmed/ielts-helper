@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Listening Module | সম্পূর্ণ প্রস্তুতি</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;--txt:#e9ecff;--muted:#a7adda;
+    --accent:#6c8cff;--accent2:#46d6b3;--gold:#ffcb5b;--pink:#ff7ab6;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  header.hero{padding:44px 0 14px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:14px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;margin-bottom:10px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.02rem}
+  nav.tabs{position:sticky;top:0;z-index:50;background:rgba(15,18,38,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0;margin-top:14px}
+  .tabrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .tab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);padding:9px 15px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.93rem;font-weight:500;transition:.15s}
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06121f;font-weight:700;border-color:transparent}
+  section.panel{display:none;padding:26px 0 24px;animation:fade .35s ease}
+  section.panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  h2.sec{font-size:1.5rem;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .card h3{color:var(--gold);font-size:1.15rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .card h4{color:var(--accent2);margin:12px 0 6px}
+  .card p{color:#d6daff;margin-bottom:8px}
+  .card ul{list-style:none;margin:6px 0}
+  .card ul li{padding:6px 0 6px 26px;position:relative;color:#d6daff}
+  .card ul li::before{content:"✦";position:absolute;left:4px;color:var(--accent2)}
+  .card ol{margin:6px 0 6px 22px;color:#d6daff}.card ol li{padding:4px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--card2);color:var(--gold)}
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  .ex{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px 15px;margin:9px 0}
+  .ex .p{color:var(--accent2);font-style:italic}
+  .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+  .vitem{background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:9px 12px}
+  .vitem b{color:var(--gold);font-family:'Poppins';font-weight:500;display:block;font-size:.92rem}
+  .vitem small{color:var(--muted)}
+  details{background:var(--card2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+  summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gold)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;color:var(--accent2)}
+  details[open] summary::after{content:"–"}
+  .dbody{padding:4px 16px 16px}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.94rem;font-weight:600;padding:11px 18px;border-radius:11px;transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  @media(max-width:640px){.vgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">🎧 LISTENING MODULE — ৪ সেকশন + সব question type</span></div>
+    <h1>Listening <span class="grad">সম্পূর্ণ প্রস্তুতি</span> মডিউল</h1>
+    <p>৪ সেকশন, ৪০ প্রশ্ন, একবারই অডিও। মূল চাবি: আগে প্রশ্ন পড়ে <b>predict</b> করা আর একটানা মনোযোগ। প্রতিটা question type-এর কৌশল এখানে।</p>
+  </div>
+</header>
+
+<nav class="tabs"><div class="wrap"><div class="tabrow">
+  <button class="tab active" onclick="go('over')">🧭 Overview</button>
+  <button class="tab" onclick="go('strategy')">🎯 Strategy</button>
+  <button class="tab" onclick="go('types')">🧩 Question Types</button>
+  <button class="tab" onclick="go('spell')">✏️ Spelling & Traps</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<section class="panel active" id="over">
+  <h2 class="sec">🧭 Listening — পূর্ণ চিত্র</h2>
+  <p class="sub">~৩০ মিনিট অডিও। কম্পিউটারে: শেষে মাত্র ২ মিনিট চেক, সরাসরি টাইপ।</p>
+  <div class="card">
+    <h3>৪টি সেকশন</h3>
+    <table>
+      <tr><th>সেকশন</th><th>বিষয়</th><th>বক্তা</th><th>কঠিনতা</th></tr>
+      <tr><td>1</td><td>দৈনন্দিন কথোপকথন (যেমন booking)</td><td>২ জন</td><td>সহজ</td></tr>
+      <tr><td>2</td><td>মনোলগ (tour/tour guide, তথ্য)</td><td>১ জন</td><td>মাঝারি</td></tr>
+      <tr><td>3</td><td>একাডেমিক আলোচনা</td><td>২–৪ জন</td><td>কঠিন</td></tr>
+      <tr><td>4</td><td>একাডেমিক লেকচার</td><td>১ জন</td><td>সবচেয়ে কঠিন</td></tr>
+    </table>
+    <div class="note">💡 Section 1 সবচেয়ে সহজ — এখানে ভুল কোরো না, পুরো নম্বর তোলো।</div>
+  </div>
+</section>
+
+<section class="panel" id="strategy">
+  <h2 class="sec">🎯 পরীক্ষার সময় কৌশল</h2>
+  <div class="card">
+    <h3>🔑 অডিও শুরুর আগে (সবচেয়ে গুরুত্বপূর্ণ)</h3>
+    <ul>
+      <li>যতটুকু সময় দেয়, প্রশ্ন <b>আগে পড়ে</b> নাও।</li>
+      <li>keyword আন্ডারলাইন করো।</li>
+      <li><b>Predict করো:</b> প্রতিটা ফাঁকায় কী ধরনের উত্তর লাগবে — সংখ্যা? নাম? বিশেষণ? বহুবচন?</li>
+    </ul>
+    <div class="ex"><p class="p">"The tour starts at ______." → সময়/সংখ্যা আসবে। "You need to bring a ______." → বস্তু (noun) আসবে।</p></div>
+  </div>
+  <div class="card">
+    <h3>🎧 শোনার সময়</h3>
+    <ul>
+      <li>উত্তর ছোট করে সাথে সাথে লিখে/টাইপ করো।</li>
+      <li>একটা মিস করলে <b>আটকে থেকো না</b> — পরেরটায় ফোকাস করো (নাহলে চেইনে সব হারাবে)।</li>
+      <li>Signpost শব্দ শোনো: "Now, moving on to…", "Firstly…", "The next point…" — এগুলো বলে দেয় কোথায় আছো।</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🗣️ Signposting ভাষা (কোথায় আছো বুঝবে)</h3>
+    <div class="vgrid">
+      <div class="vitem"><b>Let's start with…</b><small>শুরু</small></div>
+      <div class="vitem"><b>Moving on to…</b><small>পরবর্তী বিষয়</small></div>
+      <div class="vitem"><b>As I mentioned…</b><small>ফিরে উল্লেখ</small></div>
+      <div class="vitem"><b>Finally / Lastly…</b><small>শেষ পয়েন্ট</small></div>
+      <div class="vitem"><b>However / But…</b><small>মত পরিবর্তন আসছে</small></div>
+      <div class="vitem"><b>In other words…</b><small>ব্যাখ্যা</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="types">
+  <h2 class="sec">🧩 সব Question Type — কৌশল</h2>
+  <details open><summary>Form / Note / Table / Flowchart Completion</summary><div class="dbody">
+    <p>নাম, ঠিকানা, ফোন, তারিখ, সংখ্যা লিখতে হয় (বেশিরভাগ Section 1)।</p>
+    <ul>
+      <li>Predict করো কোন ধরনের শব্দ লাগবে।</li>
+      <li>শব্দ সীমা মানো ("ONE WORD AND/OR A NUMBER")।</li>
+      <li>বানান ও একবচন/বহুবচন খেয়াল রাখো।</li>
+    </ul>
+  </div></details>
+  <details><summary>Multiple Choice (MCQ)</summary><div class="dbody">
+    <p>অপশন আগে পড়ো। বক্তা প্রায়ই একটা অপশন বলে পরে বাতিল করে (distractor)। শেষ সিদ্ধান্ত ধরো।</p>
+  </div></details>
+  <details><summary>Matching</summary><div class="dbody">
+    <p>একটা তালিকার আইটেম আরেকটার সাথে মেলানো। অপশনগুলো আগে পড়ো; অডিওতে ক্রমে আসে।</p>
+  </div></details>
+  <details><summary>Map / Plan Labelling</summary><div class="dbody">
+    <p>ম্যাপে জায়গা চিহ্নিত করা। প্রথমে "you are here"/starting point খুঁজে নাও।</p>
+    <div class="vgrid">
+      <div class="vitem"><b>opposite / across from</b><small>উল্টোদিকে</small></div>
+      <div class="vitem"><b>next to / adjacent to</b><small>পাশে</small></div>
+      <div class="vitem"><b>at the far end</b><small>শেষ মাথায়</small></div>
+      <div class="vitem"><b>turn left/right at…</b><small>বাঁক</small></div>
+      <div class="vitem"><b>on your left-hand side</b><small>বাঁ দিকে</small></div>
+      <div class="vitem"><b>at the junction/corner</b><small>মোড়ে</small></div>
+    </div>
+  </div></details>
+  <details><summary>Sentence Completion / Short Answer</summary><div class="dbody">
+    <p>ফাঁকা বাক্য পূরণ বা সরাসরি সংক্ষিপ্ত উত্তর। শব্দ সীমা কঠোরভাবে মানো।</p>
+  </div></details>
+</section>
+
+<section class="panel" id="spell">
+  <h2 class="sec">✏️ Spelling, Numbers ও ফাঁদ</h2>
+  <div class="card">
+    <h3>🔤 বানান ও সংখ্যা</h3>
+    <ul>
+      <li>নাম প্রায়ই <b>বানান করে</b> বলা হয়: "S-M-I-T-H"। "double L" = LL।</li>
+      <li>"oh" = 0; "double two" = 22; দাম, তারিখ, সময় খেয়াল করো।</li>
+      <li>একবচন/বহুবচন ভুল = ভুল উত্তর (book vs books)।</li>
+    </ul>
+    <div class="ex"><p class="p">কমন বানান মুখস্থ রাখো: Wednesday, February, accommodation, address, receipt, restaurant, definitely, necessary.</p></div>
+  </div>
+  <div class="card">
+    <h3>🪤 Distractor (ফাঁদ) — উদাহরণ</h3>
+    <div class="ex"><p class="p">"I'd like Monday… oh wait, no, make that <b>Wednesday</b> — Monday's booked." → উত্তর: <b>Wednesday</b> (শেষ সিদ্ধান্ত)।</p></div>
+    <p>ফাঁদ-সংকেত শব্দ: actually, sorry, on second thought, instead of, rather than, let me change that।</p>
+  </div>
+  <div class="card">
+    <h3>👂 রোজকার Listening ড্রিল</h3>
+    <ul>
+      <li><b>Dictation:</b> ১ মিনিট অডিও শুনে হুবহু লিখে ফেলো, পরে মিলাও (band দ্রুত বাড়ে)।</li>
+      <li><b>Accent training:</b> British (BBC), American (CNN), Australian (ABC) — তিনটাই শোনো।</li>
+      <li>সাবটাইটেল ছাড়া শোনার চেষ্টা করো, পরে মিলাও।</li>
+    </ul>
+    <a href="practice.html" class="btn btn-primary">🧪 এখন অডিও সহ Listening টেস্ট দাও →</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <p>🎧 যত বেশি ইংরেজি শুনবে, Listening ও Speaking দুটোই তত ভালো হবে।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="practice.html" class="btn btn-primary">🧪 Practice</a>
+      <a href="routine.html" class="btn btn-ghost">🗓️ রুটিন</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+<script>
+function go(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const idx={over:0,strategy:1,types:2,spell:3}[id];
+  document.querySelectorAll('.tab')[idx]?.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

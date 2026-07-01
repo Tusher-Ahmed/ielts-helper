@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reading Module | সম্পূর্ণ প্রস্তুতি</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;--txt:#e9ecff;--muted:#a7adda;
+    --accent:#6c8cff;--accent2:#46d6b3;--gold:#ffcb5b;--pink:#ff7ab6;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  header.hero{padding:44px 0 14px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:14px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#06121f;font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;margin-bottom:10px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--accent2),var(--accent),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.02rem}
+  nav.tabs{position:sticky;top:0;z-index:50;background:rgba(15,18,38,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0;margin-top:14px}
+  .tabrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .tab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);padding:9px 15px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.93rem;font-weight:500;transition:.15s}
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#06121f;font-weight:700;border-color:transparent}
+  section.panel{display:none;padding:26px 0 24px;animation:fade .35s ease}
+  section.panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  h2.sec{font-size:1.5rem;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .card h3{color:var(--gold);font-size:1.15rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .card h4{color:var(--accent2);margin:12px 0 6px}
+  .card p{color:#d6daff;margin-bottom:8px}
+  .card ul{list-style:none;margin:6px 0}
+  .card ul li{padding:6px 0 6px 26px;position:relative;color:#d6daff}
+  .card ul li::before{content:"✦";position:absolute;left:4px;color:var(--accent2)}
+  .card ol{margin:6px 0 6px 22px;color:#d6daff}.card ol li{padding:4px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--card2);color:var(--gold)}
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  .ex{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px 15px;margin:9px 0}
+  .ex .p{color:var(--accent2);font-style:italic;margin-bottom:6px}
+  .qa{margin:8px 0}.qa .qq{color:var(--accent);font-weight:600}.qa .aa{color:#dfe3ff;padding-left:14px;border-left:2px solid var(--line)}
+  .ans-y{color:var(--accent2);font-weight:700}.ans-n{color:var(--pink);font-weight:700}.ans-g{color:var(--gold);font-weight:700}
+  details{background:var(--card2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+  summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gold)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;color:var(--accent2)}
+  details[open] summary::after{content:"–"}
+  .dbody{padding:4px 16px 16px}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.94rem;font-weight:600;padding:11px 18px;border-radius:11px;transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">📖 READING MODULE — সব question type + কৌশল</span></div>
+    <h1>Reading <span class="grad">সম্পূর্ণ প্রস্তুতি</span> মডিউল</h1>
+    <p>৬০ মিনিটে ৪০ প্রশ্ন। মূল দক্ষতা: skimming, scanning, paraphrase চেনা আর সময় ব্যবস্থাপনা। প্রতিটা question type-এর কৌশল ও কাজ-করা উদাহরণ এখানে।</p>
+  </div>
+</header>
+
+<nav class="tabs"><div class="wrap"><div class="tabrow">
+  <button class="tab active" onclick="go('over')">🧭 Overview</button>
+  <button class="tab" onclick="go('skills')">⚡ Core Skills</button>
+  <button class="tab" onclick="go('types')">🧩 Question Types</button>
+  <button class="tab" onclick="go('time')">⏱️ Time & Traps</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<section class="panel active" id="over">
+  <h2 class="sec">🧭 Reading — পূর্ণ চিত্র</h2>
+  <p class="sub">৩টি প্যাসেজ, ৪০ প্রশ্ন, ৬০ মিনিট। প্যাসেজ ক্রমে কঠিন হয়।</p>
+  <div class="card">
+    <h3>গঠন</h3>
+    <table>
+      <tr><th>প্যাসেজ</th><th>ধরন</th><th>কঠিনতা</th></tr>
+      <tr><td>1</td><td>সাধারণ তথ্যমূলক</td><td>সহজ</td></tr>
+      <tr><td>2</td><td>work/study সম্পর্কিত (GT) / একাডেমিক</td><td>মাঝারি</td></tr>
+      <tr><td>3</td><td>জটিল একাডেমিক আর্গুমেন্ট</td><td>কঠিন</td></tr>
+    </table>
+    <div class="note">💡 CD-IELTS: প্যাসেজ ও প্রশ্ন পাশাপাশি (split screen); উত্তর সরাসরি টাইপ/ক্লিক — transfer নেই।</div>
+  </div>
+  <div class="card">
+    <h3>🎯 সোনালি নিয়ম</h3>
+    <ul>
+      <li>পুরো প্যাসেজ শব্দে শব্দে <b>পড়ো না</b> — সময় শেষ হয়ে যাবে।</li>
+      <li>উত্তর সাধারণত প্রশ্নের <b>ক্রমেই</b> থাকে (Matching ছাড়া)।</li>
+      <li>উত্তর প্যাসেজে <b>paraphrase</b> করা থাকে — হুবহু শব্দ খুঁজো না, অর্থ খোঁজো।</li>
+      <li>কোনো প্রশ্ন <b>খালি রেখো না</b> — নেগেটিভ মার্কিং নেই।</li>
+    </ul>
+  </div>
+</section>
+
+<section class="panel" id="skills">
+  <h2 class="sec">⚡ Core Skills — ৩টি মূল দক্ষতা</h2>
+  <p class="sub">এই তিনটা রপ্ত করলে যেকোনো প্রশ্ন সামলাতে পারবে।</p>
+  <div class="card">
+    <h3>1️⃣ Skimming — মূল ভাব ধরা</h3>
+    <p>পুরো প্যাসেজ ১–২ মিনিটে দ্রুত চোখ বুলিয়ে মূল বিষয় বোঝা।</p>
+    <ul>
+      <li>প্রতি প্যারার <b>প্রথম ও শেষ বাক্য</b> পড়ো — মূল আইডিয়া ওখানে।</li>
+      <li>title, heading, বোল্ড শব্দে চোখ রাখো।</li>
+      <li>উদ্দেশ্য: কোন তথ্য কোথায় আছে সেটার একটা "map" মাথায় তৈরি করা।</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>2️⃣ Scanning — নির্দিষ্ট তথ্য খোঁজা</h3>
+    <p>প্রশ্নের keyword ধরে দ্রুত সেই তথ্য প্যাসেজে খুঁজে বের করা।</p>
+    <ul>
+      <li>নাম, সংখ্যা, তারিখ, capital letter সহজে চোখে পড়ে — এগুলো scan করো।</li>
+      <li>keyword-এর <b>synonym</b>ও খোঁজো (নিচে paraphrase দেখো)।</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>3️⃣ Paraphrase চেনা — সবচেয়ে গুরুত্বপূর্ণ</h3>
+    <p>প্রশ্নের শব্দ প্যাসেজে হুবহু থাকে না; synonym দিয়ে বলা থাকে। এটা ধরাই মূল কাজ।</p>
+    <table>
+      <tr><th>প্রশ্নে</th><th>প্যাসেজে (paraphrase)</th></tr>
+      <tr><td>children</td><td>youngsters / the young</td></tr>
+      <tr><td>important</td><td>crucial / significant / vital</td></tr>
+      <tr><td>rise / increase</td><td>grow, climb, surge, escalate</td></tr>
+      <tr><td>because of</td><td>owing to, due to, as a result of</td></tr>
+      <tr><td>hard</td><td>challenging, demanding, difficult</td></tr>
+    </table>
+    <div class="note good">✅ ড্রিল: রোজ ৫টা শব্দের synonym শেখো (Vocabulary পেজ থেকে) — paraphrase ধরা সহজ হবে।</div>
+  </div>
+</section>
+
+<section class="panel" id="types">
+  <h2 class="sec">🧩 সব Question Type — কৌশল + উদাহরণ</h2>
+  <p class="sub">প্রতিটার আলাদা কৌশল আছে। ক্লিক করে খুলে দেখো।</p>
+
+  <details open><summary>True / False / Not Given (তথ্য)</summary><div class="dbody">
+    <p><b>নিয়ম:</b> TRUE = প্যাসেজে মেলে · FALSE = উল্টো বলা আছে · NOT GIVEN = তথ্যই নেই।</p>
+    <div class="ex">
+      <p class="p">প্যাসেজ: "The Eiffel Tower, completed in 1889, was initially criticised by many Parisian artists."</p>
+      <div class="qa"><div class="qq">The tower was finished in 1889.</div><div class="aa"><span class="ans-y">TRUE</span> — সরাসরি মেলে।</div></div>
+      <div class="qa"><div class="qq">Everyone admired the tower when built.</div><div class="aa"><span class="ans-n">FALSE</span> — অনেকে সমালোচনা করেছিল, তাই উল্টো।</div></div>
+      <div class="qa"><div class="qq">It is the most visited monument in France.</div><div class="aa"><span class="ans-g">NOT GIVEN</span> — প্যাসেজে বলা নেই।</div></div>
+    </div>
+    <div class="note warn">⚠️ নিজের জ্ঞান দিয়ে "Not Given"-কে "True" বানিও না। শুধু লেখা যা আছে তাই।</div>
+  </div></details>
+
+  <details><summary>Yes / No / Not Given (লেখকের মত)</summary><div class="dbody">
+    <p>TFNG এর মতোই, কিন্তু এখানে <b>লেখকের মতামত/দাবি</b> নিয়ে। "Does the writer agree?" — Yes/No/Not Given।</p>
+    <p>opinion শব্দ খোঁজো: believe, argue, claim, suggest।</p>
+  </div></details>
+
+  <details><summary>Matching Headings (প্যারার শিরোনাম)</summary><div class="dbody">
+    <ul>
+      <li>প্রতি প্যারার <b>মূল ভাব</b> খোঁজো, ডিটেইল না।</li>
+      <li>প্রথম ও শেষ বাক্য সবচেয়ে গুরুত্বপূর্ণ।</li>
+      <li>প্যারা পড়ে নিজের ভাষায় ১টা শিরোনাম ভাবো, তারপর অপশনে মেলাও।</li>
+    </ul>
+    <div class="note warn">⚠️ heading-এ প্যাসেজের শব্দ হুবহু থাকলেই সঠিক না — অর্থ মেলাও।</div>
+  </div></details>
+
+  <details><summary>Matching Information / Features / Names</summary><div class="dbody">
+    <p><b>Matching Information:</b> কোন প্যারায় কোন তথ্য — scan করে খোঁজো (ক্রমে নাও থাকতে পারে, তাই সময় লাগে; পরে করো)।</p>
+    <p><b>Matching Features/Names:</b> গবেষক/দেশের নাম দিয়ে দাবি মেলানো — নামগুলো আগে scan করে চিহ্নিত করো।</p>
+  </div></details>
+
+  <details><summary>Sentence / Summary / Note Completion</summary><div class="dbody">
+    <ul>
+      <li>শব্দ সীমা কঠোরভাবে মানো ("NO MORE THAN TWO WORDS")।</li>
+      <li>ফাঁকার আগে-পরে দেখে কোন ধরনের শব্দ দরকার বোঝো (noun? adjective?)।</li>
+      <li>উত্তর প্যাসেজ থেকেই নিতে হয় (সাধারণত) — বানান নির্ভুল রাখো।</li>
+    </ul>
+    <div class="ex"><p class="p">"Farms grow plants in nutrient-rich ______ instead of soil." → উত্তর: <b>water</b> (প্যাসেজ থেকে)।</p></div>
+  </div></details>
+
+  <details><summary>Multiple Choice (MCQ)</summary><div class="dbody">
+    <ul>
+      <li>প্রশ্ন আগে পড়ো, তারপর প্যাসেজে সেই অংশ খুঁজে পড়ো।</li>
+      <li>ভুল অপশন <b>বাদ দিয়ে</b> এগোও (elimination)।</li>
+      <li>ফাঁদ: আংশিক সত্য অপশন — পুরোটা মিলতে হবে।</li>
+    </ul>
+  </div></details>
+
+  <details><summary>Diagram / Flowchart / Table Completion</summary><div class="dbody">
+    <p>প্যাসেজের একটা নির্দিষ্ট অংশ বর্ণনা করে। label/step পড়ে সেই অংশ scan করো। শব্দ সীমা মানো।</p>
+  </div></details>
+
+  <details><summary>List Selection & Short Answer</summary><div class="dbody">
+    <p><b>List selection:</b> "Choose TWO letters" — দুটো সঠিক বেছে নাও, বাকি বাদ দাও।</p>
+    <p><b>Short answer:</b> প্রশ্নের সরাসরি উত্তর প্যাসেজ থেকে, শব্দ সীমা মেনে।</p>
+  </div></details>
+</section>
+
+<section class="panel" id="time">
+  <h2 class="sec">⏱️ সময় ব্যবস্থাপনা ও ফাঁদ</h2>
+  <div class="card">
+    <h3>⏱️ ৬০ মিনিট কীভাবে ভাগ করবে</h3>
+    <ul>
+      <li>প্রতি প্যাসেজ: <b>~২০ মিনিট</b> (ঘড়ি দেখো)।</li>
+      <li>একটা প্রশ্নে <b>১.৫ মিনিটের</b> বেশি আটকে থেকো না — flag করে এগোও।</li>
+      <li>সহজ প্রশ্ন (completion) আগে, কঠিন (matching info) পরে।</li>
+      <li>প্যাসেজ ৩ সবচেয়ে কঠিন — সময় রিজার্ভ রাখো।</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🪤 কমন ফাঁদ</h3>
+    <ul>
+      <li>হুবহু শব্দ মিল দেখে লাফ দেওয়া (কিন্তু অর্থ ভিন্ন)।</li>
+      <li>নিজের general knowledge দিয়ে উত্তর দেওয়া।</li>
+      <li>শব্দ সীমা ভাঙা → পুরো উত্তর বাতিল।</li>
+      <li>"Not Given" ভয়ে এড়িয়ে যাওয়া — এটাও সঠিক উত্তর হতে পারে।</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>📈 কীভাবে দ্রুত উন্নতি করবে</h3>
+    <ul>
+      <li>রোজ ১টা প্যাসেজ টাইমার ধরে প্র্যাকটিস করো।</li>
+      <li>ভুল উত্তর প্যাসেজে ফিরে খুঁজে বের করো — কেন ভুল হলো বুঝো।</li>
+      <li>রোজ BBC/Guardian/National Geographic পড়ো — গতি বাড়বে।</li>
+    </ul>
+    <a href="practice.html" class="btn btn-primary">🧪 এখন ২টি full passage প্র্যাকটিস করো →</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <p>📖 Reading = গতি + paraphrase চেনা। রোজ পড়লে দুটোই বাড়ে।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="practice.html" class="btn btn-primary">🧪 Practice</a>
+      <a href="vocabulary.html" class="btn btn-ghost">📚 Vocabulary</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+<script>
+function go(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const idx={over:0,skills:1,types:2,time:3}[id];
+  document.querySelectorAll('.tab')[idx]?.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

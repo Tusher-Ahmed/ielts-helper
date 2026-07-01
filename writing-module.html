@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Writing Module | সম্পূর্ণ প্রস্তুতি (Task 1 + Task 2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;--txt:#e9ecff;--muted:#a7adda;
+    --accent:#6c8cff;--accent2:#46d6b3;--gold:#ffcb5b;--pink:#ff7ab6;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  header.hero{padding:44px 0 14px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:14px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--pink));color:#2a0a18;font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;margin-bottom:10px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--pink),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:1.02rem}
+  nav.tabs{position:sticky;top:0;z-index:50;background:rgba(15,18,38,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0;margin-top:14px}
+  .tabrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .tab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);padding:9px 15px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.93rem;font-weight:500;transition:.15s}
+  .tab:hover{color:var(--txt)}
+  .tab.active{background:linear-gradient(90deg,var(--gold),var(--pink));color:#2a0a18;font-weight:700;border-color:transparent}
+  section.panel{display:none;padding:26px 0 24px;animation:fade .35s ease}
+  section.panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  h2.sec{font-size:1.5rem;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .card h3{color:var(--gold);font-size:1.15rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .card h4{color:var(--accent2);margin:12px 0 6px}
+  .card p{color:#d6daff;margin-bottom:8px}
+  .card ul{list-style:none;margin:6px 0}
+  .card ul li{padding:6px 0 6px 26px;position:relative;color:#d6daff}
+  .card ul li::before{content:"✦";position:absolute;left:4px;color:var(--accent2)}
+  .card ol{margin:6px 0 6px 22px;color:#d6daff}
+  .card ol li{padding:4px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--card2);color:var(--gold)}
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  .formula{background:var(--card2);border:1px dashed var(--accent);border-radius:10px;padding:12px 15px;margin:9px 0;font-family:'Poppins';color:var(--gold);font-size:.93rem;line-height:1.7}
+  .model{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:9px 0;line-height:1.95}
+  .model .en{color:#eef0ff}
+  .hl{background:rgba(255,203,91,.18);color:var(--gold);border-radius:4px;padding:1px 4px}
+  .hl2{background:rgba(70,214,179,.16);color:var(--accent2);border-radius:4px;padding:1px 4px}
+  .hl3{background:rgba(108,140,255,.18);color:#9db3ff;border-radius:4px;padding:1px 4px}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:999px;margin-bottom:6px;font-family:'Poppins';background:var(--gold);color:#2a230a}
+  details{background:var(--card2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+  summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gold)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;color:var(--accent2)}
+  details[open] summary::after{content:"–"}
+  .dbody{padding:4px 16px 16px}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.94rem;font-weight:600;padding:11px 18px;border-radius:11px;transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+  .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+  .vitem{background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:9px 12px}
+  .vitem b{color:var(--gold);font-family:'Poppins';font-weight:500;display:block;font-size:.92rem}
+  .vitem small{color:var(--muted)}
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  @media(max-width:640px){.vgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">✍️ WRITING MODULE — Task 1 + Task 2 সম্পূর্ণ কোর্স</span></div>
+    <h1>Writing <span class="grad">সম্পূর্ণ প্রস্তুতি</span> মডিউল</h1>
+    <p>শুধু overview নয় — প্রতিটা প্রশ্নের ধরন, স্টেপ-বাই-স্টেপ পদ্ধতি, টেমপ্লেট, একাধিক পূর্ণ মডেল এসে, গ্রামার ও ভোকাবুলারি। Band 7.5+ এর জন্য যা যা দরকার সব।</p>
+  </div>
+</header>
+
+<nav class="tabs"><div class="wrap"><div class="tabrow">
+  <button class="tab active" onclick="go('over')">🧭 Overview</button>
+  <button class="tab" onclick="go('t2')">📝 Task 2 (Essay)</button>
+  <button class="tab" onclick="go('t1')">📊 Task 1 (Graph)</button>
+  <button class="tab" onclick="go('models')">🏆 Model Essays</button>
+  <button class="tab" onclick="go('lang')">🔤 Grammar & Vocab</button>
+  <button class="tab" onclick="go('check')">✅ Checklist</button>
+</div></div></nav>
+
+<main class="wrap">
+
+<!-- OVERVIEW -->
+<section class="panel active" id="over">
+  <h2 class="sec">🧭 Writing পরীক্ষা — পূর্ণ চিত্র</h2>
+  <p class="sub">৬০ মিনিট, ২টি টাস্ক। Task 2 এর ওজন দ্বিগুণ — তাই আগে সেটা লেখো।</p>
+  <div class="card">
+    <h3>দুটো টাস্ক</h3>
+    <table>
+      <tr><th></th><th>Task 1 (Academic)</th><th>Task 2 (Essay)</th></tr>
+      <tr><td>কী করতে হয়</td><td>graph/chart/map/process বর্ণনা</td><td>যুক্তি দিয়ে essay লেখা</td></tr>
+      <tr><td>শব্দ</td><td>কমপক্ষে ১৫০</td><td>কমপক্ষে ২৫০</td></tr>
+      <tr><td>সময়</td><td>২০ মিনিট</td><td>৪০ মিনিট</td></tr>
+      <tr><td>ওজন</td><td>স্কোরের ১/৩</td><td>স্কোরের ২/৩</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3>📐 কীভাবে স্কোর হয় — ৪টি মানদণ্ড (প্রতিটি ২৫%)</h3>
+    <table>
+      <tr><th>মানদণ্ড</th><th>মানে</th><th>Band 7+ পেতে</th></tr>
+      <tr><td>Task Achievement / Response</td><td>প্রশ্নের সব অংশের উত্তর দিয়েছ?</td><td>স্পষ্ট অবস্থান + সব পয়েন্ট develop করা</td></tr>
+      <tr><td>Coherence & Cohesion</td><td>যুক্তির প্রবাহ ও সংযোগ</td><td>প্যারাগ্রাফিং + linker (কিন্তু অতিরিক্ত না)</td></tr>
+      <tr><td>Lexical Resource</td><td>শব্দভাণ্ডার</td><td>Collocation + কম-common শব্দ, কম ভুল</td></tr>
+      <tr><td>Grammatical Range</td><td>বাক্যের বৈচিত্র্য ও নির্ভুলতা</td><td>Complex বাক্য + বেশিরভাগ error-free</td></tr>
+    </table>
+    <div class="note">💡 ৪টির গড় = Writing band। একটাতেও খুব দুর্বল হলে টানে। তাই সবগুলোতে ভারসাম্য রাখো।</div>
+  </div>
+  <div class="card">
+    <h3>🪜 প্রতিটা এসের ৪-ধাপ পদ্ধতি</h3>
+    <ol>
+      <li><b>Analyse (১ মিনিট):</b> প্রশ্নের ধরন চেনো, keyword চিহ্নিত করো, ঠিক কী চাইছে বোঝো।</li>
+      <li><b>Plan (৪ মিনিট):</b> অবস্থান ঠিক করো + ২টা মূল আইডিয়া + প্রতিটার উদাহরণ নোট করো।</li>
+      <li><b>Write (৩০ মিনিট):</b> ৪ প্যারা — Intro, Body 1, Body 2, Conclusion।</li>
+      <li><b>Check (৫ মিনিট):</b> গ্রামার, বানান, শব্দ সংখ্যা, article/preposition রিভিউ।</li>
+    </ol>
+    <div class="note warn">⚠️ প্ল্যানিং বাদ দিও না। ৫ মিনিট প্ল্যান পুরো এসে গুছিয়ে দেয় ও Coherence স্কোর বাড়ায়।</div>
+  </div>
+</section>
+
+<!-- TASK 2 -->
+<section class="panel" id="t2">
+  <h2 class="sec">📝 Task 2 — Essay (সবচেয়ে গুরুত্বপূর্ণ)</h2>
+  <p class="sub">৫টি প্রশ্নের ধরন। প্রথমেই ধরন চেনা মানে অর্ধেক কাজ শেষ।</p>
+
+  <div class="card">
+    <h3>৫টি প্রশ্নের ধরন ও তাদের স্ট্রাকচার</h3>
+    <table>
+      <tr><th>ধরন</th><th>প্রশ্নে যা থাকে</th><th>স্ট্রাকচার</th></tr>
+      <tr><td>Opinion (Agree/Disagree)</td><td>"To what extent do you agree?"</td><td>একপক্ষ নাও; ২ body-তেই সেটা সমর্থন</td></tr>
+      <tr><td>Discussion</td><td>"Discuss both views and give your opinion"</td><td>Body1: view A, Body2: view B; মত স্পষ্ট</td></tr>
+      <tr><td>Advantage/Disadvantage</td><td>"Do advantages outweigh disadvantages?"</td><td>Body1: সুবিধা, Body2: অসুবিধা</td></tr>
+      <tr><td>Problem/Solution (Cause/Solution)</td><td>"What problems…? What solutions…?"</td><td>Body1: সমস্যা/কারণ, Body2: সমাধান</td></tr>
+      <tr><td>Two-part (Direct)</td><td>দুটো সরাসরি প্রশ্ন</td><td>প্রতিটি প্রশ্নে ১টা body</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🏗️ ৪-প্যারা কাঠামো — প্রতিটা প্যারা কীভাবে লিখবে</h3>
+    <h4>1️⃣ Introduction (২ বাক্য)</h4>
+    <div class="formula">বাক্য ১ — Paraphrase: প্রশ্নটা নিজের ভাষায় লেখো।<br>বাক্য ২ — Thesis: তোমার অবস্থান + এসে কী বলবে তার ইঙ্গিত।</div>
+    <p class="model"><span class="en">"It is <span class="hl">often argued</span> that [topic paraphrased]. <span class="hl3">This essay will argue that</span> [your position], as [reason 1] and [reason 2]."</span></p>
+
+    <h4>2️⃣ + 3️⃣ Body Paragraphs — TEE ফর্মুলা</h4>
+    <div class="formula">T — Topic sentence (প্যারার মূল আইডিয়া)<br>E — Explain (কেন? বিস্তারিত ব্যাখ্যা)<br>E — Example (বাস্তব/বিশ্বাসযোগ্য উদাহরণ)</div>
+    <p class="model"><span class="en"><span class="hl2">To begin with</span>, [topic sentence]. This is because [explanation]. <span class="hl2">For instance</span>, [specific example]. <span class="hl3">As a result</span>, [mini-conclusion linking back]."</span></p>
+
+    <h4>4️⃣ Conclusion (১–২ বাক্য)</h4>
+    <div class="formula">"In conclusion" + মতামত restate + কোনো নতুন আইডিয়া না।</div>
+    <p class="model"><span class="en">"<span class="hl2">In conclusion</span>, while [acknowledge other side], I <span class="hl3">firmly believe</span> that [restate position] because [summary of reasons]."</span></p>
+  </div>
+
+  <div class="card">
+    <h3>💡 আইডিয়া বের করার কৌশল (blank মাথা এড়াও)</h3>
+    <ul>
+      <li><b>Ask "why?" & "example?":</b> প্রতিটা দাবির পেছনে কারণ ও একটা উদাহরণ খোঁজো।</li>
+      <li><b>Categories:</b> ভাবো — economic, social, health, environmental, educational দিক থেকে।</li>
+      <li><b>Stakeholders:</b> কারা প্রভাবিত হয়? — individuals, government, businesses, students।</li>
+      <li><b>উদাহরণ বানানো যায়:</b> "A recent study suggests…" / "In many countries…" — নির্দিষ্ট হলেই ভালো।</li>
+    </ul>
+  </div>
+
+  <div class="card warn note">⚠️ Task 2 এর কমন ভুল: প্রশ্নের একাংশ বাদ দেওয়া • অবস্থান অস্পষ্ট রাখা • এক প্যারায় একাধিক আইডিয়া • memorised phrase ঠেসে দেওয়া • ২৫০ শব্দের কম লেখা • উপসংহারে নতুন আইডিয়া।</div>
+</section>
+
+<!-- TASK 1 -->
+<section class="panel" id="t1">
+  <h2 class="sec">📊 Task 1 (Academic) — Data বর্ণনা</h2>
+  <p class="sub">সব ধরনের chart-এ একই তিন-ভাগ কাঠামো: Intro → Overview → Details। মতামত দিও না।</p>
+
+  <div class="card">
+    <h3>🏗️ সর্বজনীন কাঠামো</h3>
+    <ol>
+      <li><b>Introduction (১ বাক্য):</b> প্রশ্নটা paraphrase করো — chart কী দেখাচ্ছে।</li>
+      <li><b>Overview (২ বাক্য):</b> সবচেয়ে গুরুত্বপূর্ণ ২–৩টি ট্রেন্ড/বৈশিষ্ট্য (সংখ্যা ছাড়া)। <b>এটাই সবচেয়ে বেশি নম্বর টানে।</b></li>
+      <li><b>Body 1 & 2:</b> নির্দিষ্ট সংখ্যা/ডেটা দিয়ে বিস্তারিত, যুক্তিসঙ্গতভাবে গ্রুপ করে।</li>
+    </ol>
+    <div class="note good">✅ Overview-তে "Overall," দিয়ে শুরু করো — examiner সরাসরি এটা খোঁজে।</div>
+  </div>
+
+  <div class="card">
+    <h3>প্রতিটা chart type কীভাবে ধরবে</h3>
+    <details><summary>📈 Line graph (সময়ের সাথে পরিবর্তন)</summary><div class="dbody">
+      <p>Trend ভাষা ব্যবহার করো: rose, fell, peaked, fluctuated। সময় গুরুত্বপূর্ণ।</p>
+      <p class="model en"><b>Overview:</b> Overall, [X] <span class="hl">rose steadily</span> over the period, whereas [Y] <span class="hl">showed a downward trend</span>, with both <span class="hl2">converging</span> by the end.</p>
+    </div></details>
+    <details><summary>📊 Bar chart (তুলনা)</summary><div class="dbody">
+      <p>Comparison ভাষা: higher than, the highest, twice as many as, compared with।</p>
+      <p class="model en"><b>Overview:</b> Overall, [category] had <span class="hl">by far the highest</span> figure, while [category] accounted for <span class="hl">the smallest proportion</span>.</p>
+    </div></details>
+    <details><summary>🥧 Pie chart (অনুপাত)</summary><div class="dbody">
+      <p>Proportion ভাষা: accounts for, makes up, a quarter, the majority, a fraction।</p>
+      <p class="model en"><b>Detail:</b> [X] <span class="hl">made up</span> nearly half of the total, whereas [Y] <span class="hl">accounted for</span> just under a fifth.</p>
+    </div></details>
+    <details><summary>📋 Table (ডেটা)</summary><div class="dbody">
+      <p>সব ডেটা লিখো না — সবচেয়ে বড়, ছোট ও লক্ষণীয় বেছে নাও। গ্রুপ করে তুলনা করো।</p>
+    </div></details>
+    <details><summary>⚙️ Process diagram</summary><div class="dbody">
+      <p>Overview = কতগুলো ধাপ + শুরু-শেষ কোথায়। Passive + sequence শব্দ: First, Next, After that, Finally, is then + V3।</p>
+      <p class="model en">First, the raw material <span class="hl">is collected</span>. It <span class="hl">is then</span> processed, <span class="hl2">after which</span> it is packaged for delivery.</p>
+    </div></details>
+    <details><summary>🗺️ Map (পরিবর্তন)</summary><div class="dbody">
+      <p>Location ও change ভাষা: to the north of, was replaced by, was demolished, a new X was built। Past passive যদি অতীত হয়।</p>
+      <p class="model en">The forest to the east <span class="hl">was cleared</span> and <span class="hl">replaced by</span> a residential area.</p>
+    </div></details>
+  </div>
+
+  <div class="card">
+    <h3>🔤 Task 1 এর দরকারি ভাষা</h3>
+    <div class="vgrid">
+      <div class="vitem"><b>rose sharply / soared</b><small>দ্রুত বাড়া</small></div>
+      <div class="vitem"><b>declined gradually</b><small>ধীরে কমা</small></div>
+      <div class="vitem"><b>plummeted / plunged</b><small>হঠাৎ পড়া</small></div>
+      <div class="vitem"><b>peaked at / reached a peak of</b><small>সর্বোচ্চ</small></div>
+      <div class="vitem"><b>remained stable / plateaued</b><small>স্থির</small></div>
+      <div class="vitem"><b>fluctuated</b><small>ওঠানামা</small></div>
+      <div class="vitem"><b>accounted for / made up</b><small>অংশ ছিল</small></div>
+      <div class="vitem"><b>compared with / whereas</b><small>তুলনায়</small></div>
+    </div>
+    <div class="note warn">⚠️ Task 1 এ কখনো নিজের মতামত/কারণ দিও না — শুধু যা দেখাচ্ছে তা বর্ণনা করো।</div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="panel" id="models">
+  <h2 class="sec">🏆 পূর্ণ মডেল উত্তর (হাইলাইট সহ)</h2>
+  <p class="sub">প্রতিটা পড়ো, স্ট্রাকচার ও হাইলাইট করা ভাষা লক্ষ করো, তারপর নিজেরটা লেখো।</p>
+
+  <details open><summary>Task 2 — Opinion (Agree/Disagree)</summary><div class="dbody">
+    <p style="color:var(--gold)"><b>প্রশ্ন:</b> Some people believe that children should be taught how to manage money at school. To what extent do you agree or disagree?</p>
+    <div class="model">
+      <span class="tag">BAND 8 MODEL</span>
+      <p class="en">It is <span class="hl">increasingly argued</span> that financial literacy should form part of the school curriculum. <span class="hl3">I completely agree</span> with this view, as teaching children to manage money equips them with an essential life skill and helps prevent future debt.<br><br>
+      <span class="hl2">To begin with</span>, money management is a <span class="hl">practical skill</span> used throughout life. Unlike many academic subjects, budgeting and saving are applied daily. <span class="hl2">For instance</span>, a child who learns to save part of their pocket money is far more likely to <span class="hl">develop responsible financial habits</span> as an adult. <span class="hl3">Consequently</span>, schools that overlook this leave students unprepared for the real world.<br><br>
+      <span class="hl2">Furthermore</span>, early financial education can <span class="hl">significantly reduce</span> the risk of debt. Many young adults struggle financially simply because they were never taught how credit works. <span class="hl2">A clear example</span> is the rising number of university students burdened with loans they barely understand. <span class="hl3">Had they been educated earlier</span>, such problems could largely be avoided.<br><br>
+      <span class="hl2">In conclusion</span>, I <span class="hl3">strongly believe</span> that schools should teach money management, since it is a vital skill that fosters responsibility and protects young people from future hardship.</p>
+    </div>
+  </div></details>
+
+  <details><summary>Task 2 — Discussion (Both views)</summary><div class="dbody">
+    <p style="color:var(--gold)"><b>প্রশ্ন:</b> Some people prefer to work for a large company, while others prefer a small one. Discuss both views and give your opinion.</p>
+    <div class="model">
+      <span class="tag">BAND 8 MODEL</span>
+      <p class="en">Choosing between a large corporation and a small firm is a decision many job-seekers face. <span class="hl3">While both have clear merits</span>, I personally believe that small companies offer greater long-term growth.<br><br>
+      <span class="hl2">On the one hand</span>, large companies provide notable advantages, chiefly <span class="hl">job security</span> and structured career paths. Employees often enjoy better salaries and training. <span class="hl2">For example</span>, multinational firms typically offer clear promotion ladders, which appeals to those seeking stability.<br><br>
+      <span class="hl2">On the other hand</span>, smaller companies allow individuals to <span class="hl">take on diverse responsibilities</span> and see the direct impact of their work. As a software engineer, I have found that in a smaller team, one <span class="hl">acquires new skills</span> far more quickly. This hands-on exposure, <span class="hl3">in my view</span>, is invaluable early in a career.<br><br>
+      <span class="hl2">In conclusion</span>, although large firms offer security, I believe the varied experience gained in a small company ultimately benefits professional development more.</p>
+    </div>
+  </div></details>
+
+  <details><summary>Task 2 — Problem / Solution</summary><div class="dbody">
+    <p style="color:var(--gold)"><b>প্রশ্ন:</b> Traffic congestion is a serious problem in many cities. What are the causes, and what measures can solve it?</p>
+    <div class="model">
+      <span class="tag">BAND 8 MODEL</span>
+      <p class="en">Traffic congestion has become a <span class="hl">pressing issue</span> in urban areas worldwide. This essay will examine its main causes and propose realistic solutions.<br><br>
+      <span class="hl2">The primary cause</span> is the sheer rise in private car ownership. As incomes grow, more people buy vehicles, <span class="hl">putting a strain on</span> roads never designed for such volumes. <span class="hl2">In addition</span>, inadequate public transport forces commuters to rely on cars, worsening the problem.<br><br>
+      <span class="hl2">To tackle this</span>, governments should invest heavily in <span class="hl">efficient public transport</span> such as metro systems, making it a genuine alternative to driving. <span class="hl2">A further measure</span> is congestion charging, which has <span class="hl">proven effective</span> in cities like London by discouraging unnecessary car use. <span class="hl3">As a result</span>, both traffic and pollution decline.<br><br>
+      <span class="hl2">In conclusion</span>, congestion stems largely from rising car use and weak public transport, but with sustained investment and smart policies, it can be substantially reduced.</p>
+    </div>
+  </div></details>
+
+  <details><summary>Task 1 — Line graph (full model)</summary><div class="dbody">
+    <p style="color:var(--gold)"><b>প্রশ্ন:</b> The graph shows the percentage of households with internet access in three countries between 2000 and 2020.</p>
+    <div class="model">
+      <span class="tag">BAND 8 MODEL</span>
+      <p class="en">The line graph <span class="hl">illustrates</span> the proportion of homes with internet access in three countries over a two-decade period from 2000 to 2020.<br><br>
+      <span class="hl2">Overall</span>, internet access <span class="hl">rose dramatically</span> in all three nations, with Country A consistently leading, while the figures <span class="hl2">converged</span> at high levels by the end of the period.<br><br>
+      In 2000, only around 20% of households in Country A had access, <span class="hl">compared with</span> a mere 5% in Country C. Over the following years, access in Country A <span class="hl">climbed steadily</span>, <span class="hl">peaking at</span> roughly 95% in 2020. <span class="hl2">Similarly</span>, Country C <span class="hl">witnessed the sharpest growth</span>, <span class="hl">surging from</span> 5% to almost 90% over the same period, thereby narrowing the gap considerably.</p>
+    </div>
+  </div></details>
+  <a href="practice.html" class="btn btn-primary">🧪 এখন নিজে একটা এসে লেখো (টাইমার সহ) →</a>
+</section>
+
+<!-- LANG -->
+<section class="panel" id="lang">
+  <h2 class="sec">🔤 Grammar & Vocabulary (Writing-এর জন্য)</h2>
+  <p class="sub">Complex বাক্য ও সঠিক collocation-ই Lexical ও Grammar স্কোর তোলে।</p>
+
+  <div class="card">
+    <h3>🧩 যে ৫টি Complex বাক্য গঠন ব্যবহার করবে</h3>
+    <ul>
+      <li><b>Conditional:</b> If governments invested more, pollution would decline.</li>
+      <li><b>Relative clause:</b> Students who manage their time well tend to succeed.</li>
+      <li><b>Concession:</b> Although technology is useful, it has drawbacks.</li>
+      <li><b>Cleft:</b> It is education that drives long-term change.</li>
+      <li><b>Inversion:</b> Not only does it save money, but it also saves time.</li>
+    </ul>
+    <div class="note good">✅ প্রতি এসেতে অন্তত ৩–৪টা complex বাক্য রাখো — কিন্তু নির্ভুল হতে হবে।</div>
+  </div>
+
+  <div class="card">
+    <h3>⬆️ Band 6 → 8 শব্দ আপগ্রেড</h3>
+    <table>
+      <tr><th>সাধারণ</th><th>উন্নত</th></tr>
+      <tr><td>a lot of problems</td><td>a multitude of challenges</td></tr>
+      <tr><td>good / bad</td><td>beneficial / detrimental</td></tr>
+      <tr><td>very important</td><td>crucial / vital / paramount</td></tr>
+      <tr><td>I think</td><td>I would contend / In my view</td></tr>
+      <tr><td>nowadays</td><td>in this day and age</td></tr>
+      <tr><td>big difference</td><td>a substantial disparity</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🔗 Cohesion — linker সঠিকভাবে</h3>
+    <div class="vgrid">
+      <div class="vitem"><b>Addition</b><small>Moreover, Furthermore, In addition</small></div>
+      <div class="vitem"><b>Contrast</b><small>However, Nevertheless, On the other hand</small></div>
+      <div class="vitem"><b>Cause/Result</b><small>Therefore, Consequently, As a result</small></div>
+      <div class="vitem"><b>Example</b><small>For instance, To illustrate, Namely</small></div>
+      <div class="vitem"><b>Sequence</b><small>To begin with, Secondly, Finally</small></div>
+      <div class="vitem"><b>Conclusion</b><small>In conclusion, To sum up, Overall</small></div>
+    </div>
+    <div class="note warn">⚠️ প্রতি বাক্যে linker দিও না — অতিরিক্ত ব্যবহার Coherence স্কোর কমায়। স্বাভাবিক রাখো।</div>
+  </div>
+  <a href="vocabulary.html" class="btn btn-ghost">📚 আরও ৩০০+ Vocabulary দেখো →</a>
+</section>
+
+<!-- CHECK -->
+<section class="panel" id="check">
+  <h2 class="sec">✅ চূড়ান্ত চেকলিস্ট ও টাইমিং</h2>
+  <div class="card">
+    <h3>⏱️ সময় ব্যবস্থাপনা</h3>
+    <table>
+      <tr><th>ধাপ</th><th>Task 1 (২০ মি)</th><th>Task 2 (৪০ মি)</th></tr>
+      <tr><td>Plan</td><td>৩ মিনিট</td><td>৫ মিনিট</td></tr>
+      <tr><td>Write</td><td>১৪ মিনিট</td><td>৩০ মিনিট</td></tr>
+      <tr><td>Check</td><td>৩ মিনিট</td><td>৫ মিনিট</td></tr>
+    </table>
+    <div class="note">💡 Task 2 আগে লেখো (বেশি নম্বর)।</div>
+  </div>
+  <div class="card">
+    <h3>📋 জমা দেওয়ার আগে চেক করো</h3>
+    <ul>
+      <li>প্রশ্নের সব অংশের উত্তর দিয়েছ? (Task Response)</li>
+      <li>অবস্থান স্পষ্ট ও পুরো এসেতে একই আছে?</li>
+      <li>প্রতি body প্যারায় একটাই আইডিয়া + উদাহরণ?</li>
+      <li>Simple + complex বাক্য মিশিয়েছ?</li>
+      <li>শব্দ সংখ্যা পূরণ (২৫০+ / ১৫০+)?</li>
+      <li>Article (a/an/the), preposition, subject-verb agreement চেক করেছ?</li>
+      <li>একই শব্দ বারবার না — synonym ব্যবহার করেছ?</li>
+      <li><b>CD-IELTS:</b> spell-check নেই — বানান নিজে দেখেছ?</li>
+    </ul>
+  </div>
+  <div class="note good">🎓 রোজ ১টা Task লিখে ChatGPT-তে দাও: "Score this IELTS essay by the 4 criteria and show band 7.5+ fixes." — দ্রুত উন্নতির সবচেয়ে ভালো উপায়।</div>
+  <a href="practice.html" class="btn btn-primary">🧪 Practice-এ ২৬টি টপিকে লেখা শুরু করো →</a>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <p>✍️ Writing উন্নতি করে লিখে লিখে — পড়ে নয়। রোজ অন্তত ১টা প্যারা লেখো।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="practice.html" class="btn btn-primary">🧪 Practice</a>
+      <a href="routine.html" class="btn btn-ghost">🗓️ রুটিন</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+<script>
+function go(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const idx={over:0,t2:1,t1:2,models:3,lang:4,check:5}[id];
+  document.querySelectorAll('.tab')[idx]?.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
