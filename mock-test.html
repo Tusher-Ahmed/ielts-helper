@@ -94,14 +94,19 @@
   .rmodal .closeb{background:#1a73e8;color:#fff;border:none;border-radius:7px;padding:10px 16px;font-size:14.5px;font-weight:700;cursor:pointer;margin:6px 4px 0}
   .rmodal .altb{background:#e6e6e6;color:#222;border:none;border-radius:7px;padding:10px 16px;font-size:14.5px;font-weight:700;cursor:pointer;margin:6px 4px 0}
   .exit{color:#9db;font-size:12px;text-decoration:none}
+  #toast{position:fixed;top:54px;left:50%;transform:translateX(-50%);background:#1a3a6b;color:#fff;padding:10px 20px;border-radius:8px;font-size:13.5px;z-index:200;display:none;box-shadow:0 5px 16px rgba(0,0,0,.35)}
+  .modepick{margin:14px 0;padding:12px;background:#f5f9ff;border:1px solid #cfe0ff;border-radius:8px}
+  .modepick b{display:block;margin-bottom:6px;color:#1a3a6b}
+  .modepick label{display:inline-flex;align-items:center;gap:6px;margin-right:16px;font-size:13.5px;cursor:pointer}
   @media(max-width:760px){.split{flex-direction:column}.passcol{border-right:none;border-bottom:2px solid #d0d0d0;max-height:38%}.testpick{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div id="toast"></div>
 
 <div class="topbar">
   <div class="idbox"><b>IELTS Full Mock</b><span id="topId">Test taker ID: 100-2026 · <a href="index.html" class="exit">← Exit</a></span></div>
-  <div class="timer" id="timer">⏱ 150:00</div>
+  <div class="timer" id="timer">⏱ —</div>
   <div class="tools"><button onclick="showIntro()">☰ Tests</button><button onclick="showHelp()">❓ Help</button></div>
 </div>
 
@@ -116,7 +121,13 @@
   <div class="screen active" id="intro">
     <div class="intro bn">
       <h1>🖥️ Computer-Delivered IELTS — ৩টি Full Mock</h1>
-      <p>প্রতিটি mock <b>সম্পূর্ণ length</b>: Listening ৪০ প্রশ্ন (৪ সেকশন), Reading ৪০ প্রশ্ন (৩ passage), Writing (Task 1 + Task 2)। একটা বেছে নাও:</p>
+      <p>প্রতিটি mock <b>সম্পূর্ণ length</b>: Listening ৪০ প্রশ্ন (৪ সেকশন), Reading ৪০ প্রশ্ন (৩ passage), Writing (Task 1 + Task 2)।</p>
+      <div class="modepick">
+        <b>⏱️ Mode বেছে নাও (দুটোতেই প্রতি সেকশনের আলাদা টাইমার আছে):</b>
+        <label><input type="radio" name="mmode" value="realistic" checked> <b>Realistic</b> — আসল পরীক্ষার মতো: সেকশন sequential, সময় শেষে অটো পরেরটায় (ফেরা যায় না)</label>
+        <label><input type="radio" name="mmode" value="practice"> <b>Practice</b> — যেকোনো সেকশনে অবাধ চলাচল, টাইমার শুধু track করে</label>
+      </div>
+      <p style="font-weight:600;color:#1a3a6b">নিচ থেকে একটা Mock বেছে নাও:</p>
       <div class="testpick">
         <div class="tcard" onclick="startTest(0)"><b>Mock 1</b><small>Sports · Museum · Sleep + Farming · Coffee · Printing</small></div>
         <div class="tcard" onclick="startTest(1)"><b>Mock 2</b><small>Library · Marathon · Ocean + Bilingualism · Bees · Remote work</small></div>
@@ -124,13 +135,13 @@
       </div>
       <p><b>কীভাবে কাজ করে:</b></p>
       <ul>
-        <li>উপরে টাইমার (আসল সময় ~১৫০ মিনিট: L৩০+R৬০+W৬০)</li>
+        <li>উপরে-ডানে <b>ওই সেকশনের টাইমার</b> — Listening ৩২ মিনিট · Reading ৬০ · Writing ৬০ (আসল CD limit)</li>
+        <li>১০ ও ৫ মিনিট বাকি থাকলে <b>নোটিফিকেশন</b> আসবে</li>
         <li>নিচে <b>question navigator</b> — নম্বরে ক্লিক; উত্তর দিলে সবুজ; Review টিক = কমলা flag</li>
         <li>Reading-এ <b>P1/P2/P3</b> tab দিয়ে passage বদলাও; টেক্সট সিলেক্ট করে Highlight</li>
-        <li>Listening-এ ৪ সেকশন — প্রতিটার নিজের অডিও</li>
+        <li>Realistic mode-এ <b>"End section →"</b> চেপে আগেভাগে পরের সেকশনে যেতে পারো (কিন্তু ফেরা যাবে না)</li>
         <li>শেষে <b>Submit</b> → Listening ও Reading স্কোর (৪০-এ) + আনুমানিক Band</li>
       </ul>
-      <p style="color:#b00020;font-size:13px"><b>নোট:</b> এখানে একটাই টাইমার (১৫০ মিনিট)। আসল পরীক্ষায় প্রতি সেকশন আলাদাভাবে সময়বদ্ধ।</p>
     </div>
   </div>
 
@@ -168,6 +179,7 @@
   <button class="navarrow" onclick="stepQ(-1)">‹</button>
   <div class="palette" id="palette"></div>
   <button class="navarrow" onclick="stepQ(1)">›</button>
+  <button class="submit" id="endSecBtn" style="display:none;background:#e0a800;color:#2a230a" onclick="endSection(false)">End section →</button>
   <button class="submit" onclick="submitTest()">✔ Submit</button>
 </div>
 
@@ -183,7 +195,7 @@
 <script src="mock-data.js"></script>
 <script>
 /* =============== ENGINE =============== */
-let M=0, currentPart=null, readIdx=0, playingSec=-1;
+let M=0, currentPart=null, readIdx=0, playingSec=-1, mode='realistic';
 
 function qHTML(item,num){
   let inner='<div class="qtext"><span class="qn">'+num+'</span>'+item.q+'</div>';
@@ -232,6 +244,12 @@ document.addEventListener('input',e=>{if(e.target.classList.contains('fill'))upd
 document.addEventListener('change',e=>{if(e.target.classList.contains('flag'))updatePalette();});
 
 function switchPart(p){
+  if(mode==='realistic' && currentPart && p!==currentPart){
+    toast('🔒 Realistic mode — সময় শেষ হলে বা "End section →" চাপলে পরের সেকশনে যাবে।');return;
+  }
+  applyPart(p);
+}
+function applyPart(p){
   currentPart=p;
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('p-'+p).classList.add('active');
@@ -240,7 +258,7 @@ function switchPart(p){
   document.querySelectorAll('.pbtn2').forEach(b=>b.classList.toggle('active',b.dataset.p===p));
   document.getElementById('hlTools').style.display=p==='reading'?'flex':'none';
   document.getElementById('readTabs').style.display=p==='reading'?'flex':'none';
-  buildPalette();document.getElementById('content').scrollTop=0;
+  buildPalette();document.getElementById('content').scrollTop=0;updateClock();
 }
 function setRead(idx){
   readIdx=idx;
@@ -249,17 +267,28 @@ function setRead(idx){
   document.querySelectorAll('.rtab').forEach((b,i)=>b.classList.toggle('active',i===idx));
   buildPalette();document.querySelector('.passcol').scrollTop=0;document.querySelector('.qcol').scrollTop=0;
 }
-function startTest(i){loadMock(i);document.getElementById('intro').classList.remove('active');switchPart('listening');resetTimer();startTimer();}
+function startTest(i){
+  mode=document.querySelector('input[name="mmode"]:checked').value;
+  loadMock(i);
+  secLeft={listening:LIMIT.listening,reading:LIMIT.reading,writing:LIMIT.writing};
+  notified={};
+  document.getElementById('intro').classList.remove('active');
+  document.getElementById('endSecBtn').style.display=(mode==='realistic')?'inline-block':'none';
+  applyPart('listening');
+  startClock();
+  toast(mode==='realistic'?'▶️ Realistic mode — Listening ৩২ মিনিট শুরু':'▶️ Practice mode — অবাধ চলাচল, টাইমার track করছে');
+}
 function showIntro(){
-  clearInterval(tint);tint=null;speechSynthesis.cancel();playingSec=-1;
+  clearInterval(clock);clock=null;speechSynthesis.cancel();playingSec=-1;
   document.getElementById('overlay').classList.remove('show');
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('intro').classList.add('active');
   document.getElementById('partTitle').textContent='Choose a Mock Test';
   document.getElementById('readTabs').style.display='none';document.getElementById('hlTools').style.display='none';
+  document.getElementById('endSecBtn').style.display='none';
   document.querySelectorAll('.pbtn2').forEach(b=>b.classList.remove('active'));
   document.getElementById('palette').innerHTML='';currentPart=null;
-  document.getElementById('timer').textContent='⏱ 150:00';document.getElementById('timer').classList.remove('low');
+  document.getElementById('timer').textContent='⏱ —';document.getElementById('timer').classList.remove('low');
 }
 
 /* PALETTE */
@@ -278,11 +307,41 @@ function isAnswered(q){if(q.querySelector('.opts'))return !!q.querySelector('.op
 function updatePalette(){const qs=partQuestions();const pal=document.getElementById('palette').children;qs.forEach((q,i)=>{if(!pal[i])return;pal[i].classList.toggle('answered',isAnswered(q));const fl=q.querySelector('.flag');pal[i].classList.toggle('flagged',fl&&fl.checked);});}
 function stepQ(dir){const qs=[...partQuestions()];if(!qs.length)return;window._qi=window._qi||{};const k=currentPart+readIdx;let idx=(window._qi[k]||0)+dir;idx=Math.max(0,Math.min(qs.length-1,idx));window._qi[k]=idx;qs[idx].scrollIntoView({behavior:'smooth',block:'center'});}
 
-/* TIMER */
-let sec=150*60,tint=null;
+/* TIMER — per-section, CD limits */
+const LIMIT={listening:32*60, reading:60*60, writing:60*60};
+const ORDER=['listening','reading','writing'];
+const SECLABEL={listening:'🎧 Listening',reading:'📖 Reading',writing:'✍️ Writing'};
+let secLeft={listening:LIMIT.listening,reading:LIMIT.reading,writing:LIMIT.writing};
+let clock=null, notified={};
 function fmt(s){const m=Math.floor(s/60),x=s%60;return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');}
-function resetTimer(){sec=150*60;document.getElementById('timer').textContent='⏱ '+fmt(sec);document.getElementById('timer').classList.remove('low');}
-function startTimer(){if(tint)return;tint=setInterval(()=>{sec--;document.getElementById('timer').textContent='⏱ '+fmt(sec);if(sec<=300)document.getElementById('timer').classList.add('low');if(sec<=0){clearInterval(tint);submitTest();}},1000);}
+function updateClock(){
+  const s=currentPart;const el=document.getElementById('timer');
+  if(!LIMIT[s]){el.textContent='⏱ —';el.classList.remove('low');return;}
+  el.textContent=SECLABEL[s]+' '+fmt(secLeft[s]);
+  el.classList.toggle('low',secLeft[s]<=300);
+}
+function startClock(){if(clock)return;clock=setInterval(tick,1000);}
+function tick(){
+  const s=currentPart;if(!LIMIT[s])return;
+  if(secLeft[s]>0)secLeft[s]--;
+  updateClock();
+  [600,300].forEach(th=>{if(secLeft[s]===th&&!notified[s+th]){notified[s+th]=1;toast('⏰ '+SECLABEL[s]+': '+(th/60)+' মিনিট বাকি');}});
+  if(secLeft[s]===0&&!notified[s+'end']){
+    notified[s+'end']=1;
+    if(mode==='realistic'){endSection(true);}
+    else{toast('⛔ '+SECLABEL[s]+' — CD সময় শেষ (Practice mode: চাইলে চালিয়ে যাও)');}
+  }
+}
+function endSection(auto){
+  if(!currentPart)return;
+  if(!auto && mode==='realistic'){ if(!confirm('এই সেকশন শেষ করে পরের সেকশনে যাবে? আর ফেরা যাবে না।'))return; }
+  const idx=ORDER.indexOf(currentPart);
+  if(idx>=ORDER.length-1){submitTest();return;}
+  const next=ORDER[idx+1];
+  applyPart(next);
+  toast('▶️ '+SECLABEL[next]+' — '+Math.round(secLeft[next]/60)+' মিনিট');
+}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>{t.style.display='none';},4200);}
 
 /* AUDIO */
 function playSec(si){
@@ -323,7 +382,7 @@ function submitTest(){
   const lc=gradeSet(lq),rc=gradeSet(rq);
   const w1=document.getElementById('essay1').value.trim(),w2=document.getElementById('essay2').value.trim();
   const wn1=w1?w1.split(/\s+/).length:0,wn2=w2?w2.split(/\s+/).length:0;
-  clearInterval(tint);tint=null;speechSynthesis.cancel();
+  clearInterval(clock);clock=null;speechSynthesis.cancel();
   document.getElementById('rTitle').textContent='📊 '+MOCKS[M].name+' — ফলাফল';
   document.getElementById('scoreBig').textContent='L '+lc+'/'+lq.length+' · R '+rc+'/'+rq.length;
   document.getElementById('scoreTable').innerHTML=
@@ -333,7 +392,7 @@ function submitTest(){
     '<tr><td>✍️ Task 2</td><td>'+wn2+' words '+(wn2>=250?'✅':'⚠️ <250')+'</td></tr>';
   document.getElementById('overlay').classList.add('show');
 }
-function showHelp(){alert('Full Mock:\n• Listening: ৪ সেকশন, প্রতিটার অডিও\n• Reading: P1/P2/P3 tab দিয়ে passage বদলাও\n• নম্বরে ক্লিক করে প্রশ্নে যাও; উত্তর দিলে সবুজ\n• Review টিক = flag\n• ☰ Tests দিয়ে অন্য mock\n• শেষে Submit');}
+function showHelp(){alert('Full Mock:\n• প্রতি সেকশনের আলাদা টাইমার (L 32 / R 60 / W 60 মিনিট)\n• Realistic: sequential, End section → দিয়ে পরেরটায়\n• Practice: অবাধ চলাচল, টাইমার track করে\n• Reading: P1/P2/P3 tab\n• নম্বরে ক্লিক = প্রশ্নে যাও; উত্তর দিলে সবুজ; Review = flag\n• ☰ Tests দিয়ে অন্য mock\n• শেষে Submit');}
 </script>
 </body>
 </html>
