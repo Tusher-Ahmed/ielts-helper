@@ -128,11 +128,7 @@
         <label><input type="radio" name="mmode" value="practice"> <b>Practice</b> — যেকোনো সেকশনে অবাধ চলাচল, টাইমার শুধু track করে</label>
       </div>
       <p style="font-weight:600;color:#1a3a6b">নিচ থেকে একটা Mock বেছে নাও:</p>
-      <div class="testpick">
-        <div class="tcard" onclick="startTest(0)"><b>Mock 1</b><small>Sports · Museum · Sleep + Farming · Coffee · Printing</small></div>
-        <div class="tcard" onclick="startTest(1)"><b>Mock 2</b><small>Library · Marathon · Ocean + Bilingualism · Bees · Remote work</small></div>
-        <div class="tcard" onclick="startTest(2)"><b>Mock 3</b><small>Cookery · Reserve · Cities + Octopus · Tea · Energy</small></div>
-      </div>
+      <div class="testpick" id="testpick"></div>
       <p><b>কীভাবে কাজ করে:</b></p>
       <ul>
         <li>উপরে-ডানে <b>ওই সেকশনের টাইমার</b> — Listening ৩২ মিনিট · Reading ৬০ · Writing ৬০ (আসল CD limit)</li>
@@ -392,6 +388,10 @@ function submitTest(){
     '<tr><td>✍️ Task 2</td><td>'+wn2+' words '+(wn2>=250?'✅':'⚠️ <250')+'</td></tr>';
   document.getElementById('overlay').classList.add('show');
 }
+function renderCards(){
+  document.getElementById('testpick').innerHTML=MOCKS.map((m,i)=>'<div class="tcard" onclick="startTest('+i+')"><b>'+m.name+'</b><small>'+(m.blurb||'')+'</small></div>').join('');
+}
+renderCards();
 function showHelp(){alert('Full Mock:\n• প্রতি সেকশনের আলাদা টাইমার (L 32 / R 60 / W 60 মিনিট)\n• Realistic: sequential, End section → দিয়ে পরেরটায়\n• Practice: অবাধ চলাচল, টাইমার track করে\n• Reading: P1/P2/P3 tab\n• নম্বরে ক্লিক = প্রশ্নে যাও; উত্তর দিলে সবুজ; Review = flag\n• ☰ Tests দিয়ে অন্য mock\n• শেষে Submit');}
 </script>
 </body>

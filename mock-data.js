@@ -7,6 +7,7 @@ const MOCKS=[
 /* ===================== MOCK 1 ===================== */
 {
  name:'Mock 1',
+ blurb:'Sports · Museum · Sleep + Farming · Coffee · Printing',
  listen:[
   {title:'Community Sports Centre (enquiry)',
    transcript:"Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah. The centre is open from six in the morning until ten at night on weekdays, and from eight until eight at weekends. Our most popular facility is the swimming pool, which has eight lanes and is heated all year round. Membership costs forty pounds per month for adults, but students pay only twenty-five pounds. The gym is located on the first floor, next to the cafe. Please bring a towel and a padlock for the lockers. For group classes such as yoga, you need to book at least two days in advance. Computers for members are available in the lounge, and parking is free for members, but visitors must pay three pounds per hour.",
@@ -149,6 +150,7 @@ const MOCKS=[
 /* ===================== MOCK 2 ===================== */
 {
  name:'Mock 2',
+ blurb:'Library · Marathon · Ocean + Bilingualism · Bees · Remote work',
  listen:[
   {title:'University Library Induction',
    transcript:"Good morning, and welcome to the university library. I'm David, the head librarian. The library is open from eight in the morning until eleven at night on weekdays. On Saturdays, we close a little earlier, at six. Undergraduate students can borrow up to ten books at a time, while postgraduates can take out fifteen. Books are normally loaned for three weeks. Please note that if you return a book late, there is a fine of twenty pence per day. The ground floor is a social study area where talking is allowed, but the first and second floors are strictly silent zones. Computers are available on the first floor, next to the printing room. If you need help, visit the help desk near the main entrance.",
@@ -291,6 +293,7 @@ const MOCKS=[
 /* ===================== MOCK 3 ===================== */
 {
  name:'Mock 3',
+ blurb:'Cookery · Reserve · Cities + Octopus · Tea · Energy',
  listen:[
   {title:'Evening Cookery Course (enrolment)',
    transcript:"Thanks for calling Riverside Community College. Let me tell you about our evening cookery course. The course runs for eight weeks, every Tuesday, starting on the third of September. Classes begin at half past six and finish at nine. The full course costs ninety pounds, though members of the college pay a reduced rate of seventy pounds. You will need to bring an apron and a set of containers to take your food home; all other ingredients are provided. The classes are held in the kitchen on the second floor of the main building. Please note that places are limited to twelve students, so early booking is advised. To reserve a place, you can pay online or by phone, but not by cheque.",
@@ -425,6 +428,420 @@ const MOCKS=[
   img:"<svg viewBox='0 0 560 340' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>Household spending by category (%): 1990 vs 2020</text><text x='140' y='40' text-anchor='middle' font-size='12' font-weight='bold'>1990</text><text x='400' y='40' text-anchor='middle' font-size='12' font-weight='bold'>2020</text><g transform='translate(0,20)'><path d='M140 150 L140 60 A90 90 0 0 1 192.9 222.8 Z' fill='#1a73e8'/><path d='M140 150 L192.9 222.8 A90 90 0 0 1 54.4 177.8 Z' fill='#1a9c5a'/><path d='M140 150 L54.4 177.8 A90 90 0 0 1 50 150 Z' fill='#e0a800'/><path d='M140 150 L50 150 A90 90 0 0 1 87.1 77.2 Z' fill='#c0392b'/><path d='M140 150 L87.1 77.2 A90 90 0 0 1 140 60 Z' fill='#8e44ad'/><path d='M380 150 L380 60 A90 90 0 0 1 452.8 202.9 Z' fill='#1a73e8'/><path d='M380 150 L452.8 202.9 A90 90 0 0 1 363.1 238.4 Z' fill='#1a9c5a'/><path d='M380 150 L363.1 238.4 A90 90 0 0 1 290.7 161.5 Z' fill='#e0a800'/><path d='M380 150 L290.7 161.5 A90 90 0 0 1 327.1 77.2 Z' fill='#c0392b'/><path d='M380 150 L327.1 77.2 A90 90 0 0 1 380 60 Z' fill='#8e44ad'/></g><g font-size='11' fill='#333'><rect x='70' y='300' width='13' height='11' fill='#1a73e8'/><text x='88' y='309'>Housing</text><rect x='170' y='300' width='13' height='11' fill='#1a9c5a'/><text x='188' y='309'>Food</text><rect x='250' y='300' width='13' height='11' fill='#e0a800'/><text x='268' y='309'>Technology</text><rect x='355' y='300' width='13' height='11' fill='#c0392b'/><text x='373' y='309'>Transport</text><rect x='450' y='300' width='13' height='11' fill='#8e44ad'/><text x='468' y='309'>Other</text></g></svg>",
   task1:"The pie charts below show the proportion of household spending across five categories in a country in 1990 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people think that governments should spend money on public services rather than on the arts. To what extent do you agree or disagree? Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 4 ===================== */
+{
+ name:'Mock 4',
+ blurb:'Flat rental · Farmers market · Memory + Chocolate · Deserts · Personality',
+ listen:[
+  {title:'Flat rental enquiry',
+   transcript:"Hello, I'm calling about the two-bedroom flat you advertised. Certainly. The flat is on Maple Street, number forty-two. The monthly rent is seven hundred and fifty pounds, and that includes water but not electricity. There is a deposit of one month's rent required before moving in. The flat is available from the first of October. It comes furnished, with a washing machine and a fridge, though you would need to provide your own microwave. The nearest bus stop is just a two-minute walk away. If you would like to view it, we hold viewings on Saturday mornings. Please bring some form of identification, such as a passport.",
+   Q:[
+    {t:'text',a:'forty-two|42|forty two',q:'Flat address: ______ Maple Street.'},
+    {t:'text',a:'750|seven hundred and fifty',q:'Monthly rent: £______'},
+    {t:'text',a:'water',q:'The rent includes ______ but not electricity.'},
+    {t:'text',a:'one|1',q:"Deposit: ______ month's rent."},
+    {t:'text',a:'first|1st|1',q:'Available from ______ October.'},
+    {t:'text',a:'furnished',q:'The flat comes ______.'},
+    {t:'text',a:'microwave',q:'The tenant must provide their own ______.'},
+    {t:'text',a:'two-minute|two minute|2-minute|two',q:'Nearest bus stop: a ______ walk.'},
+    {t:'text',a:'saturday',q:'Viewings are on ______ mornings.'},
+    {t:'choice',a:'B',q:'Visitors to the viewing must bring:',opts:['A) a deposit','B) some identification','C) a reference','D) a bank card']}
+   ]},
+  {title:'Saturday farmers market',
+   transcript:"Welcome to the Saturday farmers market. The market runs every Saturday from eight in the morning until one in the afternoon. You'll find more than forty stalls here, selling everything from fresh vegetables to homemade bread. Our most popular stall is the cheese stall, located near the main entrance. If you're looking for something to eat, the hot food area is at the back, next to the car park. Please note that most stalls only accept cash, so there is a cash machine by the information desk. We also run free cookery demonstrations every hour in the marquee. Finally, we encourage visitors to bring their own bags, as we are trying to reduce plastic waste.",
+   Q:[
+    {t:'text',a:'one|1pm|1',q:'The market runs until ______.'},
+    {t:'text',a:'forty|40',q:'Number of stalls: more than ______.'},
+    {t:'text',a:'cheese',q:'The most popular is the ______ stall.'},
+    {t:'text',a:'car park|carpark',q:'The hot food area is next to the ______.'},
+    {t:'text',a:'cash',q:'Most stalls accept only ______.'},
+    {t:'text',a:'information',q:'The cash machine is by the ______ desk.'},
+    {t:'text',a:'cookery|cooking',q:'Free ______ demonstrations run every hour.'},
+    {t:'text',a:'marquee',q:'Demonstrations are held in the ______.'},
+    {t:'text',a:'bags|bag',q:'Visitors should bring their own ______.'},
+    {t:'choice',a:'B',q:'The market is trying to reduce:',opts:['A) noise','B) plastic waste','C) prices','D) crowds']}
+   ]},
+  {title:'Students planning a psychology experiment',
+   transcript:"Have you started the psychology assignment on memory, Priya? A little. We have to design a simple experiment, testing how well people remember a list of words. I was thinking we could compare young and older participants. Good idea. How many words should we use? Let's use twenty words; that should be enough. And how many participants? I think thirty would give us reliable results. Okay. Where will we run it? The library study rooms should be quiet enough. When is it due? We have to submit the report by the thirtieth of November. Let's meet on Thursday to start writing.",
+   Q:[
+    {t:'text',a:'memory',q:'The assignment is about ______.'},
+    {t:'text',a:'words|word',q:'They test how well people remember a list of ______.'},
+    {t:'text',a:'older|old',q:'They will compare young and ______ participants.'},
+    {t:'text',a:'twenty|20',q:'Number of words: ______.'},
+    {t:'text',a:'thirty|30',q:'Number of participants: ______.'},
+    {t:'text',a:'rooms|room',q:'They will run it in the library study ______.'},
+    {t:'text',a:'thirtieth|30th|30',q:'Report due: ______ of November.'},
+    {t:'text',a:'thursday',q:'They will meet on ______.'},
+    {t:'choice',a:'B',q:'Thirty participants will give results that are:',opts:['A) quick','B) reliable','C) cheap','D) fun']},
+    {t:'choice',a:'B',q:'The study rooms are chosen because they are:',opts:['A) large','B) quiet','C) free','D) new']}
+   ]},
+  {title:'Lecture: how memory works',
+   transcript:"Today we will explore how human memory works. Memory is often divided into three stages: encoding, storage, and retrieval. Encoding is the process of taking in information; storage is keeping it over time; and retrieval is bringing it back when needed. Psychologists also distinguish between short-term memory, which holds a small amount of information for a few seconds, and long-term memory, which can store vast amounts for years. One famous finding is that short-term memory can hold only about seven items at once. To move information into long-term memory, repetition and meaning are key; we remember things better when we connect them to what we already know. Interestingly, sleep also plays an important role, as the brain consolidates memories while we rest. Stress, on the other hand, can seriously impair our ability to recall information.",
+   Q:[
+    {t:'text',a:'retrieval',q:'Memory has three stages: encoding, storage and ______.'},
+    {t:'text',a:'information',q:'Encoding is the process of taking in ______.'},
+    {t:'text',a:'seconds|second',q:'Short-term memory lasts a few ______.'},
+    {t:'text',a:'seven|7',q:'Short-term memory holds about ______ items.'},
+    {t:'text',a:'meaning',q:'To reach long-term memory, repetition and ______ are key.'},
+    {t:'text',a:'connect',q:'We remember better when we ______ information to what we know.'},
+    {t:'text',a:'sleep',q:'______ helps the brain consolidate memories.'},
+    {t:'text',a:'stress',q:'______ can impair recall.'},
+    {t:'choice',a:'C',q:'Long-term memory can store information for:',opts:['A) seconds','B) minutes','C) years','D) hours']},
+    {t:'choice',a:'C',q:'Retrieval means:',opts:['A) taking in info','B) storing info','C) bringing info back','D) forgetting']}
+   ]}
+ ],
+ read:[
+  {title:'The History of Chocolate',
+   paras:[
+    "Chocolate, one of the world's most beloved treats, has a history stretching back thousands of years. It originates from the cacao tree, native to the tropical regions of Central and South America. The ancient Maya and later the Aztecs prized cacao so highly that they used the beans as a form of currency. Rather than the sweet bars we know today, they consumed chocolate as a bitter, frothy drink, often flavoured with spices such as chilli.",
+    "When Spanish explorers brought cacao back to Europe in the sixteenth century, it was initially reserved for the wealthy. Europeans began adding sugar and honey to counter its bitterness, transforming it into a fashionable luxury drink enjoyed at royal courts. For a long time, chocolate remained expensive and difficult to produce.",
+    "This changed during the Industrial Revolution. New machinery made it possible to process cacao on a large scale, dramatically lowering prices. In 1847, a British company produced the first solid chocolate bar, and soon afterwards, Swiss inventors developed a method for making smooth milk chocolate.",
+    "Today, chocolate is a global industry worth billions. However, it faces challenges, including concerns about the working conditions of cacao farmers, many of whom earn very little. As a result, movements promoting fair trade have grown, encouraging consumers to buy chocolate that supports farmers more fairly."
+   ],
+   Q:[
+    {t:'choice',a:'TRUE',q:'Chocolate comes from the cacao tree, native to Central and South America.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The Aztecs used cacao beans as money.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Ancient peoples ate chocolate mainly as sweet bars.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Chocolate was cheap when it first arrived in Europe.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'sugar',q:'Europeans added ______ and honey to chocolate.'},
+    {t:'text',a:'chilli|chili',q:'The ancient drink was often flavoured with ______.'},
+    {t:'text',a:'1847',q:'The first solid chocolate bar was made in ______.'},
+    {t:'text',a:'milk',q:'Swiss inventors developed smooth ______ chocolate.'},
+    {t:'choice',a:'B',q:'Chocolate prices fell because of:',opts:['A) royal courts','B) new machinery','C) fair trade','D) spices']},
+    {t:'choice',a:'B',q:'The Aztecs used cacao beans as:',opts:['A) medicine','B) currency','C) decoration','D) fuel']},
+    {t:'choice',a:'TRUE',q:'Chocolate is now a global industry worth billions.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'All cacao farmers earn high wages.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Fair trade encourages support for farmers.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'Life in the Desert',
+   paras:[
+    "Deserts, defined as regions receiving less than 250 millimetres of rain per year, cover about one-fifth of the Earth's land surface. Although often imagined as lifeless seas of sand, deserts are in fact home to a surprising variety of plants and animals, each remarkably adapted to survive in one of the planet's harshest environments.",
+    "The greatest challenge in the desert is the lack of water. Many desert plants, such as the cactus, have developed thick, fleshy stems that store water for long periods, along with spines instead of leaves to reduce water loss. Animals, too, have evolved clever strategies. The camel can survive for days without drinking, storing fat in its hump which it converts to energy. Smaller creatures often avoid the fierce daytime heat by burrowing underground and emerging only at night.",
+    "Temperature is another extreme feature of desert life. While days can be scorching, nights are often surprisingly cold, because the dry air and lack of cloud cover allow heat to escape rapidly once the sun sets.",
+    "Despite their harshness, deserts are increasingly under threat. Human activities, including farming, are damaging fragile desert ecosystems. Meanwhile, some regions once fertile are turning into desert, a process known as desertification, driven partly by climate change and poor land management."
+   ],
+   Q:[
+    {t:'choice',a:'B',q:'A desert receives less than how much rain per year?',opts:['A) 100mm','B) 250mm','C) 500mm','D) 1000mm']},
+    {t:'choice',a:'TRUE',q:'Deserts cover about one-fifth of the Earth’s land.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Deserts contain no living things.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'stems|stem',q:'Cacti store water in their ______.'},
+    {t:'text',a:'spines|spine',q:'Cacti have ______ instead of leaves.'},
+    {t:'text',a:'fat',q:'Camels store ______ in their hump.'},
+    {t:'text',a:'burrowing|burrow',q:'Small animals often avoid the heat by ______ underground.'},
+    {t:'text',a:'cold',q:'Desert nights are often ______.'},
+    {t:'choice',a:'B',q:'Desert nights are cold because:',opts:['A) it rains','B) heat escapes rapidly','C) animals hide','D) winds blow']},
+    {t:'choice',a:'TRUE',q:'The camel can survive days without drinking.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Human farming can damage desert ecosystems.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'desertification',q:'The spread of desert is called ______.'},
+    {t:'text',a:'climate',q:'Desertification is partly driven by ______ change.'}
+   ]},
+  {title:'Introverts and Extroverts',
+   paras:[
+    "Few ideas in psychology are as widely discussed as the distinction between introverts and extroverts. The terms, first popularised by the psychologist Carl Jung, describe two different ways in which people gain and lose energy. Extroverts tend to feel energised by social interaction, thriving in busy, stimulating environments. Introverts, by contrast, recharge through solitude and can find too much social activity draining.",
+    "It is a common misconception that introverts are simply shy or antisocial. In reality, many introverts enjoy socialising but need time alone afterwards to recover. Similarly, extroverts are not necessarily more confident; they simply seek out stimulation more actively. Most people, in fact, fall somewhere between the two extremes, a position sometimes called 'ambivert'.",
+    "Research suggests these tendencies have a biological basis. Studies indicate that introverts' brains may be more sensitive to stimulation, which is why they can feel overwhelmed in noisy settings. Extroverts, needing more stimulation to feel satisfied, are drawn to excitement and novelty.",
+    "Understanding these differences has practical value, particularly in the workplace. Traditional open-plan offices may actually reduce the productivity of introverted employees, who often work best in quiet spaces. Forward-thinking companies now try to provide a mix of environments, recognising that a diverse team often produces the best results."
+   ],
+   Q:[
+    {t:'text',a:'carl',q:'The terms were popularised by ______ Jung.'},
+    {t:'choice',a:'B',q:'Extroverts gain energy from:',opts:['A) solitude','B) social interaction','C) sleep','D) reading']},
+    {t:'text',a:'solitude',q:'Introverts recharge through ______.'},
+    {t:'choice',a:'FALSE',q:'Introverts are always shy and antisocial.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Extroverts are necessarily more confident.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'ambivert',q:'A person between the two types is called an ______.'},
+    {t:'text',a:'stimulation',q:"Introverts' brains may be more sensitive to ______."},
+    {t:'choice',a:'B',q:'Extroverts are drawn to:',opts:['A) quiet','B) excitement and novelty','C) solitude','D) routine']},
+    {t:'text',a:'productivity',q:'Open-plan offices may reduce introverts’ ______.'},
+    {t:'text',a:'quiet',q:'Introverts often work best in ______ spaces.'},
+    {t:'choice',a:'TRUE',q:'Introverts can feel overwhelmed in noisy settings.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some introverts enjoy socialising.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Most people are pure introverts or pure extroverts.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'B',q:'The passage suggests companies should provide:',opts:['A) only open offices','B) a mix of environments','C) no offices','D) louder spaces']}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Electricity generated by source (%), 2020</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Country</th><th style='border:1px solid #999;padding:5px 10px'>Coal</th><th style='border:1px solid #999;padding:5px 10px'>Gas</th><th style='border:1px solid #999;padding:5px 10px'>Nuclear</th><th style='border:1px solid #999;padding:5px 10px'>Renewables</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>A</td><td style='border:1px solid #999;padding:5px 10px'>40</td><td style='border:1px solid #999;padding:5px 10px'>30</td><td style='border:1px solid #999;padding:5px 10px'>10</td><td style='border:1px solid #999;padding:5px 10px'>20</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>B</td><td style='border:1px solid #999;padding:5px 10px'>25</td><td style='border:1px solid #999;padding:5px 10px'>20</td><td style='border:1px solid #999;padding:5px 10px'>30</td><td style='border:1px solid #999;padding:5px 10px'>25</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>C</td><td style='border:1px solid #999;padding:5px 10px'>10</td><td style='border:1px solid #999;padding:5px 10px'>15</td><td style='border:1px solid #999;padding:5px 10px'>5</td><td style='border:1px solid #999;padding:5px 10px'>70</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>D</td><td style='border:1px solid #999;padding:5px 10px'>55</td><td style='border:1px solid #999;padding:5px 10px'>25</td><td style='border:1px solid #999;padding:5px 10px'>0</td><td style='border:1px solid #999;padding:5px 10px'>20</td></tr></table>",
+  task1:"The table below shows the percentage of electricity generated from different sources in four countries (A, B, C, D) in 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that university education should be free for everyone, while others think students should pay for it. Discuss both views and give your own opinion. Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 5 ===================== */
+{
+ name:'Mock 5',
+ blurb:'Gym · Castle tour · Volcanoes + Barrier Reef · Body language · Telephone',
+ listen:[
+  {title:'FitZone gym membership',
+   transcript:"Thank you for your interest in FitZone gym. We have three types of membership: the standard costs thirty pounds a month, the premium is forty-five, and the student membership is just twenty pounds with a valid student card. All memberships include access to the gym floor and changing rooms, but only premium members can use the swimming pool and sauna. The gym is open twenty-four hours a day, seven days a week. When you join, you'll receive a free fitness assessment with one of our trainers. To sign up, you'll need to bring a photo, proof of address, and your bank details. There's also a one-off joining fee of fifteen pounds.",
+   Q:[
+    {t:'text',a:'thirty|30',q:'Standard membership: £______ a month.'},
+    {t:'text',a:'forty-five|45|forty five',q:'Premium membership: £______.'},
+    {t:'text',a:'twenty|20',q:'Student membership: £______.'},
+    {t:'text',a:'card',q:'Students need a valid student ______.'},
+    {t:'text',a:'sauna',q:'Only premium members can use the pool and ______.'},
+    {t:'text',a:'twenty-four|24',q:'The gym is open ______ hours a day.'},
+    {t:'text',a:'assessment',q:'New members get a free fitness ______.'},
+    {t:'text',a:'details|detail',q:'Bring a photo, proof of address and bank ______.'},
+    {t:'text',a:'fifteen|15',q:'Joining fee: £______.'},
+    {t:'choice',a:'B',q:'The gym is open:',opts:['A) weekdays only','B) 7 days a week','C) mornings only','D) weekends only']}
+   ]},
+  {title:'Dunhill Castle tour',
+   transcript:"Welcome to Dunhill Castle, one of the oldest castles in the country, built in the twelfth century. We'll begin in the Great Hall, where banquets were once held. From there, we'll climb the tower, which offers wonderful views of the valley, though I should warn you there are ninety steps and they can be slippery. The castle is said to be home to a famous ghost, and many visitors come especially to hear the legend. The gift shop, where you can buy souvenirs, is located in the old stables. Photography is welcome throughout the castle, except in the chapel, where it is not allowed. The tour lasts approximately forty-five minutes, and afterwards you're welcome to explore the gardens.",
+   Q:[
+    {t:'text',a:'twelfth|12th',q:'The castle was built in the ______ century.'},
+    {t:'text',a:'hall',q:'Banquets were held in the Great ______.'},
+    {t:'text',a:'ninety|90',q:'The tower has ______ steps.'},
+    {t:'text',a:'slippery',q:'The steps can be ______.'},
+    {t:'text',a:'legend',q:'Many visitors come to hear the ______.'},
+    {t:'text',a:'stables|stable',q:'The gift shop is in the old ______.'},
+    {t:'text',a:'chapel',q:'Photography is not allowed in the ______.'},
+    {t:'text',a:'forty-five|45|forty five',q:'The tour lasts about ______ minutes.'},
+    {t:'text',a:'gardens|garden',q:'Afterwards, visitors can explore the ______.'},
+    {t:'choice',a:'B',q:'The castle is famous for its:',opts:['A) library','B) ghost','C) river','D) market']}
+   ]},
+  {title:'Tutorial: choosing a dissertation topic',
+   transcript:"You wanted to talk about your dissertation topic? Yes, I'm interested in renewable energy, but I'm not sure it's focused enough. A topic that broad is hard to manage. Could you narrow it to one type of energy? Maybe I could focus on solar power in rural areas. That's much better. And what method will you use? I was thinking of interviews with local residents. Interviews are fine, but make sure you get at least fifteen participants. How long should the dissertation be? Around ten thousand words. When's the deadline? The final version is due in May, but I'd like a draft by the end of March.",
+   Q:[
+    {t:'text',a:'energy',q:"The student's broad topic is renewable ______."},
+    {t:'text',a:'narrow',q:'The tutor advises the student to ______ the topic.'},
+    {t:'text',a:'rural',q:'The student will focus on solar power in ______ areas.'},
+    {t:'text',a:'interviews|interview',q:'The research method will be ______.'},
+    {t:'text',a:'fifteen|15',q:'Minimum number of participants: ______.'},
+    {t:'text',a:'ten|10',q:'Length: around ______ thousand words.'},
+    {t:'text',a:'may',q:'The final version is due in ______.'},
+    {t:'text',a:'march',q:'A draft is wanted by the end of ______.'},
+    {t:'choice',a:'B',q:'The tutor thinks the original topic is:',opts:['A) perfect','B) too broad','C) too narrow','D) boring']},
+    {t:'choice',a:'B',q:'The student will interview:',opts:['A) experts','B) local residents','C) students','D) tourists']}
+   ]},
+  {title:'Lecture: volcanoes',
+   transcript:"Today's lecture concerns volcanoes, one of the most powerful forces on Earth. A volcano forms where molten rock, called magma, rises from deep within the planet to the surface. When magma reaches the surface, it is known as lava. Volcanoes are often found along the boundaries of the tectonic plates that make up the Earth's crust. The most active region is the so-called Ring of Fire, which surrounds the Pacific Ocean. While eruptions can be devastating, volcanoes also bring benefits. The ash they release makes surrounding soil extremely fertile, which is why many people choose to farm near them despite the risks. Volcanic activity has also created some of the world's most beautiful islands. Scientists monitor volcanoes closely, using instruments to detect the small earthquakes that often signal an eruption is near.",
+   Q:[
+    {t:'text',a:'magma',q:'Molten rock below the surface is called ______.'},
+    {t:'text',a:'lava',q:'When magma reaches the surface it is called ______.'},
+    {t:'text',a:'plates|plate',q:'Volcanoes are found along the boundaries of tectonic ______.'},
+    {t:'text',a:'fire',q:'The most active region is the Ring of ______.'},
+    {t:'text',a:'pacific',q:'The Ring of Fire surrounds the ______ Ocean.'},
+    {t:'text',a:'fertile',q:'Volcanic ash makes soil very ______.'},
+    {t:'text',a:'islands|island',q:'Volcanoes have created beautiful ______.'},
+    {t:'text',a:'earthquakes|earthquake',q:'Scientists detect small ______ that signal an eruption.'},
+    {t:'choice',a:'B',q:'People farm near volcanoes because the soil is:',opts:['A) dry','B) fertile','C) rocky','D) cold']},
+    {t:'choice',a:'B',q:'Lava is magma that has:',opts:['A) cooled underground','B) reached the surface','C) turned to ash','D) frozen']}
+   ]}
+ ],
+ read:[
+  {title:'The Great Barrier Reef',
+   paras:[
+    "Stretching over 2,300 kilometres along the coast of Australia, the Great Barrier Reef is the largest coral reef system on Earth and the only living structure visible from space. It is home to an astonishing diversity of life, including more than 1,500 species of fish, 400 types of coral, and numerous turtles, sharks, and dolphins.",
+    "Coral reefs are built by tiny animals called polyps, which produce hard skeletons of calcium carbonate. Over thousands of years, the accumulated skeletons form the vast structures we see today. Remarkably, corals depend on a close partnership with microscopic algae that live inside them. The algae provide the coral with food through photosynthesis, and in return receive shelter. This relationship also gives coral its brilliant colours.",
+    "Unfortunately, the reef is under serious threat. When ocean temperatures rise, corals expel their algae in a process known as 'bleaching', turning white and, if conditions do not improve, eventually dying. In recent years, rising sea temperatures caused by climate change have led to several mass bleaching events. Pollution and overfishing add to the pressure.",
+    "Efforts to protect the reef are underway. Large sections are now designated as marine parks where fishing is restricted, and scientists are experimenting with ways to grow more resilient coral. Yet experts agree that the reef's long-term survival depends above all on tackling climate change."
+   ],
+   Q:[
+    {t:'text',a:'2300|2,300',q:'The reef stretches over ______ kilometres.'},
+    {t:'choice',a:'C',q:'The reef is home to more than how many species of fish?',opts:['A) 400','B) 1000','C) 1500','D) 2300']},
+    {t:'text',a:'polyps|polyp',q:'Coral reefs are built by tiny animals called ______.'},
+    {t:'text',a:'carbonate',q:'Coral skeletons are made of calcium ______.'},
+    {t:'text',a:'algae',q:'Corals partner with microscopic ______.'},
+    {t:'text',a:'photosynthesis',q:'The algae provide food through ______.'},
+    {t:'text',a:'white',q:'When corals expel their algae, they turn ______.'},
+    {t:'text',a:'bleaching',q:'This process is known as ______.'},
+    {t:'choice',a:'B',q:'Bleaching is caused mainly by:',opts:['A) pollution','B) rising temperatures','C) overfishing','D) tourists']},
+    {t:'choice',a:'TRUE',q:'The reef is visible from space.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'fishing',q:'Marine parks restrict ______.'},
+    {t:'text',a:'resilient',q:'Scientists are trying to grow more ______ coral.'},
+    {t:'text',a:'climate',q:"The reef's survival depends above all on tackling ______ change."}
+   ]},
+  {title:'The Secrets of Body Language',
+   paras:[
+    "Long before humans developed spoken language, we communicated through our bodies, and to this day, much of what we express is conveyed without words. Researchers estimate that a significant proportion of communication is non-verbal, transmitted through facial expressions, gestures, posture, and eye contact.",
+    "Facial expressions are perhaps the most universal form of body language. Studies have shown that certain expressions, such as those for happiness, sadness, fear, and anger, are recognised across all cultures, suggesting they are innate rather than learned. A genuine smile, for instance, involves not just the mouth but also the muscles around the eyes.",
+    "Gestures, on the other hand, often vary considerably between cultures. A hand signal that is friendly in one country may be offensive in another. This is why travellers are frequently advised to learn about local customs to avoid misunderstandings.",
+    "Body language also reveals emotions we may be trying to hide. Crossed arms can signal defensiveness, while frequent touching of the face may indicate anxiety. Interestingly, research suggests that adopting confident postures can even influence how we feel, making us genuinely more self-assured."
+   ],
+   Q:[
+    {t:'text',a:'spoken',q:'Humans communicated with their bodies before developing ______ language.'},
+    {t:'text',a:'non-verbal|nonverbal|non verbal',q:'A large proportion of communication is ______.'},
+    {t:'choice',a:'B',q:'Which are said to be recognised across all cultures?',opts:['A) gestures','B) facial expressions','C) postures','D) words']},
+    {t:'text',a:'innate',q:'Expressions for basic emotions are thought to be ______ rather than learned.'},
+    {t:'text',a:'eyes|eye',q:'A genuine smile also involves muscles around the ______.'},
+    {t:'text',a:'vary',q:'Gestures often ______ between cultures.'},
+    {t:'text',a:'customs|custom',q:'Travellers are advised to learn local ______.'},
+    {t:'text',a:'defensiveness',q:'Crossed arms can signal ______.'},
+    {t:'text',a:'anxiety',q:'Touching the face may indicate ______.'},
+    {t:'choice',a:'B',q:'Adopting confident postures can:',opts:['A) tire us','B) influence how we feel','C) look rude','D) do nothing']},
+    {t:'choice',a:'FALSE',q:'All gestures mean the same thing everywhere.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Facial expressions are the most universal form of body language.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Body language can reveal hidden emotions.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Invention of the Telephone',
+   paras:[
+    "The telephone, a device now so ordinary that we scarcely notice it, was once a revolutionary invention that transformed human communication. Before its arrival, messages could travel over long distances only by letter or telegraph, the latter requiring skilled operators to send coded signals.",
+    "The invention is most commonly credited to Alexander Graham Bell, who was granted a patent in 1876. Bell, a teacher of the deaf, had long been fascinated by sound and speech. However, Bell was not working alone; several inventors were pursuing similar ideas at the same time, and the question of who truly invented the telephone remains a subject of debate.",
+    "The early telephone spread rapidly. Within a few decades, networks of wires connected homes and businesses across entire countries. Operators, often young women, manually connected calls at switchboards, a job that eventually disappeared as automatic exchanges were introduced.",
+    "The telephone's impact was profound. It allowed families separated by distance to stay in touch and transformed the way businesses operated. The smartphones we now carry are the direct descendants of that first simple device."
+   ],
+   Q:[
+    {t:'text',a:'telegraph',q:'Before the telephone, long-distance messages travelled by letter or ______.'},
+    {t:'choice',a:'B',q:'The telegraph required operators to send:',opts:['A) letters','B) coded signals','C) voices','D) pictures']},
+    {t:'text',a:'bell',q:'The telephone is most commonly credited to Alexander Graham ______.'},
+    {t:'text',a:'1876',q:'Bell was granted a patent in ______.'},
+    {t:'text',a:'deaf',q:'Bell worked as a teacher of the ______.'},
+    {t:'choice',a:'FALSE',q:'Bell was the only person working on the idea.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Who invented the telephone is still debated.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'switchboards|switchboard',q:'Early calls were connected manually at ______.'},
+    {t:'text',a:'women|woman',q:'Switchboard operators were often young ______.'},
+    {t:'text',a:'exchanges|exchange',q:'Operators’ jobs disappeared with automatic ______.'},
+    {t:'choice',a:'TRUE',q:'The telephone allowed families separated by distance to stay in touch.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The telephone spread slowly over many centuries.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Smartphones are descendants of the first telephone.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The telephone changed how businesses operated.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]}
+ ],
+ writing:{
+  img:"<div style='max-width:540px;margin:8px auto;color:#111'><div style='font-weight:bold;text-align:center;margin-bottom:8px'>How paper is recycled</div><div style='display:flex;flex-wrap:wrap;gap:5px;justify-content:center;align-items:center;font-size:11.5px'><span style='border:1px solid #1a73e8;border-radius:6px;padding:5px 8px;background:#eef4ff'>Used paper collected</span><span>&#8594;</span><span style='border:1px solid #1a73e8;border-radius:6px;padding:5px 8px;background:#eef4ff'>Sorted by type</span><span>&#8594;</span><span style='border:1px solid #1a73e8;border-radius:6px;padding:5px 8px;background:#eef4ff'>Shredded</span><span>&#8594;</span><span style='border:1px solid #1a73e8;border-radius:6px;padding:5px 8px;background:#eef4ff'>Mixed with water (pulp)</span><span>&#8594;</span><span style='border:1px solid #1a73e8;border-radius:6px;padding:5px 8px;background:#eef4ff'>Cleaned &amp; de-inked</span><span>&#8594;</span><span style='border:1px solid #1a73e8;border-radius:6px;padding:5px 8px;background:#eef4ff'>Pressed &amp; dried</span><span>&#8594;</span><span style='border:1px solid #1a9c5a;border-radius:6px;padding:5px 8px;background:#e9fbf1'>New paper</span></div></div>",
+  task1:"The diagram below shows how paper is recycled. Summarise the information by describing the main stages of the process. Write at least 150 words.",
+  task2:"Some people think the best way to reduce crime is to give longer prison sentences, while others believe there are more effective alternatives. Discuss both views and give your own opinion. Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 6 ===================== */
+{
+ name:'Mock 6',
+ blurb:'Language course · City tour · Bird migration + Brain · Ancient Egypt · Space tourism',
+ listen:[
+  {title:'Riverside Language School enrolment',
+   transcript:"Good afternoon, you've reached the Riverside Language School. The beginner Spanish course you asked about runs for twelve weeks, with classes every Monday and Wednesday evening from seven to nine. The course fee is two hundred and forty pounds, which includes the textbook. Classes are small, with a maximum of eight students, so places fill quickly. The course is taught by a native speaker, and there's a test at the end to assess your progress. If you complete the course, you'll receive a certificate. To enrol, please pay a deposit of fifty pounds. The next course begins on the fifth of February.",
+   Q:[
+    {t:'text',a:'spanish',q:'The course is beginner ______.'},
+    {t:'text',a:'twelve|12',q:'Course length: ______ weeks.'},
+    {t:'text',a:'wednesday',q:'Classes are on Monday and ______ evenings.'},
+    {t:'text',a:'nine|9',q:'Classes run from seven to ______.'},
+    {t:'text',a:'240|two hundred and forty',q:'Course fee: £______.'},
+    {t:'text',a:'textbook|text book',q:'The fee includes the ______.'},
+    {t:'text',a:'eight|8',q:'Maximum ______ students per class.'},
+    {t:'text',a:'native',q:'The course is taught by a ______ speaker.'},
+    {t:'text',a:'certificate',q:'Completers receive a ______.'},
+    {t:'text',a:'fifty|50',q:'Deposit required: £______.'}
+   ]},
+  {title:'Historic city walking tour',
+   transcript:"Welcome to our historic city walking tour. We'll be on foot for about two hours, covering roughly three kilometres, so comfortable shoes are recommended. Our first stop is the cathedral, which dates back eight hundred years. From there, we'll walk to the old market square, the heart of the medieval city. We'll stop for a short break at a traditional tea room, though refreshments are not included in the tour price. Please stay together, especially when crossing the busy roads. At the end, we'll finish at the river, where those who wish can take an optional boat trip. Don't forget to bring a camera.",
+   Q:[
+    {t:'text',a:'two|2',q:'The tour lasts about ______ hours.'},
+    {t:'text',a:'three|3',q:'The tour covers roughly ______ kilometres.'},
+    {t:'text',a:'shoes|shoe',q:'Comfortable ______ are recommended.'},
+    {t:'text',a:'eight hundred|800',q:'The cathedral dates back ______ years.'},
+    {t:'text',a:'square',q:'The old market ______ was the heart of the city.'},
+    {t:'text',a:'tea',q:"There's a break at a traditional ______ room."},
+    {t:'text',a:'price',q:'Refreshments are not included in the ______.'},
+    {t:'text',a:'roads|road',q:'Take care when crossing busy ______.'},
+    {t:'text',a:'river',q:'The tour finishes at the ______.'},
+    {t:'choice',a:'B',q:'At the end, visitors can optionally take a:',opts:['A) bus','B) boat trip','C) train','D) taxi']}
+   ]},
+  {title:'Students planning a birdwatching trip',
+   transcript:"So, for the biology trip, we're going to the wetlands to study migratory birds. When are we going? Next Saturday, and the minibus leaves at seven thirty. That's early! It is, but the birds are most active in the morning. What do we need to bring? Binoculars, of course, and a notebook to record what we see. Should we bring food? Yes, a packed lunch, as there's nowhere to buy any. What about the weather? It could be windy, so a warm jacket is a good idea. And how do we record our observations? We'll use a special app on our phones. Let's aim to be back by four.",
+   Q:[
+    {t:'text',a:'migratory',q:'The trip is to the wetlands to study ______ birds.'},
+    {t:'text',a:'saturday',q:'The trip is next ______.'},
+    {t:'text',a:'seven thirty|7:30|7.30|730',q:'The minibus leaves at ______.'},
+    {t:'text',a:'morning',q:'Birds are most active in the ______.'},
+    {t:'text',a:'notebook|note book',q:'Bring binoculars and a ______.'},
+    {t:'text',a:'lunch',q:'Bring a packed ______.'},
+    {t:'text',a:'jacket',q:'It could be windy, so bring a warm ______.'},
+    {t:'text',a:'app',q:'Observations are recorded using an ______.'},
+    {t:'choice',a:'B',q:'Why leave so early?',opts:['A) traffic','B) birds are most active in the morning','C) it is cheaper','D) the bus is busy']},
+    {t:'choice',a:'B',q:'They will return by:',opts:['A) 2','B) 4','C) 6','D) 7']}
+   ]},
+  {title:'Lecture: bird migration',
+   transcript:"Today we will look at one of nature's most remarkable phenomena: bird migration. Each year, billions of birds travel enormous distances between their breeding and wintering grounds. Some species, such as the Arctic tern, travel from the Arctic to the Antarctic and back, covering tens of thousands of kilometres. Birds migrate mainly to find food and suitable breeding conditions as the seasons change. During the day, they rely on the position of the sun, while at night they use the stars. Remarkably, birds can also sense the Earth's magnetic field, which acts like a built-in compass. Migration is dangerous, however; many birds die from exhaustion, storms, or lack of food. Sadly, human activity, including the loss of wetlands where birds rest, is making these journeys even harder.",
+   Q:[
+    {t:'text',a:'wintering|winter',q:'Birds travel between their breeding and ______ grounds.'},
+    {t:'text',a:'tern',q:'The Arctic ______ travels from the Arctic to the Antarctic.'},
+    {t:'text',a:'conditions|condition',q:'Birds migrate mainly to find food and breeding ______.'},
+    {t:'text',a:'sun',q:'During the day, birds navigate using the ______.'},
+    {t:'text',a:'stars|star',q:'At night, birds use the ______.'},
+    {t:'text',a:'magnetic',q:"Birds can sense the Earth's ______ field."},
+    {t:'text',a:'compass',q:'The magnetic field acts like a built-in ______.'},
+    {t:'text',a:'food',q:'Many birds die from exhaustion, storms or lack of ______.'},
+    {t:'choice',a:'B',q:'The Arctic tern is remarkable for the ______ it travels:',opts:['A) speed','B) distance','C) height','D) noise']},
+    {t:'choice',a:'B',q:'Loss of ______ makes migration harder:',opts:['A) forests','B) wetlands','C) deserts','D) mountains']}
+   ]}
+ ],
+ read:[
+  {title:'The Human Brain',
+   paras:[
+    "Weighing only about 1.4 kilograms, the human brain is one of the most complex structures in the known universe. It contains roughly 86 billion nerve cells, or neurons, each connected to thousands of others, forming a network of staggering complexity. Through this network, the brain controls everything we do, from breathing and moving to thinking and feeling.",
+    "The brain is divided into several regions, each with specialised functions. The largest part, the cerebrum, is responsible for higher functions such as reasoning, memory, and language. Beneath it lies the cerebellum, which coordinates movement and balance, while the brainstem controls vital automatic processes like heartbeat and breathing.",
+    "One of the brain's most remarkable qualities is its 'plasticity', the ability to change and reorganise itself throughout life. When we learn something new, connections between neurons are strengthened. Following an injury, healthy parts of the brain can sometimes take over the functions of damaged areas.",
+    "Despite decades of research, much about the brain remains a mystery. Scientists still do not fully understand how it gives rise to consciousness. Modern imaging technology, which allows researchers to watch the brain in action, is gradually revealing its secrets."
+   ],
+   Q:[
+    {t:'text',a:'1.4',q:'The brain weighs about ______ kilograms.'},
+    {t:'choice',a:'B',q:'The brain contains roughly how many neurons?',opts:['A) 86 million','B) 86 billion','C) 1.4 billion','D) 400 billion']},
+    {t:'text',a:'neurons|neuron',q:'Nerve cells are also called ______.'},
+    {t:'text',a:'cerebrum',q:'The largest part of the brain is the ______.'},
+    {t:'text',a:'language',q:'The cerebrum is responsible for reasoning, memory and ______.'},
+    {t:'text',a:'cerebellum',q:'The ______ coordinates movement and balance.'},
+    {t:'text',a:'breathing',q:'The brainstem controls heartbeat and ______.'},
+    {t:'text',a:'plasticity',q:"The brain's ability to reorganise itself is called ______."},
+    {t:'text',a:'neurons|neuron',q:'Learning strengthens connections between ______.'},
+    {t:'choice',a:'B',q:'After an injury, healthy parts of the brain can:',opts:['A) shrink','B) take over lost functions','C) stop working','D) grow larger']},
+    {t:'choice',a:'FALSE',q:'Scientists fully understand consciousness.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Imaging technology lets researchers watch the brain in action.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The brain controls both movement and thinking.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Wonders of Ancient Egypt',
+   paras:[
+    "Few ancient civilisations continue to capture the imagination as powerfully as that of ancient Egypt. Flourishing for over three thousand years along the banks of the River Nile, it produced some of the most impressive achievements of the ancient world.",
+    "The Nile was the lifeblood of Egyptian civilisation. Each year, it flooded, depositing rich, fertile soil along its banks that allowed farmers to grow abundant crops. This reliable food supply supported a large population and freed some people to become craftsmen, priests, and officials.",
+    "The Egyptians are perhaps best known for their monumental architecture, above all the pyramids. The Great Pyramid of Giza, built as a tomb for the pharaoh Khufu, consists of over two million stone blocks, some weighing several tonnes. Exactly how such structures were built without modern machinery remains a source of debate.",
+    "Religion played a central role in Egyptian life. The Egyptians believed in an afterlife and developed the elaborate process of mummification to preserve bodies. They also created a writing system known as hieroglyphics, using pictures to represent sounds and ideas. For centuries this script could not be read, until the discovery of the Rosetta Stone finally allowed scholars to decode it."
+   ],
+   Q:[
+    {t:'text',a:'three|3',q:'Ancient Egypt flourished for over ______ thousand years.'},
+    {t:'text',a:'nile',q:'Egyptian civilisation grew along the River ______.'},
+    {t:'text',a:'flooded|flood',q:'Each year the Nile ______, depositing fertile soil.'},
+    {t:'choice',a:'B',q:'The reliable food supply allowed some people to become:',opts:['A) soldiers only','B) craftsmen, priests and officials','C) farmers only','D) sailors']},
+    {t:'text',a:'tomb',q:'The Great Pyramid was built as a ______ for Khufu.'},
+    {t:'text',a:'two|2',q:'The Great Pyramid has over ______ million stone blocks.'},
+    {t:'text',a:'tonnes|tons|tonne|ton',q:'Some blocks weigh several ______.'},
+    {t:'text',a:'afterlife|after life',q:'The Egyptians believed in an ______.'},
+    {t:'text',a:'mummification',q:'Bodies were preserved through ______.'},
+    {t:'text',a:'hieroglyphics|hieroglyphs',q:'The Egyptian writing system is called ______.'},
+    {t:'choice',a:'B',q:'Hieroglyphics used ______ to represent sounds and ideas:',opts:['A) numbers','B) pictures','C) letters','D) knots']},
+    {t:'choice',a:'FALSE',q:'Hieroglyphics could always be easily read.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'rosetta',q:'The ______ Stone allowed scholars to decode the script.'},
+    {t:'choice',a:'TRUE',q:'How the pyramids were built is still debated.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Dawn of Space Tourism',
+   paras:[
+    "For most of history, travelling into space was the exclusive privilege of a small number of highly trained astronauts. In recent years, however, a new industry has emerged that promises to change this: space tourism. Several private companies are now developing spacecraft designed to carry ordinary paying customers beyond the Earth's atmosphere.",
+    "The concept is not entirely new. As early as 2001, a wealthy businessman became the first 'space tourist', paying a reported twenty million dollars to visit the International Space Station. For years, such trips remained available only to the extremely rich. But as technology advances and competition grows, prices are expected to fall.",
+    "Supporters argue that space tourism offers many benefits. It could generate funding for space research, inspire young people to study science, and give travellers a life-changing perspective on their home planet. Many astronauts describe a profound shift in outlook after seeing the Earth from space, an experience sometimes called the 'overview effect'.",
+    "Critics, however, raise serious concerns. Rocket launches produce significant pollution, and some question whether it is right to spend vast sums on space travel while problems remain unsolved on Earth. There are also safety risks, as space remains a dangerous environment."
+   ],
+   Q:[
+    {t:'text',a:'astronauts|astronaut',q:'Space travel was traditionally limited to trained ______.'},
+    {t:'text',a:'2001',q:'The first space tourist travelled in ______.'},
+    {t:'choice',a:'B',q:'The first space tourist reportedly paid:',opts:['A) 2 million','B) 20 million','C) 200 million','D) 2 billion']},
+    {t:'text',a:'station',q:'The first tourist visited the International Space ______.'},
+    {t:'text',a:'fall',q:'As competition grows, prices are expected to ______.'},
+    {t:'text',a:'research',q:'Space tourism could generate funding for space ______.'},
+    {t:'text',a:'science',q:'It could inspire young people to study ______.'},
+    {t:'text',a:'overview',q:'Seeing Earth from space is called the ______ effect.'},
+    {t:'choice',a:'B',q:'Critics point out that rocket launches produce:',opts:['A) noise only','B) pollution','C) profit','D) jobs']},
+    {t:'choice',a:'FALSE',q:'Space tourism was completely new in recent years.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some question spending on space while Earth has problems.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'dangerous',q:'Space remains a ______ environment.'},
+    {t:'choice',a:'TRUE',q:'Many astronauts describe a shift in outlook after seeing Earth.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 560 320' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>Average internet use (hours/week) by age group, 2010 vs 2020</text><line x1='60' y1='30' x2='60' y2='250' stroke='#333'/><line x1='60' y1='250' x2='510' y2='250' stroke='#333'/><g font-size='10' fill='#555'><text x='52' y='253' text-anchor='end'>0</text><text x='52' y='198' text-anchor='end'>10</text><text x='52' y='143' text-anchor='end'>20</text><text x='52' y='88' text-anchor='end'>30</text><text x='52' y='33' text-anchor='end'>40</text><line x1='60' y1='195' x2='500' y2='195' stroke='#eee'/><line x1='60' y1='140' x2='500' y2='140' stroke='#eee'/><line x1='60' y1='85' x2='500' y2='85' stroke='#eee'/></g><g><rect x='85' y='140' width='30' height='110' fill='#1a73e8'/><rect x='119' y='57' width='30' height='193' fill='#e0a800'/><rect x='195' y='167' width='30' height='83' fill='#1a73e8'/><rect x='229' y='96' width='30' height='154' fill='#e0a800'/><rect x='305' y='195' width='30' height='55' fill='#1a73e8'/><rect x='339' y='140' width='30' height='110' fill='#e0a800'/><rect x='415' y='222' width='30' height='28' fill='#1a73e8'/><rect x='449' y='184' width='30' height='66' fill='#e0a800'/></g><g font-size='10.5' fill='#333' text-anchor='middle'><text x='117' y='264'>15–24</text><text x='227' y='264'>25–34</text><text x='337' y='264'>35–49</text><text x='447' y='264'>50+</text></g><g font-size='11'><rect x='190' y='288' width='16' height='10' fill='#1a73e8'/><text x='212' y='297'>2010</text><rect x='300' y='288' width='16' height='10' fill='#e0a800'/><text x='322' y='297'>2020</text></g></svg>",
+  task1:"The bar chart below shows the average number of hours per week spent on the internet by four age groups in 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that money spent on space exploration would be better spent solving problems on Earth. To what extent do you agree or disagree? Write at least 250 words."
  }
 }
 
