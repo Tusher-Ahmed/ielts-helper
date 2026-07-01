@@ -148,6 +148,7 @@
   <div class="screen" id="p-writing"><div class="pad">
     <h2>Writing Task 1</h2>
     <p id="wPrompt1" style="background:#eef2f8;border:1px solid #cfd8e6;border-radius:7px;padding:11px;font-size:14px;margin:6px 0"></p>
+    <div id="wImg1" style="margin:8px 0;text-align:center"></div>
     <div class="wc">Words: <span id="wc1">0</span> (min 150)</div>
     <textarea id="essay1" placeholder="Type your Task 1 answer..." oninput="countWords()"></textarea>
     <h2 style="margin-top:20px">Writing Task 2</h2>
@@ -220,6 +221,7 @@ function loadMock(i){
   document.getElementById('topId').innerHTML='Test taker ID: 100-2026 · '+m.name+' · <a href="index.html" class="exit">← Exit</a>';
   renderListening(m);renderReading(m);
   document.getElementById('wPrompt1').textContent=m.writing.task1;
+  document.getElementById('wImg1').innerHTML=m.writing.img||'';
   document.getElementById('wPrompt2').textContent=m.writing.task2;
   document.getElementById('essay1').value='';document.getElementById('essay2').value='';
   document.getElementById('wc1').textContent='0';document.getElementById('wc2').textContent='0';
