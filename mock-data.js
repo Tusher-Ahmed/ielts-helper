@@ -1671,6 +1671,420 @@ const MOCKS=[
   task1:"The pie chart below shows how people in a city travel to work. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people believe that reading books is a waste of time in the digital age. To what extent do you agree or disagree? Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 13 ===================== */
+{
+ name:'Mock 13',
+ blurb:'Bank account · New shopping centre · Advertising + Online shopping · Branding · Gig economy',
+ listen:[
+  {title:'Opening a bank account',
+   transcript:"Good morning, I'd like to open a bank account. Certainly. We offer a current account with no monthly fee. To open one, you'll need two forms of identification: a passport and a recent utility bill showing your address. You'll also receive a debit card, which arrives within five working days. The account includes free online and mobile banking. There's no minimum balance required. The account pays a small amount of interest, currently one per cent a year. Our nearest branch is on King Street, open until four thirty on weekdays. You'll need to book an appointment to open the account.",
+   Q:[
+    {t:'text',a:'fee',q:'The current account has no monthly ______.'},
+    {t:'text',a:'identification|id',q:'You need two forms of ______.'},
+    {t:'text',a:'bill',q:'Documents needed: a passport and a utility ______.'},
+    {t:'text',a:'five|5',q:'The debit card arrives within ______ working days.'},
+    {t:'text',a:'mobile',q:'The account includes free online and ______ banking.'},
+    {t:'text',a:'balance',q:'There is no minimum ______ required.'},
+    {t:'text',a:'one|1',q:'Interest rate: ______ per cent a year.'},
+    {t:'text',a:'king',q:'The nearest branch is on ______ Street.'},
+    {t:'text',a:'four thirty|4:30|4.30|430',q:'The branch is open until ______ on weekdays.'},
+    {t:'choice',a:'B',q:'To open the account you must:',opts:['A) pay a fee','B) book an appointment','C) deposit money','D) be over 21']}
+   ]},
+  {title:'Radio: new shopping centre opening',
+   transcript:"In local news, the town's brand-new shopping centre opens its doors next Saturday. The centre, which took two years to build, houses over one hundred shops, as well as a cinema and a food court with twenty restaurants. On opening day, the first two hundred visitors will receive a free gift. The centre is easily reached by public transport, and there is parking for two thousand cars. To celebrate, several shops will offer discounts of up to fifty per cent during the first week. The centre will be open from nine in the morning until eight in the evening, seven days a week. Organisers say the development has created around five hundred new jobs.",
+   Q:[
+    {t:'text',a:'saturday',q:'The shopping centre opens next ______.'},
+    {t:'text',a:'two|2',q:'It took ______ years to build.'},
+    {t:'text',a:'one hundred|100',q:'It houses over ______ shops.'},
+    {t:'text',a:'twenty|20',q:'The food court has ______ restaurants.'},
+    {t:'text',a:'gift',q:'The first two hundred visitors get a free ______.'},
+    {t:'text',a:'two thousand|2000|2,000',q:'There is parking for ______ cars.'},
+    {t:'text',a:'fifty|50',q:'Some shops offer discounts of up to ______ per cent.'},
+    {t:'text',a:'nine|9',q:'The centre opens at ______ in the morning.'},
+    {t:'text',a:'seven|7',q:'It is open ______ days a week.'},
+    {t:'choice',a:'B',q:'The development has created about:',opts:['A) 200 jobs','B) 500 jobs','C) 1000 jobs','D) 2000 jobs']}
+   ]},
+  {title:'Business presentation planning',
+   transcript:"Right, our business presentation is on a company's success. Which company should we choose? How about a coffee chain? Good, and easy to research. What's the secret of their success? I think it's mainly their strong brand and consistent quality. And their locations, always on busy streets. What about weaknesses? Their prices are quite high. And a lot of competition now. So what do we recommend? Maybe they should expand their online delivery. How long is the presentation? Ten minutes, plus questions. Should we include charts? Yes, let's show their sales growth in a graph. When's it due? The fourteenth of April. Let's meet Wednesday to practise.",
+   Q:[
+    {t:'text',a:'success',q:"The presentation is about a company's ______."},
+    {t:'text',a:'coffee',q:'They choose a ______ chain.'},
+    {t:'text',a:'quality',q:'The secret of success is a strong brand and consistent ______.'},
+    {t:'text',a:'streets|street',q:'Their locations are always on busy ______.'},
+    {t:'text',a:'prices|price',q:'A weakness is their high ______.'},
+    {t:'text',a:'delivery',q:'They recommend expanding online ______.'},
+    {t:'text',a:'ten|10',q:'Presentation length: ______ minutes.'},
+    {t:'text',a:'graph',q:'They will show sales growth in a ______.'},
+    {t:'text',a:'fourteenth|14th|14',q:'Due date: ______ of April.'},
+    {t:'choice',a:'B',q:'A weakness mentioned, besides high prices, is:',opts:['A) poor quality','B) a lot of competition','C) bad locations','D) weak brand']}
+   ]},
+  {title:'Lecture: advertising and persuasion',
+   transcript:"Today's lecture concerns advertising and how it influences what we buy. The main purpose of advertising is not simply to give information, but to persuade. Advertisers use a range of techniques. One common method is to associate a product with positive feelings, such as happiness or success. Another is the use of celebrities, whose fame and image are transferred to the product in the mind of the consumer. Advertisers also exploit our desire to fit in, or, conversely, our desire to feel unique. Repetition is powerful too: the more often we see a brand, the more familiar and trustworthy it seems. Understanding these techniques helps consumers make more rational decisions.",
+   Q:[
+    {t:'text',a:'persuade',q:'The main purpose of advertising is to ______.'},
+    {t:'text',a:'feelings|feeling',q:'Advertisers associate products with positive ______.'},
+    {t:'text',a:'success',q:'One technique is describing feelings such as happiness or ______.'},
+    {t:'text',a:'celebrities|celebrity',q:'Advertisers use ______ whose fame is transferred to the product.'},
+    {t:'text',a:'fit',q:'Advertisers exploit our desire to ______ in.'},
+    {t:'text',a:'unique',q:'They may also appeal to our desire to feel ______.'},
+    {t:'text',a:'repetition',q:'______ makes a brand seem familiar and trustworthy.'},
+    {t:'text',a:'rational',q:'Understanding these techniques helps consumers make more ______ decisions.'},
+    {t:'choice',a:'B',q:'The main purpose of advertising is to:',opts:['A) inform','B) persuade','C) entertain','D) educate']},
+    {t:'choice',a:'B',q:'Seeing a brand often makes it seem more:',opts:['A) expensive','B) trustworthy','C) unusual','D) boring']}
+   ]}
+ ],
+ read:[
+  {title:'The Rise of Online Shopping',
+   paras:[
+    "Two decades ago, buying goods over the internet was a novelty. Today, online shopping, or 'e-commerce', is a part of everyday life for billions of people, and it has transformed the way we buy almost everything, from books and clothes to groceries.",
+    "The reasons for its success are easy to understand. Online shopping offers unmatched convenience: customers can browse and buy at any time of day, from home, without travelling to a store. The choice available is enormous, and it is easy to compare prices between different sellers. For many products, home delivery, sometimes within hours, adds to the appeal.",
+    "This growth has had significant effects. Traditional 'high street' shops, unable to compete on price or convenience, have struggled, and many have closed. At the same time, e-commerce has created new jobs in areas such as warehousing and delivery, and has allowed small businesses to reach customers across the world.",
+    "There are drawbacks, however. Online shopping means customers cannot see or try products before buying, leading to high rates of returns. The huge rise in home deliveries has increased traffic and packaging waste. Some also worry about the loss of the social experience of shopping in person. Despite these concerns, the convenience of e-commerce means it is almost certain to keep growing."
+   ],
+   Q:[
+    {t:'text',a:'e-commerce|ecommerce|e commerce',q:'Online shopping is also known as ______.'},
+    {t:'text',a:'convenience',q:'Online shopping offers unmatched ______.'},
+    {t:'text',a:'home',q:'Customers can buy at any time of day from ______.'},
+    {t:'text',a:'compare',q:'It is easy to ______ prices between sellers.'},
+    {t:'text',a:'home',q:'For many products, ______ delivery adds to the appeal.'},
+    {t:'choice',a:'B',q:'High street shops have struggled because they cannot compete on price or:',opts:['A) quality','B) convenience','C) location','D) staff']},
+    {t:'text',a:'delivery',q:'E-commerce has created new jobs in warehousing and ______.'},
+    {t:'text',a:'world',q:'It allows small businesses to reach customers across the ______.'},
+    {t:'text',a:'try|see',q:'A drawback is that customers cannot ______ products before buying.'},
+    {t:'text',a:'returns|return',q:'This leads to high rates of ______.'},
+    {t:'text',a:'waste',q:'Home deliveries have increased traffic and packaging ______.'},
+    {t:'text',a:'social',q:'Some worry about the loss of the ______ experience of shopping.'},
+    {t:'choice',a:'B',q:'The writer predicts that e-commerce will:',opts:['A) disappear','B) keep growing','C) stay the same','D) become illegal']}
+   ]},
+  {title:'The Power of Branding',
+   paras:[
+    "Why are some people willing to pay far more for a product simply because of the name on it? The answer lies in the power of branding, one of the most important concepts in modern business. A brand is much more than a logo or a name; it is the whole set of ideas, feelings, and expectations that a product brings to mind.",
+    "A strong brand offers companies enormous advantages. It allows them to charge higher prices, as customers associate the brand with quality or status. It also creates loyalty: satisfied customers return again and again, and may recommend the brand to others. A well-known brand is also instantly recognisable, helping a product stand out in a crowded market.",
+    "Building a brand takes time and consistency. Companies work hard to ensure that everything, from the design of their products to their advertising and even their customer service, sends the same message. Some of the world's most valuable brands have spent decades building trust with their customers.",
+    "Branding is not without its critics, however. Some argue that it encourages people to pay for image rather than substance. Nevertheless, in a world full of choices, a trusted brand remains one of a company's most valuable assets."
+   ],
+   Q:[
+    {t:'text',a:'name',q:'A brand is more than a logo or a ______.'},
+    {t:'text',a:'expectations|expectation',q:'A brand is a set of ideas, feelings and ______.'},
+    {t:'text',a:'prices|price',q:'A strong brand allows companies to charge higher ______.'},
+    {t:'text',a:'status',q:'Customers associate strong brands with quality or ______.'},
+    {t:'text',a:'loyalty',q:'A strong brand creates customer ______.'},
+    {t:'text',a:'recommend',q:'Loyal customers may ______ the brand to others.'},
+    {t:'text',a:'recognisable|recognizable',q:'A well-known brand is instantly ______.'},
+    {t:'text',a:'consistency',q:'Building a brand takes time and ______.'},
+    {t:'choice',a:'B',q:'Companies ensure everything sends the same:',opts:['A) price','B) message','C) logo','D) product']},
+    {t:'text',a:'trust',q:"Valuable brands have spent decades building ______ with customers."},
+    {t:'choice',a:'B',q:'Critics argue branding makes people pay for image rather than:',opts:['A) quality','B) substance','C) design','D) service']},
+    {t:'text',a:'assets|asset',q:"A trusted brand is one of a company's most valuable ______."},
+    {t:'choice',a:'FALSE',q:'Branding has no critics.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'Working in the Gig Economy',
+   paras:[
+    "The way many people work is changing. Instead of holding a traditional job with a single employer, a growing number of people now work in what is called the 'gig economy', taking on short-term tasks or 'gigs' for different clients, often arranged through websites or apps. This includes everything from driving passengers and delivering food to freelance writing and design.",
+    "For many workers, the main attraction is flexibility. They can choose when and how much they work, fitting their jobs around family, study, or other commitments. For some, it offers a way to be their own boss. Businesses, too, benefit, as they can hire people only when needed, without the cost of permanent staff.",
+    "However, this flexibility comes at a price. Gig workers are usually classed as self-employed, which means they miss out on the benefits enjoyed by traditional employees, such as paid holidays, sick pay, and pensions. Their income can also be unpredictable, varying from week to week. Because they are not guaranteed a minimum number of hours, they bear much of the risk themselves.",
+    "These issues have sparked debate about how gig workers should be treated. Some argue that companies should provide more protections, while others fear that too many rules would remove the flexibility that makes the gig economy attractive in the first place."
+   ],
+   Q:[
+    {t:'text',a:'gigs|gig',q:'Short-term tasks in the gig economy are called ______.'},
+    {t:'text',a:'apps|app',q:'Gigs are often arranged through websites or ______.'},
+    {t:'text',a:'flexibility',q:'The main attraction for workers is ______.'},
+    {t:'text',a:'work',q:'Workers can choose when and how much they ______.'},
+    {t:'text',a:'boss',q:'Some like being their own ______.'},
+    {t:'text',a:'needed|need',q:'Businesses can hire people only when ______.'},
+    {t:'text',a:'self-employed|selfemployed|self employed',q:'Gig workers are usually classed as ______.'},
+    {t:'choice',a:'B',q:'Which benefit do gig workers usually miss out on?',opts:['A) flexibility','B) paid holidays','C) extra income','D) apps']},
+    {t:'text',a:'pensions|pension',q:'Gig workers also miss out on sick pay and ______.'},
+    {t:'text',a:'unpredictable',q:'Their income can be ______.'},
+    {t:'text',a:'hours|hour',q:'Gig workers are not guaranteed a minimum number of ______.'},
+    {t:'text',a:'protections|protection',q:'Some argue companies should provide more ______.'},
+    {t:'text',a:'flexibility',q:'Others fear too many rules would remove the ______.'},
+    {t:'choice',a:'C',q:'The writer says finding the right balance is:',opts:['A) easy','B) unnecessary','C) increasingly urgent','D) impossible']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 560 320' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>Products bought online rather than in stores (%), 2010 vs 2020</text><line x1='60' y1='30' x2='60' y2='250' stroke='#333'/><line x1='60' y1='250' x2='510' y2='250' stroke='#333'/><g font-size='10' fill='#555'><text x='52' y='253' text-anchor='end'>0</text><text x='52' y='190' text-anchor='end'>20</text><text x='52' y='127' text-anchor='end'>40</text><text x='52' y='64' text-anchor='end'>60</text><line x1='60' y1='187' x2='500' y2='187' stroke='#eee'/><line x1='60' y1='124' x2='500' y2='124' stroke='#eee'/><line x1='60' y1='61' x2='500' y2='61' stroke='#eee'/></g><g><rect x='85' y='156' width='30' height='94' fill='#1a73e8'/><rect x='119' y='77' width='30' height='173' fill='#e0a800'/><rect x='195' y='203' width='30' height='47' fill='#1a73e8'/><rect x='229' y='109' width='30' height='141' fill='#e0a800'/><rect x='305' y='234' width='30' height='16' fill='#1a73e8'/><rect x='339' y='187' width='30' height='63' fill='#e0a800'/><rect x='415' y='171' width='30' height='79' fill='#1a73e8'/><rect x='449' y='61' width='30' height='189' fill='#e0a800'/></g><g font-size='10.5' fill='#333' text-anchor='middle'><text x='117' y='264'>Books</text><text x='227' y='264'>Clothes</text><text x='337' y='264'>Groceries</text><text x='447' y='264'>Electronics</text></g><g font-size='11'><rect x='190' y='288' width='16' height='10' fill='#1a73e8'/><text x='212' y='297'>2010</text><rect x='300' y='288' width='16' height='10' fill='#e0a800'/><text x='322' y='297'>2020</text></g></svg>",
+  task1:"The bar chart below shows the percentage of people who bought four types of product online rather than in stores in 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Online shopping is becoming increasingly popular. Do the advantages of this development outweigh the disadvantages? Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 14 ===================== */
+{
+ name:'Mock 14',
+ blurb:'Conference · Observatory · Solar system + Mars · Northern Lights · Vaccines',
+ listen:[
+  {title:'Science conference registration',
+   transcript:"Hello, I'd like to register for the science conference next month. Certainly. The conference runs over two days, on the fifteenth and sixteenth of June. The standard registration fee is eighty pounds, but students pay a reduced rate of forty pounds with a valid ID. This includes access to all talks, lunch on both days, and a printed programme. There's an optional conference dinner on the first evening, which costs an extra twenty-five pounds. The conference is held at the Grand Hotel in the city centre. To register, please complete the online form by the first of June. You'll receive your name badge by email to print at home.",
+   Q:[
+    {t:'text',a:'two|2',q:'The conference runs over ______ days.'},
+    {t:'text',a:'sixteenth|16th|16',q:'Dates: the fifteenth and ______ of June.'},
+    {t:'text',a:'eighty|80',q:'Standard fee: £______.'},
+    {t:'text',a:'forty|40',q:'Students pay £______.'},
+    {t:'text',a:'id|identification',q:'Students need a valid ______.'},
+    {t:'text',a:'programme|program',q:'The fee includes all talks, lunch and a printed ______.'},
+    {t:'text',a:'twenty-five|25|twenty five',q:'The optional dinner costs an extra £______.'},
+    {t:'text',a:'hotel',q:'The conference is held at the Grand ______.'},
+    {t:'text',a:'first|1st|1',q:'Register by the ______ of June.'},
+    {t:'choice',a:'B',q:'The name badge will be sent by:',opts:['A) post','B) email','C) text','D) collected']}
+   ]},
+  {title:'Hilltop Observatory tour',
+   transcript:"Welcome to the Hilltop Observatory. First, we'll visit the planetarium, where a thirty-minute show will take you on a journey through the night sky. After that, weather permitting, we'll use the large telescope to observe the Moon and, tonight, the planet Saturn, whose rings should be clearly visible. Please note that the observatory can get quite cold, so warm clothing is recommended, as the telescope dome has no heating. Red torches are provided, as ordinary white light affects our night vision. The gift shop, which sells star charts and models, closes at nine. Finally, please avoid using bright screens, as they disturb other visitors' viewing.",
+   Q:[
+    {t:'text',a:'planetarium',q:'First they visit the ______.'},
+    {t:'text',a:'thirty|30',q:'The show lasts ______ minutes.'},
+    {t:'text',a:'telescope',q:'They will use the large ______ to observe the sky.'},
+    {t:'text',a:'saturn',q:'Tonight they will observe the Moon and the planet ______.'},
+    {t:'text',a:'rings|ring',q:"Saturn's ______ should be clearly visible."},
+    {t:'text',a:'clothing|clothes',q:'Warm ______ is recommended.'},
+    {t:'text',a:'red',q:'______ torches are provided.'},
+    {t:'text',a:'vision',q:'White light affects our night ______.'},
+    {t:'text',a:'nine|9',q:'The gift shop closes at ______.'},
+    {t:'choice',a:'B',q:'Visitors are asked to avoid:',opts:['A) warm clothes','B) bright screens','C) red torches','D) the telescope']}
+   ]},
+  {title:'Tutorial: an astronomy project',
+   transcript:"You wanted to discuss your astronomy project? Yes, I want to study how light pollution affects our view of the stars. How will you investigate it? I'll count how many stars are visible from different locations. How many locations? I'll compare three: the city centre, the suburbs, and the countryside. And when will you observe? On clear nights, away from a full moon, as moonlight interferes. How will you record the data? I'll use a chart and take photographs. How long should the report be? About three thousand words. When's it due? The end of May. Remember to include a map of your locations.",
+   Q:[
+    {t:'text',a:'light',q:'The project is about how ______ pollution affects the view of stars.'},
+    {t:'text',a:'stars|star',q:'She will count how many ______ are visible.'},
+    {t:'text',a:'three|3',q:'She will compare ______ locations.'},
+    {t:'text',a:'countryside',q:'The locations are the city centre, suburbs and the ______.'},
+    {t:'text',a:'moon',q:"She'll observe on clear nights away from a full ______."},
+    {t:'text',a:'photographs|photos|photgraph',q:'She will record data using a chart and ______.'},
+    {t:'text',a:'three|3',q:'Report length: about ______ thousand words.'},
+    {t:'text',a:'may',q:'Due date: the end of ______.'},
+    {t:'text',a:'map',q:'She should include a ______ of her locations.'},
+    {t:'choice',a:'B',q:'She avoids a full moon because moonlight:',opts:['A) is too dim','B) interferes','C) is colourful','D) is cold']}
+   ]},
+  {title:'Lecture: the solar system',
+   transcript:"Today we'll take a tour of our solar system. At its centre is the Sun, a star that contains almost all the mass of the solar system and provides the energy that makes life on Earth possible. Orbiting the Sun are eight planets. The four closest, including Earth, are small and rocky, while the four outer planets are giant balls of gas and ice. The largest planet, Jupiter, is so big that all the others could fit inside it. Beyond the planets lie countless smaller objects, including asteroids and comets. Since the first satellite was launched in 1957, we have sent probes to every planet and landed robots on Mars. The next great goal, many believe, is to send humans to Mars.",
+   Q:[
+    {t:'text',a:'sun',q:'At the centre of the solar system is the ______.'},
+    {t:'text',a:'eight|8',q:'There are ______ planets orbiting the Sun.'},
+    {t:'text',a:'rocky',q:'The four closest planets are small and ______.'},
+    {t:'text',a:'ice',q:'The four outer planets are giant balls of gas and ______.'},
+    {t:'text',a:'jupiter',q:'The largest planet is ______.'},
+    {t:'text',a:'comets|comet',q:'Beyond the planets lie asteroids and ______.'},
+    {t:'text',a:'1957',q:'The first satellite was launched in ______.'},
+    {t:'text',a:'mars',q:'Robots have been landed on ______.'},
+    {t:'choice',a:'B',q:'The four outer planets are made of:',opts:['A) rock','B) gas and ice','C) metal','D) water']},
+    {t:'choice',a:'B',q:'Many believe the next great goal is to send humans to:',opts:['A) the Moon','B) Mars','C) Jupiter','D) the Sun']}
+   ]}
+ ],
+ read:[
+  {title:'The Search for Life on Mars',
+   paras:[
+    "Of all the planets in our solar system, none has captured the human imagination quite like Mars. For over a century, people have wondered whether the 'Red Planet' might be home to life, and today the search for evidence is one of the main goals of space exploration.",
+    "At first glance, Mars seems hostile to life. It is extremely cold, its thin atmosphere is mostly carbon dioxide, and its surface is bombarded with harmful radiation. Yet there are reasons for hope. Scientists have found strong evidence that, billions of years ago, Mars was warmer and wetter, with rivers, lakes, and possibly even oceans of liquid water. Since water is essential for life as we know it, this raises the possibility that life may once have existed there.",
+    "To investigate, space agencies have sent a series of robotic explorers, or 'rovers', to the Martian surface. These vehicles drill into rocks and analyse the soil, searching for chemical signs of life. So far, no definite evidence of life has been found, but the rovers have confirmed that the ingredients for life were once present.",
+    "The ultimate goal for many scientists is to bring samples of Martian rock back to Earth for detailed study, and eventually to send humans to explore the planet in person."
+   ],
+   Q:[
+    {t:'text',a:'red',q:'Mars is often called the ______ Planet.'},
+    {t:'text',a:'cold',q:'Mars is extremely ______.'},
+    {t:'text',a:'dioxide',q:'Its thin atmosphere is mostly carbon ______.'},
+    {t:'text',a:'radiation',q:'Its surface is bombarded with harmful ______.'},
+    {t:'text',a:'wetter|wet',q:'Billions of years ago, Mars was warmer and ______.'},
+    {t:'text',a:'water',q:'Mars may once have had rivers, lakes and oceans of liquid ______.'},
+    {t:'text',a:'life',q:'Water is essential for ______ as we know it.'},
+    {t:'text',a:'rovers|rover',q:'Robotic explorers are also called ______.'},
+    {t:'text',a:'soil',q:'Rovers drill into rocks and analyse the ______.'},
+    {t:'choice',a:'B',q:'So far, evidence of life on Mars is:',opts:['A) definite','B) not yet found','C) hidden','D) obvious']},
+    {t:'text',a:'ingredients|ingredient',q:'The rovers confirmed the ______ for life were once present.'},
+    {t:'text',a:'samples|sample',q:'Scientists hope to bring ______ of Martian rock back to Earth.'},
+    {t:'text',a:'humans|human',q:'The ultimate goal includes sending ______ to Mars.'}
+   ]},
+  {title:'The Northern Lights',
+   paras:[
+    "Few natural sights are as breathtaking as the Northern Lights, or 'aurora borealis'. On clear, dark nights in the far north, the sky can suddenly come alive with shimmering curtains of green, pink, and purple light. For centuries, people explained this phenomenon through myths, but today its cause is well understood.",
+    "The lights are created by activity on the Sun. The Sun constantly sends out a stream of tiny charged particles, known as the solar wind. When these particles reach Earth, most are deflected by the planet's magnetic field. However, near the North and South Poles, some particles are channelled into the atmosphere, where they collide with gases such as oxygen and nitrogen. These collisions release energy in the form of light.",
+    "The colour of the aurora depends on which gas is involved and at what altitude. Oxygen typically produces green and red light, while nitrogen creates blue and purple. Because the lights depend on solar activity, they are more frequent and intense when the Sun is more active.",
+    "The same phenomenon occurs near the South Pole, where it is called the 'aurora australis'. Although auroras are usually seen only in polar regions, particularly strong solar activity can occasionally make them visible much further away."
+   ],
+   Q:[
+    {t:'text',a:'borealis',q:'The Northern Lights are also called the aurora ______.'},
+    {t:'text',a:'sun',q:'The lights are created by activity on the ______.'},
+    {t:'text',a:'wind',q:'The Sun sends out a stream of charged particles called the solar ______.'},
+    {t:'text',a:'magnetic',q:"Most particles are deflected by Earth's ______ field."},
+    {t:'text',a:'atmosphere',q:'Near the poles, particles collide with gases in the ______.'},
+    {t:'text',a:'nitrogen',q:'Oxygen and ______ are the gases involved.'},
+    {t:'text',a:'light',q:'The collisions release energy in the form of ______.'},
+    {t:'text',a:'red',q:'Oxygen typically produces green and ______ light.'},
+    {t:'text',a:'purple',q:'Nitrogen creates blue and ______.'},
+    {t:'choice',a:'B',q:'The colour depends on the gas and the:',opts:['A) time','B) altitude','C) season','D) temperature']},
+    {t:'text',a:'active',q:'The lights are more intense when the Sun is more ______.'},
+    {t:'text',a:'australis',q:'Near the South Pole, the phenomenon is called the aurora ______.'},
+    {t:'text',a:'further|farther',q:'Strong solar activity can make auroras visible ______ away.'}
+   ]},
+  {title:'The Story of Vaccines',
+   paras:[
+    "Vaccines are among the greatest achievements in the history of medicine, having saved countless millions of lives. Yet the basic idea behind them is surprisingly old and remarkably simple: to train the body's own defences to recognise and fight a disease before a person ever encounters it.",
+    "The story begins in the late eighteenth century with an English doctor, Edward Jenner. He noticed that milkmaids who had caught a mild disease called cowpox seemed to be protected from the deadly disease smallpox. In 1796, he tested his idea, and it worked. This was the world's first vaccine.",
+    "Vaccines work by using a harmless part or version of a germ. When this is introduced into the body, the immune system learns to recognise it and produces defences called antibodies. If the person later encounters the real disease, their body is ready to fight it off quickly, often before they even feel sick.",
+    "Over the following centuries, vaccines were developed against many deadly diseases, including polio, measles, and tetanus. One disease, smallpox, has been completely wiped out through vaccination. Despite this success, vaccines face challenges, including the spread of false information. Scientists stress that widespread vaccination protects not only individuals but whole communities."
+   ],
+   Q:[
+    {t:'text',a:'defences|defenses|defence|defense',q:"Vaccines train the body's own ______ to fight disease."},
+    {t:'text',a:'jenner',q:'The first vaccine was developed by Edward ______.'},
+    {t:'text',a:'cowpox',q:'Jenner noticed milkmaids who caught ______ were protected from smallpox.'},
+    {t:'text',a:'1796',q:'Jenner tested his idea in ______ (year).'},
+    {t:'text',a:'smallpox',q:'Cowpox protected people from the deadly disease ______.'},
+    {t:'text',a:'germ',q:'Vaccines use a harmless part or version of a ______.'},
+    {t:'text',a:'antibodies|antibody',q:'The immune system produces defences called ______.'},
+    {t:'choice',a:'B',q:'If a vaccinated person meets the real disease, their body can:',opts:['A) not respond','B) fight it off quickly','C) catch it easily','D) ignore it']},
+    {t:'text',a:'tetanus',q:'Vaccines were developed against polio, measles and ______.'},
+    {t:'text',a:'smallpox',q:'The disease ______ has been completely wiped out.'},
+    {t:'choice',a:'B',q:'A challenge vaccines face is the spread of:',opts:['A) new diseases','B) false information','C) high costs','D) old age']},
+    {t:'text',a:'communities|community',q:'Widespread vaccination protects individuals and whole ______.'},
+    {t:'text',a:'spreading|spread',q:'Vaccination stops diseases from ______.'},
+    {t:'choice',a:'TRUE',q:'Vaccines have saved millions of lives.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 560 320' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>Successful space launches by two countries, 2000–2020</text><line x1='60' y1='30' x2='60' y2='250' stroke='#333'/><line x1='60' y1='250' x2='510' y2='250' stroke='#333'/><g font-size='10' fill='#555'><text x='52' y='253' text-anchor='end'>0</text><text x='52' y='198' text-anchor='end'>10</text><text x='52' y='143' text-anchor='end'>20</text><text x='52' y='88' text-anchor='end'>30</text><text x='52' y='33' text-anchor='end'>40</text><line x1='60' y1='195' x2='500' y2='195' stroke='#eee'/><line x1='60' y1='140' x2='500' y2='140' stroke='#eee'/><line x1='60' y1='85' x2='500' y2='85' stroke='#eee'/><text x='60' y='265' text-anchor='middle'>2000</text><text x='170' y='265' text-anchor='middle'>2005</text><text x='280' y='265' text-anchor='middle'>2010</text><text x='390' y='265' text-anchor='middle'>2015</text><text x='500' y='265' text-anchor='middle'>2020</text></g><polyline fill='none' stroke='#1a73e8' stroke-width='2.5' points='60,223 170,195 280,168 390,140 500,85'/><polyline fill='none' stroke='#e0a800' stroke-width='2.5' points='60,206 170,184 280,195 390,151 500,58'/><g font-size='11'><rect x='180' y='288' width='16' height='4' fill='#1a73e8'/><text x='202' y='293'>Country A</text><rect x='300' y='288' width='16' height='4' fill='#e0a800'/><text x='322' y='293'>Country B</text></g></svg>",
+  task1:"The line graph below shows the number of successful space launches carried out by two countries between 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Governments should spend money on scientific research even if it has no immediate practical benefits. To what extent do you agree or disagree? Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 15 ===================== */
+{
+ name:'Mock 15',
+ blurb:'Sports club · Heritage festival · Language & culture + Writing origins · Endangered languages · Football',
+ listen:[
+  {title:'Tennis club membership',
+   transcript:"Hello, I'd like to join the local tennis club. Great. Adult membership is one hundred and twenty pounds a year, and junior membership, for under-eighteens, is sixty pounds. This gives you access to all six courts, four of which are floodlit for evening play. Coaching sessions are available for an extra charge, at fifteen pounds an hour. Members can book courts online up to a week in advance. There's a clubhouse with changing rooms and a small cafe. To join, you'll need to fill in a form and provide one passport photo. New members are also invited to a free introductory session with a coach. The club is closed on Mondays.",
+   Q:[
+    {t:'text',a:'120|one hundred and twenty',q:'Adult membership: £______ a year.'},
+    {t:'text',a:'eighteens|18|eighteen',q:'Junior membership is for under-______.'},
+    {t:'text',a:'sixty|60',q:'Junior membership costs £______.'},
+    {t:'text',a:'six|6',q:'There are ______ courts.'},
+    {t:'text',a:'floodlit',q:'Four courts are ______ for evening play.'},
+    {t:'text',a:'fifteen|15',q:'Coaching costs £______ an hour.'},
+    {t:'text',a:'week',q:'Members can book courts online up to a ______ in advance.'},
+    {t:'text',a:'cafe|café',q:'The clubhouse has changing rooms and a small ______.'},
+    {t:'text',a:'photo',q:'To join, provide a form and one passport ______.'},
+    {t:'choice',a:'B',q:'The club is closed on:',opts:['A) Sundays','B) Mondays','C) weekends','D) never']}
+   ]},
+  {title:'Old Town Heritage Festival',
+   transcript:"Welcome to the Old Town Heritage Festival. The festival celebrates the town's history, which dates back nearly a thousand years. Throughout the day, you can watch traditional crafts such as pottery and weaving being demonstrated in the market square. At eleven o'clock, there's a costumed parade through the main street. For families, there are activities in the castle grounds, including archery. Traditional music will be performed on the bandstand every hour. Food stalls offer local specialities. Please note that the main street is closed to traffic all day. The festival ends with a firework display at nine in the evening. Programmes are available free at the information point.",
+   Q:[
+    {t:'text',a:'a thousand|1000|one thousand|thousand',q:"The town's history dates back nearly ______ years."},
+    {t:'text',a:'weaving',q:'Traditional crafts include pottery and ______.'},
+    {t:'text',a:'square',q:'Crafts are demonstrated in the market ______.'},
+    {t:'text',a:'eleven|11',q:"The costumed parade is at ______ o'clock."},
+    {t:'text',a:'archery',q:'Family activities in the castle grounds include ______.'},
+    {t:'text',a:'bandstand',q:'Music is performed on the ______ every hour.'},
+    {t:'text',a:'specialities|specialties|speciality',q:'Food stalls offer local ______.'},
+    {t:'text',a:'traffic',q:'The main street is closed to ______ all day.'},
+    {t:'text',a:'firework|fireworks',q:'The festival ends with a ______ display at nine.'},
+    {t:'choice',a:'B',q:'Free programmes are available at the:',opts:['A) beer tent','B) information point','C) castle','D) bandstand']}
+   ]},
+  {title:'Students planning a history presentation',
+   transcript:"Our history presentation is on an ancient civilisation. Which one should we pick? How about the Maya? Good choice. What aspect should we focus on? I think their achievements in astronomy and their calendar. And their writing system, which was very advanced. What about their decline? That's still debated; possibly drought and war. We should show a map of where they lived, in Central America. How long is the presentation? Fifteen minutes. Should we use images? Definitely, lots of pictures of their temples. When's it due? The ninth of March. Let's meet on Friday to put the slides together.",
+   Q:[
+    {t:'text',a:'civilisation|civilization',q:'The presentation is on an ancient ______.'},
+    {t:'text',a:'maya',q:'They choose the ______.'},
+    {t:'text',a:'calendar',q:'They focus on achievements in astronomy and their ______.'},
+    {t:'text',a:'writing',q:'The Maya had an advanced ______ system.'},
+    {t:'text',a:'war',q:'Their decline was possibly caused by drought and ______.'},
+    {t:'text',a:'map',q:'They will show a ______ of where the Maya lived.'},
+    {t:'text',a:'central',q:'The Maya lived in ______ America.'},
+    {t:'text',a:'fifteen|15',q:'Presentation length: ______ minutes.'},
+    {t:'text',a:'temples|temple',q:'They will include pictures of their ______.'},
+    {t:'choice',a:'B',q:"The cause of the Maya's decline is described as:",opts:['A) certain','B) still debated','C) unknown to all','D) recent']}
+   ]},
+  {title:'Lecture: language and culture',
+   transcript:"Today we will explore the relationship between language and culture. Language is far more than a tool for communication; it carries the history, values, and identity of the people who speak it. Every language has words and expressions that reflect what matters to a particular culture. When a language is lost, therefore, it is not just words that disappear, but a unique way of seeing the world. Linguists estimate that of the roughly seven thousand languages spoken today, nearly half may vanish by the end of this century. Many are spoken by only a few elderly people, with children no longer learning them. Efforts are now under way to record and revive endangered languages.",
+   Q:[
+    {t:'text',a:'identity',q:'Language carries the history, values and ______ of its speakers.'},
+    {t:'text',a:'communication',q:'Language is more than a tool for ______.'},
+    {t:'text',a:'culture',q:'Every language reflects what matters to a particular ______.'},
+    {t:'text',a:'world',q:'When a language is lost, a unique way of seeing the ______ disappears.'},
+    {t:'text',a:'seven|7',q:'There are roughly ______ thousand languages spoken today.'},
+    {t:'text',a:'half',q:'Nearly ______ may vanish by the end of the century.'},
+    {t:'text',a:'elderly|old',q:'Many endangered languages are spoken by only a few ______ people.'},
+    {t:'text',a:'revive',q:'Efforts are under way to record and ______ endangered languages.'},
+    {t:'choice',a:'B',q:'By 2100, nearly half of languages may:',opts:['A) grow','B) vanish','C) merge','D) change']},
+    {t:'choice',a:'B',q:'Each language is described as an irreplaceable part of human:',opts:['A) history','B) heritage','C) science','D) economy']}
+   ]}
+ ],
+ read:[
+  {title:'The Origins of Writing',
+   paras:[
+    "Writing is one of humanity's most important inventions, allowing knowledge to be stored and passed on across time and space. Yet for most of human history, people had no writing at all, relying entirely on memory and speech. The invention of writing, which happened independently in several parts of the world, marked a profound turning point.",
+    "The earliest known writing developed in ancient Mesopotamia, in the Middle East, over five thousand years ago. It did not begin as a way of recording stories or ideas, but for a far more practical reason: keeping accounts. As cities grew and trade increased, people needed a reliable way to record how much grain was stored or who owed what. The first symbols were simple pictures representing objects.",
+    "Over time, writing systems became more sophisticated. Rather than a picture for every word, some cultures developed symbols to represent sounds, eventually leading to the alphabet, in which a small number of letters can be combined to write any word. This was a hugely efficient system, and most writing today is based on it.",
+    "The impact of writing has been immense. It made possible the keeping of records, the writing of laws, and the recording of history. Above all, it allowed knowledge to accumulate across generations. Without writing, the complex societies we live in today would simply not be possible."
+   ],
+   Q:[
+    {t:'text',a:'speech',q:'For most of history, people relied on memory and ______.'},
+    {t:'text',a:'independently',q:'Writing developed ______ in several parts of the world.'},
+    {t:'text',a:'mesopotamia',q:'The earliest known writing developed in ancient ______.'},
+    {t:'text',a:'five|5',q:'This happened over ______ thousand years ago.'},
+    {t:'text',a:'accounts|account',q:'Writing did not begin for stories but for keeping ______.'},
+    {t:'text',a:'grain',q:'People needed to record how much ______ was stored.'},
+    {t:'text',a:'pictures|picture',q:'The first symbols were simple ______.'},
+    {t:'text',a:'sounds|sound',q:'Some cultures developed symbols to represent ______.'},
+    {t:'text',a:'alphabet',q:'This eventually led to the ______.'},
+    {t:'choice',a:'B',q:'The alphabet is efficient because a small number of letters can:',opts:['A) be drawn','B) be combined to write any word','C) be memorised','D) be spoken']},
+    {t:'text',a:'laws|law',q:'Writing made possible the writing of ______.'},
+    {t:'text',a:'accumulate',q:'Writing allowed knowledge to ______ across generations.'},
+    {t:'choice',a:'B',q:'The writer says that without writing, complex societies would:',opts:['A) be simpler','B) not be possible','C) be older','D) be faster']}
+   ]},
+  {title:"The World's Vanishing Languages",
+   paras:[
+    "There are around seven thousand languages spoken in the world today, but this remarkable diversity is under threat. Experts warn that a large proportion of these languages could disappear within the next hundred years, as more and more people abandon their traditional tongues in favour of a few dominant global languages.",
+    "A language is generally considered endangered when children stop learning it. Many of the world's smaller languages are now spoken only by older generations; when they die, the language dies with them. This process is being accelerated by globalisation, migration to cities, and education systems that teach only in major national languages. For economic reasons, parents often encourage their children to learn a dominant language.",
+    "The loss of a language is more serious than it might first appear. Each language represents a unique way of understanding the world, containing knowledge about local plants, animals, and traditions that may exist nowhere else. When a language disappears, this accumulated wisdom is often lost forever.",
+    "Fortunately, efforts are being made to reverse this trend. Communities and linguists are working to document endangered languages, creating dictionaries and recordings before it is too late. In some places, languages once close to extinction are being revived, taught again to a new generation."
+   ],
+   Q:[
+    {t:'text',a:'seven|7',q:'There are around ______ thousand languages spoken today.'},
+    {t:'text',a:'children|child',q:'A language is endangered when ______ stop learning it.'},
+    {t:'text',a:'older|old',q:'Many small languages are spoken only by ______ generations.'},
+    {t:'text',a:'migration',q:'The process is accelerated by globalisation and ______ to cities.'},
+    {t:'text',a:'national',q:'Education systems often teach only in major ______ languages.'},
+    {t:'text',a:'dominant',q:'Parents often encourage children to learn a ______ language.'},
+    {t:'text',a:'traditions|tradition',q:'Each language contains knowledge about local plants, animals and ______.'},
+    {t:'choice',a:'B',q:'When a language disappears, its knowledge is often:',opts:['A) saved','B) lost forever','C) translated','D) written down']},
+    {t:'text',a:'document',q:'Linguists are working to ______ endangered languages.'},
+    {t:'text',a:'recordings|recording',q:'They are creating dictionaries and ______.'},
+    {t:'text',a:'revived|revive',q:'In some places, languages are being ______.'},
+    {t:'text',a:'generation',q:'These languages are taught again to a new ______.'},
+    {t:'choice',a:'FALSE',q:'Language diversity is completely safe.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Global Game: A History of Football',
+   paras:[
+    "Football, known as soccer in some countries, is the most popular sport in the world, played and watched by billions of people. Its appeal is easy to understand: the rules are simple, and all that is really needed to play is a ball and some open space. Yet the modern game has a surprisingly recent and specific history.",
+    "While games involving kicking a ball have existed in many cultures for thousands of years, the sport we know today took shape in nineteenth-century England. Different schools and towns played by their own varied rules. In 1863, a group met in London to agree on a single set of rules, an event considered the birth of modern football. Crucially, they decided that handling the ball would not be allowed, which separated football from rugby.",
+    "From England, the game spread rapidly around the world, carried by traders, sailors, and workers. It proved especially popular in South America and Europe, where it became deeply woven into local culture. The first international match was played in 1872, and the first World Cup was held in 1930.",
+    "Today, football is far more than a game. It is a global industry worth billions, a source of intense local and national pride, and, for many, a passion that brings people together across boundaries of language and culture."
+   ],
+   Q:[
+    {t:'text',a:'soccer',q:'Football is known as ______ in some countries.'},
+    {t:'text',a:'space',q:'To play, all that is needed is a ball and some open ______.'},
+    {t:'text',a:'england',q:'The modern game took shape in nineteenth-century ______.'},
+    {t:'text',a:'london',q:'In 1863, a group met in ______ to agree on rules.'},
+    {t:'text',a:'football',q:'This event is considered the birth of modern ______.'},
+    {t:'text',a:'handling|handle',q:'They decided that ______ the ball would not be allowed.'},
+    {t:'text',a:'rugby',q:'This separated football from ______.'},
+    {t:'text',a:'workers|worker',q:'The game was spread by traders, sailors and ______.'},
+    {t:'choice',a:'B',q:'Football became especially popular in Europe and:',opts:['A) Asia','B) South America','C) Africa','D) Australia']},
+    {t:'text',a:'1872',q:'The first international match was played in ______.'},
+    {t:'text',a:'1930',q:'The first World Cup was held in ______.'},
+    {t:'text',a:'industry',q:'Football is now a global ______ worth billions.'},
+    {t:'choice',a:'B',q:'The writer says football is a source of local and national:',opts:['A) conflict','B) pride','C) income','D) confusion']},
+    {t:'text',a:'culture',q:'Football unites people across boundaries of language and ______.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Speakers of five languages (millions)</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Language</th><th style='border:1px solid #999;padding:5px 10px'>First language</th><th style='border:1px solid #999;padding:5px 10px'>Second language</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Mandarin</td><td style='border:1px solid #999;padding:5px 10px'>920</td><td style='border:1px solid #999;padding:5px 10px'>200</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>English</td><td style='border:1px solid #999;padding:5px 10px'>380</td><td style='border:1px solid #999;padding:5px 10px'>750</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Spanish</td><td style='border:1px solid #999;padding:5px 10px'>480</td><td style='border:1px solid #999;padding:5px 10px'>75</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Hindi</td><td style='border:1px solid #999;padding:5px 10px'>340</td><td style='border:1px solid #999;padding:5px 10px'>270</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Arabic</td><td style='border:1px solid #999;padding:5px 10px'>310</td><td style='border:1px solid #999;padding:5px 10px'>130</td></tr></table>",
+  task1:"The table below shows the number of people (in millions) who speak five major languages as a first and as a second language. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that globalisation is a threat to local cultures, while others think it helps them to develop. Discuss both views and give your own opinion. Write at least 250 words."
+ }
 }
 
 ];
