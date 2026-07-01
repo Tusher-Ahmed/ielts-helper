@@ -843,6 +843,420 @@ const MOCKS=[
   task1:"The bar chart below shows the average number of hours per week spent on the internet by four age groups in 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people believe that money spent on space exploration would be better spent solving problems on Earth. To what extent do you agree or disagree? Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 7 ===================== */
+{
+ name:'Mock 7',
+ blurb:'Hotel · Fitness centre · Nutrition + Exercise · Olympics · AI',
+ listen:[
+  {title:'Seaview Hotel booking',
+   transcript:"Good evening, Seaview Hotel, how can I help? I'd like to book a room. Certainly, for which dates? From the fourteenth of June for three nights. We have a double room available at ninety pounds per night, including breakfast. Does the room have a sea view? Yes, all our double rooms face the sea. Is there parking? Yes, free parking is available for guests. Could I take your name? It's Mr Roberts, R-O-B-E-R-T-S. Check-in is from two o'clock, and please note we require payment on arrival.",
+   Q:[
+    {t:'text',a:'fourteenth|14th|14',q:'Booking from the ______ of June.'},
+    {t:'text',a:'three|3',q:'Number of nights: ______.'},
+    {t:'text',a:'double',q:'Room type: ______ room.'},
+    {t:'text',a:'ninety|90',q:'Price per night: £______.'},
+    {t:'text',a:'breakfast',q:'The price includes ______.'},
+    {t:'text',a:'sea',q:'All double rooms face the ______.'},
+    {t:'text',a:'free',q:'______ parking is available for guests.'},
+    {t:'text',a:'roberts',q:'Guest surname: ______.'},
+    {t:'text',a:'two|2',q:"Check-in is from ______ o'clock."},
+    {t:'choice',a:'B',q:'Payment is required:',opts:['A) in advance','B) on arrival','C) monthly','D) online']}
+   ]},
+  {title:'Parkside Health & Fitness Centre',
+   transcript:"Welcome to the Parkside Health and Fitness Centre. As well as a fully equipped gym, we have two swimming pools: a large one for lane swimming and a smaller, warmer pool for children. Our fitness classes, including yoga and spinning, run throughout the day, and the timetable is available at reception. A qualified instructor is always on hand in the gym to help you. New members are entitled to one free session with a personal trainer. Our healthy-eating cafe on the first floor serves freshly made smoothies and light meals. Finally, remember that the centre gets very busy after five o'clock, so if you prefer a quieter workout, mornings are best.",
+   Q:[
+    {t:'text',a:'pools|pool',q:'The centre has two swimming ______.'},
+    {t:'text',a:'children|child',q:'The smaller, warmer pool is for ______.'},
+    {t:'text',a:'spinning',q:'Fitness classes include yoga and ______.'},
+    {t:'text',a:'reception',q:'The class timetable is available at ______.'},
+    {t:'text',a:'instructor',q:'A qualified ______ is always in the gym.'},
+    {t:'text',a:'trainer',q:'New members get one free session with a personal ______.'},
+    {t:'text',a:'first',q:'The cafe is on the ______ floor.'},
+    {t:'text',a:'meals|meal',q:'The cafe serves smoothies and light ______.'},
+    {t:'text',a:'five|5',q:"The centre is busiest after ______ o'clock."},
+    {t:'choice',a:'B',q:'The best time for a quiet workout is:',opts:['A) evenings','B) mornings','C) weekends','D) lunchtime']}
+   ]},
+  {title:'Business project: planning a new cafe',
+   transcript:"Right, for our business project we need to create a plan for a new cafe. Have you thought about the location? I think near the university would be best, lots of students. What about the name? How about 'The Study Break'? I like that. Now, what will make us different? I think free, fast wifi and lots of power sockets, so students can work. And healthy food options, not just cakes. Definitely. What about opening hours? Students study late, so maybe open until midnight. And the budget? We were told to assume ten thousand pounds to start. When do we present? The presentation is on the twenty-first of April. Let's divide the work: I'll do the marketing, you do the finances.",
+   Q:[
+    {t:'text',a:'cafe|café',q:'The project is a plan for a new ______.'},
+    {t:'text',a:'university',q:'Best location: near the ______.'},
+    {t:'text',a:'break',q:"Proposed name: 'The Study ______'."},
+    {t:'text',a:'wifi|wi-fi',q:'They will offer free, fast ______.'},
+    {t:'text',a:'sockets|socket',q:'They will provide lots of power ______.'},
+    {t:'text',a:'healthy',q:'Food will be ______ options, not just cakes.'},
+    {t:'text',a:'midnight',q:'The cafe will open until ______.'},
+    {t:'text',a:'ten|10',q:'Starting budget: £______ thousand.'},
+    {t:'text',a:'twenty-first|21st|21',q:'Presentation date: ______ of April.'},
+    {t:'choice',a:'B',q:'The speaker will handle the:',opts:['A) finances','B) marketing','C) food','D) design']}
+   ]},
+  {title:'Lecture: the basics of nutrition',
+   transcript:"Today we will discuss the basics of good nutrition. A balanced diet contains the right proportions of several food groups. Carbohydrates, found in foods like rice and bread, provide our main source of energy. Proteins, from sources such as meat, fish, and beans, are essential for growth and repairing the body. Fats are also necessary in moderation, particularly the healthy fats found in nuts and olive oil. In addition, we need vitamins and minerals, which we get mainly from fruit and vegetables. Water, too, is vital, and experts recommend drinking around two litres a day. A common mistake in modern diets is consuming too much sugar, which is linked to obesity and tooth decay. The key message is balance.",
+   Q:[
+    {t:'text',a:'energy',q:'Carbohydrates provide our main source of ______.'},
+    {t:'text',a:'bread',q:'Carbohydrates are found in rice and ______.'},
+    {t:'text',a:'repairing|repair',q:'Proteins are essential for growth and ______ the body.'},
+    {t:'text',a:'beans|bean',q:'Proteins come from meat, fish and ______.'},
+    {t:'text',a:'olive',q:'Healthy fats are found in nuts and ______ oil.'},
+    {t:'text',a:'vegetables|vegetable',q:'Vitamins and minerals come mainly from fruit and ______.'},
+    {t:'text',a:'two|2',q:'Experts recommend about ______ litres of water a day.'},
+    {t:'text',a:'sugar',q:'Too much ______ is linked to obesity.'},
+    {t:'choice',a:'B',q:'Proteins are needed mainly for:',opts:['A) energy','B) growth and repair','C) hydration','D) taste']},
+    {t:'choice',a:'B',q:'The key message of the lecture is:',opts:['A) avoid fat','B) balance','C) eat more sugar','D) drink less']}
+   ]}
+ ],
+ read:[
+  {title:'The Benefits of Exercise',
+   paras:[
+    "It is widely known that regular physical exercise is good for us, yet the full extent of its benefits is often underestimated. Far from simply helping people lose weight, exercise has profound effects on almost every part of the body and mind.",
+    "The most obvious benefits are physical. Regular exercise strengthens the heart, allowing it to pump blood more efficiently and reducing the risk of heart disease. It also strengthens muscles and bones, helping to prevent conditions such as osteoporosis. Exercise improves the body's ability to control blood sugar, lowering the risk of type 2 diabetes.",
+    "Perhaps less well known are the benefits for mental health. Physical activity causes the brain to release chemicals called endorphins, which improve mood and reduce feelings of stress. Studies have consistently shown that people who exercise regularly are less likely to suffer from depression. Exercise can also improve sleep and boost concentration.",
+    "Importantly, the benefits do not require intense training. Experts suggest that just thirty minutes of moderate activity, such as brisk walking, five times a week can make a significant difference. Despite this, a large proportion of adults worldwide do not get enough exercise, often citing a lack of time."
+   ],
+   Q:[
+    {t:'choice',a:'FALSE',q:'Exercise only helps people lose weight.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'heart',q:'Regular exercise strengthens the ______.'},
+    {t:'text',a:'osteoporosis',q:'Exercise helps prevent a bone condition called ______.'},
+    {t:'text',a:'diabetes',q:'Exercise lowers the risk of type 2 ______.'},
+    {t:'text',a:'endorphins|endorphin',q:'Exercise causes the brain to release ______.'},
+    {t:'text',a:'stress',q:'Endorphins improve mood and reduce ______.'},
+    {t:'text',a:'depression',q:'People who exercise are less likely to suffer from ______.'},
+    {t:'choice',a:'B',q:'How much moderate activity do experts recommend?',opts:['A) 10 min daily','B) 30 min, 5 times a week','C) 2 hours daily','D) once a month']},
+    {t:'text',a:'walking|walk',q:'An example of moderate activity is brisk ______.'},
+    {t:'text',a:'concentration',q:'Exercise can improve sleep and boost ______.'},
+    {t:'choice',a:'TRUE',q:'Many adults do not get enough exercise.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'time',q:'Many people say they lack ______ to exercise.'},
+    {t:'choice',a:'C',q:'The main message is that exercise benefits:',opts:['A) only the body','B) only the mind','C) both body and mind','D) neither']}
+   ]},
+  {title:'The History of the Olympic Games',
+   paras:[
+    "The Olympic Games, watched today by billions around the world, have their roots in ancient Greece. The first recorded Games took place in 776 BC in Olympia, held in honour of the god Zeus. For over a thousand years, athletes competed in events such as running, wrestling, and chariot racing. During the Games, a truce was declared, allowing competitors and spectators to travel safely even between warring cities.",
+    "The ancient Games eventually came to an end, but the idea was revived in the modern era. In 1896, largely thanks to the efforts of a Frenchman, Baron Pierre de Coubertin, the first modern Olympic Games were held in Athens. Just fourteen nations took part.",
+    "Since then, the Games have grown enormously. Today, more than two hundred nations participate, and the number of sports has expanded to include everything from swimming to gymnastics. The Winter Olympics, introduced in 1924, added sports such as skiing and ice skating.",
+    "The modern Games have not been without controversy, including concerns about their huge cost and, on occasion, political tensions. Nevertheless, the Olympics remain a powerful symbol of international cooperation, held every four years."
+   ],
+   Q:[
+    {t:'text',a:'776',q:'The first recorded Games were held in ______ BC.'},
+    {t:'text',a:'olympia',q:'The ancient Games were held in ______.'},
+    {t:'text',a:'zeus',q:'They were held in honour of the god ______.'},
+    {t:'text',a:'truce',q:'During the Games, a ______ was declared.'},
+    {t:'text',a:'coubertin',q:'The modern Games were revived largely thanks to Baron Pierre de ______.'},
+    {t:'text',a:'1896',q:'The first modern Games were held in ______ (year).'},
+    {t:'text',a:'athens',q:'The first modern Games took place in ______.'},
+    {t:'choice',a:'A',q:'How many nations took part in the first modern Games?',opts:['A) 14','B) 100','C) 200','D) 776']},
+    {t:'text',a:'two hundred|200',q:'Today more than ______ nations participate.'},
+    {t:'text',a:'1924',q:'The Winter Olympics were introduced in ______.'},
+    {t:'text',a:'skating|skate',q:'Winter sports include skiing and ice ______.'},
+    {t:'text',a:'cost',q:'The modern Games have faced concerns about their huge ______.'},
+    {t:'text',a:'four|4',q:'The Olympics are held every ______ years.'}
+   ]},
+  {title:'The Age of Artificial Intelligence',
+   paras:[
+    "Artificial intelligence, or AI, has moved from the realm of science fiction into everyday life. In its simplest form, AI refers to computer systems that can perform tasks normally requiring human intelligence, such as recognising speech, translating languages, or making decisions. Though the idea dates back decades, recent advances in computing power and the availability of vast amounts of data have driven remarkable progress.",
+    "AI is already all around us, often without our noticing. When a phone recognises a face, a website recommends a product, or a virtual assistant answers a question, AI is at work. In medicine, AI systems can help doctors detect diseases in scans, sometimes more accurately than humans. In transport, self-driving cars rely on AI to interpret their surroundings.",
+    "These developments bring enormous potential benefits. However, they also raise serious concerns. Many fear that AI will replace human workers, leading to job losses. Others worry about privacy, as AI systems often depend on collecting large amounts of personal data. There are also questions about fairness, since an AI trained on biased data may make biased decisions.",
+    "Experts disagree about the future. Some predict that AI will bring a new age of prosperity, while others warn of dangers if the technology is not carefully controlled. What is clear is that how we choose to develop and regulate AI will shape the world for generations to come."
+   ],
+   Q:[
+    {t:'text',a:'intelligence',q:'AI performs tasks normally requiring human ______.'},
+    {t:'text',a:'data',q:'Recent progress was driven by computing power and vast amounts of ______.'},
+    {t:'choice',a:'B',q:'Which is given as an example of AI in medicine?',opts:['A) writing letters','B) detecting diseases in scans','C) cooking','D) cleaning']},
+    {t:'text',a:'surroundings|surrounding',q:'Self-driving cars use AI to interpret their ______.'},
+    {t:'text',a:'workers|worker',q:'Many fear AI will replace human ______.'},
+    {t:'text',a:'privacy',q:'Some worry about ______, as AI collects personal data.'},
+    {t:'text',a:'biased|bias',q:'An AI trained on biased data may make ______ decisions.'},
+    {t:'text',a:'accurately|accurate',q:'AI can sometimes detect diseases more ______ than humans.'},
+    {t:'text',a:'decades|decade',q:'The idea of AI dates back ______.'},
+    {t:'choice',a:'B',q:'A virtual assistant answering a question is an example of:',opts:['A) science fiction','B) AI at work','C) human error','D) data loss']},
+    {t:'choice',a:'FALSE',q:'Everyone agrees about the future of AI.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some experts predict AI will bring prosperity.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'AI has no role in transport.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'B',q:'The writer concludes that how we ______ AI will shape the future:',opts:['A) ignore','B) develop and regulate','C) sell','D) hide']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 560 320' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>Adults doing regular exercise (%), 2000–2020</text><line x1='60' y1='30' x2='60' y2='250' stroke='#333'/><line x1='60' y1='250' x2='510' y2='250' stroke='#333'/><g font-size='10' fill='#555'><text x='52' y='253' text-anchor='end'>0</text><text x='52' y='180' text-anchor='end'>20</text><text x='52' y='106' text-anchor='end'>40</text><text x='52' y='33' text-anchor='end'>60</text><line x1='60' y1='177' x2='500' y2='177' stroke='#eee'/><line x1='60' y1='103' x2='500' y2='103' stroke='#eee'/><line x1='60' y1='30' x2='500' y2='30' stroke='#eee'/><text x='60' y='265' text-anchor='middle'>2000</text><text x='170' y='265' text-anchor='middle'>2005</text><text x='280' y='265' text-anchor='middle'>2010</text><text x='390' y='265' text-anchor='middle'>2015</text><text x='500' y='265' text-anchor='middle'>2020</text></g><polyline fill='none' stroke='#1a73e8' stroke-width='2.5' points='60,140 170,125 280,111 390,96 500,85'/><polyline fill='none' stroke='#e0a800' stroke-width='2.5' points='60,158 170,151 280,133 390,111 500,96'/><g font-size='11'><rect x='190' y='288' width='16' height='4' fill='#1a73e8'/><text x='212' y='293'>Men</text><rect x='290' y='288' width='16' height='4' fill='#e0a800'/><text x='312' y='293'>Women</text></g></svg>",
+  task1:"The line graph below shows the percentage of adult men and women who did regular exercise in a country between 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that governments should be responsible for making people healthier, while others think it is the responsibility of individuals. Discuss both views and give your own opinion. Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 8 ===================== */
+{
+ name:'Mock 8',
+ blurb:'Job enquiry · Food festival · Glaciers + Water cycle · Social media · Photography',
+ listen:[
+  {title:'Part-time job enquiry',
+   transcript:"Hello, I'm calling about the part-time job advertised at your supermarket. Great. The position is for a shop assistant, working three evenings a week, from five until nine. The pay is eleven pounds an hour, with a small increase after six months. No previous experience is necessary, as full training is provided. You would mainly be stocking shelves and helping customers. To apply, please send your CV and a cover letter to our email address. One thing to note: the role requires you to be at least eighteen years old. If you're offered the job, you'll need to provide two references.",
+   Q:[
+    {t:'text',a:'assistant',q:'The job is for a shop ______.'},
+    {t:'text',a:'three|3',q:'Working ______ evenings a week.'},
+    {t:'text',a:'nine|9',q:'Hours: from five until ______.'},
+    {t:'text',a:'eleven|11',q:'Pay: £______ an hour.'},
+    {t:'text',a:'six|6',q:'Pay increases after ______ months.'},
+    {t:'text',a:'experience',q:'No previous ______ is necessary.'},
+    {t:'text',a:'customers|customer',q:'Main duties: stocking shelves and helping ______.'},
+    {t:'text',a:'letter',q:'Apply by sending a CV and a cover ______.'},
+    {t:'text',a:'eighteen|18',q:'Minimum age: ______.'},
+    {t:'choice',a:'B',q:'If offered the job, you must provide:',opts:['A) a photo','B) two references','C) a deposit','D) a uniform']}
+   ]},
+  {title:'Radio: Riverford Food Festival',
+   transcript:"And now for local events. This weekend sees the return of the popular Riverford Food Festival, now in its tenth year. The festival takes place in the town park and runs from Friday to Sunday. Entry is free, though some cooking workshops must be booked in advance. This year features over sixty food stalls, as well as a competition for the best homemade cake. Live music will play on the main stage throughout the weekend. Visitors are advised to use public transport, as parking near the park is very limited. The organisers are also asking everyone to bring reusable cups to help cut down on waste. The festival opens at ten each morning and closes at eight in the evening.",
+   Q:[
+    {t:'text',a:'tenth|10th',q:'The festival is in its ______ year.'},
+    {t:'text',a:'park',q:'It takes place in the town ______.'},
+    {t:'text',a:'sunday',q:'It runs from Friday to ______.'},
+    {t:'text',a:'free',q:'Entry is ______.'},
+    {t:'text',a:'workshops|workshop',q:'Cooking ______ must be booked in advance.'},
+    {t:'text',a:'sixty|60',q:'Number of food stalls: over ______.'},
+    {t:'text',a:'cake',q:"There's a competition for the best homemade ______."},
+    {t:'text',a:'stage',q:'Live music plays on the main ______.'},
+    {t:'text',a:'cups|cup',q:'Visitors should bring reusable ______.'},
+    {t:'choice',a:'B',q:'Visitors are advised to use public transport because:',opts:["A) it's free",'B) parking is limited',"C) it's faster",'D) roads are closed']}
+   ]},
+  {title:'Tutorial: writing a lab report',
+   transcript:"Come in. You wanted help with your chemistry lab report? Yes, I'm not sure how to structure it. A lab report has several standard sections. It starts with an introduction, explaining the aim of the experiment. Then comes the method, describing exactly what you did, so that someone else could repeat it. After that, the results, where you present your data, usually in tables or graphs. Then the discussion, where you explain what the results mean. Finally, a conclusion. One common mistake is writing the method in the wrong tense; it should be in the past tense. Also, remember to reference any sources you used. How long should it be? About two thousand words. It's due on the eighth of May.",
+   Q:[
+    {t:'text',a:'chemistry',q:'The report is for a ______ experiment.'},
+    {t:'text',a:'aim',q:'The introduction explains the ______ of the experiment.'},
+    {t:'text',a:'repeat',q:'The method should let someone else ______ it.'},
+    {t:'text',a:'graphs|graph',q:'Results are usually shown in tables or ______.'},
+    {t:'text',a:'discussion',q:'The ______ explains what the results mean.'},
+    {t:'text',a:'past',q:'The method should be written in the ______ tense.'},
+    {t:'text',a:'reference',q:'Remember to ______ any sources used.'},
+    {t:'text',a:'two|2',q:'Length: about ______ thousand words.'},
+    {t:'text',a:'eighth|8th|8',q:'Due date: ______ of May.'},
+    {t:'choice',a:'B',q:'A common mistake is:',opts:['A) no title','B) wrong tense in the method','C) too many graphs','D) no name']}
+   ]},
+  {title:'Lecture: glaciers and climate',
+   transcript:"Today's lecture is about glaciers and why they matter. A glacier is a huge mass of ice that forms over many years as snow builds up and compresses. Glaciers are found in polar regions and high mountains, and they store about seventy per cent of the world's fresh water. Many rivers, which supply water to millions of people, begin as melting glacier ice. Unfortunately, as global temperatures rise, glaciers around the world are shrinking at an alarming rate. This has two major consequences. First, as glaciers melt, they add water to the oceans, contributing to rising sea levels that threaten coastal cities. Second, communities that depend on glacier-fed rivers may face serious water shortages. Scientists monitor glaciers closely, using satellites, as they are among the clearest indicators of climate change.",
+   Q:[
+    {t:'text',a:'compresses|compress',q:'A glacier forms as snow builds up and ______.'},
+    {t:'text',a:'mountains|mountain',q:'Glaciers are found in polar regions and high ______.'},
+    {t:'text',a:'seventy|70',q:"Glaciers store about ______ per cent of the world's fresh water."},
+    {t:'text',a:'rivers|river',q:'Many ______ begin as melting glacier ice.'},
+    {t:'text',a:'shrinking|shrink',q:'As temperatures rise, glaciers are ______.'},
+    {t:'text',a:'levels|level',q:'Melting glaciers contribute to rising sea ______.'},
+    {t:'text',a:'coastal',q:'Rising seas threaten ______ cities.'},
+    {t:'text',a:'shortages|shortage',q:'Communities relying on glacier-fed rivers may face water ______.'},
+    {t:'text',a:'satellites|satellite',q:'Scientists monitor glaciers using ______.'},
+    {t:'choice',a:'B',q:'Glaciers are described as clear indicators of:',opts:['A) pollution','B) climate change','C) earthquakes','D) population']}
+   ]}
+ ],
+ read:[
+  {title:'The Water Cycle',
+   paras:[
+    "Water is essential to all life on Earth, and the amount of it on our planet has remained more or less constant for billions of years. This is possible because water is continuously recycled through a natural process known as the water cycle.",
+    "The cycle is driven by energy from the sun. When the sun heats bodies of water such as oceans, lakes, and rivers, some of the water evaporates, turning into an invisible gas called water vapour that rises into the atmosphere. As this vapour rises, it cools and condenses into tiny droplets, forming clouds. This process is known as condensation.",
+    "When the droplets in clouds combine and become heavy enough, they fall back to the ground as precipitation, in the form of rain, snow, or hail. Some of this water flows across the surface into rivers and eventually returns to the sea. The rest soaks into the ground, where it may be taken up by plants or collect underground as groundwater.",
+    "Understanding the water cycle is increasingly important. Human activities and climate change are altering rainfall patterns, causing droughts in some regions and floods in others. Managing our precious freshwater supplies wisely has become one of the great challenges of our time."
+   ],
+   Q:[
+    {t:'text',a:'constant',q:'The amount of water on Earth has stayed roughly ______.'},
+    {t:'text',a:'sun',q:'The water cycle is driven by energy from the ______.'},
+    {t:'text',a:'vapour|vapor',q:'Heated water turns into an invisible gas called water ______.'},
+    {t:'text',a:'condenses|condense',q:'When vapour cools it ______ into droplets.'},
+    {t:'text',a:'clouds|cloud',q:'This process forms ______.'},
+    {t:'choice',a:'C',q:'Rain, snow and hail are all forms of:',opts:['A) evaporation','B) condensation','C) precipitation','D) vapour']},
+    {t:'text',a:'groundwater|ground water',q:'Water that soaks into the ground may collect as ______.'},
+    {t:'text',a:'plants|plant',q:'Some water is taken up by ______.'},
+    {t:'text',a:'condensation',q:'The process of vapour cooling into droplets is called ______.'},
+    {t:'text',a:'rainfall|rain',q:'Human activities are altering ______ patterns.'},
+    {t:'text',a:'floods|flood',q:'Climate change can cause droughts and ______.'},
+    {t:'choice',a:'FALSE',q:'The amount of water on Earth constantly decreases.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Managing freshwater wisely is a major challenge.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Rise of Social Media',
+   paras:[
+    "In less than two decades, social media has transformed the way billions of people communicate, share information, and view the world. Platforms that began as simple tools for keeping in touch with friends have grown into powerful forces that influence business, politics, and culture.",
+    "The benefits of social media are considerable. It allows people to stay connected with friends and family across the globe, instantly and at no cost. It gives ordinary individuals a voice, enabling them to share ideas and raise awareness of important issues. For businesses, it offers a cheap and effective way to reach customers, while for many, it has become a source of news and entertainment.",
+    "However, social media also has a darker side. Studies have linked heavy use, particularly among young people, to increased anxiety and depression, partly because users constantly compare themselves to others. The rapid spread of false information, or 'fake news', is another serious concern, as misleading stories can travel faster than the truth. There are also worries about privacy and personal data.",
+    "Ultimately, social media is a tool, and like any tool, its effects depend on how it is used. Many experts argue that the solution lies not in avoiding it altogether, but in using it more mindfully."
+   ],
+   Q:[
+    {t:'text',a:'two|2',q:'Social media has transformed communication in less than ______ decades.'},
+    {t:'text',a:'cost',q:'Social media lets people stay connected at no ______.'},
+    {t:'text',a:'voice',q:'It gives ordinary individuals a ______.'},
+    {t:'text',a:'customers|customer',q:'For businesses it offers a cheap way to reach ______.'},
+    {t:'text',a:'depression',q:'Heavy use is linked to increased anxiety and ______.'},
+    {t:'text',a:'compare',q:'Users constantly ______ themselves to others.'},
+    {t:'text',a:'fake',q:'The spread of false information is called ______ news.'},
+    {t:'choice',a:'B',q:'Misleading stories can travel:',opts:['A) slowly','B) faster than the truth','C) only at night','D) not at all']},
+    {t:'text',a:'data',q:'There are worries about privacy and personal ______.'},
+    {t:'text',a:'tool',q:'Social media is described as a ______.'},
+    {t:'choice',a:'B',q:'Experts suggest the solution is to use social media:',opts:['A) never','B) more mindfully','C) only for work','D) constantly']},
+    {t:'choice',a:'FALSE',q:'Social media only has benefits.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'entertainment',q:'Social media can be a source of news and ______.'}
+   ]},
+  {title:'The History of Photography',
+   paras:[
+    "Today we take photographs effortlessly, capturing thousands of images on devices we carry in our pockets. Yet photography, now so ordinary, was once an astonishing new technology that changed how humans saw and recorded the world.",
+    "The principle behind photography had been known for centuries. It was observed that light passing through a small hole into a dark room projects an image of the outside scene onto the opposite wall, a phenomenon used by artists as a drawing aid. The challenge was finding a way to capture and preserve such an image permanently.",
+    "This was achieved in the early nineteenth century. Several inventors, working independently, developed chemical processes that could fix an image onto a treated surface. Early photographs required very long exposure times, sometimes several minutes, meaning subjects had to remain perfectly still, which is why people in old portraits rarely smile.",
+    "Over the following decades, photography developed rapidly. Exposure times shortened, and cameras became smaller and cheaper. A major breakthrough came in 1888, when a company introduced a simple, affordable camera loaded with a roll of film, bringing photography to ordinary people for the first time. The invention of digital photography, much later, removed the need for film altogether and, combined with the smartphone, made almost everyone a photographer."
+   ],
+   Q:[
+    {t:'text',a:'recorded|record',q:'Photography changed how humans saw and ______ the world.'},
+    {t:'text',a:'image',q:'Light passing through a small hole projects an ______ onto a wall.'},
+    {t:'text',a:'artists|artist',q:'This phenomenon was used by ______ as a drawing aid.'},
+    {t:'text',a:'preserve',q:'The challenge was to capture and ______ the image permanently.'},
+    {t:'text',a:'nineteenth|19th',q:'Chemical processes to fix images were developed in the early ______ century.'},
+    {t:'text',a:'exposure',q:'Early photographs required long ______ times.'},
+    {t:'choice',a:'B',q:'Why do people in old portraits rarely smile?',opts:['A) they were sad','B) they had to stay still for long exposures','C) it was rude','D) cameras were broken']},
+    {t:'text',a:'shortened|shorten',q:'Over time, exposure times ______.'},
+    {t:'text',a:'cheaper|cheap',q:'Cameras became smaller and ______.'},
+    {t:'text',a:'film',q:'In 1888, a company introduced a camera loaded with a roll of ______.'},
+    {t:'choice',a:'B',q:'The 1888 camera was significant because it was:',opts:['A) expensive','B) simple and affordable','C) very large','D) digital']},
+    {t:'text',a:'film',q:'Digital photography removed the need for ______.'},
+    {t:'text',a:'photographer',q:'The smartphone made almost everyone a ______.'},
+    {t:'choice',a:'FALSE',q:'The principle behind photography was discovered only recently.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 420 320' width='100%' style='max-width:420px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='210' y='20' text-anchor='middle' font-size='13' font-weight='bold'>Composition of household waste (%), 2020</text><path d='M200 160 L200 65 A95 95 0 0 1 290.4 130.6 Z' fill='#1a73e8'/><path d='M200 160 L290.4 130.6 A95 95 0 0 1 200 255 Z' fill='#1a9c5a'/><path d='M200 160 L200 255 A95 95 0 0 1 105 160 Z' fill='#e0a800'/><path d='M200 160 L105 160 A95 95 0 0 1 123.1 104.2 Z' fill='#c0392b'/><path d='M200 160 L123.1 104.2 A95 95 0 0 1 200 65 Z' fill='#8e44ad'/><g font-size='11' fill='#333'><rect x='30' y='285' width='12' height='11' fill='#1a73e8'/><text x='46' y='294'>Paper 20</text><rect x='130' y='285' width='12' height='11' fill='#1a9c5a'/><text x='146' y='294'>Food 30</text><rect x='230' y='285' width='12' height='11' fill='#e0a800'/><text x='246' y='294'>Plastic 25</text><rect x='30' y='302' width='12' height='11' fill='#c0392b'/><text x='46' y='311'>Glass 10</text><rect x='130' y='302' width='12' height='11' fill='#8e44ad'/><text x='146' y='311'>Other 15</text></g></svg>",
+  task1:"The pie chart below shows the composition of household waste in a country in 2020, by percentage. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that social media has a negative effect on society. To what extent do you agree or disagree? Write at least 250 words."
+ }
+},
+
+/* ===================== MOCK 9 ===================== */
+{
+ name:'Mock 9',
+ blurb:'Train booking · Community library · History of money + Amazon · Colour · Electric cars',
+ listen:[
+  {title:'Train ticket booking',
+   transcript:"Good morning, I'd like to book a train ticket to Manchester. Certainly, for which day? This Friday, please, travelling in the morning. There's a train at nine fifteen, arriving at eleven thirty. How much is a return ticket? A standard return is fifty-two pounds, but if you book today, there's a twenty per cent discount. Would you like a seat reservation? Yes, please, a window seat if possible. Will you need a railcard? Only if you have one, for further discounts. The ticket will be sent to your phone as an e-ticket. Please arrive at least fifteen minutes before departure. Platform numbers are shown on the screens in the station.",
+   Q:[
+    {t:'text',a:'manchester',q:'Destination: ______.'},
+    {t:'text',a:'friday',q:'Day of travel: ______.'},
+    {t:'text',a:'nine fifteen|9:15|9.15|915',q:'Departure time: ______.'},
+    {t:'text',a:'eleven thirty|11:30|11.30|1130',q:'Arrival time: ______.'},
+    {t:'text',a:'fifty-two|52|fifty two',q:'Standard return price: £______.'},
+    {t:'text',a:'twenty|20',q:'Discount for booking today: ______ per cent.'},
+    {t:'text',a:'window',q:'Seat preference: a ______ seat.'},
+    {t:'text',a:'e-ticket|eticket|e ticket',q:'The ticket is sent as an ______.'},
+    {t:'text',a:'fifteen|15',q:'Arrive at least ______ minutes before departure.'},
+    {t:'choice',a:'B',q:'Platform numbers are shown:',opts:['A) on the ticket','B) on the screens','C) by staff','D) online']}
+   ]},
+  {title:'New community library services',
+   transcript:"I'd like to tell you about some new services at our community library. First, we have extended our opening hours; we are now open until eight in the evening on weekdays. Second, we have launched a free e-book service, allowing members to borrow digital books using an app. You can now borrow up to twelve books at a time. We have also created a new children's area on the ground floor, with a story-time session every Wednesday at four o'clock. For those interested in technology, we run free computer classes for beginners on Tuesday mornings. Finally, our meeting rooms can now be booked free of charge by local community groups. To use any of these services, you simply need a library card, which is free to obtain.",
+   Q:[
+    {t:'text',a:'eight|8pm|8',q:'The library is now open until ______ on weekdays.'},
+    {t:'text',a:'e-book|ebook|e book',q:'There is a new free ______ service.'},
+    {t:'text',a:'app',q:'E-books are borrowed using an ______.'},
+    {t:'text',a:'twelve|12',q:'Members can now borrow up to ______ books.'},
+    {t:'text',a:'ground',q:"The new children's area is on the ______ floor."},
+    {t:'text',a:'wednesday',q:'Story-time is every ______.'},
+    {t:'text',a:'four|4',q:"Story-time is at ______ o'clock."},
+    {t:'text',a:'tuesday',q:'Free computer classes are on ______ mornings.'},
+    {t:'text',a:'groups|group',q:'Meeting rooms can be booked by community ______.'},
+    {t:'choice',a:'B',q:'To use the services you need a:',opts:['A) passport','B) library card','C) fee','D) password']}
+   ]},
+  {title:'Planning a marketing presentation',
+   transcript:"So our marketing module presentation is on advertising. What product should we focus on? How about a new brand of trainers? Good, sport appeals to students. What's our main message? I think we should highlight that they're made from recycled materials, that's very popular now. Which platform would we advertise on? Definitely social media, especially short videos. And who's our target audience? Young people aged sixteen to twenty-five. How long is the presentation? Twelve minutes, with slides. Should we include a survey? Yes, let's survey fifty students to get some real data. When's it due? We present on the third of March. Let's meet on Monday to design the slides.",
+   Q:[
+    {t:'text',a:'advertising',q:'The presentation is about ______.'},
+    {t:'text',a:'trainers|trainer',q:'The product is a new brand of ______.'},
+    {t:'text',a:'recycled',q:'Main message: made from ______ materials.'},
+    {t:'text',a:'social',q:'They will advertise on ______ media.'},
+    {t:'text',a:'videos|video',q:'Especially using short ______.'},
+    {t:'text',a:'twenty-five|25|twenty five',q:'Target audience: aged sixteen to ______.'},
+    {t:'text',a:'twelve|12',q:'Presentation length: ______ minutes.'},
+    {t:'text',a:'fifty|50',q:'They will survey ______ students.'},
+    {t:'text',a:'third|3rd|3',q:'Presentation date: ______ of March.'},
+    {t:'choice',a:'B',q:'The recycled-materials angle is chosen because it is:',opts:['A) cheap','B) popular now','C) required','D) easy']}
+   ]},
+  {title:'Lecture: the history of money',
+   transcript:"Today we will trace the history of money. In the earliest societies, there was no money at all; people simply exchanged goods directly, a system known as barter. The problem with barter is that it requires both people to want what the other has. To solve this, societies began using objects of agreed value, such as shells or cattle, as an early form of money. The first metal coins appeared around 2,600 years ago, in what is now Turkey, made from a mixture of gold and silver. Coins were convenient because they were durable and easy to carry. Much later, paper money was introduced, first in China, as it was lighter than metal. In the modern era, money has become increasingly abstract: cheques, then plastic cards, and now digital payments made with a phone. Some economists predict that physical cash may eventually disappear altogether.",
+   Q:[
+    {t:'text',a:'barter',q:'The direct exchange of goods is called ______.'},
+    {t:'text',a:'want',q:'Barter requires both people to ______ what the other has.'},
+    {t:'text',a:'cattle',q:'Early money included shells and ______.'},
+    {t:'text',a:'2600|2,600',q:'The first metal coins appeared around ______ years ago.'},
+    {t:'text',a:'turkey',q:'The first coins were made in what is now ______.'},
+    {t:'text',a:'silver',q:'Coins were made from gold and ______.'},
+    {t:'text',a:'carry',q:'Coins were durable and easy to ______.'},
+    {t:'text',a:'china',q:'Paper money was first introduced in ______.'},
+    {t:'choice',a:'B',q:'Paper money was introduced because it was:',opts:['A) stronger','B) lighter than metal','C) prettier','D) rarer']},
+    {t:'choice',a:'B',q:'Some economists predict that ______ may disappear:',opts:['A) coins only','B) physical cash','C) banks','D) phones']}
+   ]}
+ ],
+ read:[
+  {title:'The Amazon Rainforest',
+   paras:[
+    "Covering an area of over five million square kilometres, the Amazon rainforest is the largest tropical rainforest on Earth. Often called the 'lungs of the planet', it plays a vital role in regulating the global climate and is home to an extraordinary wealth of life.",
+    "The Amazon's biodiversity is staggering. It contains around ten per cent of all known species on Earth, including thousands of types of birds, fish, and mammals, as well as countless plants, many of which have not yet been studied by scientists. Some of these plants are already used to make important medicines, and researchers believe the forest may hold cures for diseases yet to be discovered.",
+    "The rainforest also has a crucial effect on climate. Its billions of trees absorb enormous amounts of carbon dioxide, a gas that contributes to global warming, and release the oxygen on which life depends. In addition, the forest generates much of its own rainfall, helping to maintain weather patterns.",
+    "Despite its importance, the Amazon is under severe threat. Vast areas are cleared each year for farming, cattle ranching, and logging, a process known as deforestation. This not only destroys habitats but also releases stored carbon, worsening climate change. Protecting the Amazon has become a matter of global concern, requiring cooperation between governments, businesses, and local communities."
+   ],
+   Q:[
+    {t:'text',a:'five|5',q:'The Amazon covers over ______ million square kilometres.'},
+    {t:'text',a:'lungs|lung',q:'It is often called the ______ of the planet.'},
+    {t:'text',a:'ten|10',q:'It contains about ______ per cent of all known species.'},
+    {t:'text',a:'medicines|medicine',q:'Some Amazon plants are used to make ______.'},
+    {t:'text',a:'dioxide',q:'Trees absorb carbon ______.'},
+    {t:'text',a:'oxygen',q:'Trees release the ______ on which life depends.'},
+    {t:'text',a:'rainfall|rain',q:'The forest generates much of its own ______.'},
+    {t:'text',a:'deforestation',q:'Clearing the forest is known as ______.'},
+    {t:'choice',a:'B',q:'The Amazon is cleared for farming, logging and:',opts:['A) mining only','B) cattle ranching','C) tourism','D) fishing']},
+    {t:'text',a:'carbon',q:'Deforestation releases stored ______.'},
+    {t:'choice',a:'TRUE',q:'Many Amazon plants have not yet been studied.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The Amazon has no effect on climate.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'B',q:'Protecting the Amazon requires cooperation between governments, businesses and:',opts:['A) tourists','B) local communities','C) scientists only','D) farmers only']}
+   ]},
+  {title:'The Psychology of Colour',
+   paras:[
+    "Colours surround us every day, and though we may not realise it, they can have a powerful effect on our emotions and behaviour. The study of how colours influence us, known as colour psychology, is used widely in fields ranging from advertising to interior design.",
+    "Different colours are often associated with particular feelings. Red, for example, is a bold, attention-grabbing colour linked to energy, excitement, and sometimes danger. This is why it is often used for warning signs and, interestingly, by fast-food chains, as it is thought to stimulate appetite. Blue, by contrast, tends to create a sense of calm and trust, which is why it is popular with banks and technology companies wishing to appear reliable.",
+    "Colour can even affect us physically. Studies have suggested that people may feel warmer in a room painted in 'warm' colours such as orange, and cooler in one painted blue, regardless of the actual temperature. Some research indicates that colour can influence concentration and productivity, though findings are not always consistent.",
+    "It is important to note that the meaning of colours is not universal. Associations can vary significantly between cultures; while white is linked to purity and weddings in many Western countries, it is traditionally associated with mourning in parts of Asia."
+   ],
+   Q:[
+    {t:'text',a:'psychology',q:'The study of how colours influence us is called colour ______.'},
+    {t:'choice',a:'B',q:'Red is linked to energy, excitement and sometimes:',opts:['A) calm','B) danger','C) trust','D) sadness']},
+    {t:'text',a:'appetite',q:'Red is used by fast-food chains because it is thought to stimulate ______.'},
+    {t:'text',a:'trust',q:'Blue creates a sense of calm and ______.'},
+    {t:'text',a:'technology',q:'Blue is popular with banks and ______ companies.'},
+    {t:'text',a:'warmer|warm',q:'People may feel ______ in a room painted orange.'},
+    {t:'text',a:'productivity',q:'Colour may influence concentration and ______.'},
+    {t:'text',a:'universal',q:'The meaning of colours is not ______.'},
+    {t:'text',a:'weddings|wedding',q:'In many Western countries, white is linked to purity and ______.'},
+    {t:'choice',a:'B',q:'In parts of Asia, white is associated with:',opts:['A) weddings','B) mourning','C) energy','D) trust']},
+    {t:'text',a:'cultures|culture',q:'Colour associations can vary between ______.'},
+    {t:'text',a:'design',q:'Colour psychology is used in advertising and interior ______.'},
+    {t:'choice',a:'FALSE',q:'Research on colour and productivity is always consistent.',opts:['TRUE','FALSE','NOT GIVEN']}
+   ]},
+  {title:'The Rise of Electric Vehicles',
+   paras:[
+    "For over a century, cars powered by petrol and diesel have dominated the world's roads. Now, however, a quiet revolution is under way, as electric vehicles, or EVs, rapidly grow in popularity. Powered by rechargeable batteries rather than burning fuel, EVs are widely seen as a key part of the solution to climate change and air pollution.",
+    "The environmental advantages are significant. Because they have no exhaust emissions, EVs do not release the harmful gases that petrol cars produce, improving air quality in cities. If the electricity used to charge them comes from renewable sources, their overall contribution to climate change can be very low.",
+    "Electric vehicles also offer practical benefits. They are cheaper to run, as electricity generally costs less than fuel, and they have fewer moving parts, meaning less maintenance. Many drivers also appreciate their quiet, smooth performance.",
+    "There are, however, obstacles to overcome. EVs are still often more expensive to buy than conventional cars, though prices are falling. A common concern is the limited driving range on a single charge, along with a shortage of charging points in many areas. Producing the batteries also requires rare materials. Nevertheless, with governments encouraging the switch, and some planning to ban the sale of new petrol cars altogether, the future of transport increasingly appears to be electric."
+   ],
+   Q:[
+    {t:'text',a:'batteries|battery',q:'Electric vehicles are powered by rechargeable ______.'},
+    {t:'text',a:'pollution',q:'EVs are seen as part of the solution to climate change and air ______.'},
+    {t:'text',a:'emissions|emission',q:'EVs have no exhaust ______.'},
+    {t:'text',a:'quality',q:'EVs improve air ______ in cities.'},
+    {t:'choice',a:'B',q:'EVs have a low climate impact if charged with:',opts:['A) coal','B) renewable sources','C) diesel','D) petrol']},
+    {t:'text',a:'run',q:'EVs are cheaper to ______ than petrol cars.'},
+    {t:'text',a:'parts|part',q:'EVs have fewer moving ______.'},
+    {t:'text',a:'performance',q:'EVs offer quiet, smooth ______.'},
+    {t:'text',a:'expensive',q:'EVs are often more ______ to buy than conventional cars.'},
+    {t:'text',a:'range',q:'A common concern is the limited driving ______ on one charge.'},
+    {t:'text',a:'charging|charge',q:'There is a shortage of ______ points.'},
+    {t:'text',a:'rare',q:'Producing batteries requires ______ materials.'},
+    {t:'choice',a:'B',q:'Some governments plan to ban the sale of new:',opts:['A) electric cars','B) petrol cars','C) bicycles','D) buses']},
+    {t:'text',a:'century',q:'Petrol and diesel cars have dominated for over a ______.'}
+   ]}
+ ],
+ writing:{
+  img:"<svg viewBox='0 0 560 320' width='100%' style='max-width:560px;background:#fff;border:1px solid #ccc;border-radius:6px'><text x='280' y='18' text-anchor='middle' font-size='13' font-weight='bold'>New cars sold that were electric (%), 2015 vs 2020</text><line x1='60' y1='30' x2='60' y2='250' stroke='#333'/><line x1='60' y1='250' x2='510' y2='250' stroke='#333'/><g font-size='10' fill='#555'><text x='52' y='253' text-anchor='end'>0</text><text x='52' y='180' text-anchor='end'>10</text><text x='52' y='106' text-anchor='end'>20</text><text x='52' y='33' text-anchor='end'>30</text><line x1='60' y1='177' x2='500' y2='177' stroke='#eee'/><line x1='60' y1='103' x2='500' y2='103' stroke='#eee'/></g><g><rect x='85' y='235' width='30' height='15' fill='#1a73e8'/><rect x='119' y='140' width='30' height='110' fill='#e0a800'/><rect x='195' y='213' width='30' height='37' fill='#1a73e8'/><rect x='229' y='67' width='30' height='183' fill='#e0a800'/><rect x='305' y='243' width='30' height='7' fill='#1a73e8'/><rect x='339' y='191' width='30' height='59' fill='#e0a800'/><rect x='415' y='228' width='30' height='22' fill='#1a73e8'/><rect x='449' y='103' width='30' height='147' fill='#e0a800'/></g><g font-size='11' fill='#333' text-anchor='middle'><text x='117' y='264'>Country A</text><text x='227' y='264'>Country B</text><text x='337' y='264'>Country C</text><text x='447' y='264'>Country D</text></g><g font-size='11'><rect x='190' y='288' width='16' height='10' fill='#1a73e8'/><text x='212' y='297'>2015</text><rect x='300' y='288' width='16' height='10' fill='#e0a800'/><text x='322' y='297'>2020</text></g></svg>",
+  task1:"The bar chart below shows the percentage of newly sold cars that were electric in four countries in 2015 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people think that advertising encourages people to buy things they do not really need. To what extent do you agree or disagree? Write at least 250 words."
+ }
 }
 
 ];
