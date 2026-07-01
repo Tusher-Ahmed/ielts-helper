@@ -11,6 +11,7 @@
 | [`vocabulary.html`](vocabulary.html) | **Band 7.5+ Vocabulary** — ৩০০+ শব্দ, ২৫+ ক্যাটাগরিতে collocation/idiom/academic phrase, 🔊 pronunciation, search, learned-tracker, flashcard |
 | [`cue-cards.html`](cue-cards.html) | **Cue Card Centre** — ২৫+ Part 2 cue card, প্রতি ক্যাটাগরিতে Band-8 মডেল উত্তর, ১ মিনিট প্রস্তুতি + ২ মিনিট বলার টাইমার, random picker |
 | [`routine.html`](routine.html) | **Daily Routine** — কর্মজীবীদের জন্য (দিনের micro-habit + সন্ধ্যা ৭টার পর ২ ঘণ্টার সেশন), সাপ্তাহিক প্ল্যান (আজ হাইলাইট), রোজকার চেকলিস্ট + streak |
+| [`mock-test.html`](mock-test.html) | **CD-IELTS Mock Test** — আসল computer-delivered ইন্টারফেসের সিমুলেশন; ৩টি full mock (Listening+Reading+Writing), timer, question navigator, review flags, highlight, auto-scoring |
 | [`speaking-module.html`](speaking-module.html) | Speaking মডিউল (Beginner → Expert) + ভয়েস রেকর্ডার, টাইমার, প্রম্পট জেনারেটর |
 | [`writing-module.html`](writing-module.html) | **Writing Module** — Task 1 (সব chart type) + Task 2 (৫ ধরন), টেমপ্লেট, ৪টি পূর্ণ Band-8 মডেল, grammar/vocab, checklist |
 | [`reading-module.html`](reading-module.html) | **Reading Module** — skimming/scanning/paraphrase, সব question type কৌশল+উদাহরণ, time management |
