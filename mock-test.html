@@ -166,7 +166,7 @@
   </div></div>
 </div>
 
-<div class="navbar">
+<div class="navbar" id="navbar" style="display:none">
   <div class="parts">
     <button class="pbtn2" data-p="listening" onclick="switchPart('listening')">🎧 Listening</button>
     <button class="pbtn2" data-p="reading" onclick="switchPart('reading')">📖 Reading</button>
@@ -270,6 +270,7 @@ function startTest(i){
   notified={};
   document.getElementById('intro').classList.remove('active');
   document.getElementById('endSecBtn').style.display=(mode==='realistic')?'inline-block':'none';
+  document.getElementById('navbar').style.display='flex';
   applyPart('listening');
   startClock();
   toast(mode==='realistic'?'▶️ Realistic mode — Listening ৩২ মিনিট শুরু':'▶️ Practice mode — অবাধ চলাচল, টাইমার track করছে');
@@ -282,6 +283,7 @@ function showIntro(){
   document.getElementById('partTitle').textContent='Choose a Mock Test';
   document.getElementById('readTabs').style.display='none';document.getElementById('hlTools').style.display='none';
   document.getElementById('endSecBtn').style.display='none';
+  document.getElementById('navbar').style.display='none';
   document.querySelectorAll('.pbtn2').forEach(b=>b.classList.remove('active'));
   document.getElementById('palette').innerHTML='';currentPart=null;
   document.getElementById('timer').textContent='⏱ —';document.getElementById('timer').classList.remove('low');
