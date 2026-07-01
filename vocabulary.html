@@ -40,8 +40,7 @@
   #search{flex:1;background:var(--card);border:1px solid var(--line);color:var(--txt);padding:11px 16px;border-radius:12px;
     font-family:inherit;font-size:1rem}
   #search:focus{outline:none;border-color:var(--accent)}
-  .filterrow{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-  .filterrow::-webkit-scrollbar{display:none}
+  .filterrow{display:flex;gap:7px;flex-wrap:wrap;padding-bottom:2px}
   .fpill{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);
     padding:7px 13px;border-radius:9px;cursor:pointer;font-family:inherit;font-size:.88rem;font-weight:500;transition:.15s;flex:none}
   .fpill:hover{color:var(--txt)}
