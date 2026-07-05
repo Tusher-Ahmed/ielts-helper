@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f1226"><link rel="apple-touch-icon" href="icon.svg">
 <title>IELTS Cue Cards | Part 2 প্র্যাকটিস (বাংলায়)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -346,5 +346,5 @@ function startTimer(){
 function pauseTimer(){clearInterval(intv);intv=null;}
 function resetTimer(){clearInterval(intv);intv=null;phase='idle';sec=120;tEl.style.color='var(--accent2)';tEl.textContent='02:00';pEl.textContent='▶️ চাপলে: ১ মিনিট প্রস্তুতি, তারপর ২ মিনিট বলা';}
 </script>
-</body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "name": "IELTS Helper — Band 7.5+ (বাংলায়)",
+  "short_name": "IELTS Helper",
+  "description": "Complete IELTS preparation in Bangla: 15 full mocks, writing/speaking/reading/listening modules, vocabulary, cue cards, progress dashboard. Works offline.",
+  "lang": "bn",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1226",
+  "theme_color": "#0f1226",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f1226"><link rel="apple-touch-icon" href="icon.svg">
 <title>IELTS Band 7.5+ গাইড | বাংলায় সম্পূর্ণ প্রস্তুতি</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -206,6 +206,7 @@
       <a href="cue-cards.html" class="btn btn-ghost" style="border-color:var(--pink)">🃏 Cue Cards প্র্যাকটিস</a>
       <a href="routine.html" class="btn btn-ghost" style="border-color:var(--accent2)">🗓️ ডেইলি রুটিন</a>
       <a href="mock-test.html" class="btn btn-ghost" style="border-color:#ff6b6b">🖥️ Full Mock Test</a>
+      <button id="installBtn" class="btn btn-primary" style="display:none" onclick="doInstall()">📲 অ্যাপ ইনস্টল করো</button>
     </div>
 
     <div class="countdown" id="countdown">
@@ -1242,6 +1243,24 @@
   // ----- DEEP-LINK from other pages -----
   const goto=sessionStorage.getItem('goto');
   if(goto){ sessionStorage.removeItem('goto'); go(goto); }
+
+  // ----- PWA install prompt -----
+  let deferredPrompt=null;
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferredPrompt=e;
+    const b=document.getElementById('installBtn'); if(b) b.style.display='inline-flex';
+  });
+  function doInstall(){
+    if(!deferredPrompt)return;
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.finally(function(){
+      deferredPrompt=null;
+      const b=document.getElementById('installBtn'); if(b) b.style.display='none';
+    });
+  }
+  window.addEventListener('appinstalled',function(){
+    const b=document.getElementById('installBtn'); if(b) b.style.display='none';
+  });
 </script>
-</body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
 </html>

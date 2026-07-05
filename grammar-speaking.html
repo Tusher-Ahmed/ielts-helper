@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f1226"><link rel="apple-touch-icon" href="icon.svg">
 <title>Grammar + Spoken English | Basic → Advanced (বাংলায়)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -740,5 +740,5 @@ document.getElementById('nextSentence').onclick=()=>{sIndex=(sIndex+1)%SENTENCES
 document.getElementById('saySentence').onclick=()=>speak(SENTENCES[sIndex].join(' '));
 loadSentence();
 </script>
-</body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
 </html>

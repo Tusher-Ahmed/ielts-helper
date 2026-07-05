@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f1226"><link rel="apple-touch-icon" href="icon.svg">
 <title>IELTS Full Mock Tests — CD Simulation</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
@@ -399,5 +399,5 @@ renderCards();
 function saveScore(rec){try{const a=JSON.parse(localStorage.getItem('ielts_scores')||'[]');a.push(rec);localStorage.setItem('ielts_scores',JSON.stringify(a));}catch(e){}}
 function showHelp(){alert('Full Mock:\n• প্রতি সেকশনের আলাদা টাইমার (L 32 / R 60 / W 60 মিনিট)\n• Realistic: sequential, End section → দিয়ে পরেরটায়\n• Practice: অবাধ চলাচল, টাইমার track করে\n• Reading: P1/P2/P3 tab\n• নম্বরে ক্লিক = প্রশ্নে যাও; উত্তর দিলে সবুজ; Review = flag\n• ☰ Tests দিয়ে অন্য mock\n• শেষে Submit');}
 </script>
-</body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f1226"><link rel="apple-touch-icon" href="icon.svg">
 <title>Speaking Module | Beginner → Expert (বাংলায়)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -631,5 +631,5 @@ document.querySelectorAll('.tasklist input').forEach(b=>{
   b.addEventListener('change',()=>localStorage.setItem(k,b.checked?'1':'0'));
 });
 </script>
-</body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
 </html>
