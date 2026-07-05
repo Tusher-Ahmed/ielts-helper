@@ -185,6 +185,7 @@
   <table id="scoreTable"></table>
   <p style="font-size:13px;color:#555">✅ ভুল উত্তর সবুজ/লাল রঙে দেখানো হয়েছে।</p>
   <button class="closeb" onclick="document.getElementById('overlay').classList.remove('show')">ভুলগুলো দেখি</button>
+  <button class="closeb" style="background:#1a9c5a" onclick="location.href='dashboard.html'">📊 Progress</button>
   <button class="altb" onclick="showIntro()">🔄 আরেকটা Mock</button>
 </div></div>
 
@@ -380,6 +381,7 @@ function submitTest(){
   const lc=gradeSet(lq),rc=gradeSet(rq);
   const w1=document.getElementById('essay1').value.trim(),w2=document.getElementById('essay2').value.trim();
   const wn1=w1?w1.split(/\s+/).length:0,wn2=w2?w2.split(/\s+/).length:0;
+  saveScore({type:'mock',name:MOCKS[M].name,L:lc,Lt:lq.length,R:rc,Rt:rq.length,ts:Date.now()});
   clearInterval(clock);clock=null;speechSynthesis.cancel();
   document.getElementById('rTitle').textContent='📊 '+MOCKS[M].name+' — ফলাফল';
   document.getElementById('scoreBig').textContent='L '+lc+'/'+lq.length+' · R '+rc+'/'+rq.length;
@@ -394,6 +396,7 @@ function renderCards(){
   document.getElementById('testpick').innerHTML=MOCKS.map((m,i)=>'<div class="tcard" onclick="startTest('+i+')"><b>'+m.name+'</b><small>'+(m.blurb||'')+'</small></div>').join('');
 }
 renderCards();
+function saveScore(rec){try{const a=JSON.parse(localStorage.getItem('ielts_scores')||'[]');a.push(rec);localStorage.setItem('ielts_scores',JSON.stringify(a));}catch(e){}}
 function showHelp(){alert('Full Mock:\n• প্রতি সেকশনের আলাদা টাইমার (L 32 / R 60 / W 60 মিনিট)\n• Realistic: sequential, End section → দিয়ে পরেরটায়\n• Practice: অবাধ চলাচল, টাইমার track করে\n• Reading: P1/P2/P3 tab\n• নম্বরে ক্লিক = প্রশ্নে যাও; উত্তর দিলে সবুজ; Review = flag\n• ☰ Tests দিয়ে অন্য mock\n• শেষে Submit');}
 </script>
 </body>

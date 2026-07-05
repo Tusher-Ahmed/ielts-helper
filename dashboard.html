@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Progress Dashboard | IELTS অগ্রগতি</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;--txt:#e9ecff;--muted:#a7adda;
+    --accent:#6c8cff;--accent2:#46d6b3;--gold:#ffcb5b;--pink:#ff7ab6;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);color:var(--txt);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+  header.hero{padding:46px 0 20px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:14px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#06121f;font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;margin-bottom:8px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--gold),var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:600px;margin:0 auto}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+  .stat b{font-size:1.9rem;display:block;font-family:'Poppins';color:var(--gold)}
+  .stat span{color:var(--muted);font-size:.85rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+  .card h2{font-size:1.25rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .skillrow{display:grid;grid-template-columns:120px 1fr auto;gap:12px;align-items:center;margin:12px 0}
+  .skillrow .nm{font-weight:600}
+  .barwrap{background:var(--card2);border:1px solid var(--line);border-radius:999px;height:22px;overflow:hidden;position:relative}
+  .bar{height:100%;border-radius:999px;transition:width .5s}
+  .bar.L{background:linear-gradient(90deg,#6c8cff,#8aa2ff)}
+  .bar.R{background:linear-gradient(90deg,#46d6b3,#6ee7c8)}
+  .skillrow .val{font-family:'Poppins';font-weight:600;color:var(--gold);white-space:nowrap}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left}
+  th{background:var(--card2);color:var(--gold)}
+  .badge2{display:inline-block;padding:2px 9px;border-radius:999px;font-family:'Poppins';font-weight:600;font-size:.82rem}
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:12px 0;color:#dfe3ff}
+  .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.94rem;font-weight:600;padding:11px 18px;border-radius:11px;transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+  .empty{text-align:center;padding:40px;color:var(--muted)}
+  svg .grid{stroke:#2e3563}
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  @media(max-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back">← মূল গাইডে ফিরে যাও</a>
+    <div><span class="badge">📊 PROGRESS DASHBOARD — তোমার অগ্রগতি</span></div>
+    <h1>তোমার <span class="grad">অগ্রগতি</span> ট্র্যাকার</h1>
+    <p>Mock ও Practice টেস্টের সব স্কোর এখানে জমা হয় (ব্রাউজারে সেভ)। দেখো কোন স্কিলে উন্নতি হচ্ছে, কোনটায় বেশি খাটতে হবে।</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="content"></div>
+  <div style="text-align:center;margin:20px 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <a href="mock-test.html" class="btn btn-primary">🖥️ Mock Test দাও</a>
+    <a href="practice.html" class="btn btn-ghost">🧪 Practice টেস্ট</a>
+    <button class="btn btn-ghost" onclick="resetAll()" style="border-color:var(--pink)">♻️ সব ডেটা মুছো</button>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>📊 প্রতিটা টেস্টের পর এখানে এসে অগ্রগতি দেখো — এটাই সবচেয়ে বড় অনুপ্রেরণা।</p>
+    <div style="margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="mock-test.html" class="btn btn-ghost">🖥️ Mocks</a>
+      <a href="index.html" class="btn btn-ghost">🏠 মূল গাইড</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function band40(r){if(r>=39)return 9;if(r>=37)return 8.5;if(r>=35)return 8;if(r>=33)return 7.5;if(r>=30)return 7;if(r>=27)return 6.5;if(r>=23)return 6;if(r>=19)return 5.5;if(r>=15)return 5;if(r>=13)return 4.5;return 4;}
+function bandPct(c,t){const p=c/t;if(p>=.95)return 9;if(p>=.87)return 8;if(p>=.78)return 7.5;if(p>=.65)return 7;if(p>=.5)return 6.5;if(p>=.4)return 6;if(p>=.3)return 5.5;return 5;}
+function bandColor(b){return b>=7.5?'background:rgba(70,214,179,.25);color:#8affda':b>=6.5?'background:rgba(255,203,91,.22);color:#ffe08a':'background:rgba(255,123,182,.2);color:#ffb3d4';}
+function fmtDate(ts){const d=new Date(ts);return d.getDate()+'/'+(d.getMonth()+1)+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
+
+function load(){return JSON.parse(localStorage.getItem('ielts_scores')||'[]');}
+
+function attempts(){
+  // flatten into per-skill attempts with band
+  const raw=load(); const out=[];
+  raw.forEach(r=>{
+    if(r.type==='mock'){
+      out.push({skill:'Listening',band:band40(r.L),score:r.L+'/'+r.Lt,name:r.name,ts:r.ts,kind:'Mock'});
+      out.push({skill:'Reading',band:band40(r.R),score:r.R+'/'+r.Rt,name:r.name,ts:r.ts,kind:'Mock'});
+    } else {
+      out.push({skill:r.skill,band:bandPct(r.c,r.t),score:r.c+'/'+r.t,name:r.name,ts:r.ts,kind:'Practice'});
+    }
+  });
+  return out;
+}
+
+function render(){
+  const a=attempts();
+  const el=document.getElementById('content');
+  if(!a.length){
+    el.innerHTML='<div class="card empty">😌 এখনো কোনো টেস্ট দাওনি।<br><br>একটা <b>Mock</b> বা <b>Practice</b> টেস্ট দিলেই এখানে স্কোর জমা হবে ও অগ্রগতি দেখা যাবে।</div>';
+    return;
+  }
+  const L=a.filter(x=>x.skill==='Listening'), R=a.filter(x=>x.skill==='Reading');
+  const mocks=load().filter(x=>x.type==='mock').length;
+  const bestL=L.length?Math.max(...L.map(x=>x.band)):0;
+  const bestR=R.length?Math.max(...R.map(x=>x.band)):0;
+  const avg=arr=>arr.length?(arr.reduce((s,x)=>s+x.band,0)/arr.length):0;
+  const avgL=avg(L), avgR=avg(R);
+  const overallBest=((bestL+bestR)/((bestL?1:0)+(bestR?1:0)||1));
+
+  let html='';
+  // summary cards
+  html+='<div class="cards">'+
+    '<div class="stat"><b>'+a.length+'</b><span>মোট টেস্ট</span></div>'+
+    '<div class="stat"><b>'+mocks+' / 15</b><span>Mock সম্পন্ন</span></div>'+
+    '<div class="stat"><b>'+(bestL||'–')+'</b><span>সেরা Listening band</span></div>'+
+    '<div class="stat"><b>'+(bestR||'–')+'</b><span>সেরা Reading band</span></div>'+
+    '</div>';
+
+  // per-skill best/avg bars (band out of 9)
+  html+='<div class="card"><h2>🎯 স্কিল অনুযায়ী ব্যান্ড (best ও average)</h2>';
+  [['Listening','L',bestL,avgL,L.length],['Reading','R',bestR,avgR,R.length]].forEach(s=>{
+    const [nm,cls,best,av,n]=s;
+    html+='<div class="skillrow"><div class="nm">'+(nm==='Listening'?'🎧 ':'📖 ')+nm+'</div>'+
+      '<div class="barwrap"><div class="bar '+cls+'" style="width:'+(best/9*100)+'%"></div></div>'+
+      '<div class="val">best '+(best||'–')+' · avg '+(av?av.toFixed(1):'–')+' ('+n+')</div></div>';
+  });
+  html+='</div>';
+
+  // trend chart (band over attempts) per skill
+  html+='<div class="card"><h2>📈 ব্যান্ড ট্রেন্ড (সময়ের সাথে)</h2>'+trendSVG(L,R)+
+    '<p style="color:var(--muted);font-size:.85rem;margin-top:6px">🔵 Reading · 🟣 Listening — প্রতিটা বিন্দু একটা টেস্ট (বাঁ থেকে ডান = পুরোনো থেকে নতুন)।</p></div>';
+
+  // weakest skill
+  const weak = (avgL||9) <= (avgR||9) ? 'Listening' : 'Reading';
+  const weakAvg = weak==='Listening'?avgL:avgR;
+  if(L.length && R.length){
+    html+='<div class="note '+(weakAvg<7?'warn':'good')+'">💡 এই মুহূর্তে তোমার তুলনামূলক দুর্বল স্কিল: <b>'+(weak==='Listening'?'🎧 Listening':'📖 Reading')+'</b> (গড় '+weakAvg.toFixed(1)+')। '+
+      (weakAvg<7?'এই স্কিলে বেশি সময় দাও — রোজ ১টা করে টেস্ট।':'দুটো স্কিলই ভালো চলছে — এভাবেই চালিয়ে যাও!')+'</div>';
+  }
+
+  // recent attempts table (newest first, last 20)
+  html+='<div class="card"><h2>🗒️ সাম্প্রতিক টেস্ট</h2><table><tr><th>তারিখ</th><th>টেস্ট</th><th>স্কিল</th><th>স্কোর</th><th>Band</th></tr>';
+  a.slice().sort((x,y)=>y.ts-x.ts).slice(0,20).forEach(x=>{
+    html+='<tr><td>'+fmtDate(x.ts)+'</td><td>'+x.kind+' · '+x.name+'</td><td>'+x.skill+'</td><td>'+x.score+'</td>'+
+      '<td><span class="badge2" style="'+bandColor(x.band)+'">'+x.band+'</span></td></tr>';
+  });
+  html+='</table></div>';
+
+  el.innerHTML=html;
+}
+
+function trendSVG(L,R){
+  // chart area 520x180
+  const W=520,H=190,padL=34,padB=24,padT=10,padR=10;
+  const x0=padL,x1=W-padR,y0=H-padB,y1=padT;
+  function pts(arr){
+    if(!arr.length)return '';
+    const n=arr.length;
+    return arr.map((d,i)=>{
+      const x = n===1 ? (x0+x1)/2 : x0 + (i/(n-1))*(x1-x0);
+      const y = y0 - ((d.band-4)/5)*(y0-y1); // band 4..9
+      return x.toFixed(1)+','+y.toFixed(1);
+    }).join(' ');
+  }
+  let g='<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="max-width:520px">';
+  // y gridlines for bands 4,5,6,7,8,9
+  [4,5,6,7,8,9].forEach(b=>{
+    const y=y0-((b-4)/5)*(y0-y1);
+    g+='<line class="grid" x1="'+x0+'" y1="'+y+'" x2="'+x1+'" y2="'+y+'"/>';
+    g+='<text x="'+(x0-6)+'" y="'+(y+3)+'" text-anchor="end" font-size="9" fill="#a7adda">'+b+'</text>';
+  });
+  const rp=pts(R), lp=pts(L);
+  if(rp)g+='<polyline fill="none" stroke="#46d6b3" stroke-width="2.5" points="'+rp+'"/>';
+  if(lp)g+='<polyline fill="none" stroke="#c792ea" stroke-width="2.5" points="'+lp+'"/>';
+  // dots
+  R.forEach((d,i)=>{const n=R.length;const x=n===1?(x0+x1)/2:x0+(i/(n-1))*(x1-x0);const y=y0-((d.band-4)/5)*(y0-y1);g+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3.5" fill="#46d6b3"/>';});
+  L.forEach((d,i)=>{const n=L.length;const x=n===1?(x0+x1)/2:x0+(i/(n-1))*(x1-x0);const y=y0-((d.band-4)/5)*(y0-y1);g+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="3.5" fill="#c792ea"/>';});
+  g+='</svg>';
+  return g;
+}
+
+function resetAll(){
+  if(confirm('তোমার সব টেস্ট স্কোর মুছে যাবে। নিশ্চিত?')){localStorage.removeItem('ielts_scores');render();}
+}
+render();
+</script>
+</body>
+</html>
