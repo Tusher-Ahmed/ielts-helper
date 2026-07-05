@@ -72,6 +72,7 @@
   .oki{border-color:var(--green)!important}
   .badi{border-color:var(--red)!important}
   .ansreveal{color:var(--green);font-weight:600;margin-left:8px;font-family:'Poppins';font-size:.9rem}
+  .expbox{margin-top:9px;padding:8px 11px;background:rgba(255,203,91,.1);border-left:3px solid var(--gold);border-radius:6px;font-size:.86rem;color:#e6e2cf;line-height:1.6}
 
   .btn{border:none;cursor:pointer;font-family:inherit;font-size:.96rem;font-weight:600;padding:11px 20px;border-radius:11px;
     transition:transform .15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
@@ -351,7 +352,7 @@
     </div>
   </details>
 
-  <div class="note good">✅ টিপ: ভুল উত্তরগুলো প্যাসেজে ফিরে খুঁজে বের করো — কেন ভুল হলো বুঝলে দ্রুত উন্নতি হবে। এখন <b>৪টি full passage</b> আছে — রোজ ১টা টাইমার ধরে দাও।</div>
+  <div class="note good">✅ <b>নতুন:</b> "উত্তর মিলাও" চাপলে এখন প্রতিটা প্রশ্নের নিচে 💡 <b>ব্যাখ্যা</b> দেখাবে — প্যাসেজের কোন অংশ থেকে উত্তর, তা বুঝিয়ে দেবে। ভুলগুলো থেকেই সবচেয়ে বেশি শেখা যায়। এখন <b>৪টি full passage</b> আছে।</div>
 </section>
 
 <!-- ==================== LISTENING ==================== -->
@@ -715,16 +716,88 @@ document.addEventListener('click',e=>{
 });
 
 /* ===== GRADER ===== */
+const EXPLANATIONS={
+ r1:[
+  "প্যাসেজ: 'grows upwards, dramatically reducing the amount of land required' — কম জমি লাগে। → TRUE",
+  "1999 = বিংশ শতক (20th century), একবিংশ (21st) নয়। → FALSE",
+  "'the rooftops proved insufficient' — rooftop দিয়ে শহর খাওয়ানো যায়নি। → FALSE",
+  "'production continues regardless of… seasonal changes' — সব ঋতুতেই। → TRUE",
+  "'high initial cost… putting it beyond the reach of many small businesses.' → TRUE",
+  "Singapore-এর 'limited farmland' — প্রচুর জমি নেই। → FALSE",
+  "'plants grow in nutrient-rich water rather than soil.' → water",
+  "'Pesticides are also largely unnecessary.' → pesticides",
+  "'The most significant drawback is energy consumption.' → energy",
+  "'food travels a far shorter distance… reducing the carbon emissions.' → B"
+ ],
+ r2:[
+  "'sleep was regarded as a passive state.' → B",
+  "'slow-wave sleep, is when physical restoration takes place.' → C",
+  "'impair performance… comparable with being legally drunk.' → B",
+  "'REM sleep… crucial for consolidating memories.' → TRUE",
+  "চাহিদা vary করে (seven to nine hours) — ঠিক আট নয়। → FALSE",
+  "'Teenagers generally need more' — কম নয়, বেশি। → FALSE",
+  "শুধু afternoon caffeine বলা আছে; সকালের কফি নিয়ে কিছু নেই। → NOT GIVEN",
+  "'linked to a weakened immune system.' → immune system",
+  "'between seven and nine hours per night.' → nine",
+  "'cool, dark, and quiet bedroom.' → quiet"
+ ],
+ r3:[
+  "'viewed with suspicion… would confuse young children' — অতীতে ক্ষতিকর ভাবা হতো। → TRUE",
+  "bilingual শিশুদের প্রতি ভাষায় 'slightly smaller vocabulary' থাকতে পারে — সবসময় বড় নয়। → FALSE",
+  "'it does not prevent the disease' — শুধু dementia দেরি করায়, ঠেকায় না। → FALSE",
+  "'strengthening… attention and memory.' → TRUE",
+  "খেলাধুলা নিয়ে প্যাসেজে কিছু নেই। → NOT GIVEN",
+  "'denser grey matter.' → matter",
+  "প্যাসেজে একে 'perspective-taking' বলা হয়েছে। → perspective",
+  "'requires consistent exposure and effort.' → exposure",
+  "'helps people focus on relevant information while ignoring distractions.' → B",
+  "লেখক বলেন benefits 'far outweigh the drawbacks' — অর্থাৎ উপকারী। → C"
+ ],
+ r4:[
+  "'conveys both the direction and the distance of the food source.' → B",
+  "'The angle of the dance indicates the direction relative to the sun.' → C",
+  "'was initially met with scepticism.' → C",
+  "'the duration of the waggle signals how far away the food lies' — distance জানায়। → TRUE",
+  "নাচ ছাড়াও 'rely heavily on… pheromones' — শুধু নাচ নয়। → FALSE",
+  "'guard bees release an alarm pheromone that alerts the colony to danger.' → TRUE",
+  "গবেষকরা এখনো 'exploring' করছেন — robot বানানো হয়েছে বলা নেই। → NOT GIVEN",
+  "'release an alarm pheromone.' → pheromone",
+  "'pesticides, disease and habitat loss.' → habitat",
+  "'bees pollinate a large proportion of the crops.' → pollinate"
+ ],
+ l1:[
+  "'…until ten at night on weekdays.' → 10pm",
+  "'…the swimming pool, which has eight lanes.' → eight",
+  "'…forty pounds per month for adults.' → 40",
+  "'students… pay only twenty-five pounds.' → 25",
+  "'the gym is… next to the café.' → cafe",
+  "'bring a towel and a padlock.' → padlock",
+  "'book at least two days in advance.' → two",
+  "'visitors must pay three pounds per hour.' → B (£3/hour)"
+ ],
+ l2:[
+  "'open… until eleven at night on weekdays.' → 11pm",
+  "'On Saturdays, we close… at six.' → 6pm",
+  "'Undergraduate students can borrow up to ten books.' → ten",
+  "'postgraduates can take out fifteen.' → fifteen",
+  "'Books are normally loaned for three weeks.' → three",
+  "'a fine of twenty pence per day.' → 20",
+  "'the first and second floors are strictly silent zones.' → second",
+  "'the help desk near the main entrance.' → entrance",
+  "'The ground floor… where talking is allowed.' → B (ground floor)"
+ ]
+};
 function norm(s){return (s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.,]$/,'');}
 function grade(id){
   const t=document.getElementById(id);
   const qs=t.querySelectorAll('.q');
   let correct=0;
-  qs.forEach(q=>{
+  qs.forEach((q,qi)=>{
     const ans=q.dataset.a.split('|').map(norm);
     q.classList.remove('ok','bad');
     q.querySelectorAll('.correctopt').forEach(o=>o.classList.remove('correctopt'));
     const old=q.querySelector('.ansreveal'); if(old) old.remove();
+    const oldE=q.querySelector('.expbox'); if(oldE) oldE.remove();
     if(q.classList.contains('choice')){
       const sel=q.querySelector('.opt.sel');
       const val=sel?norm(sel.textContent.split(')')[0].length<=2?sel.textContent:sel.textContent):'';
@@ -751,6 +824,9 @@ function grade(id){
         inp.insertAdjacentElement('afterend',s);
       }
     }
+    if(EXPLANATIONS[id] && EXPLANATIONS[id][qi]){
+      const e=document.createElement('div');e.className='expbox';e.innerHTML='💡 '+EXPLANATIONS[id][qi];q.appendChild(e);
+    }
   });
   const total=qs.length;
   const pct=Math.round(correct/total*100);
@@ -772,6 +848,7 @@ function resetTest(id){
   t.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel','correctopt'));
   t.querySelectorAll('.fill').forEach(i=>{i.value='';i.classList.remove('oki','badi')});
   t.querySelectorAll('.ansreveal').forEach(s=>s.remove());
+  t.querySelectorAll('.expbox').forEach(e=>e.remove());
   document.getElementById(id+'-res').classList.remove('show');
 }
 
