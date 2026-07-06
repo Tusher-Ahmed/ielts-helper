@@ -43,6 +43,12 @@
   table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
   th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
   th{background:var(--card2);color:var(--gold)}
+  .q-table{max-width:520px;background:#fff;border:1px solid #ccc;border-radius:8px;margin:8px 0;overflow:hidden}
+  .q-table .cap{background:#f3f4f6;color:#111;font-weight:700;padding:9px 11px;font-size:.85rem;text-align:center}
+  .q-table table{margin:0;font-size:.9rem}
+  .q-table th,.q-table td{border:1px solid #d5d9e0;padding:8px 10px;text-align:center;color:#222}
+  .q-table thead th{background:#eef1f8;color:#111}
+  .q-table tbody th{background:#f7f8fb;color:#111;text-align:left}
   .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
   .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
   .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
@@ -397,6 +403,18 @@
 
   <details><summary>Task 1 — Table (full model)</summary><div class="dbody">
     <p style="color:var(--gold)"><b>প্রশ্ন:</b> The table shows the percentage of commuters using four transport modes in three cities.</p>
+    <div class="q-table">
+      <div class="cap">Commuters using each transport mode (%)</div>
+      <table>
+        <thead><tr><th>Transport mode</th><th>City A</th><th>City B</th><th>City C</th></tr></thead>
+        <tbody>
+          <tr><th>Car</th><td>60%</td><td>25%</td><td>25%</td></tr>
+          <tr><th>Bus</th><td>20%</td><td>25%</td><td>15%</td></tr>
+          <tr><th>Metro</th><td>10%</td><td>25%</td><td>50%</td></tr>
+          <tr><th>Other</th><td>10%</td><td>25%</td><td>10%</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="model"><span class="tag">BAND 8 MODEL</span>
     <p class="en">The table <span class="hl">compares</span> the percentage of commuters using four different modes of transport across three cities, labelled A, B, and C.<br><br>
     <span class="hl2">Overall</span>, it is evident that private cars were the dominant mode of transport in City A, <span class="hl">whereas</span> public transport, particularly the metro, was clearly favoured in City C. City B, by contrast, displayed a far more balanced pattern.<br><br>
@@ -405,6 +423,9 @@
 
   <details><summary>Task 1 — Process diagram (full model)</summary><div class="dbody">
     <p style="color:var(--gold)"><b>প্রশ্ন:</b> The diagram shows how coffee is produced, from harvesting to packaging.</p>
+    <svg viewBox="0 0 560 290" width="100%" style="max-width:520px;background:#fff;border:1px solid #ccc;border-radius:8px;margin:8px 0" font-family="Poppins,sans-serif"><defs><marker id="arrH" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1a73e8"/></marker></defs><text x="280" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">The coffee production process</text>
+    <g font-size="10.5" fill="#111" text-anchor="middle"><rect x="15" y="50" width="155" height="56" rx="8" fill="#eaf1fd" stroke="#1a73e8"/><text x="92" y="74">1. Cherries are</text><text x="92" y="90">handpicked</text><rect x="200" y="50" width="155" height="56" rx="8" fill="#eaf1fd" stroke="#1a73e8"/><text x="277" y="74">2. Beans extracted</text><text x="277" y="90">from cherries</text><rect x="385" y="50" width="160" height="56" rx="8" fill="#eaf1fd" stroke="#1a73e8"/><text x="465" y="74">3. Dried in</text><text x="465" y="90">the sun</text><rect x="385" y="185" width="160" height="56" rx="8" fill="#eaf1fd" stroke="#1a73e8"/><text x="465" y="209">4. Roasted at</text><text x="465" y="225">high heat</text><rect x="200" y="185" width="155" height="56" rx="8" fill="#eaf1fd" stroke="#1a73e8"/><text x="277" y="209">5. Ground into</text><text x="277" y="225">a fine powder</text><rect x="15" y="185" width="155" height="56" rx="8" fill="#eaf1fd" stroke="#1a73e8"/><text x="92" y="209">6. Packaged &amp;</text><text x="92" y="225">sold in shops</text></g>
+    <g stroke="#1a73e8" stroke-width="2" fill="none" marker-end="url(#arrH)"><line x1="170" y1="78" x2="196" y2="78"/><line x1="355" y1="78" x2="381" y2="78"/><path d="M465,106 L465,181"/><line x1="385" y1="213" x2="359" y2="213"/><line x1="200" y1="213" x2="174" y2="213"/></g></svg>
     <div class="model"><span class="tag">BAND 8 MODEL</span>
     <p class="en">The diagram <span class="hl">illustrates</span> the various stages involved in producing coffee, from the initial harvesting of the beans through to the final packaging of the product.<br><br>
     <span class="hl2">Overall</span>, the process is linear and consists of several distinct stages, <span class="hl">beginning with</span> the picking of the coffee cherries and <span class="hl">ending with</span> the packaging and distribution of ground coffee that is ready for sale.<br><br>
@@ -414,6 +435,21 @@
 
   <details><summary>Task 1 — Map / Plan (full model)</summary><div class="dbody">
     <p style="color:var(--gold)"><b>প্রশ্ন:</b> The two maps show a town centre in 2000 and in the present day.</p>
+    <svg viewBox="0 0 560 300" width="100%" style="max-width:520px;background:#fff;border:1px solid #ccc;border-radius:8px;margin:8px 0" font-family="Poppins,sans-serif"><text x="140" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Town centre — 2000</text><text x="420" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Town centre — present day</text>
+    <g font-size="10" fill="#333" text-anchor="middle">
+    <!-- 2000 map -->
+    <rect x="20" y="35" width="240" height="235" fill="#fbfbf7" stroke="#999"/>
+    <rect x="35" y="48" width="210" height="80" fill="#bfe3b5" stroke="#5a9c4e"/><text x="140" y="93" fill="#2f6b26" font-weight="bold">Park</text>
+    <g fill="#e0c39a" stroke="#b08a55"><rect x="185" y="150" width="26" height="26"/><rect x="217" y="150" width="26" height="26"/><rect x="185" y="182" width="26" height="26"/><rect x="217" y="182" width="26" height="26"/></g><text x="214" y="228" fill="#7a5a2a">Houses</text>
+    <rect x="35" y="140" width="120" height="115" fill="none"/><text x="95" y="205" fill="#888">Shops</text>
+    <line x1="20" y1="255" x2="260" y2="255" stroke="#c9c9c9" stroke-width="6"/>
+    <!-- present map -->
+    <rect x="300" y="35" width="240" height="235" fill="#fbfbf7" stroke="#999"/>
+    <rect x="315" y="48" width="210" height="80" fill="#bcccee" stroke="#3f63b0"/><text x="420" y="88" fill="#25407e" font-weight="bold">Shopping</text><text x="420" y="103" fill="#25407e" font-weight="bold">Centre</text>
+    <rect x="463" y="150" width="62" height="60" fill="#e5e5e5" stroke="#999"/><line x1="463" y1="170" x2="525" y2="170" stroke="#bbb"/><line x1="463" y1="190" x2="525" y2="190" stroke="#bbb"/><line x1="494" y1="150" x2="494" y2="210" stroke="#bbb"/><text x="494" y="228" fill="#666">Car park</text>
+    <rect x="315" y="140" width="120" height="115" fill="none"/><text x="375" y="205" fill="#888">Shops</text>
+    <line x1="300" y1="255" x2="540" y2="255" stroke="#444" stroke-width="7"/><text x="420" y="250" fill="#fff" font-size="9" font-weight="bold">New main road</text>
+    </g></svg>
     <div class="model"><span class="tag">BAND 8 MODEL</span>
     <p class="en">The two maps <span class="hl">illustrate</span> the changes that took place in a town centre over the period between 2000 and the present day.<br><br>
     <span class="hl2">Overall</span>, it is evident that the area was <span class="hl">transformed</span> from a largely green and residential space into a much more commercial and developed one, with several new facilities being added over the years.<br><br>
