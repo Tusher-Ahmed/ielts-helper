@@ -2322,6 +2322,151 @@ const MOCKS=[
   task1:"The table below shows the percentage of households owning four types of pet in two countries in 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people think that keeping wild or exotic animals as pets should be banned, while others disagree. Discuss both views and give your own opinion. Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 17 (Exam Level) ===================== */
+{
+ name:'Mock 17 — Exam Level',
+ blurb:'🔴 First-aid course · Community garden · Eating-habits survey + How caves form · The cat · Junk-food ads',
+ listen:[
+  {title:'Registering for a first-aid course',
+   transcript:"Hello, I'd like to sign up for the first-aid course. Certainly. Which level, basic or advanced? The basic course. That runs over one day... sorry, two days. When? The nineteenth of March — no, the ninth. The cost is sixty-five pounds... sorry, sixty. Does that include anything? Yes, a certificate on completion. Should I bring anything? Just a packed lunch; tea and coffee are provided. Who teaches it? An experienced nurse. And where is it held? In room five, in the main building. How do I book? You can book online or by phone, but for this course, by phone only.",
+   Q:[
+    {t:'text',a:'first',q:'Course: ______ aid'},
+    {t:'text',a:'basic',q:'Level: ______'},
+    {t:'text',a:'2|two',q:'Duration: ______ days'},
+    {t:'text',a:'9th|ninth|9',q:'Date: ______ of March'},
+    {t:'text',a:'60|sixty',q:'Cost: £______'},
+    {t:'text',a:'certificate',q:'Includes a ______ on completion.'},
+    {t:'text',a:'lunch',q:'Bring a packed ______.'},
+    {t:'text',a:'nurse',q:'Taught by an experienced ______.'},
+    {t:'text',a:'5|five',q:'Held in room ______.'},
+    {t:'choice',a:'B',q:'For this course, you can book by:',opts:['A) online','B) phone','C) email','D) post']}
+   ]},
+  {title:'Community garden open day',
+   transcript:"Welcome to the Riverside Community Garden open day, which takes place this Sunday. There'll be plenty of free activities, including a planting workshop for beginners. Our plant sale opens at ten in the morning, and everything is grown here by our members. The café, run entirely by volunteers, will serve homemade cake. If you'd like to help with the planting, please bring your own gloves. There's a guided tour of the garden at noon... sorry, at two o'clock. Children's activities are in the area near the pond. A few notes: dogs are welcome but must be kept on a lead, and parking nearby is very limited, so please come by bus if you can.",
+   Q:[
+    {t:'text',a:'open',q:'The event is an ______ day.'},
+    {t:'text',a:'sunday',q:'It takes place this ______.'},
+    {t:'text',a:'planting|plant',q:'Free activities include a ______ workshop.'},
+    {t:'text',a:'10am|10|ten',q:'The plant sale opens at ______.'},
+    {t:'text',a:'volunteers|volunteer',q:'The café is run by ______.'},
+    {t:'text',a:'gloves|glove',q:'Helpers should bring their own ______.'},
+    {t:'text',a:'2pm|2|two|two oclock',q:'The guided tour is at ______.'},
+    {t:'text',a:'pond',q:"Children's activities are near the ______."},
+    {t:'choice',a:'B',q:'Dogs must be:',opts:['A) left at home','B) kept on a lead','C) free to run','D) carried']},
+    {t:'choice',a:'C',q:'Parking nearby is:',opts:['A) free','B) plentiful','C) limited','D) underground']}
+   ]},
+  {title:'Two students plan a survey on eating habits',
+   transcript:"So, our project is a survey on students' eating habits. How will we collect the data? A questionnaire is easiest. How many participants? Fifty... let's aim for sixty. Which age group? University students, like us. How many questions? Let's keep it short, ten questions. How do we distribute it? Online, through a link. And how will we analyse the results? I was thinking SPSS... actually, Excel is simpler for this. How should we present it? A bar chart would be clearest. When's it due? Week eight... sorry, week nine. One thing — we must keep responses anonymous, for ethical reasons.",
+   Q:[
+    {t:'text',a:'habits|habit',q:"The survey is on students' eating ______."},
+    {t:'text',a:'questionnaire',q:'Method: a ______.'},
+    {t:'choice',a:'C',q:'Number of participants:',opts:['A) 40','B) 50','C) 60','D) 100']},
+    {t:'text',a:'students|student',q:'Age group: university ______.'},
+    {t:'text',a:'10|ten',q:'Number of questions: ______.'},
+    {t:'text',a:'online',q:'The questionnaire is distributed ______.'},
+    {t:'choice',a:'B',q:'They will analyse the data with:',opts:['A) SPSS','B) Excel','C) R','D) paper']},
+    {t:'text',a:'bar',q:'They will present the results as a ______ chart.'},
+    {t:'choice',a:'C',q:'Deadline:',opts:['A) week 7','B) week 8','C) week 9','D) week 10']},
+    {t:'text',a:'anonymous',q:'Responses must be kept ______.'}
+   ]},
+  {title:'Lecture: the science of hearing',
+   transcript:"Today's lecture is about how we hear. Sound waves travel down the ear canal until they reach the eardrum, a thin membrane that vibrates when sound hits it. These vibrations pass to three tiny bones, the smallest in the body, which amplify the sound and pass it on. The vibrations then enter a spiral-shaped organ called the cochlea, which is filled with fluid. Inside are thousands of tiny hairs that move with the fluid and convert the vibrations into electrical signals. These signals travel along the auditory nerve to the brain, which interprets them as sound. Loud noise can permanently damage these delicate hairs, causing hearing loss, and unlike some animals, humans cannot grow them back. This is why protecting our ears from very loud sounds is so important.",
+   Q:[
+    {t:'text',a:'canal',q:'Sound waves travel down the ear ______.'},
+    {t:'text',a:'vibrates|vibrate',q:'The eardrum ______ when sound hits it.'},
+    {t:'text',a:'bones|bone',q:'Three tiny ______ amplify the sound.'},
+    {t:'text',a:'cochlea',q:'The vibrations enter a spiral organ called the ______.'},
+    {t:'text',a:'fluid',q:'The cochlea is filled with ______.'},
+    {t:'text',a:'signals|signal',q:'Tiny hairs convert vibrations into electrical ______.'},
+    {t:'text',a:'nerve',q:'Signals travel along the auditory ______ to the brain.'},
+    {t:'text',a:'hairs|hair',q:'Loud noise can damage the tiny ______.'},
+    {t:'choice',a:'B',q:'Unlike some animals, humans cannot:',opts:['A) hear high sounds','B) regrow the hairs','C) feel vibrations','D) sleep']},
+    {t:'choice',a:'B',q:'The three bones are described as the ______ in the body:',opts:['A) largest','B) smallest','C) hardest','D) softest']}
+   ]}
+ ],
+ read:[
+  {title:'How Caves Are Formed',
+   paras:[
+    "List of Headings —  i) Water that dissolves rock   ii) The slow carving of a cave   iii) Decorating the cave   iv) Life in the dark   v) Other kinds of cave   vi) Exploring the underworld   vii) Working out a cave's age   viii) How mountains are made",
+    "A   Most of the world's great caves are found in a type of rock called limestone, and they are created by water. Rainwater, as it falls and seeps through the soil, absorbs carbon dioxide and becomes a weak acid. This acid is far too gentle to harm us, but over vast spans of time it can dissolve limestone, slowly eating away the rock.",
+    "B   This process is astonishingly slow. Over thousands, even millions, of years, the trickling acid widens tiny cracks in the rock into channels, then passages, and finally into great underground chambers. A cave that a person can walk through may have taken longer to form than the whole of human history.",
+    "C   As water continues to drip through a finished cave, it creates the beautiful decorations for which caves are famous. Each drop leaves behind a tiny amount of dissolved mineral. Over centuries, these deposits build up into icicle-like stalactites, hanging from the ceiling, and stalagmites, rising from the floor, which may eventually meet to form a column.",
+    "D   Caves are also home to strange and specialised life. In the total darkness of the deep cave, where no plant can grow, live creatures found nowhere else. Many have lost their eyes and their colour entirely, since sight and camouflage are useless where there is no light, relying instead on other senses to survive.",
+    "E   Not all caves are carved by acid. Along coastlines, the pounding of waves can hollow out sea caves in solid cliffs. Flowing lava from a volcano can leave behind long tunnels as its surface cools and hardens while the molten rock inside drains away. And in glaciers, meltwater can carve caves of shimmering blue ice.",
+    "F   For scientists and adventurers, caves are a frontier still only partly explored. Their still air preserves things that would vanish above ground: the paintings of Ice Age artists, the bones of long-extinct animals, and layers of mineral that record the climate of the distant past. To enter a cave is, in a sense, to travel back in time."
+   ],
+   Q:[
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Most great caves are formed in limestone by water.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Caves form very quickly, within a few years.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Stalactites rise from the floor of a cave.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some cave animals have lost their eyes.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'acid',q:'Rainwater absorbs carbon dioxide and becomes a weak ______.'},
+    {t:'text',a:'stalactites|stalactite',q:'Deposits that hang from the ceiling are called ______.'},
+    {t:'text',a:'lava',q:'Flowing ______ from a volcano can leave behind long tunnels.'}
+   ]},
+  {title:'The Domestication of the Cat',
+   paras:[
+    "A   The cat is one of the most popular pets in the world, yet it is also one of the most mysterious. Unlike the dog, which was actively bred by humans over thousands of years for particular tasks, the cat, it seems, largely domesticated itself. In many ways, the cat that curls up on the sofa is barely different from its wild ancestors.",
+    "B   Cats and humans first came together, most scientists believe, when people began to farm. Stored grain attracted mice and rats, and the mice and rats attracted wild cats, which found in the new farming villages an easy and reliable supply of prey. The cats kept the pests down; the farmers, in return, tolerated and welcomed them. It was a partnership that suited both.",
+    "C   This origin explains much about the cat's character. Because cats were never bred to obey or to work alongside people, as dogs were, they have remained far more independent. A cat regards its human less as a master than as a companion, and keeps much of the self-reliant behaviour of a wild hunter.",
+    "D   Genetic studies have traced almost all domestic cats back to a single wild species, the African wildcat, which still lives across parts of Africa and the Middle East. Tame and wild cats can still interbreed easily, and a domestic cat left to fend for itself quickly reverts to a wild way of life, unlike most other domestic animals.",
+    "E   Cats have long held a special, and sometimes troubled, place in human culture. In ancient Egypt they were revered, even worshipped, and killing one was a crime. In medieval Europe, by contrast, they were sometimes feared and associated with witchcraft. Attitudes to the cat, it seems, have always been strong, whether of love or of suspicion.",
+    "F   Today the cat is more popular than ever, kept as a pet by hundreds of millions of people. Yet it retains an air of independence that many owners find part of its charm. The cat, one writer observed, is the only domestic animal that has never entirely accepted being owned."
+   ],
+   Q:[
+    {t:'choice',a:'C',q:'Compared with the dog, the cat was:',opts:['A) bred for many tasks','B) domesticated much earlier','C) largely self-domesticated','D) never tamed at all']},
+    {t:'choice',a:'B',q:'Cats and humans first came together because of:',opts:['A) hunting together','B) stored grain attracting rodents','C) companionship','D) religion']},
+    {t:'choice',a:'B',q:'Almost all domestic cats descend from the:',opts:['A) European wildcat','B) African wildcat','C) lion','D) lynx']},
+    {t:'choice',a:'B',q:'In ancient Egypt, cats were:',opts:['A) feared','B) revered','C) eaten','D) ignored']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains how cats behave differently from dogs?'},
+    {t:'text',a:'E',q:"Which paragraph (A–F) describes the cat's changing image in different cultures?"},
+    {t:'text',a:'D',q:'Which paragraph (A–F) names the single wild species cats descend from?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains how farming brought cats and humans together?'},
+    {t:'text',a:'F',q:"Which paragraph (A–F) describes the cat's continuing popularity and independence?"},
+    {t:'text',a:'grain',q:'Stored ______ attracted mice and rats to farming villages.'},
+    {t:'text',a:'independent',q:'Cats have remained more ______ than dogs.'},
+    {t:'text',a:'reverts|revert',q:'A domestic cat left alone quickly ______ to a wild life.'},
+    {t:'text',a:'witchcraft',q:'In medieval Europe, cats were associated with ______.'}
+   ]},
+  {title:'Should Junk Food Advertising Be Banned?',
+   paras:[
+    "A   As rates of obesity rise in many countries, especially among children, governments are looking for ways to encourage healthier eating. One measure that is increasingly discussed, and in some places already introduced, is a ban on the advertising of unhealthy food, particularly to children. Like most such proposals, it has both passionate supporters and determined opponents.",
+    "B   Those in favour argue that advertising works, and that this is precisely the problem. Food companies spend vast sums promoting products high in sugar, salt and fat, and much of this is aimed at children, who are easily influenced and cannot judge the claims critically. If advertising can persuade children to want junk food, supporters argue, then restricting it could help protect their health.",
+    "C   There is some evidence to support this. Studies have found that children exposed to more food advertising tend to eat more of the products advertised, and that advertising can shape food preferences from a very young age. In several countries, limits on junk-food advertising have been followed by modest falls in the consumption of the targeted products.",
+    "D   Opponents, however, raise serious objections. Some argue that a ban interferes with the freedom of companies to promote legal products and of consumers to make their own choices. Others question whether it would really work, pointing out that children see advertising in many forms, including online and through social media, that would be hard to control.",
+    "E   There is also the question of responsibility. Critics argue that what children eat is chiefly a matter for parents, not governments, and that education about healthy eating would be more effective, and less heavy-handed, than a ban. Treating advertising as the main cause of obesity, they suggest, is far too simple.",
+    "F   Most experts take a middle position. Advertising, they accept, is only one of many causes of poor diet, alongside price, availability and habit, so a ban alone will not solve the problem. But as one part of a wider strategy, they argue, sensible limits on marketing unhealthy food to children may still be worthwhile."
+   ],
+   Q:[
+    {t:'choice',a:'YES',q:'Obesity is rising in many countries, especially among children.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Supporters believe advertising has little effect on children.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some studies link more food advertising to eating more of the products.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Opponents believe a ban would be easy to enforce online.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some critics argue education would be more effective than a ban.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most experts think a ban alone would solve the obesity problem.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'C',q:"Which paragraph (A–F) gives evidence that advertising shapes children's food preferences?"},
+    {t:'text',a:'D',q:'Which paragraph (A–F) argues that a ban limits freedom of choice?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) says healthy eating is mainly the parents responsibility?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) gives the balanced position of most experts?'},
+    {t:'text',a:'fat',q:'Junk food is often high in sugar, salt and ______.'},
+    {t:'text',a:'age',q:'Advertising can shape food preferences from a very young ______.'},
+    {t:'text',a:'price|availability|habit',q:'Besides advertising, name one other cause of poor diet mentioned.'},
+    {t:'text',a:'strategy',q:'Experts see limits on advertising as part of a wider ______.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Fast-food meals eaten per person per week, three countries</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Country</th><th style='border:1px solid #999;padding:5px 10px'>2000</th><th style='border:1px solid #999;padding:5px 10px'>2010</th><th style='border:1px solid #999;padding:5px 10px'>2020</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Country A</td><td style='border:1px solid #999;padding:5px 10px'>1.5</td><td style='border:1px solid #999;padding:5px 10px'>2.4</td><td style='border:1px solid #999;padding:5px 10px'>3.2</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Country B</td><td style='border:1px solid #999;padding:5px 10px'>2.0</td><td style='border:1px solid #999;padding:5px 10px'>2.2</td><td style='border:1px solid #999;padding:5px 10px'>2.1</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Country C</td><td style='border:1px solid #999;padding:5px 10px'>0.8</td><td style='border:1px solid #999;padding:5px 10px'>1.6</td><td style='border:1px solid #999;padding:5px 10px'>2.8</td></tr></table>",
+  task1:"The table below shows the average number of fast-food meals eaten per person per week in three countries in 2000, 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that advertising unhealthy food to children should be banned. To what extent do you agree or disagree? Write at least 250 words."
+ }
 }
 
 ];
