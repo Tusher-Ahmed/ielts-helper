@@ -112,8 +112,12 @@
       <button class="btn btn-ghost" onclick="pauseTimer()">⏸️ থামাও</button>
       <button class="btn btn-ghost" onclick="resetTimer()">♻️ রিসেট</button>
       <button class="btn btn-pink" onclick="randomCue()">🎲 র‍্যান্ডম</button>
-      <a href="speaking-module.html" class="btn btn-ghost">🎙️ রেকর্ডার</a>
+      <button class="btn btn-ghost" id="recBtn" onclick="startRec()">🎙️ রেকর্ড করো</button>
+      <button class="btn btn-ghost" id="stopBtn" onclick="stopRec()" disabled>⏹️ স্টপ</button>
     </div>
+    <div id="recStatus" style="margin-top:10px;font-size:.92rem;color:#cfd4ff"></div>
+    <div id="recList" style="margin-top:10px;display:flex;flex-direction:column;gap:10px"></div>
+    <div style="margin-top:8px;font-size:.82rem;color:#8b90c0">🎧 এই পেজেই রেকর্ড করো — টাইমার চালিয়ে বলো, নিচে সাথে সাথে শুনে ভুল ধরো। (noise-suppression চালু আছে)</div>
   </div>
 
   <div class="card">
@@ -345,6 +349,54 @@ function startTimer(){
 }
 function pauseTimer(){clearInterval(intv);intv=null;}
 function resetTimer(){clearInterval(intv);intv=null;phase='idle';sec=120;tEl.style.color='var(--accent2)';tEl.textContent='02:00';pEl.textContent='▶️ চাপলে: ১ মিনিট প্রস্তুতি, তারপর ২ মিনিট বলা';}
+
+/* ===== INLINE VOICE RECORDER (record on this page, no redirect) ===== */
+let _mr=null,_chunks=[],_recN=0,_recTick=null;
+const recBtn=document.getElementById('recBtn'),stopBtn=document.getElementById('stopBtn'),
+      recStatus=document.getElementById('recStatus'),recList=document.getElementById('recList');
+async function startRec(){
+  if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)){
+    recStatus.textContent='⚠️ এই ব্রাউজারে রেকর্ডিং সাপোর্ট করে না।';return;
+  }
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:{
+      noiseSuppression:true,   // background noise/hiss কমায়
+      echoCancellation:true,   // echo/feedback বন্ধ করে
+      autoGainControl:true,    // ভয়েস লেভেল সমান রাখে
+      channelCount:1           // mono = পরিষ্কার ভয়েস
+    }});
+    let mime='audio/webm;codecs=opus';
+    if(!(window.MediaRecorder&&MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(mime)))mime='audio/webm';
+    try{_mr=new MediaRecorder(stream,{mimeType:mime,audioBitsPerSecond:128000});}
+    catch(_){_mr=new MediaRecorder(stream);}
+    _chunks=[];
+    _mr.ondataavailable=e=>{if(e.data.size>0)_chunks.push(e.data);};
+    _mr.onstop=()=>{
+      const blob=new Blob(_chunks,{type:'audio/webm'});
+      const url=URL.createObjectURL(blob);_recN++;
+      const item=document.createElement('div');
+      item.style.cssText='background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:10px 12px';
+      item.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:.9rem;color:#cfd4ff"><span>🎧 রেকর্ডিং #'+_recN+'</span><button class="btn btn-ghost" style="padding:4px 10px;font-size:.8rem">🗑️ মুছে ফেলো</button></div>';
+      const audio=document.createElement('audio');audio.controls=true;audio.src=url;audio.style.width='100%';
+      item.appendChild(audio);
+      item.querySelector('button').onclick=()=>{URL.revokeObjectURL(url);item.remove();};
+      recList.prepend(item);
+      stream.getTracks().forEach(t=>t.stop());
+    };
+    _mr.start();
+    recBtn.disabled=true;stopBtn.disabled=false;
+    let s=0;recStatus.innerHTML='🔴 রেকর্ড হচ্ছে… 00:00';
+    _recTick=setInterval(()=>{s++;recStatus.innerHTML='🔴 রেকর্ড হচ্ছে… '+fmt(s);},1000);
+  }catch(err){
+    recStatus.textContent='⚠️ মাইক্রোফোন পাওয়া যায়নি বা পারমিশন দেওয়া হয়নি।';
+  }
+}
+function stopRec(){
+  if(_mr&&_mr.state!=='inactive')_mr.stop();
+  recBtn.disabled=false;stopBtn.disabled=true;
+  clearInterval(_recTick);
+  recStatus.textContent='✅ সেভ হয়েছে — নিচে শুনে ভুল ধরো।';
+}
 </script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
 </html>
