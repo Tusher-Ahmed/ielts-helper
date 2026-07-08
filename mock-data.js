@@ -2612,6 +2612,151 @@ const MOCKS=[
   task1:"The table below shows how commuters in a city travelled to work in 2010 and 2020, by percentage. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people think that public transport should be made free for everyone. Do the advantages of this outweigh the disadvantages? Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 19 (Exam Level) ===================== */
+{
+ name:'Mock 19 — Exam Level',
+ blurb:'🔴 Swimming course · Theatre visit · Science-fair poster + The chameleon · History of perfume · Homework',
+ listen:[
+  {title:'Enquiring about a swimming course',
+   transcript:"Hello, I'd like to enrol my daughter in a swimming course. Of course. How old is she? Eight... sorry, six. And has she swum before? No, so the beginner level. We run beginner classes on Saturdays. At what time? Eleven o'clock... actually, ten. The course runs for eight weeks. The cost is fifty pounds... sorry, fifty-five. Does she need anything? Just a swimming cap; goggles are optional. Who's the instructor? Her name is Emma. Is it the indoor or outdoor pool? The indoor pool, which is heated. How do we register? You can register online, but for children's courses, please come to reception.",
+   Q:[
+    {t:'text',a:'6|six',q:"Child's age: ______"},
+    {t:'text',a:'beginner',q:'Level: ______'},
+    {t:'text',a:'saturday|saturdays',q:'Day: ______'},
+    {t:'text',a:'10am|10|ten',q:'Time: ______'},
+    {t:'text',a:'8|eight',q:'Course length: ______ weeks'},
+    {t:'text',a:'55|fifty-five',q:'Cost: £______'},
+    {t:'text',a:'cap',q:'Bring a swimming ______.'},
+    {t:'text',a:'emma',q:"Instructor's name: ______"},
+    {t:'text',a:'indoor',q:'The ______ pool is used.'},
+    {t:'choice',a:'B',q:'To register for children’s courses:',opts:['A) online','B) at reception','C) by phone','D) by post']}
+   ]},
+  {title:'Theatre visit information',
+   transcript:"Welcome to the Royal Theatre. This evening's performance is a comedy. The show begins at half past seven, so please take your seats a few minutes before. There will be one interval of twenty minutes, halfway through. If you arrive late, you will be asked to wait until a suitable break, to avoid disturbing others. The cloakroom, where you may leave coats, is free of charge. Please note that photography is not permitted during the performance. The bar is open before the show and during the interval, and closes at ten. Programmes are available for three pounds. The whole show lasts about two hours, including the interval. Tickets booked online should be collected at the box office.",
+   Q:[
+    {t:'text',a:'comedy',q:"This evening's performance is a ______."},
+    {t:'text',a:'7.30|7:30|half past seven',q:'The show begins at ______.'},
+    {t:'text',a:'20|twenty',q:'There is one interval of ______ minutes.'},
+    {t:'text',a:'wait',q:'Latecomers will be asked to ______.'},
+    {t:'text',a:'free',q:'The cloakroom is ______ of charge.'},
+    {t:'text',a:'photography|photos|photo',q:'______ is not permitted during the show.'},
+    {t:'text',a:'10|ten',q:'The bar closes at ______.'},
+    {t:'text',a:'3|three',q:'Programmes cost £______.'},
+    {t:'choice',a:'B',q:'The show lasts about:',opts:['A) one hour','B) two hours','C) three hours','D) four hours']},
+    {t:'choice',a:'B',q:'Online tickets are collected:',opts:['A) by post','B) at the box office','C) by email','D) at the door']}
+   ]},
+  {title:'Two students plan a science-fair poster',
+   transcript:"For the science fair, we need to design a poster. What topic? Let's do recycling. Good. What should we focus on? Plastic, specifically, since it's such a big problem. Where do we get our data? We ran a survey in our class, remember. What size poster? A1, so it's big enough to read. What colours? Blue and green... let's mainly use green, for the eco theme. Should we include images? Definitely, some photos of local recycling. And the main message? 'Reduce waste'. Where do we print it? At the library; they have a large printer. When's it due? The tenth... sorry, the twentieth of April. And we present it to the judges on the day.",
+   Q:[
+    {t:'text',a:'recycling|recycle',q:'The poster topic is ______.'},
+    {t:'text',a:'plastic',q:'They focus specifically on ______.'},
+    {t:'text',a:'survey',q:'Their data comes from a ______.'},
+    {t:'text',a:'a1',q:'Poster size: ______.'},
+    {t:'text',a:'green',q:'The main colour is ______.'},
+    {t:'text',a:'photos|photo|photographs',q:'They will include some ______.'},
+    {t:'text',a:'waste',q:"The main message is 'Reduce ______'."},
+    {t:'text',a:'library',q:'They will print it at the ______.'},
+    {t:'text',a:'20th|twentieth|20',q:'Deadline: ______ of April'},
+    {t:'choice',a:'B',q:'They present the poster to:',opts:['A) their teacher','B) the judges','C) other students','D) parents']}
+   ]},
+  {title:'Lecture: how a seed grows',
+   transcript:"Today's lecture is about how a seed grows into a plant, a process called germination. A seed is far from lifeless; inside it lies a tiny, dormant plant, together with a store of food to nourish it until it can feed itself. To begin growing, a seed needs the right conditions: water, warmth and oxygen. Interestingly, most seeds do not need light to germinate. When these conditions are met, the seed swells and bursts open. The first part to emerge is the root, which grows downward in search of water. Next, a shoot grows upward towards the surface. Once the shoot reaches the light and its first leaves open, the young plant can begin to make its own food by photosynthesis, and no longer depends on the food store in the seed. Some seeds can remain dormant for many years, waiting for the right moment. Seeds are spread far and wide by wind, by water, and by animals, which helps plants colonise new ground.",
+   Q:[
+    {t:'text',a:'plant',q:'Inside a seed lies a tiny, dormant ______.'},
+    {t:'text',a:'food',q:'A seed also contains a store of ______.'},
+    {t:'text',a:'oxygen',q:'To germinate, a seed needs water, warmth and ______.'},
+    {t:'text',a:'root',q:'The first part to emerge is the ______.'},
+    {t:'text',a:'shoot',q:'Next, a ______ grows upward.'},
+    {t:'text',a:'photosynthesis',q:'The young plant makes food by ______.'},
+    {t:'text',a:'dormant',q:'Some seeds remain ______ for many years.'},
+    {t:'text',a:'animals|animal',q:'Seeds are spread by wind, water and ______.'},
+    {t:'choice',a:'B',q:'To germinate, most seeds:',opts:['A) need light','B) do not need light','C) need cold','D) need soil only']},
+    {t:'choice',a:'B',q:'The root grows:',opts:['A) upward','B) downward','C) sideways','D) in a circle']}
+   ]}
+ ],
+ read:[
+  {title:'How the Chameleon Changes Colour',
+   paras:[
+    "List of Headings —  i) More than camouflage   ii) A surprising mechanism   iii) Not for hiding, but for talking   iv) A tongue like a weapon   v) Eyes that move alone   vi) A shrinking habitat   vii) The colours of the rainbow   viii) A cold-blooded life",
+    "A   The chameleon is famous for one remarkable ability: it can change the colour of its skin. Popular belief holds that it does this to blend in with its surroundings, becoming green on a leaf or brown on a branch. The reality, as scientists have discovered, is more surprising — and colour change is only one of several extraordinary features of this strange lizard.",
+    "B   For a long time it was thought that chameleons changed colour by moving pigment around in their skin. Recent research has revealed something far stranger. Their skin contains layers of tiny crystals, and by relaxing or tightening the skin, the chameleon changes the spacing between these crystals. Because the spacing determines which colours of light are reflected, the animal's colour shifts — not with pigment, but with structure.",
+    "C   More surprising still is why they do it. Chameleons change colour far less to hide than to communicate. A bright display may warn off a rival or attract a mate, while darker colours can signal fear or submission. Colour also helps control temperature: a cold chameleon may turn dark to absorb more heat from the sun. Camouflage, it turns out, is a minor use at best.",
+    "D   The chameleon's other tools are just as remarkable. To catch its prey, it fires out a tongue that can be longer than its entire body, striking an insect in a fraction of a second and drawing it back to the mouth. The tip is sticky and forms a suction cup, so that few victims escape.",
+    "E   Then there are the eyes. Each of a chameleon's bulging eyes can swivel completely independently of the other, so that the animal can look forward with one and backward with the other at the same time. This gives it a full view of its surroundings without moving its body, ideal for spotting both prey and danger.",
+    "F   Sadly, many of the world's chameleons are now under threat. Most live in the forests of Madagascar and Africa, and as these forests are cut down for farming and timber, the lizards lose their homes. Several species are now endangered, and some may vanish before science has even fully understood them."
+   ],
+   Q:[
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:'Chameleons change colour by moving pigment around their skin.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Chameleons change colour mainly to hide.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:"A chameleon's tongue can be longer than its body.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:"Each of a chameleon's eyes can move independently.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'crystals|crystal',q:"A chameleon's skin contains tiny ______ that reflect light."},
+    {t:'text',a:'dark|darker',q:'A cold chameleon may turn ______ to absorb heat.'},
+    {t:'text',a:'Madagascar',q:'Most chameleons live in the forests of ______ and Africa.'}
+   ]},
+  {title:'The History of Perfume',
+   paras:[
+    "A   The desire to smell sweet is very ancient. Long before recorded history, people burned fragrant woods and resins, and the word 'perfume' itself comes from the Latin meaning 'through smoke', a reminder of these origins. At first, pleasant scents were used less for personal vanity than in religious ceremonies, as offerings to the gods.",
+    "B   The ancient Egyptians took perfume to new heights. They used fragrant oils in their temples, in medicine, and in the elaborate process of preparing the dead. Wealthy Egyptians scented their bodies and their homes, and perfume became a mark of status and luxury throughout the ancient world.",
+    "C   A crucial advance was the art of extracting scent from flowers. Early methods soaked petals in oil or fat to capture their fragrance, but these were slow and produced weak results. The great breakthrough came with distillation, perfected by scholars of the medieval Islamic world, which allowed the pure essence of a flower to be captured in a concentrated form.",
+    "D   Perfume-making later flourished in Europe, above all in France, which remains the centre of the industry to this day. The town of Grasse, with its fields of flowers, became famous for producing the raw materials, while skilled perfumers, sometimes called 'noses', learned to blend hundreds of ingredients into a single, harmonious scent.",
+    "E   A modern perfume is a work of remarkable complexity. It is built in 'notes' that unfold over time: the light 'top notes' smelt first, the 'heart notes' that follow, and the deep 'base notes' that linger for hours. Creating a successful perfume can take a skilled maker years of patient work.",
+    "F   The twentieth century transformed the industry. The invention of synthetic scents, made in the laboratory rather than extracted from nature, made perfume far cheaper and available to everyone, not just the rich. Today, perfume is a global business worth billions, though the finest scents are still crafted with the same care as centuries ago."
+   ],
+   Q:[
+    {t:'choice',a:'B',q:"The word 'perfume' comes from the Latin meaning:",opts:['A) sweet flower','B) through smoke','C) from France','D) pure oil']},
+    {t:'choice',a:'B',q:'At first, pleasant scents were used mainly in:',opts:['A) personal vanity','B) religious ceremonies','C) cooking','D) medicine only']},
+    {t:'choice',a:'C',q:"Distillation, which captured a flower's pure essence, was perfected by:",opts:['A) the Egyptians','B) the French','C) medieval Islamic scholars','D) the Romans']},
+    {t:'choice',a:'B',q:'The town of Grasse became famous for:',opts:['A) selling perfume','B) producing the raw materials','C) inventing synthetics','D) religious rituals']},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains how a modern perfume unfolds over time?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the effect of synthetic scents?'},
+    {t:'text',a:'A',q:"Which paragraph (A–F) explains the origin of the word 'perfume'?"},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the breakthrough of distillation?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the role of the Egyptians?'},
+    {t:'text',a:'dead',q:'The Egyptians used fragrant oils in temples, medicine and preparing the ______.'},
+    {t:'text',a:'grasse',q:'France, especially the town of ______, became a centre of perfume.'},
+    {t:'text',a:'top',q:"A perfume's light first notes are called ______ notes."},
+    {t:'text',a:'cheaper|cheap',q:'Synthetic scents made perfume far ______.'}
+   ]},
+  {title:'Is Homework Worthwhile?',
+   paras:[
+    "A   Homework is such a familiar part of school life that few stop to ask whether it actually works. Yet the value of homework is far from settled. Some argue it is essential for learning; others believe it does more harm than good, robbing children of rest and play. As schools rethink how they teach, the debate over homework has become surprisingly heated.",
+    "B   Supporters make several arguments in its favour. Homework, they say, gives students a chance to practise and reinforce what they have learned in class, which helps it stick. It also teaches valuable habits — planning, self-discipline and independent study — that will serve young people well in later life, at university and at work.",
+    "C   The evidence, however, is more complicated than either side admits. Research suggests that homework does help older students, in secondary school, to learn more, particularly in modest amounts. For younger children, though, the benefits are much less clear, and large amounts of homework seem to bring little gain at any age.",
+    "D   Critics point to real costs. Too much homework, they argue, leaves children stressed and exhausted, with no time for exercise, hobbies or family. It can also turn a subject into a chore, killing the very love of learning that school should foster. In extreme cases, the pressure of endless homework has been linked to anxiety.",
+    "E   There is also a question of fairness. Not all children have the same conditions at home. A child with a quiet room, books and educated parents to help has a great advantage over one in a crowded home with no such support. Homework, critics warn, can therefore widen the gap between richer and poorer students.",
+    "F   Most researchers now favour a balanced approach. Homework, they suggest, can be useful when it is limited in amount, well designed, and appropriate to the child's age. The goal, they argue, should be quality rather than quantity — a little meaningful work, rather than hours of busy tasks that exhaust without teaching."
+   ],
+   Q:[
+    {t:'choice',a:'NO',q:'The value of homework is widely agreed upon.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Supporters believe homework can teach useful habits like self-discipline.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Research clearly shows homework greatly benefits young children.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Too much homework has been linked to anxiety.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'All children have equal conditions for doing homework at home.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most researchers favour large amounts of homework.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the argument that homework builds good habits?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) raises the concern that homework widens the gap between rich and poor?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) reports the finding that homework helps older students more?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) calls for quality rather than quantity?'},
+    {t:'text',a:'reinforce',q:'Homework gives students a chance to practise and ______ what they learned.'},
+    {t:'text',a:'modest|small',q:'Research suggests homework helps older students most in ______ amounts.'},
+    {t:'text',a:'chore',q:'Too much homework can turn a subject into a ______.'},
+    {t:'text',a:'quantity',q:'Most researchers favour quality rather than ______.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Average hours of homework per week, by age group, two countries</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Age group</th><th style='border:1px solid #999;padding:5px 10px'>Country A</th><th style='border:1px solid #999;padding:5px 10px'>Country B</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>6–11</td><td style='border:1px solid #999;padding:5px 10px'>3</td><td style='border:1px solid #999;padding:5px 10px'>5</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>12–15</td><td style='border:1px solid #999;padding:5px 10px'>7</td><td style='border:1px solid #999;padding:5px 10px'>11</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>16–18</td><td style='border:1px solid #999;padding:5px 10px'>12</td><td style='border:1px solid #999;padding:5px 10px'>16</td></tr></table>",
+  task1:"The table below shows the average number of hours of homework done per week by three age groups in two countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that homework is an essential part of education, while others think it should be abolished. Discuss both views and give your own opinion. Write at least 250 words."
+ }
 }
 
 ];
