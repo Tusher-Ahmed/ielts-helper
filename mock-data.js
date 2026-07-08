@@ -735,7 +735,7 @@ const MOCKS=[
  blurb:'Language course · City tour · Bird migration + Brain · Ancient Egypt · Space tourism',
  listen:[
   {title:'Riverside Language School enrolment',
-   transcript:"Good afternoon, you've reached the Riverside Language School. The beginner Spanish course you asked about runs for twelve weeks, with classes every Monday and Wednesday evening from seven to nine. The course fee is two hundred and forty pounds, which includes the textbook. Classes are small, with a maximum of eight students, so places fill quickly. The course is taught by a native speaker, and there's a test at the end to assess your progress. If you complete the course, you'll receive a certificate. To enrol, please pay a deposit of fifty pounds. The next course begins on the fifth of February.",
+   transcript:"Good afternoon, you've reached the Riverside Language School. The beginner Spanish course you asked about runs for ten weeks — sorry, twelve — with classes every Monday and Wednesday evening from seven to nine. The course fee is two hundred and fourteen pounds... sorry, two hundred and forty, which includes the textbook. Classes are small, with a maximum of eight students, so places fill quickly. The course is taught by a native speaker, and there's a test at the end to assess your progress. If you complete the course, you'll receive a certificate. To enrol, please pay a deposit of fifteen pounds — no, fifty. The next course begins on the fifth of February.",
    Q:[
     {t:'text',a:'spanish',q:'The course is beginner ______.'},
     {t:'text',a:'twelve|12',q:'Course length: ______ weeks.'},
@@ -749,7 +749,7 @@ const MOCKS=[
     {t:'text',a:'fifty|50',q:'Deposit required: £______.'}
    ]},
   {title:'Historic city walking tour',
-   transcript:"Welcome to our historic city walking tour. We'll be on foot for about two hours, covering roughly three kilometres, so comfortable shoes are recommended. Our first stop is the cathedral, which dates back eight hundred years. From there, we'll walk to the old market square, the heart of the medieval city. We'll stop for a short break at a traditional tea room, though refreshments are not included in the tour price. Please stay together, especially when crossing the busy roads. At the end, we'll finish at the river, where those who wish can take an optional boat trip. Don't forget to bring a camera.",
+   transcript:"Welcome to our historic city walking tour. We'll be on foot for about two hours, covering roughly two kilometres... actually three, so comfortable shoes are recommended. Our first stop is the cathedral, which dates back six hundred years — sorry, eight hundred. From there, we'll walk to the old market square, the heart of the medieval city. We'll stop for a short break at a traditional tea room, though refreshments are not included in the tour price. Please stay together, especially when crossing the busy roads. At the end, we'll finish at the river, where those who wish can take an optional boat trip. Don't forget to bring a camera.",
    Q:[
     {t:'text',a:'two|2',q:'The tour lasts about ______ hours.'},
     {t:'text',a:'three|3',q:'The tour covers roughly ______ kilometres.'},
@@ -763,7 +763,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'At the end, visitors can optionally take a:',opts:['A) bus','B) boat trip','C) train','D) taxi']}
    ]},
   {title:'Students planning a birdwatching trip',
-   transcript:"So, for the biology trip, we're going to the wetlands to study migratory birds. When are we going? Next Saturday, and the minibus leaves at seven thirty. That's early! It is, but the birds are most active in the morning. What do we need to bring? Binoculars, of course, and a notebook to record what we see. Should we bring food? Yes, a packed lunch, as there's nowhere to buy any. What about the weather? It could be windy, so a warm jacket is a good idea. And how do we record our observations? We'll use a special app on our phones. Let's aim to be back by four.",
+   transcript:"So, for the biology trip, we're going to the wetlands to study migratory birds. When are we going? Next Friday — no, Saturday — and the minibus leaves at seven fifteen... sorry, seven thirty. That's early! It is, but the birds are most active in the morning. What do we need to bring? Binoculars, of course, and a notebook to record what we see. Should we bring food? Yes, a packed lunch, as there's nowhere to buy any. What about the weather? It could be windy, so a warm jacket is a good idea. And how do we record our observations? We'll use a special app on our phones. Let's aim to be back by four.",
    Q:[
     {t:'text',a:'migratory',q:'The trip is to the wetlands to study ______ birds.'},
     {t:'text',a:'saturday',q:'The trip is next ______.'},
@@ -777,7 +777,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'They will return by:',opts:['A) 2','B) 4','C) 6','D) 7']}
    ]},
   {title:'Lecture: bird migration',
-   transcript:"Today we will look at one of nature's most remarkable phenomena: bird migration. Each year, billions of birds travel enormous distances between their breeding and wintering grounds. Some species, such as the Arctic tern, travel from the Arctic to the Antarctic and back, covering tens of thousands of kilometres. Birds migrate mainly to find food and suitable breeding conditions as the seasons change. During the day, they rely on the position of the sun, while at night they use the stars. Remarkably, birds can also sense the Earth's magnetic field, which acts like a built-in compass. Migration is dangerous, however; many birds die from exhaustion, storms, or lack of food. Sadly, human activity, including the loss of wetlands where birds rest, is making these journeys even harder.",
+   transcript:"Today we will look at one of nature's most remarkable phenomena: bird migration. Each year, billions of birds travel enormous distances between their breeding and wintering grounds. Some species, such as the Arctic tern, travel from the Arctic to the Antarctic and back, covering tens of thousands of kilometres. Birds migrate mainly to find food and suitable breeding conditions as the seasons change. During the day, they rely on the position of the sun, while at night they use the stars — not the moon, the stars. Remarkably, birds can also sense the Earth's magnetic field, which acts like a built-in compass. Migration is dangerous, however; many birds die from exhaustion, storms, or lack of food. Sadly, human activity, including the loss of wetlands where birds rest, is making these journeys even harder.",
    Q:[
     {t:'text',a:'wintering|winter',q:'Birds travel between their breeding and ______ grounds.'},
     {t:'text',a:'tern',q:'The Arctic ______ travels from the Arctic to the Antarctic.'},
@@ -792,72 +792,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Human Brain',
+  {title:'Photosynthesis: How Plants Feed',
    paras:[
-    "Weighing only about 1.4 kilograms, the human brain is one of the most complex structures in the known universe. It contains roughly 86 billion nerve cells, or neurons, each connected to thousands of others, forming a network of staggering complexity. Through this network, the brain controls everything we do, from breathing and moving to thinking and feeling.",
-    "The brain is divided into several regions, each with specialised functions. The largest part, the cerebrum, is responsible for higher functions such as reasoning, memory, and language. Beneath it lies the cerebellum, which coordinates movement and balance, while the brainstem controls vital automatic processes like heartbeat and breathing.",
-    "One of the brain's most remarkable qualities is its 'plasticity', the ability to change and reorganise itself throughout life. When we learn something new, connections between neurons are strengthened. Following an injury, healthy parts of the brain can sometimes take over the functions of damaged areas.",
-    "Despite decades of research, much about the brain remains a mystery. Scientists still do not fully understand how it gives rise to consciousness. Modern imaging technology, which allows researchers to watch the brain in action, is gradually revealing its secrets."
+    "List of Headings —  i) The great chemical equation   ii) Capturing the light   iii) The base of the food chain   iv) Why it matters for all life   v) A link to the climate   vi) The oxygen we breathe   vii) The parts of a flower   viii) How water travels up",
+    "A   Almost all life on Earth depends on a single chemical process carried out by plants: photosynthesis. Using energy from sunlight, plants combine water and carbon dioxide to make sugar, the food they need to grow. In doing so, they capture the sun's energy and lock it away in a form that other living things can later use.",
+    "B   The process takes place mainly in the leaves. A leaf is superbly designed for the task: broad and flat to catch as much light as possible, and full of a green pigment called chlorophyll, which absorbs the energy of sunlight. It is chlorophyll that gives leaves, and most plants, their green colour.",
+    "C   Photosynthesis can be summed up in a simple exchange. The plant takes in carbon dioxide from the air through tiny pores in its leaves and draws up water from the soil through its roots. Powered by sunlight, it converts these ingredients into sugar and oxygen.",
+    "D   The oxygen is released into the air as a waste product. For the plant it is of no use, but for animals, including ourselves, it is essential: virtually all the oxygen we breathe was produced by photosynthesis. The process not only feeds the living world but also makes the atmosphere breathable.",
+    "E   Photosynthesis lies at the base of almost every food chain. Plants are eaten by animals, which are in turn eaten by others, so that the energy first captured from sunlight passes from one creature to the next. Even the coal and oil we burn are the ancient remains of plants that photosynthesised millions of years ago.",
+    "F   Because it depends on carbon dioxide, photosynthesis is closely tied to the climate. As they grow, plants remove carbon dioxide from the air, helping to slow global warming. The destruction of forests is therefore doubly harmful: it removes the plants that absorb the gas and releases the carbon they had stored."
    ],
    Q:[
-    {t:'text',a:'1.4',q:'The brain weighs about ______ kilograms.'},
-    {t:'choice',a:'B',q:'The brain contains roughly how many neurons?',opts:['A) 86 million','B) 86 billion','C) 1.4 billion','D) 400 billion']},
-    {t:'text',a:'neurons|neuron',q:'Nerve cells are also called ______.'},
-    {t:'text',a:'cerebrum',q:'The largest part of the brain is the ______.'},
-    {t:'text',a:'language',q:'The cerebrum is responsible for reasoning, memory and ______.'},
-    {t:'text',a:'cerebellum',q:'The ______ coordinates movement and balance.'},
-    {t:'text',a:'breathing',q:'The brainstem controls heartbeat and ______.'},
-    {t:'text',a:'plasticity',q:"The brain's ability to reorganise itself is called ______."},
-    {t:'text',a:'neurons|neuron',q:'Learning strengthens connections between ______.'},
-    {t:'choice',a:'B',q:'After an injury, healthy parts of the brain can:',opts:['A) shrink','B) take over lost functions','C) stop working','D) grow larger']},
-    {t:'choice',a:'FALSE',q:'Scientists fully understand consciousness.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Imaging technology lets researchers watch the brain in action.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'The brain controls both movement and thinking.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Photosynthesis uses energy from sunlight.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Chlorophyll gives leaves their green colour.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Oxygen is useful to the plant that produces it.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Coal and oil come from plants that photosynthesised long ago.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'sugar',q:'Plants combine water and carbon dioxide to make ______.'},
+    {t:'text',a:'broad',q:'Leaves are ______ and flat to catch light.'},
+    {t:'text',a:'dioxide',q:'As plants grow, they remove carbon ______ from the air.'}
    ]},
-  {title:'The Wonders of Ancient Egypt',
+  {title:'The Lost City of Pompeii',
    paras:[
-    "Few ancient civilisations continue to capture the imagination as powerfully as that of ancient Egypt. Flourishing for over three thousand years along the banks of the River Nile, it produced some of the most impressive achievements of the ancient world.",
-    "The Nile was the lifeblood of Egyptian civilisation. Each year, it flooded, depositing rich, fertile soil along its banks that allowed farmers to grow abundant crops. This reliable food supply supported a large population and freed some people to become craftsmen, priests, and officials.",
-    "The Egyptians are perhaps best known for their monumental architecture, above all the pyramids. The Great Pyramid of Giza, built as a tomb for the pharaoh Khufu, consists of over two million stone blocks, some weighing several tonnes. Exactly how such structures were built without modern machinery remains a source of debate.",
-    "Religion played a central role in Egyptian life. The Egyptians believed in an afterlife and developed the elaborate process of mummification to preserve bodies. They also created a writing system known as hieroglyphics, using pictures to represent sounds and ideas. For centuries this script could not be read, until the discovery of the Rosetta Stone finally allowed scholars to decode it."
+    "A   On a summer's day in AD 79, the Roman city of Pompeii, near modern Naples, was going about its ordinary business. Then the nearby volcano, Mount Vesuvius, erupted with tremendous violence. Within hours, the city was buried under several metres of volcanic ash and rock, and thousands of its inhabitants perished. Pompeii vanished from the map for nearly seventeen centuries.",
+    "B   Terrible as it was, the disaster preserved the city in extraordinary detail. The blanket of ash sealed Pompeii from the air and moisture that would normally cause decay. Buildings, wall paintings, furniture and everyday objects survived almost intact, frozen at the very moment of the catastrophe.",
+    "C   When systematic excavation began in the eighteenth century, archaeologists uncovered not mere ruins but a living city. Loaves of bread still sat in ovens; election notices were painted on walls; the ruts of cart wheels marked the streets. Nowhere else has the daily life of the ancient world been captured so vividly.",
+    "D   Among the most haunting discoveries were the victims themselves. The bodies had decayed, but they left cavities in the hardened ash. By pouring plaster into these hollows, excavators were able to recreate the exact shapes of people in their final moments — a family sheltering together, a chained dog straining to escape.",
+    "E   Pompeii has taught historians a great deal. Its houses, shops, baths and temples have revealed how ordinary Romans lived, worked and worshipped, filling in details that written histories, concerned mainly with emperors and battles, ignored entirely.",
+    "F   Today Pompeii faces new dangers. Exposed to the weather and to millions of visitors, the fragile remains are decaying once more, and much of the site has still not been excavated. Preserving what the eruption so strangely saved has become a challenge in its own right."
    ],
    Q:[
-    {t:'text',a:'three|3',q:'Ancient Egypt flourished for over ______ thousand years.'},
-    {t:'text',a:'nile',q:'Egyptian civilisation grew along the River ______.'},
-    {t:'text',a:'flooded|flood',q:'Each year the Nile ______, depositing fertile soil.'},
-    {t:'choice',a:'B',q:'The reliable food supply allowed some people to become:',opts:['A) soldiers only','B) craftsmen, priests and officials','C) farmers only','D) sailors']},
-    {t:'text',a:'tomb',q:'The Great Pyramid was built as a ______ for Khufu.'},
-    {t:'text',a:'two|2',q:'The Great Pyramid has over ______ million stone blocks.'},
-    {t:'text',a:'tonnes|tons|tonne|ton',q:'Some blocks weigh several ______.'},
-    {t:'text',a:'afterlife|after life',q:'The Egyptians believed in an ______.'},
-    {t:'text',a:'mummification',q:'Bodies were preserved through ______.'},
-    {t:'text',a:'hieroglyphics|hieroglyphs',q:'The Egyptian writing system is called ______.'},
-    {t:'choice',a:'B',q:'Hieroglyphics used ______ to represent sounds and ideas:',opts:['A) numbers','B) pictures','C) letters','D) knots']},
-    {t:'choice',a:'FALSE',q:'Hieroglyphics could always be easily read.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'rosetta',q:'The ______ Stone allowed scholars to decode the script.'},
-    {t:'choice',a:'TRUE',q:'How the pyramids were built is still debated.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'B',q:'Pompeii was destroyed by the eruption of:',opts:['A) Mount Etna','B) Mount Vesuvius','C) Krakatoa','D) an unknown volcano']},
+    {t:'choice',a:'C',q:'The volcanic ash preserved the city by sealing out:',opts:['A) light','B) tourists','C) air and moisture','D) heat']},
+    {t:'choice',a:'B',q:"Excavators recreated the victims' shapes by pouring ______ into cavities:",opts:['A) wax','B) plaster','C) water','D) fresh ash']},
+    {t:'choice',a:'C',q:'Compared with written histories, Pompeii reveals more about:',opts:['A) emperors','B) battles','C) ordinary daily life','D) religion only']},
+    {t:'text',a:'D',q:'Which paragraph (A–F) explains how the shapes of victims were recreated?'},
+    {t:'text',a:'A',q:'Which paragraph (A–F) describes the eruption that buried the city?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the new threats the site faces today?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes everyday details found during excavation?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains why the ash preserved the city so well?'},
+    {t:'text',a:'seventeen|17',q:'Pompeii lay buried for nearly ______ centuries.'},
+    {t:'text',a:'Naples',q:'The city is near the modern city of ______.'},
+    {t:'text',a:'eighteenth|18th',q:'Systematic excavation began in the ______ century.'},
+    {t:'text',a:'excavated',q:'Much of the site has still not been ______.'}
    ]},
-  {title:'The Dawn of Space Tourism',
+  {title:'The Ethics of Genetic Engineering',
    paras:[
-    "For most of history, travelling into space was the exclusive privilege of a small number of highly trained astronauts. In recent years, however, a new industry has emerged that promises to change this: space tourism. Several private companies are now developing spacecraft designed to carry ordinary paying customers beyond the Earth's atmosphere.",
-    "The concept is not entirely new. As early as 2001, a wealthy businessman became the first 'space tourist', paying a reported twenty million dollars to visit the International Space Station. For years, such trips remained available only to the extremely rich. But as technology advances and competition grows, prices are expected to fall.",
-    "Supporters argue that space tourism offers many benefits. It could generate funding for space research, inspire young people to study science, and give travellers a life-changing perspective on their home planet. Many astronauts describe a profound shift in outlook after seeing the Earth from space, an experience sometimes called the 'overview effect'.",
-    "Critics, however, raise serious concerns. Rocket launches produce significant pollution, and some question whether it is right to spend vast sums on space travel while problems remain unsolved on Earth. There are also safety risks, as space remains a dangerous environment."
+    "A   Few scientific advances raise as many difficult questions as genetic engineering — the ability to alter the DNA of living things directly. Once the stuff of science fiction, it is now a practical reality, and recent techniques have made changing an organism's genes cheaper and easier than ever. With this power comes an urgent debate about how, and whether, it should be used.",
+    "B   In agriculture, the technology is already widespread. Crops have been engineered to resist pests, survive drought, or contain extra vitamins, and supporters argue that such crops could help feed a growing world population. Critics worry about unforeseen effects on health and the environment, and about a handful of companies gaining control over the world's food supply.",
+    "C   In medicine, the promise is enormous. Scientists hope to cure inherited diseases by correcting the faulty genes that cause them, offering relief to families who have suffered for generations. Early treatments of this kind are already showing success, and few object to using the technology to heal the sick.",
+    "D   Far more controversial is the prospect of altering the genes of human embryos, changes that would be passed on to all future generations. Supporters see a chance to eliminate terrible hereditary diseases for good. Opponents fear a step onto a slippery slope towards 'designer babies', selected for intelligence, appearance or athletic ability.",
+    "E   Such possibilities raise deep questions of fairness. If genetic enhancement were expensive, it might be available only to the rich, widening the gap between them and everyone else — not merely in wealth but in biology itself. A society divided in this way, critics warn, could be profoundly unjust.",
+    "F   Most experts agree that the technology itself is neither good nor bad; everything depends on how it is used. What is needed, they argue, is careful regulation and open public debate, so that society, rather than scientists or companies alone, decides where the limits should lie."
    ],
    Q:[
-    {t:'text',a:'astronauts|astronaut',q:'Space travel was traditionally limited to trained ______.'},
-    {t:'text',a:'2001',q:'The first space tourist travelled in ______.'},
-    {t:'choice',a:'B',q:'The first space tourist reportedly paid:',opts:['A) 2 million','B) 20 million','C) 200 million','D) 2 billion']},
-    {t:'text',a:'station',q:'The first tourist visited the International Space ______.'},
-    {t:'text',a:'fall',q:'As competition grows, prices are expected to ______.'},
-    {t:'text',a:'research',q:'Space tourism could generate funding for space ______.'},
-    {t:'text',a:'science',q:'It could inspire young people to study ______.'},
-    {t:'text',a:'overview',q:'Seeing Earth from space is called the ______ effect.'},
-    {t:'choice',a:'B',q:'Critics point out that rocket launches produce:',opts:['A) noise only','B) pollution','C) profit','D) jobs']},
-    {t:'choice',a:'FALSE',q:'Space tourism was completely new in recent years.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Some question spending on space while Earth has problems.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'dangerous',q:'Space remains a ______ environment.'},
-    {t:'choice',a:'TRUE',q:'Many astronauts describe a shift in outlook after seeing Earth.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'Genetic engineering has become cheaper and easier in recent years.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Everyone objects to using genetic engineering to cure the sick.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Altering the genes of human embryos is uncontroversial.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Genetic enhancement, if expensive, could widen the gap between rich and poor.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NOT GIVEN',q:'Genetically engineered crops have already caused a major health disaster.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most experts believe the technology is inherently evil.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the use of genetic engineering in farming?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the hope of curing inherited diseases?'},
+    {t:'text',a:'D',q:"Which paragraph (A–F) describes the fear of 'designer babies'?"},
+    {t:'text',a:'F',q:'Which paragraph (A–F) calls for regulation and public debate?'},
+    {t:'text',a:'DNA|genes|gene',q:'What does genetic engineering directly alter?'},
+    {t:'text',a:'generations|generation',q:'Changes to embryos would be passed to all future ______.'},
+    {t:'text',a:'babies|baby',q:'Critics fear a slippery slope towards designer ______.'},
+    {t:'text',a:'regulation',q:'Experts call for careful ______ of the technology.'}
    ]}
  ],
  writing:{
