@@ -2040,7 +2040,7 @@ const MOCKS=[
  blurb:'Sports club · Heritage festival · Language & culture + Writing origins · Endangered languages · Football',
  listen:[
   {title:'Tennis club membership',
-   transcript:"Hello, I'd like to join the local tennis club. Great. Adult membership is one hundred and twenty pounds a year, and junior membership, for under-eighteens, is sixty pounds. This gives you access to all six courts, four of which are floodlit for evening play. Coaching sessions are available for an extra charge, at fifteen pounds an hour. Members can book courts online up to a week in advance. There's a clubhouse with changing rooms and a small cafe. To join, you'll need to fill in a form and provide one passport photo. New members are also invited to a free introductory session with a coach. The club is closed on Mondays.",
+   transcript:"Hello, I'd like to join the local tennis club. Great. Adult membership is one hundred and twelve pounds... sorry, one hundred and twenty a year, and junior membership, for under-eighteens, is sixty pounds. This gives you access to all six courts, four of which are floodlit for evening play. Coaching sessions are available for an extra charge, at fifty... sorry, fifteen pounds an hour. Members can book courts online up to a week in advance, not a month. There's a clubhouse with changing rooms and a small cafe. To join, you'll need to fill in a form and provide one passport photo. New members are also invited to a free introductory session with a coach. The club is closed on Mondays, not Sundays.",
    Q:[
     {t:'text',a:'120|one hundred and twenty',q:'Adult membership: £______ a year.'},
     {t:'text',a:'eighteens|18|eighteen',q:'Junior membership is for under-______.'},
@@ -2054,7 +2054,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The club is closed on:',opts:['A) Sundays','B) Mondays','C) weekends','D) never']}
    ]},
   {title:'Old Town Heritage Festival',
-   transcript:"Welcome to the Old Town Heritage Festival. The festival celebrates the town's history, which dates back nearly a thousand years. Throughout the day, you can watch traditional crafts such as pottery and weaving being demonstrated in the market square. At eleven o'clock, there's a costumed parade through the main street. For families, there are activities in the castle grounds, including archery. Traditional music will be performed on the bandstand every hour. Food stalls offer local specialities. Please note that the main street is closed to traffic all day. The festival ends with a firework display at nine in the evening. Programmes are available free at the information point.",
+   transcript:"Welcome to the Old Town Heritage Festival. The festival celebrates the town's history, which dates back nearly a thousand years. Throughout the day, you can watch traditional crafts such as pottery and weaving being demonstrated in the market square. At ten o'clock — sorry, eleven — there's a costumed parade through the main street. For families, there are activities in the castle grounds, including archery. Traditional music will be performed on the bandstand every hour. Food stalls offer local specialities. Please note that the main street is closed to traffic all day. The festival ends with a firework display at eight... no, nine in the evening. Programmes are available free at the information point, not the ticket office.",
    Q:[
     {t:'text',a:'a thousand|1000|one thousand|thousand',q:"The town's history dates back nearly ______ years."},
     {t:'text',a:'weaving',q:'Traditional crafts include pottery and ______.'},
@@ -2068,7 +2068,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Free programmes are available at the:',opts:['A) beer tent','B) information point','C) castle','D) bandstand']}
    ]},
   {title:'Students planning a history presentation',
-   transcript:"Our history presentation is on an ancient civilisation. Which one should we pick? How about the Maya? Good choice. What aspect should we focus on? I think their achievements in astronomy and their calendar. And their writing system, which was very advanced. What about their decline? That's still debated; possibly drought and war. We should show a map of where they lived, in Central America. How long is the presentation? Fifteen minutes. Should we use images? Definitely, lots of pictures of their temples. When's it due? The ninth of March. Let's meet on Friday to put the slides together.",
+   transcript:"Our history presentation is on an ancient civilisation. Which one should we pick? How about the Aztecs... no, the Maya? Good choice. What aspect should we focus on? I think their achievements in astronomy and their calendar. And their writing system, which was very advanced. What about their decline? That's still debated; possibly drought and war. We should show a map of where they lived, in Central America, not South America. How long is the presentation? Ten minutes... sorry, fifteen. Should we use images? Definitely, lots of pictures of their temples. When's it due? The nineteenth... no, the ninth of March. Let's meet on Friday to put the slides together.",
    Q:[
     {t:'text',a:'civilisation|civilization',q:'The presentation is on an ancient ______.'},
     {t:'text',a:'maya',q:'They choose the ______.'},
@@ -2082,7 +2082,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:"The cause of the Maya's decline is described as:",opts:['A) certain','B) still debated','C) unknown to all','D) recent']}
    ]},
   {title:'Lecture: language and culture',
-   transcript:"Today we will explore the relationship between language and culture. Language is far more than a tool for communication; it carries the history, values, and identity of the people who speak it. Every language has words and expressions that reflect what matters to a particular culture. When a language is lost, therefore, it is not just words that disappear, but a unique way of seeing the world. Linguists estimate that of the roughly seven thousand languages spoken today, nearly half may vanish by the end of this century. Many are spoken by only a few elderly people, with children no longer learning them. Efforts are now under way to record and revive endangered languages.",
+   transcript:"Today we will explore the relationship between language and culture. Language is far more than a tool for communication; it carries the history, values, and identity of the people who speak it. Every language has words and expressions that reflect what matters to a particular culture. When a language is lost, therefore, it is not just words that disappear, but a unique way of seeing the world. Linguists estimate that of the roughly six thousand... actually about seven thousand languages spoken today, nearly half may vanish by the end of this century. Many are spoken by only a few elderly people, with children no longer learning them. Efforts are now under way to record and revive endangered languages.",
    Q:[
     {t:'text',a:'identity',q:'Language carries the history, values and ______ of its speakers.'},
     {t:'text',a:'communication',q:'Language is more than a tool for ______.'},
@@ -2097,72 +2097,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Origins of Writing',
+  {title:'How Metals Shaped History',
    paras:[
-    "Writing is one of humanity's most important inventions, allowing knowledge to be stored and passed on across time and space. Yet for most of human history, people had no writing at all, relying entirely on memory and speech. The invention of writing, which happened independently in several parts of the world, marked a profound turning point.",
-    "The earliest known writing developed in ancient Mesopotamia, in the Middle East, over five thousand years ago. It did not begin as a way of recording stories or ideas, but for a far more practical reason: keeping accounts. As cities grew and trade increased, people needed a reliable way to record how much grain was stored or who owed what. The first symbols were simple pictures representing objects.",
-    "Over time, writing systems became more sophisticated. Rather than a picture for every word, some cultures developed symbols to represent sounds, eventually leading to the alphabet, in which a small number of letters can be combined to write any word. This was a hugely efficient system, and most writing today is based on it.",
-    "The impact of writing has been immense. It made possible the keeping of records, the writing of laws, and the recording of history. Above all, it allowed knowledge to accumulate across generations. Without writing, the complex societies we live in today would simply not be possible."
+    "List of Headings —  i) The first metals used   ii) A stronger alloy   iii) The age of iron   iv) Metals from the sky and the ground   v) The precious metals   vi) Metals in the modern world   vii) How metals are recycled   viii) The many colours of metals",
+    "A   Human history is so bound up with metals that whole ages are named after them. Before metals, people made their tools from stone, bone and wood. The very first metals to be used were those, such as gold and copper, that can be found in a pure form in nature, or extracted from rock with relatively little heat. Soft and easily shaped, copper in particular was a great improvement on stone for many tools.",
+    "B   The next great step was the discovery that mixing copper with a small amount of another metal, tin, produced a new substance, bronze, that was much harder and more durable than copper alone. A mixture of metals like this is called an alloy. Bronze was so important that an entire era, the Bronze Age, is named after it, during which it was used for everything from swords to ploughs.",
+    "C   Iron is far more common in the Earth than the metals needed for bronze, but it is much harder to work, requiring far higher temperatures to extract and shape. Once people mastered this difficult craft, however, iron, being cheaper and stronger, largely replaced bronze, ushering in the Iron Age. Later, adding a little carbon to iron produced steel, which is harder still.",
+    "D   Some metals were valued less for their usefulness than for their beauty and rarity. Gold and silver, which do not rust or tarnish easily and can be worked into fine ornaments, have been prized for thousands of years. Because they were rare, durable and universally desired, they became the natural basis for money in many societies.",
+    "E   All these metals, except the small amounts found pure in nature, must be extracted from rocks called ores, in which the metal is combined with other substances. Curiously, some of the earliest iron worked by humans did not come from the ground at all, but fell from the sky, in the form of iron-rich meteorites.",
+    "F   In the modern world, metals are more important than ever, though we rarely notice them. Steel forms the skeletons of our buildings and vehicles; copper carries electricity through countless wires; and lightweight aluminium makes flight affordable. The story of civilisation is, to a remarkable degree, the story of our growing mastery of metals."
    ],
    Q:[
-    {t:'text',a:'speech',q:'For most of history, people relied on memory and ______.'},
-    {t:'text',a:'independently',q:'Writing developed ______ in several parts of the world.'},
-    {t:'text',a:'mesopotamia',q:'The earliest known writing developed in ancient ______.'},
-    {t:'text',a:'five|5',q:'This happened over ______ thousand years ago.'},
-    {t:'text',a:'accounts|account',q:'Writing did not begin for stories but for keeping ______.'},
-    {t:'text',a:'grain',q:'People needed to record how much ______ was stored.'},
-    {t:'text',a:'pictures|picture',q:'The first symbols were simple ______.'},
-    {t:'text',a:'sounds|sound',q:'Some cultures developed symbols to represent ______.'},
-    {t:'text',a:'alphabet',q:'This eventually led to the ______.'},
-    {t:'choice',a:'B',q:'The alphabet is efficient because a small number of letters can:',opts:['A) be drawn','B) be combined to write any word','C) be memorised','D) be spoken']},
-    {t:'text',a:'laws|law',q:'Writing made possible the writing of ______.'},
-    {t:'text',a:'accumulate',q:'Writing allowed knowledge to ______ across generations.'},
-    {t:'choice',a:'B',q:'The writer says that without writing, complex societies would:',opts:['A) be simpler','B) not be possible','C) be older','D) be faster']}
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'The first metals used were those found pure in nature or easily extracted.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Bronze is softer than copper.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Iron is rarer in the Earth than the metals needed for bronze.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some of the earliest worked iron came from meteorites.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'alloy',q:'A mixture of metals such as bronze is called an ______.'},
+    {t:'text',a:'tin',q:'Bronze is made by mixing copper with ______.'},
+    {t:'text',a:'steel',q:'Adding a little carbon to iron produces ______.'}
    ]},
-  {title:"The World's Vanishing Languages",
+  {title:'Decoding the Past: The Rosetta Stone',
    paras:[
-    "There are around seven thousand languages spoken in the world today, but this remarkable diversity is under threat. Experts warn that a large proportion of these languages could disappear within the next hundred years, as more and more people abandon their traditional tongues in favour of a few dominant global languages.",
-    "A language is generally considered endangered when children stop learning it. Many of the world's smaller languages are now spoken only by older generations; when they die, the language dies with them. This process is being accelerated by globalisation, migration to cities, and education systems that teach only in major national languages. For economic reasons, parents often encourage their children to learn a dominant language.",
-    "The loss of a language is more serious than it might first appear. Each language represents a unique way of understanding the world, containing knowledge about local plants, animals, and traditions that may exist nowhere else. When a language disappears, this accumulated wisdom is often lost forever.",
-    "Fortunately, efforts are being made to reverse this trend. Communities and linguists are working to document endangered languages, creating dictionaries and recordings before it is too late. In some places, languages once close to extinction are being revived, taught again to a new generation."
+    "A   For centuries, the ancient Egyptian script known as hieroglyphics — the beautiful pictures carved on temple walls and tombs — was a complete mystery. The ancient Egyptians had written down their history, their religion and their daily lives, but the knowledge of how to read their script had been utterly lost. Their civilisation seemed to speak to later ages in a language no one could understand.",
+    "B   The key to unlocking it was found by accident. In 1799, French soldiers in Egypt, digging near the town of Rosetta, uncovered a large slab of stone covered in writing. What made it priceless was that the same text was carved on it three times, in three different scripts: hieroglyphics, a later Egyptian script, and, crucially, ancient Greek — a language that scholars could still read.",
+    "C   The Greek text, therefore, provided a translation of the unknown Egyptian writing above it. In principle, by comparing the known Greek with the unknown hieroglyphics, scholars could work out what the symbols meant. In practice, it proved fiendishly difficult, and it took more than twenty years of painstaking work.",
+    "D   The breakthrough was made by a young Frenchman, Jean-François Champollion, who had a gift for languages. He realised that hieroglyphics were not, as many had assumed, simply pictures standing for whole ideas. Instead, many of the symbols represented sounds, much like the letters of an alphabet, spelling out words. This insight was the key that unlocked the entire script.",
+    "E   The consequences were profound. Suddenly, the vast written record of one of the world's greatest civilisations could be read again. Historians could learn about ancient Egypt not from the guesses of outsiders but from the words of the Egyptians themselves, opening a window onto three thousand years of history.",
+    "F   The Rosetta Stone has become a symbol of the very idea of a key to a mystery — so much so that its name is now given to language-learning software. It stands as a reminder that a single, chance discovery can, in the right hands, reopen a door to the past that had seemed closed forever."
    ],
    Q:[
-    {t:'text',a:'seven|7',q:'There are around ______ thousand languages spoken today.'},
-    {t:'text',a:'children|child',q:'A language is endangered when ______ stop learning it.'},
-    {t:'text',a:'older|old',q:'Many small languages are spoken only by ______ generations.'},
-    {t:'text',a:'migration',q:'The process is accelerated by globalisation and ______ to cities.'},
-    {t:'text',a:'national',q:'Education systems often teach only in major ______ languages.'},
-    {t:'text',a:'dominant',q:'Parents often encourage children to learn a ______ language.'},
-    {t:'text',a:'traditions|tradition',q:'Each language contains knowledge about local plants, animals and ______.'},
-    {t:'choice',a:'B',q:'When a language disappears, its knowledge is often:',opts:['A) saved','B) lost forever','C) translated','D) written down']},
-    {t:'text',a:'document',q:'Linguists are working to ______ endangered languages.'},
-    {t:'text',a:'recordings|recording',q:'They are creating dictionaries and ______.'},
-    {t:'text',a:'revived|revive',q:'In some places, languages are being ______.'},
-    {t:'text',a:'generation',q:'These languages are taught again to a new ______.'},
-    {t:'choice',a:'FALSE',q:'Language diversity is completely safe.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'B',q:'Before the Rosetta Stone, hieroglyphics were:',opts:['A) easy to read','B) a complete mystery','C) a modern invention','D) written in Greek']},
+    {t:'choice',a:'C',q:'The Rosetta Stone was valuable because it carried the same text in:',opts:['A) one script','B) two languages','C) three scripts','D) pictures only']},
+    {t:'choice',a:'B',q:'The script that scholars could already read was:',opts:['A) hieroglyphics','B) ancient Greek','C) Latin','D) later Egyptian']},
+    {t:'choice',a:'B',q:'Champollion realised that many hieroglyphic symbols represented:',opts:['A) whole ideas','B) sounds','C) numbers','D) gods']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the accidental discovery of the stone?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the key insight that unlocked the script?'},
+    {t:'text',a:'F',q:"Which paragraph (A–F) explains how the stone's name is used today?"},
+    {t:'text',a:'A',q:'Which paragraph (A–F) explains why hieroglyphics had been a mystery?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the effect of being able to read Egyptian records?'},
+    {t:'text',a:'Rosetta',q:'The stone was found near the town of ______.'},
+    {t:'text',a:'twenty|20',q:'Decoding the script took more than ______ years.'},
+    {t:'text',a:'languages|language',q:'Champollion had a gift for ______.'},
+    {t:'text',a:'themselves',q:'The stone let historians read the words of the Egyptians ______.'}
    ]},
-  {title:'The Global Game: A History of Football',
+  {title:'Is Handwriting Worth Saving?',
    paras:[
-    "Football, known as soccer in some countries, is the most popular sport in the world, played and watched by billions of people. Its appeal is easy to understand: the rules are simple, and all that is really needed to play is a ball and some open space. Yet the modern game has a surprisingly recent and specific history.",
-    "While games involving kicking a ball have existed in many cultures for thousands of years, the sport we know today took shape in nineteenth-century England. Different schools and towns played by their own varied rules. In 1863, a group met in London to agree on a single set of rules, an event considered the birth of modern football. Crucially, they decided that handling the ball would not be allowed, which separated football from rugby.",
-    "From England, the game spread rapidly around the world, carried by traders, sailors, and workers. It proved especially popular in South America and Europe, where it became deeply woven into local culture. The first international match was played in 1872, and the first World Cup was held in 1930.",
-    "Today, football is far more than a game. It is a global industry worth billions, a source of intense local and national pride, and, for many, a passion that brings people together across boundaries of language and culture."
+    "A   As keyboards and touchscreens take over more and more of our writing, a question is being asked in schools and homes around the world: does handwriting still matter? Some argue it is a dying skill, no more worth teaching than how to use a quill pen. Others insist that abandoning it would be a serious mistake. The debate is more interesting than it first appears.",
+    "B   Those who would let handwriting fade point to the obvious. Almost all writing today is done on devices; typing is faster, neater and easily corrected and shared. Time spent teaching children to form letters by hand, they argue, could be better spent on skills more useful in a digital world, such as typing or coding.",
+    "C   Defenders of handwriting reply that it is far more than an outdated way of putting words on paper. A growing body of research suggests that the physical act of forming letters by hand helps young children learn to read and recognise letters more effectively than typing does. The slow, deliberate movement, it seems, helps the brain to remember.",
+    "D   There may be benefits for older students too. Studies have found that those who take notes by hand often understand and remember a lecture better than those who type. Because writing by hand is slower, it forces the note-taker to select and summarise rather than simply copying every word, and this effort aids learning.",
+    "E   Handwriting has a value that is harder to measure, as well. A handwritten letter carries a personal touch that a typed message cannot; a signature remains a mark of identity; and for many, the act of writing by hand is a pleasure in itself. To lose handwriting entirely, defenders argue, would be to lose something human.",
+    "F   Most educators now suggest a sensible middle way. Children should certainly learn to type, they agree, since typing is essential in the modern world. But they should not abandon handwriting, which brings benefits that typing cannot replace. The two skills, in short, are not rivals but companions."
    ],
    Q:[
-    {t:'text',a:'soccer',q:'Football is known as ______ in some countries.'},
-    {t:'text',a:'space',q:'To play, all that is needed is a ball and some open ______.'},
-    {t:'text',a:'england',q:'The modern game took shape in nineteenth-century ______.'},
-    {t:'text',a:'london',q:'In 1863, a group met in ______ to agree on rules.'},
-    {t:'text',a:'football',q:'This event is considered the birth of modern ______.'},
-    {t:'text',a:'handling|handle',q:'They decided that ______ the ball would not be allowed.'},
-    {t:'text',a:'rugby',q:'This separated football from ______.'},
-    {t:'text',a:'workers|worker',q:'The game was spread by traders, sailors and ______.'},
-    {t:'choice',a:'B',q:'Football became especially popular in Europe and:',opts:['A) Asia','B) South America','C) Africa','D) Australia']},
-    {t:'text',a:'1872',q:'The first international match was played in ______.'},
-    {t:'text',a:'1930',q:'The first World Cup was held in ______.'},
-    {t:'text',a:'industry',q:'Football is now a global ______ worth billions.'},
-    {t:'choice',a:'B',q:'The writer says football is a source of local and national:',opts:['A) conflict','B) pride','C) income','D) confusion']},
-    {t:'text',a:'culture',q:'Football unites people across boundaries of language and ______.'}
+    {t:'choice',a:'YES',q:'Some people argue that handwriting is a dying skill.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Typing is slower than writing by hand.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Forming letters by hand may help young children learn to read.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Students who type notes always remember lectures better than those who write by hand.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Writing by hand forces note-takers to select and summarise.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most educators believe children should stop learning to type.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) argues that typing time could be better spent?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the benefit of handwriting for young children learning to read?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the personal and human value of handwriting?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) gives the balanced conclusion of most educators?'},
+    {t:'text',a:'faster|neater|speed',q:'Name one advantage of typing mentioned in the passage.'},
+    {t:'text',a:'summarise|summarize',q:'Taking notes by hand forces the writer to select and ______.'},
+    {t:'text',a:'touch',q:'A handwritten letter carries a personal ______ that a typed message cannot.'},
+    {t:'text',a:'companions|companion',q:'Most educators say typing and handwriting are not rivals but ______.'}
    ]}
  ],
  writing:{
