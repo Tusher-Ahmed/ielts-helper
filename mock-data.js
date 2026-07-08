@@ -2902,6 +2902,151 @@ const MOCKS=[
   task1:"The table below shows the average number of hours per day spent using digital devices by three age groups in 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people believe that we have become too dependent on technology. To what extent do you agree or disagree? Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 21 (Exam Level) ===================== */
+{
+ name:'Mock 21 — Exam Level',
+ blurb:'🔴 Plumber call · Charity-shop induction · Fundraiser + The tardigrade · History of the piano · Are exams best?',
+ listen:[
+  {title:'Booking a plumber',
+   transcript:"Hello, Rapid Plumbers, how can I help? I've got a problem at home. Your surname? Ferguson, F-E-R-G-U-S-O-N. What's the problem? A blockage... no, actually a leak. Where is it? In the bathroom — sorry, the kitchen. And your address? Forty Oak Road... sorry, fourteen Oak Road. When would suit you? Tuesday... actually Thursday is better. Morning or afternoon? The morning, please. There's a call-out fee of forty-five pounds. And how will you pay? By card. Will you be home? No, but I'll leave a key with a neighbour. And a contact number? It ends in three-oh-seven.",
+   Q:[
+    {t:'text',a:'ferguson',q:'Surname: ______'},
+    {t:'text',a:'leak',q:'Problem: a ______'},
+    {t:'text',a:'kitchen',q:'Location: the ______'},
+    {t:'text',a:'14|fourteen',q:'Address: ______ Oak Road'},
+    {t:'text',a:'thursday',q:'Preferred day: ______'},
+    {t:'text',a:'morning',q:'Preferred time: ______'},
+    {t:'text',a:'45|forty-five',q:'Call-out fee: £______'},
+    {t:'text',a:'card',q:'Payment: ______'},
+    {t:'text',a:'neighbour|neighbor',q:'A key will be left with a ______.'},
+    {t:'choice',a:'B',q:'The contact number ends in:',opts:['A) 703','B) 307','C) 370','D) 730']}
+   ]},
+  {title:'Charity-shop volunteer induction',
+   transcript:"Welcome, and thank you for volunteering at our charity shop. Let me explain how it works. A typical shift is four hours long, and we mainly need help on weekdays, when we're busiest. Your main task will be sorting the donations that people bring in, deciding what can be sold. You'll also help by serving customers at the counter. Don't worry if you've never used a till — full training is provided. On a four-hour shift you're entitled to a fifteen-minute break. Please wear the badge we give you so customers know you work here. There are lockers where you can leave your bags. A couple of rules: volunteers must be at least sixteen years old, and before you can start, we'll need one reference, which we'll check.",
+   Q:[
+    {t:'text',a:'4|four',q:'A typical shift is ______ hours.'},
+    {t:'text',a:'weekdays|weekday',q:'Help is mainly needed on ______.'},
+    {t:'text',a:'sorting|sort',q:'The main task is ______ donations.'},
+    {t:'text',a:'serving|serve',q:'Volunteers also help by ______ customers.'},
+    {t:'text',a:'training',q:'Full ______ is provided for the till.'},
+    {t:'text',a:'15|fifteen',q:'A four-hour shift includes a ______-minute break.'},
+    {t:'text',a:'badge',q:'Volunteers must wear a ______.'},
+    {t:'text',a:'bags|bag',q:'There are lockers for ______.'},
+    {t:'choice',a:'B',q:'The minimum age is:',opts:['A) 14','B) 16','C) 18','D) 21']},
+    {t:'choice',a:'B',q:'Before starting you need:',opts:['A) a fee','B) a reference','C) a uniform','D) an exam']}
+   ]},
+  {title:'Two students plan a charity fundraiser',
+   transcript:"For the charity project, what event should we hold? A car wash? Hmm, a bake sale is easier. Good, a bake sale. Which charity? The local animal shelter. Where do we hold it? In the sports hall, at break time. What day? Saturday, when there's a match on and lots of people around. What's our target? Two hundred pounds... let's aim higher, three hundred. How do we advertise? Posters around school, and on social media too. What price per cake? Two pounds each. How many helpers do we need? About six. And who looks after the money? Our class treasurer will handle that.",
+   Q:[
+    {t:'choice',a:'B',q:'The event is a:',opts:['A) car wash','B) bake sale','C) concert','D) raffle']},
+    {t:'text',a:'shelter',q:'The money goes to the local animal ______.'},
+    {t:'text',a:'hall',q:'It is held in the sports ______.'},
+    {t:'text',a:'saturday',q:'The event is on ______.'},
+    {t:'choice',a:'B',q:'Their target is:',opts:['A) £200','B) £300','C) £500','D) £1000']},
+    {t:'text',a:'posters|poster',q:'They advertise with ______ around school.'},
+    {t:'text',a:'social',q:'They also use ______ media.'},
+    {t:'text',a:'2|two',q:'Each cake costs £______.'},
+    {t:'text',a:'6|six',q:'They need about ______ helpers.'},
+    {t:'text',a:'treasurer',q:'The money is handled by the class ______.'}
+   ]},
+  {title:'Lecture: why we have seasons',
+   transcript:"Today's lecture explains why we have seasons. A common misunderstanding is that seasons are caused by the Earth's distance from the Sun — that summer comes when we are closer. This is wrong. Seasons are caused by the tilt of the Earth. Our planet does not spin upright but is tilted at an angle of about twenty-three degrees, and this tilt stays the same as the Earth orbits the Sun. As a result, for part of the year one hemisphere leans towards the Sun. When a hemisphere tilts towards the Sun, it is summer there: the days are longer, and the Sun climbs higher in the sky, so its rays are stronger. Half a year later, the same hemisphere leans away, and it is winter. This is also why the two hemispheres always have opposite seasons — when it is summer in the north, it is winter in the south. Near the equator, where the tilt has little effect, there is little seasonal change at all.",
+   Q:[
+    {t:'text',a:'tilt',q:'Seasons are caused by the ______ of the Earth.'},
+    {t:'text',a:'23|twenty-three',q:'The Earth is tilted at about ______ degrees.'},
+    {t:'text',a:'distance',q:"Seasons are NOT caused by the Earth's ______ from the Sun."},
+    {t:'text',a:'towards|toward',q:'In summer, a hemisphere tilts ______ the Sun.'},
+    {t:'text',a:'longer|long',q:'In summer, the days are ______.'},
+    {t:'text',a:'higher|high',q:'In summer, the Sun climbs ______ in the sky.'},
+    {t:'text',a:'opposite',q:'The two hemispheres always have ______ seasons.'},
+    {t:'text',a:'equator',q:'Near the ______, there is little seasonal change.'},
+    {t:'choice',a:'B',q:'As the Earth orbits, its tilt:',opts:['A) increases','B) stays the same','C) disappears','D) reverses']},
+    {t:'choice',a:'B',q:'It is summer in a hemisphere when it tilts:',opts:['A) away from the Sun','B) towards the Sun','C) upright','D) sideways']}
+   ]}
+ ],
+ read:[
+  {title:'The Toughest Animal on Earth: The Tardigrade',
+   paras:[
+    "List of Headings —  i) A tiny, common creature   ii) Surviving the impossible   iii) The secret of survival   iv) A journey into space   v) Not truly indestructible   vi) Why scientists are interested   vii) What tardigrades eat   viii) How tardigrades reproduce",
+    "A   It is one of the toughest animals ever discovered, yet almost no one has seen one, for it is smaller than a grain of sand. The tardigrade, also known as the 'water bear' because of its plump body and lumbering walk, is a tiny creature that lives almost everywhere on Earth — in oceans, in soil, and in the film of water on a patch of moss in any garden.",
+    "B   What has made the tardigrade famous is its almost unbelievable toughness. It can survive conditions that would kill virtually any other living thing. It can endure temperatures near absolute zero and above the boiling point of water; pressures far greater than those at the bottom of the deepest ocean; and doses of radiation hundreds of times higher than would kill a human.",
+    "C   The secret of this endurance is a remarkable trick. When conditions become too harsh, a tardigrade can expel almost all the water from its body and curl into a dried-out, lifeless-looking ball called a 'tun'. In this state, its life processes all but stop, and it can survive, apparently dead, for years or even decades. Add a drop of water, and it slowly revives.",
+    "D   The tardigrade's toughness has even been tested in the most extreme place of all: outer space. In one experiment, tardigrades were taken into orbit and exposed directly to the vacuum and radiation of space. Astonishingly, many survived, making them one of the only animals known to endure the conditions of space unprotected.",
+    "E   It is important not to exaggerate, however. The tardigrade is not immortal, and in its normal, active state it is quite fragile, easily killed. Its incredible survival powers work only in the dried-out 'tun' state, and even then it cannot survive forever. It is not indestructible, but simply astonishingly resilient.",
+    "F   Scientists study tardigrades for good reasons. Understanding how they protect their cells from drying out and from radiation could help in preserving medicines and even human tissue, and may one day be useful for protecting astronauts or crops. In this tiny, humble creature, researchers hope, may lie lessons of real value to humankind."
+   ],
+   Q:[
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:'The tardigrade is larger than a grain of sand.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Tardigrades can survive very high doses of radiation.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:"In its dried-out state, a tardigrade's life processes almost stop.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Tardigrades are indestructible and cannot be killed.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'bear',q:'The tardigrade is also known as the water ______.'},
+    {t:'text',a:'tun',q:'In harsh conditions, a tardigrade curls into a dried ball called a ______.'},
+    {t:'text',a:'medicines|medicine|tissue',q:'Studying tardigrades may help in preserving ______.'}
+   ]},
+  {title:'The History of the Piano',
+   paras:[
+    "A   The piano is one of the best-loved of all musical instruments, found in concert halls, schools and homes around the world. Yet it is a relatively recent invention, and its creation solved a problem that had troubled musicians for centuries: how to play both loudly and softly on a keyboard instrument.",
+    "B   Before the piano, the main keyboard instrument was the harpsichord. In a harpsichord, pressing a key causes a small quill to pluck a string. This produces a bright sound, but always at the same volume, however hard or gently the key is struck. Musicians could not play louder or softer to add feeling to their music.",
+    "C   The solution came around 1700, from an Italian instrument-maker named Bartolomeo Cristofori. Instead of plucking the string, his new instrument used a small hammer to strike it. Crucially, the harder the key was pressed, the harder the hammer hit, and the louder the note. This allowed the player, for the first time, to control the volume with their fingers.",
+    "D   This was so important that the new instrument was named after it. Its full original name meant 'soft-loud', reflecting its ability to play both. Over time this was shortened to 'piano', the name we still use, from the Italian word for 'soft'.",
+    "E   The early piano was quieter and weaker than the modern one. Over the following century, makers steadily improved it, adding a stronger iron frame to hold the strings under greater tension, which produced a far bigger, richer sound. By the nineteenth century, the piano had become the powerful instrument we know today.",
+    "F   The piano's popularity soared. It became the centre of music-making in middle-class homes, a symbol of culture and education, and the instrument for which many of the greatest composers wrote. Even today, in an age of electronic music, the piano remains one of the first instruments many people learn to play."
+   ],
+   Q:[
+    {t:'choice',a:'B',q:'The piano solved the problem of how to play both loudly and:',opts:['A) quickly','B) softly','C) high','D) low']},
+    {t:'choice',a:'B',q:'In a harpsichord, the string is:',opts:['A) struck by a hammer','B) plucked by a quill','C) bowed','D) blown']},
+    {t:'choice',a:'A',q:'The piano was invented around 1700 by:',opts:['A) an Italian instrument-maker','B) a German composer','C) a French king','D) an English maker']},
+    {t:'choice',a:'B',q:"The word 'piano' comes from the Italian for:",opts:['A) loud','B) soft','C) hammer','D) string']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains how the harpsichord produced its sound?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the addition of an iron frame?'},
+    {t:'text',a:'D',q:"Which paragraph (A–F) explains the meaning of the name 'piano'?"},
+    {t:'text',a:'C',q:"Which paragraph (A–F) describes Cristofori's key innovation?"},
+    {t:'text',a:'F',q:"Which paragraph (A–F) describes the piano's place in the home?"},
+    {t:'text',a:'volume',q:'The harpsichord always played at the same ______.'},
+    {t:'text',a:'hammer',q:'In a piano, a small ______ strikes the string.'},
+    {t:'text',a:'iron',q:'A stronger ______ frame let the strings be held under greater tension.'},
+    {t:'text',a:'education',q:'The piano became a symbol of culture and ______.'}
+   ]},
+  {title:'Are Exams the Best Way to Assess Students?',
+   paras:[
+    "A   For generations, the formal written examination has been the main way of judging what students have learned. At the end of a course, pupils sit in silence and answer questions under strict time limits, and their whole performance may rest on a few hours' work. As education changes, however, many are asking whether exams are really the best way to measure a student's ability.",
+    "B   Supporters of examinations defend them strongly. Exams, they argue, are fair, since every student answers the same questions under the same conditions. They are hard to cheat in, they test knowledge across a whole subject, and they prepare young people for the pressure they will face in later life. For all their faults, exams remain a clear and objective measure.",
+    "C   Critics, however, see serious flaws. An exam, they point out, tests performance on a single day, and a student who is unwell or anxious may do far worse than their ability deserves. Exams tend to reward memory and quick recall rather than deep understanding or creativity, and they say little about skills such as teamwork or problem-solving that matter greatly in real life.",
+    "D   There is also concern about the effect on learning itself. When everything depends on an exam, students may simply memorise facts to pass, forgetting them soon afterwards, rather than truly understanding the subject. Teachers, under pressure to produce good results, may end up 'teaching to the test' rather than inspiring a genuine love of learning.",
+    "E   For these reasons, many educators favour a broader approach. Continuous assessment, in which a student's coursework, projects and presentations count towards their final mark, can give a fuller picture of their abilities and reduce the pressure of a single exam. Such methods also reward the steady effort of the whole year, not just performance on one day.",
+    "F   Yet coursework has weaknesses of its own. It is harder to make fair, since some students may receive more help at home, and it can be easier to cheat. Most experts therefore conclude that a mixture is best: exams and coursework together, each balancing the weaknesses of the other, to give the fairest and fullest measure of what a student can do."
+   ],
+   Q:[
+    {t:'choice',a:'YES',q:'The written exam has long been the main way of judging students.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Supporters believe exams are easy to cheat in.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Critics argue exams reward memory more than deep understanding.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:"'Teaching to the test' means inspiring a love of learning.",opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Continuous assessment can reduce the pressure of a single exam.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most experts believe coursework alone is the fairest method.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the argument that exams are fair and objective?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the effect of exams on how students learn?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the weaknesses of coursework?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the benefits of continuous assessment?'},
+    {t:'text',a:'conditions|condition',q:'Supporters say exams are fair because every student answers under the same ______.'},
+    {t:'text',a:'day',q:'Critics say exams test performance on a single ______.'},
+    {t:'text',a:'presentations|presentation',q:'Continuous assessment counts coursework, projects and ______.'},
+    {t:'text',a:'mixture|mix|combination',q:'Most experts conclude that a ______ of exams and coursework is best.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Share of final grade from exams vs coursework (%), four subjects</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Subject</th><th style='border:1px solid #999;padding:5px 10px'>Exam</th><th style='border:1px solid #999;padding:5px 10px'>Coursework</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Mathematics</td><td style='border:1px solid #999;padding:5px 10px'>90</td><td style='border:1px solid #999;padding:5px 10px'>10</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>History</td><td style='border:1px solid #999;padding:5px 10px'>60</td><td style='border:1px solid #999;padding:5px 10px'>40</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Art</td><td style='border:1px solid #999;padding:5px 10px'>20</td><td style='border:1px solid #999;padding:5px 10px'>80</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Science</td><td style='border:1px solid #999;padding:5px 10px'>70</td><td style='border:1px solid #999;padding:5px 10px'>30</td></tr></table>",
+  task1:"The table below shows the percentage of the final grade that comes from exams and from coursework in four school subjects. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that students should be assessed mainly through exams, while others think continuous assessment is better. Discuss both views and give your own opinion. Write at least 250 words."
+ }
 }
 
 ];
