@@ -1,5 +1,5 @@
 /* IELTS Helper — Service Worker (offline support) */
-const CACHE = 'ielts-helper-v2';
+const CACHE = 'ielts-helper-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,8 @@ const ASSETS = [
   './writing-module.html',
   './reading-module.html',
   './listening-module.html',
+  './listening-tests.html',
+  './listening-tests-data.js',
   './practice.html',
   './vocabulary.html',
   './cue-cards.html',
