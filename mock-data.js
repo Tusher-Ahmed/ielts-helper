@@ -880,7 +880,7 @@ const MOCKS=[
  blurb:'Hotel · Fitness centre · Nutrition + Exercise · Olympics · AI',
  listen:[
   {title:'Seaview Hotel booking',
-   transcript:"Good evening, Seaview Hotel, how can I help? I'd like to book a room. Certainly, for which dates? From the fourteenth of June for three nights. We have a double room available at ninety pounds per night, including breakfast. Does the room have a sea view? Yes, all our double rooms face the sea. Is there parking? Yes, free parking is available for guests. Could I take your name? It's Mr Roberts, R-O-B-E-R-T-S. Check-in is from two o'clock, and please note we require payment on arrival.",
+   transcript:"Good evening, Seaview Hotel, how can I help? I'd like to book a room. Certainly, for which dates? From the fourth of June... sorry, the fourteenth, for three nights. We have a double room available at nineteen pounds — I mean ninety pounds per night, including breakfast. Does the room have a sea view? Yes, all our double rooms face the sea. Is there parking? Yes, free parking is available for guests. Could I take your name? It's Mr Roberts, R-O-B-E-R-T-S. Check-in is from two o'clock, and please note we require payment on arrival, not in advance.",
    Q:[
     {t:'text',a:'fourteenth|14th|14',q:'Booking from the ______ of June.'},
     {t:'text',a:'three|3',q:'Number of nights: ______.'},
@@ -894,7 +894,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Payment is required:',opts:['A) in advance','B) on arrival','C) monthly','D) online']}
    ]},
   {title:'Parkside Health & Fitness Centre',
-   transcript:"Welcome to the Parkside Health and Fitness Centre. As well as a fully equipped gym, we have two swimming pools: a large one for lane swimming and a smaller, warmer pool for children. Our fitness classes, including yoga and spinning, run throughout the day, and the timetable is available at reception. A qualified instructor is always on hand in the gym to help you. New members are entitled to one free session with a personal trainer. Our healthy-eating cafe on the first floor serves freshly made smoothies and light meals. Finally, remember that the centre gets very busy after five o'clock, so if you prefer a quieter workout, mornings are best.",
+   transcript:"Welcome to the Parkside Health and Fitness Centre. As well as a fully equipped gym, we have two swimming pools: a large one for lane swimming and a smaller, warmer pool for children. Our fitness classes, including yoga and spinning, run throughout the day, and the timetable is available at reception, not online. A qualified instructor is always on hand in the gym to help you. New members are entitled to one free session with a personal trainer. Our healthy-eating cafe on the ground floor — sorry, the first floor — serves freshly made smoothies and light meals. Finally, remember that the centre gets very busy after five o'clock, so if you prefer a quieter workout, mornings are best, not evenings.",
    Q:[
     {t:'text',a:'pools|pool',q:'The centre has two swimming ______.'},
     {t:'text',a:'children|child',q:'The smaller, warmer pool is for ______.'},
@@ -908,7 +908,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The best time for a quiet workout is:',opts:['A) evenings','B) mornings','C) weekends','D) lunchtime']}
    ]},
   {title:'Business project: planning a new cafe',
-   transcript:"Right, for our business project we need to create a plan for a new cafe. Have you thought about the location? I think near the university would be best, lots of students. What about the name? How about 'The Study Break'? I like that. Now, what will make us different? I think free, fast wifi and lots of power sockets, so students can work. And healthy food options, not just cakes. Definitely. What about opening hours? Students study late, so maybe open until midnight. And the budget? We were told to assume ten thousand pounds to start. When do we present? The presentation is on the twenty-first of April. Let's divide the work: I'll do the marketing, you do the finances.",
+   transcript:"Right, for our business project we need to create a plan for a new cafe. Have you thought about the location? I think near the station... no, near the university would be best, lots of students. What about the name? How about 'The Study Break'? I like that. Now, what will make us different? Free, fast wifi and lots of power sockets, so students can work. And healthy food options, not just cakes. Definitely. What about opening hours? Students study late, so maybe open until eleven... actually until midnight. And the budget? We were told to assume five thousand pounds — sorry, ten thousand — to start. When do we present? The presentation is on the twelfth of April... no, the twenty-first. Let's divide the work: I'll do the marketing, you do the finances.",
    Q:[
     {t:'text',a:'cafe|café',q:'The project is a plan for a new ______.'},
     {t:'text',a:'university',q:'Best location: near the ______.'},
@@ -922,7 +922,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The speaker will handle the:',opts:['A) finances','B) marketing','C) food','D) design']}
    ]},
   {title:'Lecture: the basics of nutrition',
-   transcript:"Today we will discuss the basics of good nutrition. A balanced diet contains the right proportions of several food groups. Carbohydrates, found in foods like rice and bread, provide our main source of energy. Proteins, from sources such as meat, fish, and beans, are essential for growth and repairing the body. Fats are also necessary in moderation, particularly the healthy fats found in nuts and olive oil. In addition, we need vitamins and minerals, which we get mainly from fruit and vegetables. Water, too, is vital, and experts recommend drinking around two litres a day. A common mistake in modern diets is consuming too much sugar, which is linked to obesity and tooth decay. The key message is balance.",
+   transcript:"Today we will discuss the basics of good nutrition. A balanced diet contains the right proportions of several food groups. Carbohydrates, found in foods like rice and bread, provide our main source of energy. Proteins, from sources such as meat, fish, and beans, are essential for growth and repairing the body — not for energy, that's the carbohydrates. Fats are also necessary in moderation, particularly the healthy fats found in nuts and olive oil. In addition, we need vitamins and minerals, which we get mainly from fruit and vegetables. Water, too, is vital, and experts recommend drinking around three litres... actually about two litres a day. A common mistake in modern diets is consuming too much sugar, which is linked to obesity and tooth decay. The key message is balance.",
    Q:[
     {t:'text',a:'energy',q:'Carbohydrates provide our main source of ______.'},
     {t:'text',a:'bread',q:'Carbohydrates are found in rice and ______.'},
@@ -937,72 +937,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Benefits of Exercise',
+  {title:"The Body's Internal Clock",
    paras:[
-    "It is widely known that regular physical exercise is good for us, yet the full extent of its benefits is often underestimated. Far from simply helping people lose weight, exercise has profound effects on almost every part of the body and mind.",
-    "The most obvious benefits are physical. Regular exercise strengthens the heart, allowing it to pump blood more efficiently and reducing the risk of heart disease. It also strengthens muscles and bones, helping to prevent conditions such as osteoporosis. Exercise improves the body's ability to control blood sugar, lowering the risk of type 2 diabetes.",
-    "Perhaps less well known are the benefits for mental health. Physical activity causes the brain to release chemicals called endorphins, which improve mood and reduce feelings of stress. Studies have consistently shown that people who exercise regularly are less likely to suffer from depression. Exercise can also improve sleep and boost concentration.",
-    "Importantly, the benefits do not require intense training. Experts suggest that just thirty minutes of moderate activity, such as brisk walking, five times a week can make a significant difference. Despite this, a large proportion of adults worldwide do not get enough exercise, often citing a lack of time."
+    "List of Headings —  i) A clock set by light   ii) The master timekeeper   iii) When the rhythm is disturbed   iv) A rhythm in every living thing   v) The daily cycle of the body   vi) Putting the clock to use   vii) The stages of sleep   viii) The chemistry of hunger",
+    "A   Almost every living thing, from bacteria to human beings, keeps time. Deep within us runs an internal clock that drives a daily rhythm of roughly twenty-four hours, known as the circadian rhythm. It governs when we feel sleepy and when we feel alert, and it continues to tick even in the complete absence of any clue from the outside world.",
+    "B   In humans, this clock is controlled by a tiny cluster of cells deep in the brain. This master clock keeps the rest of the body in step, sending out signals that coordinate the many smaller clocks found in our organs and tissues, so that the whole body follows a single daily schedule.",
+    "C   The rhythm shapes far more than sleep. Over each twenty-four-hour cycle, body temperature rises and falls, blood pressure changes, and the release of various hormones is carefully timed. Alertness, too, follows a pattern, typically dipping in the early afternoon and again in the small hours of the morning.",
+    "D   Although the clock runs by itself, it is kept accurate by cues from the environment, above all light. Bright morning light tells the brain that day has begun and resets the clock, keeping it synchronised with the outside world. This is why darkness in the evening, and light in the morning, are so important for healthy sleep.",
+    "E   Problems arise when the rhythm is thrown out of step. Flying across time zones causes jet lag, as the body's clock lags behind local time. Working night shifts forces people to be active when their clock is telling them to sleep, and long-term shift work has been linked to a range of health problems.",
+    "F   Understanding the body clock has practical uses. Doctors have found that some medicines work better at particular times of day, a field known as 'chronotherapy'. And simple habits — keeping regular hours, seeking daylight in the morning and avoiding bright screens at night — can help keep our ancient internal clock running smoothly."
    ],
    Q:[
-    {t:'choice',a:'FALSE',q:'Exercise only helps people lose weight.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'heart',q:'Regular exercise strengthens the ______.'},
-    {t:'text',a:'osteoporosis',q:'Exercise helps prevent a bone condition called ______.'},
-    {t:'text',a:'diabetes',q:'Exercise lowers the risk of type 2 ______.'},
-    {t:'text',a:'endorphins|endorphin',q:'Exercise causes the brain to release ______.'},
-    {t:'text',a:'stress',q:'Endorphins improve mood and reduce ______.'},
-    {t:'text',a:'depression',q:'People who exercise are less likely to suffer from ______.'},
-    {t:'choice',a:'B',q:'How much moderate activity do experts recommend?',opts:['A) 10 min daily','B) 30 min, 5 times a week','C) 2 hours daily','D) once a month']},
-    {t:'text',a:'walking|walk',q:'An example of moderate activity is brisk ______.'},
-    {t:'text',a:'concentration',q:'Exercise can improve sleep and boost ______.'},
-    {t:'choice',a:'TRUE',q:'Many adults do not get enough exercise.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'time',q:'Many people say they lack ______ to exercise.'},
-    {t:'choice',a:'C',q:'The main message is that exercise benefits:',opts:['A) only the body','B) only the mind','C) both body and mind','D) neither']}
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'The circadian rhythm continues even without external clues.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The master clock is located in the heart.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Body temperature stays constant throughout the day.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Light in the morning helps reset the body clock.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'circadian',q:'The daily rhythm is known as the ______ rhythm.'},
+    {t:'text',a:'light',q:'The clock is kept accurate above all by ______.'},
+    {t:'text',a:'chronotherapy',q:'Timing medicines to the body clock is called ______.'}
    ]},
-  {title:'The History of the Olympic Games',
+  {title:'The History of the Compass',
    paras:[
-    "The Olympic Games, watched today by billions around the world, have their roots in ancient Greece. The first recorded Games took place in 776 BC in Olympia, held in honour of the god Zeus. For over a thousand years, athletes competed in events such as running, wrestling, and chariot racing. During the Games, a truce was declared, allowing competitors and spectators to travel safely even between warring cities.",
-    "The ancient Games eventually came to an end, but the idea was revived in the modern era. In 1896, largely thanks to the efforts of a Frenchman, Baron Pierre de Coubertin, the first modern Olympic Games were held in Athens. Just fourteen nations took part.",
-    "Since then, the Games have grown enormously. Today, more than two hundred nations participate, and the number of sports has expanded to include everything from swimming to gymnastics. The Winter Olympics, introduced in 1924, added sports such as skiing and ice skating.",
-    "The modern Games have not been without controversy, including concerns about their huge cost and, on occasion, political tensions. Nevertheless, the Olympics remain a powerful symbol of international cooperation, held every four years."
+    "A   Before the invention of the compass, sailors far from land had few ways to find their direction. By day they could follow the sun, and by night the stars, but when clouds hid the sky they could easily become hopelessly lost. The compass, a simple device that always points north, transformed navigation and helped open the age of exploration.",
+    "B   The compass works because the Earth behaves like a giant magnet. A magnetised needle, allowed to turn freely, lines itself up with the Earth's magnetic field, so that one end always points roughly towards the North Pole. Wherever a sailor was, and whatever the weather, the needle showed the way.",
+    "C   The compass was invented in China, where magnetic needles were in use by around the eleventh century, at first for telling fortunes rather than for finding direction. From China, knowledge of the compass gradually spread westward along trade routes to the Arab world and then to Europe.",
+    "D   In Europe, the compass arrived at a crucial moment. Combined with better ships and maps, it gave sailors the confidence to venture far out into the open ocean, out of sight of land. The great voyages of exploration that followed, reaching the Americas and rounding Africa, would have been almost impossible without it.",
+    "E   The compass has one curious complication. The magnetic North Pole, which the needle follows, is not in exactly the same place as the true, geographic North Pole, and it slowly shifts over time. Skilled navigators had to learn to correct for this difference, known as magnetic variation, to avoid errors.",
+    "F   Today, satellite systems have largely taken over the task of navigation, guiding everything from ships to smartphones. Yet the humble compass has not disappeared. It needs no power and cannot be switched off or jammed, which is why it remains a trusted backup when all else fails."
    ],
    Q:[
-    {t:'text',a:'776',q:'The first recorded Games were held in ______ BC.'},
-    {t:'text',a:'olympia',q:'The ancient Games were held in ______.'},
-    {t:'text',a:'zeus',q:'They were held in honour of the god ______.'},
-    {t:'text',a:'truce',q:'During the Games, a ______ was declared.'},
-    {t:'text',a:'coubertin',q:'The modern Games were revived largely thanks to Baron Pierre de ______.'},
-    {t:'text',a:'1896',q:'The first modern Games were held in ______ (year).'},
-    {t:'text',a:'athens',q:'The first modern Games took place in ______.'},
-    {t:'choice',a:'A',q:'How many nations took part in the first modern Games?',opts:['A) 14','B) 100','C) 200','D) 776']},
-    {t:'text',a:'two hundred|200',q:'Today more than ______ nations participate.'},
-    {t:'text',a:'1924',q:'The Winter Olympics were introduced in ______.'},
-    {t:'text',a:'skating|skate',q:'Winter sports include skiing and ice ______.'},
-    {t:'text',a:'cost',q:'The modern Games have faced concerns about their huge ______.'},
-    {t:'text',a:'four|4',q:'The Olympics are held every ______ years.'}
+    {t:'choice',a:'B',q:'Before the compass, sailors could become lost when:',opts:['A) the sea was rough','B) clouds hid the sky','C) they had no map','D) the wind changed']},
+    {t:'choice',a:'C',q:'A compass needle points north because it aligns with:',opts:['A) the stars','B) the sun',"C) the Earth's magnetic field",'D) the wind']},
+    {t:'choice',a:'C',q:'The compass was first invented in:',opts:['A) Europe','B) the Arab world','C) China','D) the Americas']},
+    {t:'choice',a:'B',q:'Magnetic variation is the difference between magnetic north and:',opts:['A) south','B) true (geographic) north','C) the equator','D) the nearest coast']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains how the compass reached Europe?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) explains why the compass still has a use today?'},
+    {t:'text',a:'D',q:"Which paragraph (A–F) describes the compass's role in the age of exploration?"},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the difference between magnetic and true north?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains how the compass physically works?'},
+    {t:'text',a:'north',q:'A compass always points ______.'},
+    {t:'text',a:'fortunes|fortune',q:'In China, magnetic needles were first used for telling ______.'},
+    {t:'text',a:'Africa',q:'The great voyages reached the Americas and rounded ______.'},
+    {t:'text',a:'power',q:'The compass needs no ______ and cannot be jammed.'}
    ]},
-  {title:'The Age of Artificial Intelligence',
+  {title:'Should Zoos Exist?',
    paras:[
-    "Artificial intelligence, or AI, has moved from the realm of science fiction into everyday life. In its simplest form, AI refers to computer systems that can perform tasks normally requiring human intelligence, such as recognising speech, translating languages, or making decisions. Though the idea dates back decades, recent advances in computing power and the availability of vast amounts of data have driven remarkable progress.",
-    "AI is already all around us, often without our noticing. When a phone recognises a face, a website recommends a product, or a virtual assistant answers a question, AI is at work. In medicine, AI systems can help doctors detect diseases in scans, sometimes more accurately than humans. In transport, self-driving cars rely on AI to interpret their surroundings.",
-    "These developments bring enormous potential benefits. However, they also raise serious concerns. Many fear that AI will replace human workers, leading to job losses. Others worry about privacy, as AI systems often depend on collecting large amounts of personal data. There are also questions about fairness, since an AI trained on biased data may make biased decisions.",
-    "Experts disagree about the future. Some predict that AI will bring a new age of prosperity, while others warn of dangers if the technology is not carefully controlled. What is clear is that how we choose to develop and regulate AI will shape the world for generations to come."
+    "A   Few institutions provoke such mixed feelings as the zoo. To some, zoos are places of wonder and learning, where families can encounter animals they would otherwise never see. To others, they are little more than prisons, where wild creatures are kept in captivity for human amusement. The debate over whether zoos should exist has grown sharper as attitudes to animals have changed.",
+    "B   Defenders point above all to conservation. Modern zoos, they argue, play a vital role in protecting endangered species, breeding animals whose numbers in the wild have collapsed. In some celebrated cases, species that had almost vanished have been bred in zoos and later returned to the wild, a rescue that would otherwise have been impossible.",
+    "C   Education is a second argument in their favour. Seeing a real animal, supporters say, creates a connection that no film or photograph can match, inspiring visitors — especially children — to care about wildlife and the threats it faces. A public that cares, they add, is more likely to support conservation efforts around the world.",
+    "D   Critics remain unconvinced. Many animals, they argue, suffer in captivity, unable to roam, hunt or behave as they would in the wild. Large, intelligent animals such as elephants and big cats seem to fare especially badly, and signs of boredom and distress are common. Whatever the benefits, critics say, they cannot justify this suffering.",
+    "E   There is also a deeper objection. Some argue that keeping any animal in a cage for human purposes is simply wrong, however comfortable the enclosure, because animals have a right to their freedom. From this point of view, no amount of conservation or education can make captivity acceptable.",
+    "F   Many now believe the answer lies not in abolishing zoos but in transforming them. The best modern zoos are moving away from cramped cages towards spacious, natural enclosures, focusing on the species that genuinely benefit and on animals that cannot survive in the wild. Whether that is enough to satisfy their critics remains an open question."
    ],
    Q:[
-    {t:'text',a:'intelligence',q:'AI performs tasks normally requiring human ______.'},
-    {t:'text',a:'data',q:'Recent progress was driven by computing power and vast amounts of ______.'},
-    {t:'choice',a:'B',q:'Which is given as an example of AI in medicine?',opts:['A) writing letters','B) detecting diseases in scans','C) cooking','D) cleaning']},
-    {t:'text',a:'surroundings|surrounding',q:'Self-driving cars use AI to interpret their ______.'},
-    {t:'text',a:'workers|worker',q:'Many fear AI will replace human ______.'},
-    {t:'text',a:'privacy',q:'Some worry about ______, as AI collects personal data.'},
-    {t:'text',a:'biased|bias',q:'An AI trained on biased data may make ______ decisions.'},
-    {t:'text',a:'accurately|accurate',q:'AI can sometimes detect diseases more ______ than humans.'},
-    {t:'text',a:'decades|decade',q:'The idea of AI dates back ______.'},
-    {t:'choice',a:'B',q:'A virtual assistant answering a question is an example of:',opts:['A) science fiction','B) AI at work','C) human error','D) data loss']},
-    {t:'choice',a:'FALSE',q:'Everyone agrees about the future of AI.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Some experts predict AI will bring prosperity.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'AI has no role in transport.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'B',q:'The writer concludes that how we ______ AI will shape the future:',opts:['A) ignore','B) develop and regulate','C) sell','D) hide']}
+    {t:'choice',a:'YES',q:'Attitudes towards keeping animals in zoos have changed over time.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Zoos have never successfully returned any species to the wild.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Supporters believe seeing a real animal has a stronger effect than a film.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Critics believe large animals such as elephants cope especially well in captivity.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some critics object to captivity on principle, regardless of conditions.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Everyone now agrees that zoos should be abolished.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the conservation argument for zoos?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) gives the objection that animals have a right to freedom?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) gives evidence that some animals suffer in captivity?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes how the best modern zoos are changing?'},
+    {t:'text',a:'conservation',q:'What role do defenders say zoos play in protecting endangered species?'},
+    {t:'text',a:'elephants|elephant',q:'Which large animal, along with big cats, is said to suffer most in captivity?'},
+    {t:'text',a:'freedom',q:'Some critics believe animals have a right to their ______.'},
+    {t:'text',a:'enclosures|enclosure',q:'The best modern zoos are replacing cages with natural ______.'}
    ]}
  ],
  writing:{
