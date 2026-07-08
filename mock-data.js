@@ -1750,7 +1750,7 @@ const MOCKS=[
  blurb:'Bank account · New shopping centre · Advertising + Online shopping · Branding · Gig economy',
  listen:[
   {title:'Opening a bank account',
-   transcript:"Good morning, I'd like to open a bank account. Certainly. We offer a current account with no monthly fee. To open one, you'll need two forms of identification: a passport and a recent utility bill showing your address. You'll also receive a debit card, which arrives within five working days. The account includes free online and mobile banking. There's no minimum balance required. The account pays a small amount of interest, currently one per cent a year. Our nearest branch is on King Street, open until four thirty on weekdays. You'll need to book an appointment to open the account.",
+   transcript:"Good morning, I'd like to open a bank account. Certainly. We offer a current account with no monthly fee. To open one, you'll need two forms of identification: a passport and a recent utility bill showing your address. You'll also receive a debit card, which arrives within three... sorry, five working days. The account includes free online and mobile banking. There's no minimum balance required. The account pays a small amount of interest, currently two per cent... sorry, one per cent a year. Our nearest branch is on Queen Street — no, King Street, open until four thirty on weekdays. You'll need to book an appointment to open the account.",
    Q:[
     {t:'text',a:'fee',q:'The current account has no monthly ______.'},
     {t:'text',a:'identification|id',q:'You need two forms of ______.'},
@@ -1764,7 +1764,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'To open the account you must:',opts:['A) pay a fee','B) book an appointment','C) deposit money','D) be over 21']}
    ]},
   {title:'Radio: new shopping centre opening',
-   transcript:"In local news, the town's brand-new shopping centre opens its doors next Saturday. The centre, which took two years to build, houses over one hundred shops, as well as a cinema and a food court with twenty restaurants. On opening day, the first two hundred visitors will receive a free gift. The centre is easily reached by public transport, and there is parking for two thousand cars. To celebrate, several shops will offer discounts of up to fifty per cent during the first week. The centre will be open from nine in the morning until eight in the evening, seven days a week. Organisers say the development has created around five hundred new jobs.",
+   transcript:"In local news, the town's brand-new shopping centre opens its doors next Friday — sorry, next Saturday. The centre, which took three years to build... actually two, houses over one hundred shops, as well as a cinema and a food court with twelve restaurants... no, twenty. On opening day, the first two hundred visitors will receive a free gift. The centre is easily reached by public transport, and there is parking for two thousand cars. To celebrate, several shops will offer discounts of up to fifteen... sorry, fifty per cent during the first week. The centre will be open from nine in the morning until eight in the evening, seven days a week. Organisers say the development has created around five hundred new jobs.",
    Q:[
     {t:'text',a:'saturday',q:'The shopping centre opens next ______.'},
     {t:'text',a:'two|2',q:'It took ______ years to build.'},
@@ -1778,7 +1778,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The development has created about:',opts:['A) 200 jobs','B) 500 jobs','C) 1000 jobs','D) 2000 jobs']}
    ]},
   {title:'Business presentation planning',
-   transcript:"Right, our business presentation is on a company's success. Which company should we choose? How about a coffee chain? Good, and easy to research. What's the secret of their success? I think it's mainly their strong brand and consistent quality. And their locations, always on busy streets. What about weaknesses? Their prices are quite high. And a lot of competition now. So what do we recommend? Maybe they should expand their online delivery. How long is the presentation? Ten minutes, plus questions. Should we include charts? Yes, let's show their sales growth in a graph. When's it due? The fourteenth of April. Let's meet Wednesday to practise.",
+   transcript:"Right, our business presentation is on a company's success. Which company should we choose? How about a tech firm... no, a coffee chain? Good, and easy to research. What's the secret of their success? I think it's mainly their strong brand and consistent quality. And their locations, always on busy streets. What about weaknesses? Their prices are quite high. And a lot of competition now. So what do we recommend? Maybe they should expand their online delivery. How long is the presentation? Fifteen minutes... sorry, ten, plus questions. Should we include charts? Yes, let's show their sales growth in a graph. When's it due? The fourth... no, the fourteenth of April. Let's meet Wednesday to practise.",
    Q:[
     {t:'text',a:'success',q:"The presentation is about a company's ______."},
     {t:'text',a:'coffee',q:'They choose a ______ chain.'},
@@ -1792,7 +1792,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'A weakness mentioned, besides high prices, is:',opts:['A) poor quality','B) a lot of competition','C) bad locations','D) weak brand']}
    ]},
   {title:'Lecture: advertising and persuasion',
-   transcript:"Today's lecture concerns advertising and how it influences what we buy. The main purpose of advertising is not simply to give information, but to persuade. Advertisers use a range of techniques. One common method is to associate a product with positive feelings, such as happiness or success. Another is the use of celebrities, whose fame and image are transferred to the product in the mind of the consumer. Advertisers also exploit our desire to fit in, or, conversely, our desire to feel unique. Repetition is powerful too: the more often we see a brand, the more familiar and trustworthy it seems. Understanding these techniques helps consumers make more rational decisions.",
+   transcript:"Today's lecture concerns advertising and how it influences what we buy. The main purpose of advertising is not simply to give information, but to persuade. Advertisers use a range of techniques. One common method is to associate a product with positive feelings, such as happiness or success. Another is the use of celebrities, whose fame and image are transferred to the product in the mind of the consumer. Advertisers also exploit our desire to fit in, or, conversely, our desire to feel unique — not ordinary, unique. Repetition is powerful too: the more often we see a brand, the more familiar and trustworthy it seems. Understanding these techniques helps consumers make more rational decisions.",
    Q:[
     {t:'text',a:'persuade',q:'The main purpose of advertising is to ______.'},
     {t:'text',a:'feelings|feeling',q:'Advertisers associate products with positive ______.'},
@@ -1807,72 +1807,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Rise of Online Shopping',
+  {title:'The Science of Weather Forecasting',
    paras:[
-    "Two decades ago, buying goods over the internet was a novelty. Today, online shopping, or 'e-commerce', is a part of everyday life for billions of people, and it has transformed the way we buy almost everything, from books and clothes to groceries.",
-    "The reasons for its success are easy to understand. Online shopping offers unmatched convenience: customers can browse and buy at any time of day, from home, without travelling to a store. The choice available is enormous, and it is easy to compare prices between different sellers. For many products, home delivery, sometimes within hours, adds to the appeal.",
-    "This growth has had significant effects. Traditional 'high street' shops, unable to compete on price or convenience, have struggled, and many have closed. At the same time, e-commerce has created new jobs in areas such as warehousing and delivery, and has allowed small businesses to reach customers across the world.",
-    "There are drawbacks, however. Online shopping means customers cannot see or try products before buying, leading to high rates of returns. The huge rise in home deliveries has increased traffic and packaging waste. Some also worry about the loss of the social experience of shopping in person. Despite these concerns, the convenience of e-commerce means it is almost certain to keep growing."
+    "List of Headings —  i) Reading the atmosphere   ii) From folklore to science   iii) The power of computers   iv) Why forecasts go wrong   v) Eyes in the sky   vi) Warning of disaster   vii) The changing seasons   viii) How rainfall is measured",
+    "A   For most of history, predicting the weather was a matter of folklore and guesswork. People watched the sky, the behaviour of animals and the ache of old injuries, and passed down sayings such as 'red sky at night, shepherd's delight'. Some of these contained a grain of truth, but they could not look more than a few hours ahead, and were often simply wrong.",
+    "B   Modern forecasting began when scientists realised that the weather obeys physical laws and can, in principle, be calculated. To do so, they first needed data. Networks of weather stations were set up to measure temperature, air pressure, humidity and wind, building a picture of the state of the atmosphere at a given moment.",
+    "C   The greatest advance came from satellites. Orbiting high above the Earth, they photograph cloud systems, track storms, and measure conditions across the whole planet, including the vast oceans where there are no weather stations. For the first time, forecasters could see the weather coming.",
+    "D   All this data is fed into powerful computers running mathematical models of the atmosphere. These models apply the laws of physics to calculate how the weather will change, hour by hour, over the coming days. The more powerful the computer, the more detailed and accurate the forecast can be.",
+    "E   Yet forecasts are never perfect, especially beyond a few days. The atmosphere is what scientists call a 'chaotic' system, in which a tiny difference in the starting conditions can lead to a completely different outcome — the famous idea that the flap of a butterfly's wings might, in theory, alter the weather weeks later. This sets a limit on how far ahead the weather can ever be predicted.",
+    "F   Despite these limits, forecasting saves countless lives. Accurate warnings of storms, floods and heatwaves allow people to prepare or flee, and give farmers, sailors and airlines vital information. What was once superstition has become one of the most useful sciences of all."
    ],
    Q:[
-    {t:'text',a:'e-commerce|ecommerce|e commerce',q:'Online shopping is also known as ______.'},
-    {t:'text',a:'convenience',q:'Online shopping offers unmatched ______.'},
-    {t:'text',a:'home',q:'Customers can buy at any time of day from ______.'},
-    {t:'text',a:'compare',q:'It is easy to ______ prices between sellers.'},
-    {t:'text',a:'home',q:'For many products, ______ delivery adds to the appeal.'},
-    {t:'choice',a:'B',q:'High street shops have struggled because they cannot compete on price or:',opts:['A) quality','B) convenience','C) location','D) staff']},
-    {t:'text',a:'delivery',q:'E-commerce has created new jobs in warehousing and ______.'},
-    {t:'text',a:'world',q:'It allows small businesses to reach customers across the ______.'},
-    {t:'text',a:'try|see',q:'A drawback is that customers cannot ______ products before buying.'},
-    {t:'text',a:'returns|return',q:'This leads to high rates of ______.'},
-    {t:'text',a:'waste',q:'Home deliveries have increased traffic and packaging ______.'},
-    {t:'text',a:'social',q:'Some worry about the loss of the ______ experience of shopping.'},
-    {t:'choice',a:'B',q:'The writer predicts that e-commerce will:',opts:['A) disappear','B) keep growing','C) stay the same','D) become illegal']}
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:'Old weather sayings were always completely wrong.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Weather stations measure conditions such as temperature and air pressure.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Satellites can observe the weather over the oceans.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The weather can be predicted accurately as far ahead as we like.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'models|model',q:'Modern forecasting uses mathematical ______ of the atmosphere.'},
+    {t:'text',a:'chaotic',q:'The atmosphere is described as a ______ system.'},
+    {t:'text',a:'heatwaves|heatwave|heat waves',q:'Forecasting saves lives by warning of storms, floods and ______.'}
    ]},
-  {title:'The Power of Branding',
+  {title:'The Navigators of the Pacific',
    paras:[
-    "Why are some people willing to pay far more for a product simply because of the name on it? The answer lies in the power of branding, one of the most important concepts in modern business. A brand is much more than a logo or a name; it is the whole set of ideas, feelings, and expectations that a product brings to mind.",
-    "A strong brand offers companies enormous advantages. It allows them to charge higher prices, as customers associate the brand with quality or status. It also creates loyalty: satisfied customers return again and again, and may recommend the brand to others. A well-known brand is also instantly recognisable, helping a product stand out in a crowded market.",
-    "Building a brand takes time and consistency. Companies work hard to ensure that everything, from the design of their products to their advertising and even their customer service, sends the same message. Some of the world's most valuable brands have spent decades building trust with their customers.",
-    "Branding is not without its critics, however. Some argue that it encourages people to pay for image rather than substance. Nevertheless, in a world full of choices, a trusted brand remains one of a company's most valuable assets."
+    "A   The Pacific is by far the largest ocean on Earth, and its islands are scattered across it like grains of sand, many separated by thousands of kilometres of open water. Yet long before Europeans possessed the compass or accurate maps, these remote islands had been discovered and settled by a remarkable seafaring people, the Polynesians, in one of the greatest feats of exploration in human history.",
+    "B   Beginning around three thousand years ago, and using only large double-hulled canoes, the Polynesians spread across a vast triangle of the Pacific, eventually reaching islands as far apart as Hawaii, New Zealand and Easter Island. That they did so deliberately, and not merely by accident, is now widely accepted.",
+    "C   How they navigated without instruments long puzzled outsiders. The answer is that they read the natural world with extraordinary skill. By night, they steered by the rising and setting of particular stars; by day, by the direction of the swells rolling across the ocean, which they could feel in the very motion of their canoe.",
+    "D   They also read subtler signs. The presence of certain seabirds, which fly out to sea to feed and return to land at dusk, could reveal the direction of an island still hidden below the horizon. Even the patterns of clouds, and the colour of the sky, could hint at land far away.",
+    "E   This knowledge was not written down but memorised, passed from master navigator to apprentice over many years, often in the form of chants. When Europeans arrived, they largely dismissed these skills, and much of the ancient knowledge was, tragically, lost.",
+    "F   In recent decades, however, there has been a revival. Traditional navigation has been painstakingly relearned, and voyages have been made across thousands of kilometres of ocean using no instruments at all, proving beyond doubt that the achievements of the ancient Polynesians were real."
    ],
    Q:[
-    {t:'text',a:'name',q:'A brand is more than a logo or a ______.'},
-    {t:'text',a:'expectations|expectation',q:'A brand is a set of ideas, feelings and ______.'},
-    {t:'text',a:'prices|price',q:'A strong brand allows companies to charge higher ______.'},
-    {t:'text',a:'status',q:'Customers associate strong brands with quality or ______.'},
-    {t:'text',a:'loyalty',q:'A strong brand creates customer ______.'},
-    {t:'text',a:'recommend',q:'Loyal customers may ______ the brand to others.'},
-    {t:'text',a:'recognisable|recognizable',q:'A well-known brand is instantly ______.'},
-    {t:'text',a:'consistency',q:'Building a brand takes time and ______.'},
-    {t:'choice',a:'B',q:'Companies ensure everything sends the same:',opts:['A) price','B) message','C) logo','D) product']},
-    {t:'text',a:'trust',q:"Valuable brands have spent decades building ______ with customers."},
-    {t:'choice',a:'B',q:'Critics argue branding makes people pay for image rather than:',opts:['A) quality','B) substance','C) design','D) service']},
-    {t:'text',a:'assets|asset',q:"A trusted brand is one of a company's most valuable ______."},
-    {t:'choice',a:'FALSE',q:'Branding has no critics.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'B',q:'The Polynesians settled the Pacific islands:',opts:['A) purely by accident','B) deliberately, without instruments','C) using the compass','D) after Europeans arrived']},
+    {t:'choice',a:'B',q:'The Polynesians travelled in:',opts:['A) small rafts','B) large double-hulled canoes','C) European ships','D) steamships']},
+    {t:'choice',a:'C',q:'By day, the navigators steered by the direction of the:',opts:['A) stars','B) wind','C) ocean swells','D) sun']},
+    {t:'choice',a:'B',q:'The presence of certain seabirds could reveal the direction of:',opts:['A) a storm','B) an island','C) another canoe','D) the wind']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes how the navigators steered at night?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the modern revival of traditional navigation?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the vast area the Polynesians settled?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains how navigational knowledge was passed on?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the use of seabirds and clouds to find land?'},
+    {t:'text',a:'compass',q:'The Polynesians settled the Pacific before Europeans had the ______.'},
+    {t:'text',a:'three|3',q:'They began spreading across the Pacific around ______ thousand years ago.'},
+    {t:'text',a:'stars|star',q:'At night, they steered by the rising and setting of certain ______.'},
+    {t:'text',a:'chants|chant',q:'Navigational knowledge was memorised in the form of ______.'}
    ]},
-  {title:'Working in the Gig Economy',
+  {title:'The Four-Day Week Debate',
    paras:[
-    "The way many people work is changing. Instead of holding a traditional job with a single employer, a growing number of people now work in what is called the 'gig economy', taking on short-term tasks or 'gigs' for different clients, often arranged through websites or apps. This includes everything from driving passengers and delivering food to freelance writing and design.",
-    "For many workers, the main attraction is flexibility. They can choose when and how much they work, fitting their jobs around family, study, or other commitments. For some, it offers a way to be their own boss. Businesses, too, benefit, as they can hire people only when needed, without the cost of permanent staff.",
-    "However, this flexibility comes at a price. Gig workers are usually classed as self-employed, which means they miss out on the benefits enjoyed by traditional employees, such as paid holidays, sick pay, and pensions. Their income can also be unpredictable, varying from week to week. Because they are not guaranteed a minimum number of hours, they bear much of the risk themselves.",
-    "These issues have sparked debate about how gig workers should be treated. Some argue that companies should provide more protections, while others fear that too many rules would remove the flexibility that makes the gig economy attractive in the first place."
+    "A   The idea that everyone should work five days a week is so familiar that it seems natural, yet it is only about a century old, and even that was once a radical reform. Now a new idea is gaining ground: that the working week should be shortened again, to four days, with no loss of pay. Trials of the four-day week are under way in many countries, and the results are provoking fierce debate.",
+    "B   Supporters make a striking claim: that people can produce as much in four days as in five. Freed from pointless meetings and the exhaustion of a long week, they argue, workers become more focused and efficient, so that output need not fall. Several trials have reported that productivity stayed the same, or even rose, when hours were cut.",
+    "C   The benefits for workers are obvious. An extra day off means more time for family, rest and personal interests, and trials report happier, healthier and less stressed employees. Supporters add that shorter hours could also help the environment, by cutting the commuting and office energy use of one day in five.",
+    "D   Critics, however, urge caution. What works in an office, they argue, may not work in a hospital, a shop or a factory, where output depends directly on hours worked and a service must be provided every day. Squeezing five days of such work into four, they warn, could simply pile pressure onto already busy staff.",
+    "E   There are also practical difficulties. Businesses that must stay open all week would have to hire more staff or stagger their employees' days off, adding cost and complexity. And not every job, critics point out, can easily be measured by 'output' at all, making it hard to know whether the same work is really being done.",
+    "F   The debate is far from settled. Enthusiasts believe the four-day week is the future of work, as inevitable as the two-day weekend once was. Sceptics suspect it may suit some industries but never become universal. What is clear is that, for the first time in generations, the basic shape of the working week is once again open to question."
    ],
    Q:[
-    {t:'text',a:'gigs|gig',q:'Short-term tasks in the gig economy are called ______.'},
-    {t:'text',a:'apps|app',q:'Gigs are often arranged through websites or ______.'},
-    {t:'text',a:'flexibility',q:'The main attraction for workers is ______.'},
-    {t:'text',a:'work',q:'Workers can choose when and how much they ______.'},
-    {t:'text',a:'boss',q:'Some like being their own ______.'},
-    {t:'text',a:'needed|need',q:'Businesses can hire people only when ______.'},
-    {t:'text',a:'self-employed|selfemployed|self employed',q:'Gig workers are usually classed as ______.'},
-    {t:'choice',a:'B',q:'Which benefit do gig workers usually miss out on?',opts:['A) flexibility','B) paid holidays','C) extra income','D) apps']},
-    {t:'text',a:'pensions|pension',q:'Gig workers also miss out on sick pay and ______.'},
-    {t:'text',a:'unpredictable',q:'Their income can be ______.'},
-    {t:'text',a:'hours|hour',q:'Gig workers are not guaranteed a minimum number of ______.'},
-    {t:'text',a:'protections|protection',q:'Some argue companies should provide more ______.'},
-    {t:'text',a:'flexibility',q:'Others fear too many rules would remove the ______.'},
-    {t:'choice',a:'C',q:'The writer says finding the right balance is:',opts:['A) easy','B) unnecessary','C) increasingly urgent','D) impossible']}
+    {t:'choice',a:'YES',q:'The five-day working week has existed for only about a century.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Supporters claim output must fall if hours are cut.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some trials found that productivity stayed the same or rose.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Critics believe the four-day week suits every kind of workplace equally.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Businesses open all week might need to hire more staff.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Everyone now agrees the four-day week will become universal.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) makes the claim that output need not fall?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the benefits of an extra day off for workers?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) argues that some jobs depend directly on hours?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the difficulty of staying open all week?'},
+    {t:'text',a:'one|1',q:'How many days would a four-day week remove from the standard week?'},
+    {t:'text',a:'efficient',q:'Freed from long weeks, workers become more focused and ______.'},
+    {t:'text',a:'commuting|commute',q:'Shorter hours could help the environment by cutting ______ and office energy use.'},
+    {t:'text',a:'weekend',q:'The two-day ______ is given as an example of a change that once seemed radical.'}
    ]}
  ],
  writing:{
