@@ -590,7 +590,7 @@ const MOCKS=[
  blurb:'Gym · Castle tour · Volcanoes + Barrier Reef · Body language · Telephone',
  listen:[
   {title:'FitZone gym membership',
-   transcript:"Thank you for your interest in FitZone gym. We have three types of membership: the standard costs thirty pounds a month, the premium is forty-five, and the student membership is just twenty pounds with a valid student card. All memberships include access to the gym floor and changing rooms, but only premium members can use the swimming pool and sauna. The gym is open twenty-four hours a day, seven days a week. When you join, you'll receive a free fitness assessment with one of our trainers. To sign up, you'll need to bring a photo, proof of address, and your bank details. There's also a one-off joining fee of fifteen pounds.",
+   transcript:"Thank you for your interest in FitZone gym. We have three types of membership: the standard costs thirty-five pounds a month — sorry, thirty — the premium is forty-five, and the student membership is just twenty pounds with a valid student card. All memberships include access to the gym floor and changing rooms, but only premium members can use the swimming pool and sauna. The gym is open twenty-four hours a day, seven days a week. When you join, you'll receive a free fitness assessment with one of our trainers. To sign up, you'll need to bring a photo, proof of address, and your bank details. There's also a one-off joining fee of fifty pounds... sorry, fifteen.",
    Q:[
     {t:'text',a:'thirty|30',q:'Standard membership: £______ a month.'},
     {t:'text',a:'forty-five|45|forty five',q:'Premium membership: £______.'},
@@ -604,7 +604,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The gym is open:',opts:['A) weekdays only','B) 7 days a week','C) mornings only','D) weekends only']}
    ]},
   {title:'Dunhill Castle tour',
-   transcript:"Welcome to Dunhill Castle, one of the oldest castles in the country, built in the twelfth century. We'll begin in the Great Hall, where banquets were once held. From there, we'll climb the tower, which offers wonderful views of the valley, though I should warn you there are ninety steps and they can be slippery. The castle is said to be home to a famous ghost, and many visitors come especially to hear the legend. The gift shop, where you can buy souvenirs, is located in the old stables. Photography is welcome throughout the castle, except in the chapel, where it is not allowed. The tour lasts approximately forty-five minutes, and afterwards you're welcome to explore the gardens.",
+   transcript:"Welcome to Dunhill Castle, one of the oldest castles in the country, built in the eleventh century — sorry, the twelfth. We'll begin in the Great Hall, where banquets were once held. From there, we'll climb the tower, which offers wonderful views of the valley, though I should warn you there are nineteen steps... no, ninety, and they can be slippery. The castle is said to be home to a famous ghost, and many visitors come especially to hear the legend. The gift shop, where you can buy souvenirs, is located in the old stables, not the tower. Photography is welcome throughout the castle, except in the chapel, where it is not allowed. The tour lasts approximately forty-five minutes, and afterwards you're welcome to explore the gardens.",
    Q:[
     {t:'text',a:'twelfth|12th',q:'The castle was built in the ______ century.'},
     {t:'text',a:'hall',q:'Banquets were held in the Great ______.'},
@@ -618,7 +618,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The castle is famous for its:',opts:['A) library','B) ghost','C) river','D) market']}
    ]},
   {title:'Tutorial: choosing a dissertation topic',
-   transcript:"You wanted to talk about your dissertation topic? Yes, I'm interested in renewable energy, but I'm not sure it's focused enough. A topic that broad is hard to manage. Could you narrow it to one type of energy? Maybe I could focus on solar power in rural areas. That's much better. And what method will you use? I was thinking of interviews with local residents. Interviews are fine, but make sure you get at least fifteen participants. How long should the dissertation be? Around ten thousand words. When's the deadline? The final version is due in May, but I'd like a draft by the end of March.",
+   transcript:"You wanted to talk about your dissertation topic? Yes, I'm interested in renewable energy, but I'm not sure it's focused enough. A topic that broad is hard to manage. Could you narrow it to one type of energy? Maybe I could focus on wind power... actually, solar power in rural areas. That's much better. And what method will you use? I was thinking of a questionnaire — no, interviews with local residents. Interviews are fine, but make sure you get at least fifteen participants, not five. How long should the dissertation be? Around ten thousand words. When's the deadline? The final version is due in June... sorry, May, but I'd like a draft by the end of March.",
    Q:[
     {t:'text',a:'energy',q:"The student's broad topic is renewable ______."},
     {t:'text',a:'narrow',q:'The tutor advises the student to ______ the topic.'},
@@ -632,7 +632,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The student will interview:',opts:['A) experts','B) local residents','C) students','D) tourists']}
    ]},
   {title:'Lecture: volcanoes',
-   transcript:"Today's lecture concerns volcanoes, one of the most powerful forces on Earth. A volcano forms where molten rock, called magma, rises from deep within the planet to the surface. When magma reaches the surface, it is known as lava. Volcanoes are often found along the boundaries of the tectonic plates that make up the Earth's crust. The most active region is the so-called Ring of Fire, which surrounds the Pacific Ocean. While eruptions can be devastating, volcanoes also bring benefits. The ash they release makes surrounding soil extremely fertile, which is why many people choose to farm near them despite the risks. Volcanic activity has also created some of the world's most beautiful islands. Scientists monitor volcanoes closely, using instruments to detect the small earthquakes that often signal an eruption is near.",
+   transcript:"Today's lecture concerns volcanoes, one of the most powerful forces on Earth. A volcano forms where molten rock, called magma, rises from deep within the planet to the surface. When magma reaches the surface, it is known as lava. Volcanoes are often found along the boundaries of the tectonic plates that make up the Earth's crust. The most active region is the so-called Ring of Fire, which surrounds the Atlantic — sorry, the Pacific Ocean. While eruptions can be devastating, volcanoes also bring benefits. The ash they release makes surrounding soil extremely fertile, which is why many people choose to farm near them despite the risks. Volcanic activity has also created some of the world's most beautiful islands. Scientists monitor volcanoes closely, using instruments to detect the small earthquakes that often signal an eruption is near.",
    Q:[
     {t:'text',a:'magma',q:'Molten rock below the surface is called ______.'},
     {t:'text',a:'lava',q:'When magma reaches the surface it is called ______.'},
@@ -647,72 +647,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Great Barrier Reef',
+  {title:'How the Immune System Works',
    paras:[
-    "Stretching over 2,300 kilometres along the coast of Australia, the Great Barrier Reef is the largest coral reef system on Earth and the only living structure visible from space. It is home to an astonishing diversity of life, including more than 1,500 species of fish, 400 types of coral, and numerous turtles, sharks, and dolphins.",
-    "Coral reefs are built by tiny animals called polyps, which produce hard skeletons of calcium carbonate. Over thousands of years, the accumulated skeletons form the vast structures we see today. Remarkably, corals depend on a close partnership with microscopic algae that live inside them. The algae provide the coral with food through photosynthesis, and in return receive shelter. This relationship also gives coral its brilliant colours.",
-    "Unfortunately, the reef is under serious threat. When ocean temperatures rise, corals expel their algae in a process known as 'bleaching', turning white and, if conditions do not improve, eventually dying. In recent years, rising sea temperatures caused by climate change have led to several mass bleaching events. Pollution and overfishing add to the pressure.",
-    "Efforts to protect the reef are underway. Large sections are now designated as marine parks where fishing is restricted, and scientists are experimenting with ways to grow more resilient coral. Yet experts agree that the reef's long-term survival depends above all on tackling climate change."
+    "List of Headings —  i) The body's outer defences   ii) The general first response   iii) Targeted defenders   iv) Remembering the enemy   v) When defence goes wrong   vi) Training the system   vii) The discovery of germs   viii) The cells of the blood",
+    "A   Every day the human body is under attack from bacteria, viruses and other microbes, yet most of the time we stay healthy. The first line of defence is simply to keep invaders out. The skin forms a tough physical barrier, while mucus in the nose and airways traps particles, and the acid in the stomach destroys many microbes that are swallowed. Most would-be invaders never get past these outer defences at all.",
+    "B   When microbes do break through, the body mounts a rapid, general response known as innate immunity. Specialised white blood cells rush to the site and engulf the invaders, while the area often becomes red, warm and swollen — the familiar signs of inflammation. This response is not aimed at any particular microbe; it attacks anything recognised as foreign.",
+    "C   If the threat persists, a second, more precise system takes over. Known as adaptive immunity, it relies on cells called lymphocytes that recognise a specific invader and respond only to it. Some produce antibodies, proteins that lock onto the microbe and mark it for destruction. Building this targeted response takes several days, which is why a new infection can make us ill before we recover.",
+    "D   The adaptive system has a remarkable feature: memory. After an infection has been defeated, a population of memory cells remains, primed to recognise the same invader instantly. Should it return, the response is now so swift that we may never feel ill at all. This is why, having had certain diseases such as measles once, we rarely catch them again.",
+    "E   This memory is what vaccination exploits. A vaccine exposes the immune system to a harmless version or fragment of a microbe, prompting it to build memory cells without our ever suffering the disease. When the real microbe later appears, the body is already prepared to destroy it.",
+    "F   Powerful as it is, the immune system can also cause harm. Sometimes it overreacts to harmless substances such as pollen, producing the misery of allergies. More seriously, it can mistake the body's own tissues for the enemy and attack them, causing what are called autoimmune diseases. A defence system this powerful, it seems, is not without its dangers."
    ],
    Q:[
-    {t:'text',a:'2300|2,300',q:'The reef stretches over ______ kilometres.'},
-    {t:'choice',a:'C',q:'The reef is home to more than how many species of fish?',opts:['A) 400','B) 1000','C) 1500','D) 2300']},
-    {t:'text',a:'polyps|polyp',q:'Coral reefs are built by tiny animals called ______.'},
-    {t:'text',a:'carbonate',q:'Coral skeletons are made of calcium ______.'},
-    {t:'text',a:'algae',q:'Corals partner with microscopic ______.'},
-    {t:'text',a:'photosynthesis',q:'The algae provide food through ______.'},
-    {t:'text',a:'white',q:'When corals expel their algae, they turn ______.'},
-    {t:'text',a:'bleaching',q:'This process is known as ______.'},
-    {t:'choice',a:'B',q:'Bleaching is caused mainly by:',opts:['A) pollution','B) rising temperatures','C) overfishing','D) tourists']},
-    {t:'choice',a:'TRUE',q:'The reef is visible from space.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'fishing',q:'Marine parks restrict ______.'},
-    {t:'text',a:'resilient',q:'Scientists are trying to grow more ______ coral.'},
-    {t:'text',a:'climate',q:"The reef's survival depends above all on tackling ______ change."}
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'The skin acts as a physical barrier against microbes.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Innate immunity targets one specific type of microbe.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The adaptive immune response is immediate.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Vaccines contain a harmless version or fragment of a microbe.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'swollen',q:'Inflammation makes an area red, warm and ______.'},
+    {t:'text',a:'proteins|protein',q:'Antibodies are ______ that mark microbes for destruction.'},
+    {t:'text',a:'autoimmune',q:"When the immune system attacks the body's own tissues, the result is an ______ disease."}
    ]},
-  {title:'The Secrets of Body Language',
+  {title:'The History of Cryptography',
    paras:[
-    "Long before humans developed spoken language, we communicated through our bodies, and to this day, much of what we express is conveyed without words. Researchers estimate that a significant proportion of communication is non-verbal, transmitted through facial expressions, gestures, posture, and eye contact.",
-    "Facial expressions are perhaps the most universal form of body language. Studies have shown that certain expressions, such as those for happiness, sadness, fear, and anger, are recognised across all cultures, suggesting they are innate rather than learned. A genuine smile, for instance, involves not just the mouth but also the muscles around the eyes.",
-    "Gestures, on the other hand, often vary considerably between cultures. A hand signal that is friendly in one country may be offensive in another. This is why travellers are frequently advised to learn about local customs to avoid misunderstandings.",
-    "Body language also reveals emotions we may be trying to hide. Crossed arms can signal defensiveness, while frequent touching of the face may indicate anxiety. Interestingly, research suggests that adopting confident postures can even influence how we feel, making us genuinely more self-assured."
+    "A   For as long as people have had secrets, they have sought ways to hide them. Cryptography — the art of writing in code — is almost as old as writing itself. Its purpose is simple: to turn a readable message into a form that only the intended recipient can understand, keeping it safe from anyone who intercepts it along the way.",
+    "B   The earliest methods were simple substitutions. The Roman general Julius Caesar, for example, is said to have shifted each letter of his messages a fixed number of places along the alphabet. Anyone who did not know the shift saw only nonsense. Such 'ciphers' were easy to use but, to a determined codebreaker, not very hard to crack.",
+    "C   The great weakness of simple substitution is that language has patterns. In English, some letters appear far more often than others; the letter 'e' is the most common. By counting how often each symbol appears in a coded message, a codebreaker can begin to guess which letter it stands for. This technique, known as frequency analysis, defeated simple ciphers for centuries.",
+    "D   The struggle between codemakers and codebreakers reached a dramatic peak during the Second World War. Germany used a sophisticated machine called Enigma to encode its military orders, producing a cipher of enormous complexity. A team of British mathematicians, most famously Alan Turing, built machines to break it — an effort that historians believe shortened the war.",
+    "E   Modern cryptography rests on mathematics rather than mechanical tricks. Today's codes rely on numbers so large that even the fastest computers would take billions of years to break them by trying every possibility. It is this kind of encryption that keeps our online banking, messages and passwords secure.",
+    "F   Yet the contest is far from over. Researchers are now developing 'quantum' computers which could, in theory, break much of today's encryption with ease. In response, cryptographers are already designing new codes intended to resist them. The ancient race between those who make secrets and those who steal them continues."
    ],
    Q:[
-    {t:'text',a:'spoken',q:'Humans communicated with their bodies before developing ______ language.'},
-    {t:'text',a:'non-verbal|nonverbal|non verbal',q:'A large proportion of communication is ______.'},
-    {t:'choice',a:'B',q:'Which are said to be recognised across all cultures?',opts:['A) gestures','B) facial expressions','C) postures','D) words']},
-    {t:'text',a:'innate',q:'Expressions for basic emotions are thought to be ______ rather than learned.'},
-    {t:'text',a:'eyes|eye',q:'A genuine smile also involves muscles around the ______.'},
-    {t:'text',a:'vary',q:'Gestures often ______ between cultures.'},
-    {t:'text',a:'customs|custom',q:'Travellers are advised to learn local ______.'},
-    {t:'text',a:'defensiveness',q:'Crossed arms can signal ______.'},
-    {t:'text',a:'anxiety',q:'Touching the face may indicate ______.'},
-    {t:'choice',a:'B',q:'Adopting confident postures can:',opts:['A) tire us','B) influence how we feel','C) look rude','D) do nothing']},
-    {t:'choice',a:'FALSE',q:'All gestures mean the same thing everywhere.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Facial expressions are the most universal form of body language.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Body language can reveal hidden emotions.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'B',q:'The purpose of cryptography is to:',opts:['A) speed up messages','B) hide the meaning of a message','C) translate languages','D) store data']},
+    {t:'choice',a:'B',q:'The Caesar cipher worked by:',opts:['A) swapping whole words','B) shifting each letter along the alphabet','C) using pictures','D) using a machine']},
+    {t:'choice',a:'B',q:'Frequency analysis breaks codes by:',opts:['A) guessing randomly','B) counting how often symbols appear','C) using a machine','D) asking the sender']},
+    {t:'choice',a:'B',q:'The Enigma machine was used by:',opts:['A) Britain','B) Germany','C) Turing','D) banks']},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the codebreaking effort in the Second World War?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains how modern codes rely on very large numbers?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the weakness caused by patterns in language?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) mentions a possible future threat from quantum computers?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the earliest, simple method of coding?'},
+    {t:'text',a:'recipient',q:'Cryptography turns a message into a form only the intended ______ understands.'},
+    {t:'text',a:'e',q:'In English, the most common letter is ______.'},
+    {t:'text',a:'Enigma',q:'The German cipher machine was called ______.'},
+    {t:'text',a:'shortened',q:'Breaking Enigma is believed to have ______ the war.'}
    ]},
-  {title:'The Invention of the Telephone',
+  {title:'The Nuclear Power Debate',
    paras:[
-    "The telephone, a device now so ordinary that we scarcely notice it, was once a revolutionary invention that transformed human communication. Before its arrival, messages could travel over long distances only by letter or telegraph, the latter requiring skilled operators to send coded signals.",
-    "The invention is most commonly credited to Alexander Graham Bell, who was granted a patent in 1876. Bell, a teacher of the deaf, had long been fascinated by sound and speech. However, Bell was not working alone; several inventors were pursuing similar ideas at the same time, and the question of who truly invented the telephone remains a subject of debate.",
-    "The early telephone spread rapidly. Within a few decades, networks of wires connected homes and businesses across entire countries. Operators, often young women, manually connected calls at switchboards, a job that eventually disappeared as automatic exchanges were introduced.",
-    "The telephone's impact was profound. It allowed families separated by distance to stay in touch and transformed the way businesses operated. The smartphones we now carry are the direct descendants of that first simple device."
+    "A   Few technologies divide opinion as sharply as nuclear power. To its supporters, it is a clean, powerful source of energy that could help save the planet from climate change. To its opponents, it is a dangerous and expensive technology whose risks outweigh its benefits. Both sides can point to genuine evidence, which is why the debate has continued for decades.",
+    "B   The case in favour rests largely on carbon. Unlike coal and gas, a nuclear power station produces almost no greenhouse gases as it operates. A single plant can generate vast amounts of electricity reliably, day and night, regardless of the weather — something that wind and solar power, for all their promise, cannot yet guarantee. For supporters, this makes nuclear power an essential tool against global warming.",
+    "C   Opponents counter that the dangers are too great to ignore. Although accidents are rare, when they do occur — as at Chernobyl and Fukushima — the consequences can be catastrophic and long-lasting, forcing thousands from their homes. Such disasters, critics argue, show that the technology can never be made completely safe.",
+    "D   There is also the problem of waste. Nuclear reactors produce radioactive material that remains dangerous for thousands of years, and no country has yet built a permanent solution for storing it safely. To many, leaving such a hazardous legacy for future generations is simply unacceptable, whatever the benefits today.",
+    "E   Cost is a further obstacle. Nuclear power stations are enormously expensive to build and take many years to complete, often running far over budget. As the price of wind and solar power has tumbled, some economists argue that nuclear power no longer makes financial sense, whatever its other merits.",
+    "F   Supporters respond that newer reactor designs promise to be safer, cheaper and to produce less waste, and that the urgency of climate change leaves little choice. Whether nuclear power is part of the solution or part of the problem remains, for now, one of the most contested questions in energy policy."
    ],
    Q:[
-    {t:'text',a:'telegraph',q:'Before the telephone, long-distance messages travelled by letter or ______.'},
-    {t:'choice',a:'B',q:'The telegraph required operators to send:',opts:['A) letters','B) coded signals','C) voices','D) pictures']},
-    {t:'text',a:'bell',q:'The telephone is most commonly credited to Alexander Graham ______.'},
-    {t:'text',a:'1876',q:'Bell was granted a patent in ______.'},
-    {t:'text',a:'deaf',q:'Bell worked as a teacher of the ______.'},
-    {t:'choice',a:'FALSE',q:'Bell was the only person working on the idea.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Who invented the telephone is still debated.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'switchboards|switchboard',q:'Early calls were connected manually at ______.'},
-    {t:'text',a:'women|woman',q:'Switchboard operators were often young ______.'},
-    {t:'text',a:'exchanges|exchange',q:'Operators’ jobs disappeared with automatic ______.'},
-    {t:'choice',a:'TRUE',q:'The telephone allowed families separated by distance to stay in touch.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'The telephone spread slowly over many centuries.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Smartphones are descendants of the first telephone.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'The telephone changed how businesses operated.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'Nuclear power stations produce almost no greenhouse gases while operating.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Wind and solar power can currently guarantee electricity at all times.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Nuclear accidents are common.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'A permanent solution for storing nuclear waste has already been built.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Nuclear power stations are cheap and quick to build.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Supporters believe newer reactor designs could be safer.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the argument based on avoiding greenhouse gases?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) raises concern about accidents such as Fukushima?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the problem of long-lasting radioactive waste?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) argues that nuclear power is too expensive?'},
+    {t:'text',a:'wind and solar|wind and solar power|solar and wind',q:'Which two power sources cannot yet guarantee constant electricity?'},
+    {t:'text',a:'Chernobyl|Fukushima',q:'Name one site of a nuclear accident mentioned in the passage.'},
+    {t:'text',a:'years|year',q:'Radioactive waste stays dangerous for thousands of ______.'},
+    {t:'text',a:'policy',q:'The debate remains one of the most contested questions in energy ______.'}
    ]}
  ],
  writing:{
