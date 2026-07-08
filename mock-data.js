@@ -2757,6 +2757,151 @@ const MOCKS=[
   task1:"The table below shows the average number of hours of homework done per week by three age groups in two countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people believe that homework is an essential part of education, while others think it should be abolished. Discuss both views and give your own opinion. Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 20 (Exam Level) ===================== */
+{
+ name:'Mock 20 — Exam Level',
+ blurb:'🔴 Airport transfer · Museum late night · Video project + Bats · The story of concrete · Reliance on technology',
+ listen:[
+  {title:'Booking an airport transfer',
+   transcript:"Good afternoon, City Cabs. I'd like to book an airport transfer. Certainly, your name? O'Brien, O-apostrophe-B-R-I-E-N. What time do you need collecting? Half past five... sorry, quarter past five in the morning. And where from? The Hillside Hotel. Which terminal? Terminal one — no, Terminal two. How many passengers? Three of us. And luggage? Two large suitcases. The fare is thirty-five pounds... sorry, forty. How will you pay? In cash, please. Would you like a saloon or an estate car? An estate, for the luggage. We'll send confirmation by text.",
+   Q:[
+    {t:'text',a:"o'brien|obrien|o brien",q:'Name: ______'},
+    {t:'text',a:'5.15|5:15|quarter past five',q:'Pick-up time: ______'},
+    {t:'text',a:'hillside',q:'Pick-up from: the ______ Hotel'},
+    {t:'text',a:'2|two',q:'Destination: Terminal ______'},
+    {t:'text',a:'3|three',q:'Number of passengers: ______'},
+    {t:'text',a:'suitcases|suitcase|cases|case',q:'Luggage: two large ______'},
+    {t:'text',a:'40|forty',q:'Fare: £______'},
+    {t:'text',a:'cash',q:'Payment: ______'},
+    {t:'text',a:'estate',q:'Car type: ______'},
+    {t:'choice',a:'B',q:'Confirmation is sent by:',opts:['A) email','B) text','C) phone call','D) post']}
+   ]},
+  {title:'Museum late-night opening event',
+   transcript:"We're excited to announce our new late-night opening event at the City Museum. It takes place this Friday, when the museum will stay open until ten in the evening, three hours later than usual. Entry is free after six o'clock. The highlight is our special exhibition on dinosaurs, including a life-sized model. There will be talks by our curators in the lecture hall, and live music in the main hall. Outside, a food truck will serve hot food and drinks. A few notes: children are welcome but must be accompanied by an adult, and to attend the curators' talks you'll need to pick up a free ticket from the desk, as space is limited.",
+   Q:[
+    {t:'text',a:'late-night|late night',q:'The event is a ______ opening.'},
+    {t:'text',a:'friday',q:'It takes place this ______.'},
+    {t:'text',a:'10pm|10|ten',q:'The museum stays open until ______.'},
+    {t:'text',a:'6pm|6|six',q:'Entry is free after ______.'},
+    {t:'text',a:'dinosaurs|dinosaur',q:'The special exhibition is on ______.'},
+    {t:'text',a:'lecture',q:'Talks are held in the ______ hall.'},
+    {t:'text',a:'main',q:'Live music is in the ______ hall.'},
+    {t:'text',a:'truck',q:'Hot food is served from a food ______.'},
+    {t:'choice',a:'B',q:'Children must be:',opts:['A) over 10','B) accompanied by an adult','C) left at home','D) members']},
+    {t:'choice',a:'B',q:'To attend a talk you need:',opts:['A) to pay','B) a free ticket','C) nothing','D) a passport']}
+   ]},
+  {title:'Two students plan a video project',
+   transcript:"For media class we need to make a short documentary. What about? Let's cover local history. Good idea. How long should it be? Ten minutes... actually, five is enough. Should we interview anyone? Yes, let's interview a local historian, an expert. Where do we film? At the town museum, if they allow it. What equipment do we need? A camera, obviously, and a tripod to keep it steady. How do we edit it? On my laptop, using editing software. What about music? We must use royalty-free music, to avoid copyright problems. When's it due? By the end of term. And where do we submit it? We upload it to the class website.",
+   Q:[
+    {t:'text',a:'documentary',q:'They will make a short ______.'},
+    {t:'text',a:'history',q:'The topic is local ______.'},
+    {t:'choice',a:'A',q:'Length:',opts:['A) 5 minutes','B) 10 minutes','C) 15 minutes','D) 20 minutes']},
+    {t:'text',a:'historian',q:'They will interview a local ______.'},
+    {t:'text',a:'museum',q:'They will film at the town ______.'},
+    {t:'text',a:'tripod',q:'To keep the camera steady, they need a ______.'},
+    {t:'text',a:'software',q:'They will edit using editing ______.'},
+    {t:'text',a:'royalty',q:'They must use ______-free music.'},
+    {t:'text',a:'term',q:'Deadline: the end of ______.'},
+    {t:'text',a:'website|site',q:'They upload it to the class ______.'}
+   ]},
+  {title:'Lecture: how rivers shape the land',
+   transcript:"Today's lecture is about how rivers shape the land. Every river begins at its source, usually high in the hills or mountains, where rain and springs gather into a small stream. In its upper course, the water flows fast and steeply, and this fast-moving water erodes, or wears away, the rock, cutting deep, narrow valleys. As it flows, the river picks up and carries sediment — mud, sand and stones. In its lower course, near the end of its journey, the river slows down as the land flattens. Here it winds in great loops called meanders, and, as it slows, it drops the sediment it was carrying. Where a river finally meets the sea, at its mouth, it often deposits so much sediment that it builds up a fan-shaped area of new land called a delta. Over thousands of years, rivers can carve entire landscapes, from deep gorges to broad, fertile plains.",
+   Q:[
+    {t:'text',a:'source',q:'A river begins at its ______.'},
+    {t:'text',a:'mountains|mountain',q:'The source is usually in the hills or ______.'},
+    {t:'text',a:'fast',q:'In the upper course, the water flows ______.'},
+    {t:'text',a:'valleys|valley',q:'Fast water cuts deep, narrow ______.'},
+    {t:'text',a:'sediment',q:'The river picks up and carries ______.'},
+    {t:'text',a:'slows|slow',q:'In its lower course, the river ______ down.'},
+    {t:'text',a:'delta',q:'Where a river meets the sea, it may build a ______.'},
+    {t:'text',a:'meander',q:'A great loop in a river is called a ______.'},
+    {t:'choice',a:'B',q:'Erosion means the river:',opts:['A) drops sediment','B) wears away rock','C) flows uphill','D) freezes']},
+    {t:'choice',a:'B',q:'A river ends at its:',opts:['A) source','B) mouth','C) meander','D) delta']}
+   ]}
+ ],
+ read:[
+  {title:'The Extraordinary World of Bats',
+   paras:[
+    "List of Headings —  i) The only flying mammal   ii) Seeing with sound   iii) A vital role in nature   iv) Unfairly feared   v) Sleeping through the winter   vi) A creature under threat   vii) The largest and smallest bats   viii) How bats raise their young",
+    "A   Bats are among the most misunderstood animals in the world. To many people they are creatures of horror, associated with darkness and even with vampires. In reality, bats are gentle, fascinating animals that play a vital part in the health of the natural world, and the fear they inspire is almost entirely undeserved.",
+    "B   Bats are extraordinary for a simple reason: they are the only mammals capable of true, flapping flight. While a few other mammals, such as flying squirrels, can glide, only bats can truly fly, their wings formed from skin stretched between long, thin finger bones. There are over a thousand species, making up a quarter of all mammal species.",
+    "C   Most famously, many bats find their way in the dark using echolocation. They emit high-pitched sounds, far too high for humans to hear, and listen for the echoes that bounce back off objects around them. From these echoes, a bat can build a detailed picture of its surroundings and locate tiny insects in complete darkness.",
+    "D   Bats are enormously valuable to humans and to nature. Insect-eating bats consume vast numbers of pests, including mosquitoes and insects that damage crops, saving farmers huge sums. Fruit-eating bats, meanwhile, spread the seeds of many plants and pollinate flowers, including those of some important crops.",
+    "E   In colder regions, bats face a special challenge: in winter, the insects they eat disappear. To survive, many species hibernate, entering a deep sleep in caves or hollow trees, during which their body temperature drops and their heartbeat slows almost to a stop, so that they use very little energy until spring.",
+    "F   Sadly, bats around the world are in decline. They are threatened by the loss of the caves and old trees in which they roost, by pesticides that poison their insect food, and, in some regions, by a deadly disease. Because bats breed slowly, raising only one pup a year, their populations recover very slowly once they fall."
+   ],
+   Q:[
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Bats are the only mammals capable of true flight.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Humans can easily hear the sounds bats use for echolocation.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some bats help farmers by eating pests.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Bats breed quickly, having many young each year.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'finger',q:"A bat's wings are formed from skin stretched between long ______ bones."},
+    {t:'text',a:'echolocation',q:'Finding the way using sound echoes is called ______.'},
+    {t:'text',a:'hibernate',q:'In winter, many bats ______ in caves or hollow trees.'}
+   ]},
+  {title:'The Story of Concrete',
+   paras:[
+    "A   Concrete is the most widely used building material on Earth. After water, it is the substance humanity consumes more of than any other. From roads and bridges to houses and dams, the modern world is, quite literally, built of concrete, yet most people know almost nothing about this grey, unremarkable-looking material.",
+    "B   Concrete is, at heart, a simple mixture. It is made by combining cement — a fine powder — with sand, small stones and water. A chemical reaction between the cement and the water causes the whole mixture to set hard, binding the stones together into an artificial rock. Poured as a liquid into a mould, it can be shaped into almost any form before it hardens.",
+    "C   The material is far older than many realise. The ancient Romans were master builders in concrete, using it for structures that still stand today, including the great dome of the Pantheon in Rome. Remarkably, the secret of their durable concrete was lost when their empire fell, and was not rediscovered for over a thousand years.",
+    "D   Modern concrete has one great weakness: while it is very strong when squeezed, it is weak when stretched or bent, and tends to crack. The solution, developed in the nineteenth century, was to pour the concrete around bars of steel. The resulting 'reinforced concrete', combining the strengths of both materials, made possible the skyscraper and the long-span bridge.",
+    "E   Concrete's great advantages are its strength, its low cost, and the fact that its main ingredients are found almost everywhere. These qualities explain why it has been used on such a colossal scale, especially as the world's cities have grown ever larger and taller.",
+    "F   Yet concrete comes at an environmental cost. Making cement releases large amounts of carbon dioxide, and the concrete industry is a significant contributor to climate change. Scientists are now working on greener kinds of concrete, and even on 'self-healing' concrete that can repair its own cracks, in the hope of keeping the benefits while reducing the harm."
+   ],
+   Q:[
+    {t:'choice',a:'B',q:'After water, concrete is:',opts:['A) a rare material','B) the substance humans use most','C) made only of cement','D) a modern invention']},
+    {t:'choice',a:'C',q:'Concrete sets hard because of a reaction between water and:',opts:['A) sand','B) stones','C) cement','D) steel']},
+    {t:'choice',a:'B',q:"The Romans' secret of durable concrete was:",opts:['A) never discovered','B) lost for over a thousand years','C) written down','D) stolen']},
+    {t:'choice',a:'C',q:'Reinforced concrete combines concrete with:',opts:['A) wood','B) stone','C) steel','D) glass']},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the weakness of concrete and how it was solved?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the environmental cost of concrete?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains what concrete is made from?'},
+    {t:'text',a:'C',q:"Which paragraph (A–F) describes the Romans' use of concrete?"},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains why concrete has been used so widely?'},
+    {t:'text',a:'water',q:'Concrete is made by mixing cement with sand, stones and ______.'},
+    {t:'text',a:'pantheon',q:'The Roman ______ in Rome has a famous concrete dome.'},
+    {t:'text',a:'stretched|bent',q:'Concrete is strong when squeezed but weak when ______.'},
+    {t:'text',a:'dioxide',q:'Making cement releases large amounts of carbon ______.'}
+   ]},
+  {title:'Do We Rely Too Much on Technology?',
+   paras:[
+    "A   Modern life is unimaginable without technology. We wake to phone alarms, navigate by satellite, and store our memories, our money and our friendships on electronic devices. Technology has brought enormous benefits, yet a growing number of people wonder whether we have come to depend on it too heavily, and what we might be losing as a result.",
+    "B   The advantages of our reliance are undeniable. Technology gives us instant access to almost all of human knowledge, connects us with people across the world, and does in seconds tasks that once took hours. For work, for learning and for daily convenience, few would seriously wish to return to the way things were.",
+    "C   Critics, however, point to hidden costs. When a device does something for us, we may lose the ability to do it ourselves. Many people can no longer read a map, do mental arithmetic, or remember a phone number, because their devices do these things for them. Skills that are not practised, they warn, quietly fade away.",
+    "D   There are concerns about the mind as well. Some studies suggest that constant use of screens and the flood of instant information may be shortening attention spans and making deep, sustained thought harder. Others worry about the effect on children, who now grow up with devices from their earliest years.",
+    "E   A further worry is what happens when the technology fails. A society that depends utterly on computers and networks is vulnerable: a power cut, a system crash or a cyber-attack can bring daily life to a halt. The more we rely on a system, critics note, the more serious it is when that system breaks down.",
+    "F   Most thoughtful observers, though, reject the idea of turning back. Technology itself, they argue, is neither good nor bad; what matters is how wisely we use it. The sensible course is not to abandon our devices but to use them deliberately — as tools that serve us, rather than masters that we serve."
+   ],
+   Q:[
+    {t:'choice',a:'YES',q:'Technology has brought enormous benefits to modern life.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Few people would want to return to life before modern technology.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Relying on devices can cause certain human skills to fade.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Studies prove beyond doubt that screens improve attention spans.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'A society that depends heavily on technology is more vulnerable when it fails.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most thoughtful observers believe we should abandon our devices.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the risk when technology fails?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the loss of skills we no longer practise?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the benefits of our reliance on technology?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) gives the view that technology is a tool to be used wisely?'},
+    {t:'text',a:'map|reading a map|arithmetic|mental arithmetic',q:'Name one skill people may lose because devices do it for them.'},
+    {t:'text',a:'spans|span',q:'Some studies suggest screens may be shortening our attention ______.'},
+    {t:'text',a:'halt',q:'A power cut or cyber-attack can bring daily life to a ______.'},
+    {t:'text',a:'master|masters',q:'Observers say technology should serve us, not be a ______.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Average hours per day using digital devices, by age group</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Age group</th><th style='border:1px solid #999;padding:5px 10px'>2010</th><th style='border:1px solid #999;padding:5px 10px'>2020</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Under 18</td><td style='border:1px solid #999;padding:5px 10px'>3.5</td><td style='border:1px solid #999;padding:5px 10px'>7.0</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>18–40</td><td style='border:1px solid #999;padding:5px 10px'>4.0</td><td style='border:1px solid #999;padding:5px 10px'>6.5</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Over 40</td><td style='border:1px solid #999;padding:5px 10px'>1.5</td><td style='border:1px solid #999;padding:5px 10px'>4.0</td></tr></table>",
+  task1:"The table below shows the average number of hours per day spent using digital devices by three age groups in 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people believe that we have become too dependent on technology. To what extent do you agree or disagree? Write at least 250 words."
+ }
 }
 
 ];
