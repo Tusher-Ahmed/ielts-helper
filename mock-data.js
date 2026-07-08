@@ -2177,6 +2177,151 @@ const MOCKS=[
   task1:"The table below shows the number of people (in millions) who speak five major languages as a first and as a second language. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people believe that globalisation is a threat to local cultures, while others think it helps them to develop. Discuss both views and give your own opinion. Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 16 (Exam Level) ===================== */
+{
+ name:'Mock 16 — Exam Level',
+ blurb:'🔴 Holiday cottage · Leisure centre · Chemistry experiment + Monarch butterflies · The wheel · Exotic pets',
+ listen:[
+  {title:'Booking a holiday cottage',
+   transcript:"Good morning, Coastal Cottages, how can I help? I'd like to book a holiday cottage. Certainly, your surname? Hargreaves, H-A-R-G-R-E-A-V-E-S. Which cottage would you like? The Sea View cottage, please. For how many nights? Seven... actually, let's make it five. And your arrival date? The second of August — sorry, the twelfth. How many guests? Six... no, four of us. The price is ninety pounds a night — sorry, ninety-five in August. Ninety-five, that's fine. We ask for a deposit of one hundred pounds, and the price includes parking and wifi. Are pets allowed? We have a dog. Normally not, but for the Sea View cottage, yes, pets are allowed. And the key? You collect the key from our office in the village, not from the cottage itself.",
+   Q:[
+    {t:'text',a:'hargreaves',q:'Surname: ______'},
+    {t:'text',a:'sea view|seaview|sea-view',q:'Cottage name: ______ cottage'},
+    {t:'text',a:'five|5',q:'Number of nights: ______'},
+    {t:'text',a:'twelfth|12th|12',q:'Arrival date: ______ of August'},
+    {t:'text',a:'four|4',q:'Number of guests: ______'},
+    {t:'text',a:'95|ninety-five',q:'Price per night: £______'},
+    {t:'text',a:'100|one hundred',q:'Deposit: £______'},
+    {t:'text',a:'wifi|wi-fi|internet',q:'The price includes parking and ______.'},
+    {t:'text',a:'allowed',q:'Pets are ______.'},
+    {t:'choice',a:'B',q:'The key is collected from:',opts:['A) the cottage','B) the office in the village','C) reception','D) by post']}
+   ]},
+  {title:'New leisure centre facilities',
+   transcript:"Welcome to the new Parkview Leisure Centre. Let me tell you what we offer. Our swimming pool is twenty-five metres long, with a separate learner pool for children. The gym is on the first floor — sorry, the second floor — and is open all day. Fitness classes such as yoga and spinning must be booked online, not at reception. Please note the sauna is closed on Mondays for cleaning. The café on the ground floor serves hot drinks and snacks. The lockers require a one-pound coin, which is returned when you finish. Entry is free for under-sixteens... sorry, under-fives; older children pay half price. The centre is busiest after six in the evening, so mornings are quieter. Parking is free for members but costs two pounds for visitors. And to join, you'll need to bring photo ID.",
+   Q:[
+    {t:'text',a:'25|twenty-five',q:'The pool is ______ metres long.'},
+    {t:'text',a:'second|2nd',q:'The gym is on the ______ floor.'},
+    {t:'text',a:'online',q:'Fitness classes must be booked ______.'},
+    {t:'text',a:'mondays|monday',q:'The sauna is closed on ______.'},
+    {t:'text',a:'snacks',q:'The café serves hot drinks and ______.'},
+    {t:'text',a:'coin',q:'Lockers require a one-pound ______.'},
+    {t:'text',a:'under-fives|under fives|under-5s',q:'Entry is free for ______.'},
+    {t:'text',a:'six|6|6pm',q:'The centre is busiest after ______.'},
+    {t:'choice',a:'B',q:'Parking is:',opts:['A) always free','B) free for members','C) always paid','D) not available']},
+    {t:'choice',a:'C',q:'To join, you need:',opts:['A) a passport','B) a photo','C) photo ID','D) a fee']}
+   ]},
+  {title:'Two students plan a chemistry experiment',
+   transcript:"Ben, what's our chemistry experiment going to test? How temperature affects the rate of a reaction. Good. So what do we change? The temperature of the acid, obviously. And which metal do we use? Zinc... actually, magnesium reacts more clearly. What do we measure? The volume of gas produced, and how long it takes. How many trials? Three... let's do five, to be reliable. What about safety? We must wear goggles the whole time. How do we record the results? In a table, then we'll turn it into a graph. When's it due? Week five... sorry, week six. Who writes up the method? I'll do the method if you do the results. Deal, so you, Ben, write the method. Right.",
+   Q:[
+    {t:'text',a:'rate',q:'The experiment tests how temperature affects the ______ of a reaction.'},
+    {t:'text',a:'temperature',q:'The variable they change is the ______.'},
+    {t:'text',a:'magnesium',q:'The metal used is ______.'},
+    {t:'text',a:'gas',q:'They measure the volume of ______ produced.'},
+    {t:'choice',a:'B',q:'Number of trials:',opts:['A) 3','B) 5','C) 10','D) 20']},
+    {t:'text',a:'goggles',q:'For safety they must wear ______.'},
+    {t:'text',a:'table',q:'Results are recorded in a ______.'},
+    {t:'text',a:'graph',q:'The results are presented as a ______.'},
+    {t:'choice',a:'C',q:'Deadline:',opts:['A) week 4','B) week 5','C) week 6','D) week 8']},
+    {t:'choice',a:'A',q:'The method is written by:',opts:['A) Ben','B) the other student','C) both','D) the teacher']}
+   ]},
+  {title:'Lecture: the science of dreams',
+   transcript:"Today's lecture concerns the science of dreams. Dreams occur mainly during a stage of sleep called REM sleep, which stands for rapid eye movement, because the eyes dart about beneath the closed lids. For years dreams were a mystery, first studied scientifically only in the 1940s — sorry, the 1950s. One leading theory is that dreaming helps to process and store memory, sorting through the day's experiences. Unpleasant dreams, or nightmares, are often linked to stress and anxiety. Interestingly, most dreams are quickly forgotten within minutes of waking. Some people can even become aware that they are dreaming and control the dream, an experience called lucid dreaming. During dreams, the emotional centres of the brain are especially active, which may be why dreams feel so vivid. Animals, too, appear to dream, showing similar brain activity. Yet despite decades of research, the true purpose of dreaming remains debated.",
+   Q:[
+    {t:'text',a:'rem',q:'Dreams occur mainly during ______ sleep.'},
+    {t:'text',a:'movement',q:'REM stands for rapid eye ______.'},
+    {t:'text',a:'memory|memories',q:'Dreaming may help to process and store ______.'},
+    {t:'text',a:'stress',q:'Nightmares are often linked to ______.'},
+    {t:'text',a:'forgotten|forgot',q:'Most dreams are quickly ______.'},
+    {t:'text',a:'lucid',q:'Being aware you are dreaming is called ______ dreaming.'},
+    {t:'text',a:'emotional|emotion',q:'During dreams, the ______ centres of the brain are active.'},
+    {t:'text',a:'1950s',q:'Dreams were first studied scientifically in the ______.'},
+    {t:'text',a:'animals|animal',q:'______, too, appear to dream.'},
+    {t:'choice',a:'B',q:'The true purpose of dreaming is:',opts:['A) fully known','B) still debated','C) unimportant','D) to rest the eyes']}
+   ]}
+ ],
+ read:[
+  {title:"The Monarch Butterfly's Great Migration",
+   paras:[
+    "List of Headings —  i) A journey across generations   ii) Finding the way   iii) The winter gathering   iv) A dangerous decline   v) What triggers the journey   vi) Why they migrate   vii) The life of a caterpillar   viii) The colours of the wings",
+    "A   Each autumn, one of the most astonishing journeys in the natural world takes place across North America. Monarch butterflies cannot survive the freezing winters of the north, where they would simply die. To escape, millions of them set off southward on a migration of up to four thousand kilometres, from Canada and the northern United States to the warmth of central Mexico.",
+    "B   Their winter destination is remarkably precise. The butterflies gather in just a handful of small mountain forests, where millions cluster together on the trees, so densely that the branches bend under their weight and the whole forest seems to turn orange. Here, in the cool but frost-free air, they wait out the winter.",
+    "C   The most astonishing fact of all is that no single butterfly completes the round trip. The monarchs that fly south in autumn are not the same ones that return; the journey north in spring is completed over several generations, each living only a few weeks. The butterflies that arrive back in Canada may be the great-grandchildren of those that left.",
+    "D   Somehow, these tiny insects find their way across a continent to a place they have never been. Scientists believe they use the position of the sun as a compass, correcting for the time of day using an internal clock, and may also sense the Earth's magnetic field. Yet exactly how they locate the same few forests remains only partly understood.",
+    "E   The journey is triggered by the changing season. As the days grow shorter and the nights cooler in late summer, the butterflies enter a special state, delaying reproduction and building up fat for the long flight ahead. This 'migratory generation' lives far longer than the others, surviving the entire winter.",
+    "F   In recent decades, monarch numbers have fallen alarmingly. The main cause is the loss of milkweed, the only plant on which monarchs lay their eggs and which their caterpillars eat, as farmland and weedkillers have spread. The destruction of their Mexican winter forests adds to the threat, and conservationists now urge people to plant milkweed to help the species survive."
+   ],
+   Q:[
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:'Monarch butterflies can survive the northern winter.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The same butterflies that fly south return north in spring.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:"Monarchs may use the Earth's magnetic field to navigate.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The main cause of the decline is the loss of milkweed.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'four|4',q:'Monarchs travel up to ______ thousand kilometres.'},
+    {t:'text',a:'Mexico',q:'They spend the winter in forests in central ______.'},
+    {t:'text',a:'milkweed',q:'Monarch caterpillars eat only ______.'}
+   ]},
+  {title:'The History of the Wheel',
+   paras:[
+    "A   The wheel is so basic to modern life that we imagine it must be one of humanity's oldest inventions. In fact, it is surprisingly recent. Humans had been farming, weaving and building for thousands of years before anyone thought to make a wheel. It appeared only about five and a half thousand years ago.",
+    "B   The reason for the delay is that the wheel is not as simple as it looks. A wheel is useless on its own; it needs an axle — a rod on which it can turn freely. The real difficulty lay in the join between wheel and axle, which had to be smooth enough to turn easily yet snug enough to bear weight. Solving this was a genuine feat of engineering.",
+    "C   Curiously, the wheel was not first used for transport at all. The earliest known wheels were potter's wheels, used to shape clay, and it was some time before anyone mounted wheels on a cart. Even then, wheels were of little use in many places: in mountainous or heavily forested lands, or where there were no animals to pull a cart, they offered little advantage over carrying goods.",
+    "D   Where conditions were right, however, the wheel transformed society. Wheeled carts, pulled by oxen, allowed farmers to move heavy loads and traders to carry goods far greater distances. Later, lighter wheels with spokes made possible the fast war chariot, which changed the nature of battle.",
+    "E   For thousands of years, the basic design changed little. The great leap came only in the nineteenth century, with the invention of the rubber tyre, and especially the air-filled tyre, which gave a smoother, faster ride and made possible the bicycle and, later, the motor car.",
+    "F   Today the wheel is everywhere, often hidden from view. It turns in every engine and machine, spins the discs that once stored our music, and carries our vehicles across the world. A simple circle of wood, it turned out, was one of the most powerful ideas humans ever had."
+   ],
+   Q:[
+    {t:'choice',a:'B',q:'According to the passage, the wheel was invented:',opts:['A) before farming','B) about 5,500 years ago','C) 10,000 years ago','D) in the 19th century']},
+    {t:'choice',a:'B',q:'The real engineering difficulty was:',opts:['A) making a round shape','B) the join between wheel and axle','C) finding wood','D) pulling the cart']},
+    {t:'choice',a:'C',q:'The earliest known wheels were used for:',opts:['A) transport','B) war','C) shaping clay','D) grinding grain']},
+    {t:'choice',a:'C',q:'The great leap in the 19th century was the invention of:',opts:['A) the spoke','B) the axle','C) the rubber tyre','D) the chariot']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains why the wheel was of little use in some places?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the invention of the air-filled tyre?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) explains how wheeled carts transformed trade and farming?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains why the wheel took so long to be invented?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the many hidden uses of the wheel today?'},
+    {t:'text',a:'axle',q:'A wheel needs an ______ on which to turn.'},
+    {t:'text',a:'wheels|wheel',q:"The earliest wheels were potter's ______."},
+    {t:'text',a:'spokes|spoke',q:'Lighter wheels with ______ made the war chariot possible.'},
+    {t:'text',a:'car',q:'The air-filled tyre made possible the bicycle and the motor ______.'}
+   ]},
+  {title:'Should Wild Animals Be Kept as Pets?',
+   paras:[
+    "A   From parrots and snakes to monkeys and big cats, a surprising number of people around the world keep wild animals as pets. To some owners, these creatures are beloved companions, no different in principle from a dog or a cat. To others, keeping a wild animal in a home is cruel and dangerous. As the trade in exotic pets has grown, so has the debate about whether it should be allowed.",
+    "B   Those who defend the practice argue that people have the right to keep whatever animals they choose, provided they care for them well. A responsible owner, they say, can meet an exotic animal's needs, and some breeding of rare species in private hands may even help conserve them. For many, the companionship of an unusual animal is a source of great joy.",
+    "C   Critics disagree strongly. Wild animals, they point out, have complex needs that are extremely difficult to meet in a home. A big cat needs space to roam; a parrot needs the company of its own kind. Deprived of these, such animals often suffer greatly, showing signs of boredom and distress that a well-kept dog never would.",
+    "D   There are dangers to people too. Wild animals remain wild, however tame they may seem, and even affectionate ones can injure or kill. Exotic pets can also carry diseases that pass to humans, and animals that escape or are released can become a serious threat to local wildlife, competing with or preying on native species.",
+    "E   Perhaps the gravest concern is the effect on wild populations. Many exotic pets are captured from the wild rather than bred, and the trade has driven some species towards extinction. For every animal that reaches a home alive, several may die during capture and transport, a hidden cost few buyers ever see.",
+    "F   Most experts therefore favour strict regulation rather than a complete ban. Some animals, they argue, can be kept responsibly, while others should never be private pets at all. The challenge is to protect both the welfare of the animals and the safety of the public, without denying the genuine bond that can form between a person and an animal."
+   ],
+   Q:[
+    {t:'choice',a:'YES',q:'The trade in exotic pets has grown in recent years.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:"Supporters claim that responsible owners cannot meet an exotic animal's needs.",opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Critics argue that wild animals have complex needs hard to meet in a home.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Tame wild animals are completely safe to keep.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most exotic pets are bred rather than captured from the wild.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most experts favour a complete ban on keeping any wild animal.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the argument that people have a right to choose their pets?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the danger of diseases passing to humans?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the effect of the pet trade on wild populations?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) calls for strict regulation rather than a ban?'},
+    {t:'text',a:'parrot|snake|monkey|big cat|parrots|snakes|monkeys',q:'Name one wild animal kept as a pet mentioned in the passage.'},
+    {t:'text',a:'roam',q:'A big cat kept as a pet needs space to ______.'},
+    {t:'text',a:'wildlife',q:'Escaped exotic pets can become a threat to local ______.'},
+    {t:'text',a:'regulation',q:'Most experts favour strict ______ rather than a complete ban.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>Households owning a pet, by type (%), two countries, 2020</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Pet</th><th style='border:1px solid #999;padding:5px 10px'>Country A</th><th style='border:1px solid #999;padding:5px 10px'>Country B</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Dog</td><td style='border:1px solid #999;padding:5px 10px'>38</td><td style='border:1px solid #999;padding:5px 10px'>22</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Cat</td><td style='border:1px solid #999;padding:5px 10px'>25</td><td style='border:1px solid #999;padding:5px 10px'>30</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Fish</td><td style='border:1px solid #999;padding:5px 10px'>12</td><td style='border:1px solid #999;padding:5px 10px'>9</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Bird</td><td style='border:1px solid #999;padding:5px 10px'>6</td><td style='border:1px solid #999;padding:5px 10px'>14</td></tr></table>",
+  task1:"The table below shows the percentage of households owning four types of pet in two countries in 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people think that keeping wild or exotic animals as pets should be banned, while others disagree. Discuss both views and give your own opinion. Write at least 250 words."
+ }
 }
 
 ];
