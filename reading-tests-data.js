@@ -703,5 +703,367 @@ const READING = [
     {t:'txt', q:"In what year did tulip prices collapse?", a:"1637"},
     {t:'txt', q:"At its peak, a rare bulb could cost more than a fine ______ in Amsterdam.", a:"house"},
     {t:'txt', q:"Tulip mania is still cited as a ______ about rising prices.", a:"warning"}]}
+]},
+
+/* ============ HARD TEST 1 (Band 8-9) ============ */
+{name:"The Commons · Behavioural Economics · Extremophiles", blurb:"🔴 HARD · longer, denser passages with trickier questions", level:"hard",
+ passages:[
+  {title:"The Tragedy of the Commons",
+   text:`<p><b>A</b> In 1968 the ecologist Garrett Hardin published an essay that would become one of the most cited in the social sciences. He asked his readers to imagine a pasture open to all, on which herders graze their cattle. Each herder, acting rationally, gains the full benefit of adding another animal, while the cost of the resulting overgrazing is shared among everyone. The individually sensible decision, multiplied across all herders, ends in collective ruin as the pasture is destroyed. Hardin called this outcome the "tragedy of the commons".</p>
+<p><b>B</b> The idea proved enormously influential because it appeared to explain so much. Overfished seas, polluted rivers, deforested hillsides and even a warming atmosphere could all be understood as commons degraded by the pursuit of individual self-interest. Wherever a resource was shared and access unrestricted, Hardin's logic seemed to predict its exhaustion.</p>
+<p><b>C</b> Hardin himself drew a stark conclusion: freedom in a commons brings ruin to all. To prevent catastrophe, he argued, societies must impose either strict government control or private ownership, since only external coercion or the self-interest of an owner could restrain the destructive logic of the commons. For decades this pessimistic prescription dominated environmental policy.</p>
+<p><b>D</b> Yet the theory had a serious flaw, as the political scientist Elinor Ostrom demonstrated. Studying real communities around the world — Swiss alpine pastures, Japanese forests, Filipino irrigation systems — she found that people had, for centuries, managed shared resources sustainably without either privatisation or the state. Hardin, she pointed out, had described not a true commons but an open-access free-for-all with no rules at all.</p>
+<p><b>E</b> Ostrom's research revealed that successful communities devised their own arrangements: clear boundaries defining who could use the resource, rules matched to local conditions, systems for monitoring behaviour, and graduated sanctions for those who broke the rules. Crucially, the users themselves, not distant authorities, made and enforced these agreements. In 2009 Ostrom became the first woman to win the Nobel Prize in economics, largely for this work.</p>
+<p><b>F</b> The debate is far from academic. As humanity confronts global commons such as the oceans and the atmosphere — resources no single government controls — the question of how shared things can be governed has never mattered more. Ostrom's insight, that neither pure markets nor pure states hold the only answer, offers a more hopeful and more complicated lesson than Hardin's bleak parable.</p>`,
+   Q:[
+    {head:H.head(1,6,"i&nbsp; A flawed but powerful idea<br>ii&nbsp; Ostrom's alternative evidence<br>iii&nbsp; The herder's fatal logic<br>iv&nbsp; The rules that make sharing work<br>v&nbsp; Hardin's harsh solution<br>vi&nbsp; Why the argument still matters<br>vii&nbsp; Criticism of Ostrom's methods<br>viii&nbsp; The economics of modern fishing"),
+     t:'txt', q:"Paragraph A", a:"iii"},
+    {t:'txt', q:"Paragraph B", a:"i"},
+    {t:'txt', q:"Paragraph C", a:"v"},
+    {t:'txt', q:"Paragraph D", a:"ii"},
+    {t:'txt', q:"Paragraph E", a:"iv"},
+    {t:'txt', q:"Paragraph F", a:"vi"},
+    {head:H.tf(7,10), t:'tf', q:"Hardin's essay was largely ignored by other academics.", a:"false"},
+    {t:'tf', q:"Hardin believed shared resources could be protected only by state control or private ownership.", a:"true"},
+    {t:'tf', q:"Ostrom found that community-managed resources always outperform privately owned ones.", a:"not given"},
+    {t:'tf', q:"Ostrom argued that Hardin had actually described a situation with no rules.", a:"true"},
+    {head:`<b>Questions 11–13</b> · Complete the summary. Choose <b>ONE word</b> from the box.<div class="bank">boundaries &middot; coercion &middot; monitoring &middot; sanctions &middot; owner &middot; authorities &middot; markets</div>`,
+     t:'txt', q:"Hardin thought only government coercion or a private ______ could prevent ruin.", a:"owner"},
+    {t:'txt', q:"Ostrom showed that communities set clear ______ around a resource.", a:"boundaries"},
+    {t:'txt', q:"They also imposed graduated ______ on those who broke the rules.", a:"sanctions"}]},
+  {title:"The Rise of Behavioural Economics",
+   text:`<p><b>A</b> For most of the twentieth century, mainstream economics rested on a convenient assumption: that people are rational actors who weigh costs and benefits and choose whatever maximises their own advantage. This idealised figure, sometimes called "homo economicus", made economic models elegant and mathematically tractable. It also, as a growing body of evidence showed, bore little resemblance to how real humans behave.</p>
+<p><b>B</b> The challenge came chiefly from psychology. In the 1970s Daniel Kahneman and Amos Tversky conducted a series of experiments demonstrating that people rely on mental shortcuts, or heuristics, that lead to systematic and predictable errors. Faced with uncertainty, we do not calculate probabilities like statisticians; we are swayed by how vividly we can imagine an outcome, or by whatever number happens to be mentioned first.</p>
+<p><b>C</b> One of their most striking findings concerned loss. Kahneman and Tversky showed that the pain of losing a sum of money is felt roughly twice as intensely as the pleasure of gaining the same amount. This "loss aversion" means that people will often take irrational risks to avoid a loss, while refusing sensible gambles that would, on average, leave them better off.</p>
+<p><b>D</b> The way a choice is presented, or "framed", also proved decisive. Told that a medical treatment has a ninety per cent survival rate, patients are far more willing to accept it than when told it has a ten per cent mortality rate — even though the two statements are identical. Such framing effects have no place in a world of perfectly rational actors.</p>
+<p><b>E</b> These ideas gradually moved from the fringes to the centre of the discipline. The economist Richard Thaler argued that, because our errors are predictable, choices can be gently redesigned to help people without restricting their freedom — a philosophy he called "nudging". Automatically enrolling employees in a pension scheme, while letting them opt out, dramatically increases savings, since inertia now works in their favour rather than against them.</p>
+<p><b>F</b> Critics warn that nudging can slide into manipulation, and that deciding what counts as a person's "own good" is far from straightforward. Nonetheless, behavioural insights are now used by governments worldwide, and in 2017 Thaler, like Kahneman before him, was awarded the Nobel Prize. The rational actor has not vanished from economics, but he now shares the stage with a messier, more human character.</p>`,
+   Q:[
+    {head:H.mc(14,17), t:'mc', q:"The assumption of 'homo economicus' appealed to economists because it:", o:["matched real behaviour","made models mathematically neat","was proven by experiments","came from psychology"], a:"B"},
+    {t:'mc', q:"Kahneman and Tversky showed that, under uncertainty, people:", o:["calculate probabilities carefully","use shortcuts that cause predictable errors","always avoid all risk","ignore vivid outcomes"], a:"B"},
+    {t:'mc', q:"'Loss aversion' means the pain of a loss feels about:", o:["the same as an equal gain","half as strong as a gain","twice as strong as a gain","ten times as strong"], a:"C"},
+    {t:'mc', q:"Thaler's idea of 'nudging' aims to:", o:["ban bad choices","tax bad choices","redesign choices while keeping freedom","remove choice entirely"], a:"C"},
+    {head:`<b>Questions 18–21</b> · Match each statement with the correct person or group. <div class="bank"><b>A</b> Kahneman &amp; Tversky &nbsp; <b>B</b> Thaler &nbsp; <b>C</b> Critics</div>`,
+     t:'txt', q:"developed the concept of loss aversion", a:"A"},
+    {t:'txt', q:"proposed automatically enrolling people in pension schemes", a:"B"},
+    {t:'txt', q:"warned that gentle redesign could become manipulation", a:"C"},
+    {t:'txt', q:"showed that mental shortcuts cause systematic errors", a:"A"},
+    {head:H.comp(22,26), t:'txt', q:"The idealised rational human is sometimes called homo ______.", a:"economicus"},
+    {t:'txt', q:"Mental shortcuts are also known as ______.", a:"heuristics"},
+    {t:'txt', q:"The way a choice is presented is called its ______.", a:"framing|frame"},
+    {t:'txt', q:"Thaler called his philosophy '______'.", a:"nudging"},
+    {t:'txt', q:"Automatic pension enrolment works because ______ now helps savers.", a:"inertia"}]},
+  {title:"Extremophiles: Life at the Limits",
+   text:`<p><b>A</b> For a long time, biologists assumed that life required fairly gentle conditions: moderate temperatures, fresh water, neutral acidity. Then, in the 1960s, researchers began to find organisms thriving in places that ought to have been utterly lethal — in boiling hot springs, in water saltier than the sea, in acid that would dissolve metal. These hardy microbes were named extremophiles, "lovers of extremes".</p>
+<p><b>B</b> The discovery forced a rethink of the very limits of life. In the scalding water of deep-sea vents, where temperatures exceed a hundred degrees Celsius, entire ecosystems flourish without any sunlight, powered instead by chemicals rising from beneath the sea floor. Some microbes endure pressures that would crush a submarine; others survive being frozen solid for thousands of years, only to revive when thawed.</p>
+<p><b>C</b> Perhaps the most remarkable is a bacterium able to withstand radiation thousands of times stronger than a dose fatal to humans. It does so not by preventing damage to its DNA but by repairing the shattered genetic material with extraordinary speed. Such abilities suggest that life is far tougher, and far more inventive, than anyone had imagined.</p>
+<p><b>D</b> The implications extend beyond biology. If organisms can flourish in Earth's most hostile corners, then the harsh environments of other worlds — the frozen oceans thought to lie beneath the ice of certain moons, or the salty soils of Mars — may not be as barren as they appear. Extremophiles have thus become central to the search for life beyond our planet.</p>
+<p><b>E</b> They have practical uses too. An enzyme taken from a heat-loving microbe made possible the technique that allows scientists to copy DNA rapidly, a breakthrough underpinning much of modern medicine and forensic science. Other extremophiles are being studied for cleaning up toxic waste and for producing chemicals that function at temperatures where ordinary ones fail.</p>
+<p><b>F</b> Yet many scientists caution against assuming that extreme conditions are where life began. It is one thing for organisms to have adapted to extremes over billions of years; it is another to claim, as some do, that life first arose in such places. On that question, which remains unresolved, the extremophiles themselves are silent.</p>`,
+   Q:[
+    {head:H.yn(27,31), t:'yn', q:"The discovery of extremophiles changed scientists' understanding of the limits of life.", a:"yes"},
+    {t:'yn', q:"Deep-sea vent ecosystems depend on sunlight.", a:"no"},
+    {t:'yn', q:"The radiation-resistant bacterium avoids damage to its DNA in the first place.", a:"no"},
+    {t:'yn', q:"Extremophiles have made scientists more optimistic about finding life on other worlds.", a:"yes"},
+    {t:'yn', q:"It is now proven that life on Earth began in extreme environments.", a:"no"},
+    {head:`<b>Questions 32–36</b> · Complete each sentence with the correct ending, A–F.<div class="bank">A&nbsp; without any sunlight.<br>B&nbsp; by repairing its DNA quickly.<br>C&nbsp; the technique for copying DNA.<br>D&nbsp; may support life elsewhere.<br>E&nbsp; remains an open question.<br>F&nbsp; are being studied to clean toxic waste.</div>`,
+     t:'txt', q:"Ecosystems around deep-sea vents survive ______", a:"A"},
+    {t:'txt', q:"The radiation-resistant bacterium survives ______", a:"B"},
+    {t:'txt', q:"An enzyme from a heat-loving microbe enabled ______", a:"C"},
+    {t:'txt', q:"Harsh environments on other worlds ______", a:"D"},
+    {t:'txt', q:"Whether life first began in extreme places ______", a:"E"},
+    {head:H.sa(37,40), t:'txt', q:"What name is given to organisms that live in extreme conditions?", a:"extremophiles"},
+    {t:'txt', q:"What powers deep-sea vent ecosystems instead of sunlight?", a:"chemicals"},
+    {t:'txt', q:"Copying DNA rapidly was made possible by an ______ from a heat-loving microbe.", a:"enzyme"},
+    {t:'txt', q:"Frozen oceans are thought to lie beneath the ice of certain ______.", a:"moons"}]}
+]},
+
+/* ============ HARD TEST 2 (Band 8-9) ============ */
+{name:"Biomimicry · The History of Zero · Linguistic Relativity", blurb:"🔴 HARD · abstract topics, heavy paraphrase, subtle traps", level:"hard",
+ passages:[
+  {title:"Biomimicry",
+   text:`<p><b>A</b> Nature has had some 3.8 billion years to test its designs. Over that vast span, evolution has produced solutions to problems of energy, materials and structure that human engineers are only beginning to appreciate. Biomimicry — the practice of imitating nature's models to solve human problems — treats the living world not as a warehouse of resources to be extracted but as a library of ideas to be studied.</p>
+<p><b>B</b> The approach has produced some celebrated successes. A Japanese bullet train, whose blunt nose created a deafening boom when it burst from tunnels, was redesigned to resemble the streamlined beak of a kingfisher, a bird that dives into water with barely a splash. The result was a train that was quieter, faster and more efficient. The rough skin of sharks, which resists the build-up of bacteria, has inspired surfaces for hospitals that discourage infection without chemicals.</p>
+<p><b>C</b> Materials science has been especially fruitful. Spider silk, tougher for its weight than steel, is made at body temperature from water and protein, whereas human high-performance fibres demand extreme heat and toxic solvents. Mother-of-pearl, formed by molluscs, is astonishingly resistant to cracking. Understanding how nature builds such materials so cheaply and cleanly could transform manufacturing.</p>
+<p><b>D</b> Biomimicry also offers lessons in how systems, not just single objects, might be organised. In a mature forest or a coral reef, the waste of one organism becomes the food of another, so that nothing is truly discarded. Advocates argue that human economies, which generate mountains of waste, might be redesigned along the same closed-loop lines, an idea central to what is now called the circular economy.</p>
+<p><b>E</b> Enthusiasts sometimes overstate the case. Not every natural design is worth copying; evolution produces solutions that are merely "good enough" to survive, not perfect, and a structure that suits a beetle may be useless at human scale. Nature optimises for the survival of genes, which is not always the same as optimising for human convenience or efficiency.</p>
+<p><b>F</b> Even so, the deeper value of biomimicry may be less a set of specific inventions than a change of attitude. It invites engineers to ask not "how can we bend nature to our will?" but "how does nature already solve this?" In an age of environmental strain, that humbler question may prove the most useful design principle of all.</p>`,
+   Q:[
+    {head:H.head(1,6,"i&nbsp; Lessons from whole systems<br>ii&nbsp; Nature as a library of designs<br>iii&nbsp; Famous imitations<br>iv&nbsp; Copying nature's materials<br>v&nbsp; A word of caution<br>vi&nbsp; A change of attitude<br>vii&nbsp; The cost of research<br>viii&nbsp; Nature's greatest failures"),
+     t:'txt', q:"Paragraph A", a:"ii"},
+    {t:'txt', q:"Paragraph B", a:"iii"},
+    {t:'txt', q:"Paragraph C", a:"iv"},
+    {t:'txt', q:"Paragraph D", a:"i"},
+    {t:'txt', q:"Paragraph E", a:"v"},
+    {t:'txt', q:"Paragraph F", a:"vi"},
+    {head:H.tf(7,10), t:'tf', q:"The redesigned bullet train was modelled on a kingfisher's beak.", a:"true"},
+    {t:'tf', q:"Spider silk requires very high temperatures to produce.", a:"false"},
+    {t:'tf', q:"Biomimicry has already replaced most traditional manufacturing.", a:"not given"},
+    {t:'tf', q:"Evolution always produces perfect solutions.", a:"false"},
+    {head:`<b>Questions 11–13</b> · Complete the summary. Choose <b>ONE word</b> from the box.<div class="bank">waste &middot; forest &middot; genes &middot; chemicals &middot; protein &middot; splash &middot; convenience</div>`,
+     t:'txt', q:"Shark skin has inspired surfaces that resist bacteria without ______.", a:"chemicals"},
+    {t:'txt', q:"In a mature ______, the waste of one organism feeds another.", a:"forest"},
+    {t:'txt', q:"Nature optimises for the survival of ______, not for human needs.", a:"genes"}]},
+  {title:"The History of Zero",
+   text:`<p><b>A</b> Of all the numbers, zero is the strangest and, historically, the most controversial. It is hard for us to imagine counting without it, yet for most of human history mathematics managed without a symbol for nothing. Counting, after all, begins with things that are present; the absence of things seems to need no number at all.</p>
+<p><b>B</b> The ancient Babylonians, some four thousand years ago, took a first step. To avoid confusion in their place-value system — distinguishing, say, sixty from six hundred — they eventually used a mark to show an empty position. But this was merely a placeholder, a gap-filler; it was not yet a number that could itself be added or multiplied.</p>
+<p><b>C</b> The decisive leap came in India. By around the seventh century, Indian mathematicians, above all Brahmagupta, treated zero as a number in its own right and set out rules for calculating with it. Zero, they saw, was what remained when a quantity was subtracted from itself. This was a profound conceptual shift: nothing had become something.</p>
+<p><b>D</b> From India the concept travelled, carried by scholars of the medieval Islamic world, who developed it further and passed it, along with the numerals we still call "Arabic", towards Europe. There, however, it met resistance. Zero was viewed with suspicion, even fear; some authorities associated the void it represented with disorder, and a few cities banned its use.</p>
+<p><b>E</b> The obstacle was not merely superstition. Zero genuinely misbehaves. Dividing by it produces nonsense, and its properties troubled mathematicians for centuries. Yet these very difficulties drove mathematics forward, forcing thinkers to define their terms with new rigour and eventually making possible the calculus on which modern science depends.</p>
+<p><b>F</b> Today zero is so familiar that its strangeness is invisible. It sits, unremarked, at the heart of every computer, whose entire language is written in noughts and ones. A symbol once feared as the mark of nothingness turned out to be one of the most powerful ideas humanity has ever devised.</p>`,
+   Q:[
+    {head:H.mc(14,17), t:'mc', q:"For most of human history, mathematics:", o:["used several symbols for zero","functioned without a symbol for zero","forbade counting","treated zero as the first number"], a:"B"},
+    {t:'mc', q:"The Babylonian mark for an empty position was:", o:["a full number","a placeholder only","invented in India","used for division"], a:"B"},
+    {t:'mc', q:"Brahmagupta's key contribution was to:", o:["invent Arabic numerals","treat zero as a number with rules","ban zero","build the first computer"], a:"B"},
+    {t:'mc', q:"In medieval Europe, zero was initially:", o:["welcomed at once","met with suspicion","kept secret by scholars","used only for calculus"], a:"B"},
+    {head:`<b>Questions 18–21</b> · Match each achievement with the correct civilisation. <div class="bank"><b>A</b> Babylonians &nbsp; <b>B</b> Indians &nbsp; <b>C</b> medieval Islamic scholars</div>`,
+     t:'txt', q:"first used a placeholder for an empty position", a:"A"},
+    {t:'txt', q:"treated zero as a number in its own right", a:"B"},
+    {t:'txt', q:"passed zero and the numerals towards Europe", a:"C"},
+    {t:'txt', q:"wrote rules for calculating with zero", a:"B"},
+    {head:H.comp(22,26), t:'txt', q:"For a long time zero was seen not as a number but as a ______.", a:"placeholder"},
+    {t:'txt', q:"Indians realised zero was what remained when a quantity was subtracted from ______.", a:"itself"},
+    {t:'txt', q:"The numerals spread by Islamic scholars are still called ______.", a:"Arabic"},
+    {t:'txt', q:"A few European cities ______ the use of zero.", a:"banned"},
+    {t:'txt', q:"A computer's language is written in noughts and ______.", a:"ones"}]},
+  {title:"Does Language Shape Thought?",
+   text:`<p><b>A</b> Does the language you speak shape the way you think? The question, known as linguistic relativity, has provoked one of the longest-running debates in the study of the mind. In its boldest form, associated with the linguist Benjamin Lee Whorf in the 1930s, the claim was dramatic: that the categories of our language determine, and even limit, the thoughts we are able to have.</p>
+<p><b>B</b> This strong version fell out of favour. Critics pointed out that people can plainly think about things their language lacks a single word for, and that we are not the prisoners of our vocabulary. If language rigidly controlled thought, they argued, translation would be impossible and new ideas could never arise. The claim was dismissed, for a time, as an appealing but unfounded myth.</p>
+<p><b>C</b> In recent decades, however, a subtler version has won cautious support. Careful experiments suggest that language does not imprison thought but does nudge it. Speakers of languages that use compass directions — "north", "south" — rather than "left" and "right" prove remarkably good at staying oriented, even in unfamiliar places, because their language obliges them to track direction constantly.</p>
+<p><b>D</b> Colour offers another example. Languages divide the spectrum differently; some treat blue and green as shades of a single colour, while Russian, for instance, has separate basic words for lighter and darker blue. Experiments show that Russian speakers are slightly faster at telling these two blues apart, as though the linguistic boundary had sharpened their perception.</p>
+<p><b>E</b> Grammar, too, may leave its mark. In some languages a speaker must, by the very structure of the verb, indicate whether an event was witnessed personally or merely reported. Speakers of such languages, some researchers suggest, may pay closer habitual attention to the sources of their information, though such claims remain difficult to test.</p>
+<p><b>F</b> The modern consensus is a moderate one. Language is not a cage, but nor is it a neutral vehicle that leaves thought untouched. It is better pictured as a lens, subtly colouring the way its speakers attend to the world — a conclusion less sensational than Whorf's, but far better supported by evidence.</p>`,
+   Q:[
+    {head:H.yn(27,31), t:'yn', q:"The strong version of linguistic relativity claimed language limits which thoughts are possible.", a:"yes"},
+    {t:'yn', q:"Critics accepted that translation between languages is impossible.", a:"no"},
+    {t:'yn', q:"Speakers of compass-direction languages are unusually good at staying oriented.", a:"yes"},
+    {t:'yn', q:"Russian speakers are slower than others at distinguishing two shades of blue.", a:"no"},
+    {t:'yn', q:"Claims about grammar and attention to information sources are easy to test.", a:"no"},
+    {head:`<b>Questions 32–36</b> · Complete each sentence with the correct ending, A–F.<div class="bank">A&nbsp; nudges it in subtle ways.<br>B&nbsp; track direction constantly.<br>C&nbsp; sharpened their perception of colour.<br>D&nbsp; whether an event was witnessed or reported.<br>E&nbsp; an appealing but unfounded myth.<br>F&nbsp; impossible to learn a second language.</div>`,
+     t:'txt', q:"For a time, the strong version was dismissed as ______", a:"E"},
+    {t:'txt', q:"Compass-direction languages oblige speakers to ______", a:"B"},
+    {t:'txt', q:"A linguistic boundary seems to have ______", a:"C"},
+    {t:'txt', q:"Some grammars force speakers to mark ______", a:"D"},
+    {t:'txt', q:"The modern view is that language does not control thought but ______", a:"A"},
+    {head:H.sa(37,40), t:'txt', q:"Which linguist is associated with the strong version of the theory?", a:"Whorf|Benjamin Lee Whorf"},
+    {t:'txt', q:"Instead of 'left' and 'right', some languages use ______ directions.", a:"compass"},
+    {t:'txt', q:"The passage compares language not to a cage but to a ______.", a:"lens"},
+    {t:'txt', q:"Russian has separate basic words for lighter and darker ______.", a:"blue"}]}
+]},
+
+/* ============ HARD TEST 3 (Band 8-9) ============ */
+{name:"Game Theory · The Microbiome · The Anthropocene", blurb:"🔴 HARD · dense argument, close distractors", level:"hard",
+ passages:[
+  {title:"Game Theory",
+   text:`<p><b>A</b> Game theory is the mathematical study of strategic decisions — situations in which the outcome for each participant depends not only on their own choices but on the choices of others. Though its roots lie in the analysis of parlour games such as poker, it has grown into a powerful tool used in economics, biology, politics and computer science.</p>
+<p><b>B</b> The field was largely founded in the 1940s by the mathematician John von Neumann and the economist Oskar Morgenstern. Their work was later extended by John Nash, who introduced the idea of an equilibrium: a set of choices from which no player can gain by changing their own strategy alone, given what everyone else is doing.</p>
+<p><b>C</b> The most famous illustration is the "prisoner's dilemma". Two suspects are questioned separately and each is offered a deal to betray the other. If both stay silent, both receive a light sentence; if both betray, both suffer heavily; but if one betrays while the other stays silent, the betrayer goes free. Rationally, each is tempted to betray — yet if both do so, both end up worse off than if they had cooperated.</p>
+<p><b>D</b> The dilemma captures a deep and uncomfortable truth: individually rational choices can produce collectively disastrous results. It helps explain why nations struggle to limit weapons, why businesses undercut each other on price, and why people overuse shared resources, even when everyone would benefit from restraint.</p>
+<p><b>E</b> Yet cooperation does emerge in the real world, and game theory helps explain why. When the same players interact repeatedly, betrayal can be punished and trust rewarded. A famously successful strategy, "tit for tat", simply cooperates first and then mirrors whatever the other player did last, proving that a willingness to cooperate, combined with a readiness to retaliate, can flourish.</p>
+<p><b>F</b> Biology, too, has embraced these ideas. Animal behaviours once thought merely instinctive — when to fight, when to share, when to signal honestly — can be modelled as strategies shaped by evolution. In this way a branch of mathematics born from card games now illuminates the behaviour of everything from corporations to cells.</p>`,
+   Q:[
+    {head:H.head(1,6,"i&nbsp; The founders of the field<br>ii&nbsp; A dilemma with wide relevance<br>iii&nbsp; What game theory studies<br>iv&nbsp; How cooperation can survive<br>v&nbsp; The classic thought experiment<br>vi&nbsp; From mathematics to biology<br>vii&nbsp; Games purely as entertainment<br>viii&nbsp; Criticism of Nash's equilibrium"),
+     t:'txt', q:"Paragraph A", a:"iii"},
+    {t:'txt', q:"Paragraph B", a:"i"},
+    {t:'txt', q:"Paragraph C", a:"v"},
+    {t:'txt', q:"Paragraph D", a:"ii"},
+    {t:'txt', q:"Paragraph E", a:"iv"},
+    {t:'txt', q:"Paragraph F", a:"vi"},
+    {head:H.tf(7,10), t:'tf', q:"Game theory is used only in economics.", a:"false"},
+    {t:'tf', q:"In the prisoner's dilemma, the two suspects are questioned together.", a:"false"},
+    {t:'tf', q:"The 'tit for tat' strategy begins by betraying the other player.", a:"false"},
+    {t:'tf', q:"John Nash won a Nobel Prize for his work.", a:"not given"},
+    {head:`<b>Questions 11–13</b> · Complete the summary. Choose <b>ONE word</b> from the box.<div class="bank">equilibrium &middot; betray &middot; repeatedly &middot; instinct &middot; cooperate &middot; poker &middot; punish</div>`,
+     t:'txt', q:"Nash described an ______ in which no player gains by changing strategy alone.", a:"equilibrium"},
+    {t:'txt', q:"In the prisoner's dilemma each is tempted to ______ the other.", a:"betray"},
+    {t:'txt', q:"When players meet ______, cooperation can survive.", a:"repeatedly"}]},
+  {title:"The Human Microbiome",
+   text:`<p><b>A</b> The human body is often described as a single organism, but in truth each of us is a walking ecosystem. Trillions of microbes — bacteria, viruses and fungi — live in and on our bodies, above all in the gut. Together they are known as the microbiome, and their genes vastly outnumber our own. In a real sense, we are more microbial than human.</p>
+<p><b>B</b> For most of medical history these microbes were ignored or, when noticed, regarded as enemies to be destroyed. The discovery of antibiotics reinforced the idea that bacteria were simply agents of disease. Only in recent decades have scientists come to appreciate that the great majority are harmless or positively beneficial.</p>
+<p><b>C</b> The gut microbiome performs functions our own bodies cannot. Its bacteria break down fibres we could not otherwise digest, synthesise certain vitamins, and train the immune system to distinguish friend from foe. A healthy, diverse microbiome, research increasingly suggests, is a foundation of good health.</p>
+<p><b>D</b> When that community is disturbed, trouble may follow. Studies have linked an unbalanced microbiome to conditions ranging from obesity and diabetes to allergies, and even, more controversially, to mood and mental health, through what is sometimes called the "gut–brain axis". Much of this research, however, is still young, and cause and effect are hard to separate.</p>
+<p><b>E</b> One striking treatment has already proven its worth. For patients with a dangerous gut infection resistant to antibiotics, transplanting stool — and with it a healthy microbiome — from a donor can restore balance with remarkable success. Once regarded as bizarre, the procedure is now an accepted therapy.</p>
+<p><b>F</b> The field is advancing quickly but demands caution. Popular enthusiasm has raced ahead of the evidence, and the shelves are full of probiotic products making claims that science cannot yet support. What is clear is that the tiny passengers we carry are not mere hitchhikers but partners, shaped by our diet and shaping our health in return.</p>`,
+   Q:[
+    {head:H.mc(14,17), t:'mc', q:"The microbiome consists of:", o:["only bacteria","microbes living in and on the body","human genes only","antibiotics"], a:"B"},
+    {t:'mc', q:"For most of medical history, microbes were regarded as:", o:["partners","harmless","enemies to be destroyed","vitamins"], a:"C"},
+    {t:'mc', q:"Gut bacteria help the body by:", o:["producing antibiotics","digesting fibre and making vitamins","replacing the immune system","causing obesity"], a:"B"},
+    {t:'mc', q:"The stool-transplant treatment is used for:", o:["all diseases","a gut infection resistant to antibiotics","mental illness","allergies"], a:"B"},
+    {head:H.info(18,21), t:'txt', q:"a treatment involving a transplant from a donor", a:"E"},
+    {t:'txt', q:"a warning that products overstate the evidence", a:"F"},
+    {t:'txt', q:"the claim that our microbial genes outnumber our own", a:"A"},
+    {t:'txt', q:"links between the microbiome and various diseases", a:"D"},
+    {head:H.comp(22,26), t:'txt', q:"Most of our microbes live in the ______.", a:"gut"},
+    {t:'txt', q:"Antibiotics reinforced the idea that bacteria cause ______.", a:"disease"},
+    {t:'txt', q:"Gut bacteria help train the ______ system.", a:"immune"},
+    {t:'txt', q:"The gut–brain ______ may link microbes to mood.", a:"axis"},
+    {t:'txt', q:"Products claiming gut benefits are often called ______.", a:"probiotic|probiotics"}]},
+  {title:"The Anthropocene",
+   text:`<p><b>A</b> Geologists divide Earth's history into named intervals — eras, periods and epochs — each marked by distinctive layers in the rock. For the last 11,700 years we have officially lived in the Holocene, the warm, stable epoch in which all of human civilisation arose. Now a growing number of scientists argue that we have entered a new epoch, one defined not by natural forces but by ourselves: the Anthropocene, the "age of humans".</p>
+<p><b>B</b> The case rests on the sheer scale of humanity's impact. We have transformed more than half the planet's land surface, dammed most of its major rivers, and altered the chemistry of its air and oceans. Human activity now moves more rock and soil than all the world's rivers combined. Future geologists, the argument runs, will read our presence unmistakably in the rock.</p>
+<p><b>C</b> What that lasting signal will be is much debated. Candidates include the plastics that now litter every environment, the ash from burning fossil fuels, the bones of the billions of chickens we consume, and — most precisely datable of all — the radioactive particles scattered worldwide by nuclear tests in the mid-twentieth century.</p>
+<p><b>D</b> That date, around 1950, is favoured by many, since it marks the "Great Acceleration", a sudden post-war surge in population, consumption and pollution. Others argue for an earlier start, with the rise of farming or the Industrial Revolution, while a few reject the whole idea, insisting the changes are too recent to count as a true geological epoch.</p>
+<p><b>E</b> The dispute is not merely technical. To name an epoch after ourselves is to make a statement about responsibility. It declares that humanity has become a geological force, on a par with volcanoes and asteroids, and that the future of the planet's systems now lies, to a frightening degree, in our hands.</p>
+<p><b>F</b> Whether or not the term is formally adopted, its popularity reflects a genuine shift in understanding. We can no longer think of nature as a vast backdrop, indifferent to our doings. The line between the human and the natural, once seemingly clear, has, in the space of a few generations, all but dissolved.</p>`,
+   Q:[
+    {head:H.yn(27,31), t:'yn', q:"Human civilisation developed during the Holocene epoch.", a:"yes"},
+    {t:'yn', q:"Humans now move less rock and soil than the world's rivers.", a:"no"},
+    {t:'yn', q:"There is complete agreement on when the Anthropocene began.", a:"no"},
+    {t:'yn', q:"Radioactive particles from nuclear tests offer a precisely datable marker.", a:"yes"},
+    {t:'yn', q:"The idea of the Anthropocene is purely technical, with no wider meaning.", a:"no"},
+    {head:`<b>Questions 32–36</b> · Complete each sentence with the correct ending, A–F.<div class="bank">A&nbsp; arose during the Holocene.<br>B&nbsp; more rock than all the world's rivers.<br>C&nbsp; the radioactive fallout of nuclear tests.<br>D&nbsp; the post-war "Great Acceleration".<br>E&nbsp; that humans are now a geological force.<br>F&nbsp; the eruption of a single volcano.</div>`,
+     t:'txt', q:"All of human civilisation ______", a:"A"},
+    {t:'txt', q:"Human activity now moves ______", a:"B"},
+    {t:'txt', q:"The most precisely datable marker is ______", a:"C"},
+    {t:'txt', q:"The date of about 1950 marks ______", a:"D"},
+    {t:'txt', q:"Naming the epoch declares ______", a:"E"},
+    {head:H.sa(37,40), t:'txt', q:"What is the current official epoch called?", a:"Holocene"},
+    {t:'txt', q:"What name means the 'age of humans'?", a:"Anthropocene"},
+    {t:'txt', q:"The sudden post-war surge is called the Great ______.", a:"Acceleration"},
+    {t:'txt', q:"Nuclear tests scattered radioactive ______ worldwide.", a:"particles"}]}
+]},
+
+/* ============ HARD TEST 4 (Band 8-9) ============ */
+{name:"Dark Matter · Origins of Agriculture · Swarm Intelligence", blurb:"🔴 HARD · science & prehistory, heavy inference", level:"hard",
+ passages:[
+  {title:"Dark Matter",
+   text:`<p><b>A</b> One of the great embarrassments of modern science is that we do not know what most of the universe is made of. The atoms that form stars, planets and people — everything we can see and touch — account for only about five per cent of the cosmos. The rest is invisible, detectable only by its effects. Roughly a quarter is thought to be "dark matter", and the remainder a still more mysterious "dark energy".</p>
+<p><b>B</b> The first hint of dark matter came in the 1930s, when the astronomer Fritz Zwicky noticed that galaxies in a distant cluster were moving far too fast. The visible matter they contained could not possibly generate enough gravity to hold them together; something unseen, he proposed, must be supplying the extra pull. His idea was ignored for decades.</p>
+<p><b>C</b> Stronger evidence arrived in the 1970s from the work of Vera Rubin, who studied how stars orbit within galaxies. According to the visible matter, stars at the edge should move slowly; instead they raced round just as fast as those near the centre. The simplest explanation was that each galaxy sits within a vast, invisible halo of dark matter, whose gravity keeps the outer stars moving quickly.</p>
+<p><b>D</b> What dark matter actually is remains unknown. It emits no light, which is why we cannot see it, and it appears to pass straight through ordinary matter. Most physicists suspect it consists of some as-yet-undiscovered particle, and enormous, sensitive detectors have been built deep underground to catch one. So far, none has been found.</p>
+<p><b>E</b> A minority of scientists take a bolder view: that dark matter does not exist at all, and that our theory of gravity is simply wrong on the largest scales. Modifying the laws of gravity can reproduce some observations, but this approach struggles to explain everything that dark matter accounts for, and most researchers remain unconvinced.</p>
+<p><b>F</b> The stakes could hardly be higher. To resolve the puzzle would be to discover the substance that makes up most of the material universe and shapes the largest structures within it. Until then, we are in the curious position of understanding, in detail, only a tiny fraction of the cosmos we inhabit.</p>`,
+   Q:[
+    {head:H.head(1,6,"i&nbsp; The first overlooked clue<br>ii&nbsp; An unknown substance<br>iii&nbsp; How much we cannot see<br>iv&nbsp; Evidence from spinning galaxies<br>v&nbsp; A rival explanation<br>vi&nbsp; Why the answer matters<br>vii&nbsp; The birth of the universe<br>viii&nbsp; Building better telescopes"),
+     t:'txt', q:"Paragraph A", a:"iii"},
+    {t:'txt', q:"Paragraph B", a:"i"},
+    {t:'txt', q:"Paragraph C", a:"iv"},
+    {t:'txt', q:"Paragraph D", a:"ii"},
+    {t:'txt', q:"Paragraph E", a:"v"},
+    {t:'txt', q:"Paragraph F", a:"vi"},
+    {head:H.tf(7,10), t:'tf', q:"Ordinary atoms make up most of the universe.", a:"false"},
+    {t:'tf', q:"Zwicky's early idea was quickly accepted by other scientists.", a:"false"},
+    {t:'tf', q:"Detectors built to find dark-matter particles have so far succeeded.", a:"false"},
+    {t:'tf', q:"Dark-matter detectors are placed deep underground.", a:"true"},
+    {head:`<b>Questions 11–13</b> · Complete the summary. Choose <b>ONE word</b> from the box.<div class="bank">halo &middot; light &middot; gravity &middot; particle &middot; centre &middot; energy &middot; visible</div>`,
+     t:'txt', q:"Dark matter emits no ______, so it cannot be seen directly.", a:"light"},
+    {t:'txt', q:"Vera Rubin's work suggested each galaxy sits in an invisible ______ of dark matter.", a:"halo"},
+    {t:'txt', q:"Most physicists think dark matter is an unknown ______.", a:"particle"}]},
+  {title:"The Origins of Agriculture",
+   text:`<p><b>A</b> For more than ninety per cent of our species' existence, humans lived as hunter-gatherers, moving in small bands to follow game and gather wild plants. Then, beginning around twelve thousand years ago, in several parts of the world independently, people began to plant crops and keep animals. This shift to farming, often called the Neolithic Revolution, was among the most consequential in human history.</p>
+<p><b>B</b> Curiously, it may not have made individual lives better, at least at first. Studies of ancient skeletons suggest that early farmers were often shorter, less well nourished and more prone to disease than the hunter-gatherers who preceded them. Their diet, based on a few staple crops, was narrower, and living close to animals and to other people bred new illnesses.</p>
+<p><b>C</b> Why, then, did farming spread? The likeliest answer is numbers. Although farming was harder work and less healthy, it produced far more food per unit of land, which allowed populations to grow. Farming communities, however unhealthy, simply out-bred and displaced their hunter-gatherer neighbours.</p>
+<p><b>D</b> Farming also transformed society itself. A settled life allowed people to accumulate possessions and to store surplus grain — a store that had to be defended and could be seized. For the first time, some people could live off the labour of others, and durable differences in wealth and power began to appear.</p>
+<p><b>E</b> The domesticated species themselves were changed in the process. Wild wheat scatters its seeds to reproduce; the plants farmers favoured were mutants whose seeds stayed on the stalk, easy to harvest but now dependent on humans to sow them. Animals, too, were bred to be smaller, tamer and more useful. Human and crop had entered a partnership from which neither could easily withdraw.</p>
+<p><b>F</b> The consequences are still unfolding. Everything that we call civilisation — cities, writing, states, and the vast human population itself — ultimately rests on the surplus that agriculture first made possible, along with the inequalities that came with it.</p>`,
+   Q:[
+    {head:H.mc(14,17), t:'mc', q:"For most of human existence, people lived as:", o:["farmers","hunter-gatherers","city-dwellers","herders"], a:"B"},
+    {t:'mc', q:"Compared with hunter-gatherers, early farmers were often:", o:["taller and healthier","shorter and less healthy","longer-lived","better fed"], a:"B"},
+    {t:'mc', q:"Farming spread mainly because it:", o:["was easier work","was healthier","produced more food per unit of land","required no animals"], a:"C"},
+    {t:'mc', q:"Stored surplus grain led to:", o:["equal societies","differences in wealth and power","the end of farming","smaller populations"], a:"B"},
+    {head:H.info(18,21), t:'txt', q:"evidence taken from ancient skeletons", a:"B"},
+    {t:'txt', q:"how the wheat farmers favoured differed from wild wheat", a:"E"},
+    {t:'txt', q:"the independent origins of farming in several regions", a:"A"},
+    {t:'txt', q:"the link between farming and modern civilisation", a:"F"},
+    {head:H.comp(22,26), t:'txt', q:"The shift to farming is called the ______ Revolution.", a:"Neolithic"},
+    {t:'txt', q:"Early farmers relied on a few ______ crops.", a:"staple"},
+    {t:'txt', q:"Farming allowed people to store surplus ______.", a:"grain"},
+    {t:'txt', q:"Wild wheat scatters its ______ to reproduce.", a:"seeds"},
+    {t:'txt', q:"Domesticated animals were bred to be smaller and ______.", a:"tamer"}]},
+  {title:"Swarm Intelligence",
+   text:`<p><b>A</b> A single ant is not impressive. With a brain smaller than a pinhead, it can do little on its own and would quickly perish if left alone. Yet a colony of ants can build elaborate nests, wage wars, farm fungus and find the shortest route to food, solving problems that no individual ant could begin to comprehend. This is the paradox of what scientists call swarm intelligence.</p>
+<p><b>B</b> The secret is that complex group behaviour can arise from simple individual rules, with no leader in charge. Ants find efficient paths not by planning but by laying down chemical trails; the shortest route is travelled fastest, so its trail grows strongest and attracts more ants, in a self-reinforcing loop. Order emerges from the bottom up, without anyone directing it.</p>
+<p><b>C</b> Such "emergence" is found throughout nature. A flock of thousands of starlings wheels through the sky as one, yet each bird merely follows a few simple rules about its nearest neighbours. A colony of bees chooses a new home through a kind of collective vote, with no bee overseeing the decision. The group behaves as if it were a single intelligent creature.</p>
+<p><b>D</b> These natural systems have inspired human technology. Engineers have written "ant-colony" algorithms that solve difficult routing problems — directing lorries, or data through a network — by mimicking the trail-laying of insects. Swarms of small, cheap robots, each following simple rules, are being developed to explore, to search collapsed buildings, or to monitor crops.</p>
+<p><b>E</b> The appeal of the approach is its robustness. A swarm has no leader whose loss would cause collapse and no single point of failure; if some members are lost, the rest carry on. Such systems are flexible and resilient in ways that centrally controlled ones are not, though they can also be harder to predict and control.</p>
+<p><b>F</b> There is a broader lesson here about intelligence itself. It need not reside in a single powerful brain. It can be distributed across a multitude of simple parts, emerging from their interactions — a possibility that challenges our very idea of what it means to be clever.</p>`,
+   Q:[
+    {head:H.yn(27,31), t:'yn', q:"A single ant can accomplish little on its own.", a:"yes"},
+    {t:'yn', q:"Ant colonies find short routes because a leader plans them.", a:"no"},
+    {t:'yn', q:"In a starling flock, each bird follows only a few simple rules.", a:"yes"},
+    {t:'yn', q:"Ant-colony algorithms have been used to solve routing problems.", a:"yes"},
+    {t:'yn', q:"Swarm systems collapse if any single member is lost.", a:"no"},
+    {head:`<b>Questions 32–36</b> · Complete each sentence with the correct ending, A–F.<div class="bank">A&nbsp; follows simple rules about its neighbours.<br>B&nbsp; the shortest trail grows strongest.<br>C&nbsp; directing lorries or data through a network.<br>D&nbsp; has no single point of failure.<br>E&nbsp; reside in one powerful brain.<br>F&nbsp; are difficult to breed in captivity.</div>`,
+     t:'txt', q:"Ants find efficient paths because ______", a:"B"},
+    {t:'txt', q:"Each bird in a flock merely ______", a:"A"},
+    {t:'txt', q:"Ant-colony algorithms solve problems such as ______", a:"C"},
+    {t:'txt', q:"A swarm is robust because it ______", a:"D"},
+    {t:'txt', q:"Intelligence need not ______", a:"E"},
+    {head:H.sa(37,40), t:'txt', q:"What do scientists call the collective problem-solving of groups like ant colonies?", a:"swarm intelligence"},
+    {t:'txt', q:"What do ants lay down to mark efficient routes?", a:"chemical trails|trails"},
+    {t:'txt', q:"Order in a swarm arises from the ______ up.", a:"bottom"},
+    {t:'txt', q:"Swarms of small ______ are being developed to search collapsed buildings.", a:"robots"}]}
+]},
+
+/* ============ HARD TEST 5 (Band 8-9) ============ */
+{name:"Epigenetics · The Wisdom of Crowds · Convergent Evolution", blurb:"🔴 HARD · abstract science, opinion & nuance", level:"hard",
+ passages:[
+  {title:"Epigenetics: Beyond the Gene",
+   text:`<p><b>A</b> For much of the twentieth century, the gene was regarded as destiny. The DNA sequence inherited from our parents, it was thought, was a fixed blueprint that determined our traits, and the environment could do nothing to alter the instructions written in it. The emerging field of epigenetics has complicated this tidy picture.</p>
+<p><b>B</b> Epigenetics studies changes in how genes are used — switched on or off — without any change to the underlying DNA sequence itself. Chemical tags attached to the DNA, or to the proteins around which it is wound, can silence a gene or activate it. Every cell in your body carries the same DNA, yet a liver cell and a brain cell differ precisely because different genes are switched on in each.</p>
+<p><b>C</b> What has caused excitement, and controversy, is evidence that these switches can respond to the environment. Diet, stress and exposure to toxins appear able to alter the pattern of tags, changing which genes are active. In this way experience may leave a lasting mark on the body, without touching the genetic code itself.</p>
+<p><b>D</b> More startling still is the suggestion that some of these marks may be passed to offspring. Studies of populations that suffered famine have hinted that the effects of starvation in one generation can show up in the health of the next, and even the generation after that. If confirmed, this would mean that, to a limited degree, the experiences of parents could be biologically inherited.</p>
+<p><b>E</b> Such claims must be treated with care. Much of the evidence for inherited epigenetic effects comes from animals or from small human studies that are hard to interpret, and the mechanisms remain poorly understood. Enthusiasts have sometimes drawn sweeping conclusions that the data cannot yet support.</p>
+<p><b>F</b> Nevertheless, epigenetics has already reshaped biology. It has shown that the old opposition between "nature" and "nurture" is far too simple: the two are entwined, with the environment reaching in to influence the very expression of our genes. Heredity, it turns out, is more flexible, and more interesting, than we once believed.</p>`,
+   Q:[
+    {head:H.head(1,6,"i&nbsp; Switching genes on and off<br>ii&nbsp; The gene once seen as destiny<br>iii&nbsp; A response to the environment<br>iv&nbsp; Inheritance across generations<br>v&nbsp; Reasons for caution<br>vi&nbsp; Rethinking nature and nurture<br>vii&nbsp; The discovery of the DNA molecule<br>viii&nbsp; Treating inherited disease"),
+     t:'txt', q:"Paragraph A", a:"ii"},
+    {t:'txt', q:"Paragraph B", a:"i"},
+    {t:'txt', q:"Paragraph C", a:"iii"},
+    {t:'txt', q:"Paragraph D", a:"iv"},
+    {t:'txt', q:"Paragraph E", a:"v"},
+    {t:'txt', q:"Paragraph F", a:"vi"},
+    {head:H.tf(7,10), t:'tf', q:"Epigenetic changes alter the underlying DNA sequence.", a:"false"},
+    {t:'tf', q:"Liver cells and brain cells contain different DNA.", a:"false"},
+    {t:'tf', q:"Some studies suggest the effects of famine can appear in later generations.", a:"true"},
+    {t:'tf', q:"The mechanisms of inherited epigenetic effects are now fully understood.", a:"false"},
+    {head:`<b>Questions 11–13</b> · Complete the summary. Choose <b>ONE word</b> from the box.<div class="bank">tags &middot; sequence &middot; famine &middot; environment &middot; blueprint &middot; offspring &middot; proteins</div>`,
+     t:'txt', q:"Epigenetics studies how genes are switched on or off without changing the DNA ______.", a:"sequence"},
+    {t:'txt', q:"Chemical ______ attached to DNA control this switching.", a:"tags"},
+    {t:'txt', q:"The pattern can respond to the ______, such as diet and stress.", a:"environment"}]},
+  {title:"The Wisdom of Crowds",
+   text:`<p><b>A</b> In 1906 the scientist Francis Galton attended a country fair where visitors competed to guess the weight of an ox. Expecting to prove the foolishness of the crowd, he collected the hundreds of guesses and calculated their average. To his surprise, the crowd's average guess was almost exactly the ox's true weight, and closer than any single expert's estimate. Galton had stumbled upon what is now called the wisdom of crowds.</p>
+<p><b>B</b> The principle is that, under the right conditions, the combined judgement of many ordinary people can be more accurate than that of any individual, however expert. Each person's guess carries some information and some error; when the guesses are averaged, the errors, being random, tend to cancel out, while the information adds up.</p>
+<p><b>C</b> The effect is not magic, and it does not always work. It depends, researchers have found, on certain conditions. The members of the crowd must be diverse, bringing different information and viewpoints; they must judge independently, without simply copying one another; and there must be a way to combine their judgements fairly.</p>
+<p><b>D</b> When these conditions fail, crowds can be foolish indeed. If people influence one another too much, independent errors are replaced by shared bias, and the crowd stampedes in the wrong direction — as in the financial bubbles where investors, watching each other, drive prices to absurd heights. The same crowd that is wise when independent becomes a mob when it merely imitates.</p>
+<p><b>E</b> The idea has found many modern uses. "Prediction markets", in which people bet on future events, often forecast elections and product sales more accurately than polls or panels of experts. Businesses and governments increasingly gather dispersed judgements to make decisions, harnessing the knowledge scattered among many heads.</p>
+<p><b>F</b> The lesson is a subtle one. Crowds are neither reliably wise nor reliably foolish; it depends entirely on how they are organised. Diversity and independence, it turns out, are not obstacles to good collective judgement but the very conditions that make it possible.</p>`,
+   Q:[
+    {head:H.mc(14,17), t:'mc', q:"Galton expected the crowd's guesses to be:", o:["accurate","foolish","identical","expert"], a:"B"},
+    {t:'mc', q:"The crowd's average guess turned out to be:", o:["far too high","far too low","almost exactly right","impossible to calculate"], a:"C"},
+    {t:'mc', q:"Averaging many guesses works because random errors:", o:["add up","tend to cancel out","disappear entirely","are ignored"], a:"B"},
+    {t:'mc', q:"Crowds become unreliable when members:", o:["judge independently","are diverse","influence one another too much","stay silent"], a:"C"},
+    {head:H.info(18,21), t:'txt', q:"an example from a country fair", a:"A"},
+    {t:'txt', q:"the conditions that a wise crowd requires", a:"C"},
+    {t:'txt', q:"an example of crowds behaving foolishly", a:"D"},
+    {t:'txt', q:"a modern use of crowds in forecasting", a:"E"},
+    {head:H.comp(22,26), t:'txt', q:"Galton averaged the crowd's guesses of an ox's ______.", a:"weight"},
+    {t:'txt', q:"When guesses are averaged, random ______ tend to cancel out.", a:"errors"},
+    {t:'txt', q:"A wise crowd must be ______, bringing different viewpoints.", a:"diverse"},
+    {t:'txt', q:"Members must judge ______, without copying others.", a:"independently"},
+    {t:'txt', q:"'Prediction ______' let people bet on future events.", a:"markets"}]},
+  {title:"Convergent Evolution",
+   text:`<p><b>A</b> Why do a shark, a dolphin and an extinct marine reptile all share the same sleek, torpedo-shaped body? They are only distantly related — one a fish, one a mammal, one a reptile — and each evolved from very different ancestors. Yet all three arrived, independently, at almost the same design. This phenomenon, in which unrelated organisms evolve similar features, is called convergent evolution.</p>
+<p><b>B</b> The explanation is that similar problems tend to have similar solutions. Anything that moves fast through water faces the same physical challenge of drag, and a streamlined shape is simply the best answer. Evolution, working separately on each lineage, was pushed towards the same form by the same unyielding laws of physics.</p>
+<p><b>C</b> Examples abound. The eye, one of nature's most complex organs, has evolved independently dozens of times. Wings for powered flight arose separately in insects, in the extinct pterosaurs, in birds and in bats. Even echolocation — navigating by sound — evolved twice over, in bats and in dolphins, using strikingly similar genetic changes.</p>
+<p><b>D</b> Convergence carries a deeper message about the nature of evolution. It is sometimes imagined as pure chance, a series of random accidents that could have turned out entirely differently. Convergence suggests otherwise: that there are only so many good ways to solve a given problem, and that evolution will find them again and again.</p>
+<p><b>E</b> This has fuelled a fascinating debate. If evolution repeatedly arrives at the same solutions, then life on other planets, should it exist, might not be as alien as science fiction imagines. Creatures shaped by the same physics — needing to see, to move, to capture energy — might converge on forms not wholly unlike those on Earth.</p>
+<p><b>F</b> Convergence must not be overstated, however. For every case of striking similarity there are countless unique forms that arose only once, and much of life's diversity is genuinely unrepeatable. Evolution is neither wholly random nor wholly predictable, but a subtle interplay of chance and constraint — of history and of physical law.</p>`,
+   Q:[
+    {head:H.yn(27,31), t:'yn', q:"The shark, dolphin and marine reptile are closely related.", a:"no"},
+    {t:'yn', q:"A streamlined shape is an efficient solution for moving through water.", a:"yes"},
+    {t:'yn', q:"The eye has evolved only once in the history of life.", a:"no"},
+    {t:'yn', q:"Convergence suggests evolution is purely a matter of chance.", a:"no"},
+    {t:'yn', q:"The writer thinks convergence can explain all of life's diversity.", a:"no"},
+    {head:`<b>Questions 32–36</b> · Complete each sentence with the correct ending, A–F.<div class="bank">A&nbsp; the same laws of physics.<br>B&nbsp; evolved independently many times.<br>C&nbsp; may not be wholly alien.<br>D&nbsp; arose only once and are unrepeatable.<br>E&nbsp; reside in one powerful brain.<br>F&nbsp; are always larger than their ancestors.</div>`,
+     t:'txt', q:"Streamlined bodies were shaped by ______", a:"A"},
+    {t:'txt', q:"The complex eye has ______", a:"B"},
+    {t:'txt', q:"Life on other planets ______", a:"C"},
+    {t:'txt', q:"Much of life's diversity consists of forms that ______", a:"D"},
+    {t:'txt', q:"Similar problems, the passage says, tend to have similar ______.", a:"solutions"},
+    {head:H.sa(37,40), t:'txt', q:"What is the term for unrelated organisms evolving similar features?", a:"convergent evolution"},
+    {t:'txt', q:"What physical challenge does anything moving fast through water face?", a:"drag"},
+    {t:'txt', q:"Besides bats, which animal evolved echolocation?", a:"dolphins"},
+    {t:'txt', q:"Evolution is described as an interplay of chance and ______.", a:"constraint"}]}
 ]}
 ];

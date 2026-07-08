@@ -32,6 +32,9 @@
   .accentbar .hint{font-size:.78rem;color:var(--muted)}
   details.test{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:12px 0;overflow:hidden;box-shadow:var(--shadow)}
   details.test>summary{cursor:pointer;padding:16px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gold);font-size:1.05rem;gap:10px}
+  .lvl{font-family:'Poppins';font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  .lvl.std{background:rgba(70,214,179,.18);color:var(--accent2)}
+  .lvl.hard{background:rgba(255,123,182,.2);color:var(--pink)}
   details.test>summary::-webkit-details-marker{display:none}
   details.test>summary::after{content:"+";font-size:1.4rem;color:var(--accent2)}
   details.test[open]>summary::after{content:"–"}
@@ -106,6 +109,7 @@
   </div>
   <div class="note">🗣️ <b>একাধিক বক্তা:</b> Part 1 ও Part 3 কথোপকথন — এখানে দুই বক্তাকে <b>দুটি আলাদা ভয়েস</b> (বা একই ভয়েসে ভিন্ন pitch)-এ শোনানো হয়, transcript-এ <span class="chip s0">A</span> ও <span class="chip s1">B</span> দিয়ে আলাদা করা। Part 2 ও Part 4 একক বক্তা (monologue/lecture)।</div>
   <div class="warn note">⚠️ Accent তালিকা তোমার ডিভাইস/ব্রাউজারের ওপর নির্ভর করে। বেশি accent পেতে <b>Chrome বা Edge</b> ব্যবহার করো (এদের অনলাইন ভয়েস বেশি)। একটাও en-voice না থাকলে ডিফল্ট voice চলবে।</div>
+  <div class="note">🟢 <b>Test 1–10 = Standard</b>। 🔴 <b>Test 11–15 = HARD (Band 8–9)</b>: বক্তা প্রায়ই নিজের কথা ঠিক করে (distractor — "Monday… no, Tuesday"), সংখ্যা/বানান কঠিন, আর map-এ ঘুরিয়ে direction দেওয়া। HARD টেস্টে speed একটু বেশি রাখা — একবারই শুনে উত্তর দেওয়ার চেষ্টা করো।</div>
 
   <div id="tests"></div>
 
@@ -203,7 +207,9 @@ function render(){
   TESTS.forEach((test,ti)=>{
     const det=document.createElement('details'); det.className='test';
     let qnum=0;
-    let html=`<summary><span>Test ${ti+1} — ${test.name}</span></summary><div class="tbody">
+    const r0 = test.level==='hard' ? '1' : '0.9';
+    const lvl = test.level==='hard' ? '<span class="lvl hard">🔴 HARD</span>' : '<span class="lvl std">🟢 Standard</span>';
+    let html=`<summary><span>Test ${ti+1} — ${test.name} ${lvl}</span></summary><div class="tbody">
       <div class="sub" style="margin:2px 0 6px">${test.blurb}</div>`;
     test.parts.forEach(p=>{
       const dlg=Array.isArray(p.tr);
@@ -213,7 +219,7 @@ function render(){
       html+=`<div class="audio-row">
           <button class="abtn" data-tr="${ti}-${p.n}" type="button">▶ Play</button>
           <button class="abtn stop" data-stop="1" type="button">⏹ Stop</button>
-          <span class="rate">🐢 <input type="range" min="0.6" max="1.1" step="0.05" value="0.9" class="rate-slider"> 🐇</span>
+          <span class="rate">🐢 <input type="range" min="0.6" max="1.15" step="0.05" value="${r0}" class="rate-slider"> 🐇</span>
         </div>`;
       if(p.map){ html+=p.map + `<p class="maphint">📍 প্ল্যান দেখে সঠিক অক্ষর (A–H) বসাও।</p>`; }
       p.Q.forEach(q=>{

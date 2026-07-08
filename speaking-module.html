@@ -428,6 +428,18 @@
         <div class="step">রেকর্ড শুনে: পুনরাবৃত্তি, ভুল গ্রামার, একঘেয়ে শব্দ ধরো।</div>
       </div>
       <div class="practice-here">🤖 <b>এখনই করো:</b> ChatGPT-কে বলো "Act as an IELTS examiner, ask me 5 Part 3 questions about technology and score me." তারপর এখানে রেকর্ড করে বলো।</div>
+      <h4 style="margin-top:14px">🔴 Harder Part 3 — abstract discussion (Band 8+)</h4>
+      <p style="color:var(--muted);font-size:.92rem">এগুলো কঠিন কারণ এগুলো ব্যক্তিগত নয়, বিমূর্ত ও সমাজ-কেন্দ্রিক। প্রতিটায় ২ দিক + অবস্থান + উদাহরণ দিয়ে ৪৫ সেকেন্ড বলার চেষ্টা করো, রেকর্ড করো, ChatGPT দিয়ে যাচাই করো।</p>
+      <ul>
+        <li>To what extent should individuals be held responsible for solving environmental problems?</li>
+        <li>Is economic growth always a sign that a society is improving?</li>
+        <li>Why do people often resist change, even when it is beneficial?</li>
+        <li>Should there be limits on freedom of speech? Where would you draw the line?</li>
+        <li>Does technology bring people closer together or drive them further apart?</li>
+        <li>Is it more important for a job to be well paid or personally meaningful?</li>
+        <li>How far should a government interfere in people's personal choices, such as diet?</li>
+        <li>Will traditional cultures inevitably disappear as the world becomes more connected?</li>
+      </ul>
     </div>
 
     <div class="card tasklist" data-level="5">
@@ -590,8 +602,16 @@ let mediaRecorder=null,chunks=[],recCount=0,secInt=null;
 
 recBtn.addEventListener('click',async()=>{
   try{
-    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
-    mediaRecorder=new MediaRecorder(stream);
+    const stream=await navigator.mediaDevices.getUserMedia({audio:{
+      noiseSuppression:true,   // remove steady background noise (fans, hiss)
+      echoCancellation:true,   // cancel echo/feedback
+      autoGainControl:true,    // even out your voice level
+      channelCount:1           // mono = cleaner voice capture
+    }});
+    let mime='audio/webm;codecs=opus';
+    if(!(window.MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(mime))) mime='audio/webm';
+    try{ mediaRecorder=new MediaRecorder(stream,{mimeType:mime,audioBitsPerSecond:128000}); }
+    catch(_){ mediaRecorder=new MediaRecorder(stream); }
     chunks=[];
     mediaRecorder.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};
     mediaRecorder.onstop=()=>{
