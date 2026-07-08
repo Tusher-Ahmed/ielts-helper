@@ -1315,7 +1315,7 @@ const MOCKS=[
  blurb:'Homestay · Recycling scheme · Internet history + English language · Whales · Fast fashion',
  listen:[
   {title:'Student homestay accommodation',
-   transcript:"Hello, I'm calling about arranging homestay accommodation for an international student. Of course. The standard package includes a private room and two meals a day, breakfast and dinner. The cost is one hundred and forty pounds per week. The student would have their own room, but the bathroom is usually shared. Most of our host families live within thirty minutes of the college by bus. We ask students to give two weeks' notice if they wish to leave. There is also a one-time placement fee of sixty pounds. Wifi is included in all our homes. The placement can begin from the second of September.",
+   transcript:"Hello, I'm calling about arranging homestay accommodation for an international student. Of course. The standard package includes a private room and two meals a day, breakfast and dinner. The cost is one hundred and fourteen pounds... sorry, one hundred and forty per week. The student would have their own room, but the bathroom is usually shared. Most of our host families live within thirty minutes of the college by bus, not train. We ask students to give two weeks' notice — not one — if they wish to leave. There is also a one-time placement fee of sixteen pounds... sorry, sixty. Wifi is included in all our homes. The placement can begin from the second of September.",
    Q:[
     {t:'text',a:'two|2',q:'The package includes a private room and ______ meals a day.'},
     {t:'text',a:'dinner',q:'Meals provided: breakfast and ______.'},
@@ -1329,7 +1329,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The placement can begin from:',opts:['A) 2 August','B) 2 September','C) 2 October','D) today']}
    ]},
   {title:'Radio: new recycling scheme',
-   transcript:"And now, some news about changes to our local recycling scheme. From the first of March, households will be given three new bins. The green bin is for garden waste, the blue bin is for paper and cardboard, and the brown bin is for food waste. General rubbish will still go in the usual black bin. Recycling will be collected every Tuesday, and general rubbish every Friday. Residents are reminded to rinse containers before recycling them. Those who need extra bins can request them free of charge from the council website. The council hopes the new scheme will double the amount of waste that is recycled.",
+   transcript:"And now, some news about changes to our local recycling scheme. From the first of March, households will be given three new bins. The green bin is for garden waste, the blue bin is for paper and cardboard, and the brown bin is for food waste. General rubbish will still go in the usual black bin. Recycling will be collected every Thursday — sorry, every Tuesday — and general rubbish every Friday. Residents are reminded to rinse containers before recycling them. Those who need extra bins can request them free of charge from the council website, not the town hall. The council hopes the new scheme will double the amount of waste that is recycled.",
    Q:[
     {t:'text',a:'first|1st|1',q:'The new scheme begins on the ______ of March.'},
     {t:'text',a:'three|3',q:'Households will get ______ new bins.'},
@@ -1343,7 +1343,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The council hopes the scheme will:',opts:['A) reduce costs','B) double recycling','C) cut collections','D) ban plastic']}
    ]},
   {title:'Geography project on a river',
-   transcript:"So, our geography project is on the local river. What should we investigate? I think we should look at water quality along its length. How will we measure it? We can test the water at different points for pollution. How many points? Let's take samples at five locations, from the source to the sea. And what causes the pollution? Mainly farm chemicals and waste from the factory upstream. We should include a map showing the sample points. How will we present the data? Graphs would show the changes clearly. When do we hand it in? The report is due on the tenth of December. Let's do the fieldwork this Saturday.",
+   transcript:"So, our geography project is on the local river. What should we investigate? I think we should look at water quality along its length. How will we measure it? We can test the water at different points for pollution. How many points? Let's take samples at three locations... actually five, from the source to the sea. And what causes the pollution? Mainly farm chemicals and waste from the factory upstream. We should include a map showing the sample points. How will we present the data? Graphs would show the changes clearly. When do we hand it in? The report is due on the twelfth of December... no, the tenth. Let's do the fieldwork this Sunday — sorry, Saturday.",
    Q:[
     {t:'text',a:'river',q:'The project is on the local ______.'},
     {t:'text',a:'quality',q:'They will investigate water ______.'},
@@ -1357,7 +1357,7 @@ const MOCKS=[
     {t:'choice',a:'A',q:'Samples will be taken from:',opts:['A) the source to the sea','B) one point','C) the factory only','D) the farm']}
    ]},
   {title:'Lecture: the history of the internet',
-   transcript:"Today we will look at the history of the internet. The internet has its origins in the 1960s, when researchers in the United States developed a way to connect computers so they could share information, originally for military and academic purposes. A major breakthrough came in 1969, when the first message was sent between two computers. However, the internet as we know it only began to take shape in 1989, when a British scientist, Tim Berners-Lee, invented the World Wide Web, making information easy to access through web pages and links. Throughout the 1990s, the internet spread rapidly into homes and businesses. The arrival of smartphones then made it possible to be online anywhere, at any time.",
+   transcript:"Today we will look at the history of the internet. The internet has its origins in the 1960s, when researchers in the United States developed a way to connect computers so they could share information, originally for military and academic purposes. A major breakthrough came in 1969, when the first message was sent between two computers. However, the internet as we know it only began to take shape in 1979 — sorry, 1989 — when a British scientist, Tim Berners-Lee, invented the World Wide Web, making information easy to access through web pages and links. Throughout the 1990s, the internet spread rapidly into homes and businesses. The arrival of smartphones then made it possible to be online anywhere, at any time.",
    Q:[
     {t:'text',a:'1960s|sixties',q:'The internet has its origins in the ______.'},
     {t:'text',a:'academic',q:'It was originally developed for military and ______ purposes.'},
@@ -1372,72 +1372,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The History of the English Language',
+  {title:'The Origins of Music',
    paras:[
-    "English, spoken by around 1.5 billion people worldwide, is often described as a global language. Yet its origins are surprisingly humble, and its history is one of constant change and borrowing from other tongues.",
-    "English began as the language of Germanic tribes, the Angles, Saxons, and Jutes, who settled in Britain in the fifth century. Their language, now called Old English, would be almost unrecognisable to a modern speaker. It was heavily influenced by the languages of later invaders, including the Vikings, who added many everyday words.",
-    "A turning point came in 1066, when the Normans, from what is now France, conquered England. For centuries afterwards, French was the language of the ruling class, while ordinary people continued to speak English. As a result, thousands of French words entered the language, which is why English often has two words with similar meanings.",
-    "Over time, English continued to absorb words from Latin, Greek, and, as trade and empire expanded, from languages all around the world. This willingness to borrow is one reason English has such an enormous vocabulary. Today, English keeps changing, adding new words for new technologies and ideas."
+    "List of Headings —  i) Older than language?   ii) Music in every culture   iii) The oldest instruments   iv) Why did music evolve?   v) Music and the brain   vi) A kind of social glue   vii) Writing music down and recording it   viii) The rise of the professional musician",
+    "A   Music is found in every human society that has ever been studied, from the largest cities to the most remote villages. No culture, however isolated, has been discovered without it. This universality suggests that music is not a mere invention or luxury but something deeply rooted in human nature — a puzzle that has long fascinated scientists.",
+    "B   Just how old music is, no one knows for certain. Instruments do not survive as well as stone tools, but flutes carved from bird bone and mammoth ivory, found in European caves, are at least forty thousand years old. Since these are already sophisticated, music itself must be older still — quite possibly older than any surviving trace of it.",
+    "C   Some researchers make an even bolder claim: that music came before language. They point out that babies respond to melody and rhythm before they understand words, and that mothers everywhere soothe infants with song. Perhaps, they suggest, a musical 'proto-language' of expressive sounds paved the way for speech itself.",
+    "D   But why would music have evolved at all? One idea is that it strengthened social bonds. Singing, dancing and playing together require people to coordinate and cooperate, and doing so releases chemicals in the brain that create feelings of trust and closeness. A group that made music together, on this view, was a group more likely to survive.",
+    "E   Music also has a powerful effect on the individual mind. It can lift or calm our mood, and listening to it activates reward centres in the brain, releasing the same chemicals involved in other pleasures. This is why music can move us to tears or fill us with joy, and why it is increasingly used in therapy.",
+    "F   For most of history, music existed only in the moment of performance; once a song ended, it was gone. The invention of ways to write music down, and much later to record sound, changed this forever, allowing a performance to be preserved and shared across time and distance. Today, almost all the music ever recorded is available at the touch of a button."
    ],
    Q:[
-    {t:'text',a:'1.5',q:'English is spoken by around ______ billion people.'},
-    {t:'text',a:'germanic',q:'English began as the language of ______ tribes.'},
-    {t:'text',a:'old',q:'The early form of English is called ______ English.'},
-    {t:'text',a:'vikings|viking',q:'The ______ added many everyday words.'},
-    {t:'text',a:'1066',q:'England was conquered by the Normans in ______.'},
-    {t:'text',a:'france',q:'The Normans came from what is now ______.'},
-    {t:'text',a:'french',q:'For centuries, ______ was the language of the ruling class.'},
-    {t:'text',a:'english',q:'Ordinary people continued to speak ______.'},
-    {t:'choice',a:'B',q:'English often has two words with similar meanings because of borrowing from:',opts:['A) Latin only','B) French','C) Chinese','D) Arabic']},
-    {t:'text',a:'greek',q:'English also absorbed words from Latin and ______.'},
-    {t:'text',a:'enormous|large|huge',q:'English has a very ______ vocabulary.'},
-    {t:'choice',a:'FALSE',q:'English no longer changes today.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'global',q:'English is often described as a ______ language.'}
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vii|7',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Music has been found in every human society studied.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The oldest known instruments are simple and crude.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Babies respond to words before they respond to melody.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Making music together can create feelings of trust.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'ivory',q:'The oldest known flutes were carved from bird bone and mammoth ______.'},
+    {t:'text',a:'language',q:'Some researchers claim that music came before ______.'},
+    {t:'text',a:'performance',q:'For most of history, music existed only during a ______.'}
    ]},
-  {title:'The Great Migration of Whales',
+  {title:'The History of the Skyscraper',
    paras:[
-    "Each year, some of the largest animals ever to have lived undertake one of nature's most extraordinary journeys. Many species of whale migrate vast distances between cold feeding grounds and warm breeding grounds, in some cases travelling over ten thousand kilometres in a single year.",
-    "The reason for these journeys lies in the whales' need for two different environments. In summer, whales feed in cold polar waters, which are rich in the tiny organisms they eat. Having built up thick layers of fat, they then travel towards the equator to give birth in warmer seas, where their newborn calves, which lack insulating fat, are more likely to survive.",
-    "How whales navigate across thousands of kilometres of featureless ocean remains something of a mystery. Scientists believe they may use a combination of methods, including the Earth's magnetic field, the position of the sun, and even the shape of the coastline and the sea floor.",
-    "Sadly, whales face many dangers on their long journeys. In the past, hunting brought several species close to extinction. Although commercial whaling is now largely banned, whales are still threatened by collisions with ships, entanglement in fishing nets, and increasing noise pollution in the oceans, which can interfere with the sounds they use to communicate."
+    "A   The skyscraper is one of the defining images of the modern city. Yet for most of history, buildings could not rise more than a few storeys high. Two problems stood in the way: the walls of tall stone buildings had to be impossibly thick at the base to bear the weight above, and there was no practical way for people to reach the upper floors.",
+    "B   The first problem was solved by a new way of building. Instead of thick load-bearing walls, engineers began to use a strong internal frame, or skeleton, of iron and later steel. The frame carried the weight of the building, so the outer walls no longer had to; they became a light covering rather than a support, allowing buildings to soar.",
+    "C   The second problem was solved by the elevator, or lift. A tall building is useless if no one will climb dozens of flights of stairs to reach the top. The key breakthrough was a safety device, invented by Elisha Otis, that stopped a lift from falling if its cable broke. Only once people trusted lifts could tall buildings become practical.",
+    "D   With these inventions in place, the first true skyscrapers rose in the American cities of Chicago and New York in the late nineteenth century. Land in these booming cities was expensive, and building upwards allowed far more floor space on a small plot. The race to build ever higher had begun.",
+    "E   Building tall brings its own challenges. A skyscraper must resist not only its own enormous weight but also the force of the wind, which grows stronger with height and can make a tower sway. Modern engineers use clever designs and deep foundations to keep tall buildings stable and their occupants comfortable.",
+    "F   Today, skyscrapers over eight hundred metres tall exist, and cities around the world compete to build the tallest. Critics question whether such buildings are worth their vast cost, but supporters argue that, as populations grow and land runs short, building upwards is the only sustainable way for cities to expand."
    ],
    Q:[
-    {t:'text',a:'ten thousand|10000|10,000',q:'Some whales travel over ______ kilometres a year.'},
-    {t:'text',a:'polar',q:'Whales feed in cold ______ waters in summer.'},
-    {t:'text',a:'organisms|organism',q:'Cold waters are rich in tiny ______ that whales eat.'},
-    {t:'text',a:'equator',q:'Whales travel towards the ______ to give birth.'},
-    {t:'text',a:'fat',q:'Newborn calves lack insulating ______.'},
-    {t:'text',a:'survive',q:'Calves are more likely to ______ in warmer seas.'},
-    {t:'text',a:'magnetic',q:"Whales may navigate using the Earth's ______ field."},
-    {t:'choice',a:'C',q:'Which is NOT mentioned as a navigation method?',opts:['A) the sun','B) the coastline','C) the stars','D) the sea floor']},
-    {t:'text',a:'hunting|whaling',q:'In the past, ______ brought several species close to extinction.'},
-    {t:'text',a:'banned|ban',q:'Commercial whaling is now largely ______.'},
-    {t:'text',a:'ships|ship',q:'Whales can be harmed by collisions with ______.'},
-    {t:'text',a:'nets|net',q:'Whales can get entangled in fishing ______.'},
-    {t:'text',a:'communicate',q:'Noise pollution can interfere with the sounds whales use to ______.'}
+    {t:'choice',a:'B',q:'For most of history, tall buildings were limited by wall thickness and:',opts:['A) cost','B) the lack of a way to reach upper floors','C) poor materials','D) the weather']},
+    {t:'choice',a:'B',q:'Skyscrapers became possible when walls were replaced as supports by:',opts:['A) glass','B) a steel frame','C) thicker stone','D) wood']},
+    {t:'choice',a:'B',q:"Elisha Otis's key invention was:",opts:['A) the steel frame','B) a lift safety device','C) the electric motor','D) reinforced concrete']},
+    {t:'choice',a:'B',q:'The first true skyscrapers were built in:',opts:['A) London and Paris','B) Chicago and New York','C) Tokyo','D) Dubai']},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the challenge posed by the wind?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) explains why cities built upwards?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the invention that made upper floors accessible?'},
+    {t:'text',a:'A',q:'Which paragraph (A–F) describes the two obstacles to building tall?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the use of a steel skeleton?'},
+    {t:'text',a:'frame|skeleton',q:'In a skyscraper, a strong internal ______ carries the weight.'},
+    {t:'text',a:'falling|fall',q:"Otis's device stopped a lift from ______ if the cable broke."},
+    {t:'text',a:'wind',q:'Tall buildings must resist their weight and the force of the ______.'},
+    {t:'text',a:'expand|grow',q:'Supporters say building upwards is the only sustainable way for cities to ______.'}
    ]},
-  {title:'The True Cost of Fast Fashion',
+  {title:'Children and Screens',
    paras:[
-    "In recent decades, the way we buy clothes has changed dramatically. 'Fast fashion', a business model based on producing cheap, trendy clothing very quickly, has made fashionable garments more affordable than ever. Major retailers now release new collections almost every week, encouraging shoppers to buy more and more.",
-    "While cheap clothing may seem appealing, fast fashion carries a heavy hidden cost. The industry is one of the world's largest polluters. Producing clothes uses enormous amounts of water; a single cotton t-shirt can require around 2,700 litres. Textile factories also release chemicals into rivers, and the huge quantities of clothing thrown away each year end up in landfill, where synthetic fabrics can take decades to break down.",
-    "There are human costs too. To keep prices low, many clothes are made in factories where workers, often in developing countries, endure long hours and poor conditions for very little pay.",
-    "Growing awareness of these problems has led to calls for a more sustainable approach. Some consumers are choosing to buy fewer, higher-quality items, to repair clothes rather than replace them, or to buy second-hand. Meanwhile, some companies are experimenting with recycling old garments into new ones."
+    "A   Few questions worry parents today more than how much time their children should spend looking at screens. Smartphones, tablets, computers and televisions are now a constant presence in children's lives, and opinions about their effect range from alarm to enthusiasm. The truth, as usual, is more complicated than either extreme.",
+    "B   Those who worry point to a number of concerns. Excessive screen time, they argue, can crowd out sleep, exercise and face-to-face play, all of which are vital for healthy development. Some studies have linked heavy use to poorer concentration and, in older children, to anxiety, though whether screens are the cause or merely a symptom is hard to prove.",
+    "C   Others stress the benefits. Used well, screens can be powerful tools for learning, giving children access to information, educational games and creative software that were unavailable to earlier generations. During periods when schools have closed, screens have allowed children to keep learning and to stay in touch with friends and relatives.",
+    "D   Increasingly, experts argue that what matters is not simply the quantity of screen time but its quality. An hour spent passively watching low-quality videos, they suggest, is very different from an hour spent creating, learning or talking to a distant grandparent. The content, and whether an adult is involved, may matter more than the number of minutes.",
+    "E   Context is important too. The same device can be harmful or helpful depending on how it is used. Screens at mealtimes or just before bed tend to cause the most problems, whereas screens used together with a parent, who can talk about what the child is seeing, can be positively beneficial.",
+    "F   Most specialists therefore advise a balanced approach rather than a rigid ban. They recommend setting sensible limits, keeping bedrooms and mealtimes screen-free, choosing good-quality content, and, above all, making sure that screens do not replace sleep, exercise and real-world play. The goal is not to eliminate screens but to keep them in their place."
    ],
    Q:[
-    {t:'text',a:'quickly|fast',q:'Fast fashion produces cheap, trendy clothing very ______.'},
-    {t:'text',a:'week',q:'Retailers now release new collections almost every ______.'},
-    {t:'text',a:'polluters|polluter',q:"The fashion industry is one of the world's largest ______."},
-    {t:'text',a:'2700|2,700',q:'A single cotton t-shirt can require around ______ litres of water.'},
-    {t:'text',a:'chemicals|chemical',q:'Textile factories release ______ into rivers.'},
-    {t:'text',a:'landfill|landfills',q:'Discarded clothing ends up in ______.'},
-    {t:'text',a:'decades|decade',q:'Synthetic fabrics can take ______ to break down.'},
-    {t:'choice',a:'B',q:'Clothes are often made in factories with:',opts:['A) high pay','B) poor conditions','C) short hours','D) few workers']},
-    {t:'text',a:'developing',q:'Factory workers are often in ______ countries.'},
-    {t:'text',a:'quality',q:'Some consumers buy fewer, higher-______ items.'},
-    {t:'text',a:'repair',q:'Some choose to ______ clothes rather than replace them.'},
-    {t:'text',a:'recycling|recycle',q:'Some companies are ______ old garments into new ones.'},
-    {t:'choice',a:'TRUE',q:'Fast fashion has made clothes cheaper.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'C',q:'The writer believes a shift away from throwaway fashion is:',opts:['A) impossible','B) unnecessary','C) necessary and under way','D) harmful']}
+    {t:'choice',a:'YES',q:"Opinions about children's screen use vary widely.",opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'It has been clearly proved that screens cause anxiety in older children.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Screens can be useful tools for learning.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Experts believe the quantity of screen time is all that matters.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Using a screen together with a parent can be beneficial.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most specialists recommend banning screens completely.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) raises concerns about sleep and play being crowded out?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) argues that quality matters more than quantity?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the benefits of screens for learning?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) gives practical advice for a balanced approach?'},
+    {t:'text',a:'sleep|exercise|play',q:'Name one activity that too much screen time can crowd out.'},
+    {t:'text',a:'quality',q:'According to experts, what matters more than the quantity of screen time?'},
+    {t:'text',a:'bed|bedtime',q:'Screens used just before ______ tend to cause the most problems.'},
+    {t:'text',a:'free',q:'Specialists advise keeping bedrooms and mealtimes screen-______.'}
    ]}
  ],
  writing:{
