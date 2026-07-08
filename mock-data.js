@@ -1025,7 +1025,7 @@ const MOCKS=[
  blurb:'Job enquiry · Food festival · Glaciers + Water cycle · Social media · Photography',
  listen:[
   {title:'Part-time job enquiry',
-   transcript:"Hello, I'm calling about the part-time job advertised at your supermarket. Great. The position is for a shop assistant, working three evenings a week, from five until nine. The pay is eleven pounds an hour, with a small increase after six months. No previous experience is necessary, as full training is provided. You would mainly be stocking shelves and helping customers. To apply, please send your CV and a cover letter to our email address. One thing to note: the role requires you to be at least eighteen years old. If you're offered the job, you'll need to provide two references.",
+   transcript:"Hello, I'm calling about the part-time job advertised at your supermarket. Great. The position is for a shop assistant, working two evenings a week — sorry, three — from five until nine. The pay is ten pounds an hour... actually eleven, with a small increase after six months. No previous experience is necessary, as full training is provided. You would mainly be stocking shelves and helping customers. To apply, please send your CV and a cover letter to our email address, not by post. One thing to note: the role requires you to be at least sixteen... no, eighteen years old. If you're offered the job, you'll need to provide two references.",
    Q:[
     {t:'text',a:'assistant',q:'The job is for a shop ______.'},
     {t:'text',a:'three|3',q:'Working ______ evenings a week.'},
@@ -1039,7 +1039,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'If offered the job, you must provide:',opts:['A) a photo','B) two references','C) a deposit','D) a uniform']}
    ]},
   {title:'Radio: Riverford Food Festival',
-   transcript:"And now for local events. This weekend sees the return of the popular Riverford Food Festival, now in its tenth year. The festival takes place in the town park and runs from Friday to Sunday. Entry is free, though some cooking workshops must be booked in advance. This year features over sixty food stalls, as well as a competition for the best homemade cake. Live music will play on the main stage throughout the weekend. Visitors are advised to use public transport, as parking near the park is very limited. The organisers are also asking everyone to bring reusable cups to help cut down on waste. The festival opens at ten each morning and closes at eight in the evening.",
+   transcript:"And now for local events. This weekend sees the return of the popular Riverford Food Festival, now in its ninth year — sorry, its tenth. The festival takes place in the town park, not the town square, and runs from Friday to Sunday. Entry is free, though some cooking workshops must be booked in advance. This year features over sixteen food stalls... over sixty, in fact, as well as a competition for the best homemade cake. Live music will play on the main stage throughout the weekend. Visitors are advised to use public transport, as parking near the park is very limited. The organisers are also asking everyone to bring reusable cups to help cut down on waste. The festival opens at ten each morning and closes at eight in the evening.",
    Q:[
     {t:'text',a:'tenth|10th',q:'The festival is in its ______ year.'},
     {t:'text',a:'park',q:'It takes place in the town ______.'},
@@ -1053,7 +1053,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Visitors are advised to use public transport because:',opts:["A) it's free",'B) parking is limited',"C) it's faster",'D) roads are closed']}
    ]},
   {title:'Tutorial: writing a lab report',
-   transcript:"Come in. You wanted help with your chemistry lab report? Yes, I'm not sure how to structure it. A lab report has several standard sections. It starts with an introduction, explaining the aim of the experiment. Then comes the method, describing exactly what you did, so that someone else could repeat it. After that, the results, where you present your data, usually in tables or graphs. Then the discussion, where you explain what the results mean. Finally, a conclusion. One common mistake is writing the method in the wrong tense; it should be in the past tense. Also, remember to reference any sources you used. How long should it be? About two thousand words. It's due on the eighth of May.",
+   transcript:"Come in. You wanted help with your chemistry lab report? Yes, I'm not sure how to structure it. A lab report has several standard sections. It starts with an introduction, explaining the aim of the experiment. Then comes the method, describing exactly what you did, so that someone else could repeat it. After that, the results, where you present your data, usually in tables or graphs. Then the discussion, where you explain what the results mean. Finally, a conclusion. One common mistake is writing the method in the wrong tense; it should be in the present tense — no, the past tense. Also, remember to reference any sources you used. How long should it be? About one thousand... sorry, two thousand words. It's due on the eighteenth... no, the eighth of May.",
    Q:[
     {t:'text',a:'chemistry',q:'The report is for a ______ experiment.'},
     {t:'text',a:'aim',q:'The introduction explains the ______ of the experiment.'},
@@ -1067,7 +1067,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'A common mistake is:',opts:['A) no title','B) wrong tense in the method','C) too many graphs','D) no name']}
    ]},
   {title:'Lecture: glaciers and climate',
-   transcript:"Today's lecture is about glaciers and why they matter. A glacier is a huge mass of ice that forms over many years as snow builds up and compresses. Glaciers are found in polar regions and high mountains, and they store about seventy per cent of the world's fresh water. Many rivers, which supply water to millions of people, begin as melting glacier ice. Unfortunately, as global temperatures rise, glaciers around the world are shrinking at an alarming rate. This has two major consequences. First, as glaciers melt, they add water to the oceans, contributing to rising sea levels that threaten coastal cities. Second, communities that depend on glacier-fed rivers may face serious water shortages. Scientists monitor glaciers closely, using satellites, as they are among the clearest indicators of climate change.",
+   transcript:"Today's lecture is about glaciers and why they matter. A glacier is a huge mass of ice that forms over many years as snow builds up and compresses. Glaciers are found in polar regions and high mountains, and they store about seventeen per cent... actually about seventy per cent of the world's fresh water. Many rivers, which supply water to millions of people, begin as melting glacier ice. Unfortunately, as global temperatures rise, glaciers around the world are shrinking at an alarming rate. This has two major consequences. First, as glaciers melt, they add water to the oceans, contributing to rising sea levels that threaten coastal cities. Second, communities that depend on glacier-fed rivers may face serious water shortages. Scientists monitor glaciers closely, using satellites, as they are among the clearest indicators of climate change.",
    Q:[
     {t:'text',a:'compresses|compress',q:'A glacier forms as snow builds up and ______.'},
     {t:'text',a:'mountains|mountain',q:'Glaciers are found in polar regions and high ______.'},
@@ -1082,72 +1082,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Water Cycle',
+  {title:'The Carbon Cycle',
    paras:[
-    "Water is essential to all life on Earth, and the amount of it on our planet has remained more or less constant for billions of years. This is possible because water is continuously recycled through a natural process known as the water cycle.",
-    "The cycle is driven by energy from the sun. When the sun heats bodies of water such as oceans, lakes, and rivers, some of the water evaporates, turning into an invisible gas called water vapour that rises into the atmosphere. As this vapour rises, it cools and condenses into tiny droplets, forming clouds. This process is known as condensation.",
-    "When the droplets in clouds combine and become heavy enough, they fall back to the ground as precipitation, in the form of rain, snow, or hail. Some of this water flows across the surface into rivers and eventually returns to the sea. The rest soaks into the ground, where it may be taken up by plants or collect underground as groundwater.",
-    "Understanding the water cycle is increasingly important. Human activities and climate change are altering rainfall patterns, causing droughts in some regions and floods in others. Managing our precious freshwater supplies wisely has become one of the great challenges of our time."
+    "List of Headings —  i) Carbon locked away for ages   ii) The gas that warms the planet   iii) A constant exchange   iv) Returning carbon to the soil   v) Upsetting the balance   vi) Carbon, the element of life   vii) The oceans as a store   viii) How plants grow",
+    "A   Carbon is the element on which all life is built. Every living thing — every plant, animal and microbe — is made largely of carbon-based molecules. But carbon does not stay in one place. It moves constantly between living things, the air, the oceans and the rocks, in a great natural process known as the carbon cycle.",
+    "B   At the heart of the cycle is a continual exchange between living things and the atmosphere. Plants take carbon dioxide from the air and, through photosynthesis, use it to build their tissues. Animals eat the plants, taking in that carbon; and when living things breathe, they release carbon dioxide back into the air. So carbon flows round and round.",
+    "C   Some carbon, however, is removed from this rapid cycle and locked away for very long periods. When plants and animals die, most of their carbon returns to the air as they decay, but a small fraction is buried and, over millions of years, may be transformed into coal, oil and gas — the fossil fuels.",
+    "D   The oceans, too, play a huge role. They hold vast amounts of dissolved carbon dioxide, far more than the atmosphere, and act as an enormous reservoir. Carbon dioxide moves between the air and the sea surface, and tiny marine creatures use dissolved carbon to build their shells, which eventually sink and form rock.",
+    "E   For most of history, this cycle stayed roughly in balance, so that the amount of carbon dioxide in the air changed only slowly. Human activity has upset that balance. By burning fossil fuels, we release, in a few centuries, carbon that took millions of years to bury, adding it to the atmosphere far faster than natural processes can remove it.",
+    "F   The consequence is a build-up of carbon dioxide in the atmosphere. Because this gas traps heat, keeping the planet warm, adding more of it is causing global temperatures to rise. Understanding the carbon cycle is therefore essential to understanding, and tackling, climate change."
    ],
    Q:[
-    {t:'text',a:'constant',q:'The amount of water on Earth has stayed roughly ______.'},
-    {t:'text',a:'sun',q:'The water cycle is driven by energy from the ______.'},
-    {t:'text',a:'vapour|vapor',q:'Heated water turns into an invisible gas called water ______.'},
-    {t:'text',a:'condenses|condense',q:'When vapour cools it ______ into droplets.'},
-    {t:'text',a:'clouds|cloud',q:'This process forms ______.'},
-    {t:'choice',a:'C',q:'Rain, snow and hail are all forms of:',opts:['A) evaporation','B) condensation','C) precipitation','D) vapour']},
-    {t:'text',a:'groundwater|ground water',q:'Water that soaks into the ground may collect as ______.'},
-    {t:'text',a:'plants|plant',q:'Some water is taken up by ______.'},
-    {t:'text',a:'condensation',q:'The process of vapour cooling into droplets is called ______.'},
-    {t:'text',a:'rainfall|rain',q:'Human activities are altering ______ patterns.'},
-    {t:'text',a:'floods|flood',q:'Climate change can cause droughts and ______.'},
-    {t:'choice',a:'FALSE',q:'The amount of water on Earth constantly decreases.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Managing freshwater wisely is a major challenge.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'vii|7',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'All living things are made largely of carbon.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Plants release carbon dioxide when they photosynthesise.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The oceans hold less carbon dioxide than the atmosphere.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Burning fossil fuels releases carbon much faster than nature can remove it.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'carbon',q:'All life is built on the element ______.'},
+    {t:'text',a:'gas',q:'Buried carbon may become coal, oil and ______.'},
+    {t:'text',a:'heat',q:'Carbon dioxide traps ______, keeping the planet warm.'}
    ]},
-  {title:'The Rise of Social Media',
+  {title:'The Discovery of Electricity',
    paras:[
-    "In less than two decades, social media has transformed the way billions of people communicate, share information, and view the world. Platforms that began as simple tools for keeping in touch with friends have grown into powerful forces that influence business, politics, and culture.",
-    "The benefits of social media are considerable. It allows people to stay connected with friends and family across the globe, instantly and at no cost. It gives ordinary individuals a voice, enabling them to share ideas and raise awareness of important issues. For businesses, it offers a cheap and effective way to reach customers, while for many, it has become a source of news and entertainment.",
-    "However, social media also has a darker side. Studies have linked heavy use, particularly among young people, to increased anxiety and depression, partly because users constantly compare themselves to others. The rapid spread of false information, or 'fake news', is another serious concern, as misleading stories can travel faster than the truth. There are also worries about privacy and personal data.",
-    "Ultimately, social media is a tool, and like any tool, its effects depend on how it is used. Many experts argue that the solution lies not in avoiding it altogether, but in using it more mindfully."
+    "A   Electricity is so central to modern life that a single power cut can bring a city to a halt. Yet for almost all of human history, its nature was a complete mystery. People had seen its effects — the flash of lightning, the shock from certain fish — but no one understood what it was, and it could be neither produced nor controlled.",
+    "B   The first steps towards understanding came through curiosity about static electricity. The ancient Greeks noticed that amber, when rubbed, would attract small objects; indeed, our word 'electricity' comes from the Greek word for amber. But for centuries this remained a mere curiosity, with no practical use whatsoever.",
+    "C   Real progress came in the eighteenth century. In a famous and highly dangerous experiment, the American Benjamin Franklin flew a kite in a thunderstorm and showed that lightning was a form of electricity, the very same force that could be produced by rubbing amber. Electricity, it turned out, was a single phenomenon, whether in the sky or the laboratory.",
+    "D   The crucial breakthrough was learning to produce a steady flow of electricity, rather than a single spark. Around 1800 the Italian Alessandro Volta invented the first battery, which could deliver a continuous electric current. For the first time, scientists had a reliable source of electricity to experiment with.",
+    "E   The discoveries then came rapidly. Michael Faraday showed that a moving magnet could generate electricity in a wire — the principle behind every power station today. This link between electricity and magnetism made it possible to generate electricity on a large scale, turning a scientific curiosity into a practical source of power.",
+    "F   By the late nineteenth century, electricity was lighting streets and homes and driving machines in factories. What had once been a baffling mystery had become the invisible force that powers the modern world — so reliable that we notice it only when it fails."
    ],
    Q:[
-    {t:'text',a:'two|2',q:'Social media has transformed communication in less than ______ decades.'},
-    {t:'text',a:'cost',q:'Social media lets people stay connected at no ______.'},
-    {t:'text',a:'voice',q:'It gives ordinary individuals a ______.'},
-    {t:'text',a:'customers|customer',q:'For businesses it offers a cheap way to reach ______.'},
-    {t:'text',a:'depression',q:'Heavy use is linked to increased anxiety and ______.'},
-    {t:'text',a:'compare',q:'Users constantly ______ themselves to others.'},
-    {t:'text',a:'fake',q:'The spread of false information is called ______ news.'},
-    {t:'choice',a:'B',q:'Misleading stories can travel:',opts:['A) slowly','B) faster than the truth','C) only at night','D) not at all']},
-    {t:'text',a:'data',q:'There are worries about privacy and personal ______.'},
-    {t:'text',a:'tool',q:'Social media is described as a ______.'},
-    {t:'choice',a:'B',q:'Experts suggest the solution is to use social media:',opts:['A) never','B) more mindfully','C) only for work','D) constantly']},
-    {t:'choice',a:'FALSE',q:'Social media only has benefits.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'entertainment',q:'Social media can be a source of news and ______.'}
+    {t:'choice',a:'B',q:'For most of history, the nature of electricity was:',opts:['A) well understood','B) a complete mystery','C) deliberately ignored','D) fully controlled']},
+    {t:'choice',a:'C',q:"The word 'electricity' comes from the Greek word for:",opts:['A) lightning','B) fish','C) amber','D) fire']},
+    {t:'choice',a:'B',q:"Franklin's kite experiment showed that lightning was:",opts:['A) harmless','B) a form of electricity','C) caused by amber','D) purely magnetic']},
+    {t:'choice',a:'C',q:'The first device to deliver a continuous current was invented by:',opts:['A) Franklin','B) Faraday','C) Volta','D) the Greeks']},
+    {t:'text',a:'B',q:"Which paragraph (A–F) explains the origin of the word 'electricity'?"},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the invention of the first battery?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the link between magnetism and electricity?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes a dangerous experiment with a kite?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) mentions electricity lighting streets and homes?'},
+    {t:'text',a:'cut',q:'A single power ______ can bring a city to a halt.'},
+    {t:'text',a:'amber',q:'Rubbed ______ attracts small objects.'},
+    {t:'text',a:'current',q:"Volta's invention delivered a continuous electric ______."},
+    {t:'text',a:'magnet',q:'Faraday showed that a moving ______ could generate electricity.'}
    ]},
-  {title:'The History of Photography',
+  {title:'The Debate over Eating Meat',
    paras:[
-    "Today we take photographs effortlessly, capturing thousands of images on devices we carry in our pockets. Yet photography, now so ordinary, was once an astonishing new technology that changed how humans saw and recorded the world.",
-    "The principle behind photography had been known for centuries. It was observed that light passing through a small hole into a dark room projects an image of the outside scene onto the opposite wall, a phenomenon used by artists as a drawing aid. The challenge was finding a way to capture and preserve such an image permanently.",
-    "This was achieved in the early nineteenth century. Several inventors, working independently, developed chemical processes that could fix an image onto a treated surface. Early photographs required very long exposure times, sometimes several minutes, meaning subjects had to remain perfectly still, which is why people in old portraits rarely smile.",
-    "Over the following decades, photography developed rapidly. Exposure times shortened, and cameras became smaller and cheaper. A major breakthrough came in 1888, when a company introduced a simple, affordable camera loaded with a roll of film, bringing photography to ordinary people for the first time. The invention of digital photography, much later, removed the need for film altogether and, combined with the smartphone, made almost everyone a photographer."
+    "A   Whether or not people should eat meat has become one of the most debated questions of our time. For most of human history, meat was a prized food, eaten whenever it could be obtained. Today, in wealthy countries where meat is cheap and abundant, a growing number of people are choosing to eat less of it, or none at all, and the reasons they give are worth examining.",
+    "B   The first argument concerns the environment. Producing meat, especially beef, uses enormous quantities of land, water and energy, and livestock are a significant source of the greenhouse gases driving climate change. Growing plants for people to eat directly, campaigners argue, would feed more people while doing far less harm to the planet.",
+    "C   A second argument concerns animal welfare. Much of the meat we eat comes from intensive farms where animals are kept in cramped, unnatural conditions. To many, causing such suffering simply for the pleasure of eating meat, when nourishing alternatives exist, is difficult to justify.",
+    "D   Health is a third consideration. Research has linked heavy consumption of red and processed meat to a higher risk of certain diseases, including heart disease and some cancers. A balanced plant-based diet, studies suggest, can be perfectly healthy, and may even be healthier — though a poorly planned one can lack important nutrients.",
+    "E   Those who defend eating meat make their own case. Meat, they point out, is a rich source of protein and certain vitamins, and has been part of the human diet for millions of years. In many parts of the world, livestock also provide a livelihood for poor communities and can graze on land unsuitable for crops.",
+    "F   Between the two extremes, many people are choosing a middle path: not giving up meat entirely, but eating less of it and choosing meat produced to higher standards. Whether this shift will be enough to address the concerns raised, or whether more radical change is needed, remains a matter of heated debate."
    ],
    Q:[
-    {t:'text',a:'recorded|record',q:'Photography changed how humans saw and ______ the world.'},
-    {t:'text',a:'image',q:'Light passing through a small hole projects an ______ onto a wall.'},
-    {t:'text',a:'artists|artist',q:'This phenomenon was used by ______ as a drawing aid.'},
-    {t:'text',a:'preserve',q:'The challenge was to capture and ______ the image permanently.'},
-    {t:'text',a:'nineteenth|19th',q:'Chemical processes to fix images were developed in the early ______ century.'},
-    {t:'text',a:'exposure',q:'Early photographs required long ______ times.'},
-    {t:'choice',a:'B',q:'Why do people in old portraits rarely smile?',opts:['A) they were sad','B) they had to stay still for long exposures','C) it was rude','D) cameras were broken']},
-    {t:'text',a:'shortened|shorten',q:'Over time, exposure times ______.'},
-    {t:'text',a:'cheaper|cheap',q:'Cameras became smaller and ______.'},
-    {t:'text',a:'film',q:'In 1888, a company introduced a camera loaded with a roll of ______.'},
-    {t:'choice',a:'B',q:'The 1888 camera was significant because it was:',opts:['A) expensive','B) simple and affordable','C) very large','D) digital']},
-    {t:'text',a:'film',q:'Digital photography removed the need for ______.'},
-    {t:'text',a:'photographer',q:'The smartphone made almost everyone a ______.'},
-    {t:'choice',a:'FALSE',q:'The principle behind photography was discovered only recently.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'For most of human history, meat was a valued food.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Producing beef uses relatively little land and water.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'All meat comes from animals kept in good conditions.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'A well-planned plant-based diet can be healthy.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Meat has only recently become part of the human diet.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Everyone agrees that people should stop eating meat entirely.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the environmental argument against meat?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) argues that meat provides a livelihood for poor communities?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) raises the concern about animal welfare?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the middle path many people are choosing?'},
+    {t:'text',a:'beef',q:'Which meat is singled out as especially damaging to the environment?'},
+    {t:'text',a:'greenhouse|greenhouse gases',q:'What kind of gases from livestock drive climate change?'},
+    {t:'text',a:'cancers|cancer',q:'Heavy meat consumption is linked to heart disease and some ______.'},
+    {t:'text',a:'vitamins|vitamin',q:'Meat is a rich source of protein and certain ______.'}
    ]}
  ],
  writing:{
