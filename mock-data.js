@@ -2467,6 +2467,151 @@ const MOCKS=[
   task1:"The table below shows the average number of fast-food meals eaten per person per week in three countries in 2000, 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   task2:"Some people believe that advertising unhealthy food to children should be banned. To what extent do you agree or disagree? Write at least 250 words."
  }
+},
+
+/* ===================== MOCK 18 (Exam Level) ===================== */
+{
+ name:'Mock 18 — Exam Level',
+ blurb:'🔴 Cake order · New bus service · Tourism debate + The eel · The history of soap · Free public transport',
+ listen:[
+  {title:'Ordering a birthday cake',
+   transcript:"Good morning, Sweet Treats bakery. I'd like to order a cake. Certainly, your name? Middleton, M-I-D-D-L-E-T-O-N. What's the occasion? A birthday. How many people is it for? Thirty... actually, twenty. Which flavour? Vanilla... no, chocolate, please. Would you like a message on it? Yes, 'Happy 30th'. When would you like to collect it? The fourth of June — sorry, the fourteenth. At what time? Three in the afternoon. That will be forty pounds... sorry, forty-five. We take a ten-pound deposit. And any allergies? Yes, please, no nuts.",
+   Q:[
+    {t:'text',a:'middleton',q:'Surname: ______'},
+    {t:'text',a:'birthday',q:'Occasion: ______'},
+    {t:'text',a:'20|twenty',q:'For ______ people'},
+    {t:'text',a:'chocolate',q:'Flavour: ______'},
+    {t:'text',a:'30th|thirtieth|30',q:"Message: 'Happy ______'"},
+    {t:'text',a:'14th|fourteenth|14',q:'Collect on the ______ of June'},
+    {t:'text',a:'3pm|3|three',q:'Collection time: ______'},
+    {t:'text',a:'45|forty-five',q:'Price: £______'},
+    {t:'text',a:'10|ten',q:'Deposit: £______'},
+    {t:'choice',a:'B',q:'The customer has an allergy to:',opts:['A) dairy','B) nuts','C) eggs','D) wheat']}
+   ]},
+  {title:'Announcement: new bus service',
+   transcript:"Here's some news about local transport. From next Monday, a new bus service, the number seven, will begin. Buses will run every fifteen minutes... sorry, every twenty minutes throughout the day. The first bus leaves at six in the morning. The route runs from the town centre to the hospital, stopping at the railway station on the way. A single fare is two pounds, and you can pay by cash or, more conveniently, contactless card. Travel is free for over-sixty-fives with a valid pass. Buses run until eleven at night on weekdays. Please note that on Sundays the service is reduced, with buses every hour.",
+   Q:[
+    {t:'text',a:'7|seven',q:'New bus: the number ______'},
+    {t:'text',a:'monday',q:'Starts next ______'},
+    {t:'text',a:'20|twenty',q:'Buses run every ______ minutes'},
+    {t:'text',a:'6am|6|six',q:'First bus: ______'},
+    {t:'text',a:'hospital',q:'The route runs to the ______'},
+    {t:'text',a:'2|two',q:'Single fare: £______'},
+    {t:'text',a:'contactless',q:'You can pay by cash or ______ card'},
+    {t:'text',a:'over-65s|over-sixty-fives|over 65s',q:'Free for ______'},
+    {t:'choice',a:'B',q:'Buses run until:',opts:['A) 9 pm','B) 11 pm','C) midnight','D) 8 pm']},
+    {t:'choice',a:'B',q:'On Sundays the service is:',opts:['A) the same','B) reduced','C) cancelled','D) free']}
+   ]},
+  {title:'Two students prepare a debate on tourism',
+   transcript:"Right, our debate is on tourism. Are we for or against? We're arguing for it... no, we've been assigned against. Okay. What's our strongest argument? I think the damage tourism does to the environment. Good, and an example? Venice, which is overwhelmed by visitors. How long do we each speak? Five minutes... actually, four. Where will we get our facts? From official reports and studies. Who prepares the rebuttal? Sara will handle the rebuttal. Should we use a visual aid? Yes, a few slides. When shall we practise? On Tuesday. And the debate itself? It's on Friday.",
+   Q:[
+    {t:'text',a:'tourism',q:'The debate is on ______'},
+    {t:'choice',a:'B',q:'Their side is:',opts:['A) for','B) against','C) neutral','D) undecided']},
+    {t:'text',a:'environment',q:'Their main argument is the damage to the ______'},
+    {t:'text',a:'venice',q:'Their example is ______'},
+    {t:'text',a:'4|four',q:'Each person speaks for ______ minutes'},
+    {t:'text',a:'reports|report',q:'Facts come from official ______ and studies'},
+    {t:'text',a:'sara',q:'The rebuttal is prepared by ______'},
+    {t:'text',a:'slides|slide',q:'They will use a few ______'},
+    {t:'text',a:'tuesday',q:'They will practise on ______'},
+    {t:'text',a:'friday',q:'The debate is on ______'}
+   ]},
+  {title:'Lecture: the science of rainbows',
+   transcript:"Today we'll look at the science of rainbows. A rainbow appears when sunlight shines through falling rain. As a ray of sunlight enters a raindrop, it bends, or refracts, and because different colours bend by slightly different amounts, the white light is split into its separate colours, forming a spectrum. We usually describe a rainbow as having seven colours, with red on the outside and violet on the inside. To see a rainbow, the Sun must be behind you and the rain in front. Sometimes a fainter, second rainbow appears above the first, with its colours reversed. A rainbow is not a physical object in a fixed place; it is an effect of light, which is why you can never reach the end of one. In fact, because it depends on the position of the observer, every person sees a slightly different rainbow.",
+   Q:[
+    {t:'text',a:'rain',q:'A rainbow appears when sunlight shines through falling ______.'},
+    {t:'text',a:'raindrop',q:'Light enters a ______.'},
+    {t:'text',a:'refracts|refract',q:'The light bends, or ______.'},
+    {t:'text',a:'spectrum',q:'The white light is split into a ______.'},
+    {t:'text',a:'seven|7',q:'A rainbow is usually said to have ______ colours.'},
+    {t:'text',a:'red',q:'______ is on the outside of the rainbow.'},
+    {t:'text',a:'behind',q:'To see a rainbow, the Sun must be ______ you.'},
+    {t:'text',a:'reversed|reverse',q:'A second, fainter rainbow has its colours ______.'},
+    {t:'choice',a:'B',q:'A rainbow is:',opts:['A) a physical object','B) an effect of light','C) a type of cloud','D) a kind of rain']},
+    {t:'choice',a:'B',q:'Each person sees a rainbow that is:',opts:['A) identical','B) slightly different','C) invisible','D) upside down']}
+   ]}
+ ],
+ read:[
+  {title:'The Mysterious Journey of the Eel',
+   paras:[
+    "List of Headings —  i) A single, distant birthplace   ii) A journey of transformations   iii) A long life in fresh water   iv) The final voyage   v) A creature of mystery   vi) A species in danger   vii) How eels are caught   viii) The diet of the eel",
+    "A   Few animals have puzzled scientists as much as the humble eel. For thousands of years, no one knew where eels came from. They seemed simply to appear in rivers and ponds, and since no one ever found eel eggs, ancient thinkers came up with strange explanations, suggesting that eels were born from mud. The truth, when it was finally uncovered, proved stranger than any of these guesses.",
+    "B   The European eel, it turns out, is born in one place only: the Sargasso Sea, a remote region of the Atlantic Ocean near the Caribbean, thousands of kilometres from the rivers where adult eels live. Every European eel begins life there, as a tiny, transparent, leaf-shaped larva, drifting in the open ocean.",
+    "C   From the Sargasso, the young eels are carried by ocean currents on an extraordinary journey towards Europe, which may take two or three years. As they travel and grow, they change their shape and colour dramatically, transforming first into slender 'glass eels' and then into the darker young eels that finally reach the coast.",
+    "D   Reaching land, the eels swim up rivers and settle in fresh water, sometimes even wriggling over wet ground to reach isolated ponds. Here they spend most of their lives — often ten or twenty years, and sometimes far longer — growing slowly into the adults we know.",
+    "E   Then, at the end of their lives, the adult eels undertake the greatest journey of all. Ceasing to feed, their bodies change once more, and they set off back across the Atlantic to the Sargasso Sea, the place of their birth, to breed and then die. No adult eel has ever been observed completing this final voyage, which remains partly mysterious.",
+    "F   Sadly, the European eel is now in serious danger. Its numbers have collapsed dramatically in recent decades, the victims of overfishing, pollution, and dams and other barriers that block their path up rivers. A creature that survived for millions of years is now, remarkably, considered critically endangered."
+   ],
+   Q:[
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'In the past, no one knew where eels came from.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'European eels are born in rivers.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Eels change their shape and colour as they grow.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The European eel is now critically endangered.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'sargasso',q:'European eels are born in the ______ Sea.'},
+    {t:'text',a:'currents|current',q:'The young are carried towards Europe by ocean ______.'},
+    {t:'text',a:'feeding|feed|eating',q:'At the end of their lives, adult eels stop ______.'}
+   ]},
+  {title:'The History of Soap',
+   paras:[
+    "A   Soap is such an everyday thing that we rarely give it a thought, yet it is one of the most important substances ever made, having saved more lives, perhaps, than any medicine. The simple act of washing with soap has done more to protect human health than almost anything else, by removing the germs that cause disease.",
+    "B   Soap has a very long history. Recipes for a soap-like substance, made by boiling animal fat with ashes, have been found on clay tablets from ancient Mesopotamia over four thousand years ago. At first, however, soap was used mainly for cleaning cloth and treating wounds, rather than for washing the body.",
+    "C   The chemistry of soap is elegant. A soap molecule has two ends: one is attracted to water, while the other is attracted to grease and oil. When we wash, the greasy ends cling to the dirt and oil on our skin, while the water-loving ends allow the whole lot to be rinsed away with water. In this way, soap lifts away dirt that water alone cannot remove.",
+    "D   For most of history, soap was an expensive luxury, and washing was rare. The link between dirt and disease was not understood, and even doctors did not wash their hands. It was only in the nineteenth century that scientists proved that invisible germs cause illness, and that washing with soap could kill them.",
+    "E   This discovery transformed public health. Governments and reformers began to promote cleanliness, soap was taxed less and produced more cheaply, and hand-washing gradually became a normal habit. The result was a dramatic fall in deaths from infectious disease.",
+    "F   Even today, in a world of advanced medicine, soap remains one of our most powerful defences against illness. Simple hand-washing with soap and water prevents the spread of many diseases, and public-health experts still regard it as one of the cheapest and most effective ways to save lives."
+   ],
+   Q:[
+    {t:'choice',a:'B',q:'According to the passage, soap has:',opts:['A) done little for health','B) saved many lives','C) caused disease','D) replaced all medicine']},
+    {t:'choice',a:'B',q:'The earliest soap was used mainly for:',opts:['A) washing the body','B) cleaning cloth and treating wounds','C) cooking','D) religion']},
+    {t:'choice',a:'B',q:'A soap molecule is attracted at one end to water and at the other to:',opts:['A) air','B) grease and oil','C) skin','D) germs']},
+    {t:'choice',a:'C',q:'Hand-washing with soap became a normal habit mainly in the:',opts:['A) ancient world','B) Middle Ages','C) nineteenth century','D) present day']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains how soap molecules remove dirt?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the discovery that germs cause illness?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) mentions the earliest known recipes for soap?'},
+    {t:'text',a:'F',q:"Which paragraph (A–F) describes soap's continuing importance today?"},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the effect of promoting cleanliness on public health?'},
+    {t:'text',a:'ashes|ash',q:'Ancient soap was made by boiling animal fat with ______.'},
+    {t:'text',a:'water',q:'One end of a soap molecule is attracted to ______.'},
+    {t:'text',a:'germs|germ',q:'In the nineteenth century, scientists proved that ______ cause illness.'},
+    {t:'text',a:'lives|life',q:'Soap remains one of the cheapest ways to save ______.'}
+   ]},
+  {title:'Should Public Transport Be Free?',
+   paras:[
+    "A   In a growing number of cities around the world, an idea once dismissed as impossible is being seriously discussed, and in a few places already tried: making public transport free for everyone. Instead of paying a fare, passengers would simply get on the bus or train, with the cost met by the city. Supporters see it as a bold solution to several problems at once; critics fear it would create more.",
+    "B   The case in favour begins with the environment and congestion. If buses and trains were free, supporters argue, many people would leave their cars at home, easing the traffic jams that choke modern cities and cutting the pollution that cars produce. Fewer cars would mean cleaner air, quieter streets and lower emissions.",
+    "C   There is also an argument about fairness. Public transport, supporters point out, is a lifeline for those on low incomes, who may struggle to afford the fares. Making it free would help the poorest most, giving everyone equal access to jobs, education and services, regardless of what they can pay.",
+    "D   Critics, however, ask a simple question: who pays? Running a transport system is expensive, and if passengers do not pay fares, the money must come from somewhere else, usually from taxes. This, opponents argue, is unfair to those who never use public transport but would have to help fund it.",
+    "E   There are practical worries too. Some fear that free transport would become so crowded that the service would suffer, and that, without the income from fares, there would be less money to maintain and improve it. A free but overcrowded and unreliable system, they warn, might help no one.",
+    "F   The evidence from the cities that have tried it is mixed. In some, the number of passengers has risen sharply, though not always at the expense of car use, since some new passengers previously walked or cycled. Whether free public transport is a wise investment or a costly mistake, it seems, may depend a great deal on the particular city."
+   ],
+   Q:[
+    {t:'choice',a:'YES',q:'The idea of free public transport was once thought impossible.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Supporters believe free transport would increase the number of cars on the road.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Supporters say free transport would help those on low incomes the most.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Critics argue that free transport would cost nothing to provide.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some fear free transport could become overcrowded.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'The results from cities that tried it have been entirely positive.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) gives the argument about fairness to poorer people?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) raises the question of who would pay?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the environmental and congestion benefits?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the mixed evidence from cities that have tried it?'},
+    {t:'text',a:'pollution',q:'Free public transport could reduce traffic jams and cut ______ from cars.'},
+    {t:'text',a:'incomes|income',q:'Public transport is described as a lifeline for those on low ______.'},
+    {t:'text',a:'taxes|tax',q:'If passengers pay no fares, the money must usually come from ______.'},
+    {t:'text',a:'crowded|overcrowded',q:'Some critics fear a free system would become ______.'}
+   ]}
+ ],
+ writing:{
+  img:"<table style='border-collapse:collapse;margin:8px auto;font-size:13px;background:#fff;color:#111'><caption style='font-weight:bold;margin-bottom:6px'>How commuters travel to work in a city (%), 2010 vs 2020</caption><tr style='background:#eef2f8'><th style='border:1px solid #999;padding:5px 10px'>Mode</th><th style='border:1px solid #999;padding:5px 10px'>2010</th><th style='border:1px solid #999;padding:5px 10px'>2020</th></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Car</td><td style='border:1px solid #999;padding:5px 10px'>55</td><td style='border:1px solid #999;padding:5px 10px'>40</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Bus</td><td style='border:1px solid #999;padding:5px 10px'>20</td><td style='border:1px solid #999;padding:5px 10px'>25</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Train</td><td style='border:1px solid #999;padding:5px 10px'>15</td><td style='border:1px solid #999;padding:5px 10px'>20</td></tr><tr><td style='border:1px solid #999;padding:5px 10px'>Cycling/walking</td><td style='border:1px solid #999;padding:5px 10px'>10</td><td style='border:1px solid #999;padding:5px 10px'>15</td></tr></table>",
+  task1:"The table below shows how commuters in a city travelled to work in 2010 and 2020, by percentage. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  task2:"Some people think that public transport should be made free for everyone. Do the advantages of this outweigh the disadvantages? Write at least 250 words."
+ }
 }
 
 ];
