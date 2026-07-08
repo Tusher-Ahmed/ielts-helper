@@ -1170,7 +1170,7 @@ const MOCKS=[
  blurb:'Train booking · Community library · History of money + Amazon · Colour · Electric cars',
  listen:[
   {title:'Train ticket booking',
-   transcript:"Good morning, I'd like to book a train ticket to Manchester. Certainly, for which day? This Friday, please, travelling in the morning. There's a train at nine fifteen, arriving at eleven thirty. How much is a return ticket? A standard return is fifty-two pounds, but if you book today, there's a twenty per cent discount. Would you like a seat reservation? Yes, please, a window seat if possible. Will you need a railcard? Only if you have one, for further discounts. The ticket will be sent to your phone as an e-ticket. Please arrive at least fifteen minutes before departure. Platform numbers are shown on the screens in the station.",
+   transcript:"Good morning, I'd like to book a train ticket to Manchester. Certainly, for which day? This Friday, please, travelling in the morning. There's a train at nine fifty... sorry, nine fifteen, arriving at eleven thirty. How much is a return ticket? A standard return is forty-two pounds — no, fifty-two, but if you book today, there's a twenty per cent discount. Would you like a seat reservation? Yes, please, an aisle seat... actually a window seat if possible. Will you need a railcard? Only if you have one, for further discounts. The ticket will be sent to your phone as an e-ticket. Please arrive at least fifteen minutes before departure. Platform numbers are shown on the screens in the station.",
    Q:[
     {t:'text',a:'manchester',q:'Destination: ______.'},
     {t:'text',a:'friday',q:'Day of travel: ______.'},
@@ -1184,7 +1184,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Platform numbers are shown:',opts:['A) on the ticket','B) on the screens','C) by staff','D) online']}
    ]},
   {title:'New community library services',
-   transcript:"I'd like to tell you about some new services at our community library. First, we have extended our opening hours; we are now open until eight in the evening on weekdays. Second, we have launched a free e-book service, allowing members to borrow digital books using an app. You can now borrow up to twelve books at a time. We have also created a new children's area on the ground floor, with a story-time session every Wednesday at four o'clock. For those interested in technology, we run free computer classes for beginners on Tuesday mornings. Finally, our meeting rooms can now be booked free of charge by local community groups. To use any of these services, you simply need a library card, which is free to obtain.",
+   transcript:"I'd like to tell you about some new services at our community library. First, we have extended our opening hours; we are now open until seven in the evening — sorry, until eight — on weekdays. Second, we have launched a free e-book service, allowing members to borrow digital books using an app. You can now borrow up to ten books at a time... actually twelve. We have also created a new children's area on the first floor — no, the ground floor — with a story-time session every Wednesday at four o'clock. For those interested in technology, we run free computer classes for beginners on Tuesday mornings, not afternoons. Finally, our meeting rooms can now be booked free of charge by local community groups. To use any of these services, you simply need a library card, which is free to obtain.",
    Q:[
     {t:'text',a:'eight|8pm|8',q:'The library is now open until ______ on weekdays.'},
     {t:'text',a:'e-book|ebook|e book',q:'There is a new free ______ service.'},
@@ -1198,7 +1198,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'To use the services you need a:',opts:['A) passport','B) library card','C) fee','D) password']}
    ]},
   {title:'Planning a marketing presentation',
-   transcript:"So our marketing module presentation is on advertising. What product should we focus on? How about a new brand of trainers? Good, sport appeals to students. What's our main message? I think we should highlight that they're made from recycled materials, that's very popular now. Which platform would we advertise on? Definitely social media, especially short videos. And who's our target audience? Young people aged sixteen to twenty-five. How long is the presentation? Twelve minutes, with slides. Should we include a survey? Yes, let's survey fifty students to get some real data. When's it due? We present on the third of March. Let's meet on Monday to design the slides.",
+   transcript:"So our marketing module presentation is on advertising. What product should we focus on? How about a new brand of watches... no, trainers? Good, sport appeals to students. What's our main message? I think we should highlight that they're made from recycled materials, that's very popular now. Which platform would we advertise on? Definitely social media, especially short videos. And who's our target audience? Young people aged sixteen to twenty-five. How long is the presentation? Ten minutes — sorry, twelve, with slides. Should we include a survey? Yes, let's survey fifteen students... actually fifty, to get some real data. When's it due? We present on the thirteenth of March... no, the third. Let's meet on Monday to design the slides.",
    Q:[
     {t:'text',a:'advertising',q:'The presentation is about ______.'},
     {t:'text',a:'trainers|trainer',q:'The product is a new brand of ______.'},
@@ -1212,7 +1212,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The recycled-materials angle is chosen because it is:',opts:['A) cheap','B) popular now','C) required','D) easy']}
    ]},
   {title:'Lecture: the history of money',
-   transcript:"Today we will trace the history of money. In the earliest societies, there was no money at all; people simply exchanged goods directly, a system known as barter. The problem with barter is that it requires both people to want what the other has. To solve this, societies began using objects of agreed value, such as shells or cattle, as an early form of money. The first metal coins appeared around 2,600 years ago, in what is now Turkey, made from a mixture of gold and silver. Coins were convenient because they were durable and easy to carry. Much later, paper money was introduced, first in China, as it was lighter than metal. In the modern era, money has become increasingly abstract: cheques, then plastic cards, and now digital payments made with a phone. Some economists predict that physical cash may eventually disappear altogether.",
+   transcript:"Today we will trace the history of money. In the earliest societies, there was no money at all; people simply exchanged goods directly, a system known as barter. The problem with barter is that it requires both people to want what the other has. To solve this, societies began using objects of agreed value, such as shells or cattle, as an early form of money. The first metal coins appeared around two thousand six hundred years ago, in what is now Greece — sorry, Turkey, made from a mixture of gold and silver. Coins were convenient because they were durable and easy to carry. Much later, paper money was introduced, first in China, as it was lighter than metal. In the modern era, money has become increasingly abstract: cheques, then plastic cards, and now digital payments made with a phone. Some economists predict that physical cash may eventually disappear altogether.",
    Q:[
     {t:'text',a:'barter',q:'The direct exchange of goods is called ______.'},
     {t:'text',a:'want',q:'Barter requires both people to ______ what the other has.'},
@@ -1227,72 +1227,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Amazon Rainforest',
+  {title:"Wetlands: Nature's Kidneys",
    paras:[
-    "Covering an area of over five million square kilometres, the Amazon rainforest is the largest tropical rainforest on Earth. Often called the 'lungs of the planet', it plays a vital role in regulating the global climate and is home to an extraordinary wealth of life.",
-    "The Amazon's biodiversity is staggering. It contains around ten per cent of all known species on Earth, including thousands of types of birds, fish, and mammals, as well as countless plants, many of which have not yet been studied by scientists. Some of these plants are already used to make important medicines, and researchers believe the forest may hold cures for diseases yet to be discovered.",
-    "The rainforest also has a crucial effect on climate. Its billions of trees absorb enormous amounts of carbon dioxide, a gas that contributes to global warming, and release the oxygen on which life depends. In addition, the forest generates much of its own rainfall, helping to maintain weather patterns.",
-    "Despite its importance, the Amazon is under severe threat. Vast areas are cleared each year for farming, cattle ranching, and logging, a process known as deforestation. This not only destroys habitats but also releases stored carbon, worsening climate change. Protecting the Amazon has become a matter of global concern, requiring cooperation between governments, businesses, and local communities."
+    "List of Headings —  i) Cleaning the water   ii) A guard against floods   iii) Teeming with life   iv) Vanishing fast   v) Storing carbon   vi) A change in attitude   vii) The formation of soil   viii) Fishing and farming",
+    "A   Wetlands — areas of land flooded with water, permanently or seasonally — include marshes, swamps, bogs and the edges of lakes and rivers. For centuries they were dismissed as useless, disease-ridden wastelands, to be drained and built upon. Only recently have we come to recognise them as among the most valuable ecosystems on Earth, and attitudes have changed dramatically as a result.",
+    "B   One reason for their value is the sheer abundance of life they support. Wetlands are among the most biologically productive environments anywhere, providing food and shelter for a vast array of fish, insects, amphibians and birds. Many migrating birds depend on them as places to rest and feed on their long journeys.",
+    "C   Wetlands also act as natural filters, which is why they are sometimes called 'nature's kidneys'. As water moves slowly through them, sediment and pollutants settle out or are absorbed by plants, so that the water leaving a wetland is far cleaner than the water entering it. This natural purification saves communities the huge cost of treating water artificially.",
+    "D   They provide protection from floods as well. Like a giant sponge, a wetland soaks up heavy rainfall and river water, storing it and releasing it slowly, instead of allowing it to rush downstream all at once. Where wetlands have been destroyed, flooding has often become more frequent and more severe.",
+    "E   Some wetlands perform a further, less visible service. Peat bogs, formed from partly decayed plants, store immense quantities of carbon — more, in total, than all the world's forests. Left undisturbed, they keep this carbon safely locked away; drained or burned, they release it, adding to global warming.",
+    "F   Despite all this, wetlands are disappearing faster than almost any other type of habitat. Vast areas have been drained for farming and building, and pollution and rising sea levels threaten many of those that remain. Conservationists warn that protecting the wetlands we still have is far cheaper, and far easier, than trying to recreate them once they are gone."
    ],
    Q:[
-    {t:'text',a:'five|5',q:'The Amazon covers over ______ million square kilometres.'},
-    {t:'text',a:'lungs|lung',q:'It is often called the ______ of the planet.'},
-    {t:'text',a:'ten|10',q:'It contains about ______ per cent of all known species.'},
-    {t:'text',a:'medicines|medicine',q:'Some Amazon plants are used to make ______.'},
-    {t:'text',a:'dioxide',q:'Trees absorb carbon ______.'},
-    {t:'text',a:'oxygen',q:'Trees release the ______ on which life depends.'},
-    {t:'text',a:'rainfall|rain',q:'The forest generates much of its own ______.'},
-    {t:'text',a:'deforestation',q:'Clearing the forest is known as ______.'},
-    {t:'choice',a:'B',q:'The Amazon is cleared for farming, logging and:',opts:['A) mining only','B) cattle ranching','C) tourism','D) fishing']},
-    {t:'text',a:'carbon',q:'Deforestation releases stored ______.'},
-    {t:'choice',a:'TRUE',q:'Many Amazon plants have not yet been studied.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'The Amazon has no effect on climate.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'B',q:'Protecting the Amazon requires cooperation between governments, businesses and:',opts:['A) tourists','B) local communities','C) scientists only','D) farmers only']}
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Wetlands were once regarded as worthless.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Water leaving a wetland is dirtier than the water entering it.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:"Peat bogs store more carbon than all the world's forests.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Wetlands are disappearing more slowly than most other habitats.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'kidneys|kidney',q:"Wetlands are sometimes called nature's ______."},
+    {t:'text',a:'sponge',q:'A wetland acts like a giant ______, soaking up floodwater.'},
+    {t:'text',a:'plants|plant',q:'Peat bogs are formed from partly decayed ______.'}
    ]},
-  {title:'The Psychology of Colour',
+  {title:'The Steam Engine and the Industrial Revolution',
    paras:[
-    "Colours surround us every day, and though we may not realise it, they can have a powerful effect on our emotions and behaviour. The study of how colours influence us, known as colour psychology, is used widely in fields ranging from advertising to interior design.",
-    "Different colours are often associated with particular feelings. Red, for example, is a bold, attention-grabbing colour linked to energy, excitement, and sometimes danger. This is why it is often used for warning signs and, interestingly, by fast-food chains, as it is thought to stimulate appetite. Blue, by contrast, tends to create a sense of calm and trust, which is why it is popular with banks and technology companies wishing to appear reliable.",
-    "Colour can even affect us physically. Studies have suggested that people may feel warmer in a room painted in 'warm' colours such as orange, and cooler in one painted blue, regardless of the actual temperature. Some research indicates that colour can influence concentration and productivity, though findings are not always consistent.",
-    "It is important to note that the meaning of colours is not universal. Associations can vary significantly between cultures; while white is linked to purity and weddings in many Western countries, it is traditionally associated with mourning in parts of Asia."
+    "A   Of all the machines that shaped the modern world, few can rival the steam engine. Before it, almost all work depended on the muscles of humans and animals, or on the uncertain power of wind and water. The steam engine, for the first time, gave humanity a source of power that was reliable, movable and almost limitless, and in doing so it transformed society beyond recognition.",
+    "B   The principle is simple: heat turns water into steam, and steam, expanding, can push a piston and drive machinery. Early versions were built in the eighteenth century, but they were clumsy and wasteful of fuel. The great improvement came from the Scottish engineer James Watt, whose more efficient design, patented in the 1760s and 1770s, made the steam engine truly practical.",
+    "C   The first great use of steam power was in industry. Factories, which had needed to be built beside fast-flowing rivers to drive their machines by water, could now be built anywhere, powered by coal. This freed industry from geography and allowed the growth of great manufacturing cities, drawing workers in from the countryside.",
+    "D   Steam then transformed transport. Fitted to a locomotive, the steam engine gave birth to the railway, which could carry goods and people across land faster than ever before. Fitted to a ship, it freed sea travel from its dependence on the wind. Distances that had once taken weeks could now be crossed in days.",
+    "E   The social consequences were immense, and not all of them welcome. The new factories and cities offered work but also brought long hours, dangerous conditions and overcrowded, polluted slums. The steam age created great wealth, but it was distributed very unevenly, and the hardships it caused fuelled demands for reform.",
+    "F   The steam engine's direct reign eventually ended, replaced by the electric motor and the internal combustion engine. Yet its legacy endures. It launched the Industrial Revolution, set in motion the shift from a rural to an urban world, and established the pattern of continual technological change that defines our age."
    ],
    Q:[
-    {t:'text',a:'psychology',q:'The study of how colours influence us is called colour ______.'},
-    {t:'choice',a:'B',q:'Red is linked to energy, excitement and sometimes:',opts:['A) calm','B) danger','C) trust','D) sadness']},
-    {t:'text',a:'appetite',q:'Red is used by fast-food chains because it is thought to stimulate ______.'},
-    {t:'text',a:'trust',q:'Blue creates a sense of calm and ______.'},
-    {t:'text',a:'technology',q:'Blue is popular with banks and ______ companies.'},
-    {t:'text',a:'warmer|warm',q:'People may feel ______ in a room painted orange.'},
-    {t:'text',a:'productivity',q:'Colour may influence concentration and ______.'},
-    {t:'text',a:'universal',q:'The meaning of colours is not ______.'},
-    {t:'text',a:'weddings|wedding',q:'In many Western countries, white is linked to purity and ______.'},
-    {t:'choice',a:'B',q:'In parts of Asia, white is associated with:',opts:['A) weddings','B) mourning','C) energy','D) trust']},
-    {t:'text',a:'cultures|culture',q:'Colour associations can vary between ______.'},
-    {t:'text',a:'design',q:'Colour psychology is used in advertising and interior ______.'},
-    {t:'choice',a:'FALSE',q:'Research on colour and productivity is always consistent.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'B',q:'Before the steam engine, most work relied on:',opts:['A) coal','B) muscles, wind and water','C) electricity','D) steam']},
+    {t:'choice',a:'B',q:'The steam engine was made truly practical by:',opts:['A) a factory owner','B) James Watt','C) a railway company','D) the ancient Greeks']},
+    {t:'choice',a:'C',q:'Steam power freed factories from having to be built beside:',opts:['A) coal mines','B) cities','C) rivers','D) railways']},
+    {t:'choice',a:'B',q:'According to the passage, the wealth created by the steam age was:',opts:['A) shared equally','B) distributed very unevenly','C) very small','D) given to the workers']},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the effect of steam power on transport?'},
+    {t:'text',a:'B',q:"Which paragraph (A–F) describes James Watt's improved design?"},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the negative social effects of the steam age?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains how steam power changed where factories could be built?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the lasting legacy of the steam engine?'},
+    {t:'text',a:'piston',q:'In a steam engine, expanding steam pushes a ______.'},
+    {t:'text',a:'anywhere',q:'Factories powered by coal could now be built ______.'},
+    {t:'text',a:'railway|railways',q:'Fitted to a locomotive, the steam engine gave birth to the ______.'},
+    {t:'text',a:'Revolution',q:'The steam engine launched the Industrial ______.'}
    ]},
-  {title:'The Rise of Electric Vehicles',
+  {title:'The Ethics of Animal Testing',
    paras:[
-    "For over a century, cars powered by petrol and diesel have dominated the world's roads. Now, however, a quiet revolution is under way, as electric vehicles, or EVs, rapidly grow in popularity. Powered by rechargeable batteries rather than burning fuel, EVs are widely seen as a key part of the solution to climate change and air pollution.",
-    "The environmental advantages are significant. Because they have no exhaust emissions, EVs do not release the harmful gases that petrol cars produce, improving air quality in cities. If the electricity used to charge them comes from renewable sources, their overall contribution to climate change can be very low.",
-    "Electric vehicles also offer practical benefits. They are cheaper to run, as electricity generally costs less than fuel, and they have fewer moving parts, meaning less maintenance. Many drivers also appreciate their quiet, smooth performance.",
-    "There are, however, obstacles to overcome. EVs are still often more expensive to buy than conventional cars, though prices are falling. A common concern is the limited driving range on a single charge, along with a shortage of charging points in many areas. Producing the batteries also requires rare materials. Nevertheless, with governments encouraging the switch, and some planning to ban the sale of new petrol cars altogether, the future of transport increasingly appears to be electric."
+    "A   For more than a century, animals have been used in scientific research, from testing new medicines to studying how the body works. The practice has always been controversial, and the debate over whether it is justified has grown fiercer as public concern for animal welfare has increased. Few issues so directly pit the interests of humans against those of other creatures.",
+    "B   Those who defend animal testing point to its results. Many of the medical advances we take for granted — vaccines, antibiotics, treatments for cancer and heart disease — were developed with the help of animal experiments. Because animals share much of their biology with humans, supporters argue, testing on them is often the only way to be reasonably sure a treatment is safe before it is given to people.",
+    "C   Critics respond that the suffering inflicted on animals is a serious moral wrong. Millions of animals are used each year, many enduring pain, distress and confinement, and ultimately death. To cause such suffering, opponents argue, is difficult to justify, however useful the results may be to us.",
+    "D   There are scientific objections too. Animals are not identical to humans, and a drug that is safe in one species may be harmful in another. Some critics argue that results from animals can therefore be misleading, and that resources would be better spent developing alternative methods that do not rely on them at all.",
+    "E   Such alternatives are in fact advancing quickly. Scientists can now grow human cells and tissues in the laboratory, and sophisticated computer models can predict how a substance will behave in the body. These methods, their advocates argue, are often cheaper, faster and more relevant to humans than animal tests.",
+    "F   Most countries now try to strike a balance through regulation, requiring that animal testing be reduced, refined to cause less suffering, and replaced with alternatives wherever possible — an approach known as the 'three Rs'. Whether this compromise is acceptable, or whether animal testing should be ended altogether, remains one of the most difficult questions in modern science."
    ],
    Q:[
-    {t:'text',a:'batteries|battery',q:'Electric vehicles are powered by rechargeable ______.'},
-    {t:'text',a:'pollution',q:'EVs are seen as part of the solution to climate change and air ______.'},
-    {t:'text',a:'emissions|emission',q:'EVs have no exhaust ______.'},
-    {t:'text',a:'quality',q:'EVs improve air ______ in cities.'},
-    {t:'choice',a:'B',q:'EVs have a low climate impact if charged with:',opts:['A) coal','B) renewable sources','C) diesel','D) petrol']},
-    {t:'text',a:'run',q:'EVs are cheaper to ______ than petrol cars.'},
-    {t:'text',a:'parts|part',q:'EVs have fewer moving ______.'},
-    {t:'text',a:'performance',q:'EVs offer quiet, smooth ______.'},
-    {t:'text',a:'expensive',q:'EVs are often more ______ to buy than conventional cars.'},
-    {t:'text',a:'range',q:'A common concern is the limited driving ______ on one charge.'},
-    {t:'text',a:'charging|charge',q:'There is a shortage of ______ points.'},
-    {t:'text',a:'rare',q:'Producing batteries requires ______ materials.'},
-    {t:'choice',a:'B',q:'Some governments plan to ban the sale of new:',opts:['A) electric cars','B) petrol cars','C) bicycles','D) buses']},
-    {t:'text',a:'century',q:'Petrol and diesel cars have dominated for over a ______.'}
+    {t:'choice',a:'YES',q:'Concern for animal welfare has increased over time.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Supporters claim animal testing has played no part in medical advances.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'A drug that is safe in one species is always safe in another.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Laboratory-grown human cells are one alternative to animal testing.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'All countries have now banned animal testing.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'The debate over animal testing has been fully resolved.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the argument that animals share biology with humans?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) gives the moral objection based on animal suffering?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) gives examples of alternative methods to animal testing?'},
+    {t:'text',a:'F',q:"Which paragraph (A–F) describes the 'three Rs' approach?"},
+    {t:'text',a:'vaccines|antibiotics|vaccine',q:'Name one medical advance developed with the help of animal experiments.'},
+    {t:'text',a:'millions|million',q:'Roughly how many animals are used in research each year?'},
+    {t:'text',a:'human cells|cells|cells and tissues',q:'What can scientists now grow in the laboratory as an alternative?'},
+    {t:'text',a:'Rs|R',q:'Reducing, refining and replacing is known as the three ______.'}
    ]}
  ],
  writing:{
