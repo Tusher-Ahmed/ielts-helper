@@ -1895,7 +1895,7 @@ const MOCKS=[
  blurb:'Conference · Observatory · Solar system + Mars · Northern Lights · Vaccines',
  listen:[
   {title:'Science conference registration',
-   transcript:"Hello, I'd like to register for the science conference next month. Certainly. The conference runs over two days, on the fifteenth and sixteenth of June. The standard registration fee is eighty pounds, but students pay a reduced rate of forty pounds with a valid ID. This includes access to all talks, lunch on both days, and a printed programme. There's an optional conference dinner on the first evening, which costs an extra twenty-five pounds. The conference is held at the Grand Hotel in the city centre. To register, please complete the online form by the first of June. You'll receive your name badge by email to print at home.",
+   transcript:"Hello, I'd like to register for the science conference next month. Certainly. The conference runs over three days... sorry, two, on the fifteenth and sixteenth of June. The standard registration fee is eighteen pounds... sorry, eighty, but students pay a reduced rate of forty pounds with a valid ID. This includes access to all talks, lunch on both days, and a printed programme. There's an optional conference dinner on the first evening, which costs an extra twenty-five pounds. The conference is held at the Grand Hotel in the city centre, not the Grand Theatre. To register, please complete the online form by the first of June. You'll receive your name badge by email to print at home.",
    Q:[
     {t:'text',a:'two|2',q:'The conference runs over ______ days.'},
     {t:'text',a:'sixteenth|16th|16',q:'Dates: the fifteenth and ______ of June.'},
@@ -1909,7 +1909,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The name badge will be sent by:',opts:['A) post','B) email','C) text','D) collected']}
    ]},
   {title:'Hilltop Observatory tour',
-   transcript:"Welcome to the Hilltop Observatory. First, we'll visit the planetarium, where a thirty-minute show will take you on a journey through the night sky. After that, weather permitting, we'll use the large telescope to observe the Moon and, tonight, the planet Saturn, whose rings should be clearly visible. Please note that the observatory can get quite cold, so warm clothing is recommended, as the telescope dome has no heating. Red torches are provided, as ordinary white light affects our night vision. The gift shop, which sells star charts and models, closes at nine. Finally, please avoid using bright screens, as they disturb other visitors' viewing.",
+   transcript:"Welcome to the Hilltop Observatory. First, we'll visit the planetarium, where a twenty-minute show... sorry, thirty minutes, will take you on a journey through the night sky. After that, weather permitting, we'll use the large telescope to observe the Moon and, tonight, the planet Jupiter — no, Saturn, whose rings should be clearly visible. Please note that the observatory can get quite cold, so warm clothing is recommended, as the telescope dome has no heating. Red torches are provided, as ordinary white light affects our night vision. The gift shop, which sells star charts and models, closes at nine. Finally, please avoid using bright screens, as they disturb other visitors' viewing.",
    Q:[
     {t:'text',a:'planetarium',q:'First they visit the ______.'},
     {t:'text',a:'thirty|30',q:'The show lasts ______ minutes.'},
@@ -1923,7 +1923,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Visitors are asked to avoid:',opts:['A) warm clothes','B) bright screens','C) red torches','D) the telescope']}
    ]},
   {title:'Tutorial: an astronomy project',
-   transcript:"You wanted to discuss your astronomy project? Yes, I want to study how light pollution affects our view of the stars. How will you investigate it? I'll count how many stars are visible from different locations. How many locations? I'll compare three: the city centre, the suburbs, and the countryside. And when will you observe? On clear nights, away from a full moon, as moonlight interferes. How will you record the data? I'll use a chart and take photographs. How long should the report be? About three thousand words. When's it due? The end of May. Remember to include a map of your locations.",
+   transcript:"You wanted to discuss your astronomy project? Yes, I want to study how light pollution affects our view of the stars. How will you investigate it? I'll count how many stars are visible from different locations. How many locations? I'll compare two... actually three: the city centre, the suburbs, and the countryside. And when will you observe? On clear nights, away from a full moon, as moonlight interferes. How will you record the data? I'll use a chart and take photographs. How long should the report be? About two thousand... sorry, three thousand words. When's it due? The end of April — no, May. Remember to include a map of your locations.",
    Q:[
     {t:'text',a:'light',q:'The project is about how ______ pollution affects the view of stars.'},
     {t:'text',a:'stars|star',q:'She will count how many ______ are visible.'},
@@ -1937,7 +1937,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'She avoids a full moon because moonlight:',opts:['A) is too dim','B) interferes','C) is colourful','D) is cold']}
    ]},
   {title:'Lecture: the solar system',
-   transcript:"Today we'll take a tour of our solar system. At its centre is the Sun, a star that contains almost all the mass of the solar system and provides the energy that makes life on Earth possible. Orbiting the Sun are eight planets. The four closest, including Earth, are small and rocky, while the four outer planets are giant balls of gas and ice. The largest planet, Jupiter, is so big that all the others could fit inside it. Beyond the planets lie countless smaller objects, including asteroids and comets. Since the first satellite was launched in 1957, we have sent probes to every planet and landed robots on Mars. The next great goal, many believe, is to send humans to Mars.",
+   transcript:"Today we'll take a tour of our solar system. At its centre is the Sun, a star that contains almost all the mass of the solar system and provides the energy that makes life on Earth possible. Orbiting the Sun are nine... sorry, eight planets. The four closest, including Earth, are small and rocky, while the four outer planets are giant balls of gas and ice. The largest planet, Jupiter, is so big that all the others could fit inside it. Beyond the planets lie countless smaller objects, including asteroids and comets. Since the first satellite was launched in 1967 — sorry, 1957 — we have sent probes to every planet and landed robots on Mars. The next great goal, many believe, is to send humans to Mars.",
    Q:[
     {t:'text',a:'sun',q:'At the centre of the solar system is the ______.'},
     {t:'text',a:'eight|8',q:'There are ______ planets orbiting the Sun.'},
@@ -1952,72 +1952,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Search for Life on Mars',
+  {title:'The Hunt for Exoplanets',
    paras:[
-    "Of all the planets in our solar system, none has captured the human imagination quite like Mars. For over a century, people have wondered whether the 'Red Planet' might be home to life, and today the search for evidence is one of the main goals of space exploration.",
-    "At first glance, Mars seems hostile to life. It is extremely cold, its thin atmosphere is mostly carbon dioxide, and its surface is bombarded with harmful radiation. Yet there are reasons for hope. Scientists have found strong evidence that, billions of years ago, Mars was warmer and wetter, with rivers, lakes, and possibly even oceans of liquid water. Since water is essential for life as we know it, this raises the possibility that life may once have existed there.",
-    "To investigate, space agencies have sent a series of robotic explorers, or 'rovers', to the Martian surface. These vehicles drill into rocks and analyse the soil, searching for chemical signs of life. So far, no definite evidence of life has been found, but the rovers have confirmed that the ingredients for life were once present.",
-    "The ultimate goal for many scientists is to bring samples of Martian rock back to Earth for detailed study, and eventually to send humans to explore the planet in person."
+    "List of Headings —  i) A question as old as humanity   ii) The problem of the glare   iii) Watching for a dimming   iv) Feeling the star wobble   v) Worlds beyond counting   vi) The search for another Earth   vii) The birth of a star   viii) Measuring a star's age",
+    "A   Are there other worlds like our own, orbiting distant stars? For thousands of years this was a question for philosophers and poets, since no one could hope to answer it. A planet around another star — an 'exoplanet' — would be impossibly faint and far away. Only in the last thirty years has it become a question for science, with astonishing results.",
+    "B   The first difficulty is that planets do not shine; they only reflect the light of their star. Seen from light years away, a planet is lost entirely in the overwhelming glare of the star it orbits, like a firefly next to a searchlight. Astronomers therefore had to find indirect ways to detect planets they could not see.",
+    "C   One clever method detects the tiny 'wobble' of a star. A planet's gravity tugs on its star, making the star move very slightly back and forth. Although far too small to see directly, this motion can be measured in the star's light, revealing the presence of an unseen planet and even hinting at its mass.",
+    "D   An even more powerful method watches for a dimming. If a planet's orbit happens to carry it directly between us and its star, it blocks a tiny fraction of the star's light, causing a small, regular dip in brightness. By staring at many thousands of stars at once and watching for these dips, telescopes have discovered planets in enormous numbers.",
+    "E   The results have transformed astronomy. Far from being rare, planets now appear to be commonplace: most stars, it seems, have planets, and our galaxy alone must contain billions of them. What was once guessed at is now known — the universe is full of worlds.",
+    "F   The ultimate prize is to find a planet like Earth: rocky, and at just the right distance from its star for liquid water, and perhaps life, to exist. Several promising candidates have already been found, and astronomers are now building instruments that may one day be able to detect signs of life in the atmospheres of these distant worlds."
    ],
    Q:[
-    {t:'text',a:'red',q:'Mars is often called the ______ Planet.'},
-    {t:'text',a:'cold',q:'Mars is extremely ______.'},
-    {t:'text',a:'dioxide',q:'Its thin atmosphere is mostly carbon ______.'},
-    {t:'text',a:'radiation',q:'Its surface is bombarded with harmful ______.'},
-    {t:'text',a:'wetter|wet',q:'Billions of years ago, Mars was warmer and ______.'},
-    {t:'text',a:'water',q:'Mars may once have had rivers, lakes and oceans of liquid ______.'},
-    {t:'text',a:'life',q:'Water is essential for ______ as we know it.'},
-    {t:'text',a:'rovers|rover',q:'Robotic explorers are also called ______.'},
-    {t:'text',a:'soil',q:'Rovers drill into rocks and analyse the ______.'},
-    {t:'choice',a:'B',q:'So far, evidence of life on Mars is:',opts:['A) definite','B) not yet found','C) hidden','D) obvious']},
-    {t:'text',a:'ingredients|ingredient',q:'The rovers confirmed the ______ for life were once present.'},
-    {t:'text',a:'samples|sample',q:'Scientists hope to bring ______ of Martian rock back to Earth.'},
-    {t:'text',a:'humans|human',q:'The ultimate goal includes sending ______ to Mars.'}
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:'Exoplanets are easy to see directly with telescopes.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:"A planet's gravity causes its star to wobble slightly.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The dimming method detects planets that pass in front of their star.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Planets are now thought to be rare in the galaxy.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'exoplanet',q:'A planet around another star is called an ______.'},
+    {t:'text',a:'brightness',q:"A planet blocks a tiny fraction of its star's light, causing a dip in ______."},
+    {t:'text',a:'Earth',q:'The ultimate prize is to find a planet like ______.'}
    ]},
-  {title:'The Northern Lights',
+  {title:'The History of the Telescope',
    paras:[
-    "Few natural sights are as breathtaking as the Northern Lights, or 'aurora borealis'. On clear, dark nights in the far north, the sky can suddenly come alive with shimmering curtains of green, pink, and purple light. For centuries, people explained this phenomenon through myths, but today its cause is well understood.",
-    "The lights are created by activity on the Sun. The Sun constantly sends out a stream of tiny charged particles, known as the solar wind. When these particles reach Earth, most are deflected by the planet's magnetic field. However, near the North and South Poles, some particles are channelled into the atmosphere, where they collide with gases such as oxygen and nitrogen. These collisions release energy in the form of light.",
-    "The colour of the aurora depends on which gas is involved and at what altitude. Oxygen typically produces green and red light, while nitrogen creates blue and purple. Because the lights depend on solar activity, they are more frequent and intense when the Sun is more active.",
-    "The same phenomenon occurs near the South Pole, where it is called the 'aurora australis'. Although auroras are usually seen only in polar regions, particularly strong solar activity can occasionally make them visible much further away."
+    "A   For all of human history until about four hundred years ago, people could see no further into space than their own eyes allowed. The stars were points of light and nothing more. The invention of the telescope changed this forever, revealing a universe of undreamed-of wonders and launching the science of modern astronomy.",
+    "B   The telescope was invented in the Netherlands around 1608, apparently by a spectacle-maker, as a simple device using two lenses to make distant objects appear closer. Its makers thought of it chiefly as a useful instrument for sailors and soldiers, and had little idea of the revolution it would bring.",
+    "C   The revolution came the following year, when the Italian scientist Galileo Galilei built his own, improved telescope and, crucially, pointed it at the sky. What he saw astonished him: mountains and craters on the Moon, four moons circling Jupiter, and countless stars invisible to the naked eye. The heavens were not perfect and unchanging, as had been believed, but complex and full of surprises.",
+    "D   Galileo's telescope used lenses, but such 'refracting' telescopes had a serious flaw: they split light into false colours, blurring the image. The solution, devised by Isaac Newton, was to gather light with a curved mirror instead of a lens. Almost all large telescopes today are of this 'reflecting' design.",
+    "E   Over the centuries, telescopes grew ever larger, since a bigger mirror gathers more light and reveals fainter, more distant objects. Yet all telescopes on the ground share one problem: they must peer through the Earth's shimmering atmosphere, which blurs the view, the reason the stars appear to twinkle.",
+    "F   The answer was to escape the atmosphere altogether. Telescopes placed in orbit, above the air, can see with astonishing clarity, and have sent back images of galaxies billions of light years away. From two lenses in a Dutch workshop to giant eyes in space, the telescope continues to extend the reach of human sight."
    ],
    Q:[
-    {t:'text',a:'borealis',q:'The Northern Lights are also called the aurora ______.'},
-    {t:'text',a:'sun',q:'The lights are created by activity on the ______.'},
-    {t:'text',a:'wind',q:'The Sun sends out a stream of charged particles called the solar ______.'},
-    {t:'text',a:'magnetic',q:"Most particles are deflected by Earth's ______ field."},
-    {t:'text',a:'atmosphere',q:'Near the poles, particles collide with gases in the ______.'},
-    {t:'text',a:'nitrogen',q:'Oxygen and ______ are the gases involved.'},
-    {t:'text',a:'light',q:'The collisions release energy in the form of ______.'},
-    {t:'text',a:'red',q:'Oxygen typically produces green and ______ light.'},
-    {t:'text',a:'purple',q:'Nitrogen creates blue and ______.'},
-    {t:'choice',a:'B',q:'The colour depends on the gas and the:',opts:['A) time','B) altitude','C) season','D) temperature']},
-    {t:'text',a:'active',q:'The lights are more intense when the Sun is more ______.'},
-    {t:'text',a:'australis',q:'Near the South Pole, the phenomenon is called the aurora ______.'},
-    {t:'text',a:'further|farther',q:'Strong solar activity can make auroras visible ______ away.'}
+    {t:'choice',a:'B',q:'The telescope was invented around 1608 in:',opts:['A) Italy','B) the Netherlands','C) England','D) Germany']},
+    {t:'choice',a:'B',q:"Galileo's crucial step was to:",opts:['A) invent the telescope','B) point a telescope at the sky','C) make spectacles','D) sail with a telescope']},
+    {t:'choice',a:'B',q:'Refracting telescopes had the flaw of:',opts:['A) being too small','B) splitting light into false colours','C) using mirrors','D) needing electricity']},
+    {t:'choice',a:'B',q:"Isaac Newton's telescope gathered light using a:",opts:['A) lens','B) curved mirror','C) prism','D) second lens']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes what Galileo saw through his telescope?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) explains why telescopes were placed in orbit?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the original inventor and intended uses?'},
+    {t:'text',a:'D',q:"Which paragraph (A–F) describes Newton's solution to a problem with lenses?"},
+    {t:'text',a:'E',q:"Which paragraph (A–F) describes the problem caused by the Earth's atmosphere?"},
+    {t:'text',a:'spectacle',q:'The telescope was apparently invented by a ______-maker.'},
+    {t:'text',a:'Moon|moon',q:'Galileo saw mountains and craters on the ______.'},
+    {t:'text',a:'light',q:'A bigger mirror gathers more ______.'},
+    {t:'text',a:'twinkle',q:'The atmosphere blurs the view and makes stars appear to ______.'}
    ]},
-  {title:'The Story of Vaccines',
+  {title:'The End of Privacy?',
    paras:[
-    "Vaccines are among the greatest achievements in the history of medicine, having saved countless millions of lives. Yet the basic idea behind them is surprisingly old and remarkably simple: to train the body's own defences to recognise and fight a disease before a person ever encounters it.",
-    "The story begins in the late eighteenth century with an English doctor, Edward Jenner. He noticed that milkmaids who had caught a mild disease called cowpox seemed to be protected from the deadly disease smallpox. In 1796, he tested his idea, and it worked. This was the world's first vaccine.",
-    "Vaccines work by using a harmless part or version of a germ. When this is introduced into the body, the immune system learns to recognise it and produces defences called antibodies. If the person later encounters the real disease, their body is ready to fight it off quickly, often before they even feel sick.",
-    "Over the following centuries, vaccines were developed against many deadly diseases, including polio, measles, and tetanus. One disease, smallpox, has been completely wiped out through vaccination. Despite this success, vaccines face challenges, including the spread of false information. Scientists stress that widespread vaccination protects not only individuals but whole communities."
+    "A   Not long ago, privacy could be taken for granted. What we did, said and bought largely vanished as soon as it was done. Today, by contrast, we live in a world of constant recording. Our phones track where we go, our searches and purchases are logged, and cameras watch many public spaces. Some ask whether privacy, as previous generations understood it, still exists at all.",
+    "B   Much of this data is gathered by companies. Every website visited and product bought adds to a detailed profile, which can be used to predict our behaviour and target us with advertising. In return for free services, we hand over information about ourselves on a scale that would once have seemed unimaginable, often without fully realising it.",
+    "C   Governments collect data too, and here the concerns are different. Surveillance can help catch criminals and prevent terrorism, and few object to that in principle. But the same tools, critics warn, can be turned against ordinary citizens and used to suppress dissent, especially where there are few limits on the power of the state.",
+    "D   Defenders of these developments argue that the benefits are real and the fears exaggerated. Personalised services are more convenient; medical data, shared and analysed, can save lives; and, as the saying goes, those who have done nothing wrong have nothing to hide. Privacy, on this view, is a fair price for the conveniences of modern life.",
+    "E   Critics reject this reasoning. Privacy, they argue, is not about hiding wrongdoing but about the freedom to think, speak and live without being watched and judged. People behave differently when they know they are being observed, and a society under constant surveillance, they warn, may become fearful and conformist.",
+    "F   Most experts believe the answer lies not in rejecting technology but in controlling it. Clear laws about what data may be collected and how it may be used, they argue, together with the right of individuals to see and delete their own data, could preserve the benefits while protecting the freedom that privacy makes possible."
    ],
    Q:[
-    {t:'text',a:'defences|defenses|defence|defense',q:"Vaccines train the body's own ______ to fight disease."},
-    {t:'text',a:'jenner',q:'The first vaccine was developed by Edward ______.'},
-    {t:'text',a:'cowpox',q:'Jenner noticed milkmaids who caught ______ were protected from smallpox.'},
-    {t:'text',a:'1796',q:'Jenner tested his idea in ______ (year).'},
-    {t:'text',a:'smallpox',q:'Cowpox protected people from the deadly disease ______.'},
-    {t:'text',a:'germ',q:'Vaccines use a harmless part or version of a ______.'},
-    {t:'text',a:'antibodies|antibody',q:'The immune system produces defences called ______.'},
-    {t:'choice',a:'B',q:'If a vaccinated person meets the real disease, their body can:',opts:['A) not respond','B) fight it off quickly','C) catch it easily','D) ignore it']},
-    {t:'text',a:'tetanus',q:'Vaccines were developed against polio, measles and ______.'},
-    {t:'text',a:'smallpox',q:'The disease ______ has been completely wiped out.'},
-    {t:'choice',a:'B',q:'A challenge vaccines face is the spread of:',opts:['A) new diseases','B) false information','C) high costs','D) old age']},
-    {t:'text',a:'communities|community',q:'Widespread vaccination protects individuals and whole ______.'},
-    {t:'text',a:'spreading|spread',q:'Vaccination stops diseases from ______.'},
-    {t:'choice',a:'TRUE',q:'Vaccines have saved millions of lives.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'In the past, most of what people did soon disappeared without record.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:"Companies collect data only with people's full understanding.",opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Few people object to governments using surveillance to catch criminals.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Defenders argue that privacy fears are exaggerated.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Critics believe privacy is only about hiding wrongdoing.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Most experts think technology should be rejected to protect privacy.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes how companies build profiles of us?'},
+    {t:'text',a:'D',q:"Which paragraph (A–F) gives the 'nothing to hide' argument?"},
+    {t:'text',a:'C',q:'Which paragraph (A–F) raises the concern that surveillance could suppress dissent?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) proposes the solution of clear laws?'},
+    {t:'text',a:'where we go|location|our location|movements',q:'What do our phones track about us?'},
+    {t:'text',a:'data|information',q:'Companies give us free services in return for our ______.'},
+    {t:'text',a:'live',q:'Critics say privacy is about the freedom to think, speak and ______ without being watched.'},
+    {t:'text',a:'delete',q:'Experts want individuals to have the right to see and ______ their own data.'}
    ]}
  ],
  writing:{
