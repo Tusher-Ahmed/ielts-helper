@@ -1460,7 +1460,7 @@ const MOCKS=[
  blurb:'Photography class · Art gallery · Architecture + Roman engineering · Happiness · Plastic',
  listen:[
   {title:'Evening photography course',
-   transcript:"Thank you for your interest in our evening photography course. The beginners' course runs for six weeks, meeting every Thursday evening from six thirty to eight thirty. The fee is one hundred and ten pounds. You will need to bring your own camera, although a smartphone is acceptable for beginners. The classes are held in Studio 3 at the community arts centre. There is a practical photo walk in week four. At the end of the course, students' work is displayed in a small exhibition. Class sizes are limited to ten people. To secure your place, a deposit of thirty pounds is required, and the next course starts on the seventh of October.",
+   transcript:"Thank you for your interest in our evening photography course. The beginners' course runs for four weeks — sorry, six — meeting every Thursday evening from six thirty to eight thirty. The fee is one hundred and thirteen pounds... sorry, one hundred and ten. You will need to bring your own camera, although a smartphone is acceptable for beginners. The classes are held in Studio 3 at the community arts centre, not Studio 2. There is a practical photo walk in week four. At the end of the course, students' work is displayed in a small exhibition. Class sizes are limited to twelve... no, ten people. To secure your place, a deposit of thirty pounds is required, and the next course starts on the seventh of October.",
    Q:[
     {t:'text',a:'six|6',q:'The course runs for ______ weeks.'},
     {t:'text',a:'thursday',q:'Classes meet every ______ evening.'},
@@ -1474,7 +1474,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'To secure a place you must pay:',opts:['A) the full fee','B) a deposit','C) nothing','D) for a camera']}
    ]},
   {title:'Art gallery exhibition tour',
-   transcript:"Welcome to the City Art Gallery and to our special exhibition on Impressionism. The exhibition brings together more than eighty paintings, many on loan from museums abroad. We'll begin in the first room, which introduces the movement and its origins in nineteenth-century France. Please do not use flash photography, as it can damage the artwork. Audio guides are available at the desk for three pounds. The exhibition shop, selling prints and postcards, is by the exit. The exhibition closes at five thirty, and the last entry is at half past four. There is also a cafe on the lower floor.",
+   transcript:"Welcome to the City Art Gallery and to our special exhibition on Impressionism. The exhibition brings together more than eighteen paintings... more than eighty, in fact, many on loan from museums abroad. We'll begin in the first room, which introduces the movement and its origins in nineteenth-century France. Please do not use flash photography, as it can damage the artwork. Audio guides are available at the desk for two pounds — sorry, three. The exhibition shop, selling prints and postcards, is by the exit, not the entrance. The exhibition closes at five thirty, and the last entry is at half past four. There is also a cafe on the lower floor.",
    Q:[
     {t:'text',a:'impressionism',q:'The exhibition is about ______.'},
     {t:'text',a:'eighty|80',q:'It brings together more than ______ paintings.'},
@@ -1488,7 +1488,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The cafe is located:',opts:['A) by the entrance','B) on the lower floor','C) next to the shop','D) outside']}
    ]},
   {title:'Tutorial: a tourism dissertation',
-   transcript:"You wanted to discuss your tourism dissertation? Yes, I want to study the impact of tourism on a small coastal town. What's your main question? Whether tourism has helped or harmed the local community. How will you gather information? I'll interview local business owners and residents. Try to get a balanced range of views. And any statistics? Yes, I'll use visitor numbers from the tourist office. How many people will you interview? I'm planning on twenty. Remember to get their consent. How long should it be? Around twelve thousand words. And the deadline? The final draft is due in June, but send me a plan by the end of April.",
+   transcript:"You wanted to discuss your tourism dissertation? Yes, I want to study the impact of tourism on a small coastal town. What's your main question? Whether tourism has helped or harmed the local community. How will you gather information? I'll interview local business owners and residents. Try to get a balanced range of views. And any statistics? Yes, I'll use visitor numbers from the tourist office, not the town council. How many people will you interview? I'm planning on thirty... actually twenty. Remember to get their consent. How long should it be? Around ten thousand... sorry, twelve thousand words. And the deadline? The final draft is due in June, but send me a plan by the end of March — no, April.",
    Q:[
     {t:'text',a:'tourism',q:'The dissertation is about the impact of ______.'},
     {t:'text',a:'coastal',q:'The study focuses on a small ______ town.'},
@@ -1502,7 +1502,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The tutor advises her to get:',opts:['A) more statistics','B) a balanced range of views','C) fewer interviews','D) a shorter topic']}
    ]},
   {title:'Lecture: architecture through history',
-   transcript:"Today's lecture is about how architecture reflects the societies that create it. Throughout history, the grandest buildings have often been those devoted to religion or power. The ancient Egyptians built enormous pyramids as tombs, while the Greeks constructed elegant temples supported by columns. The Romans were brilliant engineers, famous for inventing the arch, which allowed them to build strong bridges and vast structures like the Colosseum. In the Middle Ages, European builders created soaring cathedrals with pointed arches and huge stained-glass windows. Much later, the invention of steel and the lift made it possible to build upwards, giving rise to the modern skyscraper. Today, architects increasingly focus on sustainability, designing energy-efficient buildings.",
+   transcript:"Today's lecture is about how architecture reflects the societies that create it. Throughout history, the grandest buildings have often been those devoted to religion or power. The ancient Egyptians built enormous pyramids as tombs, while the Greeks constructed elegant temples supported by columns. The Romans were brilliant engineers, famous for inventing the arch — not the dome, the arch — which allowed them to build strong bridges and vast structures like the Colosseum. In the Middle Ages, European builders created soaring cathedrals with pointed arches and huge stained-glass windows. Much later, the invention of steel and the lift made it possible to build upwards, giving rise to the modern skyscraper. Today, architects increasingly focus on sustainability, designing energy-efficient buildings.",
    Q:[
     {t:'text',a:'power',q:'The grandest buildings were often devoted to religion or ______.'},
     {t:'text',a:'tombs|tomb',q:'The Egyptians built pyramids as ______.'},
@@ -1517,72 +1517,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Engineering of Ancient Rome',
+  {title:'The Life Cycle of Stars',
    paras:[
-    "The ancient Romans were among the greatest engineers in history. While other civilisations produced impressive art and monuments, the Romans excelled at building practical structures on a massive scale, many of which still stand two thousand years later.",
-    "Perhaps their most important contribution was the development of the arch. Although the arch had been used before, the Romans perfected it, using it to build bridges and aqueducts strong enough to bear enormous weight. Aqueducts, which carried fresh water into cities across great distances using only the force of gravity, supplied public baths, fountains, and homes.",
-    "The Romans were also famous for their roads. Built to allow armies to move quickly across the empire, these roads were so well constructed, with layers of stone and a cambered surface to drain rainwater, that some are still in use today. It was said that 'all roads lead to Rome', reflecting how the network connected the entire empire to its capital.",
-    "Another key innovation was concrete. Roman concrete was extraordinarily durable, and structures built with it, such as the vast dome of the Pantheon, have survived for centuries. Modern scientists are still studying why Roman concrete has lasted so much longer than many modern equivalents."
+    "List of Headings —  i) Born in a cloud   ii) A long, stable middle age   iii) The gentle death of a small star   iv) The violent death of a giant   v) Recycled into new stars   vi) What a star is and how it shines   vii) The colours of the stars   viii) Measuring the distance to a star",
+    "A   A star is an enormous ball of hot gas, mostly hydrogen, held together by its own gravity. It shines because, deep in its core, the crushing pressure fuses hydrogen atoms together to form helium, a process that releases colossal amounts of energy. It is this nuclear fusion that produces the light and heat by which stars, including our own Sun, pour energy into space.",
+    "B   Stars are born in vast clouds of gas and dust called nebulae. Where such a cloud is dense enough, gravity pulls the material together into a spinning clump, which grows hotter and hotter as it shrinks. When the centre becomes hot and dense enough for fusion to begin, a new star switches on and starts to shine.",
+    "C   A star then spends most of its life in a long, stable phase, steadily fusing hydrogen in its core. Our Sun is in this phase now and will remain so for billions of years. Throughout it, the star holds a delicate balance: the inward pull of gravity is exactly matched by the outward push of the energy pouring from its core.",
+    "D   Eventually the hydrogen fuel begins to run out, and the star's fate depends on its size. A smaller star like the Sun swells into a huge, cool 'red giant', then gently sheds its outer layers, leaving behind a small, dense, slowly cooling core known as a white dwarf.",
+    "E   A truly massive star dies far more dramatically. When its fuel is spent, its core collapses in an instant and the star explodes in a titanic blast called a supernova, briefly outshining an entire galaxy. What remains may be an incredibly dense neutron star or, if the star was massive enough, a black hole.",
+    "F   These deaths are not merely endings. The explosion of a massive star scatters into space the heavier chemical elements forged in its core — the carbon, oxygen and iron from which planets, and living things, are made. In a very real sense, we are made of the ashes of long-dead stars, and the material returns to form new stars in an endless cycle."
    ],
    Q:[
-    {t:'text',a:'two thousand|2000|2,000',q:'Many Roman structures still stand after ______ years.'},
-    {t:'text',a:'arch',q:'The Romans perfected the ______.'},
-    {t:'text',a:'water',q:'Aqueducts carried fresh ______ into cities.'},
-    {t:'text',a:'gravity',q:'Aqueducts moved water using only the force of ______.'},
-    {t:'text',a:'homes|home',q:'Aqueducts supplied public baths, fountains and ______.'},
-    {t:'text',a:'armies|army',q:'Roman roads were built to allow ______ to move quickly.'},
-    {t:'text',a:'rainwater|water|rain',q:'Roads had a cambered surface to drain ______.'},
-    {t:'choice',a:'B',q:"What does 'all roads lead to Rome' reflect?",opts:['A) roads were short','B) the network connected the empire to its capital','C) Rome had no roads','D) roads were straight']},
-    {t:'text',a:'concrete',q:'Another key innovation was ______.'},
-    {t:'text',a:'durable',q:'Roman concrete was extraordinarily ______.'},
-    {t:'text',a:'pantheon',q:'The ______ has a vast dome built with Roman concrete.'},
-    {t:'text',a:'long',q:'Scientists still study why Roman concrete has lasted so ______.'},
-    {t:'choice',a:'TRUE',q:'Roman engineering influenced builders for thousands of years.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Stars shine because of nuclear fusion in their cores.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Stars are born in dense clouds of gas and dust.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'The Sun will end its life as a supernova.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The heavier chemical elements were formed inside stars.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'helium',q:"In a star's core, hydrogen is fused into ______."},
+    {t:'text',a:'nebulae|nebula|nebulas',q:'Stars are born in clouds of gas and dust called ______.'},
+    {t:'text',a:'black hole|blackhole',q:'A massive star may end as a neutron star or a ______.'}
    ]},
-  {title:'The Science of Happiness',
+  {title:'How Refrigeration Changed the World',
    paras:[
-    "What makes people happy? For most of history, this was a question for philosophers, but in recent decades it has become a subject of serious scientific study. Researchers in the field of 'positive psychology' have used surveys and experiments to investigate the factors that contribute to a happy life.",
-    "One of the clearest findings is that, beyond a certain point, money does not buy happiness. While having enough to meet basic needs is important, once people are comfortable, further increases in income make surprisingly little difference to their wellbeing. Far more important, research suggests, are strong personal relationships. People with close friends and supportive families tend to be significantly happier than those who are wealthy but isolated.",
-    "Other factors also play a role. Regular physical exercise, spending time in nature, and helping others have all been shown to boost happiness. Interestingly, the simple act of expressing gratitude appears to have a measurable positive effect.",
-    "Perhaps most encouraging is the discovery that happiness is not fixed. Although our genes and circumstances play a part, a significant portion of our happiness is within our control, influenced by our habits and attitudes. This suggests that people can learn to be happier."
+    "A   It is easy to take the refrigerator for granted. Yet before it, keeping food cold — and therefore safe — was a constant struggle. For most of history, food spoiled quickly, and preserving it meant salting, drying, smoking or pickling, methods that changed its taste and only partly slowed decay. The ability to keep food reliably cold has quietly transformed human life.",
+    "B   The only cold available was natural. In cold climates, people cut ice from frozen lakes in winter and stored it, packed in sawdust, in special ice houses to last into the summer. A whole industry grew up around harvesting and shipping natural ice, but it depended entirely on the weather and could never reach warm countries.",
+    "C   The breakthrough was mechanical refrigeration, developed in the nineteenth century. It works on a simple principle: when a liquid evaporates into a gas, it absorbs heat from its surroundings, making them colder. By pumping a special fluid round and round, forcing it to evaporate and condense, a machine can move heat out of an enclosed space and keep it cold indefinitely.",
+    "D   The first refrigerators were huge industrial machines, used to cool warehouses, breweries and, above all, to preserve meat. For the first time, meat could be shipped frozen across the world, allowing countries such as Australia and Argentina to sell their beef and lamb to distant Europe. Whole national economies were reshaped by the cold.",
+    "E   The smaller domestic refrigerator arrived in homes during the twentieth century and changed daily life profoundly. Families could store fresh food safely for days, shop less often, and enjoy a far more varied diet, including foods brought from the other side of the world. Diseases caused by spoiled food declined.",
+    "F   Refrigeration remains vital in ways we rarely notice. It keeps medicines and vaccines safe, freezes food for long storage, and cools the vast computer servers that run the internet. Yet it comes at a cost: refrigeration uses huge amounts of energy, and some of the gases once used in it proved harmful to the environment, a reminder that even the most useful inventions bring new problems."
    ],
    Q:[
-    {t:'text',a:'positive',q:'The scientific study of happiness is part of ______ psychology.'},
-    {t:'text',a:'money',q:'Beyond a certain point, ______ does not buy happiness.'},
-    {t:'text',a:'needs|need',q:'Having enough to meet basic ______ is important.'},
-    {t:'text',a:'relationships|relationship',q:'Far more important are strong personal ______.'},
-    {t:'text',a:'isolated',q:'People who are wealthy but ______ tend to be less happy.'},
-    {t:'text',a:'exercise',q:'Regular physical ______ boosts happiness.'},
-    {t:'text',a:'nature',q:'Spending time in ______ boosts happiness.'},
-    {t:'text',a:'others',q:'Helping ______ boosts happiness.'},
-    {t:'text',a:'gratitude',q:'Expressing ______ has a positive effect.'},
-    {t:'choice',a:'B',q:"Which has a 'measurable positive effect'?",opts:['A) earning more','B) expressing gratitude','C) being alone','D) working more']},
-    {t:'choice',a:'FALSE',q:'Happiness is completely fixed.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'control',q:'A significant portion of happiness is within our ______.'},
-    {t:'choice',a:'B',q:'The most encouraging finding is that people can:',opts:['A) become rich','B) learn to be happier','C) live longer','D) avoid stress']}
+    {t:'choice',a:'B',q:'Before refrigeration, food was preserved by methods such as:',opts:['A) freezing','B) salting and drying','C) canning','D) vacuum-packing']},
+    {t:'choice',a:'B',q:'Natural ice was stored through the summer in:',opts:['A) cellars','B) ice houses','C) caves','D) barns']},
+    {t:'choice',a:'B',q:'Mechanical refrigeration works because an evaporating liquid:',opts:['A) releases heat','B) absorbs heat','C) freezes instantly','D) expands']},
+    {t:'choice',a:'C',q:'The first refrigerators were used above all to preserve:',opts:['A) vegetables','B) milk','C) meat','D) fruit']},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains how mechanical refrigeration works?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the effect on home life and diet?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the trade in natural ice?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes modern and hidden uses of refrigeration?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) explains how refrigeration reshaped national economies?'},
+    {t:'text',a:'taste',q:'Before refrigeration, preserving food often changed its ______.'},
+    {t:'text',a:'sawdust',q:'Natural ice was packed in ______ to keep it from melting.'},
+    {t:'text',a:'beef|meat',q:'Refrigerated ships let countries like Australia sell their ______.'},
+    {t:'text',a:'environment',q:'Some gases once used in refrigeration harmed the ______.'}
    ]},
-  {title:'The Problem with Plastic',
+  {title:'Is Multitasking a Myth?',
    paras:[
-    "Plastic is one of the most useful materials ever invented. Cheap, lightweight, strong, and waterproof, it is found in almost every part of modern life, from packaging and clothing to medical equipment. Yet the very qualities that make plastic so useful have also created one of the greatest environmental problems of our age.",
-    "The core of the problem is that most plastic does not break down naturally. A plastic bottle discarded today may still exist in hundreds of years. Because so much plastic is used only once and then thrown away, enormous quantities accumulate in the environment. Much of it ends up in the oceans, where it harms marine life; animals may become entangled in it or mistake it for food.",
-    "Even more worrying is the discovery of 'microplastics', tiny fragments formed as larger pieces break apart. These have now been found almost everywhere, from the deepest oceans to the food we eat and the water we drink, though the long-term effects on human health are still not fully understood.",
-    "Solving the problem will require action on many fronts. Individuals can reduce their use of single-use plastics, while governments can ban unnecessary items and improve recycling. Scientists, meanwhile, are developing new materials that break down harmlessly."
+    "A   In our busy world, the ability to multitask — to do several things at once — is often prized as a valuable skill. People boast of answering emails during meetings or checking their phones while studying. Yet a growing body of research suggests that, for demanding mental tasks at least, multitasking may be largely an illusion.",
+    "B   The problem, scientists say, is that the human brain cannot truly focus on two demanding tasks at the same time. What actually happens when we 'multitask' is that the brain switches rapidly back and forth between them. Each switch takes a small amount of time and effort, and these costs add up, so that doing two things at once usually takes longer, and produces more errors, than doing them one after another.",
+    "C   Studies have measured this cost repeatedly. In experiments, people asked to switch between tasks perform noticeably worse than those allowed to concentrate on one at a time. Perhaps more surprising, people who consider themselves excellent multitaskers often turn out, when tested, to be worse at it than everyone else, not better.",
+    "D   There is a deeper cost too. Constantly switching attention appears to make it harder to think deeply or creatively, since good ideas often require a sustained, undistracted focus. Some researchers worry that a culture of constant interruption, in which we are always half-attending to several things, may be quietly eroding our capacity for concentration.",
+    "E   Not all multitasking is harmful, however. We can easily do a simple, automatic task, such as walking or folding laundry, while doing something else that demands our attention, because the automatic task requires little conscious thought. The trouble comes only when two tasks both compete for the same limited pool of attention.",
+    "F   The practical lesson is clear. For anything that truly matters, the research suggests, we are better off doing one thing at a time, giving it our full attention, and then moving on to the next. Far from being old-fashioned, single-tasking may be the more efficient, and more productive, way to work."
    ],
    Q:[
-    {t:'text',a:'waterproof',q:'Plastic is cheap, lightweight, strong and ______.'},
-    {t:'text',a:'break down|breakdown|decompose|degrade',q:'Most plastic does not ______ naturally.'},
-    {t:'text',a:'years|year',q:'A plastic bottle may still exist in hundreds of ______.'},
-    {t:'text',a:'once',q:'Much plastic is used only ______ and thrown away.'},
-    {t:'text',a:'oceans|ocean',q:'Much plastic ends up in the ______.'},
-    {t:'text',a:'food',q:'Animals may mistake plastic for ______.'},
-    {t:'text',a:'microplastics|microplastic',q:'Tiny fragments of plastic are called ______.'},
-    {t:'text',a:'water',q:'Microplastics have been found in the food we eat and the ______ we drink.'},
-    {t:'choice',a:'B',q:'The long-term effects of microplastics on human health are:',opts:['A) fully understood','B) not fully understood','C) harmless','D) beneficial']},
-    {t:'text',a:'single-use|single use',q:'Individuals can reduce their use of ______ plastics.'},
-    {t:'text',a:'recycling|recycle',q:'Governments can ban unnecessary items and improve ______.'},
-    {t:'text',a:'materials|material',q:'Scientists are developing new ______ that break down harmlessly.'},
-    {t:'text',a:'medical',q:'Plastic is found in packaging, clothing and ______ equipment.'},
-    {t:'choice',a:'B',q:"The writer's overall tone about solving the problem is:",opts:['A) hopeless','B) hopeful','C) uninterested','D) angry']}
+    {t:'choice',a:'YES',q:'Multitasking is widely regarded as a valuable skill.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'The brain can fully focus on two demanding tasks at the same time.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'People who think they are good multitaskers are usually better than others at it.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Constant task-switching may harm deep and creative thinking.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Doing an automatic task while doing something demanding is always harmful.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'The research suggests we should do one important thing at a time.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'E',q:'Which paragraph (A–F) gives an example of harmless multitasking?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) reports that self-declared multitaskers perform worse?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains that the brain switches back and forth?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) gives the practical advice to single-task?'},
+    {t:'text',a:'switches|switch|switching',q:"What does the brain actually do when we 'multitask'?"},
+    {t:'text',a:'errors|error|mistakes',q:'Multitasking on demanding tasks usually produces more ______.'},
+    {t:'text',a:'focus',q:'Deep thinking often requires a sustained, undistracted ______.'},
+    {t:'text',a:'attention',q:'The passage recommends giving an important task our full ______.'}
    ]}
  ],
  writing:{
