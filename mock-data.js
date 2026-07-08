@@ -445,7 +445,7 @@ const MOCKS=[
  blurb:'Flat rental · Farmers market · Memory + Chocolate · Deserts · Personality',
  listen:[
   {title:'Flat rental enquiry',
-   transcript:"Hello, I'm calling about the two-bedroom flat you advertised. Certainly. The flat is on Maple Street, number forty-two. The monthly rent is seven hundred and fifty pounds, and that includes water but not electricity. There is a deposit of one month's rent required before moving in. The flat is available from the first of October. It comes furnished, with a washing machine and a fridge, though you would need to provide your own microwave. The nearest bus stop is just a two-minute walk away. If you would like to view it, we hold viewings on Saturday mornings. Please bring some form of identification, such as a passport.",
+   transcript:"Hello, I'm calling about the two-bedroom flat you advertised. Certainly. The flat is on Maple Street, number twenty-four... sorry, forty-two. The monthly rent is seven hundred and fifteen pounds — no, seven hundred and fifty — and that includes water but not electricity. There is a deposit of one month's rent required before moving in. The flat is available from the first of November... sorry, the first of October. It comes furnished, with a washing machine and a fridge, though you would need to provide your own microwave. The nearest bus stop is just a two-minute walk away. If you would like to view it, we hold viewings on Saturday mornings, not Sundays. Please bring some form of identification, such as a passport.",
    Q:[
     {t:'text',a:'forty-two|42|forty two',q:'Flat address: ______ Maple Street.'},
     {t:'text',a:'750|seven hundred and fifty',q:'Monthly rent: £______'},
@@ -459,7 +459,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Visitors to the viewing must bring:',opts:['A) a deposit','B) some identification','C) a reference','D) a bank card']}
    ]},
   {title:'Saturday farmers market',
-   transcript:"Welcome to the Saturday farmers market. The market runs every Saturday from eight in the morning until one in the afternoon. You'll find more than forty stalls here, selling everything from fresh vegetables to homemade bread. Our most popular stall is the cheese stall, located near the main entrance. If you're looking for something to eat, the hot food area is at the back, next to the car park. Please note that most stalls only accept cash, so there is a cash machine by the information desk. We also run free cookery demonstrations every hour in the marquee. Finally, we encourage visitors to bring their own bags, as we are trying to reduce plastic waste.",
+   transcript:"Welcome to the Saturday farmers market. The market runs every Saturday from eight in the morning until noon — sorry, until one in the afternoon. You'll find more than fourteen stalls here... more than forty, in fact, selling everything from fresh vegetables to homemade bread. Our most popular stall is the cheese stall, located near the main entrance, not the exit. If you're looking for something to eat, the hot food area is at the back, next to the car park. Please note that most stalls only accept cash, so there is a cash machine by the information desk. We also run free cookery demonstrations every hour in the marquee. Finally, we encourage visitors to bring their own bags, as we are trying to reduce plastic waste.",
    Q:[
     {t:'text',a:'one|1pm|1',q:'The market runs until ______.'},
     {t:'text',a:'forty|40',q:'Number of stalls: more than ______.'},
@@ -473,7 +473,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The market is trying to reduce:',opts:['A) noise','B) plastic waste','C) prices','D) crowds']}
    ]},
   {title:'Students planning a psychology experiment',
-   transcript:"Have you started the psychology assignment on memory, Priya? A little. We have to design a simple experiment, testing how well people remember a list of words. I was thinking we could compare young and older participants. Good idea. How many words should we use? Let's use twenty words; that should be enough. And how many participants? I think thirty would give us reliable results. Okay. Where will we run it? The library study rooms should be quiet enough. When is it due? We have to submit the report by the thirtieth of November. Let's meet on Thursday to start writing.",
+   transcript:"Have you started the psychology assignment on memory, Priya? A little. We have to design a simple experiment, testing how well people remember a list of words. I was thinking we could compare young and older participants. Good idea. How many words should we use? Let's use ten... no, twenty words; that should be enough. And how many participants? I think twenty would do — actually, let's say thirty for reliable results. Okay. Where will we run it? The library study rooms should be quiet enough. When is it due? We have to submit the report by the thirteenth of November... sorry, the thirtieth. Let's meet on Wednesday — no, Thursday — to start writing.",
    Q:[
     {t:'text',a:'memory',q:'The assignment is about ______.'},
     {t:'text',a:'words|word',q:'They test how well people remember a list of ______.'},
@@ -487,7 +487,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The study rooms are chosen because they are:',opts:['A) large','B) quiet','C) free','D) new']}
    ]},
   {title:'Lecture: how memory works',
-   transcript:"Today we will explore how human memory works. Memory is often divided into three stages: encoding, storage, and retrieval. Encoding is the process of taking in information; storage is keeping it over time; and retrieval is bringing it back when needed. Psychologists also distinguish between short-term memory, which holds a small amount of information for a few seconds, and long-term memory, which can store vast amounts for years. One famous finding is that short-term memory can hold only about seven items at once. To move information into long-term memory, repetition and meaning are key; we remember things better when we connect them to what we already know. Interestingly, sleep also plays an important role, as the brain consolidates memories while we rest. Stress, on the other hand, can seriously impair our ability to recall information.",
+   transcript:"Today we will explore how human memory works. Memory is often divided into three stages: encoding, storage, and retrieval. Encoding is the process of taking in information; storage is keeping it over time; and retrieval is bringing it back when needed. Psychologists also distinguish between short-term memory, which holds a small amount of information for a few seconds, and long-term memory, which can store vast amounts for years. One famous finding is that short-term memory can hold only about five items... actually about seven, at once. To move information into long-term memory, repetition and meaning are key; we remember things better when we connect them to what we already know. Interestingly, sleep also plays an important role, as the brain consolidates memories while we rest. Stress, on the other hand, can seriously impair our ability to recall information.",
    Q:[
     {t:'text',a:'retrieval',q:'Memory has three stages: encoding, storage and ______.'},
     {t:'text',a:'information',q:'Encoding is the process of taking in ______.'},
@@ -502,72 +502,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The History of Chocolate',
+  {title:'Ocean Currents and the Global Climate',
    paras:[
-    "Chocolate, one of the world's most beloved treats, has a history stretching back thousands of years. It originates from the cacao tree, native to the tropical regions of Central and South America. The ancient Maya and later the Aztecs prized cacao so highly that they used the beans as a form of currency. Rather than the sweet bars we know today, they consumed chocolate as a bitter, frothy drink, often flavoured with spices such as chilli.",
-    "When Spanish explorers brought cacao back to Europe in the sixteenth century, it was initially reserved for the wealthy. Europeans began adding sugar and honey to counter its bitterness, transforming it into a fashionable luxury drink enjoyed at royal courts. For a long time, chocolate remained expensive and difficult to produce.",
-    "This changed during the Industrial Revolution. New machinery made it possible to process cacao on a large scale, dramatically lowering prices. In 1847, a British company produced the first solid chocolate bar, and soon afterwards, Swiss inventors developed a method for making smooth milk chocolate.",
-    "Today, chocolate is a global industry worth billions. However, it faces challenges, including concerns about the working conditions of cacao farmers, many of whom earn very little. As a result, movements promoting fair trade have grown, encouraging consumers to buy chocolate that supports farmers more fairly."
+    "List of Headings —  i) A global conveyor belt   ii) Warming distant shores   iii) Winds that drive the surface   iv) The deep, salty engine   v) A threat from melting ice   vi) Currents and marine life   vii) Mapping the ocean floor   viii) How the tides are formed",
+    "A   The ocean is far from still. Through it flow vast currents, like rivers within the sea, carrying enormous quantities of water and heat around the planet. The currents at the surface are driven mainly by the wind. As steady winds blow across the water, they drag the surface along with them, creating great circular flows that sweep warm water away from the equator and cooler water back towards it.",
+    "B   These surface currents have a profound effect on climate. The best-known example is the Gulf Stream, which carries warm water from the Gulf of Mexico across the Atlantic towards Europe. Without it, countries such as Britain and Norway would be far colder, more like regions at the same latitude in Canada. In this way, a current thousands of kilometres away keeps distant shores mild.",
+    "C   Beneath the surface, a second, slower system is at work, driven not by wind but by density. Water that is colder and saltier is heavier, and sinks; warmer, fresher water rises. In the far North Atlantic, cold, salty water sinks to the ocean floor and begins a long journey through the deep sea.",
+    "D   These deep and surface currents are linked into a single, planet-wide loop, often called the global conveyor belt. Water sinking in the North Atlantic travels along the sea floor to the Pacific and Indian Oceans, rises, and eventually returns to the Atlantic at the surface. A single circuit of this belt may take around a thousand years to complete.",
+    "E   Scientists warn that this vast engine is vulnerable. As the climate warms, melting ice adds fresh water to the North Atlantic, making the surface water less salty and less dense, so that it sinks less readily. If the conveyor belt were to slow significantly, the effects on global climate could be severe and unpredictable.",
+    "F   Currents matter for life as well as climate. In certain regions, currents draw cold, nutrient-rich water up from the deep to the sunlit surface, a process called upwelling. These upwelling zones are among the most productive in the ocean, teeming with fish and supporting some of the world's most important fisheries."
    ],
    Q:[
-    {t:'choice',a:'TRUE',q:'Chocolate comes from the cacao tree, native to Central and South America.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'The Aztecs used cacao beans as money.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Ancient peoples ate chocolate mainly as sweet bars.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Chocolate was cheap when it first arrived in Europe.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'sugar',q:'Europeans added ______ and honey to chocolate.'},
-    {t:'text',a:'chilli|chili',q:'The ancient drink was often flavoured with ______.'},
-    {t:'text',a:'1847',q:'The first solid chocolate bar was made in ______.'},
-    {t:'text',a:'milk',q:'Swiss inventors developed smooth ______ chocolate.'},
-    {t:'choice',a:'B',q:'Chocolate prices fell because of:',opts:['A) royal courts','B) new machinery','C) fair trade','D) spices']},
-    {t:'choice',a:'B',q:'The Aztecs used cacao beans as:',opts:['A) medicine','B) currency','C) decoration','D) fuel']},
-    {t:'choice',a:'TRUE',q:'Chocolate is now a global industry worth billions.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'All cacao farmers earn high wages.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Fair trade encourages support for farmers.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Surface ocean currents are driven mainly by the wind.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Without the Gulf Stream, Britain would be warmer.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Cold, salty water rises to the surface.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'A full circuit of the global conveyor belt takes about a thousand years.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'Europe',q:'The Gulf Stream carries warm water towards ______.'},
+    {t:'text',a:'density',q:'Deep currents are driven by differences in ______.'},
+    {t:'text',a:'nutrient',q:'Upwelling brings ______-rich water to the surface.'}
    ]},
-  {title:'Life in the Desert',
+  {title:'The Discovery of Anaesthesia',
    paras:[
-    "Deserts, defined as regions receiving less than 250 millimetres of rain per year, cover about one-fifth of the Earth's land surface. Although often imagined as lifeless seas of sand, deserts are in fact home to a surprising variety of plants and animals, each remarkably adapted to survive in one of the planet's harshest environments.",
-    "The greatest challenge in the desert is the lack of water. Many desert plants, such as the cactus, have developed thick, fleshy stems that store water for long periods, along with spines instead of leaves to reduce water loss. Animals, too, have evolved clever strategies. The camel can survive for days without drinking, storing fat in its hump which it converts to energy. Smaller creatures often avoid the fierce daytime heat by burrowing underground and emerging only at night.",
-    "Temperature is another extreme feature of desert life. While days can be scorching, nights are often surprisingly cold, because the dry air and lack of cloud cover allow heat to escape rapidly once the sun sets.",
-    "Despite their harshness, deserts are increasingly under threat. Human activities, including farming, are damaging fragile desert ecosystems. Meanwhile, some regions once fertile are turning into desert, a process known as desertification, driven partly by climate change and poor land management."
+    "A   For most of human history, surgery was a horror. Without any effective means of dulling pain, operations were carried out on fully conscious patients, who had to be held down by force. Speed was the surgeon's only mercy: the best were judged by how quickly they could amputate a limb. Many patients died not of their injuries but of the shock and agony of the operation itself.",
+    "B   Attempts to dull pain were ancient but crude. Alcohol, opium and even strangulation to the point of unconsciousness had all been tried, with limited and dangerous results. What was needed was a substance that could reliably render a patient insensible to pain, and then allow them to wake unharmed.",
+    "C   The breakthrough came in the 1840s in the United States. Several gases and vapours were found to have the necessary effect. In 1846 a dentist named William Morton publicly demonstrated the use of ether, sending a patient to sleep so that a surgeon could remove a tumour painlessly. News of the demonstration spread around the world within months.",
+    "D   Chloroform soon followed and was, for a time, preferred, not least because Queen Victoria accepted it during childbirth, lending the practice respectability. Yet anaesthetics were not without risk: too large a dose could kill, and administering them safely required judgement and skill. The new speciality of the anaesthetist was born of this need.",
+    "E   The impact was revolutionary. Freed from the need for speed, surgeons could now operate slowly and carefully, attempting procedures deep inside the body that would once have been unthinkable. Anaesthesia, together with the later discovery of antiseptics to prevent infection, transformed surgery from a last, desperate resort into a routine and reliable treatment.",
+    "F   Modern anaesthesia is far more sophisticated, using precise combinations of drugs to control consciousness, pain and movement independently. Yet exactly how these agents switch off consciousness remains, remarkably, not fully understood — a reminder that even a routine medical miracle can still hold deep mysteries."
    ],
    Q:[
-    {t:'choice',a:'B',q:'A desert receives less than how much rain per year?',opts:['A) 100mm','B) 250mm','C) 500mm','D) 1000mm']},
-    {t:'choice',a:'TRUE',q:'Deserts cover about one-fifth of the Earth’s land.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Deserts contain no living things.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'stems|stem',q:'Cacti store water in their ______.'},
-    {t:'text',a:'spines|spine',q:'Cacti have ______ instead of leaves.'},
-    {t:'text',a:'fat',q:'Camels store ______ in their hump.'},
-    {t:'text',a:'burrowing|burrow',q:'Small animals often avoid the heat by ______ underground.'},
-    {t:'text',a:'cold',q:'Desert nights are often ______.'},
-    {t:'choice',a:'B',q:'Desert nights are cold because:',opts:['A) it rains','B) heat escapes rapidly','C) animals hide','D) winds blow']},
-    {t:'choice',a:'TRUE',q:'The camel can survive days without drinking.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Human farming can damage desert ecosystems.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'desertification',q:'The spread of desert is called ______.'},
-    {t:'text',a:'climate',q:'Desertification is partly driven by ______ change.'}
+    {t:'choice',a:'B',q:'Before anaesthetics, the best surgeons were judged by their:',opts:['A) cleanliness','B) speed','C) kindness','D) training']},
+    {t:'choice',a:'C',q:'Ether was publicly demonstrated in 1846 by:',opts:['A) Queen Victoria','B) a surgeon','C) William Morton, a dentist','D) a chemist']},
+    {t:'choice',a:'B',q:'Chloroform gained respectability partly because it was used by:',opts:['A) soldiers','B) Queen Victoria','C) dentists','D) explorers']},
+    {t:'choice',a:'B',q:'How anaesthetics switch off consciousness is, according to the passage:',opts:['A) fully understood','B) not fully understood','C) a simple chemical reaction','D) caused by alcohol']},
+    {t:'text',a:'A',q:'Which paragraph (A–F) describes what surgery was like before anaesthesia?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the first public demonstration of ether?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) mentions the birth of a new medical speciality?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains how anaesthesia changed what surgeons could attempt?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes early, crude attempts to dull pain?'},
+    {t:'text',a:'conscious',q:'Before anaesthesia, patients were operated on while fully ______.'},
+    {t:'text',a:'tumour|tumor',q:'In 1846, ether was used to remove a ______ painlessly.'},
+    {t:'text',a:'antiseptics|antiseptic',q:'Anaesthesia together with ______ transformed surgery.'},
+    {t:'text',a:'movement',q:'Modern anaesthesia controls consciousness, pain and ______.'}
    ]},
-  {title:'Introverts and Extroverts',
+  {title:'The Science of Willpower',
    paras:[
-    "Few ideas in psychology are as widely discussed as the distinction between introverts and extroverts. The terms, first popularised by the psychologist Carl Jung, describe two different ways in which people gain and lose energy. Extroverts tend to feel energised by social interaction, thriving in busy, stimulating environments. Introverts, by contrast, recharge through solitude and can find too much social activity draining.",
-    "It is a common misconception that introverts are simply shy or antisocial. In reality, many introverts enjoy socialising but need time alone afterwards to recover. Similarly, extroverts are not necessarily more confident; they simply seek out stimulation more actively. Most people, in fact, fall somewhere between the two extremes, a position sometimes called 'ambivert'.",
-    "Research suggests these tendencies have a biological basis. Studies indicate that introverts' brains may be more sensitive to stimulation, which is why they can feel overwhelmed in noisy settings. Extroverts, needing more stimulation to feel satisfied, are drawn to excitement and novelty.",
-    "Understanding these differences has practical value, particularly in the workplace. Traditional open-plan offices may actually reduce the productivity of introverted employees, who often work best in quiet spaces. Forward-thinking companies now try to provide a mix of environments, recognising that a diverse team often produces the best results."
+    "A   Why is it so hard to resist a piece of cake, finish a boring task, or stick to a resolution? Psychologists group these struggles under the heading of self-control, or willpower — the capacity to override an immediate impulse in the service of a longer-term goal. For decades, researchers have tried to understand how it works, and why it so often fails.",
+    "B   One famous set of experiments, begun in the 1960s, offered young children a marshmallow, telling them they could eat it at once or wait a few minutes and receive two. The ability to wait, it was later reported, predicted a range of positive outcomes in later life. The 'marshmallow test' became one of the best-known studies in psychology.",
+    "C   An influential theory held that willpower behaves like a muscle. According to this view, self-control draws on a limited store of mental energy that becomes depleted with use, so that resisting one temptation leaves us weaker against the next. This idea, known as 'ego depletion', seemed to explain why we give in to temptation when tired or stressed.",
+    "D   In recent years, however, this theory has come under serious challenge. When researchers attempted to repeat the original experiments on a large scale, many failed to find the effect. Some now argue that willpower feels limited only because we believe it to be; people who think their self-control is unlimited show no signs of depletion at all.",
+    "E   Whatever the underlying mechanism, one finding is robust: the most successful self-controllers rarely rely on willpower at all. Instead, they arrange their lives to avoid temptation in the first place — keeping snacks out of the house, or removing distracting apps from their phones. Good habits and a well-designed environment achieve what raw willpower cannot.",
+    "F   This is a hopeful conclusion. It suggests that self-control is less a fixed trait, possessed by some lucky individuals, than a skill that can be cultivated. By changing our surroundings rather than merely gritting our teeth, almost anyone can improve their ability to pursue their long-term goals."
    ],
    Q:[
-    {t:'text',a:'carl',q:'The terms were popularised by ______ Jung.'},
-    {t:'choice',a:'B',q:'Extroverts gain energy from:',opts:['A) solitude','B) social interaction','C) sleep','D) reading']},
-    {t:'text',a:'solitude',q:'Introverts recharge through ______.'},
-    {t:'choice',a:'FALSE',q:'Introverts are always shy and antisocial.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Extroverts are necessarily more confident.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'ambivert',q:'A person between the two types is called an ______.'},
-    {t:'text',a:'stimulation',q:"Introverts' brains may be more sensitive to ______."},
-    {t:'choice',a:'B',q:'Extroverts are drawn to:',opts:['A) quiet','B) excitement and novelty','C) solitude','D) routine']},
-    {t:'text',a:'productivity',q:'Open-plan offices may reduce introverts’ ______.'},
-    {t:'text',a:'quiet',q:'Introverts often work best in ______ spaces.'},
-    {t:'choice',a:'TRUE',q:'Introverts can feel overwhelmed in noisy settings.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Some introverts enjoy socialising.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Most people are pure introverts or pure extroverts.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'B',q:'The passage suggests companies should provide:',opts:['A) only open offices','B) a mix of environments','C) no offices','D) louder spaces']}
+    {t:'choice',a:'YES',q:'Willpower involves resisting an immediate impulse for a longer-term goal.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'In the marshmallow test, children could get two marshmallows by eating one immediately.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:"The 'ego depletion' theory claims self-control is a limitless resource.",opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Recent attempts to repeat the original experiments always confirmed the effect.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'People who believe their willpower is unlimited show less depletion.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'The best self-controllers depend heavily on raw willpower.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) describes the marshmallow experiment?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) explains the theory that willpower works like a muscle?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the challenge to the ego-depletion theory?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains how successful people avoid temptation?'},
+    {t:'text',a:'willpower',q:'What is another word for self-control used in the passage?'},
+    {t:'text',a:'marshmallow',q:'What food was used in the famous 1960s experiment?'},
+    {t:'text',a:'depletion',q:'The theory that self-control uses a limited store of energy is called ego ______.'},
+    {t:'text',a:'environment|surroundings',q:'Successful self-controllers change their ______ rather than relying on willpower.'}
    ]}
  ],
  writing:{
