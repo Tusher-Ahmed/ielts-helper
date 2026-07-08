@@ -10,7 +10,7 @@ const MOCKS=[
  blurb:'Sports · Museum · Sleep + Farming · Coffee · Printing',
  listen:[
   {title:'Community Sports Centre (enquiry)',
-   transcript:"Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah. The centre is open from six in the morning until ten at night on weekdays, and from eight until eight at weekends. Our most popular facility is the swimming pool, which has eight lanes and is heated all year round. Membership costs forty pounds per month for adults, but students pay only twenty-five pounds. The gym is located on the first floor, next to the cafe. Please bring a towel and a padlock for the lockers. For group classes such as yoga, you need to book at least two days in advance. Computers for members are available in the lounge, and parking is free for members, but visitors must pay three pounds per hour.",
+   transcript:"Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah. The centre is open from six in the morning until nine at night on weekdays — sorry, until ten — and from eight until eight at weekends. Our most popular facility is the swimming pool, which has six lanes... actually eight, and it is heated all year round. Membership costs fifty pounds a month for adults — no, forty; fifty is the family rate — while students pay only twenty-five. The gym is on the first floor, next to the cafe, not the reception. Please bring a towel and a padlock for the lockers. For group classes such as yoga, you need to book at least two days in advance, not one. Computers for members are in the lounge, and parking is free for members, but visitors must pay three pounds per hour.",
    Q:[
     {t:'text',a:'10pm|10 pm|ten|10',q:'Weekday closing time: ______'},
     {t:'text',a:'eight|8',q:'Swimming pool lanes: ______'},
@@ -24,7 +24,7 @@ const MOCKS=[
     {t:'choice',a:'A',q:'The swimming pool is:',opts:['A) heated all year','B) closed in winter','C) outdoors','D) staff only']}
    ]},
   {title:'City Science Museum (tour information)',
-   transcript:"Welcome to the City Science Museum. Let me give you a quick overview. The museum has three floors. On the ground floor, you will find the interactive exhibits, which are especially popular with children. The first floor is dedicated to space, including a model of the International Space Station. The top floor houses our newest gallery on climate change, which opened last month. Guided tours leave from the main desk every hour and last about forty minutes. If you would like an audio guide, they are available in six languages for a small fee of two pounds. The cafe is located next to the gift shop, and it closes at half past four. Finally, please remember that photography is allowed, but flash must be turned off.",
+   transcript:"Welcome to the City Science Museum. The museum has two floors — sorry, three. On the ground floor you will find the interactive exhibits, which are especially popular with children. The first floor is dedicated to space, including a model of the International Space Station. The top floor houses our newest gallery, on climate change, which opened last month, not last year. Guided tours leave from the main desk every hour and last about thirty minutes... actually forty. If you would like an audio guide, they are available in five languages — let me correct that, six — for a small fee of two pounds. The cafe is next to the gift shop, and it closes at four o'clock; sorry, half past four. Finally, please remember that photography is allowed, but the flash must be turned off.",
    Q:[
     {t:'text',a:'three|3',q:'Number of floors: ______'},
     {t:'text',a:'exhibits|exhibit',q:'The ground floor has interactive ______.'},
@@ -38,7 +38,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Photography is:',opts:['A) not allowed','B) allowed without flash','C) allowed with flash','D) only on the top floor']}
    ]},
   {title:'Two students planning a presentation',
-   transcript:"So, Maya, have you decided what our geography presentation will focus on? Yes, I think we should look at renewable energy, particularly wind power. Good idea, but shouldn't we include solar as well? We could, but I think wind is more relevant to our region, so let's keep the focus narrow. Fair enough. How long does it need to be? The tutor said fifteen minutes, plus five minutes for questions. Okay, and who is making the slides? I'll do the slides if you handle the research. Deal. When is the deadline? We present on the twelfth of March, so we should meet next week to practise. Perfect, let's aim for Tuesday afternoon in the library.",
+   transcript:"So, Maya, have you decided what our geography presentation will focus on? Yes, I think we should look at renewable energy — solar power, maybe... no, wind power in particular. Good idea, but shouldn't we include solar as well? We could, but I think wind is more relevant to our region, so let's keep the focus narrow. Fair enough. How long does it need to be? The tutor said ten minutes — sorry, fifteen — plus five minutes for questions. Okay, and who is making the slides? I'll do the slides if you handle the research. Deal. When is the deadline? We present on the second of March... let me check, the twelfth. So we should meet next week to practise — Monday? No, Tuesday afternoon, in the library.",
    Q:[
     {t:'text',a:'wind',q:'The presentation will focus on ______ power.'},
     {t:'text',a:'solar',q:'They decide not to cover ______ in detail.'},
@@ -52,7 +52,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Maya wants to keep the focus:',opts:['A) broad','B) narrow','C) on solar','D) on costs']}
    ]},
   {title:'Lecture: The science of sleep',
-   transcript:"Today's lecture is about the science of sleep. For years, sleep was seen as a passive state, but we now know it is highly active. During deep sleep, the body repairs tissues and strengthens the immune system. Later in the night, we enter what is called REM sleep, when most dreaming occurs and memories are consolidated. Research shows that adults need between seven and nine hours per night for optimal function. A lack of sleep has been linked to weight gain, poor concentration, and a higher risk of heart disease. Interestingly, staying awake for twenty-four hours can impair performance as much as alcohol. To improve sleep, experts recommend avoiding screens before bed and keeping the bedroom cool and dark.",
+   transcript:"Today's lecture is about the science of sleep. For years, sleep was seen as a passive state, but we now know it is highly active. During deep sleep, the body repairs tissues and strengthens the immune system. Later in the night we enter what is called REM sleep, when most dreaming occurs and memories are consolidated — not forgotten, consolidated. Research shows that adults need between six and nine hours a night — sorry, seven to nine — for optimal function. A lack of sleep has been linked to weight gain, poor concentration, and a higher risk of heart disease. Interestingly, staying awake for twenty-four hours can impair performance as much as alcohol. To improve sleep, experts recommend avoiding screens before bed and keeping the bedroom cool and dark.",
    Q:[
     {t:'text',a:'passive',q:'Sleep was once seen as a ______ state.'},
     {t:'text',a:'tissues|tissue',q:'During deep sleep the body repairs ______.'},
@@ -300,7 +300,7 @@ const MOCKS=[
  blurb:'Cookery · Reserve · Cities + Octopus · Tea · Energy',
  listen:[
   {title:'Evening Cookery Course (enrolment)',
-   transcript:"Thanks for calling Riverside Community College. Let me tell you about our evening cookery course. The course runs for eight weeks, every Tuesday, starting on the third of September. Classes begin at half past six and finish at nine. The full course costs ninety pounds, though members of the college pay a reduced rate of seventy pounds. You will need to bring an apron and a set of containers to take your food home; all other ingredients are provided. The classes are held in the kitchen on the second floor of the main building. Please note that places are limited to twelve students, so early booking is advised. To reserve a place, you can pay online or by phone, but not by cheque.",
+   transcript:"Thanks for calling Riverside Community College. Let me tell you about our evening cookery course. The course runs for six weeks — sorry, eight — every Tuesday, starting on the thirteenth of September... no, the third. Classes begin at half past six and finish at half past eight; sorry, at nine. The full course costs ninety pounds, though members of the college pay a reduced rate of seventy. You will need to bring an apron and a set of containers to take your food home; all other ingredients are provided. The classes are held in the kitchen on the first floor — correction, the second floor — of the main building. Please note that places are limited to twelve students, so early booking is advised. To reserve a place, you can pay online or by phone, but not by cheque.",
    Q:[
     {t:'text',a:'eight|8',q:'Course length: ______ weeks.'},
     {t:'text',a:'tuesday',q:'Classes are held every ______.'},
@@ -314,7 +314,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'You can pay:',opts:['A) by cheque','B) online or by phone','C) only online','D) cash only']}
    ]},
   {title:'Blackwood Nature Reserve (visitor tour)',
-   transcript:"Welcome to Blackwood Nature Reserve. Before we begin, a few points. The reserve is home to more than two hundred species of birds, as well as deer and foxes. Please keep to the marked paths, as wandering off can damage the fragile habitat. The main trail is about five kilometres long and takes roughly two hours to complete. Halfway along, you will find a wooden hide where you can watch birds without disturbing them. Remember to bring binoculars if you have them. Dogs are welcome but must be kept on a lead at all times. There are no bins in the reserve, so please take all your litter home. Finally, the visitor centre, where you can buy hot drinks and maps, closes at five o'clock.",
+   transcript:"Welcome to Blackwood Nature Reserve. Before we begin, a few points. The reserve is home to more than a hundred species of birds — actually more than two hundred — as well as deer and foxes. Please keep to the marked paths, as wandering off can damage the fragile habitat. The main trail is about three kilometres long... sorry, five, and takes roughly two hours to complete. Halfway along, you will find a wooden hide where you can watch birds without disturbing them. Remember to bring binoculars if you have them. Dogs are welcome but must be kept on a lead at all times. There are no bins in the reserve, so please take all your litter home. Finally, the visitor centre, where you can buy hot drinks and maps, closes at four... no, five o'clock.",
    Q:[
     {t:'text',a:'two hundred|200',q:'The reserve has more than ______ species of birds.'},
     {t:'text',a:'paths|path',q:'Visitors must keep to the marked ______.'},
@@ -328,7 +328,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The visitor centre closes at:',opts:['A) 2 pm','B) 5 pm','C) 7 pm','D) noon']}
    ]},
   {title:'Students planning a biology field trip',
-   transcript:"Have you finished planning the biology field trip, Tom? Almost. We are going to the coast to study rock pools. Sounds great. When are we leaving? The coach departs at eight sharp, so don't be late. How long is the journey? About two hours each way, so we will arrive around ten. What should we bring? Waterproof boots are essential, and a packed lunch, since there is no cafe nearby. Do we need to collect any samples? No, we are not allowed to remove anything; just take photographs and notes. And the weather? It might rain, so bring a waterproof jacket too. We will be back by five.",
+   transcript:"Have you finished planning the biology field trip, Tom? Almost. We are going to the coast to study rock pools. Sounds great. When are we leaving? The coach departs at seven sharp — sorry, eight — so don't be late. How long is the journey? About two hours each way, so we will arrive around ten. What should we bring? Waterproof boots are essential, and a packed lunch, since there is no cafe nearby. Do we need to collect any samples? No, we are not allowed to remove anything; just take photographs and notes. And the weather? It might rain, so bring a waterproof jacket too. We will be back by four... actually five.",
    Q:[
     {t:'text',a:'pools|pool',q:'The trip is to study rock ______.'},
     {t:'text',a:'eight|8|8am',q:'The coach departs at ______.'},
@@ -342,7 +342,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'They will return by:',opts:['A) 3 pm','B) 5 pm','C) 7 pm','D) 8 pm']}
    ]},
   {title:'Lecture: urbanisation',
-   transcript:"Today's topic is urbanisation, the process by which more and more people move from the countryside to cities. For the first time in history, over half the world's population now lives in urban areas, and this figure is expected to rise further. Cities offer clear advantages, including better job opportunities, education, and healthcare. However, rapid urbanisation also creates serious problems. As populations swell, cities struggle to provide enough housing, leading to overcrowding and informal settlements. Traffic congestion and air pollution worsen, while pressure on water and electricity increases. Planners argue that the solution lies in designing sustainable cities with efficient public transport, green spaces, and energy-efficient buildings.",
+   transcript:"Today's topic is urbanisation, the process by which more and more people move from the countryside to cities. For the first time in history, over half the world's population now lives in urban areas — only a third did a century ago, but over half do today — and this figure is expected to rise further. Cities offer clear advantages, including better job opportunities, education, and healthcare. However, rapid urbanisation also creates serious problems. As populations swell, cities struggle to provide enough housing, leading to overcrowding and informal settlements. Traffic congestion and air pollution worsen, while pressure on water and electricity increases. Planners argue that the solution lies in designing sustainable cities with efficient public transport, green spaces, and energy-efficient buildings.",
    Q:[
     {t:'text',a:'cities|city',q:'Urbanisation is people moving from the countryside to ______.'},
     {t:'text',a:'half',q:"Over ______ the world's population now lives in cities."},
@@ -357,75 +357,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The Extraordinary Octopus',
+  {title:'The Theory of Plate Tectonics',
    paras:[
-    "The octopus is among the most extraordinary creatures in the ocean. Belonging to a group of animals known as cephalopods, which also includes squid and cuttlefish, the octopus has fascinated scientists for centuries with its intelligence and remarkable abilities.",
-    "Perhaps the most striking feature of the octopus is its capacity for camouflage. Using special cells in its skin, an octopus can change colour and even texture within seconds, blending seamlessly into its surroundings. This ability serves both to hide from predators and to ambush prey. Some species can also mimic other animals, such as venomous fish, to deter attackers.",
-    "The octopus is also surprisingly intelligent. In laboratory experiments, octopuses have learned to open jars, navigate mazes, and even recognise individual human faces. Unusually, much of their nervous system is located not in the brain but in their arms, each of which can act with a degree of independence.",
-    "Reproduction, however, marks the end of an octopus's life. After laying eggs, the female guards them without eating, and dies soon after they hatch. Males, too, live only a short time after mating. As a result, most octopuses survive for just one or two years.",
-    "Despite their short lives, octopuses continue to intrigue researchers, who believe that studying them may reveal new insights into intelligence itself."
+    "List of Headings —  i) A theory once ridiculed   ii) The engine beneath the plates   iii) Evidence from the sea floor   iv) Where the plates meet   v) Living with the hazards   vi) A single unifying idea   vii) The structure of the Earth   viii) Continents that seem to fit",
+    "A   For most of history, the continents were thought to be fixed in place. In 1912 a German scientist, Alfred Wegener, proposed a startling idea: that the continents had once been joined and had since drifted apart. He pointed to the way the coastlines of Africa and South America seem to fit together like the pieces of a jigsaw, and to matching fossils on either side of the ocean. Because he could suggest no mechanism to move whole continents, his theory was widely ridiculed.",
+    "B   The explanation, when it came, lay in the structure of the Earth itself. Beneath the thin, rigid outer layer, or crust, lies the mantle, a vast region of hot, slowly flowing rock. The crust is not a single shell but is broken into about a dozen huge slabs, called tectonic plates, which effectively float on the mantle beneath.",
+    "C   What moves them is heat. Deep within the Earth, heat rising from the core sets up slow circulating currents in the mantle, known as convection. Like a conveyor belt, these currents drag the plates above them, so that the continents ride slowly across the globe at roughly the speed our fingernails grow.",
+    "D   Decisive proof arrived only in the 1960s, from the bottom of the sea. Surveys revealed long undersea mountain ranges where molten rock rises and pushes the sea floor apart on either side. As this new rock cools, it records the direction of the Earth's magnetic field, leaving a striped pattern that confirmed the sea floor was indeed spreading.",
+    "E   Most of the Earth's drama occurs where plates meet. Where two plates pull apart, new crust forms; where they collide, one may plunge beneath the other or crumple upward into mountains; where they grind past one another, they lock and then slip. The Himalayas, the Andes and the deep ocean trenches all mark such boundaries.",
+    "F   These boundaries are also where the greatest hazards lie. The world's earthquakes and most of its volcanoes are concentrated along plate edges, above all around the rim of the Pacific. Although scientists cannot yet predict exactly when an earthquake will strike, understanding plate tectonics allows them to identify the regions most at risk and to prepare."
    ],
    Q:[
-    {t:'choice',a:'B',q:'The octopus belongs to a group called:',opts:['A) fish','B) cephalopods','C) mammals','D) reptiles']},
-    {t:'choice',a:'TRUE',q:'An octopus can change colour within seconds.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Camouflage is used only to hide from predators.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Some octopuses can mimic other animals.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Octopuses have failed to recognise human faces.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'cuttlefish',q:'The group also includes squid and ______.'},
-    {t:'text',a:'arms|arm',q:"Much of the octopus's nervous system is in its ______."},
-    {t:'text',a:'eating|eat',q:'After laying eggs, the female guards them without ______.'},
-    {t:'choice',a:'A',q:'Most octopuses live for:',opts:['A) 1–2 years','B) 5 years','C) 10 years','D) 20 years']},
-    {t:'choice',a:'B',q:'In labs, octopuses have learned to:',opts:['A) sing','B) open jars','C) fly','D) swim faster']},
-    {t:'choice',a:'FALSE',q:'Males live a long time after mating.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Each octopus arm can act with some independence.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Scientists think octopuses may reveal insights into intelligence.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'vii|7',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:"Wegener's theory was accepted immediately.",opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'The tectonic plates float on the mantle.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Plates move at roughly the speed fingernails grow.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Scientists can now predict exactly when earthquakes will occur.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'jigsaw|puzzle',q:'Wegener noted that Africa and South America fit together like a ______.'},
+    {t:'text',a:'convection',q:'Heat from the core sets up ______ currents in the mantle.'},
+    {t:'text',a:'Pacific',q:'Most of the world\'s volcanoes lie around the rim of the ______.'}
    ]},
-  {title:'The History of Tea',
+  {title:'The Science of Fermentation',
    paras:[
-    "Tea is the most widely consumed drink in the world after water, enjoyed by billions of people every day. Its origins lie in ancient China, where, according to legend, it was discovered by the emperor Shen Nong around 2737 BC when leaves from a wild tree drifted into his boiling water.",
-    "For centuries, tea remained largely a Chinese product, valued both as a medicine and as a refreshing drink. It gradually spread to neighbouring countries such as Japan, where elaborate tea ceremonies developed, reflecting values of harmony and respect.",
-    "Tea reached Europe in the seventeenth century through trade, and quickly became fashionable, particularly in Britain. There, it was initially an expensive luxury enjoyed only by the wealthy. Over time, however, prices fell and tea became a national drink. The British custom of afternoon tea remains popular to this day.",
-    "The global demand for tea had significant historical consequences. To satisfy this demand, Britain established vast tea plantations in its colonies, particularly in India and Sri Lanka, transforming the economies of those regions. Today, these countries remain among the world's largest tea producers.",
-    "Modern research suggests that tea may offer genuine health benefits, as it contains antioxidants believed to support the body. Whether consumed for its taste or as part of a daily ritual, tea continues to bring people together across cultures."
+    "A   Long before anyone understood why it worked, people were fermenting food. Fermentation is the process by which microbes — chiefly bacteria and yeasts — break down sugars in food, producing acids, gases or alcohol. It is one of the oldest of all food technologies, used for thousands of years to make bread, cheese, wine and countless other staples.",
+    "B   Its first purpose was preservation. In the age before refrigeration, fermentation was a way of keeping food edible for months. The acids and alcohol that microbes produce create conditions in which harmful, spoilage-causing organisms cannot survive, so that milk becomes long-lasting cheese and cabbage becomes sauerkraut.",
+    "C   The chemistry was a mystery until the nineteenth century, when the French scientist Louis Pasteur demonstrated that fermentation was the work of living microorganisms, not a purely chemical reaction as had been believed. His discovery laid the foundations of microbiology and transformed industries from brewing to medicine.",
+    "D   Fermentation shapes flavour as much as it preserves. The tang of yoghurt, the complexity of aged cheese, the sourness of a good loaf of bread — all are the by-products of microbial activity. Different microbes, and different conditions, produce strikingly different results, which is why the fermented foods of each region taste so distinctive.",
+    "E   Recently, fermented foods have attracted fresh attention for their possible health benefits. Foods such as yoghurt and kimchi contain live bacteria that may help to maintain a healthy population of microbes in the gut. Although the evidence is still developing, interest in such 'probiotic' foods has grown rapidly.",
+    "F   Fermentation is also finding new industrial uses. The same basic process is now harnessed to produce fuels, medicines and even materials, as engineers programme microbes to manufacture substances that would otherwise be difficult or costly to make. An ancient craft, it turns out, still has a great deal to offer."
    ],
    Q:[
-    {t:'choice',a:'FALSE',q:'Tea is the most consumed drink in the world.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Tea originated in China.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Tea was valued as a medicine in China.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Tea was cheap when it first reached Britain.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'shen',q:'Tea was discovered by the emperor ______ Nong.'},
-    {t:'text',a:'ceremonies|ceremony',q:'In Japan, elaborate tea ______ developed.'},
-    {t:'text',a:'sri lanka|srilanka',q:'Britain set up tea plantations in India and ______.'},
-    {t:'text',a:'antioxidants|antioxidant',q:'Tea contains ______ believed to support the body.'},
-    {t:'choice',a:'C',q:'Tea reached Europe in the:',opts:['A) 15th century','B) 16th century','C) 17th century','D) 18th century']},
-    {t:'choice',a:'C',q:'Afternoon tea is a custom associated with:',opts:['A) Japan','B) China','C) Britain','D) India']},
-    {t:'choice',a:'TRUE',q:'India and Sri Lanka are among the largest tea producers.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Tea ceremonies reflect harmony and respect.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Tea is only enjoyed for its taste.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'B',q:'Fermentation is carried out mainly by:',opts:['A) enzymes alone','B) bacteria and yeasts','C) heat','D) salt']},
+    {t:'choice',a:'B',q:'Before refrigeration, the main purpose of fermentation was:',opts:['A) flavour','B) preservation','C) colour','D) profit']},
+    {t:'choice',a:'B',q:'Louis Pasteur showed that fermentation was caused by:',opts:['A) a chemical reaction','B) living microorganisms','C) heat','D) acids']},
+    {t:'choice',a:'C',q:'"Probiotic" foods are thought to benefit the:',opts:['A) skin','B) eyes','C) gut','D) teeth']},
+    {t:'text',a:'A',q:'Which paragraph (A–F) gives a definition of fermentation?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the contribution of Louis Pasteur?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) explains how fermentation affects taste?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) mentions modern industrial applications?'},
+    {t:'text',a:'B',q:'Which paragraph (A–F) explains how fermentation keeps food safe?'},
+    {t:'text',a:'sugars|sugar',q:'Microbes break down ______ in food.'},
+    {t:'text',a:'sauerkraut',q:'Fermented cabbage becomes ______.'},
+    {t:'text',a:'microbiology',q:"Pasteur's work founded the science of ______."},
+    {t:'text',a:'bacteria',q:'Yoghurt and kimchi contain live ______.'}
    ]},
-  {title:'The Promise of Renewable Energy',
+  {title:'The Economics of Attention',
    paras:[
-    "As concerns about climate change intensify, the world is increasingly turning to renewable sources of energy. Unlike fossil fuels such as coal and oil, which release harmful gases and will eventually run out, renewable sources are naturally replenished and produce little or no pollution.",
-    "The most established form of renewable energy is hydropower, which generates electricity from flowing water, usually by building dams across rivers. Although efficient, large dams can disrupt ecosystems and displace communities. Wind power, by contrast, has grown rapidly. Turbines placed on land or out at sea convert the wind into electricity, though some people object to their appearance and the noise they produce.",
-    "Solar power is perhaps the most promising source of all. The amount of energy the sun delivers to the earth in a single hour exceeds the entire world's annual consumption. As the cost of solar panels has fallen, solar power has become affordable for households. Its main limitation is that it cannot generate electricity at night, though improvements in battery storage are gradually overcoming this problem.",
-    "Despite rapid progress, renewable energy still faces obstacles. It often requires significant initial investment, and some sources are intermittent, depending on weather conditions. For this reason, many experts argue that a mix of different renewable sources, supported by better storage, offers the best path forward.",
-    "Governments around the world are setting ambitious targets to reduce their reliance on fossil fuels. If these goals are met, renewable energy could not only slow climate change but also create millions of new jobs."
+    "A   We are used to thinking of information as valuable, but the economist Herbert Simon pointed out a paradox: in a world flooded with information, the truly scarce resource is not information but attention. There is simply too much to read, watch and hear, and only so many hours in which to do so. Human attention, therefore, has become one of the most sought-after commodities of the modern age.",
+    "B   Whole industries now compete for it. Much of what we use online appears to be free — search engines, social networks, video sites — but in reality we pay with our attention. These services make their money by capturing our time and selling it, in the form of advertising, to others. As the saying goes, if you are not paying for the product, you are the product.",
+    "C   To win this competition, companies design their products to be as engaging as possible. Endless feeds that never reach a bottom, notifications that interrupt us, and rewards delivered at unpredictable intervals all exploit well-understood features of human psychology, keeping us scrolling long after we meant to stop.",
+    "D   Critics argue that this comes at a cost. When our attention is constantly fragmented, they say, our capacity for deep, sustained thought suffers. Some researchers link heavy use of attention-grabbing technology to shortened concentration spans and greater difficulty in focusing, though such claims remain difficult to prove conclusively.",
+    "E   Defenders respond that the same technologies bring enormous benefits, connecting people and putting the world's knowledge within reach. The problem, they argue, lies not in the tools themselves but in how they are designed and used, and better design could serve users rather than merely capturing them.",
+    "F   Increasingly, people are seeking to reclaim their attention deliberately — switching off notifications, setting limits on their screen time, or taking breaks from social media altogether. Whether such individual efforts are enough, or whether the design of these systems must change, is now a live question."
    ],
    Q:[
-    {t:'choice',a:'TRUE',q:'Fossil fuels will eventually run out.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Renewable sources produce large amounts of pollution.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Large dams can displace communities.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Everyone likes the appearance of wind turbines.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'water',q:'Hydropower generates electricity from flowing ______.'},
-    {t:'text',a:'sea',q:'Wind turbines can be placed on land or out at ______.'},
-    {t:'text',a:'night',q:'Solar power cannot generate electricity at ______.'},
-    {t:'text',a:'storage',q:'Improvements in battery ______ are helping.'},
-    {t:'choice',a:'B',q:'The sun delivers to earth in one hour more than the world uses in a:',opts:['A) day','B) year','C) month','D) hour']},
-    {t:'choice',a:'C',q:'A limitation of solar power is that it:',opts:['A) is expensive now','B) works only at night','C) cannot work at night','D) causes pollution']},
-    {t:'choice',a:'C',q:'Many experts recommend:',opts:['A) one single source','B) only coal','C) a mix of renewable sources','D) no change']},
-    {t:'choice',a:'TRUE',q:'Renewable energy often needs significant initial investment.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Some renewable sources depend on the weather.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Renewable energy could create new jobs.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'Herbert Simon argued that attention, not information, is now scarce.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Free online services make no money from their users.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some product features are designed to keep users engaged.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'It has been conclusively proved that technology shortens attention spans.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Defenders believe the technologies themselves are the main problem.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some people now try to limit their own screen time.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'A',q:'Which paragraph (A–F) describes the paradox identified by an economist?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes design features that exploit psychology?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) argues the problem lies in design, not the tools?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes ways individuals reclaim their attention?'},
+    {t:'text',a:'attention',q:'According to Simon, the truly scarce resource today is ______.'},
+    {t:'text',a:'advertising',q:'Online services sell our attention in the form of ______.'},
+    {t:'text',a:'thought',q:'Critics say fragmented attention harms our capacity for deep ______.'},
+    {t:'text',a:'social',q:'Some people take breaks from ______ media altogether.'}
    ]}
  ],
  writing:{
