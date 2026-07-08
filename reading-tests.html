@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f1226"><link rel="apple-touch-icon" href="icon.svg">
+<title>Full Reading Tests | 10 × 40 প্রশ্ন</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0f1226;--card:#1d2142;--card2:#242a52;--line:#2e3563;--txt:#e9ecff;--muted:#a7adda;
+    --accent:#6c8cff;--accent2:#46d6b3;--gold:#ffcb5b;--pink:#ff7ab6;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri',system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#252a59 0,transparent 60%),radial-gradient(900px 500px at 0% 10%,#1b2a45 0,transparent 55%),var(--bg);color:var(--txt);line-height:1.8}
+  .en{font-family:'Poppins',sans-serif}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+  header.hero{padding:44px 0 14px;text-align:center}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:14px;font-size:.92rem}
+  .back:hover{color:var(--txt)}
+  .badge{display:inline-block;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#06121f;font-weight:700;padding:7px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;margin-bottom:10px}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--accent2),var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--muted);max-width:660px;margin:0 auto;font-size:1.02rem}
+  .sub{color:var(--muted);margin-bottom:20px}
+  .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
+  .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  details.test{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:12px 0;overflow:hidden;box-shadow:var(--shadow)}
+  details.test>summary{cursor:pointer;padding:16px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gold);font-size:1.05rem;gap:10px}
+  details.test>summary::-webkit-details-marker{display:none}
+  details.test>summary::after{content:"+";font-size:1.4rem;color:var(--accent2)}
+  details.test[open]>summary::after{content:"–"}
+  .tbody{padding:6px 16px 18px}
+  .passage{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+  .passage .ptitle{color:var(--accent2);font-size:1.08rem;font-weight:700;margin-bottom:2px}
+  .passage .pref{color:var(--muted);font-size:.8rem;margin-bottom:8px}
+  .ptext{max-height:340px;overflow-y:auto;background:#0d1024;border:1px solid var(--line);border-radius:10px;padding:12px 15px;margin-bottom:10px}
+  .ptext p{color:#d6dcff;font-size:.93rem;margin-bottom:9px}
+  .ptext p b{color:var(--gold);font-family:'Poppins';margin-right:4px}
+  .ptext.exp{max-height:none}
+  .expand{background:var(--card);color:var(--muted);border:1px solid var(--line);border-radius:8px;font-size:.78rem;padding:4px 10px;cursor:pointer;font-family:inherit;margin-bottom:10px}
+  .ghead{background:rgba(108,140,255,.10);border-left:3px solid var(--accent);border-radius:8px;padding:9px 12px;margin:12px 0 6px;font-size:.86rem;color:#dbe1ff}
+  .ghead b{color:var(--gold)}
+  .ghead .bank{margin-top:5px;color:#cdd6ff;font-size:.85rem}
+  .q{display:flex;gap:9px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.06)}
+  .q:last-child{border-bottom:none}
+  .qn{flex:0 0 26px;height:26px;border-radius:7px;background:var(--card);border:1px solid var(--line);color:var(--gold);font-family:'Poppins';font-size:.82rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .qmain{flex:1}
+  .qt{color:#e9ecff;font-size:.94rem}
+  .opts{margin:4px 0 2px}
+  .opts label{display:block;color:#cdd2ff;font-size:.9rem;padding:2px 0;cursor:pointer}
+  .opts input{margin-right:7px}
+  input.ans,select.ans{margin-top:5px;background:#fff;color:#111;border:1px solid #b9c0d0;border-radius:7px;padding:5px 9px;font-family:'Poppins';font-size:.86rem;min-width:150px}
+  select.ans{min-width:150px}
+  .fb{font-size:.82rem;margin-top:3px;font-weight:600}
+  .fb.ok{color:var(--accent2)}.fb.no{color:var(--pink)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:.94rem;font-weight:600;padding:11px 18px;border-radius:11px;transition:transform .15s;display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
+  .btn-ghost{background:var(--card);color:var(--txt);border:1px solid var(--line)}
+  .score{font-weight:700;color:var(--gold);font-family:'Poppins'}
+  .review{display:none;margin-top:12px;background:#0d1024;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .review.show{display:block}
+  .review h5{color:var(--gold);font-size:.95rem;margin-bottom:6px}
+  .review .wrongs{color:var(--pink);font-family:'Poppins';font-size:.88rem;line-height:1.9}
+  .review .bar{display:flex;align-items:center;gap:8px;margin:3px 0;font-size:.85rem}
+  .review .bar .track{flex:1;height:10px;background:#242a52;border-radius:6px;overflow:hidden}
+  .review .bar .fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+  .review .weak{color:var(--gold);font-size:.88rem;margin-top:6px}
+  .keybox{background:#0d1024;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px;display:none}
+  .keybox.show{display:block}
+  .keybox h5{color:var(--gold);font-size:.9rem;margin:8px 0 3px}
+  .keybox p{color:#c7ccf0;font-size:.9rem}
+  footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a href="reading-module.html" class="back">← Reading Module-এ ফিরে যাও</a>
+    <div><span class="badge">📖 FULL READING TESTS — ১০টি সম্পূর্ণ টেস্ট</span></div>
+    <h1>Full <span class="grad">Reading Tests</span></h1>
+    <p>১০টি সম্পূর্ণ Academic Reading টেস্ট — প্রতিটিতে ৩টি passage ও ৪০টি প্রশ্ন। সব আসল question type: True/False/Not Given, Matching Headings, MCQ, Completion, Yes/No/Not Given, Matching Information ও Short Answer।</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="note">⏱️ আসল পরীক্ষার মতো: <b>৬০ মিনিটে ৪০ প্রশ্ন</b> (৩ passage)। টাইমার চালিয়ে চেষ্টা করো, তারপর <b>✅ Check Answers</b> চেপে স্কোর, ভুলের রিভিউ ও উত্তর দেখো।</div>
+  <div class="warn note">📝 উত্তরের নিয়ম: বানান ঠিক রাখো; completion-এ শব্দসীমা মানো; TFNG-তে <b>NOT GIVEN</b> মানে passage-এ তথ্যটা নেই (মিথ্যা নয়)।</div>
+  <div id="tests"></div>
+  <div style="text-align:center;margin-top:24px">
+    <a href="practice.html" class="btn btn-primary">🧪 আরও Practice</a>
+    <a href="reading-module.html" class="btn btn-ghost">📘 Strategy Module</a>
+  </div>
+</main>
+<footer><div class="wrap"><p>📖 রোজ ১টা passage — Reading band দ্রুত বাড়বে।</p></div></footer>
+
+<script src="reading-tests-data.js"></script>
+<script>
+function norm(s){return (s||'').toString().toLowerCase().trim()
+  .replace(/[.,;:!?'"()£$%]/g,'').replace(/\s+/g,' ')
+  .replace(/^the /,'').replace(/^a /,'').replace(/^an /,'');}
+function isCorrect(user,ans){const u=norm(user); if(!u) return false;
+  return ans.split('|').map(norm).some(a=>a===u);}
+function band(r){const t=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4]];
+  for(const [m,b] of t) if(r>=m) return b; return '<4';}
+
+function render(){
+  const root=document.getElementById('tests');
+  READING.forEach((test,ti)=>{
+    const det=document.createElement('details'); det.className='test';
+    let qnum=0;
+    let html=`<summary><span>Test ${ti+1} — ${test.name}</span></summary><div class="tbody">
+      <div class="sub" style="margin:2px 0 6px">${test.blurb}</div>`;
+    test.passages.forEach((ps,pi)=>{
+      html+=`<div class="passage"><div class="ptitle">Passage ${pi+1} — ${ps.title}</div>`;
+      if(ps.ref) html+=`<div class="pref">${ps.ref}</div>`;
+      html+=`<div class="ptext" id="pt${ti}-${pi}">${ps.text}</div>
+        <button class="expand" data-exp="${ti}-${pi}" type="button">⤢ পুরো passage দেখাও / লুকাও</button>`;
+      ps.Q.forEach(q=>{
+        qnum++;
+        if(q.head) html+=`<div class="ghead">${q.head}</div>`;
+        html+=`<div class="q"><div class="qn">${qnum}</div><div class="qmain"><div class="qt">${q.q||''}</div>`;
+        if(q.t==='mc'){
+          const L='ABCDEFGH';
+          html+=`<div class="opts">`;
+          q.o.forEach((opt,i)=>{html+=`<label><input type="radio" name="t${ti}q${qnum}" value="${L[i]}">${L[i]}) ${opt}</label>`;});
+          html+=`</div><input type="hidden" class="ans" data-a="${q.a}" data-mode="radio" data-name="t${ti}q${qnum}" data-p="${pi}"><div class="fb"></div>`;
+        } else if(q.t==='tf'||q.t==='yn'){
+          const opts = q.t==='tf'?['TRUE','FALSE','NOT GIVEN']:['YES','NO','NOT GIVEN'];
+          html+=`<select class="ans" data-a="${q.a}" data-p="${pi}"><option value="">—</option>${opts.map(o=>`<option>${o}</option>`).join('')}</select><div class="fb"></div>`;
+        } else {
+          html+=`<input class="ans" data-a="${q.a}" data-p="${pi}" placeholder="উত্তর..."><div class="fb"></div>`;
+        }
+        html+=`</div></div>`;
+      });
+      html+=`</div>`;
+    });
+    // answer key
+    let key=[],kn=0;
+    test.passages.forEach(ps=>ps.Q.forEach(q=>{kn++;key.push(kn+'. '+q.a.split('|')[0]);}));
+    html+=`<div class="actions">
+        <button class="btn btn-primary" data-check="${ti}" type="button">✅ Check Answers</button>
+        <button class="btn btn-ghost" data-key="${ti}" type="button">🔑 Answer key</button>
+        <span class="score" id="score${ti}"></span>
+      </div>
+      <div class="review" id="review${ti}"></div>
+      <div class="keybox" id="key${ti}"><h5>🔑 Answer key</h5><p>${key.join(' &nbsp;·&nbsp; ')}</p></div></div>`;
+    det.innerHTML=html;
+    root.appendChild(det);
+  });
+  wire();
+}
+function wire(){
+  document.querySelectorAll('[data-exp]').forEach(b=>b.onclick=()=>{
+    document.getElementById('pt'+b.dataset.exp).classList.toggle('exp');});
+  document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>checkTest(+b.dataset.check,b));
+  document.querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>
+    document.getElementById('key'+b.dataset.key).classList.toggle('show'));
+}
+function checkTest(ti,btn){
+  const body=btn.closest('.tbody');
+  const inputs=[...body.querySelectorAll('.ans')];
+  let right=0; const wrong=[]; const pc=[[0,0],[0,0],[0,0]]; // [correct,total] per passage
+  inputs.forEach((inp,i)=>{
+    let val='';
+    if(inp.dataset.mode==='radio'){const s=body.querySelector(`input[name="${inp.dataset.name}"]:checked`);val=s?s.value:'';}
+    else val=inp.value;
+    const p=+inp.dataset.p; pc[p][1]++;
+    const ok=isCorrect(val,inp.dataset.a);
+    const fb=inp.parentElement.querySelector('.fb');
+    if(ok){right++;pc[p][0]++;fb.className='fb ok';fb.textContent='✓ সঠিক';}
+    else{wrong.push(i+1);fb.className='fb no';fb.textContent='✗ সঠিক উত্তর: '+inp.dataset.a.split('|')[0];}
+  });
+  document.getElementById('score'+ti).textContent=`স্কোর: ${right} / 40  →  আনুমানিক Band ${band(right)}`;
+  const names=['Passage 1','Passage 2','Passage 3'];
+  let bars='',worst=0,worstPct=2;
+  pc.forEach((c,i)=>{const pct=c[1]?c[0]/c[1]:1; if(pct<worstPct){worstPct=pct;worst=i;}
+    bars+=`<div class="bar"><span style="flex:0 0 90px">${names[i]}</span><span class="track"><span class="fill" style="width:${Math.round(pct*100)}%"></span></span><span style="flex:0 0 42px;text-align:right">${c[0]}/${c[1]}</span></div>`;});
+  const rev=document.getElementById('review'+ti);
+  rev.innerHTML=`<h5>📊 Answer review</h5>
+    <div class="wrongs">${wrong.length?('❌ ভুল ('+wrong.length+'): Q'+wrong.join(', Q')):'🎉 সব সঠিক! (40/40)'}</div>
+    <div style="margin:8px 0">${bars}</div>
+    ${wrong.length?`<div class="weak">💡 সবচেয়ে দুর্বল: <b>${names[worst]}</b> — passage-টা আবার পড়ে ভুলগুলো মিলিয়ে দেখো।</div>`:''}`;
+  rev.classList.add('show');
+  rev.scrollIntoView({behavior:'smooth',block:'center'});
+}
+document.addEventListener('DOMContentLoaded',render);
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script>
+</body>
+</html>
