@@ -26,6 +26,10 @@
   .note{background:linear-gradient(90deg,rgba(108,140,255,.12),transparent);border-left:3px solid var(--accent);padding:11px 15px;border-radius:8px;margin:11px 0;color:#dfe3ff}
   .good{background:linear-gradient(90deg,rgba(70,214,179,.12),transparent);border-left:3px solid var(--accent2)}
   .warn{background:linear-gradient(90deg,rgba(255,123,182,.12),transparent);border-left:3px solid var(--pink)}
+  .accentbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin:12px 0;display:flex;gap:12px;flex-wrap:wrap;align-items:center;box-shadow:var(--shadow);position:sticky;top:8px;z-index:20}
+  .accentbar label{font-size:.9rem;color:var(--muted);font-weight:600}
+  .accentbar select{background:#fff;color:#111;border:1px solid #b9c0d0;border-radius:8px;padding:6px 10px;font-family:'Poppins';font-size:.86rem;max-width:260px}
+  .accentbar .hint{font-size:.78rem;color:var(--muted)}
   details.test{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:12px 0;overflow:hidden;box-shadow:var(--shadow)}
   details.test>summary{cursor:pointer;padding:16px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gold);font-size:1.05rem;gap:10px}
   details.test>summary::-webkit-details-marker{display:none}
@@ -35,6 +39,7 @@
   .part{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
   .part h4{color:var(--accent2);font-size:1.02rem;margin-bottom:4px}
   .part .ptype{color:var(--muted);font-size:.82rem;margin-bottom:8px}
+  .part .speakers{font-size:.8rem;color:var(--gold);margin-bottom:6px}
   .audio-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
   .abtn{border:none;cursor:pointer;font-family:inherit;font-size:.86rem;font-weight:600;padding:7px 13px;border-radius:9px;background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22}
   .abtn.stop{background:var(--card);color:var(--txt);border:1px solid var(--line)}
@@ -62,10 +67,24 @@
   .btn-primary{background:linear-gradient(90deg,var(--accent),#8aa2ff);color:#0b0e22;box-shadow:var(--shadow)}
   .btn-ghost{background:var(--card);color:var(--txt);border:1px solid var(--line)}
   .score{font-weight:700;color:var(--gold);font-family:'Poppins'}
+  .review{display:none;margin-top:12px;background:#0d1024;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .review.show{display:block}
+  .review h5{color:var(--gold);font-size:.95rem;margin-bottom:6px}
+  .review .wrongs{color:var(--pink);font-family:'Poppins';font-size:.88rem;line-height:1.9}
+  .review .bars{margin:8px 0}
+  .review .bar{display:flex;align-items:center;gap:8px;margin:3px 0;font-size:.85rem}
+  .review .bar .track{flex:1;height:10px;background:#242a52;border-radius:6px;overflow:hidden}
+  .review .bar .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .review .weak{color:var(--gold);font-size:.88rem;margin-top:6px}
   .scriptbox{background:#0d1024;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px;display:none}
   .scriptbox.show{display:block}
   .scriptbox h5{color:var(--gold);margin:10px 0 3px;font-size:.9rem}
   .scriptbox p{color:#c7ccf0;font-size:.9rem;margin-bottom:6px}
+  .turn{display:flex;gap:8px;margin:3px 0;font-size:.9rem}
+  .chip{flex:0 0 auto;font-family:'Poppins';font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:999px;height:20px;margin-top:2px}
+  .chip.s0{background:rgba(108,140,255,.22);color:#9db3ff}
+  .chip.s1{background:rgba(255,123,182,.20);color:#ff9ecb}
+  .turn .tx{color:#c7ccf0}
   footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
 </style>
 </head>
@@ -75,15 +94,18 @@
     <a href="listening-module.html" class="back">← Listening Module-এ ফিরে যাও</a>
     <div><span class="badge">🎧 FULL LISTENING TESTS — ১০টি সম্পূর্ণ টেস্ট (Map সহ)</span></div>
     <h1>Full <span class="grad">Listening Tests</span></h1>
-    <p>১০টি সম্পূর্ণ টেস্ট, প্রতিটিতে ৪টি Part ও ৪০টি প্রশ্ন — Part 2-তে আসল <b>Map/Plan labelling</b>। ব্রাউজারের ভয়েস দিয়ে transcript শোনো (▶ Play), উত্তর লেখো, তারপর <b>Check</b> করে স্কোর ও সঠিক উত্তর দেখো।</p>
+    <p>১০টি সম্পূর্ণ টেস্ট, প্রতিটিতে ৪টি Part ও ৪০টি প্রশ্ন — Part 2-তে আসল <b>Map/Plan labelling</b>। ব্রাউজারের ভয়েস দিয়ে শোনো, উত্তর লেখো, তারপর <b>Check</b> করে স্কোর, ভুলের রিভিউ ও সঠিক উত্তর দেখো।</p>
   </div>
 </header>
 
 <main class="wrap">
-  <h2 class="sec">🗺️ কীভাবে ব্যবহার করবে</h2>
-  <p class="sub">প্রতিটা Part-এর <b>▶ Play</b> চাপো (ব্রাউজার নিজে পড়ে শোনাবে — কোনো ডাউনলোড লাগে না)। শোনার সময় transcript দেখো না। উত্তর দিয়ে <b>✅ Check Answers</b> চাপো। Map প্রশ্নে শুধু অক্ষর (A–H) বসাও।</p>
-  <div class="note">🔊 <b>Audio টিপস:</b> প্রথমবার ভয়েস লোড হতে ১ সেকেন্ড লাগতে পারে। speed স্লাইডার দিয়ে গতি কমাও-বাড়াও। Chrome/Edge/Safari-তে সবচেয়ে ভালো কাজ করে।</div>
-  <div class="warn note">⚠️ Map labelling IELTS Listening-এ <b>প্রায় প্রতিটি টেস্টে</b> (সাধারণত Part 2) আসে — তাই এখানে প্রতিটা টেস্টে একটা করে map রাখা হয়েছে।</div>
+  <div class="accentbar">
+    <label for="accent">🌍 Accent / Voice:</label>
+    <select id="accent"></select>
+    <span class="hint">(British/American/Australian — যা browser-এ আছে)</span>
+  </div>
+  <div class="note">🗣️ <b>একাধিক বক্তা:</b> Part 1 ও Part 3 কথোপকথন — এখানে দুই বক্তাকে <b>দুটি আলাদা ভয়েস</b> (বা একই ভয়েসে ভিন্ন pitch)-এ শোনানো হয়, transcript-এ <span class="chip s0">A</span> ও <span class="chip s1">B</span> দিয়ে আলাদা করা। Part 2 ও Part 4 একক বক্তা (monologue/lecture)।</div>
+  <div class="warn note">⚠️ Accent তালিকা তোমার ডিভাইস/ব্রাউজারের ওপর নির্ভর করে। বেশি accent পেতে <b>Chrome বা Edge</b> ব্যবহার করো (এদের অনলাইন ভয়েস বেশি)। একটাও en-voice না থাকলে ডিফল্ট voice চলবে।</div>
 
   <div id="tests"></div>
 
@@ -97,7 +119,7 @@
 
 <script src="listening-tests-data.js"></script>
 <script>
-/* ---------- number normalisation for answer checking ---------- */
+/* ---------- answer checking ---------- */
 function norm(s){return (s||'').toString().toLowerCase().trim()
   .replace(/[.,;:!?'"()£$%]/g,'').replace(/\s+/g,' ')
   .replace(/^the /,'').replace(/^a /,'').replace(/^an /,'');}
@@ -105,40 +127,74 @@ function isCorrect(user,ans){
   const u=norm(user); if(!u) return false;
   return ans.split('|').map(norm).some(a=>a===u);
 }
-/* ---------- band estimate from raw /40 ---------- */
 function band(r){
   const t=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4]];
   for(const [m,b] of t) if(r>=m) return b; return '<4';
 }
-/* ---------- speech synthesis (one active utterance) ---------- */
+
+/* ---------- voices / accents ---------- */
+function engVoices(){
+  const all=('speechSynthesis' in window)?speechSynthesis.getVoices():[];
+  const en=all.filter(v=>/^en(-|_|$)/i.test(v.lang));
+  return en.length?en:all;
+}
+function accentName(l){l=(l||'').toLowerCase();
+  return l.startsWith('en-gb')?'🇬🇧 British':l.startsWith('en-us')?'🇺🇸 American':
+    l.startsWith('en-au')?'🇦🇺 Australian':l.startsWith('en-in')?'🇮🇳 Indian':
+    l.startsWith('en-ca')?'🇨🇦 Canadian':l.startsWith('en-ie')?'🇮🇪 Irish':
+    l.startsWith('en-za')?'🇿🇦 S. African':l.startsWith('en-nz')?'🇳🇿 NZ':'🌐 English';}
+function fillAccents(){
+  const sel=document.getElementById('accent'); if(!sel) return;
+  const vs=engVoices(); const prev=sel.value;
+  sel.innerHTML='';
+  if(!vs.length){ sel.innerHTML='<option>(default browser voice)</option>'; return; }
+  vs.forEach((v,i)=>{ const o=document.createElement('option'); o.value=i;
+    o.textContent=accentName(v.lang)+' — '+v.name.replace(/Microsoft |Google /,''); sel.appendChild(o); });
+  const saved=localStorage.getItem('ielts_accent');
+  if(prev && prev<vs.length) sel.value=prev;
+  else if(saved!==null && saved<vs.length) sel.value=saved;
+  sel.onchange=()=>localStorage.setItem('ielts_accent',sel.value);
+}
+function chosenVoices(){
+  const vs=engVoices(); if(!vs.length) return {vA:null,vB:null};
+  const sel=document.getElementById('accent');
+  const iA=(sel && sel.value!=='')?Math.min(+sel.value,vs.length-1):0;
+  const vA=vs[iA];
+  // second speaker: prefer different voice, ideally same accent
+  let vB=vs.find(v=>v!==vA && v.lang===vA.lang) || vs.find(v=>v!==vA) || null;
+  return {vA,vB};
+}
+
+/* ---------- playback (queued turns, 2 voices for dialogue) ---------- */
 let curBtn=null;
-function speak(text,btn,rate){
+function toTurns(tr){return Array.isArray(tr)?tr:[tr];}
+function playTurns(turns, btn, rate){
   if(!('speechSynthesis' in window)){alert('তোমার ব্রাউজার voice সাপোর্ট করে না।');return;}
-  // toggle pause/resume if same button already playing
-  if(curBtn===btn && speechSynthesis.speaking && !speechSynthesis.paused){
-    speechSynthesis.pause(); btn.textContent='▶ Resume'; return;
-  }
-  if(curBtn===btn && speechSynthesis.paused){
-    speechSynthesis.resume(); btn.textContent='⏸ Pause'; return;
+  if(curBtn===btn){
+    if(speechSynthesis.paused){speechSynthesis.resume();btn.textContent='⏸ Pause';return;}
+    if(speechSynthesis.speaking){speechSynthesis.pause();btn.textContent='▶ Resume';return;}
   }
   speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(text);
-  u.rate=rate||0.95; u.lang='en-GB';
-  const vs=speechSynthesis.getVoices();
-  const pref=vs.find(v=>/en-GB/i.test(v.lang))||vs.find(v=>/en/i.test(v.lang));
-  if(pref) u.voice=pref;
-  u.onend=()=>{if(curBtn===btn){btn.textContent='▶ Play';curBtn=null;}};
+  const {vA,vB}=chosenVoices();
+  const dialogue=turns.length>1;
   curBtn=btn; btn.textContent='⏸ Pause';
-  speechSynthesis.speak(u);
+  turns.forEach((t,i)=>{
+    const u=new SpeechSynthesisUtterance(t);
+    u.rate=rate||0.9;
+    if(dialogue && i%2===1){ u.voice=vB||vA; u.pitch=vB?1:0.7; }   // speaker B
+    else { u.voice=vA; u.pitch=1; }                                // speaker A / monologue
+    if(vA) u.lang=vA.lang; else u.lang='en-GB';
+    if(i===turns.length-1) u.onend=()=>{ if(curBtn===btn){btn.textContent='▶ Play';curBtn=null;} };
+    speechSynthesis.speak(u);
+  });
 }
-function stopAll(){speechSynthesis.cancel(); if(curBtn){curBtn.textContent='▶ Play';curBtn=null;}}
-if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=()=>{};}
+function stopAll(){ if('speechSynthesis' in window) speechSynthesis.cancel(); if(curBtn){curBtn.textContent='▶ Play';curBtn=null;} }
 
 /* ---------- render ---------- */
 function ptypeLabel(p){
   if(p.map) return 'Map / Plan labelling + MCQ';
   if(p.n===1) return 'Form / Note completion';
-  if(p.n===3) return 'Multiple choice / Matching';
+  if(p.n===3) return 'Multiple choice';
   if(p.n===4) return 'Note / Sentence completion';
   return 'Completion';
 }
@@ -150,9 +206,11 @@ function render(){
     let html=`<summary><span>Test ${ti+1} — ${test.name}</span></summary><div class="tbody">
       <div class="sub" style="margin:2px 0 6px">${test.blurb}</div>`;
     test.parts.forEach(p=>{
+      const dlg=Array.isArray(p.tr);
       html+=`<div class="part"><h4>Part ${p.n} — ${p.title}</h4>
-        <div class="ptype">${ptypeLabel(p)}</div>
-        <div class="audio-row">
+        <div class="ptype">${ptypeLabel(p)}${dlg?' · 🗣️ dialogue (2 voices)':' · 🎙️ monologue'}</div>`;
+      if(dlg && p.sp) html+=`<div class="speakers"><span class="chip s0">A</span> ${p.sp[0]} &nbsp; <span class="chip s1">B</span> ${p.sp[1]}</div>`;
+      html+=`<div class="audio-row">
           <button class="abtn" data-tr="${ti}-${p.n}" type="button">▶ Play</button>
           <button class="abtn stop" data-stop="1" type="button">⏹ Stop</button>
           <span class="rate">🐢 <input type="range" min="0.6" max="1.1" step="0.05" value="0.9" class="rate-slider"> 🐇</span>
@@ -161,25 +219,30 @@ function render(){
       p.Q.forEach(q=>{
         qnum++;
         html+=`<div class="q"><div class="qn">${qnum}</div><div class="qmain"><div class="qt">${q.q}</div>`;
-        if(q.o){ // MCQ
+        if(q.o){
           const letters='ABCDEFGH';
           html+=`<div class="opts">`;
           q.o.forEach((opt,i)=>{ const L=letters[i];
             html+=`<label><input type="radio" name="t${ti}q${qnum}" value="${L}">${L}) ${opt}</label>`; });
           html+=`</div><input type="hidden" class="ans" data-a="${q.a}" data-mode="radio" data-name="t${ti}q${qnum}"><div class="fb"></div>`;
-        } else if(p.map){ // letter select
+        } else if(p.map){
           html+=`<select class="ans" data-a="${q.a}"><option value="">—</option>${'ABCDEFGH'.split('').map(L=>`<option>${L}</option>`).join('')}</select><div class="fb"></div>`;
-        } else { // text
+        } else {
           html+=`<input class="ans" data-a="${q.a}" placeholder="উত্তর..."><div class="fb"></div>`;
         }
         html+=`</div></div>`;
       });
       html+=`</div>`;
     });
-    // build transcript box
+    // transcript box
     let sc=`<div class="scriptbox" id="sc${ti}"><h5>📄 Transcript (audio script)</h5>`;
-    test.parts.forEach(p=>{ sc+=`<h5>Part ${p.n} — ${p.title}</h5><p>${p.tr}</p>`; });
-    // answer key
+    test.parts.forEach(p=>{
+      sc+=`<h5>Part ${p.n} — ${p.title}</h5>`;
+      if(Array.isArray(p.tr)){
+        p.tr.forEach((t,i)=>{ const who=p.sp?p.sp[i%2]:(i%2?'B':'A');
+          sc+=`<div class="turn"><span class="chip s${i%2}">${i%2?'B':'A'}</span><span class="tx"><b>${who}:</b> ${t}</span></div>`; });
+      } else sc+=`<p>${p.tr}</p>`;
+    });
     let key=[]; let kn=0;
     test.parts.forEach(p=>p.Q.forEach(q=>{kn++;key.push(kn+'. '+q.a.split('|')[0]);}));
     sc+=`<h5>✅ Answer key</h5><p>${key.join(' &nbsp;·&nbsp; ')}</p></div>`;
@@ -187,7 +250,8 @@ function render(){
         <button class="btn btn-primary" data-check="${ti}" type="button">✅ Check Answers</button>
         <button class="btn btn-ghost" data-script="${ti}" type="button">📄 Transcript / Answers</button>
         <span class="score" id="score${ti}"></span>
-      </div>${sc}</div>`;
+      </div>
+      <div class="review" id="review${ti}"></div>${sc}</div>`;
     det.innerHTML=html;
     root.appendChild(det);
   });
@@ -197,37 +261,47 @@ function wire(){
   document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=stopAll);
   document.querySelectorAll('.abtn[data-tr]').forEach(b=>{
     b.onclick=()=>{ const [ti,pn]=b.dataset.tr.split('-');
-      const test=TESTS[+ti]; const part=test.parts.find(p=>p.n==pn);
+      const part=TESTS[+ti].parts.find(p=>p.n==pn);
       const slider=b.closest('.audio-row').querySelector('.rate-slider');
-      speak(part.tr,b,parseFloat(slider.value)); };
+      playTurns(toTurns(part.tr), b, parseFloat(slider.value)); };
   });
-  document.querySelectorAll('[data-check]').forEach(b=>{
-    b.onclick=()=>checkTest(+b.dataset.check,b);
-  });
+  document.querySelectorAll('[data-check]').forEach(b=>{ b.onclick=()=>checkTest(+b.dataset.check,b); });
   document.querySelectorAll('[data-script]').forEach(b=>{
-    b.onclick=()=>{ document.getElementById('sc'+b.dataset.script).classList.toggle('show'); };
+    b.onclick=()=>document.getElementById('sc'+b.dataset.script).classList.toggle('show');
   });
 }
 function checkTest(ti,btn){
   const body=btn.closest('.tbody');
   const inputs=[...body.querySelectorAll('.ans')];
-  let right=0;
-  inputs.forEach(inp=>{
+  let right=0; const wrong=[]; const partScore=[0,0,0,0];
+  inputs.forEach((inp,i)=>{
     let val='';
     if(inp.dataset.mode==='radio'){
       const sel=body.querySelector(`input[name="${inp.dataset.name}"]:checked`);
       val=sel?sel.value:'';
     } else val=inp.value;
     const ok=isCorrect(val,inp.dataset.a);
+    const part=Math.floor(i/10); // all parts have exactly 10 Q
     const fb=inp.parentElement.querySelector('.fb');
-    if(ok){right++; fb.className='fb ok'; fb.textContent='✓ সঠিক';}
-    else{ fb.className='fb no'; fb.textContent='✗ সঠিক উত্তর: '+inp.dataset.a.split('|')[0];}
+    if(ok){right++; partScore[part]++; fb.className='fb ok'; fb.textContent='✓ সঠিক';}
+    else{ wrong.push(i+1); fb.className='fb no'; fb.textContent='✗ সঠিক উত্তর: '+inp.dataset.a.split('|')[0];}
   });
-  const s=document.getElementById('score'+ti);
-  s.textContent=`স্কোর: ${right} / 40  →  আনুমানিক Band ${band(right)}`;
-  s.scrollIntoView({behavior:'smooth',block:'center'});
+  document.getElementById('score'+ti).textContent=`স্কোর: ${right} / 40  →  আনুমানিক Band ${band(right)}`;
+  // review summary
+  const names=['Part 1 (Form)','Part 2 (Map)','Part 3 (MCQ)','Part 4 (Notes)'];
+  const weakest=partScore.indexOf(Math.min(...partScore));
+  let bars='';
+  partScore.forEach((s,i)=>{ bars+=`<div class="bar"><span style="flex:0 0 120px">${names[i]}</span><span class="track"><span class="fill" style="width:${s*10}%"></span></span><span style="flex:0 0 42px;text-align:right">${s}/10</span></div>`; });
+  const rev=document.getElementById('review'+ti);
+  rev.innerHTML=`<h5>📊 Answer review</h5>
+    <div class="wrongs">${wrong.length?('❌ ভুল ('+wrong.length+'): Q'+wrong.join(', Q')):'🎉 সব সঠিক! (40/40)'}</div>
+    <div class="bars">${bars}</div>
+    ${wrong.length?`<div class="weak">💡 সবচেয়ে দুর্বল: <b>${names[weakest]}</b> — এই Part-টা আবার শোনো, তারপর transcript মিলিয়ে দেখো।</div>`:''}`;
+  rev.classList.add('show');
+  rev.scrollIntoView({behavior:'smooth',block:'center'});
 }
-document.addEventListener('DOMContentLoaded',render);
+document.addEventListener('DOMContentLoaded',()=>{ render(); fillAccents(); });
+if('speechSynthesis' in window) speechSynthesis.onvoiceschanged=fillAccents;
 window.addEventListener('beforeunload',stopAll);
 </script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script>
