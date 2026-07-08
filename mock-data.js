@@ -155,7 +155,7 @@ const MOCKS=[
  blurb:'Library · Marathon · Ocean + Bilingualism · Bees · Remote work',
  listen:[
   {title:'University Library Induction',
-   transcript:"Good morning, and welcome to the university library. I'm David, the head librarian. The library is open from eight in the morning until eleven at night on weekdays. On Saturdays, we close a little earlier, at six. Undergraduate students can borrow up to ten books at a time, while postgraduates can take out fifteen. Books are normally loaned for three weeks. Please note that if you return a book late, there is a fine of twenty pence per day. The ground floor is a social study area where talking is allowed, but the first and second floors are strictly silent zones. Computers are available on the first floor, next to the printing room. If you need help, visit the help desk near the main entrance.",
+   transcript:"Good morning, and welcome to the university library. I'm David, the head librarian. The library is open from eight in the morning until ten at night on weekdays — sorry, until eleven; we extended it last term. On Saturdays we close earlier, at five o'clock... no, at six. Undergraduate students can borrow up to eight books at a time — let me correct that, ten for undergraduates — while postgraduates can take out fifteen. Books are loaned for two weeks; sorry, three weeks is the standard. If you return a book late, there is a fine of twenty pence per day. The ground floor is a social study area where talking is allowed, but the first and second floors are strictly silent zones. Computers are available on the first floor, right next to the printing room. If you need help, the help desk is by the main entrance, not upstairs.",
    Q:[
     {t:'text',a:'11pm|11 pm|eleven|11',q:'Weekday closing time: ______'},
     {t:'text',a:'6pm|6 pm|six|6',q:'Saturday closing time: ______'},
@@ -169,7 +169,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Talking is allowed on:',opts:['A) the first floor','B) the ground floor','C) the second floor','D) nowhere']}
    ]},
   {title:'City Marathon — volunteer briefing',
-   transcript:"Thank you all for signing up to volunteer at this year's city marathon. Volunteers should arrive by seven o'clock in the morning, one hour before the race begins at eight. You will be given a bright yellow T-shirt, which you must wear at all times so runners can identify you. Most of you will be working at the water stations, handing out bottles to runners. It is important to stand behind the table and not step onto the course. Lunch will be provided free of charge, and there is a rest area near the finish line. If there is a medical emergency, do not try to help yourself; instead, call the medical team using the number on your badge. The event finishes at around two in the afternoon.",
+   transcript:"Thank you all for signing up to volunteer at this year's city marathon. Volunteers should arrive by seven o'clock in the morning — not eight; eight is when the race itself begins. You will be given a bright orange T-shirt... sorry, a yellow one, which you must wear so runners can identify you. Most of you will be working at the water stations, handing out bottles — a few people will be at the finish line, but the majority at the water points. It is important to stand behind the table and never step onto the course. Lunch will be provided free of charge, and there is a rest area near the finish line, not the start. If there is a medical emergency, do not try to help yourself; call the medical team using the number on your badge, not the one on your T-shirt. The event should finish at around two in the afternoon.",
    Q:[
     {t:'text',a:'seven|7am|7',q:'Volunteers should arrive by ______.'},
     {t:'text',a:'eight|8am|8',q:'The race begins at ______.'},
@@ -183,7 +183,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The event finishes at about:',opts:['A) noon','B) 2 pm','C) 4 pm','D) 7 pm']}
    ]},
   {title:'Tutorial: feedback on an essay',
-   transcript:"Come in, Sam. So, you wanted to discuss your essay on globalisation? Yes, I got a lower mark than I expected. Well, your ideas are good, but the main problem is structure. Your introduction doesn't clearly state your position. Should I add a thesis statement? Exactly. And each paragraph should focus on just one main idea. What about my examples? Your examples are strong, but you need to explain them more; don't just mention them. And the word count? You were slightly under; aim for at least two hundred and fifty words. Also, try to use more linking words to connect your ideas. When should I resubmit? Let's say by next Friday.",
+   transcript:"Come in, Sam. So, you wanted to discuss your essay on migration — sorry, on globalisation? Yes, I got a lower mark than I expected. Well, your ideas are good, but the main problem is structure, not grammar this time. Your introduction doesn't clearly state your position. Should I add a thesis statement? Exactly. And each paragraph should focus on just one main idea, not several. What about my examples? Your examples are strong, but you need to explain them more; don't just list them. And the word count? You were slightly under; aim for at least two hundred and fifty words, not two hundred. Also, try to use more linking words to connect your ideas. When should I resubmit? Let's say by next Thursday... actually, make it Friday.",
    Q:[
     {t:'text',a:'globalisation|globalization',q:'The essay is about ______.'},
     {t:'text',a:'structure',q:'The main problem is ______.'},
@@ -197,7 +197,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The tutor says the examples are:',opts:['A) missing','B) strong but under-explained','C) wrong','D) too many']}
    ]},
   {title:'Lecture: plastic in the oceans',
-   transcript:"Today we will look at the problem of plastic in our oceans. Every year, millions of tonnes of plastic waste enter the sea, much of it carried by rivers from inland cities. Once in the ocean, plastic does not disappear; instead, it slowly breaks into tiny fragments known as microplastics. These fragments are eaten by fish and other marine animals, and can eventually end up in the food we consume. One of the largest accumulations of ocean plastic is found in the Pacific, in an area often called the Great Pacific Garbage Patch, which covers a region several times the size of France. Solutions include reducing single-use plastics and improving waste collection. However, experts agree that prevention is far more effective than cleaning up plastic once it has entered the sea.",
+   transcript:"Today we will look at the problem of plastic in our oceans. Every year, millions of tonnes of plastic waste enter the sea, much of it carried not by wind but by rivers from inland cities. Once in the ocean, plastic does not disappear; instead, it slowly breaks into tiny fragments known as microplastics. These fragments are eaten by fish and other marine animals, and can eventually end up in the food we consume. One of the largest accumulations of ocean plastic is found in the Pacific — not the Atlantic, as people sometimes assume — in an area often called the Great Pacific Garbage Patch, which covers a region several times the size of France. Solutions include reducing single-use plastics and improving waste collection. However, experts agree that prevention is far more effective than cleaning up plastic once it has entered the sea.",
    Q:[
     {t:'text',a:'rivers|river',q:'Plastic waste is often carried to the sea by ______.'},
     {t:'text',a:'microplastics|microplastic',q:'Plastic breaks into tiny fragments called ______.'},
@@ -212,77 +212,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'Two Languages, One Sharper Mind',
+  {title:'The Sixth Mass Extinction',
    paras:[
-    "For a long time, raising a child with two languages was viewed with suspicion. Many parents and even educators believed that bilingualism would confuse young children and slow their development. Today, however, a growing body of research suggests the opposite: learning two languages from an early age offers considerable cognitive and social advantages.",
-    "One of the most significant benefits concerns the brain itself. Studies using brain imaging have shown that bilingual individuals tend to have denser grey matter in regions associated with attention and memory. Constantly switching between two languages appears to act as a kind of mental exercise, strengthening what psychologists call the 'executive control system', which helps people focus on relevant information while ignoring distractions.",
-    "The advantages are not limited to childhood. Remarkably, research indicates that bilingualism may delay the onset of dementia by several years. Although it does not prevent the disease, the mental flexibility built up over a lifetime of using two languages seems to make the brain more resilient.",
-    "Bilingual children also tend to develop stronger social skills. Because they must constantly judge which language to use with whom, they become more sensitive to the perspectives of others. This ability, known as 'perspective-taking', is increasingly valuable in an interconnected world.",
-    "Of course, bilingualism is not without its challenges. Bilingual children sometimes have a slightly smaller vocabulary in each individual language during their early years, though their combined vocabulary usually equals or exceeds that of monolingual children. Moreover, maintaining two languages requires consistent exposure and effort.",
-    "Despite these challenges, experts increasingly agree that the benefits far outweigh the drawbacks."
+    "List of Headings —  i) A rate far above normal   ii) Five catastrophes of the past   iii) A crisis caused by humans   iv) Why biodiversity matters to us   v) Grounds for hope   vi) A narrow window for action   vii) The death of the dinosaurs   viii) Protecting one species at a time",
+    "A   Extinction is a natural part of life on Earth; species have always appeared and vanished. What alarms scientists today is the speed at which they are now disappearing. The current rate of extinction is estimated to be tens or even hundreds of times higher than the natural 'background' rate, and it is accelerating. Many biologists argue that we have entered a sixth mass extinction.",
+    "B   The phrase is deliberate. Over the last half-billion years, the fossil record shows five earlier catastrophes in which a large proportion of all species were wiped out in a geologically short time. The most famous, 66 million years ago, ended the age of the dinosaurs, probably after an asteroid struck the Earth. Each of these previous five was caused by natural forces.",
+    "C   This time, the cause is different. Unlike the earlier events, the present crisis is driven overwhelmingly by a single species: our own. Habitat destruction, as forests and wetlands are cleared for farming and cities, is the greatest threat. To this are added hunting, pollution, the spread of invasive species, and, increasingly, climate change.",
+    "D   Why should the loss of, say, a beetle or a frog concern us? The answer lies in the interconnectedness of nature. Species depend on one another in complex webs; remove enough threads and the whole fabric can unravel. Ecosystems provide humans with 'services' we take for granted — clean water, fertile soil, the pollination of crops — and these depend on biodiversity.",
+    "E   The picture is not entirely hopeless. Conservation can work: species brought to the very edge of extinction have sometimes recovered when given protection. Setting aside large areas of habitat, restoring damaged ecosystems and curbing emissions could still slow the losses dramatically.",
+    "F   What is clear is that the window for action is narrow. Unlike the victims of past extinctions, we can see the crisis unfolding and understand its causes. Whether we choose to act on that knowledge, many scientists say, will determine the character of the living world for millions of years to come."
    ],
    Q:[
-    {t:'choice',a:'TRUE',q:'In the past, some people believed bilingualism was harmful to children.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Bilingual people always have a larger vocabulary in each language.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Bilingualism can completely prevent dementia.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Switching between languages strengthens attention and memory.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'NOT GIVEN',q:'Bilingual children are usually better at sports.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'matter',q:'Bilingual people tend to have denser grey ______.'},
-    {t:'text',a:'perspective',q:"The ability to understand others' views is called ______-taking."},
-    {t:'text',a:'exposure',q:'Maintaining two languages requires consistent ______ and effort.'},
-    {t:'choice',a:'B',q:"The 'executive control system' helps people to:",opts:['A) learn faster','B) focus and ignore distractions','C) speak more languages','D) sleep better']},
-    {t:'choice',a:'C',q:"The writer's overall view of bilingualism is that it is:",opts:['A) risky','B) confusing','C) beneficial','D) unclear']},
-    {t:'text',a:'social',q:'Bilingual children may develop stronger ______ skills.'},
-    {t:'text',a:'dementia',q:'Bilingualism may delay the onset of ______.'},
-    {t:'choice',a:'B',q:"Bilingual children's combined vocabulary is usually:",opts:['A) smaller','B) equal or greater','C) irrelevant','D) unknown']}
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'FALSE',q:'All five previous mass extinctions were caused by human activity.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Habitat destruction is described as the greatest current threat.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some endangered species have recovered after being protected.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'NOT GIVEN',q:'The current extinction rate is higher in tropical regions than elsewhere.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'extinction',q:'The current crisis is often called the sixth mass ______.'},
+    {t:'text',a:'asteroid',q:'The dinosaurs were probably wiped out by an ______.'},
+    {t:'text',a:'pollination',q:'Ecosystems provide clean water, fertile soil and crop ______.'}
    ]},
-  {title:'The Language of Bees',
+  {title:'The Psychology of Nostalgia',
    paras:[
-    "Among the many wonders of the natural world, few are as fascinating as the way honeybees communicate. Despite having a brain smaller than a grain of rice, bees are able to share remarkably precise information with one another, guiding their hive-mates to distant sources of food.",
-    "The key to this communication is a behaviour known as the 'waggle dance'. When a forager bee discovers a rich patch of flowers, it returns to the hive and performs a series of movements on the honeycomb. By waggling its body and moving in a figure-of-eight pattern, the bee conveys both the direction and the distance of the food source. The angle of the dance indicates the direction relative to the sun, while the duration of the waggle signals how far away the food lies.",
-    "This discovery, made by the Austrian scientist Karl von Frisch in the twentieth century, was initially met with scepticism. Many found it hard to believe that an insect could communicate such detailed information. However, decades of careful experiments have confirmed that other bees do indeed use the dance to locate food.",
-    "Interestingly, the waggle dance is not the only signal bees use. They also rely heavily on chemical messages called pheromones. For example, when a hive is threatened, guard bees release an alarm pheromone that alerts the colony to danger.",
-    "Scientists believe that studying bee communication may have practical benefits beyond biology. Some researchers are exploring how the efficient way bees share information could inspire better designs for computer networks and even swarms of small robots.",
-    "Sadly, bee populations around the world are declining, threatened by pesticides, disease and habitat loss. Since bees pollinate a large proportion of the crops humans depend on, protecting them safeguards our own food supply."
+    "A   Nostalgia — a sentimental longing for the past — was for centuries regarded as an illness. The word was coined in the seventeenth century by a Swiss physician to describe the homesickness of soldiers far from home, and it was treated as a dangerous medical condition. Only recently has psychology reached a very different conclusion.",
+    "B   Modern research suggests that nostalgia, far from being harmful, is generally good for us. When people recall cherished memories — a family celebration, an old friendship — they typically report feeling happier, more optimistic and more connected to others. Nostalgia, it seems, is a resource the mind uses to comfort itself.",
+    "C   It appears to be triggered most often by negative feelings. Loneliness, boredom and sadness all tend to bring on nostalgic reflection, which then works to counteract them. In this sense nostalgia acts almost like a psychological immune response, restoring a sense of meaning when we feel low.",
+    "D   The triggers are not only emotional. Sensory cues are especially powerful: a particular song, or a smell such as baking bread, can summon a vivid memory in an instant. This is why music from our teenage years often moves us so deeply, long after we have forgotten more recent songs.",
+    "E   Nostalgia is also social. The memories people treasure are overwhelmingly about relationships — moments shared with family and friends rather than solitary achievements. By reminding us that we are loved and that we belong, nostalgia strengthens our bonds with others and reduces feelings of isolation.",
+    "F   There is, of course, a risk. Dwelling too much on an idealised past can make the present seem disappointing by comparison, and can slide into an unhelpful refusal to move on. Used in moderation, however, psychologists now regard nostalgia not as a weakness but as a small and valuable tool for wellbeing."
    ],
    Q:[
-    {t:'choice',a:'B',q:'The waggle dance tells other bees:',opts:['A) the colour of flowers','B) the direction and distance of food','C) the time of day','D) the number of bees']},
-    {t:'choice',a:'C',q:'The angle of the dance is measured relative to:',opts:['A) the hive','B) the queen','C) the sun','D) the wind']},
-    {t:'choice',a:'C',q:"Karl von Frisch's discovery was at first:",opts:['A) widely accepted','B) ignored','C) met with scepticism','D) kept secret']},
-    {t:'choice',a:'TRUE',q:'Bees can communicate the distance of a food source.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Bees only use dancing to communicate.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Alarm pheromones warn the colony of danger.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'NOT GIVEN',q:'Bee communication has already been used to build working robots.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'pheromone|pheromones',q:'When threatened, guard bees release an alarm ______.'},
-    {t:'text',a:'habitat',q:'Bee populations decline due to pesticides, disease and ______ loss.'},
-    {t:'text',a:'pollinate',q:'Bees ______ many of the crops humans rely on.'},
-    {t:'text',a:'pheromones|pheromone',q:'Bees also rely on chemical messages called ______.'},
-    {t:'choice',a:'B',q:'Studying bees may inspire designs for:',opts:['A) new pesticides','B) computer networks and robots','C) larger hives','D) faster cars']},
-    {t:'text',a:'food',q:'Protecting bees safeguards our own ______ supply.'}
+    {t:'choice',a:'B',q:'When the word "nostalgia" was first coined, it was seen as:',opts:['A) a virtue','B) a medical illness','C) a memory skill','D) a social bond']},
+    {t:'choice',a:'B',q:'Modern research suggests nostalgia usually makes people feel:',opts:['A) worse','B) happier and more connected','C) nothing at all','D) confused']},
+    {t:'choice',a:'B',q:'Nostalgia is most often triggered by:',opts:['A) success','B) negative feelings','C) exercise','D) hunger']},
+    {t:'choice',a:'C',q:'The memories people treasure are mostly about:',opts:['A) achievements','B) possessions','C) relationships','D) places']},
+    {t:'text',a:'A',q:'Which paragraph (A–F) explains the medical origin of the word?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) describes the power of smells and songs to trigger memory?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) mentions a possible danger of too much nostalgia?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) compares nostalgia to an immune response?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains how nostalgia strengthens social bonds?'},
+    {t:'text',a:'homesickness',q:'Nostalgia was first described as the ______ of soldiers.'},
+    {t:'text',a:'immune',q:'Nostalgia acts like a psychological ______ response.'},
+    {t:'text',a:'sensory',q:'______ cues such as a song can summon a memory instantly.'},
+    {t:'text',a:'present',q:'Too much nostalgia can make the ______ seem disappointing.'}
    ]},
-  {title:'The Rise of Remote Work',
+  {title:'Crows: Feathered Problem-Solvers',
    paras:[
-    "Over the past decade, and especially since the global pandemic, working from home has shifted from a rare privilege to a common arrangement. Millions of employees who once commuted daily to an office now carry out their duties from a spare room or kitchen table. This transformation has brought both opportunities and challenges.",
-    "For many workers, the benefits are considerable. Without a daily commute, employees save time and money, and often report a better work-life balance. Employers, too, can benefit, as remote work allows them to reduce office costs and recruit talent from anywhere in the world, rather than being limited to a single city.",
-    "However, remote work is not without drawbacks. Some employees find it difficult to separate their professional and personal lives, leading to longer hours and, in some cases, burnout. Others miss the social interaction of an office, feeling isolated and disconnected from colleagues.",
-    "Collaboration can also suffer, as spontaneous conversations that spark ideas are harder to replicate over video calls. The impact varies from person to person. Studies suggest that experienced employees who value independence tend to thrive when working remotely, whereas younger workers, who benefit from learning by observing others, may struggle.",
-    "For this reason, many companies have adopted a 'hybrid' model, combining days in the office with days at home. As technology continues to improve, remote work is likely to remain a permanent feature of the modern workplace. The challenge for organisations is to capture its benefits while minimising its disadvantages."
+    "A   For most of history, to call someone 'bird-brained' was to call them stupid. Birds, with their tiny heads, were assumed to be incapable of real thought. The crow family — which includes crows, ravens, rooks and jays — has forced scientists to abandon that assumption entirely. These birds, it turns out, are among the most intelligent animals on the planet.",
+    "B   The evidence is striking. In laboratory experiments, crows have solved multi-step puzzles that would defeat many mammals, using one tool to obtain another before reaching a reward. Some wild crows in New Caledonia not only use sticks as tools but shape them, bending a piece of wire into a hook — a level of tool manufacture once thought unique to humans and great apes.",
+    "C   Their abilities extend to memory and planning. Crows can remember the individual human faces of people who have threatened them, and will scold those particular individuals years later, even passing the grudge on to other crows. Some species hide thousands of food items and recall the locations months afterwards, and appear to plan for future needs rather than merely reacting to the present.",
+    "D   Perhaps most surprisingly, crows seem to understand something about other minds. A crow that has hidden food while being watched by another bird will often return, alone, to move it — behaviour that suggests it grasps that the observer might steal the cache. Such awareness of what others can see was long believed to be beyond any animal but ourselves.",
+    "E   How can so small a brain achieve so much? The answer lies not in size but in structure. Although a crow's brain is tiny, it is exceptionally dense, packed with far more neurons than a mammal brain of similar size. Intelligence, it appears, depends less on the sheer size of a brain than on how tightly it is wired.",
+    "F   These discoveries carry a wider lesson. They show that advanced intelligence has evolved more than once, and by a very different route from our own. In studying the mind of a crow, scientists are learning that there is more than one way for nature to build a thinking creature."
    ],
    Q:[
-    {t:'choice',a:'TRUE',q:'Working from home became more common after the pandemic.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Remote work always increases costs for employers.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'Remote workers can be recruited from anywhere.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'All employees prefer working from home.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'money',q:'Without commuting, employees save time and ______.'},
-    {t:'text',a:'burnout',q:'Some workers experience ______ from longer hours.'},
-    {t:'text',a:'observing|observe',q:'Younger workers benefit from learning by ______ others.'},
-    {t:'text',a:'hybrid',q:'Many companies have adopted a ______ model.'},
-    {t:'choice',a:'B',q:'A drawback of remote work is:',opts:['A) shorter hours','B) isolation','C) lower costs','D) more commuting']},
-    {t:'choice',a:'B',q:'Employees who tend to thrive value:',opts:['A) money','B) independence','C) supervision','D) commuting']},
-    {t:'choice',a:'TRUE',q:'Collaboration can suffer with remote work.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Spontaneous conversations are easier over video calls.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'FALSE',q:'Remote work is likely to disappear soon.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'TRUE',q:'The hybrid model combines office and home working.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'Birds were once assumed to be incapable of real thought.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'No animal other than humans and apes can make tools.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Crows can remember the faces of people who threatened them.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'A crow may move hidden food if it was watched hiding it.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:"A crow's intelligence is explained by the large size of its brain.",opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NOT GIVEN',q:'Crows are now known to be more intelligent than all mammals.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives an example of a crow shaping a tool?'},
+    {t:'text',a:'D',q:'Which paragraph (A–F) gives evidence that crows understand what others can see?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) explains the role of brain structure?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) states the wider lesson about how intelligence evolves?'},
+    {t:'text',a:'New Caledonia',q:'Where do the tool-shaping wild crows live?'},
+    {t:'text',a:'dense',q:"A crow's brain is small but exceptionally ______."},
+    {t:'text',a:'locations|location',q:'Crows can recall the ______ of hidden food months later.'},
+    {t:'text',a:'neurons|neuron',q:'A crow\'s brain is packed with more ______ than a mammal brain of the same size.'}
    ]}
  ],
  writing:{
