@@ -1605,7 +1605,7 @@ const MOCKS=[
  blurb:'Car hire · Botanical garden · Flight history + Flight · Trees · Reading',
  listen:[
   {title:'City Car Hire booking',
-   transcript:"Good afternoon, City Car Hire. I'd like to rent a car for the weekend. What size of car would you like? A small economy car, please. That's forty pounds a day, so eighty pounds for two days. Does that include insurance? Basic insurance is included, but full cover is an extra ten pounds a day. You'll need a valid driving licence and a credit card. The car comes with a full tank of fuel, and we ask that you return it full; there's a charge if it's returned with less. Can I collect it tomorrow? Yes, our office opens at eight in the morning. Please note the car must be returned by six in the evening on Sunday, or a late fee applies.",
+   transcript:"Good afternoon, City Car Hire. I'd like to rent a car for the weekend. What size of car would you like? A small economy car, please. That's forty pounds a day, so eighty pounds for two days. Does that include insurance? Basic insurance is included, but full cover is an extra fifteen... sorry, ten pounds a day. You'll need a valid driving licence and a credit card, not a debit card. The car comes with a full tank of fuel, and we ask that you return it full; there's a charge if it's returned with less. Can I collect it tomorrow? Yes, our office opens at nine — sorry, eight in the morning. Please note the car must be returned by six in the evening on Sunday, or a late fee applies.",
    Q:[
     {t:'text',a:'economy',q:'The customer wants a small ______ car.'},
     {t:'text',a:'forty|40',q:'Cost: £______ a day.'},
@@ -1619,7 +1619,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'If the car is returned with less fuel, there is a:',opts:['A) discount','B) charge','C) free refill','D) warning']}
    ]},
   {title:'Botanical garden guided walk',
-   transcript:"Welcome to the Riverside Botanical Gardens. Our guided walk today will last about ninety minutes. We'll start at the tropical glasshouse, home to plants from rainforests around the world, including some rare orchids. From there, we'll visit the rose garden, which is at its best in June. One of our most popular features is the giant redwood tree, planted over a hundred years ago. Please stay on the paths to protect the plants, and note that picnics are only allowed in the designated area near the lake. The gardens are entirely run by volunteers. Guidebooks are available in the shop for four pounds. The cafe closes at four thirty.",
+   transcript:"Welcome to the Riverside Botanical Gardens. Our guided walk today will last about sixty minutes... sorry, ninety. We'll start at the tropical glasshouse, home to plants from rainforests around the world, including some rare orchids. From there, we'll visit the rose garden, which is at its best in July — no, June. One of our most popular features is the giant redwood tree, planted over a hundred years ago. Please stay on the paths to protect the plants, and note that picnics are only allowed in the designated area near the lake, not by the glasshouse. The gardens are entirely run by volunteers. Guidebooks are available in the shop for four pounds. The cafe closes at four thirty.",
    Q:[
     {t:'text',a:'ninety|90',q:'The guided walk lasts about ______ minutes.'},
     {t:'text',a:'glasshouse|glass house',q:'The walk starts at the tropical ______.'},
@@ -1633,7 +1633,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'The cafe closes at:',opts:['A) 4:00','B) 4:30','C) 5:00','D) 6:00']}
    ]},
   {title:'Group project: reducing food waste',
-   transcript:"For our project, we need a plan to reduce food waste in the college canteen. Where should we start? Let's find out how much food is currently wasted. How? We could weigh the leftover food for a week. What are the main causes? I think portions are too large, and students take more than they eat. So what's our solution? We could offer smaller and larger portion sizes. And use the leftover food? Yes, we could donate it to a local charity. We should also put up posters to raise awareness. When do we present? On the fifteenth of May. I'll contact the charity, you design the posters. And we'll present the weight data as a graph.",
+   transcript:"For our project, we need a plan to reduce food waste in the college canteen. Where should we start? Let's find out how much food is currently wasted. How? We could weigh the leftover food for a week. What are the main causes? I think portions are too large, and students take more than they eat. So what's our solution? We could offer smaller and larger portion sizes. And use the leftover food? Yes, we could donate it to a local charity, not throw it away. We should also put up posters to raise awareness. When do we present? On the fifth... no, the fifteenth of May. I'll contact the charity, you design the posters. And we'll present the weight data as a graph.",
    Q:[
     {t:'text',a:'waste',q:'The project aims to reduce food ______ in the canteen.'},
     {t:'text',a:'weigh',q:'They will ______ the leftover food for a week.'},
@@ -1647,7 +1647,7 @@ const MOCKS=[
     {t:'choice',a:'B',q:'Students currently take:',opts:['A) less than they eat','B) more than they eat','C) the right amount','D) nothing']}
    ]},
   {title:'Lecture: the history of flight',
-   transcript:"Today we will look at the history of human flight. For centuries, people dreamed of flying, but early attempts to copy birds by flapping wings all failed. The first real success came with balloons: in 1783, two Frenchmen became the first people to fly, in a hot-air balloon. However, balloons could not be steered easily. The great breakthrough came in 1903, when the Wright brothers, in the United States, made the first controlled flight in a powered aircraft, lasting just twelve seconds. Progress after that was astonishingly rapid. Within a few decades, aircraft were crossing oceans, and by 1969, humans had landed on the Moon.",
+   transcript:"Today we will look at the history of human flight. For centuries, people dreamed of flying, but early attempts to copy birds by flapping wings all failed. The first real success came with balloons: in 1873 — sorry, 1783 — two Frenchmen became the first people to fly, in a hot-air balloon. However, balloons could not be steered easily. The great breakthrough came in 1903, when the Wright brothers, in the United States, made the first controlled flight in a powered aircraft, lasting just twenty... no, twelve seconds. Progress after that was astonishingly rapid. Within a few decades, aircraft were crossing oceans, and by 1969, humans had landed on the Moon.",
    Q:[
     {t:'text',a:'flapping|flap',q:'Early attempts to fly by ______ wings all failed.'},
     {t:'text',a:'balloon',q:'The first people to fly used a hot-air ______.'},
@@ -1662,72 +1662,79 @@ const MOCKS=[
    ]}
  ],
  read:[
-  {title:'The History of Flight',
+  {title:'The Science of Sound',
    paras:[
-    "The dream of flight is as old as humanity itself. Ancient myths tell of people attaching wings to their arms, and for centuries inventors tried, and failed, to fly like birds. Real progress only began when people stopped imitating birds and started to understand the science of flight.",
-    "The first breakthrough came with the hot-air balloon. In 1783, in France, a balloon carried the first human passengers into the sky. Balloons, however, could drift only where the wind took them. The next great challenge was achieving controlled, powered flight.",
-    "This was accomplished in 1903 by two American brothers, Orville and Wilbur Wright, who built and flew the first aeroplane. Their first flight lasted only twelve seconds, but it changed the world. Over the following decades, aircraft became faster, larger, and more reliable. During the two World Wars, rapid advances were made in aviation technology.",
-    "The arrival of the jet engine after the Second World War transformed air travel, making it faster and eventually affordable to ordinary people. Air travel shrank the world, allowing people and goods to move between continents in hours rather than weeks."
+    "List of Headings —  i) Waves through the air   ii) What makes a sound high or low   iii) The speed of sound   iv) How we hear   v) Sounds we cannot hear   vi) Using sound to see   vii) Measuring loudness   viii) Silencing unwanted noise",
+    "A   Sound is all around us, yet it is easy to forget what it actually is. Sound is not a substance but a movement — a wave of vibration that travels through a material such as air. When an object vibrates, it pushes on the air next to it, which pushes on the air beyond, and so a wave of pressure spreads outward from the source, like ripples from a stone dropped in water.",
+    "B   Because sound is a movement of a material, it cannot travel through empty space, where there is no material to carry it. This is why space, despite the explosions of science-fiction films, is in reality completely silent. Sound also travels at different speeds through different materials, moving faster through water, and faster still through solids, than it does through air.",
+    "C   The character of a sound depends on the wave. How quickly the vibrations repeat — the 'frequency' — determines the pitch: fast vibrations produce a high note, slow ones a low note. The size of the vibration, meanwhile, determines the loudness: a bigger wave carries more energy and sounds louder.",
+    "D   We detect these waves with our ears. Sound waves entering the ear cause the eardrum to vibrate, and these vibrations are passed on and converted into signals that the brain interprets as sound. The human ear is remarkably sensitive, but it can only detect a certain range of frequencies.",
+    "E   Beyond that range lie sounds we cannot hear at all. Frequencies too high for humans, called ultrasound, are audible to animals such as dogs and bats; frequencies too low, called infrasound, are used by elephants and whales to communicate over great distances. Our silent world is, to other creatures, full of sound.",
+    "F   Humans have learned to put sound to ingenious use. By sending out a pulse of sound and timing its echo, ships can measure the depth of the sea, and doctors can form images of the inside of the body. Bats and dolphins discovered the same trick long before us, navigating and hunting by listening to the echoes of their own calls."
    ],
    Q:[
-    {t:'text',a:'birds|bird',q:'For centuries, inventors tried to fly like ______.'},
-    {t:'text',a:'science',q:'Progress began when people understood the ______ of flight.'},
-    {t:'text',a:'balloon',q:'The first human passengers flew in a hot-air ______.'},
-    {t:'text',a:'1783',q:'The first balloon flight was in ______ (year).'},
-    {t:'text',a:'wind',q:'Balloons could only drift where the ______ took them.'},
-    {t:'choice',a:'B',q:'The first aeroplane was built by:',opts:['A) the French','B) the Wright brothers','C) the British','D) balloonists']},
-    {t:'text',a:'twelve|12',q:"The Wright brothers' first flight lasted ______ seconds."},
-    {t:'text',a:'wars|war',q:'Rapid advances were made during the two World ______.'},
-    {t:'text',a:'jet',q:'The ______ engine transformed air travel after WWII.'},
-    {t:'text',a:'affordable',q:'Air travel eventually became ______ to ordinary people.'},
-    {t:'text',a:'hours|hour',q:'Air travel allowed movement between continents in ______ rather than weeks.'},
-    {t:'choice',a:'TRUE',q:'Early inventors failed because they imitated birds.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'choice',a:'B',q:'The story of flight is described as:',opts:['A) unimportant','B) one of the most remarkable in history','C) a failure','D) a myth']}
+    {t:'text',a:'i|1',q:'Choose the best heading (i–viii) for Paragraph A.'},
+    {t:'text',a:'iii|3',q:'Choose the best heading (i–viii) for Paragraph B.'},
+    {t:'text',a:'ii|2',q:'Choose the best heading (i–viii) for Paragraph C.'},
+    {t:'text',a:'iv|4',q:'Choose the best heading (i–viii) for Paragraph D.'},
+    {t:'text',a:'v|5',q:'Choose the best heading (i–viii) for Paragraph E.'},
+    {t:'text',a:'vi|6',q:'Choose the best heading (i–viii) for Paragraph F.'},
+    {t:'choice',a:'TRUE',q:'Sound is a wave of vibration that needs a material to travel through.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Sound travels faster through air than through water.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'FALSE',q:'Fast vibrations produce a low note.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'choice',a:'TRUE',q:'Some animals can hear sounds that humans cannot.',opts:['TRUE','FALSE','NOT GIVEN']},
+    {t:'text',a:'frequency',q:'How quickly the vibrations repeat is called the ______.'},
+    {t:'text',a:'space',q:'Sound cannot travel through empty ______.'},
+    {t:'text',a:'ultrasound',q:'Sound too high for humans to hear is called ______.'}
    ]},
-  {title:'The Secret Life of Trees',
+  {title:'The History of the Newspaper',
    paras:[
-    "For a long time, trees were thought of as solitary organisms, each competing with its neighbours for light and water. In recent years, however, scientists have discovered that forests are far more complex and cooperative than anyone imagined, and that trees are, in a sense, connected to one another.",
-    "The key to this hidden connection lies underground. The roots of trees are linked by a vast network of fungi, sometimes called the 'wood wide web'. Through this network, trees can actually share resources. A large, healthy tree may send sugars through the fungi to a younger or weaker tree nearby, helping it to survive in the shade.",
-    "Even more remarkably, trees appear to communicate. When one tree is attacked by insects, it can release chemical signals into the air and through the fungal network, warning neighbouring trees, which then begin to produce substances to defend themselves. In this way, a forest behaves less like a collection of individuals and more like a single, cooperative community.",
-    "These discoveries have important implications. They suggest that when we cut down forests, we may be destroying not just individual trees but complex communities and relationships built up over centuries."
+    "A   The desire to know what is happening in the world is nothing new. In ancient Rome, official announcements were carved on stone or metal and displayed in public places for citizens to read. But the newspaper as we know it — a printed sheet of news, produced regularly and sold to the public — could not exist until a crucial invention: the printing press.",
+    "B   The first true newspapers appeared in Europe in the early seventeenth century, printed weekly and carrying news of wars, trade and foreign courts. They were expensive, and, because most people could not read, their audience was small. Governments, wary of their power, often tried to control what they printed, and censorship was common.",
+    "C   Two developments in the nineteenth century transformed the newspaper. Faster printing presses, driven by steam, could produce thousands of copies an hour, while rising literacy created a vast new readership. Newspapers became cheap enough for ordinary people to buy daily, and their circulation soared into the millions.",
+    "D   The telegraph then revolutionised how news was gathered. For the first time, reports could travel faster than a person, arriving from distant cities or countries within minutes rather than weeks. News agencies grew up to collect and sell such reports, so that the same story could appear in papers around the world almost at once.",
+    "E   For over a century, the newspaper reigned as the main source of information, shaping public opinion and holding the powerful to account. Great newspapers uncovered scandals and corruption, and a free press came to be seen, in many countries, as an essential guardian of democracy.",
+    "F   Today the printed newspaper is in steep decline, its readers and its advertising drawn away by the internet. Yet the need it served has not vanished. Much online news is produced by the same organisations, and the questions raised by the newspaper's history — who controls the news, and how it should be paid for — are as pressing as ever."
    ],
    Q:[
-    {t:'text',a:'solitary',q:'Trees were once thought to be ______ organisms.'},
-    {t:'text',a:'fungi|fungus',q:'Tree roots are linked by a network of ______.'},
-    {t:'text',a:'web',q:"This network is sometimes called the 'wood wide ______'."},
-    {t:'text',a:'resources|resource',q:'Through the network, trees can share ______.'},
-    {t:'text',a:'sugars|sugar',q:'A healthy tree may send ______ to a weaker tree.'},
-    {t:'text',a:'shade',q:'This helps weaker trees survive in the ______.'},
-    {t:'text',a:'signals|signal',q:'When attacked by insects, a tree releases chemical ______.'},
-    {t:'text',a:'defend',q:'Warned trees produce substances to ______ themselves.'},
-    {t:'choice',a:'B',q:'A forest behaves less like individuals and more like a:',opts:['A) machine','B) cooperative community','C) single tree','D) desert']},
-    {t:'text',a:'communities|community',q:'Cutting down forests may destroy complex ______.'},
-    {t:'text',a:'centuries|century',q:'These relationships were built up over ______.'},
-    {t:'choice',a:'FALSE',q:'Trees are completely isolated from each other.',opts:['TRUE','FALSE','NOT GIVEN']},
-    {t:'text',a:'protect',q:'Understanding forests may help us ______ them.'}
+    {t:'choice',a:'B',q:'The newspaper could not exist until the invention of the:',opts:['A) telegraph','B) printing press','C) steam engine','D) internet']},
+    {t:'choice',a:'B',q:'Early newspapers had a small audience mainly because:',opts:['A) they were boring','B) most people could not read','C) they were banned','D) they were slow']},
+    {t:'choice',a:'B',q:'In the nineteenth century, newspapers became cheap partly because of:',opts:['A) the telegraph','B) steam-driven printing presses','C) censorship','D) news agencies']},
+    {t:'choice',a:'C',q:'The telegraph changed newspapers by making news:',opts:['A) cheaper','B) longer','C) travel faster than a person','D) more accurate']},
+    {t:'text',a:'D',q:'Which paragraph (A–F) explains how news agencies spread the same story worldwide?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes the role of the free press in democracy?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) describes the current decline of printed newspapers?'},
+    {t:'text',a:'A',q:'Which paragraph (A–F) explains how public news was shared in ancient Rome?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the two changes that transformed newspapers in the 1800s?'},
+    {t:'text',a:'metal',q:'In ancient Rome, announcements were carved on stone or ______.'},
+    {t:'text',a:'censorship',q:'Early newspapers were often subject to government ______.'},
+    {t:'text',a:'hour',q:'Steam-driven presses could produce thousands of copies an ______.'},
+    {t:'text',a:'democracy',q:'A free press is seen as a guardian of ______.'}
    ]},
-  {title:'Why Reading Still Matters',
+  {title:'Is a University Degree Still Worth It?',
    paras:[
-    "In an age of screens, videos, and endless digital distraction, some people wonder whether reading books still matters. Yet research continues to show that reading, particularly of longer texts such as books, offers benefits that other media struggle to match.",
-    "One clear benefit is for the mind. Reading has been shown to improve vocabulary and general knowledge, and, unlike passively watching a screen, it actively engages the brain, strengthening concentration and the ability to follow complex ideas. Reading fiction, in particular, has a surprising benefit: by encouraging readers to imagine the thoughts and feelings of characters, it appears to improve empathy, our ability to understand others.",
-    "Reading also has emotional benefits. Studies suggest that reading for pleasure can reduce stress, sometimes more effectively than other relaxing activities. For many, losing themselves in a good book provides a valuable escape from the pressures of daily life.",
-    "Despite these benefits, reading for pleasure appears to be declining, especially among young people, who spend increasing amounts of time on digital devices. Many experts find this worrying, arguing that the deep, focused attention that reading develops is exactly the skill most under threat in a world of constant distraction."
+    "A   For decades, a university degree was seen as a sure path to a better job and a higher income. Young people were told that education was the best investment they could make. Recently, however, that assumption has come under question, as the cost of a degree has risen and the world of work has changed. The question of whether a degree is still worth it now troubles students and parents alike.",
+    "B   Those who defend the value of a degree point to the evidence. On average, graduates still earn considerably more over their lifetimes than those without a degree, and are less likely to be unemployed. Beyond money, supporters argue, university broadens the mind, teaches people to think critically, and offers experiences and friendships that last a lifetime.",
+    "C   Critics, however, raise serious doubts. In many countries the cost of a degree has soared, leaving graduates with large debts that take years to repay. Meanwhile, as more and more people gain degrees, a degree no longer guarantees the advantage it once did, and some graduates find themselves in jobs that do not require one at all.",
+    "D   The choice of subject matters greatly. A degree in a field such as medicine or engineering still leads reliably to well-paid work, whereas the financial return on some other subjects is far less certain. Averages, critics point out, hide huge differences between one graduate and another.",
+    "E   There are also alternatives that were once overlooked. Apprenticeships, in which young people learn a skilled trade while earning a wage, are attracting fresh interest, and some large technology companies no longer require applicants to have a degree at all, preferring to test skills directly.",
+    "F   Most careers advisers now give a more nuanced answer than in the past. A degree, they suggest, remains valuable for many people and many careers, but it is no longer the only route to success, nor automatically the right choice for everyone. The wise course, they argue, is to weigh the costs and benefits carefully rather than to assume."
    ],
    Q:[
-    {t:'text',a:'matters|matter',q:'Some people wonder whether reading books still ______.'},
-    {t:'text',a:'knowledge',q:'Reading improves vocabulary and general ______.'},
-    {t:'text',a:'engages|engage',q:'Unlike watching a screen, reading actively ______ the brain.'},
-    {t:'text',a:'ideas|idea',q:'Reading strengthens concentration and the ability to follow complex ______.'},
-    {t:'text',a:'empathy',q:'Reading fiction appears to improve ______.'},
-    {t:'text',a:'others',q:'Empathy is the ability to understand ______.'},
-    {t:'text',a:'stress',q:'Reading for pleasure can reduce ______.'},
-    {t:'text',a:'escape',q:'A good book provides an ______ from daily pressures.'},
-    {t:'choice',a:'B',q:"Reading fiction improves empathy by encouraging readers to imagine characters' thoughts and:",opts:['A) actions','B) feelings','C) words','D) names']},
-    {t:'text',a:'declining|decline',q:'Reading for pleasure appears to be ______.'},
-    {t:'text',a:'young',q:'This decline is especially seen among ______ people.'},
-    {t:'text',a:'devices|device',q:'Young people spend increasing time on digital ______.'},
-    {t:'choice',a:'B',q:'Experts are worried because reading develops:',opts:['A) fast typing','B) deep, focused attention','C) social media skills','D) memory of facts']},
-    {t:'choice',a:'TRUE',q:'Reading books offers benefits other media struggle to match.',opts:['TRUE','FALSE','NOT GIVEN']}
+    {t:'choice',a:'YES',q:'A university degree was once seen as a sure path to a better job.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Graduates, on average, earn less over their lifetimes than non-graduates.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'The cost of a degree has fallen in recent years.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'The financial value of a degree is the same regardless of subject.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'YES',q:'Some technology companies no longer require a degree.',opts:['YES','NO','NOT GIVEN']},
+    {t:'choice',a:'NO',q:'Careers advisers now say a degree is the only route to success.',opts:['YES','NO','NOT GIVEN']},
+    {t:'text',a:'B',q:'Which paragraph (A–F) gives the argument that graduates earn more?'},
+    {t:'text',a:'C',q:'Which paragraph (A–F) describes the problem of graduate debt?'},
+    {t:'text',a:'E',q:'Which paragraph (A–F) describes apprenticeships as an alternative?'},
+    {t:'text',a:'F',q:'Which paragraph (A–F) gives the balanced advice of careers advisers?'},
+    {t:'text',a:'think critically|critically|critical thinking',q:'Besides earning more, what does university teach people to do?'},
+    {t:'text',a:'debts|debt|large debts',q:'What have many graduates been left with because of rising costs?'},
+    {t:'text',a:'engineering',q:'A degree in medicine or ______ still leads reliably to well-paid work.'},
+    {t:'text',a:'trade',q:'In an apprenticeship, young people learn a skilled ______ while earning.'}
    ]}
  ],
  writing:{
