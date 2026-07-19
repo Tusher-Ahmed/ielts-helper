@@ -53,17 +53,21 @@
   .q{background:#fff;border:1px solid #ddd;border-radius:7px;padding:11px 13px;margin:9px 0}
   .q .qn{display:inline-flex;width:23px;height:23px;background:#1a3a6b;color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-right:8px}
   .qtext{font-size:14px;color:#1a1a1a;margin-bottom:7px}
-  .opts{display:flex;flex-direction:column;gap:5px}
-  .opt{border:1px solid #ccc;background:#fff;border-radius:6px;padding:7px 11px;cursor:pointer;font-size:13.5px;text-align:left}
-  .opt:hover{background:#eef4ff;border-color:#1a73e8}
-  .opt.sel{background:#1a73e8;color:#fff;border-color:#1a73e8}
+  .opts{display:flex;flex-direction:column;gap:7px;margin-top:5px}
+  .opt{border:1.5px solid #dde3ee;background:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-size:13.5px;text-align:left;line-height:1.4;transition:background .12s,border-color .12s,transform .12s,box-shadow .12s}
+  .opt:hover{background:#f2f7ff;border-color:#1a73e8;transform:translateX(2px)}
+  .opt.sel{background:#1a73e8;color:#fff;border-color:#1a73e8;font-weight:600;box-shadow:0 3px 10px rgba(26,115,232,.28)}
   .fill{border:1px solid #aaa;border-radius:5px;padding:6px 10px;font-size:13.5px;width:200px;max-width:100%}
   .fill:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
   .flagrow{margin-top:8px;display:flex;align-items:center;gap:6px;font-size:12px;color:#b06a00}
   .flagrow input{accent-color:#e0a800;width:14px;height:14px}
   .q.ok{border-color:#1a9c5a;box-shadow:0 0 0 1px #1a9c5a inset}
   .q.bad{border-color:#c0392b;box-shadow:0 0 0 1px #c0392b inset}
-  .opt.correctopt{background:#d6f5e3;border-color:#1a9c5a;color:#0a5c33}
+  .opt.correctopt{background:#e7f8ee;border-color:#1a9c5a;color:#0a5c33;font-weight:600}
+  .lcontrols{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;background:#f7f9fc;border:1px solid #e3e8f0;border-radius:10px;padding:9px 14px;margin:6px 0 10px;font-size:12.5px;color:#55617a}
+  .lcontrols label{display:flex;align-items:center;gap:7px;font-weight:600}
+  .lcontrols select{border:1px solid #cfd8e6;border-radius:7px;padding:5px 9px;font-size:12.5px;max-width:230px;background:#fff;color:#1a1a1a;cursor:pointer}
+  .lcontrols input[type=range]{vertical-align:middle;accent-color:#1a73e8}
   .oki{border-color:#1a9c5a!important;background:#f0fff6}.badi{border-color:#c0392b!important;background:#fff2f0}
   .ansreveal{color:#1a9c5a;font-weight:700;font-size:12.5px;margin-left:8px}
   .player{display:flex;gap:10px;align-items:center;background:#eef2f8;border:1px solid #cfd8e6;border-radius:8px;padding:9px 12px;margin:6px 0 8px}
@@ -189,7 +193,10 @@
 
   <div class="screen" id="p-listening"><div class="pad">
     <h2>Listening</h2>
-    <label style="font-size:12.5px;color:#555">Audio speed: <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.8"></label>
+    <div class="lcontrols">
+      <label>🔊 Voice <select id="voicePick"><option value="">Auto (recommended)</option></select></label>
+      <label>🐢 Speed <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.8"> 🐇</label>
+    </div>
     <div id="listenQ"></div>
   </div></div>
 
@@ -435,10 +442,23 @@ let _bestVoice=null;
 function bestVoice(){
   if(!('speechSynthesis'in window))return null;
   const all=speechSynthesis.getVoices(); if(!all.length)return _bestVoice;
+  const sel=document.getElementById('voicePick');           // honour the user's manual choice
+  if(sel&&sel.value){const v=all.find(x=>x.voiceURI===sel.value);if(v){_bestVoice=v;return v;}}
   const en=all.filter(v=>/^en(-|_|$)/i.test(v.lang)); const list=en.length?en:all;
   _bestVoice=list.slice().sort((a,b)=>voiceScore(b)-voiceScore(a))[0]||null; return _bestVoice;
 }
-if('speechSynthesis'in window) speechSynthesis.onvoiceschanged=bestVoice;
+function fillVoices(){
+  const sel=document.getElementById('voicePick'); if(!sel||!('speechSynthesis'in window))return;
+  const all=speechSynthesis.getVoices(); const en=all.filter(v=>/^en(-|_|$)/i.test(v.lang));
+  const list=(en.length?en:all).slice().sort((a,b)=>voiceScore(b)-voiceScore(a));
+  if(!list.length)return;
+  const saved=localStorage.getItem('ielts_voice')||'';
+  const nat=v=>/natural|neural|online|google|siri|premium|enhanced/i.test(v.name);
+  sel.innerHTML='<option value="">Auto (recommended)</option>'+list.map(v=>'<option value="'+v.voiceURI+'"'+(v.voiceURI===saved?' selected':'')+'>'+(nat(v)?'⭐ ':'')+v.name.replace(/Microsoft |Google /,'')+' — '+v.lang+'</option>').join('');
+  sel.onchange=()=>localStorage.setItem('ielts_voice',sel.value);
+}
+if('speechSynthesis'in window) speechSynthesis.onvoiceschanged=()=>{bestVoice();fillVoices();};
+window.addEventListener('load',fillVoices);
 function rateVal(){return parseFloat(document.getElementById('rate').value||'0.85');}
 function lstat(si,txt){const el=document.getElementById('lstat'+si);if(el)el.textContent=txt||'';}
 function lskip(si,show){const b=document.getElementById('lskip'+si);if(b)b.style.display=show?'inline-block':'none';}
