@@ -69,6 +69,25 @@
   .fill:focus{outline:none;border-color:var(--accent)}
   .q.ok{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
   .q.bad{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+  .oki{border-color:var(--green)!important}.badi{border-color:var(--red)!important}
+  /* ---- hard-mode question layouts (table / matching / short-answer) ---- */
+  .qinstr{font-weight:700;color:var(--gold);margin:14px 0 8px;font-size:13.5px}
+  .lim{color:var(--muted);font-size:11px;font-weight:700;background:rgba(255,255,255,.07);border-radius:5px;padding:1px 7px;white-space:nowrap}
+  .ltable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0;border-radius:12px;border:1px solid var(--line)}
+  .ltable{border-collapse:collapse;width:100%;min-width:340px;font-size:14px;color:var(--txt);background:var(--card2)}
+  .ltable th,.ltable td{border-bottom:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:middle}
+  .ltable tr:last-child th,.ltable tr:last-child td{border-bottom:none}
+  .ltable tr:first-child th{background:linear-gradient(90deg,rgba(108,140,255,.22),rgba(70,214,179,.14));color:#eef0ff;font-weight:700}
+  .ltable th{background:var(--card);font-weight:600;color:var(--muted);white-space:nowrap}
+  .qi{display:inline!important;background:none!important;border:none!important;padding:0!important;margin:0!important;box-shadow:none!important}
+  .qi .fill{width:120px;display:inline-block;margin-left:4px;padding:5px 9px}
+  .qn2{display:inline-flex;min-width:19px;height:19px;padding:0 5px;background:var(--accent);color:#06121f;border-radius:20px;font-size:10.5px;font-weight:800;align-items:center;justify-content:center;vertical-align:middle}
+  .matchleg{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:11px 15px;margin:10px 0;font-size:13px}
+  .matchleg b{color:var(--gold);display:block;margin-bottom:6px}
+  .matchleg ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+  .matchleg li{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:3px 13px;font-weight:600}
+  select.fill{cursor:pointer;min-width:170px}
+  .ansreveal{color:var(--green)!important;font-weight:700}
   .oki{border-color:var(--green)!important}
   .badi{border-color:var(--red)!important}
   .ansreveal{color:var(--green);font-weight:600;margin-left:8px;font-family:'Poppins';font-size:.9rem}
@@ -373,17 +392,20 @@
     <div style="font-size:13px;color:var(--gold);margin:6px 0;min-height:18px"><span id="lstat1">▶️ চাপো — আসল IELTS-এর মতো intro + প্রশ্ন পড়ার সময় সহ চলবে</span> <button id="lskip1" class="btn btn-ghost" style="display:none;padding:2px 8px;font-size:12px" onclick="skipPracticeGap()">⏭ Skip</button></div>
     <div class="note warn">⚠️ এটি ব্রাউজারের কৃত্রিম কণ্ঠ (synthetic voice) — প্র্যাকটিসের জন্য। আসল পরীক্ষায় বিভিন্ন accent থাকবে। হেডফোন ব্যবহার করো।</div>
 
-    <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–8:</b> ফাঁকা জায়গা পূরণ করো (সংখ্যা বা ১ শব্দ)।</p>
+    <div class="qinstr">Questions 1–7: Complete the table. Write ONE WORD AND/OR A NUMBER for each answer.</div>
     <div class="test" id="l1">
-      <div class="q text" data-a="10pm|10 pm|ten|10|10:00"><p class="qtext">1. Weekday closing time: ______</p><input class="fill" type="text" placeholder="যেমন 10pm"></div>
-      <div class="q text" data-a="eight|8"><p class="qtext">2. Number of swimming pool lanes: ______</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="40|£40|40 pounds|forty"><p class="qtext">3. Adult membership per month: £______</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="25|£25|25 pounds|twenty-five|twenty five"><p class="qtext">4. Student membership per month: £______</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="cafe|café"><p class="qtext">5. The gym is located next to the ______.</p><input class="fill" type="text" placeholder="১ শব্দ"></div>
-      <div class="q text" data-a="padlock"><p class="qtext">6. Members must bring a towel and a ______.</p><input class="fill" type="text" placeholder="১ শব্দ"></div>
-      <div class="q text" data-a="two|2"><p class="qtext">7. Group classes must be booked ______ days in advance.</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q choice" data-a="B"><p class="qtext">8. Visitors must pay for parking:</p>
-        <div class="opts"><button class="opt">A) it is free</button><button class="opt">B) £3 per hour</button><button class="opt">C) £40 per month</button><button class="opt">D) only at weekends</button></div></div>
+      <div class="ltable-wrap"><table class="ltable"><tbody>
+        <tr><th>Facility / item</th><th>Details</th></tr>
+        <tr><th>Latest weekday closing</th><td>open until <span class="q text qi" data-a="10pm|10 pm|ten|10|10:00"><span class="qn2">1</span><input class="fill" type="text"></span></td></tr>
+        <tr><th>Size of the pool</th><td><span class="q text qi" data-a="eight|8"><span class="qn2">2</span><input class="fill" type="text"></span> lanes</td></tr>
+        <tr><th>Standard adult membership</th><td>£ <span class="q text qi" data-a="40|£40|40 pounds|forty"><span class="qn2">3</span><input class="fill" type="text"></span> a month</td></tr>
+        <tr><th>Concession for students</th><td>£ <span class="q text qi" data-a="25|£25|25 pounds|twenty-five|twenty five"><span class="qn2">4</span><input class="fill" type="text"></span> a month</td></tr>
+        <tr><th>The gym is next to the</th><td><span class="q text qi" data-a="cafe|café"><span class="qn2">5</span><input class="fill" type="text"></span></td></tr>
+        <tr><th>Bring with you (plus a towel)</th><td>a <span class="q text qi" data-a="padlock"><span class="qn2">6</span><input class="fill" type="text"></span></td></tr>
+        <tr><th>Advance notice for a class</th><td><span class="q text qi" data-a="two|2"><span class="qn2">7</span><input class="fill" type="text"></span> days</td></tr>
+      </tbody></table></div>
+      <div class="q choice" data-a="B"><p class="qtext"><b>8.</b> Visitors who come by car:</p>
+        <div class="opts"><button class="opt">A) park free of charge</button><button class="opt">B) pay £3 an hour</button><button class="opt">C) pay a monthly rate</button><button class="opt">D) cannot park</button></div></div>
 
       <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
         <button class="btn btn-primary" onclick="grade('l1')">✅ উত্তর মিলাও</button>
@@ -410,18 +432,19 @@
     <div style="font-size:13px;color:var(--gold);margin:6px 0;min-height:18px"><span id="lstat2">▶️ চাপো — আসল IELTS-এর মতো intro + প্রশ্ন পড়ার সময় সহ চলবে</span> <button id="lskip2" class="btn btn-ghost" style="display:none;padding:2px 8px;font-size:12px" onclick="skipPracticeGap()">⏭ Skip</button></div>
     <div class="note warn">⚠️ ব্রাউজারের কৃত্রিম কণ্ঠ — প্র্যাকটিসের জন্য। একবারই শোনার চেষ্টা করো।</div>
 
-    <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–9:</b> ফাঁকা পূরণ করো (সংখ্যা বা ১ শব্দ)।</p>
+    <div class="qinstr">Questions 1–9: Answer the questions (NO MORE THAN TWO WORDS AND/OR A NUMBER); for 3–4, choose from the list.</div>
     <div class="test" id="l2">
-      <div class="q text" data-a="11pm|11 pm|eleven|11|11:00"><p class="qtext">1. Weekday closing time: ______</p><input class="fill" type="text" placeholder="যেমন 11pm"></div>
-      <div class="q text" data-a="6pm|6 pm|six|6|6:00"><p class="qtext">2. Saturday closing time: ______</p><input class="fill" type="text" placeholder="যেমন 6pm"></div>
-      <div class="q text" data-a="ten|10"><p class="qtext">3. Undergraduates can borrow up to ______ books.</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="fifteen|15"><p class="qtext">4. Postgraduates can borrow up to ______ books.</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="three|3"><p class="qtext">5. Books are loaned for ______ weeks.</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="20|twenty"><p class="qtext">6. Late return fine: ______ pence per day.</p><input class="fill" type="text" placeholder="সংখ্যা"></div>
-      <div class="q text" data-a="second"><p class="qtext">7. The silent zones are the first and ______ floors.</p><input class="fill" type="text" placeholder="১ শব্দ"></div>
-      <div class="q text" data-a="entrance|main entrance"><p class="qtext">8. The help desk is near the main ______.</p><input class="fill" type="text" placeholder="১ শব্দ"></div>
-      <div class="q choice" data-a="B"><p class="qtext">9. Talking is allowed on:</p>
-        <div class="opts"><button class="opt">A) the first floor</button><button class="opt">B) the ground floor</button><button class="opt">C) the second floor</button><button class="opt">D) nowhere</button></div></div>
+      <div class="q text" data-a="11pm|11 pm|eleven|11|11:00"><p class="qtext"><b>1.</b> At what time does the library shut on weekdays? <span class="lim">A TIME</span></p><input class="fill" type="text"></div>
+      <div class="q text" data-a="6pm|6 pm|six|6|6:00"><p class="qtext"><b>2.</b> When does it close on Saturdays? <span class="lim">A TIME</span></p><input class="fill" type="text"></div>
+      <div class="matchleg"><b>Questions 3–4 — how many books may each group borrow?</b><ul><li>A — 10 books</li><li>B — 15 books</li><li>C — 20 books</li></ul></div>
+      <div class="q" data-a="A"><p class="qtext"><b>3.</b> Undergraduate students</p><select class="fill"><option value="">— choose —</option><option value="A">A — 10 books</option><option value="B">B — 15 books</option><option value="C">C — 20 books</option></select></div>
+      <div class="q" data-a="B"><p class="qtext"><b>4.</b> Postgraduate students</p><select class="fill"><option value="">— choose —</option><option value="A">A — 10 books</option><option value="B">B — 15 books</option><option value="C">C — 20 books</option></select></div>
+      <div class="q text" data-a="three|3"><p class="qtext"><b>5.</b> For how many weeks is a book lent out? <span class="lim">A NUMBER</span></p><input class="fill" type="text"></div>
+      <div class="q text" data-a="20|twenty"><p class="qtext"><b>6.</b> What is the daily fine for a late book, in pence? <span class="lim">A NUMBER</span></p><input class="fill" type="text"></div>
+      <div class="q text" data-a="second"><p class="qtext"><b>7.</b> Apart from the first, which floor is kept silent? <span class="lim">ONE WORD</span></p><input class="fill" type="text"></div>
+      <div class="q text" data-a="entrance|main entrance"><p class="qtext"><b>8.</b> Which part of the building is the help desk beside? <span class="lim">ONE/TWO WORDS</span></p><input class="fill" type="text"></div>
+      <div class="q choice" data-a="B"><p class="qtext"><b>9.</b> Where is quiet chatting permitted?</p>
+        <div class="opts"><button class="opt">A) the first floor</button><button class="opt">B) the ground floor</button><button class="opt">C) the second floor</button><button class="opt">D) nowhere at all</button></div></div>
 
       <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
         <button class="btn btn-primary" onclick="grade('l2')">✅ উত্তর মিলাও</button>
@@ -786,6 +809,9 @@ const EXPLANATIONS={
  ]
 };
 function norm(s){return (s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.,]$/,'');}
+function lev(a,b){const m=a.length,n=b.length;if(!m)return n;if(!n)return m;let p=[...Array(n+1).keys()];
+  for(let i=1;i<=m;i++){let prev=p[0];p[0]=i;for(let j=1;j<=n;j++){const t=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=t;}}return p[n];}
+function nearMiss(val,normedAlts){const v=norm(val);if(!v)return false;return normedAlts.some(t=>{if(!t)return false;const d=lev(v,t);return d>0&&d<=(t.length<=4?1:2);});}
 function grade(id){
   const t=document.getElementById(id);
   const qs=t.querySelectorAll('.q');
@@ -818,7 +844,8 @@ function grade(id){
       else{
         q.classList.add('bad');inp.classList.add('badi');
         const s=document.createElement('span');s.className='ansreveal';
-        s.textContent=' ✓ সঠিক: '+q.dataset.a.split('|')[0];
+        const spell=inp.tagName==='INPUT'&&inp.value&&nearMiss(inp.value,ans);
+        s.textContent=(spell?' ✗ বানান ভুল! ✓ ':' ✓ সঠিক: ')+q.dataset.a.split('|')[0];
         inp.insertAdjacentElement('afterend',s);
       }
     }
