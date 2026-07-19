@@ -1182,6 +1182,7 @@
   <div class="wrap">
     <p>🎯 তোমার IELTS Band 7.5+ যাত্রা শুরু হোক আজ থেকে।</p>
     <p style="margin-top:6px;font-size:.85rem">এই পেজটা বুকমার্ক করে রাখো — প্রতিদিন এসে চেকলিস্ট আপডেট করো।</p>
+    <p style="margin-top:10px;font-size:.78rem;opacity:.65">🔖 App version: <b id="appVersion" style="letter-spacing:.03em">…</b></p>
   </div>
 </footer>
 
@@ -1245,5 +1246,20 @@
   const goto=sessionStorage.getItem('goto');
   if(goto){ sessionStorage.removeItem('goto'); go(goto); }
 </script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script></body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js")})}</script>
+<script>
+/* show the live service-worker cache version so users can confirm updates loaded */
+(function(){
+  var el=document.getElementById('appVersion'); if(!el) return;
+  function fromCaches(){
+    if(!('caches' in window)) return Promise.reject();
+    return caches.keys().then(function(keys){
+      var k=keys.filter(function(x){return /ielts-helper-v\d+/.test(x);}).sort().pop();
+      if(!k) throw 0;
+      return k.replace('ielts-helper-','').toUpperCase();
+    });
+  }
+  fromCaches().then(function(v){el.textContent=v;}).catch(function(){el.textContent='V22';});
+})();
+</script></body>
 </html>
