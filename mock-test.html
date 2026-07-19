@@ -108,6 +108,30 @@
   .reslist small{color:#777}
   .resnote{background:#fff;border:1px dashed #f0d8a0;border-radius:7px;padding:9px 11px;font-size:13px!important}
   @media(max-width:760px){.split{flex-direction:column}.passcol{border-right:none;border-bottom:2px solid #d0d0d0;max-height:38%}.testpick{grid-template-columns:1fr}}
+  /* ---- hard-mode question layouts (table / flow-chart / matching / short-answer) ---- */
+  .qinstr{font-weight:700;margin:12px 0 6px;color:#1a3a6b;font-size:13.5px;display:flex;align-items:center;gap:6px}
+  .qinstr::before{content:"✍️";font-size:14px}
+  .lim{color:#8a93a6;font-size:11px;font-weight:600;background:#f0f3f8;border-radius:4px;padding:1px 6px;white-space:nowrap}
+  .ltable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0;border-radius:10px;border:1px solid #dfe6f0}
+  .ltable{border-collapse:collapse;width:100%;min-width:340px;font-size:13.5px;background:#fff}
+  .ltable th,.ltable td{border-bottom:1px solid #eef1f6;padding:9px 12px;text-align:left;vertical-align:middle}
+  .ltable tr:last-child th,.ltable tr:last-child td{border-bottom:none}
+  .ltable tr:first-child th,.ltable tr:first-child td{background:#1a3a6b;color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.02em}
+  .ltable th{background:#f7f9fc;font-weight:600;color:#33415c;white-space:nowrap}
+  .ltable tbody tr:nth-child(even) td,.ltable tbody tr:nth-child(even) th{background:#fbfcfe}
+  .qinline{display:inline-flex!important;align-items:center;gap:6px;border:none!important;background:none!important;padding:0!important;margin:0!important;border-radius:0!important}
+  .qinline .fill{width:110px;display:inline-block;padding:5px 8px}
+  .qinline .qn{margin-right:0}
+  .flowchart{margin:10px auto;max-width:540px;display:flex;flex-direction:column;align-items:center}
+  .flowbox{border:1px solid #cfe0f5;border-left:4px solid #1a73e8;border-radius:10px;padding:11px 14px;background:linear-gradient(180deg,#f7faff,#eef4ff);width:100%;line-height:2;box-shadow:0 1px 3px rgba(26,58,107,.06)}
+  .flowarrow{color:#1a73e8;font-size:18px;line-height:1;margin:3px 0}
+  .matchleg{background:linear-gradient(180deg,#f7faff,#eef4ff);border:1px solid #cfe0f5;border-radius:10px;padding:10px 15px;margin:8px 0;font-size:13px}
+  .matchleg b{color:#1a3a6b;display:block;margin-bottom:5px}
+  .matchleg ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+  .matchleg li{background:#fff;border:1px solid #cfe0f5;border-radius:20px;padding:3px 12px;font-weight:600;color:#33415c}
+  .msel{padding:6px 9px;min-width:150px;border:1px solid #aaa;border-radius:6px;background:#fff;font-size:13.5px;cursor:pointer}
+  .msel:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
+  .ansreveal{margin-left:8px;color:#0a5c33;font-weight:700;font-size:12.5px}
 </style>
 </head>
 <body>
@@ -233,13 +257,8 @@ function qInline(item,num){ // compact control for table/flow cells (label comes
 }
 function refdSet(cells){const s=new Set();cells.forEach(c=>{(String(c).match(/\{(\d+)\}/g)||[]).forEach(x=>s.add(+x.replace(/[{}]/g,'')));});return s;}
 function embed(str,sec,base){return String(str).replace(/\{(\d+)\}/g,(_,i)=>qInline(sec.Q[+i-1],base+(+i)));}
-const HARD_CSS='<style>.qinstr{font-weight:600;margin:9px 0 4px;color:#1a6}.lim{color:#8a93a6;font-size:11.5px;font-weight:400}'
-  +'.ltable{border-collapse:collapse;width:100%;margin:8px 0;font-size:13.5px}.ltable th,.ltable td{border:1px solid #cfd8e6;padding:6px 9px;text-align:left;vertical-align:middle}.ltable th{background:#eef2f8;font-weight:600;white-space:nowrap}'
-  +'.qinline{display:inline-flex;align-items:center;gap:5px;border:none;background:none;padding:0;margin:0}.qinline .fill{width:96px;display:inline-block}.qinline .qn{background:#1a73e8;color:#fff}'
-  +'.flowchart{margin:8px auto;max-width:520px}.flowbox{border:1px solid #cfd8e6;border-radius:9px;padding:9px 12px;background:#f7faff;text-align:center;line-height:1.9}.flowarrow{text-align:center;color:#7a9;font-size:20px;line-height:1.2}'
-  +'.matchleg{background:#eef2f8;border:1px solid #cfd8e6;border-radius:9px;padding:8px 13px;margin:8px 0;font-size:13px}.matchleg ul{margin:4px 0 0;padding-left:20px}.msel{padding:3px 6px;min-width:150px}</style>';
 function renderListening(m){
-  let html=HARD_CSS;
+  let html='';
   m.listen.forEach((sec,si)=>{
     const base=si*10;
     html+='<div class="lsec"><h3>Section '+(si+1)+' — '+sec.title+'</h3>';
@@ -252,9 +271,9 @@ function renderListening(m){
     let refd=new Set();
     if(sec.layout==='table' && sec.table){
       refd=refdSet(sec.table.flat());
-      html+='<table class="ltable"><tbody>';
+      html+='<div class="ltable-wrap"><table class="ltable"><tbody>';
       sec.table.forEach(row=>{ html+='<tr>'+row.map((cell,ci)=>{const tag=ci===0?'th':'td';return '<'+tag+'>'+embed(cell,sec,base)+'</'+tag+'>';}).join('')+'</tr>'; });
-      html+='</tbody></table>';
+      html+='</tbody></table></div>';
     } else if(sec.layout==='flow' && sec.flow){
       refd=refdSet(sec.flow);
       html+='<div class="flowchart">';
@@ -407,8 +426,10 @@ const READ_GAP=[25,20], READ_GAP_ONE=30;
 let playCtl=null;
 /* pick the most natural (neural) English voice available, avoiding robotic SAPI ones */
 function voiceScore(v){const n=(v.name||'').toLowerCase(),l=(v.lang||'').toLowerCase();let s=0;
-  if(/natural|neural|online/.test(n))s+=100; if(/siri|premium|enhanced/.test(n))s+=80; if(/google/.test(n))s+=60;
-  if(/desktop|david|zira|mark|hazel|susan|george|sean/.test(n))s-=40;
+  if(v.localService)s+=60;                 // installed locally: plays instantly & reliably (vital for a timed test)
+  if(/online/.test(n))s-=50;               // Edge 'Online (Natural)' voices lag or stay silent via Web Speech
+  if(/natural|neural/.test(n))s+=20; if(/google/.test(n))s+=20; if(/siri|premium|enhanced/.test(n))s+=25;
+  if(/zira|hazel|susan|aria|jenny|libby|sonia/.test(n))s+=6;
   if(l.startsWith('en-gb'))s+=8; else if(l.startsWith('en-us'))s+=6; else if(l.startsWith('en'))s+=3; return s;}
 let _bestVoice=null;
 function bestVoice(){
@@ -476,8 +497,11 @@ function runStep(){
     const u=new SpeechSynthesisUtterance(st.text);
     const bv=bestVoice(); if(bv){u.voice=bv;u.lang=bv.lang;} else u.lang='en-GB';
     u.rate= st.tag==='narr'?rateVal():Math.min(rateVal()+0.05,1);
-    u.onend=()=>{if(playCtl&&playCtl.si===si)runStep();};
-    u.onerror=()=>{if(playCtl&&playCtl.si===si)runStep();};
+    let fired=false,started=false;
+    const go=()=>{if(fired)return;fired=true;clearTimeout(wd);if(playCtl&&playCtl.si===si)runStep();};
+    u.onstart=()=>{started=true;};
+    u.onend=go; u.onerror=go;
+    const wd=setTimeout(()=>{if(!started){try{speechSynthesis.cancel();}catch(e){}go();}},5000); // never hang on a stuck voice
     speechSynthesis.speak(u);
   } else { /* gap */
     let left=st.secs;lskip(si,true);lstat(si,st.label+' — '+left+'s');

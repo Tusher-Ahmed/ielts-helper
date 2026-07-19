@@ -141,10 +141,12 @@ function band(r){
 function voiceScore(v){
   const n=(v.name||'').toLowerCase(), l=(v.lang||'').toLowerCase();
   let s=0;
-  if(/natural|neural|online/.test(n)) s+=100;   // MS "Online (Natural)" — best
-  if(/siri|premium|enhanced/.test(n)) s+=80;     // Apple enhanced
-  if(/google/.test(n)) s+=60;                    // Google voices — good
-  if(/desktop|david|zira|mark|hazel|susan|george|sean|\bsapi\b/.test(n)) s-=40; // old robotic SAPI
+  if(v.localService) s+=60;                      // installed locally: plays instantly & reliably
+  if(/online/.test(n)) s-=50;                    // Edge 'Online (Natural)' voices lag / stay silent via Web Speech
+  if(/natural|neural/.test(n)) s+=20;
+  if(/google/.test(n)) s+=20;
+  if(/siri|premium|enhanced/.test(n)) s+=25;
+  if(/zira|hazel|susan|aria|jenny|libby|sonia/.test(n)) s+=6;
   if(l.startsWith('en-gb')) s+=8; else if(l.startsWith('en-us')) s+=6; else if(l.startsWith('en')) s+=3;
   return s;
 }
