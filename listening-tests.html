@@ -89,6 +89,22 @@
   .chip.s1{background:rgba(255,123,182,.20);color:#ff9ecb}
   .turn .tx{color:#c7ccf0}
   footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+  /* ---- hard-mode layouts (table completion / flow-chart) ---- */
+  .qinstr{font-weight:700;color:var(--gold);margin:12px 0 6px;font-size:.9rem}
+  .lim{color:var(--muted);font-size:.66rem;font-weight:700;background:rgba(255,255,255,.07);border-radius:5px;padding:1px 7px;white-space:nowrap;margin-left:4px}
+  .ltable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0;border-radius:12px;border:1px solid var(--line)}
+  .ltable{border-collapse:collapse;width:100%;min-width:320px;font-size:.88rem;color:var(--txt);background:var(--card2)}
+  .ltable th,.ltable td{border-bottom:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:middle}
+  .ltable tr:last-child th,.ltable tr:last-child td{border-bottom:none}
+  .ltable tr:first-child th{background:linear-gradient(90deg,rgba(108,140,255,.24),rgba(70,214,179,.14));color:#eef0ff;font-weight:700}
+  .ltable th{background:var(--card);font-weight:600;color:var(--muted);white-space:nowrap}
+  .q.qi{display:inline-flex!important;align-items:center;gap:5px;padding:0!important;border:none!important;margin:0}
+  .qi input.ans{margin-top:0;min-width:92px;width:108px;padding:4px 8px}
+  .qi .fb{margin-top:0;margin-left:4px}
+  .qn2{display:inline-flex;min-width:20px;height:20px;padding:0 6px;background:var(--accent);color:#06121f;border-radius:20px;font-size:.66rem;font-weight:800;align-items:center;justify-content:center;font-family:'Poppins'}
+  .flowchart{margin:9px auto;max-width:560px;display:flex;flex-direction:column;align-items:stretch}
+  .flowbox{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:9px 13px;background:var(--card2);line-height:2.1}
+  .flowarrow{text-align:center;color:var(--accent);font-size:1.1rem;line-height:1;margin:3px 0}
 </style>
 </head>
 <body>
@@ -131,6 +147,9 @@ function isCorrect(user,ans){
   const u=norm(user); if(!u) return false;
   return ans.split('|').map(norm).some(a=>a===u);
 }
+function lev(a,b){const m=a.length,n=b.length;if(!m)return n;if(!n)return m;let p=[...Array(n+1).keys()];
+  for(let i=1;i<=m;i++){let prev=p[0];p[0]=i;for(let j=1;j<=n;j++){const t=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=t;}}return p[n];}
+function nearMiss(val,ans){const v=norm(val);if(!v)return false;return ans.split('|').map(norm).some(t=>{if(!t)return false;const d=lev(v,t);return d>0&&d<=(t.length<=4?1:2);});}
 function band(r){
   const t=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4]];
   for(const [m,b] of t) if(r>=m) return b; return '<4';
@@ -298,15 +317,32 @@ function render(){
         </div>
         <div class="pstat" style="font-size:12.5px;color:#555;min-height:17px;margin:2px 0 4px"></div>`;
       if(p.map){ html+=p.map + `<p class="maphint">📍 প্ল্যান দেখে সঠিক অক্ষর (A–H) বসাও।</p>`; }
-      p.Q.forEach(q=>{
-        qnum++;
-        html+=`<div class="q"><div class="qn">${qnum}</div><div class="qmain"><div class="qt">${q.q}</div>`;
+      if(p.instr){ html+=`<div class="qinstr">${p.instr}</div>`; }
+      const base=qnum;
+      const cellsLT = p.layout==='table'? (p.table||[]).flat() : p.layout==='flow'? (p.flow||[]) : [];
+      const refdLT=new Set(); cellsLT.forEach(c=>{(String(c).match(/\{(\d+)\}/g)||[]).forEach(x=>refdLT.add(+x.replace(/[{}]/g,'')));});
+      const ctrlLT=(q,gnum)=>`<span class="q qi"><span class="qn2">${gnum}</span><input class="ans" data-a="${q.a}"><span class="fb"></span></span>`;
+      const embLT=(str)=>String(str).replace(/\{(\d+)\}/g,(_,k)=>ctrlLT(p.Q[+k-1],base+(+k)));
+      if(p.layout==='table' && p.table){
+        html+=`<div class="ltable-wrap"><table class="ltable"><tbody>`;
+        p.table.forEach(row=>{ html+='<tr>'+row.map((cell,ci)=>{const tg=ci===0?'th':'td';return `<${tg}>${embLT(cell)}</${tg}>`;}).join('')+'</tr>'; });
+        html+=`</tbody></table></div>`;
+      } else if(p.layout==='flow' && p.flow){
+        html+=`<div class="flowchart">`;
+        p.flow.forEach((step,i)=>{ if(i)html+=`<div class="flowarrow">↓</div>`; html+=`<div class="flowbox">${embLT(step)}</div>`; });
+        html+=`</div>`;
+      }
+      p.Q.forEach((q,qi)=>{
+        const within=qi+1, gnum=base+within;
+        if(refdLT.has(within)) return;   // rendered inside the table/flow
+        const lim=q.lim?` <span class="lim">${q.lim}</span>`:'';
+        html+=`<div class="q"><div class="qn">${gnum}</div><div class="qmain"><div class="qt">${q.q}${lim}</div>`;
         if(q.o){
           const letters='ABCDEFGH';
           html+=`<div class="opts">`;
           q.o.forEach((opt,i)=>{ const L=letters[i];
-            html+=`<label><input type="radio" name="t${ti}q${qnum}" value="${L}">${L}) ${opt}</label>`; });
-          html+=`</div><input type="hidden" class="ans" data-a="${q.a}" data-mode="radio" data-name="t${ti}q${qnum}"><div class="fb"></div>`;
+            html+=`<label><input type="radio" name="t${ti}q${gnum}" value="${L}">${L}) ${opt}</label>`; });
+          html+=`</div><input type="hidden" class="ans" data-a="${q.a}" data-mode="radio" data-name="t${ti}q${gnum}"><div class="fb"></div>`;
         } else if(p.map){
           html+=`<select class="ans" data-a="${q.a}"><option value="">—</option>${'ABCDEFGH'.split('').map(L=>`<option>${L}</option>`).join('')}</select><div class="fb"></div>`;
         } else {
@@ -314,6 +350,7 @@ function render(){
         }
         html+=`</div></div>`;
       });
+      qnum=base+p.Q.length;
       html+=`</div>`;
     });
     // transcript box
@@ -368,7 +405,9 @@ function checkTest(ti,btn){
     const part=Math.floor(i/10); // all parts have exactly 10 Q
     const fb=inp.parentElement.querySelector('.fb');
     if(ok){right++; partScore[part]++; fb.className='fb ok'; fb.textContent='✓ সঠিক';}
-    else{ wrong.push(i+1); fb.className='fb no'; fb.textContent='✗ সঠিক উত্তর: '+inp.dataset.a.split('|')[0];}
+    else{ wrong.push(i+1); fb.className='fb no';
+      const spell=inp.tagName==='INPUT'&&inp.dataset.mode!=='radio'&&val&&nearMiss(val,inp.dataset.a);
+      fb.textContent=(spell?'✗ বানান ভুল! সঠিক: ':'✗ সঠিক উত্তর: ')+inp.dataset.a.split('|')[0];}
   });
   document.getElementById('score'+ti).textContent=`স্কোর: ${right} / 40  →  আনুমানিক Band ${band(right)}`;
   // review summary
