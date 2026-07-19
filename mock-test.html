@@ -165,7 +165,7 @@
 
   <div class="screen" id="p-listening"><div class="pad">
     <h2>Listening</h2>
-    <label style="font-size:12.5px;color:#555">Audio speed: <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.9"></label>
+    <label style="font-size:12.5px;color:#555">Audio speed: <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.8"></label>
     <div id="listenQ"></div>
   </div></div>
 
@@ -216,20 +216,54 @@
 /* =============== ENGINE =============== */
 let M=0, currentPart=null, readIdx=0, playingSec=-1, mode='realistic';
 
-function qHTML(item,num){
-  let inner='<div class="qtext"><span class="qn">'+num+'</span>'+item.q+'</div>';
-  if(item.t==='choice') inner+='<div class="opts">'+item.opts.map(o=>'<button class="opt">'+o+'</button>').join('')+'</div>';
-  else inner+='<input class="fill" type="text" placeholder="Your answer">';
+/* controls: gap-fill / short-answer (text), MCQ (choice), matching (select) */
+function qControl(item){
+  if(item.t==='choice') return '<div class="opts">'+item.opts.map(o=>'<button class="opt">'+o+'</button>').join('')+'</div>';
+  if(item.t==='match')  return '<select class="fill msel"><option value="">—</option>'+item.opts.map(o=>'<option value="'+o.trim().charAt(0)+'">'+o+'</option>').join('')+'</select>';
+  return '<input class="fill" type="text" placeholder="answer">';
+}
+function qHTML(item,num){   // full stacked question
+  let inner='<div class="qtext"><span class="qn">'+num+'</span>'+item.q+(item.lim?' <span class="lim">('+item.lim+')</span>':'')+'</div>';
+  inner+=qControl(item);
   inner+='<div class="flagrow"><input type="checkbox" class="flag"> Review</div>';
   return '<div class="q" data-a="'+item.a+'">'+inner+'</div>';
 }
+function qInline(item,num){ // compact control for table/flow cells (label comes from the layout)
+  return '<span class="q qinline" data-a="'+item.a+'"><span class="qn">'+num+'</span>'+qControl(item)+'</span>';
+}
+function refdSet(cells){const s=new Set();cells.forEach(c=>{(String(c).match(/\{(\d+)\}/g)||[]).forEach(x=>s.add(+x.replace(/[{}]/g,'')));});return s;}
+function embed(str,sec,base){return String(str).replace(/\{(\d+)\}/g,(_,i)=>qInline(sec.Q[+i-1],base+(+i)));}
+const HARD_CSS='<style>.qinstr{font-weight:600;margin:9px 0 4px;color:#1a6}.lim{color:#8a93a6;font-size:11.5px;font-weight:400}'
+  +'.ltable{border-collapse:collapse;width:100%;margin:8px 0;font-size:13.5px}.ltable th,.ltable td{border:1px solid #cfd8e6;padding:6px 9px;text-align:left;vertical-align:middle}.ltable th{background:#eef2f8;font-weight:600;white-space:nowrap}'
+  +'.qinline{display:inline-flex;align-items:center;gap:5px;border:none;background:none;padding:0;margin:0}.qinline .fill{width:96px;display:inline-block}.qinline .qn{background:#1a73e8;color:#fff}'
+  +'.flowchart{margin:8px auto;max-width:520px}.flowbox{border:1px solid #cfd8e6;border-radius:9px;padding:9px 12px;background:#f7faff;text-align:center;line-height:1.9}.flowarrow{text-align:center;color:#7a9;font-size:20px;line-height:1.2}'
+  +'.matchleg{background:#eef2f8;border:1px solid #cfd8e6;border-radius:9px;padding:8px 13px;margin:8px 0;font-size:13px}.matchleg ul{margin:4px 0 0;padding-left:20px}.msel{padding:3px 6px;min-width:150px}</style>';
 function renderListening(m){
-  let html='',n=1;
+  let html=HARD_CSS;
   m.listen.forEach((sec,si)=>{
+    const base=si*10;
     html+='<div class="lsec"><h3>Section '+(si+1)+' — '+sec.title+'</h3>';
-    html+='<div class="player"><button class="pbtn lplaybtn" id="lp'+si+'" onclick="playSec('+si+')">▶️</button><span style="font-size:12.5px;color:#555">▶️ চাপো — একবারই শোনার চেষ্টা করো</span></div>';
-    sec.Q.forEach(item=>{html+=qHTML(item,n);n++;});
-    html+='<details><summary>📜 Transcript</summary><div class="tscript">'+sec.transcript+'</div></details>';
+    html+='<div class="player"><button class="pbtn lplaybtn" id="lp'+si+'" onclick="playSec('+si+')">▶️</button>'
+      +'<span id="lstat'+si+'" style="font-size:12.5px;color:#555">▶️ চাপো — আসল IELTS-এর মতো intro + প্রশ্ন পড়ার সময় সহ চলবে</span>'
+      +'<button class="pbtn" id="lskip'+si+'" style="display:none;margin-left:6px;background:#e0a800;color:#2a230a;font-size:12px;padding:2px 8px" onclick="skipGap('+si+')">⏭ Skip</button>'
+      +'</div>';
+    if(sec.instr) html+='<div class="qinstr">'+sec.instr+'</div>';
+    if(sec.matchOpts) html+='<div class="matchleg"><b>Choose from:</b><ul>'+sec.matchOpts.map(o=>'<li>'+o+'</li>').join('')+'</ul></div>';
+    let refd=new Set();
+    if(sec.layout==='table' && sec.table){
+      refd=refdSet(sec.table.flat());
+      html+='<table class="ltable"><tbody>';
+      sec.table.forEach(row=>{ html+='<tr>'+row.map((cell,ci)=>{const tag=ci===0?'th':'td';return '<'+tag+'>'+embed(cell,sec,base)+'</'+tag+'>';}).join('')+'</tr>'; });
+      html+='</tbody></table>';
+    } else if(sec.layout==='flow' && sec.flow){
+      refd=refdSet(sec.flow);
+      html+='<div class="flowchart">';
+      sec.flow.forEach((step,i)=>{ if(i)html+='<div class="flowarrow">↓</div>'; html+='<div class="flowbox">'+embed(step,sec,base)+'</div>'; });
+      html+='</div>';
+    }
+    for(let i=1;i<=sec.Q.length;i++){ if(!refd.has(i)) html+=qHTML(sec.Q[i-1],base+i); }
+    const fullT=sec.t1?(sec.t1+' '+sec.t2):(sec.transcript||'');
+    html+='<details><summary>📜 Transcript</summary><div class="tscript">'+fullT+'</div></details>';
     html+='</div>';
   });
   document.getElementById('listenQ').innerHTML=html;
@@ -260,7 +294,7 @@ function loadMock(i){
 
 document.addEventListener('click',e=>{if(e.target.classList.contains('opt')){const p=e.target.parentElement;p.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));e.target.classList.add('sel');updatePalette();}});
 document.addEventListener('input',e=>{if(e.target.classList.contains('fill'))updatePalette();});
-document.addEventListener('change',e=>{if(e.target.classList.contains('flag'))updatePalette();});
+document.addEventListener('change',e=>{if(e.target.classList.contains('flag')||e.target.classList.contains('fill'))updatePalette();});
 
 function switchPart(p){
   if(mode==='realistic' && currentPart && p!==currentPart){
@@ -299,7 +333,7 @@ function startTest(i){
   toast(mode==='realistic'?'▶️ Realistic mode — Listening ৩২ মিনিট শুরু':'▶️ Practice mode — অবাধ চলাচল, টাইমার track করছে');
 }
 function showIntro(){
-  clearInterval(clock);clock=null;speechSynthesis.cancel();playingSec=-1;
+  clearInterval(clock);clock=null;stopPlay();
   document.getElementById('overlay').classList.remove('show');
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('intro').classList.add('active');
@@ -364,17 +398,97 @@ function endSection(auto){
 }
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>{t.style.display='none';},4200);}
 
-/* AUDIO */
+/* ================= AUDIO — realistic IELTS listening flow =================
+   Each section plays like the real test: a spoken intro, time to read the
+   questions (a skippable on-screen countdown), then the narration — split
+   in two with a mid-section reading gap — and finally an end-of-section cue.
+   Reading-gap length (seconds) for first / second half of a section: */
+const READ_GAP=[25,20], READ_GAP_ONE=30;
+let playCtl=null;
+/* pick the most natural (neural) English voice available, avoiding robotic SAPI ones */
+function voiceScore(v){const n=(v.name||'').toLowerCase(),l=(v.lang||'').toLowerCase();let s=0;
+  if(/natural|neural|online/.test(n))s+=100; if(/siri|premium|enhanced/.test(n))s+=80; if(/google/.test(n))s+=60;
+  if(/desktop|david|zira|mark|hazel|susan|george|sean/.test(n))s-=40;
+  if(l.startsWith('en-gb'))s+=8; else if(l.startsWith('en-us'))s+=6; else if(l.startsWith('en'))s+=3; return s;}
+let _bestVoice=null;
+function bestVoice(){
+  if(!('speechSynthesis'in window))return null;
+  const all=speechSynthesis.getVoices(); if(!all.length)return _bestVoice;
+  const en=all.filter(v=>/^en(-|_|$)/i.test(v.lang)); const list=en.length?en:all;
+  _bestVoice=list.slice().sort((a,b)=>voiceScore(b)-voiceScore(a))[0]||null; return _bestVoice;
+}
+if('speechSynthesis'in window) speechSynthesis.onvoiceschanged=bestVoice;
+function rateVal(){return parseFloat(document.getElementById('rate').value||'0.85');}
+function lstat(si,txt){const el=document.getElementById('lstat'+si);if(el)el.textContent=txt||'';}
+function lskip(si,show){const b=document.getElementById('lskip'+si);if(b)b.style.display=show?'inline-block':'none';}
+/* split a long passage into sentence-sized utterances so onend stays reliable
+   (Chrome silently drops utterances longer than ~15s) */
+function sentences(t){return (t.match(/[^.!?…]+[.!?…]+["']?\s*|[^.!?…]+$/g)||[t]).map(s=>s.trim()).filter(Boolean);}
+function buildSteps(sec,si){
+  const base=si*10, a1=base+1,b1=base+5,a2=base+6,b2=base+10;
+  const intro=sec.intro||('a recording about '+sec.title.toLowerCase());
+  const steps=[{type:'say',text:'Section '+(si+1)+'. You will hear '+intro+'.',tag:'intro'}];
+  if(sec.t1){ /* new full-length format: two halves with a mid-section gap */
+    steps.push({type:'say',text:'First, you have some time to look at questions '+a1+' to '+b1+'.',tag:'instr'});
+    steps.push({type:'gap',secs:READ_GAP[0],label:'📖 Reading time — questions '+a1+'–'+b1});
+    steps.push({type:'say',text:'Now listen carefully, and answer questions '+a1+' to '+b1+'.',tag:'instr'});
+    sentences(sec.t1).forEach(s=>steps.push({type:'say',text:s,tag:'narr'}));
+    steps.push({type:'say',text:'Before you hear the rest of the section, you have some time to look at questions '+a2+' to '+b2+'.',tag:'instr'});
+    steps.push({type:'gap',secs:READ_GAP[1],label:'📖 Reading time — questions '+a2+'–'+b2});
+    sentences(sec.t2).forEach(s=>steps.push({type:'say',text:s,tag:'narr'}));
+  } else { /* legacy single-transcript format */
+    steps.push({type:'say',text:'First, you have some time to look at questions '+a1+' to '+b2+'.',tag:'instr'});
+    steps.push({type:'gap',secs:READ_GAP_ONE,label:'📖 Reading time — questions '+a1+'–'+b2});
+    steps.push({type:'say',text:'Now listen carefully, and answer questions '+a1+' to '+b2+'.',tag:'instr'});
+    sentences(sec.transcript||'').forEach(s=>steps.push({type:'say',text:s,tag:'narr'}));
+  }
+  steps.push({type:'say',text:'That is the end of section '+(si+1)+'.',tag:'instr'});
+  return steps;
+}
+function stopPlay(){
+  if(playCtl){
+    if(playCtl.timer)clearInterval(playCtl.timer);
+    if(playCtl.keep)clearInterval(playCtl.keep);
+    const s=playCtl.si;lstat(s,'');lskip(s,false);
+    const btn=document.getElementById('lp'+s);if(btn)btn.textContent='▶️';
+  }
+  if('speechSynthesis'in window)speechSynthesis.cancel();
+  playCtl=null;playingSec=-1;
+}
 function playSec(si){
   if(!('speechSynthesis'in window)){alert('Voice not supported');return;}
-  const btn=document.getElementById('lp'+si);
-  if(playingSec===si){speechSynthesis.cancel();playingSec=-1;btn.textContent='▶️';return;}
-  speechSynthesis.cancel();document.querySelectorAll('.lplaybtn').forEach(b=>b.textContent='▶️');
-  const u=new SpeechSynthesisUtterance(MOCKS[M].listen[si].transcript);
-  u.lang='en-GB';u.rate=parseFloat(document.getElementById('rate').value||'0.9');
-  u.onend=()=>{playingSec=-1;btn.textContent='▶️';};
-  speechSynthesis.speak(u);playingSec=si;btn.textContent='⏸️';
+  if(playCtl && playCtl.si===si){stopPlay();return;}   // toggle off
+  stopPlay();
+  document.querySelectorAll('.lplaybtn').forEach(b=>b.textContent='▶️');
+  playCtl={si:si,steps:buildSteps(MOCKS[M].listen[si],si),idx:0,timer:null,
+           keep:setInterval(()=>{if(speechSynthesis.speaking&&!speechSynthesis.paused)speechSynthesis.resume();},9000)};
+  playingSec=si;document.getElementById('lp'+si).textContent='⏸️';
+  runStep();
 }
+function runStep(){
+  if(!playCtl)return;
+  const si=playCtl.si;
+  if(playCtl.idx>=playCtl.steps.length){lstat(si,'✅ End of section');stopPlay();lstat(si,'✅ End of section');return;}
+  const st=playCtl.steps[playCtl.idx++];
+  if(st.type==='say'){
+    lskip(si,false);
+    lstat(si, st.tag==='narr'?'🎙️ Playing…':'📢 '+st.text);
+    const u=new SpeechSynthesisUtterance(st.text);
+    const bv=bestVoice(); if(bv){u.voice=bv;u.lang=bv.lang;} else u.lang='en-GB';
+    u.rate= st.tag==='narr'?rateVal():Math.min(rateVal()+0.05,1);
+    u.onend=()=>{if(playCtl&&playCtl.si===si)runStep();};
+    u.onerror=()=>{if(playCtl&&playCtl.si===si)runStep();};
+    speechSynthesis.speak(u);
+  } else { /* gap */
+    let left=st.secs;lskip(si,true);lstat(si,st.label+' — '+left+'s');
+    playCtl.timer=setInterval(()=>{
+      left--;
+      if(left<=0){clearInterval(playCtl.timer);playCtl.timer=null;lskip(si,false);runStep();}
+      else lstat(si,st.label+' — '+left+'s');
+    },1000);
+  }
+}
+function skipGap(si){if(playCtl&&playCtl.si===si&&playCtl.timer){clearInterval(playCtl.timer);playCtl.timer=null;lskip(si,false);runStep();}}
 
 /* HIGHLIGHT */
 function highlightSel(){const s=window.getSelection();if(!s.rangeCount||s.isCollapsed)return;const r=s.getRangeAt(0);if(!document.getElementById('passage').contains(r.commonAncestorContainer))return;const m=document.createElement('mark');try{r.surroundContents(m);}catch(e){}s.removeAllRanges();}
@@ -388,13 +502,18 @@ function countWords(){
 
 /* GRADE */
 function norm(s){return (s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.,]$/,'');}
+function lev(a,b){const m=a.length,n=b.length;if(!m)return n;if(!n)return m;let p=[...Array(n+1).keys()];
+  for(let i=1;i<=m;i++){let prev=p[0];p[0]=i;for(let j=1;j<=n;j++){const t=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=t;}}return p[n];}
+function nearMiss(val,normedAlts){const v=norm(val);if(!v)return false;return normedAlts.some(t=>{if(!t)return false;const d=lev(v,t);return d>0&&d<=(t.length<=4?1:2);});}
 function gradeSet(qs){let c=0;qs.forEach(q=>{const ans=q.dataset.a.split('|').map(norm);q.classList.remove('ok','bad');
   if(q.querySelector('.opts')){const sel=q.querySelector('.opt.sel');const val=sel?norm(sel.textContent):'';const letter=sel?norm(sel.textContent.charAt(0)):'';
     if(sel&&(ans.includes(val)||ans.includes(letter))){c++;q.classList.add('ok');sel.classList.add('correctopt');}
     else{q.classList.add('bad');q.querySelectorAll('.opt').forEach(o=>{if(ans.includes(norm(o.textContent))||ans.includes(norm(o.textContent.charAt(0))))o.classList.add('correctopt');});}}
   else{const inp=q.querySelector('.fill');inp.classList.remove('oki','badi');
     if(inp.value&&ans.includes(norm(inp.value))){c++;q.classList.add('ok');inp.classList.add('oki');}
-    else{q.classList.add('bad');inp.classList.add('badi');if(!q.querySelector('.ansreveal')){const s=document.createElement('span');s.className='ansreveal';s.textContent='✓ '+q.dataset.a.split('|')[0];inp.insertAdjacentElement('afterend',s);}}}
+    else{q.classList.add('bad');inp.classList.add('badi');if(!q.querySelector('.ansreveal')){const s=document.createElement('span');s.className='ansreveal';
+      const spell=inp.tagName==='INPUT'&&inp.value&&nearMiss(inp.value,ans);
+      s.textContent=(spell?'✗ বানান ভুল (spelling)! ✓ ':'✓ ')+q.dataset.a.split('|')[0];inp.insertAdjacentElement('afterend',s);}}}
 });return c;}
 function bandRaw(r){if(r>=39)return '9';if(r>=37)return '8.5';if(r>=35)return '8';if(r>=33)return '7.5';if(r>=30)return '7';if(r>=27)return '6.5';if(r>=23)return '6';if(r>=19)return '5.5';if(r>=15)return '5';if(r>=13)return '4.5';return '4';}
 function submitTest(){
@@ -404,7 +523,7 @@ function submitTest(){
   const w1=document.getElementById('essay1').value.trim(),w2=document.getElementById('essay2').value.trim();
   const wn1=w1?w1.split(/\s+/).length:0,wn2=w2?w2.split(/\s+/).length:0;
   saveScore({type:'mock',name:MOCKS[M].name,L:lc,Lt:lq.length,R:rc,Rt:rq.length,ts:Date.now()});
-  clearInterval(clock);clock=null;speechSynthesis.cancel();
+  clearInterval(clock);clock=null;stopPlay();
   document.getElementById('rTitle').textContent='📊 '+MOCKS[M].name+' — ফলাফল';
   document.getElementById('scoreBig').textContent='L '+lc+'/'+lq.length+' · R '+rc+'/'+rq.length;
   document.getElementById('scoreTable').innerHTML=

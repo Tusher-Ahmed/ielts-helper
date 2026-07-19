@@ -137,10 +137,23 @@ function band(r){
 }
 
 /* ---------- voices / accents ---------- */
+/* score voices so the most natural (neural) ones are preferred over robotic SAPI ones */
+function voiceScore(v){
+  const n=(v.name||'').toLowerCase(), l=(v.lang||'').toLowerCase();
+  let s=0;
+  if(/natural|neural|online/.test(n)) s+=100;   // MS "Online (Natural)" — best
+  if(/siri|premium|enhanced/.test(n)) s+=80;     // Apple enhanced
+  if(/google/.test(n)) s+=60;                    // Google voices — good
+  if(/desktop|david|zira|mark|hazel|susan|george|sean|\bsapi\b/.test(n)) s-=40; // old robotic SAPI
+  if(l.startsWith('en-gb')) s+=8; else if(l.startsWith('en-us')) s+=6; else if(l.startsWith('en')) s+=3;
+  return s;
+}
+function isNatural(v){return voiceScore(v)>=60;}
 function engVoices(){
   const all=('speechSynthesis' in window)?speechSynthesis.getVoices():[];
   const en=all.filter(v=>/^en(-|_|$)/i.test(v.lang));
-  return en.length?en:all;
+  const list=en.length?en:all;
+  return list.slice().sort((a,b)=>voiceScore(b)-voiceScore(a));  // most natural first
 }
 function accentName(l){l=(l||'').toLowerCase();
   return l.startsWith('en-gb')?'🇬🇧 British':l.startsWith('en-us')?'🇺🇸 American':
@@ -153,7 +166,7 @@ function fillAccents(){
   sel.innerHTML='';
   if(!vs.length){ sel.innerHTML='<option>(default browser voice)</option>'; return; }
   vs.forEach((v,i)=>{ const o=document.createElement('option'); o.value=i;
-    o.textContent=accentName(v.lang)+' — '+v.name.replace(/Microsoft |Google /,''); sel.appendChild(o); });
+    o.textContent=(isNatural(v)?'⭐ ':'')+accentName(v.lang)+' — '+v.name.replace(/Microsoft |Google /,''); sel.appendChild(o); });
   const saved=localStorage.getItem('ielts_accent');
   if(prev && prev<vs.length) sel.value=prev;
   else if(saved!==null && saved<vs.length) sel.value=saved;
@@ -169,30 +182,89 @@ function chosenVoices(){
   return {vA,vB};
 }
 
-/* ---------- playback (queued turns, 2 voices for dialogue) ---------- */
-let curBtn=null;
+/* ---------- playback — realistic IELTS flow: intro + reading gaps + end cue, 2 voices,
+   sentence-chunked so long audio isn't cut off (~15s) in Chrome/Edge ---------- */
+let curBtn=null, partCtl=null;
+const RG=[25,20];   // reading-gap seconds: before Q1-5, before Q6-10
 function toTurns(tr){return Array.isArray(tr)?tr:[tr];}
-function playTurns(turns, btn, rate){
-  if(!('speechSynthesis' in window)){alert('তোমার ব্রাউজার voice সাপোর্ট করে না।');return;}
-  if(curBtn===btn){
-    if(speechSynthesis.paused){speechSynthesis.resume();btn.textContent='⏸ Pause';return;}
-    if(speechSynthesis.speaking){speechSynthesis.pause();btn.textContent='▶ Resume';return;}
-  }
-  speechSynthesis.cancel();
-  const {vA,vB}=chosenVoices();
-  const dialogue=turns.length>1;
-  curBtn=btn; btn.textContent='⏸ Pause';
-  turns.forEach((t,i)=>{
-    const u=new SpeechSynthesisUtterance(t);
-    u.rate=rate||0.9;
-    if(dialogue && i%2===1){ u.voice=vB||vA; u.pitch=vB?1:0.7; }   // speaker B
-    else { u.voice=vA; u.pitch=1; }                                // speaker A / monologue
-    if(vA) u.lang=vA.lang; else u.lang='en-GB';
-    if(i===turns.length-1) u.onend=()=>{ if(curBtn===btn){btn.textContent='▶ Play';curBtn=null;} };
-    speechSynthesis.speak(u);
-  });
+function sentences(t){return (t.match(/[^.!?…]+[.!?…]+["']?\s*|[^.!?…]+$/g)||[t]).map(s=>s.trim()).filter(Boolean);}
+function utters(arr,isD,offset){   // -> [{say,v}] ; dialogue alternates A/B by turn, monologue all A; each chunked by sentence
+  const out=[];
+  arr.forEach((t,i)=>{ const v=isD?(((offset+i)%2===0)?'A':'B'):'A'; sentences(t).forEach(s=>out.push({say:s,v})); });
+  return out;
 }
-function stopAll(){ if('speechSynthesis' in window) speechSynthesis.cancel(); if(curBtn){curBtn.textContent='▶ Play';curBtn=null;} }
+function partHalves(p){
+  const isD=(p.tr1!==undefined)?Array.isArray(p.tr1):Array.isArray(p.tr);
+  let raw1,raw2;
+  if(p.tr1!==undefined){ raw1=p.tr1; raw2=p.tr2; }
+  else if(isD){ const t=p.tr,m=Math.ceil(t.length/2); raw1=t.slice(0,m); raw2=t.slice(m); }
+  else { const s=sentences(p.tr),m=Math.ceil(s.length/2); raw1=s.slice(0,m).join(' '); raw2=s.slice(m).join(' '); }
+  const a1=Array.isArray(raw1)?raw1:[raw1], a2=Array.isArray(raw2)?raw2:[raw2];
+  return [ utters(a1,isD,0), utters(a2,isD,isD?a1.length:0) ];
+}
+function buildPartSteps(p){
+  const base=(p.n-1)*10, a1=base+1,b1=base+5,a2=base+6,b2=base+10;
+  const [h1,h2]=partHalves(p);
+  const intro=p.intro||('a recording about '+p.title.toLowerCase());
+  const steps=[{say:'Part '+p.n+'. You will hear '+intro+'.',v:'I'}];
+  if(p.map) steps.push({say:'Look at the plan as you listen.',v:'I'});
+  steps.push({say:'First, you have some time to look at questions '+a1+' to '+b1+'.',v:'I'});
+  steps.push({gap:RG[0],label:'📖 Reading time — Q'+a1+'–'+b1});
+  steps.push({say:'Now listen carefully, and answer questions '+a1+' to '+b1+'.',v:'I'});
+  h1.forEach(x=>steps.push(x));
+  steps.push({say:'Before you hear the rest, you have some time to look at questions '+a2+' to '+b2+'.',v:'I'});
+  steps.push({gap:RG[1],label:'📖 Reading time — Q'+a2+'–'+b2});
+  h2.forEach(x=>steps.push(x));
+  steps.push({say:'That is the end of part '+p.n+'.',v:'I'});
+  return steps;
+}
+function playPart(p, btn){
+  if(!('speechSynthesis' in window)){alert('তোমার ব্রাউজার voice সাপোর্ট করে না।');return;}
+  if(curBtn===btn){ stopAll(); return; }   // toggle off
+  stopAll();
+  const {vA,vB}=chosenVoices();
+  const row=btn.closest('.audio-row');
+  const slider=row.querySelector('.rate-slider');
+  curBtn=btn; btn.textContent='⏸ Stop';
+  partCtl={steps:buildPartSteps(p), idx:0, vA, vB,
+    rate:parseFloat(slider.value)||0.8,
+    stat:row.querySelector('.pstat'), skip:row.querySelector('.pskip'),
+    timer:null, keep:setInterval(()=>{if(speechSynthesis.speaking&&!speechSynthesis.paused)speechSynthesis.resume();},9000)};
+  runPart();
+}
+function runPart(){
+  if(!partCtl)return;
+  const st=partCtl.steps[partCtl.idx++];
+  if(!st){ if(partCtl.stat)partCtl.stat.textContent='✅ End of part'; stopAll(); return; }
+  if(st.say!==undefined){
+    if(partCtl.skip)partCtl.skip.style.display='none';
+    if(partCtl.stat)partCtl.stat.textContent = st.v==='I'?('📢 '+st.say):'🎙️ Playing…';
+    const u=new SpeechSynthesisUtterance(st.say);
+    const {vA,vB}=partCtl;
+    if(st.v==='B'){ u.voice=vB||vA; u.pitch=vB?1:0.7; } else { u.voice=vA; u.pitch=1; }
+    if(vA) u.lang=vA.lang; else u.lang='en-GB';
+    u.rate = st.v==='I'? Math.min(partCtl.rate+0.05,1) : partCtl.rate;
+    u.onend=()=>{ if(partCtl) runPart(); };
+    u.onerror=()=>{ if(partCtl) runPart(); };
+    speechSynthesis.speak(u);
+  } else {   // reading gap
+    let left=st.gap;
+    if(partCtl.skip)partCtl.skip.style.display='inline-block';
+    if(partCtl.stat)partCtl.stat.textContent=st.label+' — '+left+'s';
+    partCtl.timer=setInterval(()=>{
+      left--;
+      if(left<=0){ clearInterval(partCtl.timer);partCtl.timer=null; if(partCtl.skip)partCtl.skip.style.display='none'; runPart(); }
+      else if(partCtl.stat)partCtl.stat.textContent=st.label+' — '+left+'s';
+    },1000);
+  }
+}
+function skipPartGap(){ if(partCtl&&partCtl.timer){ clearInterval(partCtl.timer);partCtl.timer=null; if(partCtl.skip)partCtl.skip.style.display='none'; runPart(); } }
+function stopAll(){
+  if(partCtl){ if(partCtl.timer)clearInterval(partCtl.timer); if(partCtl.keep)clearInterval(partCtl.keep);
+    if(partCtl.stat)partCtl.stat.textContent=''; if(partCtl.skip)partCtl.skip.style.display='none'; partCtl=null; }
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  if(curBtn){curBtn.textContent='▶ Play';curBtn=null;}
+}
 
 /* ---------- render ---------- */
 function ptypeLabel(p){
@@ -207,7 +279,7 @@ function render(){
   TESTS.forEach((test,ti)=>{
     const det=document.createElement('details'); det.className='test';
     let qnum=0;
-    const r0 = test.level==='hard' ? '1' : '0.9';
+    const r0 = test.level==='hard' ? '0.85' : '0.8';
     const lvl = test.level==='hard' ? '<span class="lvl hard">🔴 HARD</span>' : '<span class="lvl std">🟢 Standard</span>';
     let html=`<summary><span>Test ${ti+1} — ${test.name} ${lvl}</span></summary><div class="tbody">
       <div class="sub" style="margin:2px 0 6px">${test.blurb}</div>`;
@@ -219,8 +291,10 @@ function render(){
       html+=`<div class="audio-row">
           <button class="abtn" data-tr="${ti}-${p.n}" type="button">▶ Play</button>
           <button class="abtn stop" data-stop="1" type="button">⏹ Stop</button>
-          <span class="rate">🐢 <input type="range" min="0.6" max="1.15" step="0.05" value="${r0}" class="rate-slider"> 🐇</span>
-        </div>`;
+          <button class="abtn pskip" data-skip="1" type="button" style="display:none">⏭ Skip</button>
+          <span class="rate">🐢 <input type="range" min="0.6" max="1.1" step="0.05" value="${r0}" class="rate-slider"> 🐇</span>
+        </div>
+        <div class="pstat" style="font-size:12.5px;color:#555;min-height:17px;margin:2px 0 4px"></div>`;
       if(p.map){ html+=p.map + `<p class="maphint">📍 প্ল্যান দেখে সঠিক অক্ষর (A–H) বসাও।</p>`; }
       p.Q.forEach(q=>{
         qnum++;
@@ -244,10 +318,12 @@ function render(){
     let sc=`<div class="scriptbox" id="sc${ti}"><h5>📄 Transcript (audio script)</h5>`;
     test.parts.forEach(p=>{
       sc+=`<h5>Part ${p.n} — ${p.title}</h5>`;
-      if(Array.isArray(p.tr)){
-        p.tr.forEach((t,i)=>{ const who=p.sp?p.sp[i%2]:(i%2?'B':'A');
+      const turnsAll = (p.tr1!==undefined) ? (Array.isArray(p.tr1)?p.tr1.concat(p.tr2):null)
+                                           : (Array.isArray(p.tr)?p.tr:null);
+      if(turnsAll){
+        turnsAll.forEach((t,i)=>{ const who=p.sp?p.sp[i%2]:(i%2?'B':'A');
           sc+=`<div class="turn"><span class="chip s${i%2}">${i%2?'B':'A'}</span><span class="tx"><b>${who}:</b> ${t}</span></div>`; });
-      } else sc+=`<p>${p.tr}</p>`;
+      } else { const mono = (p.tr1!==undefined)?(p.tr1+' '+p.tr2):p.tr; sc+=`<p>${mono}</p>`; }
     });
     let key=[]; let kn=0;
     test.parts.forEach(p=>p.Q.forEach(q=>{kn++;key.push(kn+'. '+q.a.split('|')[0]);}));
@@ -265,11 +341,11 @@ function render(){
 }
 function wire(){
   document.querySelectorAll('[data-stop]').forEach(b=>b.onclick=stopAll);
+  document.querySelectorAll('[data-skip]').forEach(b=>b.onclick=skipPartGap);
   document.querySelectorAll('.abtn[data-tr]').forEach(b=>{
     b.onclick=()=>{ const [ti,pn]=b.dataset.tr.split('-');
       const part=TESTS[+ti].parts.find(p=>p.n==pn);
-      const slider=b.closest('.audio-row').querySelector('.rate-slider');
-      playTurns(toTurns(part.tr), b, parseFloat(slider.value)); };
+      playPart(part, b); };
   });
   document.querySelectorAll('[data-check]').forEach(b=>{ b.onclick=()=>checkTest(+b.dataset.check,b); });
   document.querySelectorAll('[data-script]').forEach(b=>{

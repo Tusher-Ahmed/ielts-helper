@@ -366,10 +366,11 @@
       <button class="pbtn" id="playBtn" onclick="toggleAudio()">▶️</button>
       <div>
         <div style="font-weight:600">Greenfield Sports Centre — তথ্য</div>
-        <label>গতি (speed): <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.9"></label>
+        <label>গতি (speed): <input type="range" id="rate" min="0.6" max="1.2" step="0.1" value="0.8"></label>
       </div>
       <button class="btn btn-ghost" onclick="stopAudio()">⏹️ Stop</button>
     </div>
+    <div style="font-size:13px;color:var(--gold);margin:6px 0;min-height:18px"><span id="lstat1">▶️ চাপো — আসল IELTS-এর মতো intro + প্রশ্ন পড়ার সময় সহ চলবে</span> <button id="lskip1" class="btn btn-ghost" style="display:none;padding:2px 8px;font-size:12px" onclick="skipPracticeGap()">⏭ Skip</button></div>
     <div class="note warn">⚠️ এটি ব্রাউজারের কৃত্রিম কণ্ঠ (synthetic voice) — প্র্যাকটিসের জন্য। আসল পরীক্ষায় বিভিন্ন accent থাকবে। হেডফোন ব্যবহার করো।</div>
 
     <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–8:</b> ফাঁকা জায়গা পূরণ করো (সংখ্যা বা ১ শব্দ)।</p>
@@ -393,9 +394,7 @@
 
     <details style="margin-top:14px">
       <summary>📜 Transcript দেখো (উত্তর দেওয়ার পর)</summary>
-      <div class="body" id="transcriptText">
-        "Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah, and I'll give you a quick overview of what we offer. The centre is open from six in the morning until ten at night on weekdays, and from eight until eight at weekends. Our most popular facility is the swimming pool, which has eight lanes and is heated all year round. Membership costs forty pounds per month for adults, but students receive a discount and pay only twenty-five pounds. If you join for a full year, you also get one free personal training session. The gym is located on the first floor, next to the café. Please remember to bring a towel and a padlock for the lockers, as these are not provided. For group classes such as yoga and boxing, you need to book at least two days in advance through our website. Finally, parking is free for members, but visitors must pay three pounds per hour."
-      </div>
+      <div class="body" id="transcriptText"></div>
     </details>
   </div>
   <div class="card">
@@ -404,10 +403,11 @@
       <button class="pbtn" id="playBtn2" onclick="toggleAudio2()">▶️</button>
       <div>
         <div style="font-weight:600">Library Induction — তথ্য</div>
-        <label>গতি (speed): <input type="range" id="rate2" min="0.6" max="1.2" step="0.1" value="0.9"></label>
+        <label>গতি (speed): <input type="range" id="rate2" min="0.6" max="1.2" step="0.1" value="0.8"></label>
       </div>
       <button class="btn btn-ghost" onclick="stopAudio2()">⏹️ Stop</button>
     </div>
+    <div style="font-size:13px;color:var(--gold);margin:6px 0;min-height:18px"><span id="lstat2">▶️ চাপো — আসল IELTS-এর মতো intro + প্রশ্ন পড়ার সময় সহ চলবে</span> <button id="lskip2" class="btn btn-ghost" style="display:none;padding:2px 8px;font-size:12px" onclick="skipPracticeGap()">⏭ Skip</button></div>
     <div class="note warn">⚠️ ব্রাউজারের কৃত্রিম কণ্ঠ — প্র্যাকটিসের জন্য। একবারই শোনার চেষ্টা করো।</div>
 
     <p style="color:var(--accent2);margin:14px 0 4px"><b>Questions 1–9:</b> ফাঁকা পূরণ করো (সংখ্যা বা ১ শব্দ)।</p>
@@ -432,9 +432,7 @@
 
     <details style="margin-top:14px">
       <summary>📜 Transcript দেখো (উত্তর দেওয়ার পর)</summary>
-      <div class="body" id="transcriptText2">
-        "Good morning, and welcome to the university library. I'm David, the head librarian, and I'll explain how everything works. The library is open from eight in the morning until eleven at night on weekdays. On Saturdays, we close a little earlier, at six. To borrow books, you'll need your student card, which also acts as your library card. Undergraduate students can borrow up to ten books at a time, while postgraduates can take out fifteen. Books are normally loaned for three weeks, but if no one else has requested them, you can renew them online. Please note that if you return a book late, there is a fine of twenty pence per day. The ground floor is a social study area where talking is allowed, but the first and second floors are strictly silent zones. Computers are available on the first floor, next to the printing room. If you need help finding a resource, just visit the help desk near the main entrance, and a member of staff will be happy to assist you."
-      </div>
+      <div class="body" id="transcriptText2"></div>
     </details>
   </div>
 
@@ -852,41 +850,98 @@ function resetTest(id){
   document.getElementById(id+'-res').classList.remove('show');
 }
 
-/* ===== LISTENING (TTS) ===== */
-let speaking=false;
-function getTranscript(){
-  return document.getElementById('transcriptText').textContent.replace(/"/g,'').trim();
+/* ===== LISTENING (TTS) — realistic IELTS flow: intro + reading gaps + end cue,
+   with sentence-chunking so long audio doesn't get cut off (~15s) in Chrome/Edge ===== */
+const LPRACTICE=[
+  {play:'playBtn', rate:'rate', stat:'lstat1', skip:'lskip1', disp:'transcriptText',  a:[1,4], b:[5,8],
+   intro:"a receptionist at a community sports centre giving information to a new member",
+   t1:"Hello everyone, and welcome to the Greenfield Community Sports Centre. My name is Sarah, and I'll give you a quick overview of everything we offer here. Let me start with our opening hours, as people often get these wrong. On weekdays, the centre is open from six o'clock in the morning right the way through until nine at night — sorry, I should say ten at night; we recently extended our evening hours. At the weekend we open from eight in the morning until eight in the evening. Now, our most popular facility by far is the swimming pool. It originally had six lanes, but after last year's refurbishment it now has eight lanes, and I'm pleased to say it's heated all year round, so it's lovely even in winter. Let me move on to membership, which is very reasonable. For an adult, membership costs fifty pounds a month — no, let me correct that, it's forty pounds a month; the fifty-pound rate is for a whole family. Students, however, get a generous discount and pay only twenty-five pounds a month, provided they can show a valid student card. If you sign up for a full year in advance, you'll also receive one free personal-training session with one of our instructors.",
+   t2:"Now let me tell you where things are and what to bring. The gym is on the first floor. People often expect it to be near the reception, but in fact you'll find it right next to the cafe, so you can grab a drink afterwards. When you come to use the pool or the gym, please remember to bring two things with you: a towel, and a padlock for the lockers. We don't provide either of these, so do come prepared. If you'd like to join one of our group classes, such as yoga or boxing, please be aware that you must book in advance. We used to allow same-day booking, but the classes are so popular now that you need to book at least two days ahead through our website. Finally, a quick word about parking. For members, parking here is completely free, which is a real bonus. Visitors, on the other hand, are not exempt: they must pay for parking, and the charge is three pounds per hour. So if a friend or family member drives you here, do let them know in advance. Right — that's the overview. Does anyone have any questions before we begin the tour?"},
+  {play:'playBtn2', rate:'rate2', stat:'lstat2', skip:'lskip2', disp:'transcriptText2', a:[1,5], b:[6,9],
+   intro:"the head librarian explaining how the university library works to new students",
+   t1:"Good morning, everyone, and welcome to the university library. My name is David, and I'm the head librarian. I'll spend a few minutes explaining how everything works, so please listen carefully. Let's begin with our opening hours. From Monday to Friday, the library is open from eight o'clock in the morning until ten at night — sorry, until eleven at night; we now stay open an extra hour during term time. On Saturdays we close a good deal earlier, at six in the evening, and I'm afraid we're closed altogether on Sundays. Now, to borrow any books, you'll need your student card, which doubles as your library card, so please keep it with you. The number of books you can borrow depends on your level of study. Undergraduate students may borrow up to ten books at any one time, whereas postgraduate students, who tend to need more for their research, can borrow up to fifteen. Books are normally loaned out for a period of three weeks — not two, as some of you may have read on the old website. If nobody else has reserved the book, you're very welcome to renew it online from home rather than coming in.",
+   t2:"Now, a few important rules and services. Please be careful about returning books on time. If you return a book late, there's a fine — it used to be ten pence a day, but it's now twenty pence per day, so those fines can add up quickly. Let me also explain our noise policy, as students often get this wrong. The ground floor is our social study area, where quiet talking and group work are perfectly allowed. However, the first and second floors are strictly silent zones, so no talking at all up there, please. Computers are available on the first floor, right next to the printing room, and you can print, scan and photocopy there using your student card. If you ever get stuck or can't find a particular resource, don't struggle on your own — just come to the help desk, which is located near the main entrance, and one of our friendly staff will be delighted to assist you. We also run free workshops on research skills throughout the term. So, to sum up: mind the silent floors, return your books on time, and don't hesitate to ask us for help. Enjoy using the library, and welcome once again to the university."}
+];
+const PGAP=[25,20];
+let pCtl=null;
+/* pick the most natural (neural) English voice available, avoiding robotic SAPI ones */
+function voiceScore(v){const n=(v.name||'').toLowerCase(),l=(v.lang||'').toLowerCase();let s=0;
+  if(/natural|neural|online/.test(n))s+=100; if(/siri|premium|enhanced/.test(n))s+=80; if(/google/.test(n))s+=60;
+  if(/desktop|david|zira|mark|hazel|susan|george|sean/.test(n))s-=40;
+  if(l.startsWith('en-gb'))s+=8; else if(l.startsWith('en-us'))s+=6; else if(l.startsWith('en'))s+=3; return s;}
+let _bestVoice=null;
+function bestVoice(){
+  if(!('speechSynthesis'in window))return null;
+  const all=speechSynthesis.getVoices(); if(!all.length)return _bestVoice;
+  const en=all.filter(v=>/^en(-|_|$)/i.test(v.lang)); const list=en.length?en:all;
+  _bestVoice=list.slice().sort((a,b)=>voiceScore(b)-voiceScore(a))[0]||null; return _bestVoice;
 }
-function toggleAudio(){
-  if(!('speechSynthesis' in window)){alert('তোমার ব্রাউজার voice সাপোর্ট করে না।');return;}
-  if(speaking){speechSynthesis.pause();speaking=false;document.getElementById('playBtn').textContent='▶️';return;}
-  if(speechSynthesis.paused && speechSynthesis.speaking){speechSynthesis.resume();}
-  else{
-    speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(getTranscript());
-    u.lang='en-GB';u.rate=parseFloat(document.getElementById('rate').value);
-    u.onend=()=>{speaking=false;document.getElementById('playBtn').textContent='▶️';};
-    speechSynthesis.speak(u);
+if('speechSynthesis'in window) speechSynthesis.onvoiceschanged=bestVoice;
+function pSent(t){return (t.match(/[^.!?…]+[.!?…]+["']?\s*|[^.!?…]+$/g)||[t]).map(s=>s.trim()).filter(Boolean);}
+function pStat(i,txt){const e=document.getElementById(LPRACTICE[i].stat);if(e)e.textContent=txt||'';}
+function pSkip(i,show){const b=document.getElementById(LPRACTICE[i].skip);if(b)b.style.display=show?'inline-block':'none';}
+function pRate(i){return parseFloat(document.getElementById(LPRACTICE[i].rate).value||'0.8');}
+function pSteps(i){
+  const L=LPRACTICE[i];
+  const steps=[{t:'say',x:'You will hear '+L.intro+'.',tag:'i'}];
+  steps.push({t:'say',x:'First, you have some time to look at questions '+L.a[0]+' to '+L.a[1]+'.',tag:'i'});
+  steps.push({t:'gap',s:PGAP[0],l:'📖 Reading time — questions '+L.a[0]+'–'+L.a[1]});
+  steps.push({t:'say',x:'Now listen carefully, and answer questions '+L.a[0]+' to '+L.a[1]+'.',tag:'i'});
+  pSent(L.t1).forEach(s=>steps.push({t:'say',x:s,tag:'n'}));
+  steps.push({t:'say',x:'Before you hear the rest, you have some time to look at questions '+L.b[0]+' to '+L.b[1]+'.',tag:'i'});
+  steps.push({t:'gap',s:PGAP[1],l:'📖 Reading time — questions '+L.b[0]+'–'+L.b[1]});
+  pSent(L.t2).forEach(s=>steps.push({t:'say',x:s,tag:'n'}));
+  steps.push({t:'say',x:'That is the end of the recording.',tag:'i'});
+  return steps;
+}
+function pStop(){
+  if(pCtl){
+    if(pCtl.timer)clearInterval(pCtl.timer);
+    if(pCtl.keep)clearInterval(pCtl.keep);
+    const i=pCtl.i;pStat(i,'');pSkip(i,false);
+    const b=document.getElementById(LPRACTICE[i].play);if(b)b.textContent='▶️';
   }
-  speaking=true;document.getElementById('playBtn').textContent='⏸️';
+  if('speechSynthesis' in window)speechSynthesis.cancel();
+  pCtl=null;
 }
-function stopAudio(){speechSynthesis.cancel();speaking=false;document.getElementById('playBtn').textContent='▶️';}
-
-let speaking2=false;
-function toggleAudio2(){
+function pPlay(i){
   if(!('speechSynthesis' in window)){alert('তোমার ব্রাউজার voice সাপোর্ট করে না।');return;}
-  if(speaking2){speechSynthesis.pause();speaking2=false;document.getElementById('playBtn2').textContent='▶️';return;}
-  if(speechSynthesis.paused && speechSynthesis.speaking){speechSynthesis.resume();}
-  else{
-    speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(document.getElementById('transcriptText2').textContent.replace(/"/g,'').trim());
-    u.lang='en-GB';u.rate=parseFloat(document.getElementById('rate2').value);
-    u.onend=()=>{speaking2=false;document.getElementById('playBtn2').textContent='▶️';};
-    speechSynthesis.speak(u);
-  }
-  speaking2=true;document.getElementById('playBtn2').textContent='⏸️';
+  if(pCtl&&pCtl.i===i){pStop();return;}
+  pStop();
+  LPRACTICE.forEach(L=>{const b=document.getElementById(L.play);if(b)b.textContent='▶️';});
+  pCtl={i:i,steps:pSteps(i),idx:0,timer:null,keep:setInterval(()=>{if(speechSynthesis.speaking&&!speechSynthesis.paused)speechSynthesis.resume();},9000)};
+  document.getElementById(LPRACTICE[i].play).textContent='⏸️';
+  pRun();
 }
-function stopAudio2(){speechSynthesis.cancel();speaking2=false;document.getElementById('playBtn2').textContent='▶️';}
+function pRun(){
+  if(!pCtl)return;const i=pCtl.i;
+  if(pCtl.idx>=pCtl.steps.length){pStat(i,'✅ শেষ');pStop();pStat(i,'✅ শেষ');return;}
+  const st=pCtl.steps[pCtl.idx++];
+  if(st.t==='say'){
+    pSkip(i,false);pStat(i, st.tag==='n'?'🎙️ Playing…':'📢 '+st.x);
+    const u=new SpeechSynthesisUtterance(st.x);
+    const bv=bestVoice(); if(bv){u.voice=bv;u.lang=bv.lang;} else u.lang='en-GB';
+    u.rate= st.tag==='n'?pRate(i):Math.min(pRate(i)+0.05,1);
+    u.onend=()=>{if(pCtl&&pCtl.i===i)pRun();};
+    u.onerror=()=>{if(pCtl&&pCtl.i===i)pRun();};
+    speechSynthesis.speak(u);
+  } else {
+    let left=st.s;pSkip(i,true);pStat(i,st.l+' — '+left+'s');
+    pCtl.timer=setInterval(()=>{
+      left--;
+      if(left<=0){clearInterval(pCtl.timer);pCtl.timer=null;pSkip(i,false);pRun();}
+      else pStat(i,st.l+' — '+left+'s');
+    },1000);
+  }
+}
+function skipPracticeGap(){if(pCtl&&pCtl.timer){clearInterval(pCtl.timer);pCtl.timer=null;pSkip(pCtl.i,false);pRun();}}
+/* keep existing onclick handlers working */
+function toggleAudio(){pPlay(0);}
+function toggleAudio2(){pPlay(1);}
+function stopAudio(){pStop();}
+function stopAudio2(){pStop();}
+/* fill the transcript panels from the single source of truth */
+LPRACTICE.forEach(L=>{const d=document.getElementById(L.disp);if(d)d.textContent=L.t1+' '+L.t2;});
 
 /* ===== WRITING TOOLS ===== */
 function countWords(){
